@@ -1,0 +1,33 @@
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* Glass Nav */
+.glass-nav {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Nav Item Underline Animation */
+.nav-item { position: relative; transition: color 0.2s; }
+.nav-item::after {
+    content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+    background-color: #F97316; transition: width 0.3s ease;
+}
+.nav-item:hover::after, .nav-item.active::after { width: 100%; }
+
+/* Accordion Animation */
+details[open] summary ~ * { animation: sweep .3s ease-in-out; }
+@keyframes sweep { 0% {opacity: 0; transform: translateY(-10px)} 100% {opacity: 1; transform: translateY(0)} }
+
+/* Vertical Side Tab */
+.side-tab { writing-mode: vertical-rl; transform: rotate(180deg); }
+
+/* Performance optimizations */
+img { 
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
