@@ -26,6 +26,55 @@ details[open] summary ~ * { animation: sweep .3s ease-in-out; }
 /* Vertical Side Tab */
 .side-tab { writing-mode: vertical-rl; transform: rotate(180deg); }
 
+/* Language Switcher Styles */
+#language-dropdown {
+    transform-origin: top right;
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.language-flag {
+    width: 20px;
+    height: 15px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/* Ensure dropdown appears above other elements */
+#language-dropdown {
+    z-index: 9999;
+}
+
+/* Language button hover effects */
+.group:hover .group-hover\:text-white {
+    color: white;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible {
+    outline: 2px solid #F97316;
+    outline-offset: 2px;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    #language-dropdown {
+        width: 200px;
+        right: 0;
+        left: auto;
+    }
+}
+
 /* Performance optimizations */
 img {
     max-width: 100%;

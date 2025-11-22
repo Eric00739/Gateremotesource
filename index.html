@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GateRemoteSource | Wholesale Garage & Gate Remote Replacements</title>
+    <title data-i18n="meta.title">GateRemoteSource | Wholesale Garage & Gate Remote Replacements</title>
     <!-- Favicon (Square Icon) -->
     <link rel="icon" href="favicon.png">
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Factory-direct wholesale garage and gate remote replacements for LiftMaster®, Nice®, CAME® and other systems. Trusted by 500+ distributors with 2-year warranty and low MOQ from 100pcs.">
-    <meta name="keywords" content="wholesale garage remote, gate remote replacements, LiftMaster compatible, Nice compatible, CAME compatible, universal remote, receiver, factory direct, aftermarket RF solutions">
-    <link rel="canonical" href="https://yourusername.github.io/Gateremotesource/">
+    <meta name="description" data-i18n="meta.description" content="Factory-direct wholesale garage and gate remote replacements for LiftMaster®, Nice®, CAME® and other systems. Trusted by 500+ distributors with 2-year warranty and low MOQ from 100pcs.">
+    <meta name="keywords" data-i18n="meta.keywords" content="wholesale garage remote, gate remote replacements, LiftMaster compatible, Nice compatible, CAME compatible, universal remote, receiver, factory direct, aftermarket RF solutions">
+    <link rel="canonical" href="https://eric00739.github.io/Gateremotesource/">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourusername.github.io/Gateremotesource/">
-    <meta property="og:title" content="GateRemoteSource | Wholesale Garage & Gate Remote Replacements">
-    <meta property="og:description" content="Factory-direct wholesale garage and gate remote replacements. Trusted by 500+ distributors with 2-year warranty and low MOQ from 100pcs.">
-    <meta property="og:image" content="https://yourusername.github.io/Gateremotesource/logo.png">
+    <meta property="og:url" content="https://eric00739.github.io/Gateremotesource/">
+    <meta property="og:title" data-i18n="meta.title" content="GateRemoteSource | Wholesale Garage & Gate Remote Replacements">
+    <meta property="og:description" data-i18n="meta.description" content="Factory-direct wholesale garage and gate remote replacements. Trusted by 500+ distributors with 2-year warranty and low MOQ from 100pcs.">
+    <meta property="og:image" content="https://eric00739.github.io/Gateremotesource/logo.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://yourusername.github.io/Gateremotesource/">
-    <meta property="twitter:title" content="GateRemoteSource | Wholesale Garage & Gate Remote Replacements">
-    <meta property="twitter:description" content="Factory-direct wholesale garage and gate remote replacements. Trusted by 500+ distributors with 2-year warranty and low MOQ from 100pcs.">
-    <meta property="twitter:image" content="https://yourusername.github.io/Gateremotesource/logo.png">
+    <meta property="twitter:url" content="https://eric00739.github.io/Gateremotesource/">
+    <meta property="twitter:title" data-i18n="meta.title" content="GateRemoteSource | Wholesale Garage & Gate Remote Replacements">
+    <meta property="twitter:description" data-i18n="meta.description" content="Factory-direct wholesale garage and gate remote replacements. Trusted by 500+ distributors with 2-year warranty and low MOQ from 100pcs.">
+    <meta property="twitter:image" content="https://eric00739.github.io/Gateremotesource/logo.png">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -32,8 +32,8 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "GateRemoteSource",
-      "url": "https://yourusername.github.io/Gateremotesource/",
-      "logo": "https://yourusername.github.io/Gateremotesource/logo.png",
+      "url": "https://eric00739.github.io/Gateremotesource/",
+      "logo": "https://eric00739.github.io/Gateremotesource/logo.png",
       "description": "Factory-direct wholesale garage and gate remote replacements for professional installers and distributors",
       "address": {
         "@type": "PostalAddress",
@@ -115,11 +115,41 @@
     <div class="bg-primary text-slate-300 text-xs py-2.5 border-b border-slate-800">
         <div class="container mx-auto px-4 lg:px-8 flex justify-between items-center">
             <div class="flex items-center space-x-6">
-                <span class="flex items-center"><i class="fas fa-shield-alt text-accent mr-2"></i> ISO9001 Certified Factory</span>
-                <span class="hidden sm:flex items-center"><i class="fas fa-globe-americas text-accent mr-2"></i> Exporting to 50+ Countries</span>
+                <span class="flex items-center"><i class="fas fa-shield-alt text-accent mr-2"></i> <span data-i18n="topBar.isoCertified">ISO9001 Certified Factory</span></span>
+                <span class="hidden sm:flex items-center"><i class="fas fa-globe-americas text-accent mr-2"></i> <span data-i18n="topBar.exporting">Exporting to 50+ Countries</span></span>
             </div>
             <div class="flex items-center space-x-4 divide-x divide-slate-700">
-                <a href="mailto:sales@gateremotesource.com" class="hover:text-white transition pl-4 first:pl-0 font-medium">
+                <!-- Language Switcher -->
+                <div class="relative group">
+                    <button class="flex items-center space-x-1 hover:text-white transition pl-4 first:pl-0 font-medium" onclick="toggleLanguageDropdown()" aria-expanded="false" aria-label="Select language">
+                        <i class="fas fa-globe mr-1.5"></i>
+                        <span id="current-lang">EN</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div id="language-dropdown" class="absolute right-0 mt-2 w-48 bg-white text-primary rounded-lg shadow-xl border border-slate-200 hidden z-50">
+                        <div class="py-1">
+                            <button onclick="changeLanguage('en')" class="flex items-center w-full px-4 py-2 text-sm hover:bg-slate-100 transition">
+                                <span class="mr-3">🇬🇧</span> English
+                            </button>
+                            <button onclick="changeLanguage('it')" class="flex items-center w-full px-4 py-2 text-sm hover:bg-slate-100 transition">
+                                <span class="mr-3">🇮🇹</span> Italiano
+                            </button>
+                            <button onclick="changeLanguage('es')" class="flex items-center w-full px-4 py-2 text-sm hover:bg-slate-100 transition">
+                                <span class="mr-3">🇪🇸</span> Español
+                            </button>
+                            <button onclick="changeLanguage('pt')" class="flex items-center w-full px-4 py-2 text-sm hover:bg-slate-100 transition">
+                                <span class="mr-3">🇵🇹</span> Português
+                            </button>
+                            <button onclick="changeLanguage('fr')" class="flex items-center w-full px-4 py-2 text-sm hover:bg-slate-100 transition">
+                                <span class="mr-3">🇫🇷</span> Français
+                            </button>
+                            <button onclick="changeLanguage('de')" class="flex items-center w-full px-4 py-2 text-sm hover:bg-slate-100 transition">
+                                <span class="mr-3">🇩🇪</span> Deutsch
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <a href="mailto:sales@gateremotesource.com" class="hover:text-white transition pl-4 font-medium">
                     <i class="far fa-envelope mr-1.5"></i> sales@gateremotesource.com
                 </a>
             </div>
@@ -136,17 +166,17 @@
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-8 text-sm font-bold uppercase tracking-wide text-primary">
-                <a href="#home" onclick="switchPage('home'); return false;" class="nav-item active" id="nav-home" aria-current="page">Home</a>
-                <a href="#products" onclick="switchPage('products'); return false;" class="nav-item" id="nav-products">Catalog</a>
-                <a href="#about" onclick="switchPage('about'); return false;" class="nav-item" id="nav-about">Factory</a>
-                <a href="#blog" onclick="switchPage('blog'); return false;" class="nav-item" id="nav-blog">Insights</a>
-                <a href="#contact" onclick="switchPage('contact'); return false;" class="nav-item" id="nav-contact">Contact</a>
+                <a href="#home" onclick="switchPage('home'); return false;" class="nav-item active" id="nav-home" aria-current="page" data-i18n="navigation.home">Home</a>
+                <a href="#products" onclick="switchPage('products'); return false;" class="nav-item" id="nav-products" data-i18n="navigation.catalog">Catalog</a>
+                <a href="#about" onclick="switchPage('about'); return false;" class="nav-item" id="nav-about" data-i18n="navigation.factory">Factory</a>
+                <a href="#blog" onclick="switchPage('blog'); return false;" class="nav-item" id="nav-blog" data-i18n="navigation.insights">Insights</a>
+                <a href="#contact" onclick="switchPage('contact'); return false;" class="nav-item" id="nav-contact" data-i18n="navigation.contact">Contact</a>
             </div>
 
             <!-- CTA & Mobile Toggle -->
             <div class="flex items-center gap-4">
                 <button onclick="openQuoteModal()" class="hidden md:flex items-center bg-accent hover:bg-accentHover text-white text-sm font-bold px-6 py-2.5 rounded-full shadow-lg transition-transform hover:scale-105">
-                    <i class="fas fa-bolt mr-2"></i> Get Wholesale Prices
+                    <i class="fas fa-bolt mr-2"></i> <span data-i18n="sideTab">Get Wholesale Prices</span>
                 </button>
                 <button onclick="toggleMobileMenu()" class="md:hidden text-primary text-2xl p-2" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
                     <i class="fas fa-bars" aria-hidden="true"></i>
@@ -157,11 +187,11 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden bg-white border-b border-gray-100 shadow-lg absolute w-full left-0 top-20" role="navigation" aria-label="Mobile navigation">
             <div class="container mx-auto px-4 py-4 flex flex-col space-y-3">
-                <a href="#home" onclick="switchPage('home'); toggleMobileMenu(); return false;" class="block py-2 font-bold text-primary border-b border-gray-50">Home</a>
-                <a href="#products" onclick="switchPage('products'); toggleMobileMenu(); return false;" class="block py-2 font-bold text-primary border-b border-gray-50">Catalog</a>
-                <a href="#about" onclick="switchPage('about'); toggleMobileMenu(); return false;" class="block py-2 font-bold text-primary border-b border-gray-50">Factory Tour</a>
-                <a href="#blog" onclick="switchPage('blog'); toggleMobileMenu(); return false;" class="block py-2 font-bold text-primary border-b border-gray-50">Insights</a>
-                <a href="#contact" onclick="switchPage('contact'); toggleMobileMenu(); return false;" class="block py-2 font-bold text-primary border-b border-gray-50">Contact Us</a>
+                <a href="#home" onclick="switchPage('home'); toggleMobileMenu(); return false;" class="block py-2 font-bold text-primary border-b border-gray-50" data-i18n="navigation.home">Home</a>
+                <a href="#products" onclick="switchPage('products'); toggleMobileMenu(); return false;" class="block py-2 font-bold text-primary border-b border-gray-50" data-i18n="navigation.catalog">Catalog</a>
+                <a href="#about" onclick="switchPage('about'); toggleMobileMenu(); return false;" class="block py-2 font-bold text-primary border-b border-gray-50" data-i18n="navigation.factory">Factory Tour</a>
+                <a href="#blog" onclick="switchPage('blog'); toggleMobileMenu(); return false;" class="block py-2 font-bold text-primary border-b border-gray-50" data-i18n="navigation.insights">Insights</a>
+                <a href="#contact" onclick="switchPage('contact'); toggleMobileMenu(); return false;" class="block py-2 font-bold text-primary border-b border-gray-50" data-i18n="navigation.contact">Contact Us</a>
             </div>
         </div>
     </nav>
@@ -176,37 +206,37 @@
                 <div class="container mx-auto px-4 lg:px-8 flex flex-col-reverse lg:flex-row items-center gap-12">
                     <div class="w-full lg:w-1/2 z-10">
                         <div class="inline-flex items-center bg-blue-50 border border-blue-100 rounded-full px-3 py-1 text-xs font-bold text-primary mb-6">
-                            <span class="w-2 h-2 rounded-full bg-accent mr-2 animate-pulse"></span> FACTORY DIRECT SUPPLY
+                            <span class="w-2 h-2 rounded-full bg-accent mr-2 animate-pulse"></span> <span data-i18n="hero.badge">FACTORY DIRECT SUPPLY</span>
                         </div>
-                        <div class="text-xs font-bold text-accent uppercase tracking-widest mb-4">Trusted by 500+ gate and garage distributors in 50+ countries</div>
-                        <h1 class="text-4xl lg:text-6xl font-extrabold text-primary leading-tight mb-6">
+                        <div class="text-xs font-bold text-accent uppercase tracking-widest mb-4" data-i18n="hero.trusted">Trusted by 500+ gate and garage distributors in 50+ countries</div>
+                        <h1 class="text-4xl lg:text-6xl font-extrabold text-primary leading-tight mb-6" data-i18n-html="hero.title">
                             Wholesale Garage & Gate <br><span class="text-accent">Remote Replacements</span>
                         </h1>
-                        <p class="text-lg text-slate-500 mb-6 leading-relaxed max-w-xl">
+                        <p class="text-lg text-slate-500 mb-6 leading-relaxed max-w-xl" data-i18n="hero.subtitle">
                             Smart aftermarket RF solutions for LiftMaster®, Nice®, CAME® and other gate & garage systems.
                         </p>
-                        <p class="text-base text-slate-600 mb-8 leading-relaxed max-w-xl">
+                        <p class="text-base text-slate-600 mb-8 leading-relaxed max-w-xl" data-i18n="hero.description">
                             Engineered for professional installers and distributors who need reliable, high-turnover models.
                         </p>
                         <div class="flex flex-col gap-4 mb-8">
                             <div class="flex items-center gap-2 text-sm text-slate-600">
                                 <i class="fas fa-check-circle text-green-500"></i>
-                                <span>Factory-direct pricing</span>
+                                <span data-i18n="hero.benefit1">Factory-direct pricing</span>
                             </div>
                             <div class="flex items-center gap-2 text-sm text-slate-600">
                                 <i class="fas fa-check-circle text-green-500"></i>
-                                <span>2-year warranty on all remotes</span>
+                                <span data-i18n="hero.benefit2">2-year warranty on all remotes</span>
                             </div>
                             <div class="flex items-center gap-2 text-sm text-slate-600">
                                 <i class="fas fa-check-circle text-green-500"></i>
-                                <span>Low MOQ from 100 pcs per model</span>
+                                <span data-i18n="hero.benefit3">Low MOQ from 100 pcs per model</span>
                             </div>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-4">
-                            <button onclick="openQuoteModal()" class="bg-accent hover:bg-accentHover text-white font-bold px-8 py-4 rounded shadow-lg flex justify-center items-center transition">
+                            <button onclick="openQuoteModal()" class="bg-accent hover:bg-accentHover text-white font-bold px-8 py-4 rounded shadow-lg flex justify-center items-center transition" data-i18n="hero.cta1">
                                 Get Wholesale Price List
                             </button>
-                            <button onclick="switchPage('products')" class="border-2 border-primary text-primary font-bold px-8 py-4 rounded hover:bg-primary hover:text-white transition">
+                            <button onclick="switchPage('products')" class="border-2 border-primary text-primary font-bold px-8 py-4 rounded hover:bg-primary hover:text-white transition" data-i18n="hero.cta2">
                                 Browse Full Catalog
                             </button>
                         </div>
@@ -219,20 +249,20 @@
                                     <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="w-32 h-32 object-contain mx-auto rounded-lg shadow-lg" alt="Universal 433MHz Remote Control" width="128" height="128" loading="lazy">
                                     <span class="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full font-bold">NEW</span>
                                 </div>
-                                <p class="font-bold text-primary">Universal 433MHz Remote Series</p>
-                                <p class="text-sm text-slate-600 mt-2 mb-3">Cover up to 80% of common LiftMaster®, Nice® and CAME® remotes with just a few SKUs.</p>
+                                <p class="font-bold text-primary" data-i18n="productShowcase.title">Universal 433MHz Remote Series</p>
+                                <p class="text-sm text-slate-600 mt-2 mb-3" data-i18n="productShowcase.description">Cover up to 80% of common LiftMaster®, Nice® and CAME® remotes with just a few SKUs.</p>
                                 <div class="space-y-1 text-xs text-slate-600">
                                     <div class="flex items-center gap-2">
                                         <i class="fas fa-broadcast-tower text-accent"></i>
-                                        <span>Frequency: 433.92 MHz rolling code</span>
+                                        <span data-i18n="productShowcase.feature1">Frequency: 433.92 MHz rolling code</span>
                                     </div>
                                     <div class="flex items-center gap-2">
                                         <i class="fas fa-check-circle text-green-500"></i>
-                                        <span>Compatible with popular gate & garage operators</span>
+                                        <span data-i18n="productShowcase.feature2">Compatible with popular gate & garage operators</span>
                                     </div>
                                     <div class="flex items-center gap-2">
                                         <i class="fas fa-users text-blue-500"></i>
-                                        <span>Ideal for installers stocking high-turnover models</span>
+                                        <span data-i18n="productShowcase.feature3">Ideal for installers stocking high-turnover models</span>
                                     </div>
                                 </div>
                             </div>
@@ -244,8 +274,8 @@
             <!-- Brands -->
             <div class="bg-slate-50 border-y border-slate-200 py-8">
                 <div class="container mx-auto px-4 text-center">
-                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Compatible Replacements For Leading Brands</p>
-                    <p class="text-sm text-slate-600 mb-6">Drop-in replacements for popular LiftMaster®, Nice®, CAME®, BFT®, FAAC® and other gate & garage systems.</p>
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4" data-i18n="brands.title">Compatible Replacements For Leading Brands</p>
+                    <p class="text-sm text-slate-600 mb-6" data-i18n="brands.description">Drop-in replacements for popular LiftMaster®, Nice®, CAME®, BFT®, FAAC® and other gate & garage systems.</p>
                     <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition duration-500">
                         <span class="text-xl font-bold text-slate-600">LiftMaster®</span>
                         <span class="text-xl font-bold text-slate-600">Nice®</span>
@@ -260,10 +290,10 @@
             <section class="py-20 container mx-auto px-4 lg:px-8">
                 <div class="flex justify-between items-end mb-12">
                     <div>
-                        <h2 class="text-3xl font-bold text-primary mb-2">Best-Selling Models</h2>
-                        <p class="text-slate-500">High-turnover remotes and receivers your installers reorder again and again.</p>
+                        <h2 class="text-3xl font-bold text-primary mb-2" data-i18n="products.title">Best-Selling Models</h2>
+                        <p class="text-slate-500" data-i18n="products.description">High-turnover remotes and receivers your installers reorder again and again.</p>
                     </div>
-                    <button onclick="switchPage('products')" class="text-accent font-bold hover:underline hidden md:inline-block">View Full Catalog <i class="fas fa-arrow-right ml-2"></i></button>
+                    <button onclick="switchPage('products')" class="text-accent font-bold hover:underline hidden md:inline-block" data-i18n="products.viewFull">View Full Catalog <i class="fas fa-arrow-right ml-2"></i></button>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- Product 1 -->
@@ -276,8 +306,8 @@
                         <h3 class="font-bold text-primary text-lg mb-1">371LM Replacement Remote</h3>
                         <p class="text-xs text-slate-500 mb-2">Compatible with 371LM / 373LM and Security+ remotes.</p>
                         <p class="text-xs text-slate-500 mb-4">315 MHz rolling code &bull; 2-year warranty</p>
-                        <p class="text-xs text-slate-600 mb-4">MOQ: 100 pcs • Custom logo printing available</p>
-                        <button onclick="openQuoteModal()" class="mt-auto w-full py-2 border border-slate-200 rounded text-primary font-bold text-sm hover:bg-primary hover:text-white transition">View Wholesale Price</button>
+                        <p class="text-xs text-slate-600 mb-4" data-i18n="products.moq">MOQ: 100 pcs • Custom logo printing available</p>
+                        <button onclick="openQuoteModal()" class="mt-auto w-full py-2 border border-slate-200 rounded text-primary font-bold text-sm hover:bg-primary hover:text-white transition" data-i18n="products.viewPrice">View Wholesale Price</button>
                     </div>
                     <!-- Product 2 -->
                     <div class="group bg-white rounded-xl border border-slate-100 shadow-soft hover:shadow-xl transition p-6 flex flex-col">
@@ -289,8 +319,8 @@
                         <h3 class="font-bold text-primary text-lg mb-1">Flor-S Replacement Remote</h3>
                         <p class="text-xs text-slate-500 mb-2">433.92 MHz rolling code replacement for Nice® Flor-S remotes.</p>
                         <p class="text-xs text-slate-500 mb-4">Stable range and consistent IC quality.</p>
-                        <p class="text-xs text-slate-600 mb-4">MOQ: 100 pcs • Custom logo printing available</p>
-                        <button onclick="openQuoteModal()" class="mt-auto w-full py-2 border border-slate-200 rounded text-primary font-bold text-sm hover:bg-primary hover:text-white transition">View Wholesale Price</button>
+                        <p class="text-xs text-slate-600 mb-4" data-i18n="products.moq">MOQ: 100 pcs • Custom logo printing available</p>
+                        <button onclick="openQuoteModal()" class="mt-auto w-full py-2 border border-slate-200 rounded text-primary font-bold text-sm hover:bg-primary hover:text-white transition" data-i18n="products.viewPrice">View Wholesale Price</button>
                     </div>
                     <!-- Product 3 -->
                     <div class="group bg-white rounded-xl border border-slate-100 shadow-soft hover:shadow-xl transition p-6 flex flex-col">
@@ -302,8 +332,8 @@
                         <h3 class="font-bold text-primary text-lg mb-1">Multi-Freq Cloner</h3>
                         <p class="text-xs text-slate-500 mb-2">280-868MHz Auto-Scan replacement for multiple brands.</p>
                         <p class="text-xs text-slate-500 mb-4">Covers 95% of market frequencies with one device.</p>
-                        <p class="text-xs text-slate-600 mb-4">MOQ: 100 pcs • Custom logo printing available</p>
-                        <button onclick="openQuoteModal()" class="mt-auto w-full py-2 border border-slate-200 rounded text-primary font-bold text-sm hover:bg-primary hover:text-white transition">View Wholesale Price</button>
+                        <p class="text-xs text-slate-600 mb-4" data-i18n="products.moq">MOQ: 100 pcs • Custom logo printing available</p>
+                        <button onclick="openQuoteModal()" class="mt-auto w-full py-2 border border-slate-200 rounded text-primary font-bold text-sm hover:bg-primary hover:text-white transition" data-i18n="products.viewPrice">View Wholesale Price</button>
                     </div>
                     <!-- Product 4 -->
                     <div class="group bg-white rounded-xl border border-slate-100 shadow-soft hover:shadow-xl transition p-6 flex flex-col">
@@ -315,8 +345,8 @@
                         <h3 class="font-bold text-primary text-lg mb-1">2-CH Universal RX</h3>
                         <p class="text-xs text-slate-500 mb-2">AC/DC 9-30V • 400 Codes • Universal compatibility</p>
                         <p class="text-xs text-slate-500 mb-4">Perfect for replacing obsolete OEM receivers.</p>
-                        <p class="text-xs text-slate-600 mb-4">MOQ: 100 pcs • Custom logo printing available</p>
-                        <button onclick="openQuoteModal()" class="mt-auto w-full py-2 border border-slate-200 rounded text-primary font-bold text-sm hover:bg-primary hover:text-white transition">View Wholesale Price</button>
+                        <p class="text-xs text-slate-600 mb-4" data-i18n="products.moq">MOQ: 100 pcs • Custom logo printing available</p>
+                        <button onclick="openQuoteModal()" class="mt-auto w-full py-2 border border-slate-200 rounded text-primary font-bold text-sm hover:bg-primary hover:text-white transition" data-i18n="products.viewPrice">View Wholesale Price</button>
                     </div>
                 </div>
             </section>
@@ -325,19 +355,19 @@
             <section class="py-20 bg-primary text-white">
                 <div class="container mx-auto px-4 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <h2 class="text-3xl font-bold mb-6">Manufacturer Direct.<br>No Middleman.</h2>
-                        <p class="text-slate-300 mb-6 leading-relaxed">
+                        <h2 class="text-3xl font-bold mb-6" data-i18n-html="factory.title">Manufacturer Direct.<br>No Middleman.</h2>
+                        <p class="text-slate-300 mb-6 leading-relaxed" data-i18n="factory.description1">
                             Our 3,000 m² facility in Dongguan ensures factory-direct pricing and consistent RF performance.
                         </p>
-                        <p class="text-slate-300 mb-8 leading-relaxed">
+                        <p class="text-slate-300 mb-8 leading-relaxed" data-i18n="factory.description2">
                             We focus on RF engineering, not just assembly. From PCB design to final testing, every step is built for reliability and repeatable quality.
                         </p>
                         <div class="grid grid-cols-1 gap-6 mb-8">
-                            <div><h4 class="font-bold text-white mb-2">In-house R&D</h4><p class="text-xs text-slate-400">Custom RF design and compatibility testing for gate & garage systems.</p></div>
-                            <div><h4 class="font-bold text-white mb-2">OEM & Custom Branding</h4><p class="text-xs text-slate-400">Custom logo printing from 100 pcs per model to support your brand.</p></div>
-                            <div><h4 class="font-bold text-white mb-2">Quality & Testing</h4><p class="text-xs text-slate-400">SMT line, aging test, warehouse and QC lab ensure stable IC quality batch after batch.</p></div>
+                            <div><h4 class="font-bold text-white mb-2" data-i18n="factory.rd">In-house R&D</h4><p class="text-xs text-slate-400" data-i18n="factory.rdDesc">Custom RF design and compatibility testing for gate & garage systems.</p></div>
+                            <div><h4 class="font-bold text-white mb-2" data-i18n="factory.oem">OEM & Custom Branding</h4><p class="text-xs text-slate-400" data-i18n="factory.oemDesc">Custom logo printing from 100 pcs per model to support your brand.</p></div>
+                            <div><h4 class="font-bold text-white mb-2" data-i18n="factory.quality">Quality & Testing</h4><p class="text-xs text-slate-400" data-i18n="factory.qualityDesc">SMT line, aging test, warehouse and QC lab ensure stable IC quality batch after batch.</p></div>
                         </div>
-                        <button onclick="switchPage('about')" class="text-accent hover:text-white border-b border-accent pb-1 transition">Factory Tour <i class="fas fa-arrow-right ml-2"></i></button>
+                        <button onclick="switchPage('about')" class="text-accent hover:text-white border-b border-accent pb-1 transition" data-i18n="factory.tour">Factory Tour <i class="fas fa-arrow-right ml-2"></i></button>
                     </div>
                     <div class="grid grid-cols-2 gap-4">
                         <div class="bg-white/10 h-32 rounded flex flex-col items-center justify-center text-xs font-bold p-4 hover:bg-white/20 transition">
@@ -368,10 +398,10 @@
             <section class="py-20 container mx-auto px-4 lg:px-8">
                 <div class="flex justify-between items-end mb-12">
                     <div>
-                        <h2 class="text-3xl font-bold text-primary mb-2">Industry Insights for Installers & Distributors</h2>
-                        <p class="text-slate-500">Technical knowledge to help you choose the right aftermarket RF solutions.</p>
+                        <h2 class="text-3xl font-bold text-primary mb-2" data-i18n="insights.title">Industry Insights for Installers & Distributors</h2>
+                        <p class="text-slate-500" data-i18n="insights.description">Technical knowledge to help you choose the right aftermarket RF solutions.</p>
                     </div>
-                    <button onclick="switchPage('blog')" class="text-accent font-bold hover:underline hidden md:inline-block">Read More <i class="fas fa-arrow-right ml-1"></i></button>
+                    <button onclick="switchPage('blog')" class="text-accent font-bold hover:underline hidden md:inline-block" data-i18n="insights.readMore">Read More <i class="fas fa-arrow-right ml-1"></i></button>
                 </div>
                 <div class="grid md:grid-cols-2 gap-8">
                     <div class="bg-white p-6 rounded-xl shadow-card border border-slate-100 flex gap-6 cursor-pointer hover:border-orange-200 transition" onclick="switchPage('blog')">
@@ -398,8 +428,8 @@
             <!-- Testimonials (Trust Wall) -->
             <section class="py-20 bg-white border-t border-slate-100">
                 <div class="container mx-auto px-4 lg:px-8">
-                    <h2 class="text-3xl font-bold text-primary text-center mb-4">Trusted by 500+ Distributors</h2>
-                    <p class="text-slate-500 text-center mb-16">From UK to US and EU, wholesalers trust our consistent IC quality, high-turnover SKUs and flexible OEM packaging.</p>
+                    <h2 class="text-3xl font-bold text-primary text-center mb-4" data-i18n="testimonials.title">Trusted by 500+ Distributors</h2>
+                    <p class="text-slate-500 text-center mb-16" data-i18n="testimonials.description">From UK to US and EU, wholesalers trust our consistent IC quality, high-turnover SKUs and flexible OEM packaging.</p>
                     <div class="grid md:grid-cols-3 gap-8">
                         <div class="p-8 bg-bgLight rounded-xl border border-slate-100 relative">
                             <div class="absolute top-4 right-4">
@@ -434,19 +464,19 @@
                     <div class="mt-16 flex flex-wrap justify-center items-center gap-8">
                         <div class="flex items-center gap-2 text-sm text-slate-600">
                             <i class="fas fa-certificate text-green-500 text-xl"></i>
-                            <span>ISO 9001:2015 Certified</span>
+                            <span data-i18n="testimonials.iso">ISO 9001:2015 Certified</span>
                         </div>
                         <div class="flex items-center gap-2 text-sm text-slate-600">
                             <i class="fas fa-shield-alt text-blue-500 text-xl"></i>
-                            <span>CE & RoHS Compliant</span>
+                            <span data-i18n="testimonials.ce">CE & RoHS Compliant</span>
                         </div>
                         <div class="flex items-center gap-2 text-sm text-slate-600">
                             <i class="fas fa-truck text-orange-500 text-xl"></i>
-                            <span>Global Shipping</span>
+                            <span data-i18n="testimonials.shipping">Global Shipping</span>
                         </div>
                         <div class="flex items-center gap-2 text-sm text-slate-600">
                             <i class="fas fa-award text-purple-500 text-xl"></i>
-                            <span>2-Year Warranty</span>
+                            <span data-i18n="testimonials.warranty">2-Year Warranty</span>
                         </div>
                     </div>
                 </div>
@@ -482,10 +512,10 @@
             <!-- CTA -->
             <section class="py-20 bg-primary text-center text-white">
                 <div class="container mx-auto px-4">
-                    <h2 class="text-3xl font-bold mb-4">Ready to Scale Your RF Business?</h2>
-                    <p class="text-slate-300 mb-6">Get our latest 2025 wholesale price list and recommended high-turnover models for your market.</p>
-                    <p class="text-slate-300 mb-8 text-sm">Share your details and we'll send you the price list and suggested starter models within 24 hours.</p>
-                    <button onclick="openQuoteModal()" class="bg-accent hover:bg-accentHover text-white font-bold px-10 py-4 rounded-full shadow-lg transition transform hover:-translate-y-1">
+                    <h2 class="text-3xl font-bold mb-4" data-i18n="cta.title">Ready to Scale Your RF Business?</h2>
+                    <p class="text-slate-300 mb-6" data-i18n="cta.description">Get our latest 2025 wholesale price list and recommended high-turnover models for your market.</p>
+                    <p class="text-slate-300 mb-8 text-sm" data-i18n="cta.subDescription">Share your details and we'll send you the price list and suggested starter models within 24 hours.</p>
+                    <button onclick="openQuoteModal()" class="bg-accent hover:bg-accentHover text-white font-bold px-10 py-4 rounded-full shadow-lg transition transform hover:-translate-y-1" data-i18n="cta.button">
                         Request 2025 Price List
                     </button>
                 </div>
@@ -524,24 +554,24 @@
                     <img src="logo.png" class="h-8 w-auto" alt="GateRemoteSource Logo" width="32" height="32" loading="lazy">
                     <span class="text-white text-xl font-bold">GateRemote<span class="text-accent">Source</span></span>
                 </div>
-                <p class="text-sm text-slate-400 mb-4">Professional aftermarket RF solutions for gate & garage systems.</p>
+                <p class="text-sm text-slate-400 mb-4" data-i18n="footer.tagline">Professional aftermarket RF solutions for gate & garage systems.</p>
                 <div class="flex flex-col gap-2">
                     <div class="flex items-center gap-2 text-xs text-slate-400">
                         <i class="fas fa-check-circle text-green-400"></i>
-                        <span>ISO 9001:2015 Certified</span>
+                        <span data-i18n="testimonials.iso">ISO 9001:2015 Certified</span>
                     </div>
                     <div class="flex items-center gap-2 text-xs text-slate-400">
                         <i class="fas fa-check-circle text-green-400"></i>
-                        <span>CE & RoHS Compliant</span>
+                        <span data-i18n="testimonials.ce">CE & RoHS Compliant</span>
                     </div>
                     <div class="flex items-center gap-2 text-xs text-slate-400">
                         <i class="fas fa-check-circle text-green-400"></i>
-                        <span>2-Year Warranty</span>
+                        <span data-i18n="testimonials.warranty">2-Year Warranty</span>
                     </div>
                 </div>
             </div>
             <div>
-                <h4 class="text-white font-bold mb-4">Products</h4>
+                <h4 class="text-white font-bold mb-4" data-i18n="footer.products">Products</h4>
                 <ul class="space-y-2 text-sm">
                     <li><a onclick="switchPage('products')" class="hover:text-white cursor-pointer">LiftMaster Compatible Remotes</a></li>
                     <li><a onclick="switchPage('products')" class="hover:text-white cursor-pointer">Nice Compatible Remotes</a></li>
@@ -549,7 +579,7 @@
                 </ul>
             </div>
             <div>
-                <h4 class="text-white font-bold mb-4">Support</h4>
+                <h4 class="text-white font-bold mb-4" data-i18n="footer.support">Support</h4>
                 <ul class="space-y-2 text-sm">
                     <li><a onclick="openQuoteModal()" class="hover:text-white cursor-pointer">Request Samples</a></li>
                     <li><a onclick="openQuoteModal()" class="hover:text-white cursor-pointer">OEM Services</a></li>
@@ -557,21 +587,21 @@
                 </ul>
             </div>
             <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
-                <h4 class="text-white font-bold mb-2">Price List</h4>
-                <p class="text-xs text-slate-400 mb-4">Get the latest wholesale catalog.</p>
-                <button onclick="openQuoteModal()" class="w-full bg-accent hover:bg-accentHover text-white font-bold py-2 rounded text-sm transition">DOWNLOAD</button>
+                <h4 class="text-white font-bold mb-2" data-i18n="footer.priceList">Price List</h4>
+                <p class="text-xs text-slate-400 mb-4" data-i18n="footer.priceListDesc">Get the latest wholesale catalog.</p>
+                <button onclick="openQuoteModal()" class="w-full bg-accent hover:bg-accentHover text-white font-bold py-2 rounded text-sm transition" data-i18n="footer.download">DOWNLOAD</button>
             </div>
         </div>
         <div class="container mx-auto px-4 border-t border-slate-800 pt-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-xs text-slate-500">&copy; 2025 GateRemoteSource.com. All Rights Reserved.</p>
+                <p class="text-xs text-slate-500" data-i18n="footer.copyright">&copy; 2025 GateRemoteSource.com. All Rights Reserved.</p>
                 <div class="flex items-center gap-6 text-xs text-slate-500">
-                    <a href="#privacy" class="hover:text-white transition">Privacy Policy</a>
-                    <a href="#terms" class="hover:text-white transition">Terms of Service</a>
-                    <a href="#shipping" class="hover:text-white transition">Shipping Info</a>
+                    <a href="#privacy" class="hover:text-white transition" data-i18n="footer.privacy">Privacy Policy</a>
+                    <a href="#terms" class="hover:text-white transition" data-i18n="footer.terms">Terms of Service</a>
+                    <a href="#shipping" class="hover:text-white transition" data-i18n="footer.shippingInfo">Shipping Info</a>
                     <div class="flex items-center gap-2">
                         <i class="fas fa-lock text-green-400"></i>
-                        <span>Secure Payments</span>
+                        <span data-i18n="footer.securePayments">Secure Payments</span>
                     </div>
                 </div>
             </div>
@@ -580,7 +610,7 @@
 
     <!-- Sticky Quote Tab -->
     <div onclick="openQuoteModal()" class="fixed right-0 top-1/2 -translate-y-1/2 bg-primary text-white p-3 rounded-l-lg shadow-xl cursor-pointer hover:pr-5 transition-all z-40">
-        <div class="side-tab font-bold text-xs tracking-widest uppercase h-24 flex items-center justify-center">Get Wholesale Prices</div>
+        <div class="side-tab font-bold text-xs tracking-widest uppercase h-24 flex items-center justify-center" data-i18n="sideTab">Get Wholesale Prices</div>
     </div>
 
     <!-- WhatsApp -->
@@ -593,38 +623,38 @@
         <div id="modal-content" class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300">
             <div class="bg-primary p-6 text-white relative text-center">
                 <button onclick="closeQuoteModal()" class="absolute top-4 right-4 hover:text-accent"><i class="fas fa-times text-xl"></i></button>
-                <h3 class="text-2xl font-bold">Get Wholesale Pricing</h3>
-                <p class="text-blue-200 text-sm mt-1">Response within 1 business day</p>
+                <h3 class="text-2xl font-bold" data-i18n="modal.title">Get Wholesale Pricing</h3>
+                <p class="text-blue-200 text-sm mt-1" data-i18n="modal.subtitle">Response within 1 business day</p>
             </div>
             <div class="p-6">
                 <form id="quote-form" onsubmit="handleQuoteSubmit(event)" class="space-y-4" novalidate>
                     <div>
-                        <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Business Email *</label>
+                        <label for="email" class="block text-sm font-medium text-slate-700 mb-1" data-i18n="modal.email">Business Email *</label>
                         <input type="email" id="email" name="email" placeholder="your@business.com" required class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-accent" aria-required="true">
                         <span class="text-red-500 text-xs mt-1 hidden" id="email-error">Please enter a valid email address</span>
                     </div>
                     <div class="grid grid-cols-2 gap-4">
                         <div>
-                            <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Name *</label>
+                            <label for="name" class="block text-sm font-medium text-slate-700 mb-1" data-i18n="modal.name">Name *</label>
                             <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-accent" aria-required="true">
                             <span class="text-red-500 text-xs mt-1 hidden" id="name-error">Name is required</span>
                         </div>
                         <div>
-                            <label for="whatsapp" class="block text-sm font-medium text-slate-700 mb-1">WhatsApp</label>
+                            <label for="whatsapp" class="block text-sm font-medium text-slate-700 mb-1" data-i18n="modal.whatsapp">WhatsApp</label>
                             <input type="tel" id="whatsapp" name="whatsapp" placeholder="+1 234 567 8900" class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-accent">
                         </div>
                     </div>
                     <div>
-                        <label for="details" class="block text-sm font-medium text-slate-700 mb-1">Details (Qty, Models...)</label>
+                        <label for="details" class="block text-sm font-medium text-slate-700 mb-1" data-i18n="modal.details">Details (Qty, Models...)</label>
                         <textarea id="details" name="details" rows="2" placeholder="Tell us about your needs..." class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-accent"></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-accent hover:bg-accentHover text-white font-bold py-3 rounded-lg shadow-lg transition">SEND INQUIRY</button>
+                    <button type="submit" class="w-full bg-accent hover:bg-accentHover text-white font-bold py-3 rounded-lg shadow-lg transition" data-i18n="modal.submit">SEND INQUIRY</button>
                 </form>
                 <div id="quote-success" class="hidden text-center py-8">
                     <div class="w-16 h-16 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl"><i class="fas fa-check"></i></div>
-                    <h4 class="text-xl font-bold text-primary">Received!</h4>
-                    <p class="text-sm text-slate-500 mt-2 mb-6">We'll get back to you shortly.</p>
-                    <button onclick="closeQuoteModal()" class="text-accent font-bold text-sm hover:underline">Close</button>
+                    <h4 class="text-xl font-bold text-primary" data-i18n="modal.successTitle">Received!</h4>
+                    <p class="text-sm text-slate-500 mt-2 mb-6" data-i18n="modal.successMessage">We'll get back to you shortly.</p>
+                    <button onclick="closeQuoteModal()" class="text-accent font-bold text-sm hover:underline" data-i18n="modal.close">Close</button>
                 </div>
             </div>
         </div>

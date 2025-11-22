@@ -1,3 +1,124 @@
+// Language Management
+let currentLanguage = localStorage.getItem('preferredLanguage') || 'en';
+let translations = {};
+
+// Load translations
+async function loadTranslations() {
+    try {
+        const response = await fetch('translations.json');
+        translations = await response.json();
+        applyLanguage(currentLanguage);
+    } catch (error) {
+        console.error('Error loading translations:', error);
+    }
+}
+
+// Apply language to the page
+function applyLanguage(lang) {
+    currentLanguage = lang;
+    localStorage.setItem('preferredLanguage', lang);
+    
+    // Update HTML lang attribute
+    document.documentElement.lang = lang;
+    
+    // Update current language display
+    const currentLangDisplay = document.getElementById('current-lang');
+    if (currentLangDisplay) {
+        currentLangDisplay.textContent = lang.toUpperCase();
+    }
+    
+    // Update all elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+    
+    // Update elements with data-i18n-html attribute (for HTML content)
+    document.querySelectorAll('[data-i18n-html]').forEach(element => {
+        const key = element.getAttribute('data-i18n-html');
+        if (translations[lang] && translations[lang][key]) {
+            element.innerHTML = translations[lang][key];
+        }
+    });
+    
+    // Update meta tags
+    updateMetaTags(lang);
+}
+
+// Update meta tags for SEO
+function updateMetaTags(lang) {
+    if (!translations[lang] || !translations[lang].meta) return;
+    const meta = translations[lang].meta;
+    const currentUrl = window.location.origin + window.location.pathname;
+
+    document.title = meta.title || document.title;
+
+    const descMeta = document.querySelector('meta[name="description"]');
+    if (descMeta && meta.description) descMeta.content = meta.description;
+
+    const keywordsMeta = document.querySelector('meta[name="keywords"]');
+    if (keywordsMeta && meta.keywords) keywordsMeta.content = meta.keywords;
+
+    const canonical = document.querySelector('link[rel="canonical"]') || document.createElement('link');
+    canonical.setAttribute('rel', 'canonical');
+    canonical.setAttribute('href', currentUrl);
+    if (!canonical.parentNode) document.head.appendChild(canonical);
+
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle && meta.title) ogTitle.content = meta.title;
+
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc && meta.description) ogDesc.content = meta.description;
+
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.content = currentUrl;
+
+    const twitterTitle = document.querySelector('meta[property="twitter:title"]');
+    if (twitterTitle && meta.title) twitterTitle.content = meta.title;
+
+    const twitterDesc = document.querySelector('meta[property="twitter:description"]');
+    if (twitterDesc && meta.description) twitterDesc.content = meta.description;
+
+    const twitterUrl = document.querySelector('meta[property="twitter:url"]');
+    if (twitterUrl) twitterUrl.content = currentUrl;
+}
+
+// Change language function
+function changeLanguage(lang) {
+    applyLanguage(lang);
+    toggleLanguageDropdown(); // Close dropdown after selection
+}
+
+// Toggle language dropdown
+function toggleLanguageDropdown() {
+    const dropdown = document.getElementById('language-dropdown');
+    if (dropdown) {
+        dropdown.classList.toggle('hidden');
+        
+        // Update aria-expanded
+        const button = dropdown.previousElementSibling;
+        if (button) {
+            const isExpanded = !dropdown.classList.contains('hidden');
+            button.setAttribute('aria-expanded', isExpanded.toString());
+        }
+    }
+}
+
+// Close language dropdown when clicking outside
+document.addEventListener('click', function(event) {
+    const dropdown = document.getElementById('language-dropdown');
+    const button = dropdown ? dropdown.previousElementSibling : null;
+    
+    if (dropdown && !dropdown.contains(event.target) && button && !button.contains(event.target)) {
+        dropdown.classList.add('hidden');
+        if (button) {
+            button.setAttribute('aria-expanded', 'false');
+        }
+    }
+});
+
 // Mobile Menu
 function toggleMobileMenu() {
     const menu = document.getElementById('mobile-menu');
@@ -157,10 +278,20 @@ window.onclick = function(e) {
 
 // Initialize on DOM load
 document.addEventListener('DOMContentLoaded', function() {
-    // Add keyboard navigation for mobile menu
+    // Load translations first
+    loadTranslations();
+    
+    // Add keyboard navigation for mobile menu and modals
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-            closeQuoteModal();
+        if (e.key === 'Escape') {
+            if (!modal.classList.contains('hidden')) {
+                closeQuoteModal();
+            }
+            // Close language dropdown if open
+            const dropdown = document.getElementById('language-dropdown');
+            if (dropdown && !dropdown.classList.contains('hidden')) {
+                toggleLanguageDropdown();
+            }
         }
     });
     
