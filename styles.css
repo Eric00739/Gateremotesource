@@ -27,7 +27,7 @@ details[open] summary ~ * { animation: sweep .3s ease-in-out; }
 .side-tab { writing-mode: vertical-rl; transform: rotate(180deg); }
 
 /* Performance optimizations */
-img { 
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
+img {
+    max-width: 100%;
+    height: auto;
 }
