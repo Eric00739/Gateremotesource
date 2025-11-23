@@ -532,15 +532,86 @@
         </div>
 
         <!-- === OTHER PAGES (Hidden by default) === -->
-        <div id="products" class="page-section hidden py-20 text-center">
-            <h2 class="text-3xl font-bold text-primary">Full Catalog</h2>
-            <p class="text-slate-500 mt-4">Loading product database...</p>
-            <button onclick="switchPage('home')" class="mt-8 text-accent font-bold hover:underline">&larr; Back Home</button>
+        <div id="products" class="page-section hidden py-16 lg:py-20 bg-gradient-to-b from-white via-slate-50 to-white">
+            <div class="container mx-auto px-4 lg:px-8 space-y-10">
+                <div class="text-center space-y-4">
+                    <p class="text-xs font-bold tracking-[0.2em] text-accent uppercase">Catalog</p>
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-primary">Best-sellers ready to ship</h2>
+                    <p class="text-slate-600 max-w-3xl mx-auto">433/868 MHz remotes, receivers, and OEM-ready kits trusted by installers and distributors.</p>
+                    <div class="flex flex-wrap gap-3 justify-center">
+                        <a href="products.html" class="bg-accent text-white font-bold px-6 py-3 rounded-full shadow-lg hover:-translate-y-0.5 transition">View full catalog</a>
+                        <a href="index.html#quote-modal" class="border border-slate-200 text-primary font-bold px-6 py-3 rounded-full hover:border-accent hover:text-accent transition">Get wholesale price list</a>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <article class="bg-white border border-slate-100 rounded-2xl p-6 shadow-card text-left">
+                        <span class="text-[11px] font-bold text-accent uppercase">LiftMaster compatible</span>
+                        <h3 class="text-lg font-bold text-primary mt-2 mb-2">High-turnover SKUs</h3>
+                        <p class="text-sm text-slate-600 mb-3">Rolling-code remotes and receivers that cover 80% of installs.</p>
+                        <ul class="text-sm text-slate-600 space-y-1 mb-3">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Factory-programmed, ready to ship</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Low MOQ from 100 pcs</li>
+                        </ul>
+                        <a href="products.html" class="text-accent font-bold text-sm hover:underline">Open catalog &rarr;</a>
+                    </article>
+                    <article class="bg-white border border-slate-100 rounded-2xl p-6 shadow-card text-left">
+                        <span class="text-[11px] font-bold text-accent uppercase">Nice / CAME / BFT</span>
+                        <h3 class="text-lg font-bold text-primary mt-2 mb-2">EU frequency coverage</h3>
+                        <p class="text-sm text-slate-600 mb-3">433/868 MHz options with CE & RoHS compliance.</p>
+                        <ul class="text-sm text-slate-600 space-y-1 mb-3">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Tested IC batches for stability</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Custom branding available</li>
+                        </ul>
+                        <a href="products.html" class="text-accent font-bold text-sm hover:underline">View EU lineup &rarr;</a>
+                    </article>
+                    <article class="bg-white border border-slate-100 rounded-2xl p-6 shadow-card text-left">
+                        <span class="text-[11px] font-bold text-accent uppercase">Receivers & kits</span>
+                        <h3 class="text-lg font-bold text-primary mt-2 mb-2">Universal & upgrade bundles</h3>
+                        <p class="text-sm text-slate-600 mb-3">Receiver + remote kits to modernize legacy fixed-code gates.</p>
+                        <ul class="text-sm text-slate-600 space-y-1 mb-3">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Rolling code security</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Reduce truck rolls</li>
+                        </ul>
+                        <a href="products.html" class="text-accent font-bold text-sm hover:underline">See kits &rarr;</a>
+                    </article>
+                </div>
+            </div>
         </div>
-        <div id="about" class="page-section hidden py-20 text-center">
-            <h2 class="text-3xl font-bold text-primary">Factory Tour</h2>
-            <p class="text-slate-500 mt-4">Loading virtual tour...</p>
-            <button onclick="switchPage('home')" class="mt-8 text-accent font-bold hover:underline">&larr; Back Home</button>
+        <div id="about" class="page-section hidden py-16 lg:py-20 bg-gradient-to-b from-white via-slate-50 to-white">
+            <div class="container mx-auto px-4 lg:px-8 space-y-10">
+                <div class="text-center space-y-4">
+                    <p class="text-xs font-bold tracking-[0.2em] text-accent uppercase">Factory</p>
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-primary">Manufacturer-direct RF lab</h2>
+                    <p class="text-slate-600 max-w-3xl mx-auto">3,000m² Dongguan facility with SMT, aging tests, and QC lab. ISO 9001:2015, CE, and RoHS ready for tenders.</p>
+                    <div class="flex flex-wrap gap-3 justify-center">
+                        <a href="about.html" class="bg-accent text-white font-bold px-6 py-3 rounded-full shadow-lg hover:-translate-y-0.5 transition">View factory page</a>
+                        <a href="index.html#quote-modal" class="border border-slate-200 text-primary font-bold px-6 py-3 rounded-full hover:border-accent hover:text-accent transition">Request samples</a>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <article class="bg-white border border-slate-100 rounded-2xl p-6 shadow-card text-left">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-full bg-blue-50 text-primary flex items-center justify-center"><i class="fas fa-flask"></i></div>
+                            <p class="font-bold text-primary">R&D + compatibility</p>
+                        </div>
+                        <p class="text-sm text-slate-600">Rolling/advanced code testing for LiftMaster, Nice, CAME, BFT, FAAC.</p>
+                    </article>
+                    <article class="bg-white border border-slate-100 rounded-2xl p-6 shadow-card text-left">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-full bg-green-50 text-green-700 flex items-center justify-center"><i class="fas fa-industry"></i></div>
+                            <p class="font-bold text-primary">OEM & branding</p>
+                        </div>
+                        <p class="text-sm text-slate-600">Custom logos from 100 pcs, packaging mockups in 48h, compliant inserts.</p>
+                    </article>
+                    <article class="bg-white border border-slate-100 rounded-2xl p-6 shadow-card text-left">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-full bg-orange-50 text-accent flex items-center justify-center"><i class="fas fa-shield-alt"></i></div>
+                            <p class="font-bold text-primary">Quality & warranty</p>
+                        </div>
+                        <p class="text-sm text-slate-600">Batch QC data, aging tests, and 2-year warranty on all remotes.</p>
+                    </article>
+                </div>
+            </div>
         </div>
         <div id="blog" class="page-section hidden py-16 lg:py-20 bg-gradient-to-b from-white via-slate-50 to-white">
             <div class="container mx-auto px-4 lg:px-8 space-y-10">
