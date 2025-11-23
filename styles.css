@@ -80,3 +80,9 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+/* Reusable chip buttons */
+.filter-chip,
+.quick-filter {
+    cursor: pointer;
+}

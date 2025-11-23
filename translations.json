@@ -9,8 +9,8 @@
       "home": "Home",
       "catalog": "Catalog",
       "factory": "Factory",
-      "insights": "Insights",
-      "contact": "Contact"
+      "contact": "Contact",
+      "blog": "Blog"
     },
     "topBar": {
       "isoCertified": "ISO9001 Certified Factory",
@@ -59,9 +59,9 @@
       "tour": "Factory Tour"
     },
     "insights": {
-      "title": "Industry Insights for Installers & Distributors",
-      "description": "Technical knowledge to help you choose the right aftermarket RF solutions.",
-      "readMore": "Read More"
+      "title": "Blog: 100+ gate & garage growth playbooks",
+      "description": "Searchable technical + commercial guides. Filter by persona and send readers straight to your quote form.",
+      "readMore": "Open blog"
     },
     "testimonials": {
       "title": "Trusted by 500+ Distributors",
@@ -127,8 +127,8 @@
       "home": "Home",
       "catalog": "Catalogo",
       "factory": "Fabbrica",
-      "insights": "Approfondimenti",
-      "contact": "Contatto"
+      "contact": "Contatto",
+      "blog": "Blog"
     },
     "topBar": {
       "isoCertified": "Fabbrica Certificata ISO9001",
@@ -177,9 +177,9 @@
       "tour": "Tour della Fabbrica"
     },
     "insights": {
-      "title": "Approfondimenti del Settore per Installatori e Distributori",
-      "description": "Conoscenza tecnica per aiutarti a scegliere le giuste soluzioni RF aftermarket.",
-      "readMore": "Leggi di Più"
+      "title": "Blog: 100+ gate & garage growth playbooks",
+      "description": "Searchable technical + commercial guides. Filter by persona and send readers straight to your quote form.",
+      "readMore": "Open blog"
     },
     "testimonials": {
       "title": "Affidato da 500+ Distributori",
@@ -245,8 +245,8 @@
       "home": "Inicio",
       "catalog": "Catálogo",
       "factory": "Fábrica",
-      "insights": "Perspectivas",
-      "contact": "Contacto"
+      "contact": "Contacto",
+      "blog": "Blog"
     },
     "topBar": {
       "isoCertified": "Fábrica Certificada ISO9001",
@@ -295,9 +295,9 @@
       "tour": "Tour de Fábrica"
     },
     "insights": {
-      "title": "Perspectivas de la Industria para Instaladores y Distribuidores",
-      "description": "Conocimiento técnico para ayudarte a elegir las soluciones RF aftermarket correctas.",
-      "readMore": "Leer Más"
+      "title": "Blog: 100+ gate & garage growth playbooks",
+      "description": "Searchable technical + commercial guides. Filter by persona and send readers straight to your quote form.",
+      "readMore": "Open blog"
     },
     "testimonials": {
       "title": "Confiado por 500+ Distribuidores",
@@ -363,8 +363,8 @@
       "home": "Início",
       "catalog": "Catálogo",
       "factory": "Fábrica",
-      "insights": "Insights",
-      "contact": "Contato"
+      "contact": "Contato",
+      "blog": "Blog"
     },
     "topBar": {
       "isoCertified": "Fábrica Certificada ISO9001",
@@ -413,9 +413,9 @@
       "tour": "Tour da Fábrica"
     },
     "insights": {
-      "title": "Insights da Indústria para Instaladores e Distribuidores",
-      "description": "Conhecimento técnico para ajudá-lo a escolher as soluções RF aftermarket corretas.",
-      "readMore": "Ler Mais"
+      "title": "Blog: 100+ gate & garage growth playbooks",
+      "description": "Searchable technical + commercial guides. Filter by persona and send readers straight to your quote form.",
+      "readMore": "Open blog"
     },
     "testimonials": {
       "title": "Confiado por 500+ Distribuidores",
@@ -481,8 +481,8 @@
       "home": "Accueil",
       "catalog": "Catalogue",
       "factory": "Usine",
-      "insights": "Perspectives",
-      "contact": "Contact"
+      "contact": "Contact",
+      "blog": "Blog"
     },
     "topBar": {
       "isoCertified": "Usine Certifiée ISO9001",
@@ -531,9 +531,9 @@
       "tour": "Visite d'Usine"
     },
     "insights": {
-      "title": "Perspectives de l'Industrie pour les Installateurs et Distributeurs",
-      "description": "Connaissances techniques pour vous aider à choisir les bonnes solutions RF aftermarket.",
-      "readMore": "Lire Plus"
+      "title": "Blog: 100+ gate & garage growth playbooks",
+      "description": "Searchable technical + commercial guides. Filter by persona and send readers straight to your quote form.",
+      "readMore": "Open blog"
     },
     "testimonials": {
       "title": "Approuvé par 500+ Distributeurs",
@@ -599,8 +599,8 @@
       "home": "Startseite",
       "catalog": "Katalog",
       "factory": "Fabrik",
-      "insights": "Einblicke",
-      "contact": "Kontakt"
+      "contact": "Kontakt",
+      "blog": "Blog"
     },
     "topBar": {
       "isoCertified": "ISO9001-zertifizierte Fabrik",
@@ -649,9 +649,9 @@
       "tour": "Fabrikbesichtigung"
     },
     "insights": {
-      "title": "Brancheneinblicke für Installateure und Händler",
-      "description": "Technisches Wissen, das Ihnen hilft, die richtigen RF-Aftermarket-Lösungen zu wählen.",
-      "readMore": "Mehr Lesen"
+      "title": "Blog: 100+ gate & garage growth playbooks",
+      "description": "Searchable technical + commercial guides. Filter by persona and send readers straight to your quote form.",
+      "readMore": "Open blog"
     },
     "testimonials": {
       "title": "Vertraut von 500+ Händlern",

@@ -169,7 +169,7 @@
                 <a href="#home" onclick="switchPage('home'); return false;" class="nav-item active" id="nav-home" aria-current="page" data-i18n="navigation.home">Home</a>
                 <a href="#products" onclick="switchPage('products'); return false;" class="nav-item" id="nav-products" data-i18n="navigation.catalog">Catalog</a>
                 <a href="#about" onclick="switchPage('about'); return false;" class="nav-item" id="nav-about" data-i18n="navigation.factory">Factory</a>
-                <a href="#blog" onclick="switchPage('blog'); return false;" class="nav-item" id="nav-blog" data-i18n="navigation.insights">Insights</a>
+                <a href="#blog" onclick="switchPage('blog'); return false;" class="nav-item" id="nav-blog" data-i18n="navigation.blog">Blog</a>
                 <a href="#contact" onclick="switchPage('contact'); return false;" class="nav-item" id="nav-contact" data-i18n="navigation.contact">Contact</a>
             </div>
 
@@ -190,7 +190,7 @@
                 <a href="#home" onclick="switchPage('home'); toggleMobileMenu(); return false;" class="block py-2 font-bold text-primary border-b border-gray-50" data-i18n="navigation.home">Home</a>
                 <a href="#products" onclick="switchPage('products'); toggleMobileMenu(); return false;" class="block py-2 font-bold text-primary border-b border-gray-50" data-i18n="navigation.catalog">Catalog</a>
                 <a href="#about" onclick="switchPage('about'); toggleMobileMenu(); return false;" class="block py-2 font-bold text-primary border-b border-gray-50" data-i18n="navigation.factory">Factory Tour</a>
-                <a href="#blog" onclick="switchPage('blog'); toggleMobileMenu(); return false;" class="block py-2 font-bold text-primary border-b border-gray-50" data-i18n="navigation.insights">Insights</a>
+                <a href="#blog" onclick="switchPage('blog'); toggleMobileMenu(); return false;" class="block py-2 font-bold text-primary border-b border-gray-50" data-i18n="navigation.blog">Blog</a>
                 <a href="#contact" onclick="switchPage('contact'); toggleMobileMenu(); return false;" class="block py-2 font-bold text-primary border-b border-gray-50" data-i18n="navigation.contact">Contact Us</a>
             </div>
         </div>
@@ -394,32 +394,41 @@
                 </div>
             </section>
 
-            <!-- Blog Preview (Insights) -->
+            <!-- Blog Preview -->
             <section class="py-20 container mx-auto px-4 lg:px-8">
                 <div class="flex justify-between items-end mb-12">
                     <div>
-                        <h2 class="text-3xl font-bold text-primary mb-2" data-i18n="insights.title">Industry Insights for Installers & Distributors</h2>
-                        <p class="text-slate-500" data-i18n="insights.description">Technical knowledge to help you choose the right aftermarket RF solutions.</p>
+                        <h2 class="text-3xl font-bold text-primary mb-2" data-i18n="insights.title">Blog: 100+ gate & garage growth playbooks</h2>
+                        <p class="text-slate-500" data-i18n="insights.description">Searchable technical + commercial guides. Filter by persona and send readers straight to your quote form.</p>
                     </div>
-                    <button onclick="switchPage('blog')" class="text-accent font-bold hover:underline hidden md:inline-block" data-i18n="insights.readMore">Read More <i class="fas fa-arrow-right ml-1"></i></button>
+                    <button onclick="switchPage('blog')" class="text-accent font-bold hover:underline hidden md:inline-block" data-i18n="insights.readMore">Open blog <i class="fas fa-arrow-right ml-1"></i></button>
                 </div>
-                <div class="grid md:grid-cols-2 gap-8">
+                <div class="grid md:grid-cols-3 gap-6">
                     <div class="bg-white p-6 rounded-xl shadow-card border border-slate-100 flex gap-6 cursor-pointer hover:border-orange-200 transition" onclick="switchPage('blog')">
-                        <div class="w-24 h-24 bg-slate-100 rounded-lg flex items-center justify-center text-slate-300 shrink-0"><i class="fas fa-wifi text-3xl"></i></div>
+                        <div class="w-16 h-16 bg-orange-50 rounded-lg flex items-center justify-center text-accent shrink-0"><i class="fas fa-microchip text-2xl"></i></div>
                         <div>
-                            <span class="text-[10px] font-bold text-accent uppercase">Technical Guide</span>
-                            <h3 class="text-lg font-bold text-primary mt-1 mb-2">Rolling Code vs Fixed Code: What Gate Installers Need to Know</h3>
-                            <p class="text-xs text-slate-500 mb-3">Why rolling code is the new standard and how it impacts compatibility, security and remote stocking.</p>
-                            <span class="text-xs font-bold text-primary">Read Article &rarr;</span>
+                            <span class="text-[10px] font-bold text-accent uppercase">Technical</span>
+                            <h3 class="text-lg font-bold text-primary mt-1 mb-2">Rolling code upgrade kits that cut call-backs</h3>
+                            <p class="text-xs text-slate-500 mb-3">Turn legacy fixed-code jobs into secure rolling code installs without touching the operator.</p>
+                            <span class="text-xs font-bold text-primary">See playbook &rarr;</span>
                         </div>
                     </div>
                     <div class="bg-white p-6 rounded-xl shadow-card border border-slate-100 flex gap-6 cursor-pointer hover:border-orange-200 transition" onclick="switchPage('blog')">
-                        <div class="w-24 h-24 bg-slate-100 rounded-lg flex items-center justify-center text-slate-300 shrink-0"><i class="fas fa-chart-line text-3xl"></i></div>
+                        <div class="w-16 h-16 bg-blue-50 rounded-lg flex items-center justify-center text-primary shrink-0"><i class="fas fa-chart-line text-2xl"></i></div>
                         <div>
-                            <span class="text-[10px] font-bold text-accent uppercase">Market Trend</span>
-                            <h3 class="text-lg font-bold text-primary mt-1 mb-2">Profit Analysis: OEM vs Aftermarket Remotes</h3>
-                            <p class="text-xs text-slate-500 mb-3">Compare margins and stock flexibility when switching installers to compatible aftermarket remotes.</p>
-                            <span class="text-xs font-bold text-primary">View Analysis &rarr;</span>
+                            <span class="text-[10px] font-bold text-accent uppercase">Market</span>
+                            <h3 class="text-lg font-bold text-primary mt-1 mb-2">OEM vs aftermarket profit play</h3>
+                            <p class="text-xs text-slate-500 mb-3">Margin math, MAP guardrails, and bundle ideas distributors can run this quarter.</p>
+                            <span class="text-xs font-bold text-primary">View analysis &rarr;</span>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-card border border-slate-100 flex gap-6 cursor-pointer hover:border-orange-200 transition" onclick="switchPage('blog')">
+                        <div class="w-16 h-16 bg-green-50 rounded-lg flex items-center justify-center text-green-700 shrink-0"><i class="fas fa-industry text-2xl"></i></div>
+                        <div>
+                            <span class="text-[10px] font-bold text-accent uppercase">OEM</span>
+                            <h3 class="text-lg font-bold text-primary mt-1 mb-2">Private label launch kit from 100 pcs</h3>
+                            <p class="text-xs text-slate-500 mb-3">Certification talking points, packaging, and sales scripts to own the reorder cycle.</p>
+                            <span class="text-xs font-bold text-primary">Open kit &rarr;</span>
                         </div>
                     </div>
                 </div>
@@ -534,7 +543,7 @@
             <button onclick="switchPage('home')" class="mt-8 text-accent font-bold hover:underline">&larr; Back Home</button>
         </div>
         <div id="blog" class="page-section hidden py-20 text-center">
-            <h2 class="text-3xl font-bold text-primary">Insights</h2>
+            <h2 class="text-3xl font-bold text-primary">Blog</h2>
             <p class="text-slate-500 mt-4">Loading articles...</p>
             <button onclick="switchPage('home')" class="mt-8 text-accent font-bold hover:underline">&larr; Back Home</button>
         </div>

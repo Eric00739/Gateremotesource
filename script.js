@@ -31,6 +31,9 @@ function applyLanguage(lang) {
     
     // Update HTML lang attribute
     document.documentElement.lang = lang;
+
+    // Allow pages to opt out of meta overrides (e.g., custom blog SEO)
+    const lockMeta = document.body && document.body.dataset.lockMeta === 'true';
     
     // Update current language display
     const currentLangDisplay = document.getElementById('current-lang');
@@ -57,7 +60,9 @@ function applyLanguage(lang) {
     });
     
     // Update meta tags
-    updateMetaTags(lang);
+    if (!lockMeta) {
+        updateMetaTags(lang);
+    }
 }
 
 // Update meta tags for SEO

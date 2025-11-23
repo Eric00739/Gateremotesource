@@ -59,7 +59,7 @@ The deployment workflow is configured in `.github/workflows/deploy.yml`.
 - **Hero Section**: Eye-catching introduction with call-to-action
 - **Product Showcase**: Featured products with pricing inquiries
 - **Factory Information**: Manufacturing capabilities and credentials
-- **Industry Insights**: Technical articles and market analysis
+- **Blog**: 100+ technical, commercial, and marketing playbooks with search & filters
 - **Testimonials**: Customer reviews and trust signals
 - **FAQ**: Common questions and answers
 - **Contact**: Multiple contact methods and quote request form
