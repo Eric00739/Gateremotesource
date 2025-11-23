@@ -358,20 +358,5 @@
     </a>
 
     <script src="script.js"></script>
-    <script>
-        // Mobile Menu
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const toggleBtn = document.querySelector('[aria-controls="mobile-menu"]');
-            
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-                toggleBtn.setAttribute('aria-expanded', 'true');
-            } else {
-                menu.classList.add('hidden');
-                toggleBtn.setAttribute('aria-expanded', 'false');
-            }
-        }
-    </script>
 </body>
 </html>
