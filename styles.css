@@ -86,3 +86,43 @@ img {
 .quick-filter {
     cursor: pointer;
 }
+
+/* --- Layout & Apple-style spacing --- */
+.container,
+.page-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+@media (min-width: 1500px) {
+    .container,
+    .page-container {
+        max-width: 1440px;
+    }
+}
+
+/* Soft cards */
+.card-soft {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(226, 232, 240, 0.7);
+}
+.shadow-card,
+.shadow-soft {
+    box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08) !important;
+    border: 1px solid rgba(226, 232, 240, 0.7);
+}
+
+/* Section padding helper */
+.section-py {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+@media (max-width: 768px) {
+    .section-py {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+}
