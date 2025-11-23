@@ -542,15 +542,86 @@
             <p class="text-slate-500 mt-4">Loading virtual tour...</p>
             <button onclick="switchPage('home')" class="mt-8 text-accent font-bold hover:underline">&larr; Back Home</button>
         </div>
-        <div id="blog" class="page-section hidden py-20 text-center">
-            <h2 class="text-3xl font-bold text-primary">Blog</h2>
-            <p class="text-slate-500 mt-4">Loading articles...</p>
-            <button onclick="switchPage('home')" class="mt-8 text-accent font-bold hover:underline">&larr; Back Home</button>
+        <div id="blog" class="page-section hidden py-16 lg:py-20 bg-gradient-to-b from-white via-slate-50 to-white">
+            <div class="container mx-auto px-4 lg:px-8 space-y-10">
+                <div class="text-center space-y-4">
+                    <p class="text-xs font-bold tracking-[0.2em] text-accent uppercase">Blog</p>
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-primary">100+ gate & garage growth playbooks</h2>
+                    <p class="text-slate-600 max-w-3xl mx-auto">Searchable technical, commercial, and OEM guides. Filter by persona and send readers straight to your quote form.</p>
+                    <div class="flex flex-wrap gap-3 justify-center">
+                        <a href="blog.html" class="bg-accent text-white font-bold px-6 py-3 rounded-full shadow-lg hover:-translate-y-0.5 transition">Open full blog</a>
+                        <a href="index.html#quote-modal" class="border border-slate-200 text-primary font-bold px-6 py-3 rounded-full hover:border-accent hover:text-accent transition">Get price list</a>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <article class="bg-white border border-slate-100 rounded-2xl p-6 shadow-card">
+                        <span class="text-[11px] font-bold text-accent uppercase">Technical</span>
+                        <h3 class="text-lg font-bold text-primary mt-2 mb-2">Rolling code upgrade kits</h3>
+                        <p class="text-sm text-slate-600 mb-3">Secure legacy gates with receiver+remote bundles; cut call-backs.</p>
+                        <a href="blog.html" class="text-accent font-bold text-sm hover:underline">See playbook &rarr;</a>
+                    </article>
+                    <article class="bg-white border border-slate-100 rounded-2xl p-6 shadow-card">
+                        <span class="text-[11px] font-bold text-accent uppercase">Market</span>
+                        <h3 class="text-lg font-bold text-primary mt-2 mb-2">OEM vs aftermarket margin math</h3>
+                        <p class="text-sm text-slate-600 mb-3">Pricing guardrails and bundles distributors can run this quarter.</p>
+                        <a href="blog.html" class="text-accent font-bold text-sm hover:underline">Read analysis &rarr;</a>
+                    </article>
+                    <article class="bg-white border border-slate-100 rounded-2xl p-6 shadow-card">
+                        <span class="text-[11px] font-bold text-accent uppercase">OEM</span>
+                        <h3 class="text-lg font-bold text-primary mt-2 mb-2">Private label launch kit</h3>
+                        <p class="text-sm text-slate-600 mb-3">Mockups, certifications, and reorder tactics from 100 pcs.</p>
+                        <a href="blog.html" class="text-accent font-bold text-sm hover:underline">Open kit &rarr;</a>
+                    </article>
+                </div>
+            </div>
         </div>
-        <div id="contact" class="page-section hidden py-20 text-center">
-            <h2 class="text-3xl font-bold text-primary">Contact Us</h2>
-            <p class="text-slate-500 mt-4">Loading contact form...</p>
-            <button onclick="switchPage('home')" class="mt-8 text-accent font-bold hover:underline">&larr; Back Home</button>
+        <div id="contact" class="page-section hidden py-16 lg:py-20 bg-gradient-to-b from-white via-slate-50 to-white">
+            <div class="container mx-auto px-4 lg:px-8 space-y-10">
+                <div class="text-center space-y-4">
+                    <p class="text-xs font-bold tracking-[0.2em] text-accent uppercase">Contact</p>
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-primary">Talk to sales, engineering, or OEM</h2>
+                    <p class="text-slate-600 max-w-3xl mx-auto">We respond in 12-24 hours with pricing, compatibility guidance, or OEM mockups.</p>
+                    <div class="flex flex-wrap gap-3 justify-center">
+                        <a href="contact.html" class="bg-accent text-white font-bold px-6 py-3 rounded-full shadow-lg hover:-translate-y-0.5 transition">Open full contact page</a>
+                        <a href="https://wa.me/8613800000000" target="_blank" class="border border-slate-200 text-primary font-bold px-6 py-3 rounded-full hover:border-accent hover:text-accent transition">WhatsApp us</a>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <article class="bg-white border border-slate-100 rounded-2xl p-6 shadow-card">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-full bg-orange-50 text-accent flex items-center justify-center"><i class="fas fa-handshake"></i></div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-500 uppercase">Sales</p>
+                                <p class="font-bold text-primary">Wholesale & pricing</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-3">MOQ, rebates, and SKU planning for installers & distributors.</p>
+                        <a href="index.html#quote-modal" class="text-accent font-bold text-sm hover:underline">Request price list &rarr;</a>
+                    </article>
+                    <article class="bg-white border border-slate-100 rounded-2xl p-6 shadow-card">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-full bg-blue-50 text-primary flex items-center justify-center"><i class="fas fa-microchip"></i></div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-500 uppercase">Engineering</p>
+                                <p class="font-bold text-primary">RF & compatibility</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-3">Programming steps, interference fixes, rolling-code upgrades.</p>
+                        <a href="mailto:sales@gateremotesource.com?subject=Technical%20Support%20Request" class="text-accent font-bold text-sm hover:underline">Email engineering &rarr;</a>
+                    </article>
+                    <article class="bg-white border border-slate-100 rounded-2xl p-6 shadow-card">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-full bg-green-50 text-green-700 flex items-center justify-center"><i class="fas fa-industry"></i></div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-500 uppercase">OEM</p>
+                                <p class="font-bold text-primary">Private label</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-3">Custom logo from 100 pcs, packaging, and certification docs.</p>
+                        <a href="mailto:sales@gateremotesource.com?subject=OEM%20Branding%20Request" class="text-accent font-bold text-sm hover:underline">Start OEM project &rarr;</a>
+                    </article>
+                </div>
+            </div>
         </div>
 
     </main>
