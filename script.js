@@ -13,6 +13,17 @@ async function loadTranslations() {
     }
 }
 
+// Resolve translation keys like "hero.title" inside nested objects
+function getTranslationValue(lang, key) {
+    if (!translations[lang]) return null;
+    return key.split('.').reduce((acc, part) => {
+        if (acc && typeof acc === 'object' && part in acc) {
+            return acc[part];
+        }
+        return null;
+    }, translations[lang]);
+}
+
 // Apply language to the page
 function applyLanguage(lang) {
     currentLanguage = lang;
@@ -30,16 +41,18 @@ function applyLanguage(lang) {
     // Update all elements with data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) {
-            element.textContent = translations[lang][key];
+        const value = getTranslationValue(lang, key);
+        if (value !== null && value !== undefined) {
+            element.textContent = value;
         }
     });
     
     // Update elements with data-i18n-html attribute (for HTML content)
     document.querySelectorAll('[data-i18n-html]').forEach(element => {
         const key = element.getAttribute('data-i18n-html');
-        if (translations[lang] && translations[lang][key]) {
-            element.innerHTML = translations[lang][key];
+        const value = getTranslationValue(lang, key);
+        if (value !== null && value !== undefined) {
+            element.innerHTML = value;
         }
     });
     
