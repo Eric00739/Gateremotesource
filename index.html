@@ -97,27 +97,49 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Inter', 'sans-serif'],
                     },
                     colors: {
-                        primary: '#0B1E3D', // Navy Blue
-                        secondary: '#1e293b', // Slate 800
-                        accent: '#F97316',  // Signal Orange
-                        accentHover: '#ea580c',
-                        bgLight: '#F8FAFC', // Slate 50
+                        primary: '#1d1d1f', // Apple space black
+                        secondary: '#86868b', // Apple secondary gray
+                        accent: '#007AFF',  // Apple blue
+                        accentLight: '#5AC8FA', // Apple light blue
+                        accentHover: '#0056CC',
+                        bgPrimary: '#ffffff',
+                        bgSecondary: '#f5f5f7',
+                        bgTertiary: '#fafafa',
+                        textPrimary: '#1d1d1f',
+                        textSecondary: '#86868b',
+                        textTertiary: '#8e8e93',
                     },
                     boxShadow: {
+                        'apple-light': '0 2px 10px rgba(0, 0, 0, 0.04)',
+                        'apple-medium': '0 4px 20px rgba(0, 0, 0, 0.08)',
+                        'apple-heavy': '0 8px 30px rgba(0, 0, 0, 0.12)',
                         'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
                         'card': '0 10px 30px -5px rgba(0, 0, 0, 0.08)',
                     },
                     animation: {
-                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'fade-in': 'appleFadeIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
+                        'slide-up': 'appleSlideUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
+                        'scale-in': 'appleScaleIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
                     },
                     keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                        appleFadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        appleSlideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        appleScaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.95)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
                         }
+                    },
+                    backdropBlur: {
+                        'apple': '20px',
                     }
                 }
             }
@@ -126,47 +148,47 @@
     <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-bgLight text-slate-600 flex flex-col min-h-screen antialiased">
+<body class="bg-bgPrimary text-textSecondary flex flex-col min-h-screen antialiased">
 
     <!-- 1. TOP BAR -->
-    <div class="bg-primary text-slate-300 text-xs py-2.5 border-b border-slate-800">
+    <div class="bg-primary text-textSecondary text-xs py-3 border-b border-gray-100 backdrop-blur-apple">
         <div class="container mx-auto px-4 lg:px-8 flex justify-between items-center">
-            <div class="flex items-center space-x-6">
+            <div class="flex items-center space-x-8">
                 <span class="flex items-center"><i class="fas fa-shield-alt text-accent mr-2"></i> <span data-i18n="topBar.isoCertified">ISO9001 Certified Factory</span></span>
                 <span class="hidden sm:flex items-center"><i class="fas fa-globe-americas text-accent mr-2"></i> <span data-i18n="topBar.exporting">Exporting to 50+ Countries</span></span>
             </div>
-            <div class="flex items-center space-x-4 divide-x divide-slate-700">
+            <div class="flex items-center space-x-6 divide-x divide-gray-200">
                 <!-- Language Switcher -->
                 <div class="relative group">
-                    <button class="flex items-center space-x-1 hover:text-white transition pl-4 first:pl-0 font-medium" onclick="toggleLanguageDropdown()" aria-expanded="false" aria-label="Select language">
-                        <i class="fas fa-globe mr-1.5"></i>
+                    <button class="flex items-center space-x-2 hover:text-primary transition pl-4 first:pl-0 font-medium" onclick="toggleLanguageDropdown()" aria-expanded="false" aria-label="Select language">
+                        <i class="fas fa-globe mr-2"></i>
                         <span id="current-lang">EN</span>
                         <i class="fas fa-chevron-down text-xs"></i>
                     </button>
-                    <div id="language-dropdown" class="absolute right-0 mt-2 w-48 bg-white text-primary rounded-lg shadow-xl border border-slate-200 hidden z-50">
+                    <div id="language-dropdown" class="absolute right-0 mt-3 w-52 bg-white text-primary rounded-2xl shadow-apple-medium border border-gray-100 hidden z-50">
                         <div class="py-1">
-                            <button onclick="changeLanguage('en')" class="flex items-center w-full px-4 py-2 text-sm hover:bg-slate-100 transition">
+                            <button onclick="changeLanguage('en')" class="flex items-center w-full px-4 py-3 text-sm hover:bg-bgSecondary transition rounded-lg mx-2 my-1">
                                 <span class="mr-3">🇬🇧</span> English
                             </button>
-                            <button onclick="changeLanguage('it')" class="flex items-center w-full px-4 py-2 text-sm hover:bg-slate-100 transition">
+                            <button onclick="changeLanguage('it')" class="flex items-center w-full px-4 py-3 text-sm hover:bg-bgSecondary transition rounded-lg mx-2 my-1">
                                 <span class="mr-3">🇮🇹</span> Italiano
                             </button>
-                            <button onclick="changeLanguage('es')" class="flex items-center w-full px-4 py-2 text-sm hover:bg-slate-100 transition">
+                            <button onclick="changeLanguage('es')" class="flex items-center w-full px-4 py-3 text-sm hover:bg-bgSecondary transition rounded-lg mx-2 my-1">
                                 <span class="mr-3">🇪🇸</span> Español
                             </button>
-                            <button onclick="changeLanguage('pt')" class="flex items-center w-full px-4 py-2 text-sm hover:bg-slate-100 transition">
+                            <button onclick="changeLanguage('pt')" class="flex items-center w-full px-4 py-3 text-sm hover:bg-bgSecondary transition rounded-lg mx-2 my-1">
                                 <span class="mr-3">🇵🇹</span> Português
                             </button>
-                            <button onclick="changeLanguage('fr')" class="flex items-center w-full px-4 py-2 text-sm hover:bg-slate-100 transition">
+                            <button onclick="changeLanguage('fr')" class="flex items-center w-full px-4 py-3 text-sm hover:bg-bgSecondary transition rounded-lg mx-2 my-1">
                                 <span class="mr-3">🇫🇷</span> Français
                             </button>
-                            <button onclick="changeLanguage('de')" class="flex items-center w-full px-4 py-2 text-sm hover:bg-slate-100 transition">
+                            <button onclick="changeLanguage('de')" class="flex items-center w-full px-4 py-3 text-sm hover:bg-bgSecondary transition rounded-lg mx-2 my-1">
                                 <span class="mr-3">🇩🇪</span> Deutsch
                             </button>
                         </div>
                     </div>
                 </div>
-                <a href="mailto:sales@gateremotesource.com" class="hover:text-white transition pl-4 font-medium">
+                <a href="mailto:sales@gateremotesource.com" class="hover:text-primary transition pl-4 font-medium">
                     <i class="far fa-envelope mr-1.5"></i> sales@gateremotesource.com
                 </a>
             </div>
@@ -218,191 +240,368 @@
 
         <!-- === HOME PAGE === -->
         <div id="home" class="page-section animate-fade-in">
-            <!-- Hero -->
-            
-<section class="relative bg-white overflow-hidden pt-24 pb-24 lg:pt-28 lg:pb-32">
-                <div class="container flex flex-col-reverse lg:flex-row items-center gap-16">
-                    <div class="w-full lg:w-1/2 z-10">
-                        <div class="inline-flex items-center bg-blue-50 border border-blue-100 rounded-full px-3 py-1 text-xs font-bold text-primary mb-6">
-                            <span class="w-2 h-2 rounded-full bg-accent mr-2 animate-pulse"></span> <span data-i18n="hero.badge">FACTORY DIRECT SUPPLY</span>
+            <!-- Hero Section - Apple Style -->
+            <section class="relative bg-gradient-to-br from-bgPrimary via-bgSecondary to-bgTertiary overflow-hidden pt-32 pb-32 lg:pt-40 lg:pb-40">
+                <!-- Background decoration -->
+                <div class="absolute inset-0 bg-gradient-to-r from-accent/5 to-accentLight/5"></div>
+                <div class="absolute top-20 right-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-20 left-20 w-64 h-64 bg-accentLight/10 rounded-full blur-2xl"></div>
+                
+                <div class="container relative z-10">
+                    <div class="flex flex-col-reverse lg:flex-row items-center gap-20 lg:gap-32">
+                        <!-- Left Content -->
+                        <div class="w-full lg:w-1/2 animate-slide-up">
+                            <!-- Badge -->
+                            <div class="inline-flex items-center bg-white/80 backdrop-blur-apple border border-gray-100 rounded-full px-6 py-3 text-sm font-medium text-accent mb-8 shadow-apple-light">
+                                <span class="w-2 h-2 rounded-full bg-accent mr-3 animate-pulse"></span>
+                                <span data-i18n="hero.badge">FACTORY DIRECT SUPPLY</span>
+                            </div>
+                            
+                            <!-- Trust indicator -->
+                            <div class="text-sm font-medium text-textSecondary uppercase tracking-wider mb-6 opacity-80" data-i18n="hero.trusted">
+                                Trusted by 500+ distributors in 50+ countries
+                            </div>
+                            
+                            <!-- Main Heading -->
+                            <h1 class="text-5xl lg:text-7xl font-bold text-textPrimary leading-tight mb-8 tracking-tight" data-i18n-html="hero.title">
+                                Premium Gate & Garage<br>
+                                <span class="bg-gradient-to-r from-accent to-accentLight bg-clip-text text-transparent">Remote Solutions</span>
+                            </h1>
+                            
+                            <!-- Subtitle -->
+                            <p class="text-xl text-textSecondary mb-8 leading-relaxed max-w-lg font-medium" data-i18n="hero.subtitle">
+                                Smart aftermarket RF solutions engineered for professional installers and distributors.
+                            </p>
+                            
+                            <!-- Description -->
+                            <p class="text-lg text-textTertiary mb-10 leading-relaxed max-w-lg" data-i18n="hero.description">
+                                Compatible with LiftMaster®, Nice®, CAME® and leading gate & garage systems.
+                            </p>
+                            
+                            <!-- Benefits Grid -->
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+                                <div class="flex flex-col items-center text-center p-4 bg-white/40 backdrop-blur-apple rounded-2xl border border-gray-100">
+                                    <i class="fas fa-factory text-accent text-2xl mb-3"></i>
+                                    <span class="text-sm font-medium text-textPrimary" data-i18n="hero.benefit1">Factory Direct</span>
+                                </div>
+                                <div class="flex flex-col items-center text-center p-4 bg-white/40 backdrop-blur-apple rounded-2xl border border-gray-100">
+                                    <i class="fas fa-shield-alt text-green-500 text-2xl mb-3"></i>
+                                    <span class="text-sm font-medium text-textPrimary" data-i18n="hero.benefit2">2-Year Warranty</span>
+                                </div>
+                                <div class="flex flex-col items-center text-center p-4 bg-white/40 backdrop-blur-apple rounded-2xl border border-gray-100">
+                                    <i class="fas fa-box text-accentLight text-2xl mb-3"></i>
+                                    <span class="text-sm font-medium text-textPrimary" data-i18n="hero.benefit3">Low MOQ 100pcs</span>
+                                </div>
+                            </div>
+                            
+                            <!-- CTA Buttons -->
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <button onclick="openQuoteModal()" class="btn-primary px-8 py-4 text-lg shadow-apple-medium hover:shadow-apple-heavy transform hover:-translate-y-1 transition-all duration-300" data-i18n="hero.cta1">
+                                    Get Wholesale Pricing
+                                </button>
+                                <button onclick="switchPage('products')" class="btn-secondary px-8 py-4 text-lg hover:shadow-apple-light transform hover:-translate-y-1 transition-all duration-300" data-i18n="hero.cta2">
+                                    Browse Catalog
+                                </button>
+                            </div>
                         </div>
-                        <div class="text-xs font-bold text-accent uppercase tracking-widest mb-4" data-i18n="hero.trusted">Trusted by 500+ gate and garage distributors in 50+ countries</div>
-                        <h1 class="text-4xl lg:text-6xl font-extrabold text-primary leading-tight mb-6" data-i18n-html="hero.title">
-                            Wholesale Garage & Gate <br><span class="text-accent">Remote Replacements</span>
-                        </h1>
-                        <p class="text-lg text-slate-500 mb-6 leading-relaxed max-w-xl" data-i18n="hero.subtitle">
-                            Smart aftermarket RF solutions for LiftMaster?, Nice?, CAME? and other gate & garage systems.
-                        </p>
-                        <p class="text-base text-slate-600 mb-8 leading-relaxed max-w-xl" data-i18n="hero.description">
-                            Engineered for professional installers and distributors who need reliable, high-turnover models.
-                        </p>
-                        <div class="flex flex-col gap-4 mb-8">
-                            <div class="flex items-center gap-2 text-sm text-slate-600">
-                                <i class="fas fa-check-circle text-green-500"></i>
-                                <span data-i18n="hero.benefit1">Factory-direct pricing</span>
+                        
+                        <!-- Right Product Showcase -->
+                        <div class="w-full lg:w-1/2 relative animate-scale-in">
+                            <div class="relative">
+                                <!-- Main Product Image -->
+                                <div class="relative z-10">
+                                    <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                         class="w-full rounded-3xl shadow-apple-heavy hover:shadow-2xl transition-all duration-500 hover:scale-105"
+                                         alt="Universal 433MHz Remote Control"
+                                         loading="lazy">
+                                </div>
+                                
+                                <!-- Floating Feature Cards -->
+                                <div class="absolute -top-6 -right-6 bg-white/90 backdrop-blur-apple rounded-2xl p-4 shadow-apple-medium border border-gray-100 animate-float">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fas fa-broadcast-tower text-accent text-xl"></i>
+                                        <div>
+                                            <p class="text-xs font-medium text-textTertiary">Frequency</p>
+                                            <p class="text-sm font-bold text-textPrimary">433.92 MHz</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="absolute -bottom-6 -left-6 bg-white/90 backdrop-blur-apple rounded-2xl p-4 shadow-apple-medium border border-gray-100 animate-float-delayed">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                                        <div>
+                                            <p class="text-xs font-medium text-textTertiary">Compatibility</p>
+                                            <p class="text-sm font-bold text-textPrimary">80% Coverage</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="flex items-center gap-2 text-sm text-slate-600">
-                                <i class="fas fa-check-circle text-green-500"></i>
-                                <span data-i18n="hero.benefit2">2-year warranty on all remotes</span>
+                            
+                            <!-- Product Info -->
+                            <div class="mt-8 text-center">
+                                <h3 class="text-2xl font-bold text-textPrimary mb-3" data-i18n="productShowcase.title">
+                                    Universal 433MHz Series
+                                </h3>
+                                <p class="text-lg text-textSecondary mb-6" data-i18n="productShowcase.description">
+                                    Covers up to 80% of common gate & garage systems
+                                </p>
+                                
+                                <!-- Feature Pills -->
+                                <div class="flex flex-wrap justify-center gap-3">
+                                    <span class="compat-pill">
+                                        <i class="fas fa-microchip text-accent"></i>
+                                        Rolling Code
+                                    </span>
+                                    <span class="compat-pill">
+                                        <i class="fas fa-globe text-accentLight"></i>
+                                        Universal Fit
+                                    </span>
+                                    <span class="compat-pill">
+                                        <i class="fas fa-users text-green-500"></i>
+                                        Pro Installer Choice
+                                    </span>
+                                </div>
                             </div>
-                            <div class="flex items-center gap-2 text-sm text-slate-600">
-                                <i class="fas fa-check-circle text-green-500"></i>
-                                <span data-i18n="hero.benefit3">Low MOQ from 100 pcs per model</span>
-                            </div>
-                        </div>
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <button onclick="openQuoteModal()" class="bg-accent hover:bg-accentHover text-white font-bold px-8 py-4 rounded shadow-lg flex justify-center items-center transition" data-i18n="hero.cta1">
-                                Get Wholesale Price List
-                            </button>
-                            <button onclick="switchPage('products')" class="border-2 border-primary text-primary font-bold px-8 py-4 rounded hover:bg-primary hover:text-white transition" data-i18n="hero.cta2">
-                                Browse Full Catalog
-                            </button>
                         </div>
                     </div>
-                    <div class="w-full lg:w-1/2 relative flex justify-center">
-                        <div class="text-center w-full">
-                            <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="w-3/4 lg:w-2/3 mx-auto rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.1)]" alt="Universal 433MHz Remote Control" loading="lazy">
-                            <p class="font-bold text-primary mt-6" data-i18n="productShowcase.title">Universal 433MHz Remote Series</p>
-                            <p class="text-sm text-slate-600 mt-2 mb-3" data-i18n="productShowcase.description">Cover up to 80% of common LiftMaster?, Nice?, CAME? and other gate & garage systems.</p>
-                            <div class="space-y-1 text-xs text-slate-600">
-                                <div class="flex items-center gap-2 justify-center">
-                                    <i class="fas fa-broadcast-tower text-accent"></i>
-                                    <span data-i18n="productShowcase.feature1">Frequency: 433.92 MHz rolling code</span>
-                                </div>
-                                <div class="flex items-center gap-2 justify-center">
-                                    <i class="fas fa-check-circle text-green-500"></i>
-                                    <span data-i18n="productShowcase.feature2">Compatible with popular gate & garage operators</span>
-                                </div>
-                                <div class="flex items-center gap-2 justify-center">
-                                    <i class="fas fa-users text-blue-500"></i>
-                                    <span data-i18n="productShowcase.feature3">Ideal for installers stocking high-turnover models</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 </div>
             </section>
             <!-- Brands -->
             <!-- Brands -->
-            <div class="bg-slate-50 border-y border-slate-200 py-12">
+            <div class="bg-bgSecondary border-y border-gray-100 py-20">
                 <div class="container text-center">
-                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4" data-i18n="brands.title">Compatible Replacements For Leading Brands</p>
-                    <p class="text-sm text-slate-600 mb-6" data-i18n="brands.description">Drop-in replacements for popular LiftMaster®, Nice®, CAME®, BFT®, FAAC® and other gate & garage systems.</p>
-                    <div class="flex flex-wrap justify-center gap-3 md:gap-4">
-                        <span class="compat-pill">Compatible with LiftMaster™</span>
-                        <span class="compat-pill">Compatible with Nice®</span>
-                        <span class="compat-pill">Compatible with CAME®</span>
-                        <span class="compat-pill">Compatible with BFT®</span>
-                        <span class="compat-pill">Compatible with FAAC®</span>
+                    <p class="text-sm font-medium text-textTertiary uppercase tracking-wider mb-6" data-i18n="brands.title">
+                        Compatible Replacements For Leading Brands
+                    </p>
+                    <p class="text-lg text-textSecondary mb-12 max-w-3xl mx-auto" data-i18n="brands.description">
+                        Drop-in replacements for popular gate & garage systems with seamless compatibility
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+                        <div class="compat-pill bg-white/80 backdrop-blur-apple hover:bg-white transition-all duration-300">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            LiftMaster™ Compatible
+                        </div>
+                        <div class="compat-pill bg-white/80 backdrop-blur-apple hover:bg-white transition-all duration-300">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Nice® Compatible
+                        </div>
+                        <div class="compat-pill bg-white/80 backdrop-blur-apple hover:bg-white transition-all duration-300">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            CAME® Compatible
+                        </div>
+                        <div class="compat-pill bg-white/80 backdrop-blur-apple hover:bg-white transition-all duration-300">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            BFT® Compatible
+                        </div>
+                        <div class="compat-pill bg-white/80 backdrop-blur-apple hover:bg-white transition-all duration-300">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            FAAC® Compatible
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Products Preview -->
-            <section class="section-py">
+            <!-- Products Preview - Apple Style -->
+            <section class="section-py bg-bgPrimary">
                 <div class="container">
-                <div class="flex justify-between items-end mb-12">
-                    <div>
-                        <h2 class="text-3xl font-bold text-primary mb-2" data-i18n="products.title">Best-Selling Models</h2>
-                        <p class="text-slate-500" data-i18n="products.description">High-turnover remotes and receivers your installers reorder again and again.</p>
+                    <div class="flex justify-between items-end mb-16">
+                        <div>
+                            <h2 class="text-4xl font-bold text-textPrimary mb-4" data-i18n="products.title">Best-Selling Models</h2>
+                            <p class="text-xl text-textSecondary max-w-2xl" data-i18n="products.description">
+                                High-turnover remotes and receivers that installers reorder again and again
+                            </p>
+                        </div>
+                        <button onclick="switchPage('products')" class="btn-primary hidden md:inline-flex items-center px-6 py-3" data-i18n="products.viewFull">
+                            View Full Catalog <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
                     </div>
-                    <button onclick="switchPage('products')" class="text-accent font-bold hover:underline hidden md:inline-block" data-i18n="products.viewFull">View Full Catalog <i class="fas fa-arrow-right ml-2"></i></button>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Product 1 -->
-                    <div class="group bg-white rounded-xl border border-slate-100 card-soft transition p-6 flex flex-col">
-                        <div class="h-40 bg-slate-50 rounded-lg mb-4 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="371LM Remote" loading="lazy">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <!-- Product 1 -->
+                        <div class="group card-soft p-6 flex flex-col hover:transform hover:scale-105 transition-all duration-300">
+                            <div class="h-48 bg-bgSecondary rounded-2xl mb-6 overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                     alt="371LM Remote"
+                                     loading="lazy">
+                                <div class="absolute top-4 right-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">
+                                    #1 Seller
+                                </div>
                             </div>
-                        <span class="text-[10px] font-bold text-accent uppercase">LiftMaster® Compatible</span>
-                        <h3 class="font-bold text-primary text-lg mb-1">371LM Replacement Remote</h3>
-                        <div class="spec-line mb-2">?? 315 MHz Security+ <span aria-hidden="true">|</span> ?? MOQ: 100 pcs</div>
-                        <p class="text-xs text-slate-500 mb-2">Compatible with 371LM / 373LM and Security+ remotes.</p>
-                        <p class="text-xs text-slate-500 mb-4">315 MHz rolling code &bull; 2-year warranty</p>
-                        <p class="text-xs text-slate-600 mb-4" data-i18n="products.moq">MOQ: 100 pcs • Custom logo printing available</p>
-                        <button onclick="openQuoteModal()" class="mt-auto w-full py-2 border border-slate-200 rounded text-primary font-bold text-sm hover:bg-primary hover:text-white transition" data-i18n="products.viewPrice">View Wholesale Price</button>
-                    </div>
-                    <!-- Product 2 -->
-                    <div class="group bg-white rounded-xl border border-slate-100 card-soft transition p-6 flex flex-col">
-                        <div class="h-40 bg-slate-50 rounded-lg mb-4 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Flor-S Remote" loading="lazy">
+                            <span class="text-xs font-bold text-accent uppercase tracking-wider">LiftMaster® Compatible</span>
+                            <h3 class="font-bold text-textPrimary text-xl mb-2">371LM Replacement</h3>
+                            <div class="spec-line mb-3">315 MHz Security+ • MOQ: 100 pcs</div>
+                            <p class="text-sm text-textSecondary mb-4">Compatible with 371LM / 373LM Security+ remotes</p>
+                            <div class="flex items-center gap-2 text-xs text-textTertiary mb-6">
+                                <i class="fas fa-shield-alt text-green-500"></i>
+                                <span>2-year warranty</span>
                             </div>
-                        <span class="text-[10px] font-bold text-accent uppercase">Nice® Compatible</span>
-                        <h3 class="font-bold text-primary text-lg mb-1">Flor-S Replacement Remote</h3>
-                        <div class="spec-line mb-2">?? 433.92 MHz <span aria-hidden="true">|</span> ?? MOQ: 100 pcs</div>
-                        <p class="text-xs text-slate-500 mb-2">433.92 MHz rolling code replacement for Nice® Flor-S remotes.</p>
-                        <p class="text-xs text-slate-500 mb-4">Stable range and consistent IC quality.</p>
-                        <p class="text-xs text-slate-600 mb-4" data-i18n="products.moq">MOQ: 100 pcs • Custom logo printing available</p>
-                        <button onclick="openQuoteModal()" class="mt-auto w-full py-2 border border-slate-200 rounded text-primary font-bold text-sm hover:bg-primary hover:text-white transition" data-i18n="products.viewPrice">View Wholesale Price</button>
-                    </div>
-                    <!-- Product 3 -->
-                    <div class="group bg-white rounded-xl border border-slate-100 card-soft transition p-6 flex flex-col">
-                        <div class="h-40 bg-slate-50 rounded-lg mb-4 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Multi-Freq Cloner" loading="lazy">
+                            <button onclick="openQuoteModal()" class="mt-auto w-full py-3 bg-accent text-white rounded-2xl font-medium hover:bg-accentLight transition-colors" data-i18n="products.viewPrice">
+                                View Wholesale Price
+                            </button>
+                        </div>
+                        
+                        <!-- Product 2 -->
+                        <div class="group card-soft p-6 flex flex-col hover:transform hover:scale-105 transition-all duration-300">
+                            <div class="h-48 bg-bgSecondary rounded-2xl mb-6 overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                     alt="Flor-S Remote"
+                                     loading="lazy">
+                                <div class="absolute top-4 right-4 bg-accentLight text-white text-xs font-bold px-3 py-1 rounded-full">
+                                    EU Popular
+                                </div>
                             </div>
-                        <span class="text-[10px] font-bold text-accent uppercase">Universal</span>
-                        <h3 class="font-bold text-primary text-lg mb-1">Multi-Freq Cloner</h3>
-                        <div class="spec-line mb-2">?? 280-868 MHz <span aria-hidden="true">|</span> ?? MOQ: 100 pcs</div>
-                        <p class="text-xs text-slate-500 mb-2">280-868MHz Auto-Scan replacement for multiple brands.</p>
-                        <p class="text-xs text-slate-500 mb-4">Covers 95% of market frequencies with one device.</p>
-                        <p class="text-xs text-slate-600 mb-4" data-i18n="products.moq">MOQ: 100 pcs • Custom logo printing available</p>
-                        <button onclick="openQuoteModal()" class="mt-auto w-full py-2 border border-slate-200 rounded text-primary font-bold text-sm hover:bg-primary hover:text-white transition" data-i18n="products.viewPrice">View Wholesale Price</button>
-                    </div>
-                    <!-- Product 4 -->
-                    <div class="group bg-white rounded-xl border border-slate-100 card-soft transition p-6 flex flex-col">
-                        <div class="h-40 bg-slate-50 rounded-lg mb-4 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Universal Receiver" loading="lazy">
+                            <span class="text-xs font-bold text-accent uppercase tracking-wider">Nice® Compatible</span>
+                            <h3 class="font-bold text-textPrimary text-xl mb-2">Flor-S Replacement</h3>
+                            <div class="spec-line mb-3">433.92 MHz • MOQ: 100 pcs</div>
+                            <p class="text-sm text-textSecondary mb-4">Rolling code replacement for Nice® Flor-S systems</p>
+                            <div class="flex items-center gap-2 text-xs text-textTertiary mb-6">
+                                <i class="fas fa-signal text-accent"></i>
+                                <span>Stable range</span>
                             </div>
-                        <span class="text-[10px] font-bold text-accent uppercase">Receiver</span>
-                        <h3 class="font-bold text-primary text-lg mb-1">2-CH Universal RX</h3>
-                        <div class="spec-line mb-2">?? 433 MHz <span aria-hidden="true">|</span> ?? MOQ: 100 pcs</div>
-                        <p class="text-xs text-slate-500 mb-2">AC/DC 9-30V • 400 Codes • Universal compatibility</p>
-                        <p class="text-xs text-slate-500 mb-4">Perfect for replacing obsolete OEM receivers.</p>
-                        <p class="text-xs text-slate-600 mb-4" data-i18n="products.moq">MOQ: 100 pcs • Custom logo printing available</p>
-                        <button onclick="openQuoteModal()" class="mt-auto w-full py-2 border border-slate-200 rounded text-primary font-bold text-sm hover:bg-primary hover:text-white transition" data-i18n="products.viewPrice">View Wholesale Price</button>
+                            <button onclick="openQuoteModal()" class="mt-auto w-full py-3 bg-accent text-white rounded-2xl font-medium hover:bg-accentLight transition-colors" data-i18n="products.viewPrice">
+                                View Wholesale Price
+                            </button>
+                        </div>
+                        
+                        <!-- Product 3 -->
+                        <div class="group card-soft p-6 flex flex-col hover:transform hover:scale-105 transition-all duration-300">
+                            <div class="h-48 bg-bgSecondary rounded-2xl mb-6 overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                     alt="Multi-Freq Cloner"
+                                     loading="lazy">
+                                <div class="absolute top-4 right-4 bg-gradient-to-r from-accent to-accentLight text-white text-xs font-bold px-3 py-1 rounded-full">
+                                    Universal
+                                </div>
+                            </div>
+                            <span class="text-xs font-bold text-accent uppercase tracking-wider">Multi-Frequency</span>
+                            <h3 class="font-bold text-textPrimary text-xl mb-2">Universal Cloner</h3>
+                            <div class="spec-line mb-3">280-868 MHz • MOQ: 100 pcs</div>
+                            <p class="text-sm text-textSecondary mb-4">Auto-scan replacement for multiple brands</p>
+                            <div class="flex items-center gap-2 text-xs text-textTertiary mb-6">
+                                <i class="fas fa-globe text-accentLight"></i>
+                                <span>95% coverage</span>
+                            </div>
+                            <button onclick="openQuoteModal()" class="mt-auto w-full py-3 bg-accent text-white rounded-2xl font-medium hover:bg-accentLight transition-colors" data-i18n="products.viewPrice">
+                                View Wholesale Price
+                            </button>
+                        </div>
+                        
+                        <!-- Product 4 -->
+                        <div class="group card-soft p-6 flex flex-col hover:transform hover:scale-105 transition-all duration-300">
+                            <div class="h-48 bg-bgSecondary rounded-2xl mb-6 overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                     alt="Universal Receiver"
+                                     loading="lazy">
+                                <div class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                                    Essential
+                                </div>
+                            </div>
+                            <span class="text-xs font-bold text-accent uppercase tracking-wider">Receiver</span>
+                            <h3 class="font-bold text-textPrimary text-xl mb-2">2-CH Universal RX</h3>
+                            <div class="spec-line mb-3">433 MHz • MOQ: 100 pcs</div>
+                            <p class="text-sm text-textSecondary mb-4">AC/DC 9-30V • 400 Codes • Universal</p>
+                            <div class="flex items-center gap-2 text-xs text-textTertiary mb-6">
+                                <i class="fas fa-microchip text-green-500"></i>
+                                <span>OEM replacement</span>
+                            </div>
+                            <button onclick="openQuoteModal()" class="mt-auto w-full py-3 bg-accent text-white rounded-2xl font-medium hover:bg-accentLight transition-colors" data-i18n="products.viewPrice">
+                                View Wholesale Price
+                            </button>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- Factory Section -->
-            <section class="section-py bg-primary text-white">
-                <div class="container grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h2 class="text-3xl font-bold mb-6" data-i18n-html="factory.title">Manufacturer Direct.<br>No Middleman.</h2>
-                        <p class="text-slate-300 mb-6 leading-relaxed" data-i18n="factory.description1">
-                            Our 3,000 m² facility in Dongguan ensures factory-direct pricing and consistent RF performance.
-                        </p>
-                        <p class="text-slate-300 mb-8 leading-relaxed" data-i18n="factory.description2">
-                            We focus on RF engineering, not just assembly. From PCB design to final testing, every step is built for reliability and repeatable quality.
-                        </p>
-                        <div class="grid grid-cols-1 gap-6 mb-8">
-                            <div><h4 class="font-bold text-white mb-2" data-i18n="factory.rd">In-house R&D</h4><p class="text-xs text-slate-400" data-i18n="factory.rdDesc">Custom RF design and compatibility testing for gate & garage systems.</p></div>
-                            <div><h4 class="font-bold text-white mb-2" data-i18n="factory.oem">OEM & Custom Branding</h4><p class="text-xs text-slate-400" data-i18n="factory.oemDesc">Custom logo printing from 100 pcs per model to support your brand.</p></div>
-                            <div><h4 class="font-bold text-white mb-2" data-i18n="factory.quality">Quality & Testing</h4><p class="text-xs text-slate-400" data-i18n="factory.qualityDesc">SMT line, aging test, warehouse and QC lab ensure stable IC quality batch after batch.</p></div>
+            <section class="section-py bg-gradient-to-br from-primary to-primary/90 text-white relative overflow-hidden">
+                <!-- Background decoration -->
+                <div class="absolute inset-0 bg-gradient-to-r from-accent/10 to-accentLight/10"></div>
+                <div class="absolute top-10 right-10 w-64 h-64 bg-white/5 rounded-full blur-2xl"></div>
+                <div class="absolute bottom-10 left-10 w-48 h-48 bg-white/5 rounded-full blur-xl"></div>
+                
+                <div class="container relative z-10 grid md:grid-cols-2 gap-20 items-center">
+                    <div class="space-y-8">
+                        <h2 class="text-4xl lg:text-5xl font-bold leading-tight" data-i18n-html="factory.title">
+                            Manufacturer Direct.<br>
+                            <span class="text-white/90">No Middleman.</span>
+                        </h2>
+                        <div class="space-y-6 text-lg leading-relaxed text-white/80">
+                            <p data-i18n="factory.description1">
+                                Our 3,000 m² facility in Dongguan ensures factory-direct pricing and consistent RF performance.
+                            </p>
+                            <p data-i18n="factory.description2">
+                                We focus on RF engineering, not just assembly. From PCB design to final testing, every step is built for reliability and repeatable quality.
+                            </p>
                         </div>
-                        <button onclick="switchPage('about')" class="text-accent hover:text-white border-b border-accent pb-1 transition" data-i18n="factory.tour">Factory Tour <i class="fas fa-arrow-right ml-2"></i></button>
+                        
+                        <div class="grid grid-cols-1 gap-8">
+                            <div class="glass-card p-6 border border-white/20">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-microchip text-accent text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-white mb-2" data-i18n="factory.rd">In-house R&D</h4>
+                                        <p class="text-sm text-white/70" data-i18n="factory.rdDesc">Custom RF design and compatibility testing for gate & garage systems.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="glass-card p-6 border border-white/20">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-industry text-accentLight text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-white mb-2" data-i18n="factory.oem">OEM & Custom Branding</h4>
+                                        <p class="text-sm text-white/70" data-i18n="factory.oemDesc">Custom logo printing from 100 pcs per model to support your brand.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="glass-card p-6 border border-white/20">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-shield-alt text-green-400 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-white mb-2" data-i18n="factory.quality">Quality & Testing</h4>
+                                        <p class="text-sm text-white/70" data-i18n="factory.qualityDesc">SMT line, aging test, warehouse and QC lab ensure stable IC quality batch after batch.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button onclick="switchPage('about')" class="btn-secondary border-white text-white hover:bg-white hover:text-primary px-6 py-3 inline-flex items-center" data-i18n="factory.tour">
+                            Factory Tour <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
                     </div>
-                    <div class="grid grid-cols-2 gap-6 text-left">
-                        <div class="flex flex-col gap-1">
-                            <i class="fas fa-microchip text-accent text-2xl"></i>
-                            <span class="text-xs font-bold text-white">SMT LINE</span>
-                            <span class="text-xs text-slate-300">Automated Assembly</span>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="glass-card p-8 text-center hover:transform hover:scale-105 transition-all duration-300">
+                            <i class="fas fa-microchip text-accent text-3xl mb-4"></i>
+                            <h3 class="text-sm font-bold text-white mb-2">SMT LINE</h3>
+                            <p class="text-xs text-white/70">Automated Assembly</p>
                         </div>
-                        <div class="flex flex-col gap-1">
-                            <i class="fas fa-temperature-high text-accent text-2xl"></i>
-                            <span class="text-xs font-bold text-white">AGING TEST</span>
-                            <span class="text-xs text-slate-300">72hr Stress Test</span>
+                        <div class="glass-card p-8 text-center hover:transform hover:scale-105 transition-all duration-300">
+                            <i class="fas fa-temperature-high text-accentLight text-3xl mb-4"></i>
+                            <h3 class="text-sm font-bold text-white mb-2">AGING TEST</h3>
+                            <p class="text-xs text-white/70">72hr Stress Test</p>
                         </div>
-                        <div class="flex flex-col gap-1">
-                            <i class="fas fa-warehouse text-accent text-2xl"></i>
-                            <span class="text-xs font-bold text-white">WAREHOUSE</span>
-                            <span class="text-xs text-slate-300">10,000m² Storage</span>
+                        <div class="glass-card p-8 text-center hover:transform hover:scale-105 transition-all duration-300">
+                            <i class="fas fa-warehouse text-green-400 text-3xl mb-4"></i>
+                            <h3 class="text-sm font-bold text-white mb-2">WAREHOUSE</h3>
+                            <p class="text-xs text-white/70">10,000m² Storage</p>
                         </div>
-                        <div class="flex flex-col gap-1">
-                            <i class="fas fa-vial text-accent text-2xl"></i>
-                            <span class="text-xs font-bold text-white">QC LAB</span>
-                            <span class="text-xs text-slate-300">RF Signal Testing</span>
+                        <div class="glass-card p-8 text-center hover:transform hover:scale-105 transition-all duration-300">
+                            <i class="fas fa-vial text-accent text-3xl mb-4"></i>
+                            <h3 class="text-sm font-bold text-white mb-2">QC LAB</h3>
+                            <p class="text-xs text-white/70">RF Signal Testing</p>
                         </div>
                     </div>
                 </div>
@@ -715,7 +914,7 @@
     </main>
 
     <!-- 4. FOOTER -->
-    <footer class="bg-secondary text-slate-300 pt-16 pb-8 border-t-4 border-accent">
+    <footer class="bg-primary text-white pt-20 pb-12 border-t border-gray-100">
         <div class="container mx-auto px-4 lg:px-8 grid md:grid-cols-4 gap-12 mb-12">
             <div>
                 <div class="flex items-center gap-2 mb-4">
@@ -754,16 +953,18 @@
                     <li><a onclick="switchPage('contact')" class="hover:text-white cursor-pointer">Contact Us</a></li>
                 </ul>
             </div>
-            <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+            <div class="glass-card p-8 border border-white/10">
                 <h4 class="text-white font-bold mb-2" data-i18n="footer.priceList">Price List</h4>
                 <p class="text-xs text-slate-400 mb-4" data-i18n="footer.priceListDesc">Get the latest wholesale catalog.</p>
-                <button onclick="openQuoteModal()" class="w-full bg-accent hover:bg-accentHover text-white font-bold py-2 rounded text-sm transition" data-i18n="footer.download">DOWNLOAD</button>
+                <button onclick="openQuoteModal()" class="w-full btn-primary text-sm font-medium py-3" data-i18n="footer.download">
+                    Get Price List
+                </button>
             </div>
         </div>
         <div class="container mx-auto px-4 border-t border-slate-800 pt-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-xs text-slate-500" data-i18n="footer.copyright">&copy; 2025 GateRemoteSource.com. All Rights Reserved.</p>
-                <div class="flex items-center gap-6 text-xs text-slate-500">
+                <p class="text-sm text-white/50" data-i18n="footer.copyright">&copy; 2025 GateRemoteSource.com. All Rights Reserved.</p>
+                <div class="flex items-center gap-8 text-sm text-white/50">
                     <a href="#privacy" class="hover:text-white transition" data-i18n="footer.privacy">Privacy Policy</a>
                     <a href="#terms" class="hover:text-white transition" data-i18n="footer.terms">Terms of Service</a>
                     <a href="#shipping" class="hover:text-white transition" data-i18n="footer.shippingInfo">Shipping Info</a>
@@ -777,7 +978,7 @@
     </footer>
 
     <!-- Sticky Quote Tab -->
-    <div onclick="openQuoteModal()" class="fixed right-0 top-1/2 -translate-y-1/2 bg-primary text-white p-3 rounded-l-lg shadow-xl cursor-pointer hover:pr-5 transition-all z-40">
+    <div onclick="openQuoteModal()" class="fixed right-0 top-1/2 -translate-y-1/2 bg-gradient-to-r from-accent to-accentLight text-white p-4 rounded-l-2xl shadow-apple-heavy cursor-pointer hover:pr-6 transition-all duration-300 z-40">
         <div class="side-tab font-bold text-xs tracking-widest uppercase h-24 flex items-center justify-center" data-i18n="sideTab">Get Wholesale Prices</div>
     </div>
 
@@ -787,42 +988,46 @@
     </a>
 
     <!-- Quote Modal -->
-    <div id="quote-modal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-[100] hidden items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+    <div id="quote-modal" class="fixed inset-0 bg-black/60 backdrop-blur-apple z-[100] hidden items-center justify-center p-4 opacity-0 transition-opacity duration-300">
         <div id="modal-content" class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300">
-            <div class="bg-primary p-6 text-white relative text-center">
+            <div class="bg-gradient-to-r from-accent to-accentLight p-8 text-white relative text-center">
                 <button onclick="closeQuoteModal()" class="absolute top-4 right-4 hover:text-accent"><i class="fas fa-times text-xl"></i></button>
                 <h3 class="text-2xl font-bold" data-i18n="modal.title">Get Wholesale Pricing</h3>
                 <p class="text-blue-200 text-sm mt-1" data-i18n="modal.subtitle">Response within 1 business day</p>
             </div>
             <div class="p-6">
-                <form id="quote-form" onsubmit="handleQuoteSubmit(event)" class="space-y-4" novalidate>
+                <form id="quote-form" onsubmit="handleQuoteSubmit(event)" class="space-y-6" novalidate>
                     <div>
-                        <label for="email" class="block text-sm font-medium text-slate-700 mb-1" data-i18n="modal.email">Business Email *</label>
-                        <input type="email" id="email" name="email" placeholder="your@business.com" required class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-accent" aria-required="true">
+                        <label for="email" class="block text-sm font-medium text-textPrimary mb-2" data-i18n="modal.email">Business Email *</label>
+                        <input type="email" id="email" name="email" placeholder="your@business.com" required class="w-full border border-gray-200 rounded-2xl px-4 py-4 text-base focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all" aria-required="true">
                         <span class="text-red-500 text-xs mt-1 hidden" id="email-error">Please enter a valid email address</span>
                     </div>
                     <div class="grid grid-cols-2 gap-4">
                         <div>
-                            <label for="name" class="block text-sm font-medium text-slate-700 mb-1" data-i18n="modal.name">Name *</label>
-                            <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-accent" aria-required="true">
+                            <label for="name" class="block text-sm font-medium text-textPrimary mb-2" data-i18n="modal.name">Name *</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full border border-gray-200 rounded-2xl px-4 py-4 text-base focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all" aria-required="true">
                             <span class="text-red-500 text-xs mt-1 hidden" id="name-error">Name is required</span>
                         </div>
                         <div>
-                            <label for="whatsapp" class="block text-sm font-medium text-slate-700 mb-1" data-i18n="modal.whatsapp">WhatsApp</label>
-                            <input type="tel" id="whatsapp" name="whatsapp" placeholder="+1 234 567 8900" class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-accent">
+                            <label for="whatsapp" class="block text-sm font-medium text-textPrimary mb-2" data-i18n="modal.whatsapp">WhatsApp</label>
+                            <input type="tel" id="whatsapp" name="whatsapp" placeholder="+1 234 567 8900" class="w-full border border-gray-200 rounded-2xl px-4 py-4 text-base focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all">
                         </div>
                     </div>
                     <div>
-                        <label for="details" class="block text-sm font-medium text-slate-700 mb-1" data-i18n="modal.details">Details (Qty, Models...)</label>
-                        <textarea id="details" name="details" rows="2" placeholder="Tell us about your needs..." class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-accent"></textarea>
+                        <label for="details" class="block text-sm font-medium text-textPrimary mb-2" data-i18n="modal.details">Details (Qty, Models...)</label>
+                        <textarea id="details" name="details" rows="3" placeholder="Tell us about your needs..." class="w-full border border-gray-200 rounded-2xl px-4 py-4 text-base focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all resize-none"></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-accent hover:bg-accentHover text-white font-bold py-3 rounded-lg shadow-lg transition" data-i18n="modal.submit">SEND INQUIRY</button>
+                    <button type="submit" class="w-full btn-primary py-4 text-base font-semibold shadow-apple-medium hover:shadow-apple-heavy" data-i18n="modal.submit">
+                        SEND INQUIRY
+                    </button>
                 </form>
-                <div id="quote-success" class="hidden text-center py-8">
-                    <div class="w-16 h-16 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl"><i class="fas fa-check"></i></div>
-                    <h4 class="text-xl font-bold text-primary" data-i18n="modal.successTitle">Received!</h4>
-                    <p class="text-sm text-slate-500 mt-2 mb-6" data-i18n="modal.successMessage">We'll get back to you shortly.</p>
-                    <button onclick="closeQuoteModal()" class="text-accent font-bold text-sm hover:underline" data-i18n="modal.close">Close</button>
+                <div id="quote-success" class="hidden text-center py-12">
+                    <div class="w-20 h-20 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-textPrimary mb-2" data-i18n="modal.successTitle">Received!</h4>
+                    <p class="text-base text-textSecondary mb-8" data-i18n="modal.successMessage">We'll get back to you shortly.</p>
+                    <button onclick="closeQuoteModal()" class="btn-secondary px-6 py-3" data-i18n="modal.close">Close</button>
                 </div>
             </div>
         </div>
