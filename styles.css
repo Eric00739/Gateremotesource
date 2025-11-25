@@ -9,6 +9,7 @@
     --primary: #1d1d1f; /* Deep space black */
     --accent: #007AFF; /* Apple blue */
     --accent-light: #5AC8FA; /* Light blue */
+    --accentLight: #5AC8FA; /* Alias for legacy camelCase reference */
     --text-primary: #1d1d1f;
     --text-secondary: #86868b;
     --text-tertiary: #8e8e93;

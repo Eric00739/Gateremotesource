@@ -176,6 +176,7 @@ const form = document.getElementById('quote-form');
 const successMsg = document.getElementById('quote-success');
 
 function openQuoteModal() {
+    if (!modal || !modalContent || !form || !successMsg) return; // Safety for pages without the modal markup
     form.classList.remove('hidden');
     successMsg.classList.add('hidden');
     form.reset();
@@ -189,6 +190,7 @@ function openQuoteModal() {
 }
 
 function closeQuoteModal() {
+    if (!modal || !modalContent) return;
     modal.classList.add('opacity-0');
     modalContent.classList.remove('scale-100');
     modalContent.classList.add('scale-95');
@@ -198,6 +200,7 @@ function closeQuoteModal() {
 }
 
 function handleQuoteSubmit(e) {
+    if (!form || !successMsg) return;
     e.preventDefault();
     
     // Clear previous errors
@@ -291,7 +294,7 @@ function handleQuoteSubmit(e) {
 
 // Event listeners
 window.onclick = function(e) {
-    if (e.target == modal) closeQuoteModal();
+    if (modal && e.target == modal) closeQuoteModal();
 }
 
 // Initialize on DOM load
@@ -302,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add keyboard navigation for mobile menu and modals
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
-            if (!modal.classList.contains('hidden')) {
+            if (modal && !modal.classList.contains('hidden')) {
                 closeQuoteModal();
             }
             // Close language dropdown if open
