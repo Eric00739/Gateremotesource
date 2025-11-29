@@ -641,6 +641,78 @@
                 </div>
             </div>
         </section>
+
+        <!-- Compatibility Matrix -->
+        <section class="py-24 bg-brand-surface border-t border-gray-800">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Top Requested Compatibilities</h2>
+                    <p class="text-gray-400 max-w-3xl mx-auto">Quick reference for your sales reps when customers ask for replacements.</p>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-gray-300 border border-gray-700 rounded-2xl overflow-hidden">
+                        <thead class="bg-brand-dark text-gray-200 uppercase text-xs tracking-wider">
+                            <tr>
+                                <th class="px-6 py-4">OEM Model</th>
+                                <th class="px-6 py-4">Our Compatible</th>
+                                <th class="px-6 py-4">Frequency</th>
+                                <th class="px-6 py-4">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-800">
+                            <tr>
+                                <td class="px-6 py-4">Nice FLO2R</td>
+                                <td class="px-6 py-4">GRS-FLO2</td>
+                                <td class="px-6 py-4">433.92MHz</td>
+                                <td class="px-6 py-4">Fixed code, metal frame, high range</td>
+                            </tr>
+                            <tr class="bg-brand-dark/40">
+                                <td class="px-6 py-4">CAME TOP432EV</td>
+                                <td class="px-6 py-4">GRS-CAME2</td>
+                                <td class="px-6 py-4">433.92MHz</td>
+                                <td class="px-6 py-4">Face-to-face clone in 10s</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4">HÖRMANN HSE2 BS</td>
+                                <td class="px-6 py-4">GRS-HM868</td>
+                                <td class="px-6 py-4">868.3MHz</td>
+                                <td class="px-6 py-4">Rolling code, blue button</td>
+                            </tr>
+                            <tr class="bg-brand-dark/40">
+                                <td class="px-6 py-4">LIFTMASTER 971LM</td>
+                                <td class="px-6 py-4">GRS-LM390</td>
+                                <td class="px-6 py-4">390MHz</td>
+                                <td class="px-6 py-4">Includes visor clip</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fulfillment -->
+        <section class="py-24 bg-brand-dark border-t border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Fulfillment Built for B2B</h2>
+                    <p class="text-gray-400 max-w-3xl mx-auto">Predictable lead times and packaging that ships direct to your warehouse.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-brand-surface border border-gray-700 rounded-2xl p-6">
+                        <h3 class="text-xl font-bold text-white mb-3">Stock Buffers</h3>
+                        <p class="text-gray-400 text-sm">Priority allocation for repeat POs so you don’t run out mid-project.</p>
+                    </div>
+                    <div class="bg-brand-surface border border-gray-700 rounded-2xl p-6">
+                        <h3 class="text-xl font-bold text-white mb-3">Kitting & Labeling</h3>
+                        <p class="text-gray-400 text-sm">Carton labels with your SKU/barcode and multi-language inserts.</p>
+                    </div>
+                    <div class="bg-brand-surface border border-gray-700 rounded-2xl p-6">
+                        <h3 class="text-xl font-bold text-white mb-3">Fast Dispatch</h3>
+                        <p class="text-gray-400 text-sm">48h dispatch on repeats; DHL/FedEx priority lanes by default.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <!-- ================= PAGE: OEM (Independent) ================= -->
@@ -655,6 +727,42 @@
                         <h2 class="text-2xl font-bold text-white mb-6" data-i18n="oem_page.title">Ready to engineer your custom remote?</h2>
                     <p class="text-gray-400 mb-8" data-i18n="oem_page.subtitle">We offer PCB Design, ID Design, Mold Tooling, and Firmware Development.</p>
                     <button onclick="navigateTo('contact')" class="bg-brand-accent text-white px-8 py-3 rounded-lg font-bold hover:bg-brand-hover" data-i18n="oem_page.start_consultation">Start Consultation</button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+                    <div class="bg-brand-surface border border-gray-700 rounded-2xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-white mb-3">RF & Firmware Lab</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">HCS301/rolling code, 433/868MHz auto-scan, remote range tuning, and encryption key management.</p>
+                    </div>
+                    <div class="bg-brand-surface border border-gray-700 rounded-2xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-white mb-3">Tooling & ID</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Industrial design, silicone keypads, metal shells, rapid molds, and PP/PC material selection.</p>
+                    </div>
+                    <div class="bg-brand-surface border border-gray-700 rounded-2xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-white mb-3">Certification Ready</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">FCC/CE test support, ISO9001 QA flow, traceable batches, and burn-in testing.</p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-surface border border-gray-700 rounded-2xl p-10 mt-16">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                        <div>
+                            <p class="text-3xl font-bold text-brand-accent mb-2">10</p>
+                            <p class="text-gray-400 text-sm">RF Engineers</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-brand-accent mb-2">6</p>
+                            <p class="text-gray-400 text-sm">ID/Mold Designers</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-brand-accent mb-2">4</p>
+                            <p class="text-gray-400 text-sm">Aging Rooms</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-brand-accent mb-2">48h</p>
+                            <p class="text-gray-400 text-sm">Prototype Turnaround</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -801,6 +909,20 @@
                             <div>
                                 <h4 class="text-white font-bold" data-i18n="contact.email_sales.title">Email Sales</h4>
                                 <a href="mailto:sales@gateremotesource.com" class="text-brand-accent hover:underline" data-i18n="contact.email_sales.description">Reach out to our sales team for bulk orders and technical support.</a>
+                            </div>
+                        </div>
+                        <div class="bg-brand-surface p-6 rounded-xl border border-gray-700 flex items-start gap-4">
+                            <div class="bg-brand-accent/20 p-3 rounded-full"><i class="fa-solid fa-clock text-brand-accent text-xl"></i></div>
+                            <div>
+                                <h4 class="text-white font-bold">Service Hours</h4>
+                                <p class="text-gray-400">Mon-Sat, 9:00-20:00 (GMT+8)</p>
+                            </div>
+                        </div>
+                        <div class="bg-brand-surface p-6 rounded-xl border border-gray-700 flex items-start gap-4">
+                            <div class="bg-brand-accent/20 p-3 rounded-full"><i class="fa-solid fa-globe text-brand-accent text-xl"></i></div>
+                            <div>
+                                <h4 class="text-white font-bold">Regions</h4>
+                                <p class="text-gray-400">Priority lanes: UK/EU, Middle East, LATAM; ship via DHL/FedEx.</p>
                             </div>
                         </div>
                     </div>
