@@ -258,5 +258,21 @@
       "message_placeholder": "Sto cercando sostituti per...",
       "submit_button": "Richiedi Lista Prezzi"
     }
+  },
+  "advantages": {
+    "title": "Perch? i distributori scelgono GateRemoteSource",
+    "subtitle": "Pi? dei telecomandi: strumenti di vendita, supporto tecnico e logistica prevedibile per acquirenti B2B.",
+    "card1": {
+      "title": "Playbook Pre-vendita",
+      "body": "Schede compatibilit? e template di prezzo pronti aiutano i tuoi commerciali a chiudere prima."
+    },
+    "card2": {
+      "title": "Copertura Tech Support",
+      "body": "Video di programmazione, guide di cablaggio e ingegneri OEM pronti per i tuoi installatori."
+    },
+    "card3": {
+      "title": "Logistica Affidabile",
+      "body": "Scorte buffer, spedizione 48h sui riordini ed etichette cartone pronte per i tuoi magazzini."
+    }
   }
 }

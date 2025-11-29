@@ -266,5 +266,21 @@
     "timeline_2015_description": "Launched our first Universal Rolling Code remote series.",
     "timeline_2023_title": "Global Reach",
     "timeline_2023_description": "Exporting to over 40 countries. 100% focus on B2B aftermarket solutions."
+  },
+  "advantages": {
+    "title": "Why Distributors Choose GateRemoteSource",
+    "subtitle": "More than remotes: sales tools, technical backup, and predictable logistics tailored for B2B buyers.",
+    "card1": {
+      "title": "Pre-Sales Playbook",
+      "body": "Ready-to-send compatibility sheets and pricing templates help your reps close faster."
+    },
+    "card2": {
+      "title": "Tech Support Coverage",
+      "body": "Programming videos, wiring guides, and OEM engineers on standby for your installers."
+    },
+    "card3": {
+      "title": "Logistics You Can Promise",
+      "body": "Stock buffers, 48h dispatch on repeats, and carton labels ready for your warehouses."
+    }
   }
 }

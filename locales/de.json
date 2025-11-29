@@ -258,5 +258,21 @@
       "message_placeholder": "Ich suche Ersatz für...",
       "submit_button": "Preisliste anfordern"
     }
+  },
+  "advantages": {
+    "title": "Warum Distributoren GateRemoteSource w?hlen",
+    "subtitle": "Mehr als Fernbedienungen: Sales-Tools, technischer Support und planbare Logistik f?r B2B-Kunden.",
+    "card1": {
+      "title": "Pre-Sales Leitfaden",
+      "body": "Versandfertige Kompatibilit?tslisten und Preisvorlagen helfen Ihrem Vertrieb schneller abzuschlie?en."
+    },
+    "card2": {
+      "title": "Technischer Support",
+      "body": "Programmier-Videos, Verdrahtungs-Guides und OEM-Ingenieure auf Abruf f?r Ihre Monteure."
+    },
+    "card3": {
+      "title": "Zuverl?ssige Logistik",
+      "body": "Sicherheitsbestand, 48h Versand bei Nachbestellungen und Kartonetiketten fertig f?r Ihr Lager."
+    }
   }
 }

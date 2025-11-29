@@ -258,5 +258,21 @@
       "message_placeholder": "Estoy buscando reemplazos para...",
       "submit_button": "Solicitar Lista de Precios"
     }
+  },
+  "advantages": {
+    "title": "Por qu? los distribuidores eligen GateRemoteSource",
+    "subtitle": "M?s que mandos: herramientas de venta, soporte t?cnico y log?stica predecible pensadas para compradores B2B.",
+    "card1": {
+      "title": "Gu?a de Preventa",
+      "body": "Hojas de compatibilidad y plantillas de precios listas para enviar ayudan a cerrar m?s r?pido."
+    },
+    "card2": {
+      "title": "Soporte T?cnico",
+      "body": "Videos de programaci?n, gu?as de cableado y t?cnicos OEM en espera para tus instaladores."
+    },
+    "card3": {
+      "title": "Log?stica Confiable",
+      "body": "Stock de seguridad, despacho en 48h en repetidos y etiquetas de cart?n listas para tus almacenes."
+    }
   }
 }

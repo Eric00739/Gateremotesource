@@ -189,5 +189,21 @@
     "moq_50pcs": "MOQ : 50 pcs",
     "moq_100pcs": "MOQ : 100 pcs",
     "get_price": "Obtenir le prix ->"
+  },
+  "advantages": {
+    "title": "Pourquoi les distributeurs choisissent GateRemoteSource",
+    "subtitle": "Plus que des t?l?commandes : outils de vente, support technique et logistique fiable pour les acheteurs B2B.",
+    "card1": {
+      "title": "Kit Avant-Vente",
+      "body": "Fiches de compatibilit? et mod?les de prix pr?ts ? envoyer pour conclure plus vite."
+    },
+    "card2": {
+      "title": "Support Technique",
+      "body": "Vid?os de programmation, guides de c?blage et ing?nieurs OEM pr?ts pour vos installateurs."
+    },
+    "card3": {
+      "title": "Logistique Fiable",
+      "body": "Stocks tampons, exp?dition 48h sur r?assorts et ?tiquettes carton pr?tes pour vos entrep?ts."
+    }
   }
 }
