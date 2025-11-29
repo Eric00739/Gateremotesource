@@ -1,0 +1,193 @@
+{
+  "meta": {
+    "title": "GateRemoteSource | Grossiste Télécommandes Aftermarket et Récepteurs de Porte de Garage",
+    "description": "Votre source #1 de Télécommandes Compatibles et Récepteurs Universels pour Portes de Garage. Solutions aftermarket à haute marge spécifiquement pour Installateurs et Serruriers. Remplace Nice, Came, Liftmaster et plus.",
+    "keywords": "Télécommande Aftermarket Garage, Récepteur Universel Portail, Remplacement Code Roulant, Duplicateur Télécommande, Grossiste Télécommandes Portail, Fournitures Serruriers, GateRemoteSource"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "catalog": "Catalogue",
+    "oem": "OEM/ODM",
+    "about": "À Propos",
+    "blog": "Blog",
+    "contact": "Contact",
+    "dealer_login": "Connexion Revendeur"
+  },
+  "hero": {
+    "badge": "Pour Professionnels de Portes de Garage et Portails",
+    "title": "Augmentez Vos Marges",
+    "title_highlight": "avec Télécommandes de Portail 100% Compatibles",
+    "description": "Ne perdez pas une vente parce que la télécommande originale est chère ou discontinuée. Stockez nos <strong>Télécommandes Compatibles et Récepteurs Universels</strong> pour profit maximum.",
+    "search_placeholder": "Rechercher par ID FCC ou Modèle Chip (ex., HCS301)",
+    "search_button": "Rechercher",
+    "cta_catalog": "Voir Catalogue Remplacements",
+    "cta_samples": "Commande Kit d'Échantillons"
+  },
+  "trust_bar": {
+    "high_margins": {
+      "title": "Marges Élevées",
+      "subtitle": "Prix Direct Usine"
+    },
+    "compatible": {
+      "title": "100% Compatible",
+      "subtitle": "Testé et Garanti"
+    },
+    "low_moq": {
+      "title": "MOQ Bas",
+      "subtitle": "À partir de 50 pièces"
+    },
+    "fast_dispatch": {
+      "title": "Expédition Rapide",
+      "subtitle": "Priorité DHL/FedEx"
+    }
+  },
+  "inventory": {
+    "top_sellers": "Meilleures Ventes",
+    "title": "L'Inventaire \"Indispensable\"",
+    "subtitle": "Outils essentiels pour chaque serrurier et installateur d'automatisation de portail.",
+    "database_access": "Accès Base de Données",
+    "supported_models": "500+ Modèles Supportés",
+    "database_description": "Nous fournissons une liste Excel complète correspondant les numéros de pièce originaux à nos modèles compatibles.",
+    "request_full_list": "Demander Liste Complète",
+    "card1": {
+      "title": "Compatibilité Aftermarket",
+      "description": "Alternatives à haute marge compatibles avec les meilleures marques.",
+      "image_alt": "Gros plan de PCB/Circuit Télécommande",
+      "badge": "Haute Marge",
+      "cta": "Voir Liste Compatibilité ->"
+    },
+    "card2": {
+      "title": "Récepteurs Universels",
+      "description": "Résolvez les problèmes de portails legacy avec modules auto-scan 433/868MHz.",
+      "image_alt": "Schéma de câblage récepteur ou Gros plan Port",
+      "badge": "Le Solutionneur",
+      "cta": "Voir Spécifications ->"
+    },
+    "card3": {
+      "title": "Télécommandes Auto-Apprentissage",
+      "description": "Clonez télécommandes à code fixe en secondes. Aucun outil requis.",
+      "image_alt": "Deux télécommandes clonant signal",
+      "badge": "Multi-Fréq",
+      "cta": "Voir Démo ->"
+    }
+  },
+  "factory_trust": {
+    "title": "Pourquoi Faire Confiance à GateRemoteSource",
+    "subtitle": "Nous sommes une usine, pas un dropshipper.",
+    "iso_certified": {
+      "title": "Usine Certifiée ISO9001",
+      "description": "Systèmes de gestion qualité certifiés"
+    },
+    "authentic_components": {
+      "title": "Composants Authentiques Microchip/NXP",
+      "description": "Puces authentiques pour performance fiable"
+    },
+    "aging_test": {
+      "title": "Salle Test Vieillissement 100%",
+      "description": "Tous les produits subissent des tests rigoureux"
+    },
+    "production_base": {
+      "title": "Base Production 4.000m²",
+      "description": "Capacité production à grande échelle"
+    }
+  },
+  "testimonials": {
+    "title": "Que Disent Nos Partenaires B2B",
+    "subtitle": "Vrai feedback de serruriers et distributeurs worldwide.",
+    "review1": {
+      "text": "La portée de ces télécommandes HCS301 est meilleure que l'originale. Mes installateurs les adorent.",
+      "author": "John D.",
+      "company": "Distributeur UK"
+    },
+    "review2": {
+      "text": "Prototypage OEM le plus rapide que j'ai vu à Shenzhen. Excellent partenaire.",
+      "author": "Carlos M.",
+      "company": "Espagne"
+    },
+    "review3": {
+      "text": "La compatibilité est 100% parfaite. Nous avons doublé notre volume de ventes de télécommandes depuis que nous avons changé.",
+      "author": "Marco T.",
+      "company": "Italie"
+    }
+  },
+  "blog": {
+    "installer_resources": "Ressources Installateur",
+    "technical_guides": "Guides Techniques",
+    "read_all": "Tout lire ->",
+    "post1": {
+      "title": "Comment Cloner des Télécommandes à Code Roulant en 10 Secondes",
+      "category": "TUTORIAL",
+      "summary": "Arrêtez de perdre du temps sur site. Notre nouvelle série de duplicateurs face-à-face copie HCS301 instantanément."
+    },
+    "post2": {
+      "title": "Top 5 Télécommandes Aftermarket à Haute Marge pour 2025",
+      "category": "CONSEILS PROFIT",
+      "summary": "Quelles marques ont le plus de demande? Nous analysons les données du marché pour vous aider à stocker correctement."
+    },
+    "post3": {
+      "title": "Récepteurs Universels: La Solution pour Portes Anciennes",
+      "category": "TECHNIQUE",
+      "summary": "Quand une carte récepteur ancienne meurt, ne remplacez pas le moteur. Installez notre récepteur $5."
+    },
+    "post4": {
+      "title": "Dépannage Interférence 433MHz",
+      "category": "TECHNIQUE",
+      "summary": "Client se plaint de courte portée? Voici une checklist pour identifier et réparer l'interférence de signal sur site."
+    },
+    "read_more": "Lire plus ->",
+    "no_articles": "Aucun article trouv?.",
+    "read_article": "Lire l'article"
+  },
+  "faq": {
+    "title": "FAQ Distributeur",
+    "q1": {
+      "question": "Vendez-vous aux utilisateurs finaux ?",
+      "answer": "Non. Nous sommes un fabricant B2B protégeant nos distributeurs. Nous ne vendons pas d'unités individuelles au public."
+    },
+    "q2": {
+      "question": "Puis-je mélanger différentes marques ?",
+      "answer": "Absolument. Vous pouvez mélanger 50pcs compatibles Nice + 50pcs compatibles Came pour atteindre le MOQ."
+    },
+    "q3": {
+      "question": "Les récepteurs sont-ils fournis avec télécommandes ?",
+      "answer": "Vous pouvez acheter des récepteurs séparément, ou en kit avec 2 télécommandes à un prix bundle spécial."
+    },
+    "q4": {
+      "question": "Quelle est la garantie de vos télécommandes ?",
+      "answer": "Toutes nos télécommandes sont garanties 2 ans contre tout défaut de fabrication. Nous remplaçons gratuitement toute unité défectueuse."
+    },
+    "q5": {
+      "question": "Proposez-vous un marquage privé pour les distributeurs ?",
+      "answer": "Oui, nous proposons un service OEM avec marquage de votre logo et emballage personnalisé pour les commandes de 1000 pièces et plus."
+    }
+  },
+  "pre_footer": {
+    "title": "Besoin d'un Kit d'Échantillons?",
+    "subtitle": "Testez notre gamme et compatibilité avant d'acheter en gros.",
+    "order_samples": "Commander Échantillons"
+  },
+  "products": {
+    "all_products": "Tous les Produits",
+    "rolling_code_remotes": "Télécommandes à Code Roulant",
+    "universal_receivers": "Récepteurs Universels",
+    "duplicators": "Duplicateurs",
+    "get_price": "Obtenir le Prix",
+    "moq_50pcs": "MOQ : 50pcs",
+    "moq_100pcs": "MOQ : 100pcs",
+    "frequency_433": "433.92MHz",
+    "multi_freq": "Multi-Freq",
+    "receiver": "Récepteur"
+  },
+  "footer": {
+    "legal_disclaimer": "Avis: Tous les noms de produits, logos et marques sont la propriété de leurs propriétaires respectifs. Tous les noms d'entreprise, de produits et de services utilisés dans ce site web sont uniquement à des fins d'identification. L'utilisation de ces noms, logos et marques n'implique pas d'approbation.",
+    "copyright": "© {year} GateRemoteSource. Tous droits réservés."
+  },
+  "products_page": {
+    "frequency_433": "433,92MHz",
+    "multi_freq": "Multi-Fréq",
+    "receiver": "Récepteur",
+    "moq_50pcs": "MOQ : 50 pcs",
+    "moq_100pcs": "MOQ : 100 pcs",
+    "get_price": "Obtenir le prix ->"
+  }
+}
