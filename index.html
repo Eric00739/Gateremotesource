@@ -162,6 +162,10 @@
                                     <span>🇫🇷</span>
                                     <span class="text-white">Français</span>
                                 </a>
+                                <a href="#" onclick="changeLanguage('pt')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
+                                    <span>????</span>
+                                    <span class="text-white">Portugu?s</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -1125,7 +1129,8 @@
                 'es': '🇪🇸',
                 'de': '🇩🇪',
                 'it': '🇮🇹',
-                'fr': '🇫🇷'
+                'fr': '🇫🇷',
+                'pt': '🇵🇹'
             };
             
             const langNames = {
@@ -1133,7 +1138,8 @@
                 'es': 'ES',
                 'de': 'DE',
                 'it': 'IT',
-                'fr': 'FR'
+                'fr': 'FR',
+                'pt': 'PT'
             };
             
             const flagElement = document.getElementById('currentFlag');
@@ -1173,7 +1179,7 @@
 
         // Language detection optimized for non-language subdirectory deployments
         // Only uses query parameters to avoid conflicts with paths like /app/, /admin/, etc.
-        const supportedLangs = ['en', 'es', 'de', 'it', 'fr'];
+        const supportedLangs = ['en', 'es', 'de', 'it', 'fr', 'pt'];
         const urlParams = new URLSearchParams(window.location.search);
         const searchLang = urlParams.get('lang');
         

@@ -1,0 +1,286 @@
+{
+  "meta": {
+    "title": "GateRemoteSource | Controles Remotos e Receptores para Portões no Atacado",
+    "description": "Sua fonte nº1 de controles remotos compatíveis e receptores universais. Soluções de alta margem para instaladores e chaveiros. Substitui Nice, Came, LiftMaster e mais.",
+    "keywords": "controle remoto portão compatível, receptor universal 433MHz, substituto rolling code, duplicador de controle, atacado de controles de portão, fornecedor para chaveiros, GateRemoteSource"
+  },
+  "navigation": {
+    "home": "Início",
+    "catalog": "Catálogo",
+    "oem": "OEM/ODM",
+    "about": "Sobre",
+    "blog": "Blog",
+    "contact": "Contato",
+    "dealer_login": "Login de Distribuidor"
+  },
+  "hero": {
+    "badge": "Para profissionais de portões e garagens",
+    "title": "Soluções RF industriais de controles e receptores.",
+    "title_highlight": "Compatível com 600+ modelos (LiftMaster, Came, Nice)",
+    "description": "Baseado em HCS301/Security+2.0/rolling code com opções 433/868/315MHz. Preços diretos de fábrica para distribuidores e chaveiros.",
+    "search_placeholder": "Busque FCC ID, chip (ex: HCS301) ou frequência...",
+    "search_button": "Buscar",
+    "cta_catalog": "Ver Catálogo e Especificações",
+    "cta_samples": "Solicitar Kit de Amostras"
+  },
+  "trust_bar": {
+    "high_margins": {
+      "title": "Taxa de defeito < 0,5%",
+      "subtitle": "ICT + câmara de envelhecimento em cada lote"
+    },
+    "compatible": {
+      "title": "Garantia da PCBA de 3 anos",
+      "subtitle": "Relés/EEPROM validados para instaladores"
+    },
+    "low_moq": {
+      "title": "Certificados CE & FCC",
+      "subtitle": "Documentos prontos para seus importadores"
+    },
+    "fast_dispatch": {
+      "title": "Fábrica ISO9001",
+      "subtitle": "SMT + salas de envelhecimento em Dongguan"
+    }
+  },
+  "inventory": {
+    "top_sellers": "Mais vendidos",
+    "title": "Estoque obrigatório",
+    "subtitle": "Ferramentas essenciais para chaveiros e instaladores de automação de portões.",
+    "database_access": "Acesso ao banco de dados",
+    "supported_models": "500+ modelos suportados",
+    "database_description": "Fornecemos uma planilha completa cruzando números originais com nossos modelos compatíveis.",
+    "request_full_list": "Pedir lista completa",
+    "card1": {
+      "title": "Clonadores multifrequência (280-868MHz)",
+      "description": "Copia rolling/fixed codes incluindo HCS301, Security+2.0, SM1527 em segundos.",
+      "image_alt": "Close-up de uma placa PCB de controle remoto",
+      "badge": "Alta margem",
+      "cta": "Ver cobertura de protocolos ->"
+    },
+    "card2": {
+      "title": "Receptores externos 2 canais (AC/DC 9-30V)",
+      "description": "Auto-learn 433/868MHz, relés contato seco, memória 400 usuários para retrofits.",
+      "image_alt": "Diagrama de fiação do receptor ou close-up dos terminais",
+      "badge": "O resolvedor",
+      "cta": "Baixar especificações de fiação ->"
+    },
+    "card3": {
+      "title": "Controles de cópia face-a-face (sem master)",
+      "description": "Programa no local sem painel; suporta rolling + fixed, inclui chaveiro.",
+      "image_alt": "Dois controles clonando sinal",
+      "badge": "Multi-Freq",
+      "cta": "Ver fluxo em campo ->"
+    }
+  },
+  "factory_trust": {
+    "title": "Por que confiar na GateRemoteSource",
+    "subtitle": "Somos fábrica, não dropshipper.",
+    "iso_certified": {
+      "title": "Fábrica certificada ISO9001",
+      "description": "Sistema de gestão da qualidade certificado"
+    },
+    "authentic_components": {
+      "title": "Componentes Microchip/NXP autênticos",
+      "description": "Chips genuínos para desempenho confiável"
+    },
+    "aging_test": {
+      "title": "Sala de teste de envelhecimento 100%",
+      "description": "Todos os produtos passam por testes rigorosos"
+    },
+    "production_base": {
+      "title": "Base produtiva de 4.000 m²",
+      "description": "Capacidade de fabricação em escala"
+    }
+  },
+  "testimonials": {
+    "title": "O que dizem nossos parceiros B2B",
+    "subtitle": "Feedback real de chaveiros e distribuidores no mundo todo.",
+    "review1": {
+      "text": "O alcance em HCS301/433,92MHz supera o OEM. Padronizamos isso em todas as vans de serviço.",
+      "author": "Jackie Liu",
+      "company": "Gerente de Operações, AllGate UK"
+    },
+    "review2": {
+      "text": "Carcaça custom + documentos FCC/CE entregues já no primeiro protótipo de 7 dias. Parceiro OEM confiável.",
+      "author": "Carlos Medina",
+      "company": "Distribuidor, Madri"
+    },
+    "review3": {
+      "text": "Compatibilidade rolling code bateu todos os jobs LiftMaster/Nice. Recompras agora são previsíveis.",
+      "author": "Marco Tomassi",
+      "company": "Revendedor, Milão"
+    }
+  },
+  "blog": {
+    "installer_resources": "Recursos para instaladores",
+    "technical_guides": "Guias técnicos",
+    "read_all": "Ler tudo ->",
+    "title": "Hub do Instalador",
+    "subtitle": "Guias técnicos, tutoriais de programação e novidades do setor para chaveiros.",
+    "topics": "Tópicos",
+    "programming_guides": "Guias de programação",
+    "market_trends": "Tendências de mercado",
+    "troubleshooting": "Solução de problemas",
+    "new_products": "Novos produtos",
+    "become_distributor_title": "Torne-se um distribuidor",
+    "become_distributor_description": "Acesse preços de atacado e materiais de marketing.",
+    "apply_now": "Inscreva-se agora",
+    "post1": {
+      "title": "Como clonar controles rolling code em 10 segundos",
+      "category": "TUTORIAL",
+      "summary": "Pare de perder tempo em campo. Nossa nova série de duplicadores face-a-face copia HCS301 instantaneamente."
+    },
+    "post2": {
+      "title": "Top 5 controles de alta margem para 2025",
+      "category": "DICAS DE LUCRO",
+      "summary": "Quais marcas têm mais demanda? Analisamos os dados de mercado para você estocar certo."
+    },
+    "post3": {
+      "title": "Receptores universais: a solução para portões antigos",
+      "category": "TÉCNICO",
+      "summary": "Quando a placa receptora queima, não troque o motor. Instale nosso receptor de US$5."
+    },
+    "post4": {
+      "title": "Resolvendo interferência em 433MHz",
+      "category": "TÉCNICO",
+      "summary": "Cliente reclamando de curto alcance? Checklist para identificar e corrigir interferência de sinal em campo."
+    },
+    "read_more": "Ler mais ->",
+    "no_articles": "Nenhum artigo encontrado.",
+    "read_article": "Ler artigo"
+  },
+  "faq": {
+    "title": "FAQ de Distribuidores",
+    "q1": {
+      "question": "Vocês vendem para usuário final?",
+      "answer": "Não. Somos fabricante B2B e protegemos nossos distribuidores. Não vendemos unidades avulsas ao público."
+    },
+    "q2": {
+      "question": "Posso misturar marcas diferentes?",
+      "answer": "Claro. Você pode misturar 50 peças compatíveis Nice + 50 peças compatíveis Came para atingir o MOQ."
+    },
+    "q3": {
+      "question": "Os receptores vêm com controles?",
+      "answer": "Você pode comprar receptores separados ou em kit com 2 controles por preço especial."
+    },
+    "q4": {
+      "question": "Qual o lead time típico para pedidos grandes?",
+      "answer": "Pedidos padrão: 3-5 dias úteis. Pedidos expressos: 1-2 dias úteis. Todos via DHL/FedEx."
+    },
+    "q5": {
+      "question": "Vocês oferecem suporte técnico?",
+      "answer": "Sim, fornecemos suporte técnico completo, guias de programação e vídeos para todos os produtos."
+    }
+  },
+  "pre_footer": {
+    "title": "Precisa de um kit de amostras?",
+    "subtitle": "Teste nossa linha e compatibilidade antes de comprar em volume.",
+    "order_samples": "Pedir amostras"
+  },
+  "contact": {
+    "title": "Abrir conta de atacado",
+    "subtitle": "Junte-se à nossa rede de 500+ distribuidores. Receba a lista de preços hoje.",
+    "fastest_response": {
+      "title": "Resposta mais rápida",
+      "description": "Fale com o time de vendas no WhatsApp para ajuda imediata."
+    },
+    "email_sales": {
+      "title": "Email de vendas",
+      "description": "Contate o time para pedidos em volume e suporte técnico."
+    },
+    "inquire_now": {
+      "title": "Solicitar agora",
+      "email_label": "Email",
+      "message_label": "Mensagem",
+      "message_placeholder": "Procuro substitutos para...",
+      "submit_button": "Pedir lista de preços"
+    }
+  },
+  "footer": {
+    "legal_disclaimer": "Aviso: Todos os nomes, logotipos e marcas são propriedade de seus respectivos donos. Nomes, produtos e serviços usados aqui são apenas para identificação. O uso não implica endosso.",
+    "copyright": "© {year} GateRemoteSource. Todos os direitos reservados.",
+    "products": "Produtos",
+    "remotes": "Controles",
+    "receivers": "Receptores",
+    "smart_home": "Casa inteligente",
+    "contact": "Contato",
+    "email_sales": "sales@gateremotesource.com",
+    "whatsapp": "+86 158 9964 8898",
+    "address": "Endereço",
+    "company_description": "Seu parceiro de lucro em controle de acesso. Fornecendo chaveiros no mundo todo."
+  },
+  "products": {
+    "all_products": "Todos os produtos",
+    "rolling_code_remotes": "Controles rolling code",
+    "universal_receivers": "Receptores universais",
+    "duplicators": "Duplicadores",
+    "get_price": "Pedir preço",
+    "moq_50pcs": "MOQ: 50 pcs",
+    "moq_100pcs": "MOQ: 100 pcs",
+    "frequency_433": "433,92MHz",
+    "multi_freq": "Multi-Freq",
+    "receiver": "Receptor"
+  },
+  "products_page": {
+    "title": "Catálogo de atacado",
+    "subtitle": "Soluções aftermarket completas para instaladores profissionais.",
+    "nice_smilo": "Compatível Nice SMILO",
+    "nice_description": "Compatível com SM2/SM4. Estilo preto arredondado. Botões de alta durabilidade.",
+    "universal_face_copy": "Clonador face-a-face universal",
+    "universal_description": "Duplicador 4 canais. Copia 95% dos códigos fixos e muitos rolling (HCS301).",
+    "mini_receiver": "Mini receptor 2CH",
+    "mini_description": "Design compacto cabe na caixa do motor. Entrada AC/DC 12-24V. Capacidade 400 usuários.",
+    "catalog_download": "Precisa do catálogo 2025 completo?",
+    "catalog_description": "Baixe o PDF com especificações técnicas de mais de 200 produtos.",
+    "download_pdf_catalog": "Baixar catálogo em PDF",
+    "trusted_by_pros": "Confiado por profissionais",
+    "what_installers_say": "O que dizem os instaladores",
+    "installers_feedback": "Feedback real de chaveiros e instaladores usando nossos controles e receptores compatíveis.",
+    "frequency_433": "433,92MHz",
+    "multi_freq": "Multi-Freq",
+    "receiver": "Receptor",
+    "moq_50pcs": "MOQ: 50 pcs",
+    "moq_100pcs": "MOQ: 100 pcs",
+    "get_price": "Pedir preço ->"
+  },
+  "oem_odm": {
+    "title": "Soluções OEM/ODM",
+    "subtitle": "Transforme sua ideia em produto. Fornecemos manufatura turnkey."
+  },
+  "oem_page": {
+    "title": "Pronto para projetar seu controle personalizado?",
+    "subtitle": "Oferecemos design de PCB, design industrial, moldes e firmware.",
+    "start_consultation": "Iniciar consulta"
+  },
+  "about": {
+    "title": "Sobre a GateRemoteSource",
+    "description": "Fundada em 2010 em Dalingshan, Dongguan, começamos como oficina RF especializada. Hoje somos fabricante OEM/ODM completo para o mercado global de controle de acesso.",
+    "mission": "Nossa missão é capacitar chaveiros e instaladores com soluções aftermarket de alta qualidade e margem, que simplesmente funcionam.",
+    "years_experience": "15+",
+    "years_label": "Anos de experiência",
+    "remotes_per_year": "500k+",
+    "remotes_label": "Controles / ano",
+    "our_journey": "Nossa jornada",
+    "timeline_2010_title": "Fundação",
+    "timeline_2010_description": "Estabelecida em Dongguan como oficina de montagem PCBA.",
+    "timeline_2015_title": "Expansão de P&D",
+    "timeline_2015_description": "Lançamos nossa primeira linha de controles rolling code universais.",
+    "timeline_2023_title": "Alcance global",
+    "timeline_2023_description": "Exportando para 40+ países. 100% focados em soluções B2B aftermarket."
+  },
+  "advantages": {
+    "title": "Por que distribuidores escolhem a GateRemoteSource",
+    "subtitle": "Mais do que controles: ferramentas de vendas, suporte técnico e logística previsível para compradores B2B.",
+    "card1": {
+      "title": "Playbook de pré-vendas",
+      "body": "Tabelas de compatibilidade e modelos de preços prontos para seus representantes fecharem mais rápido."
+    },
+    "card2": {
+      "title": "Cobertura de suporte técnico",
+      "body": "Vídeos de programação, guias de fiação e engenheiros OEM de prontidão para seus instaladores."
+    },
+    "card3": {
+      "title": "Logística que você pode prometer",
+      "body": "Estoques de segurança, despacho em 48h para repetidos e etiquetas prontas para seus armazéns."
+    }
+  }
+}
