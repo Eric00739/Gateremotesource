@@ -81,6 +81,8 @@
             top: 0;
             left: 0;
             object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
         
         /* Navigation State */
@@ -217,7 +219,7 @@
         <!-- Hero -->
         <section class="hero-bg h-screen flex items-center relative pt-24">
             <div class="hero-video">
-                <video autoplay muted loop playsinline>
+                <video autoplay muted loop playsinline preload="auto" poster="/assets/videos/V1.3-poster.jpg" onloadeddata="this.style.opacity=1;">
                     <source src="/assets/videos/V1.3.mp4" type="video/mp4">
                 </video>
             </div>
