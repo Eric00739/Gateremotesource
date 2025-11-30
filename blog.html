@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title id="meta-title">Installer Hub | GateRemoteSource Blog | Technical Guides & Resources</title>
+    <meta id="meta-description" name="description" content="Technical guides, programming tutorials, and industry news for locksmiths and gate automation professionals. Expert tips on remote programming and troubleshooting.">
+    <meta id="meta-keywords" name="keywords" content="Garage Remote Programming, Locksmith Resources, Gate Installation Guides, Technical Tutorials, Access Control Blog">
+    <meta name="author" content="GateRemoteSource">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png.png">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            accent: '#06b6d4',
+                            hover: '#0891b2',
+                            light: '#f8fafc',
+                            surface: '#1e293b',
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
+        
+        /* Navigation State */
+        .nav-link.active { color: #06b6d4 !important; font-weight: 700; border-bottom: 2px solid #06b6d4; }
+
+        /* Language Selector */
+        .lang-select {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            cursor: pointer;
+            outline: none;
+        }
+        .lang-select option { background-color: #0f172a; color: white; }
+    </style>
+</head>
+<body class="font-sans text-gray-300 bg-brand-surface selection:bg-brand-accent selection:text-white flex flex-col min-h-screen">
+
+    <!-- ================= NAVIGATION ================= -->
+    <nav class="fixed w-full z-50 bg-brand-dark/95 backdrop-blur border-b border-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <div class="bg-white p-1.5 rounded-lg h-10 w-10 flex items-center justify-center">
+                            <img src="logo.png.png" alt="GateRemoteSource Logo" class="h-full w-full object-contain">
+                        </div>
+                        <span class="font-bold text-2xl text-white tracking-tight">GateRemote<span class="text-brand-accent">Source</span></span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex space-x-8 items-center">
+                    <a href="index.html" class="nav-link text-gray-300 hover:text-brand-accent transition font-medium py-2" data-i18n="navigation.home">Home</a>
+                    <a href="catalog.html" class="nav-link text-gray-300 hover:text-brand-accent transition font-medium py-2" id="nav-products" data-i18n="navigation.catalog">Catalog</a>
+                    <a href="oem.html" class="nav-link text-gray-300 hover:text-brand-accent transition font-medium py-2" id="nav-oem" data-i18n="navigation.oem">OEM/ODM</a>
+                    <a href="about.html" class="nav-link text-gray-300 hover:text-brand-accent transition font-medium py-2" id="nav-about" data-i18n="navigation.about">About</a>
+                    <a href="blog.html" class="nav-link text-gray-300 hover:text-brand-accent transition font-medium py-2 active" id="nav-blog" data-i18n="navigation.blog">Blog</a>
+                    <a href="contact.html" class="nav-link text-gray-300 hover:text-brand-accent transition font-medium py-2" id="nav-contact" data-i18n="navigation.contact">Contact</a>
+                    
+                    <!-- Language Switcher -->
+                    <div class="flex items-center ml-2 border-l border-gray-700 pl-4">
+                        <div class="relative">
+                            <button id="languageDropdownBtn" class="flex items-center gap-2 text-white hover:text-brand-accent transition">
+                                <span id="currentFlag">🇬🇧</span>
+                                <span id="currentLang">EN</span>
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </button>
+                            <div id="languageDropdown" class="absolute right-0 mt-2 w-48 bg-brand-surface border border-gray-700 rounded-lg shadow-lg hidden z-50">
+                                <a href="#" onclick="changeLanguage('en')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
+                                    <span>🇬🇧</span>
+                                    <span class="text-white">English</span>
+                                </a>
+                                <a href="#" onclick="changeLanguage('es')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
+                                    <span>🇪🇸</span>
+                                    <span class="text-white">Español</span>
+                                </a>
+                                <a href="#" onclick="changeLanguage('de')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
+                                    <span>🇩🇪</span>
+                                    <span class="text-white">Deutsch</span>
+                                </a>
+                                <a href="#" onclick="changeLanguage('it')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
+                                    <span>🇮🇹</span>
+                                    <span class="text-white">Italiano</span>
+                                </a>
+                                <a href="#" onclick="changeLanguage('fr')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
+                                    <span>🇫🇷</span>
+                                    <span class="text-white">Français</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="contact.html" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-2 rounded-lg font-bold transition shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login">
+                        Dealer Login
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center gap-4">
+                    <button id="mobile-menu-btn" class="text-white text-2xl focus:outline-none">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="lg:hidden bg-brand-surface border-b border-gray-700 hidden">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="index.html" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.home">Home</a>
+                <a href="catalog.html" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.catalog">Catalog</a>
+                <a href="oem.html" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.oem">OEM/ODM</a>
+                <a href="about.html" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.about">About</a>
+                <a href="blog.html" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.blog">Blog</a>
+                <a href="contact.html" class="block px-3 py-3 rounded-md text-base font-medium text-brand-accent font-bold" data-i18n="navigation.contact">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= PAGE CONTENT ================= -->
+    <main class="pt-32 pb-24 bg-brand-surface min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4" data-i18n="blog.title">Installer Hub</h1>
+                <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="blog.subtitle">Technical guides, programming tutorials, and industry news for locksmiths.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Main Content: Articles -->
+                <div class="lg:col-span-2 space-y-8" id="blog-list-area">
+                    <!-- Blog posts will be injected here by JavaScript -->
+                </div>
+
+                <!-- Sidebar: Marketing Tools -->
+                <div class="space-y-8">
+                    <!-- Search Widget -->
+                    <div class="bg-brand-dark p-6 rounded-xl border border-gray-700 shadow-lg">
+                        <h3 class="font-bold text-white mb-4" data-i18n="blog.installer_resources">Search Guides</h3>
+                        <div class="relative">
+                            <input type="text" id="blogSearch" placeholder="e.g. Programming Nice..." onkeyup="filterBlogs()" class="w-full bg-brand-surface border border-gray-600 rounded-lg pl-4 pr-10 py-3 text-white focus:border-brand-accent outline-none transition">
+                            <i class="fa-solid fa-search absolute right-3 top-3.5 text-gray-500"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Categories Widget -->
+                    <div class="bg-brand-dark p-6 rounded-xl border border-gray-700 shadow-lg">
+                        <h3 class="font-bold text-white mb-4" data-i18n="blog.topics">Topics</h3>
+                        <ul class="space-y-3 text-gray-400 text-sm">
+                            <li class="hover:text-brand-accent cursor-pointer flex justify-between border-b border-gray-700 pb-2"><span data-i18n="blog.programming_guides">Programming Guides</span> <span class="bg-gray-700 text-xs px-2 rounded-full">12</span></li>
+                            <li class="hover:text-brand-accent cursor-pointer flex justify-between border-b border-gray-700 pb-2"><span data-i18n="blog.market_trends">Market Trends</span> <span class="bg-gray-700 text-xs px-2 rounded-full">5</span></li>
+                            <li class="hover:text-brand-accent cursor-pointer flex justify-between border-b border-gray-700 pb-2"><span data-i18n="blog.troubleshooting">Troubleshooting</span> <span class="bg-gray-700 text-xs px-2 rounded-full">8</span></li>
+                            <li class="hover:text-brand-accent cursor-pointer flex justify-between"><span data-i18n="blog.new_products">New Products</span> <span class="bg-gray-700 text-xs px-2 rounded-full">3</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Marketing CTA Widget -->
+                    <div class="bg-gradient-to-br from-brand-accent to-blue-600 p-8 rounded-xl text-center text-white shadow-xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
+                        <h3 class="font-bold text-xl mb-2 relative z-10" data-i18n="blog.become_distributor_title">Become a Distributor</h3>
+                        <p class="text-sm opacity-90 mb-6 relative z-10" data-i18n="blog.become_distributor_description">Get access to wholesale pricing and marketing materials.</p>
+                        <a href="contact.html" class="bg-white text-brand-accent px-6 py-3 rounded-full font-bold text-sm shadow-lg hover:bg-gray-100 transition relative z-10 w-full" data-i18n="blog.apply_now">Apply Now</a>
+                    </div>
+
+                    <!-- Popular Posts -->
+                    <div class="bg-brand-dark p-6 rounded-xl border border-gray-700 shadow-lg">
+                        <h3 class="font-bold text-white mb-4">Popular Posts</h3>
+                        <div class="space-y-4">
+                            <div class="flex gap-3">
+                                <div class="w-16 h-16 bg-gray-800 rounded-lg flex-shrink-0 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1558002038-1091a166111c?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white hover:text-brand-accent cursor-pointer">How to Clone Rolling Code Remotes</h4>
+                                    <p class="text-xs text-gray-500 mt-1">2 days ago</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <div class="w-16 h-16 bg-gray-800 rounded-lg flex-shrink-0 overflow-hidden">
+                                    <img src="https://plus.unsplash.com/premium_photo-1677005095384-477921810046?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white hover:text-brand-accent cursor-pointer">High-Margin Aftermarket Remotes</h4>
+                                    <p class="text-xs text-gray-500 mt-1">1 week ago</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <div class="w-16 h-16 bg-gray-800 rounded-lg flex-shrink-0 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white hover:text-brand-accent cursor-pointer">Universal Receivers Guide</h4>
+                                    <p class="text-xs text-gray-500 mt-1">2 weeks ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="mt-16 flex justify-center gap-2">
+                <button class="w-10 h-10 rounded-lg bg-brand-accent text-white font-bold flex items-center justify-center">1</button>
+                <button class="w-10 h-10 rounded-lg bg-brand-dark border border-gray-700 text-gray-400 hover:border-brand-accent hover:text-white transition flex items-center justify-center">2</button>
+                <button class="w-10 h-10 rounded-lg bg-brand-dark border border-gray-700 text-gray-400 hover:border-brand-accent hover:text-white transition flex items-center justify-center">3</button>
+                <button class="w-10 h-10 rounded-lg bg-brand-dark border border-gray-700 text-gray-400 hover:border-brand-accent hover:text-white transition flex items-center justify-center"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-brand-dark border-t border-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Stay Updated with Latest Tips</h2>
+            <p class="text-gray-400 mb-8">Get weekly technical guides and market insights delivered to your inbox.</p>
+            <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="Enter your email" class="flex-1 bg-brand-surface border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-brand-accent outline-none transition">
+                <button class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-3 rounded-lg font-bold transition">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PRE-FOOTER ================= -->
+    <section class="py-16 bg-brand-accent relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+            <div>
+                <h2 class="text-3xl font-bold text-white mb-2" data-i18n="pre_footer.title">Need Technical Support?</h2>
+                <p class="text-white/90 text-lg" data-i18n="pre_footer.subtitle">Our engineering team is here to help with your installation challenges.</p>
+            </div>
+            <a href="contact.html" class="bg-amber-400 text-brand-dark px-8 py-3 rounded-full font-bold hover:bg-amber-300 transition shadow-lg shadow-amber-200/50">
+                <span data-i18n="pre_footer.order_samples">Get Support</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-brand-dark pt-20 pb-10 border-t border-gray-800 text-gray-400 text-base">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Legal Disclaimer -->
+            <div class="bg-brand-surface border border-gray-700 rounded-xl p-6 mb-12">
+                <p class="text-sm text-gray-400 text-center" data-i18n="footer.legal_disclaimer">
+                    Disclaimer: All product names, logos, and brands are property of their respective owners. All company, product and service names used in this website are for identification purposes only. Use of these names, logos, and brands does not imply endorsement.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-2 mb-4 text-white">
+                        <i class="fa-solid fa-key text-brand-accent text-xl"></i>
+                        <span class="font-bold text-xl">GateRemote<span class="text-brand-accent">Source</span></span>
+                    </div>
+                    <p class="mb-4" data-i18n="footer.company_description">Your Profit Partner in Access Control. Supplying locksmiths worldwide.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4" data-i18n="footer.products">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="catalog.html" class="hover:text-brand-accent" data-i18n="footer.remotes">Remotes</a></li>
+                        <li><a href="catalog.html" class="hover:text-brand-accent" data-i18n="footer.receivers">Receivers</a></li>
+                        <li><a href="catalog.html" class="hover:text-brand-accent" data-i18n="footer.smart_home">Smart Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4" data-i18n="footer.contact">Contact</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:sales@gateremotesource.com" class="hover:text-brand-accent" data-i18n="footer.email_sales">sales@gateremotesource.com</a></li>
+                        <li><a href="https://wa.me/8615899648898" class="hover:text-brand-accent" data-i18n="footer.whatsapp">+86 158 9964 8898</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4" data-i18n="footer.address">Address</h4>
+                    <p class="flex items-start gap-2"><i class="fa-solid fa-location-dot mt-1 text-brand-accent"></i> Huawei Kegu Industrial Park, Dalingshan Town, Dongguan, Guangdong, China</p>
+                </div>
+            </div>
+            <div class="text-center pt-8 border-t border-gray-800">
+                <span data-i18n="footer.copyright">© 2024 GateRemoteSource. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/8615899648898" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-green-600 text-white rounded-full p-4 shadow-lg flex items-center justify-center transition transform hover:scale-110 animate-bounce-slow">
+        <i class="fa-brands fa-whatsapp text-4xl"></i>
+    </a>
+
+    <!-- LOGIC -->
+    <script>
+        // i18n System
+        let currentLanguage = 'en';
+        let translations = {};
+
+        // Blog posts data
+        const blogPosts = [
+            {
+                title: "How to Clone Rolling Code Remotes in 10 Seconds",
+                category: "TUTORIAL",
+                summary: "Stop wasting time on site. Our new face-to-face duplicator series copies HCS301 instantly.",
+                image: "https://images.unsplash.com/photo-1558002038-1091a166111c?q=80&w=800&auto=format&fit=crop",
+                date: "2024-01-15",
+                readTime: "5 min read"
+            },
+            {
+                title: "Top 5 High-Margin Aftermarket Remotes for 2025",
+                category: "PROFIT TIPS",
+                summary: "Which brands have the most demand? We analyze the market data to help you stock right.",
+                image: "https://plus.unsplash.com/premium_photo-1677005095384-477921810046?q=80&w=800&auto=format&fit=crop",
+                date: "2024-01-10",
+                readTime: "8 min read"
+            },
+            {
+                title: "Universal Receivers: The Fix for Old Gates",
+                category: "TECHNICAL",
+                summary: "When an old receiver board dies, don't replace the motor. Install our $5 receiver.",
+                image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
+                date: "2024-01-05",
+                readTime: "6 min read"
+            },
+            {
+                title: "Troubleshooting 433MHz Interference",
+                category: "TECHNICAL",
+                summary: "Customer complaining about short range? Here is a checklist to identify and fix signal interference on site.",
+                image: "https://images.unsplash.com/photo-1587582541194-591b5c22d9eb?q=80&w=800&auto=format&fit=crop",
+                date: "2023-12-28",
+                readTime: "7 min read"
+            },
+            {
+                title: "Programming Nice SMILO Compatible Remotes",
+                category: "GUIDE",
+                summary: "Step-by-step instructions for programming our Nice-compatible remotes with existing systems.",
+                image: "https://images.unsplash.com/photo-1603792553403-94f2ad1a28c5?q=80&w=800&auto=format&fit=crop",
+                date: "2023-12-20",
+                readTime: "4 min read"
+            },
+            {
+                title: "Market Trends: Smart Integration in Access Control",
+                category: "MARKET ANALYSIS",
+                summary: "How IoT is changing the gate automation industry and opportunities for traditional installers.",
+                image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop",
+                date: "2023-12-15",
+                readTime: "10 min read"
+            }
+        ];
+
+        // Load translations
+        async function loadTranslations(lang) {
+            try {
+                const response = await fetch(`locales/${lang}.json`);
+                translations = await response.json();
+                applyTranslations();
+            } catch (error) {
+                console.error('Error loading translations:', error);
+            }
+        }
+
+        // Helper function to get nested object values by dot notation
+        function getNestedValue(obj, path) {
+            return path.split('.').reduce((current, key) => {
+                return current && current[key] !== undefined ? current[key] : null;
+            }, obj);
+        }
+
+        // Render blog posts
+        function renderBlogs(posts) {
+            const readArticleLabel = getNestedValue(translations, 'blog.read_article') || 'Read Article';
+            const noArticlesLabel = getNestedValue(translations, 'blog.no_articles') || 'No articles found.';
+            
+            const listArea = document.getElementById('blog-list-area');
+            
+            if (listArea) {
+                if(posts.length === 0) {
+                    listArea.innerHTML = `<p class="text-gray-400">${noArticlesLabel}</p>`;
+                    return;
+                }
+                listArea.innerHTML = posts.map(post => `
+                    <article class="flex flex-col md:flex-row gap-6 bg-brand-dark p-6 rounded-xl border border-gray-700 hover:border-brand-accent transition group">
+                        <div class="w-full md:w-48 h-48 md:h-32 flex-shrink-0 rounded-lg overflow-hidden relative">
+                            <img src="${post.image}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="flex-1 flex flex-col justify-center">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="text-xs font-bold text-brand-accent uppercase tracking-wider bg-brand-surface px-2 py-1 rounded">${post.category}</span>
+                                <span class="text-xs text-gray-500">${post.date}</span>
+                                <span class="text-xs text-gray-500">${post.readTime}</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand-accent transition">${post.title}</h3>
+                            <p class="text-gray-400 text-sm mb-2 line-clamp-2">${post.summary}</p>
+                            <a href="#" class="text-brand-accent font-bold text-sm hover:text-white inline-flex items-center">${readArticleLabel} <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                        </div>
+                    </article>
+                `).join('');
+            }
+        }
+
+        // Filter blogs
+        window.filterBlogs = function() {
+            const query = document.getElementById('blogSearch').value.toLowerCase();
+            const filtered = blogPosts.filter(post => 
+                post.title.toLowerCase().includes(query) || 
+                post.summary.toLowerCase().includes(query) ||
+                post.category.toLowerCase().includes(query)
+            );
+            renderBlogs(filtered);
+        }
+
+        // Apply translations to DOM
+        function applyTranslations() {
+            // Update meta tags
+            if (translations.meta) {
+                document.getElementById('meta-title').textContent = translations.meta.title;
+                document.getElementById('meta-description').content = translations.meta.description;
+                document.getElementById('meta-keywords').content = translations.meta.keywords;
+            }
+
+            // Update elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                const value = getNestedValue(translations, key);
+                if (value) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = value;
+                    } else {
+                        element.textContent = value;
+                    }
+                }
+            });
+
+            // Update placeholders
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+                const key = element.getAttribute('data-i18n-placeholder');
+                const value = getNestedValue(translations, key);
+                if (value) {
+                    element.placeholder = value;
+                }
+            });
+
+            // Update copyright year
+            const copyrightElement = document.querySelector('[data-i18n="footer.copyright"]');
+            if (copyrightElement && translations.footer && translations.footer.copyright) {
+                copyrightElement.textContent = translations.footer.copyright.replace('{year}', new Date().getFullYear());
+            }
+
+            // Re-render blogs with translated content
+            renderBlogs(blogPosts);
+        }
+
+        // Language switching
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            loadTranslations(lang);
+            
+            // Update language dropdown
+            const flags = {
+                'en': '🇬🇧',
+                'es': '🇪🇸',
+                'de': '🇩🇪',
+                'it': '🇮🇹',
+                'fr': '🇫🇷'
+            };
+            
+            const langNames = {
+                'en': 'EN',
+                'es': 'ES',
+                'de': 'DE',
+                'it': 'IT',
+                'fr': 'FR'
+            };
+            
+            const flagElement = document.getElementById('currentFlag');
+            const langElement = document.getElementById('currentLang');
+            if (flagElement) flagElement.textContent = flags[lang];
+            if (langElement) langElement.textContent = langNames[lang];
+            
+            // Update HTML lang attribute for SEO
+            document.documentElement.setAttribute('lang', lang);
+            
+            // Persist language in query string
+            const url = new URL(window.location);
+            url.searchParams.set('lang', lang);
+            if (history.replaceState) history.replaceState(null, '', url.toString());
+            
+            // Hide dropdown
+            const dropdown = document.getElementById('languageDropdown');
+            if (dropdown) dropdown.classList.add('hidden');
+        }
+
+        // Language dropdown toggle
+        document.getElementById('languageDropdownBtn').addEventListener('click', function() {
+            document.getElementById('languageDropdown').classList.toggle('hidden');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('languageDropdown');
+            const button = document.getElementById('languageDropdownBtn');
+            if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.classList.add('hidden');
+            }
+        });
+
+        // Mobile menu
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+
+        // Initialize
+        loadTranslations('en');
+        renderBlogs(blogPosts);
+
+        // Language detection
+        const supportedLangs = ['en', 'es', 'de', 'it', 'fr'];
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchLang = urlParams.get('lang');
+        
+        // Set initial language from URL or default to English
+        const initialLang = supportedLangs.includes(searchLang) ? searchLang : 'en';
+        
+        // Only change language if different from default (English)
+        if (initialLang !== 'en') {
+            loadTranslations(initialLang).then(() => {
+                changeLanguage(initialLang);
+            });
+        }
+    </script>
+    
+    <style>
+        @keyframes bounce-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .animate-bounce-slow { animation: bounce-slow 3s infinite; }
+    </style>
+</body>
+</html>
