@@ -1054,6 +1054,62 @@
         // i18n System
         let currentLanguage = 'en';
         let translations = {};
+        const defaultLanguageSnapshot = {
+            meta: {},
+            text: {},
+            placeholders: {}
+        };
+
+        function captureDefaultLanguage() {
+            const metaTitle = document.getElementById('meta-title');
+            const metaDescription = document.getElementById('meta-description');
+            const metaKeywords = document.getElementById('meta-keywords');
+            if (metaTitle) defaultLanguageSnapshot.meta.title = metaTitle.textContent;
+            if (metaDescription) defaultLanguageSnapshot.meta.description = metaDescription.content;
+            if (metaKeywords) defaultLanguageSnapshot.meta.keywords = metaKeywords.content;
+
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                const value = (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') ? element.placeholder : element.textContent;
+                defaultLanguageSnapshot.text[key] = value;
+            });
+
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+                const key = element.getAttribute('data-i18n-placeholder');
+                defaultLanguageSnapshot.placeholders[key] = element.placeholder;
+            });
+        }
+
+        function applyDefaultLanguage() {
+            const metaTitle = document.getElementById('meta-title');
+            const metaDescription = document.getElementById('meta-description');
+            const metaKeywords = document.getElementById('meta-keywords');
+            if (metaTitle && defaultLanguageSnapshot.meta.title) metaTitle.textContent = defaultLanguageSnapshot.meta.title;
+            if (metaDescription && defaultLanguageSnapshot.meta.description) metaDescription.content = defaultLanguageSnapshot.meta.description;
+            if (metaKeywords && defaultLanguageSnapshot.meta.keywords) metaKeywords.content = defaultLanguageSnapshot.meta.keywords;
+
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                const value = defaultLanguageSnapshot.text[key];
+                if (value !== undefined) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = value;
+                    } else {
+                        element.textContent = value;
+                    }
+                }
+            });
+
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+                const key = element.getAttribute('data-i18n-placeholder');
+                const value = defaultLanguageSnapshot.placeholders[key];
+                if (value !== undefined) {
+                    element.placeholder = value;
+                }
+            });
+
+            renderBlogs(getBlogPosts());
+        }
 
         // Load translations
         async function loadTranslations(lang) {
@@ -1158,8 +1214,15 @@
 
         // Language switching
         function changeLanguage(lang) {
+            if (lang === currentLanguage && lang === 'en') return;
             currentLanguage = lang;
-            loadTranslations(lang);
+            
+            if (lang === 'en') {
+                translations = {};
+                applyDefaultLanguage();
+            } else {
+                loadTranslations(lang);
+            }
             
             // Update language dropdown
             const flags = {
@@ -1212,8 +1275,8 @@
             }
         });
 
-        // Initialize
-        loadTranslations('en');
+        // Initialize defaults before any language swap to avoid first-render flicker
+        captureDefaultLanguage();
 
         // Language detection optimized for non-language subdirectory deployments
         // Only uses query parameters to avoid conflicts with paths like /app/, /admin/, etc.
@@ -1226,10 +1289,7 @@
         
         // Only change language if different from default (English)
         if (initialLang !== 'en') {
-            // Load translations immediately for non-English languages
-            loadTranslations(initialLang).then(() => {
-                changeLanguage(initialLang);
-            });
+            changeLanguage(initialLang);
         }
 
         // SPA Navigation
