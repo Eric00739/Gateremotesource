@@ -6,8 +6,8 @@
     
     <!-- SEO Meta Tags -->
     <title id="meta-title">Contact GateRemoteSource | Open Wholesale Account | Get Price List</title>
-    <meta id="meta-description" name="description" content="Contact GateRemoteSource to open a wholesale account and get pricing for aftermarket garage door remotes and receivers. Fast response via WhatsApp and email.">
-    <meta id="meta-keywords" name="keywords" content="Contact GateRemoteSource, Wholesale Account, Price List, Garage Remote Distributor, WhatsApp Support">
+    <meta id="meta-description" name="description" content="Contact GateRemoteSource to open a wholesale account and get pricing for aftermarket garage door remotes and receivers. Gate remote manufacturer in Dongguan supporting UK distributors for 433MHz remotes and Nice/Came compatible remotes across Europe.">
+    <meta id="meta-keywords" name="keywords" content="Contact GateRemoteSource, Wholesale Account, Price List, Garage Remote Distributor, WhatsApp Support, gate remote manufacturer Dongguan, wholesale 433MHz remote control UK distributor, Nice Came compatible remote Europe">
     <meta name="author" content="GateRemoteSource">
     
     <!-- Favicon -->
@@ -21,6 +21,15 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
 
     <!-- Custom Configuration -->
     <script>
@@ -135,8 +144,8 @@
                         </div>
                     </div>
 
-                    <a href="/contact" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-2 rounded-lg font-bold transition shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login">
-                        Dealer Login
+                    <a href="/contact" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-2 rounded-lg font-bold transition shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_distributor_portal_contact">
+                        Distributor Portal
                     </a>
                 </div>
 
@@ -157,7 +166,7 @@
                 <a href="/oem" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.oem">OEM/ODM</a>
                 <a href="/about" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.about">About</a>
                 <a href="/blog" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.blog">Blog</a>
-                <a href="/contact" class="block px-3 py-3 rounded-md text-base font-medium text-brand-accent font-bold" data-i18n="navigation.contact">Contact Us</a>
+                <a href="/contact" class="block px-3 py-3 rounded-md text-base font-medium text-brand-accent font-bold" data-i18n="navigation.contact" data-cta="mobile_apply_wholesale_contact">Apply for Wholesale Account</a>
             </div>
         </div>
     </nav>
@@ -167,7 +176,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h1 class="text-4xl md:text-5xl font-bold text-white mb-4" data-i18n="contact.title">Open Wholesale Account</h1>
-                <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="contact.subtitle">Join our network of 500+ distributors. Get the price list today.</p>
+                <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="contact.subtitle">Apply through our Distributor Portal for the price list and sample kit access. Built for UK/EU distributors buying 433.92MHz and Nice/Came compatible remotes direct from Dongguan.</p>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div class="space-y-8">
@@ -199,42 +208,39 @@
                             <p class="text-gray-400">Priority lanes: UK/EU, Middle East, LATAM; ship via DHL/FedEx.</p>
                         </div>
                     </div>
+                    <div class="bg-brand-surface p-6 rounded-xl border border-gray-700 flex items-start gap-4">
+                        <div class="bg-amber-400/20 p-3 rounded-full"><i class="fa-solid fa-door-open text-amber-300 text-xl"></i></div>
+                        <div>
+                            <h4 class="text-white font-bold">Distributor Portal</h4>
+                            <p class="text-gray-400 text-sm">Single entry for price list + sample kit. Built for wholesale 433MHz remote control UK distributors and Europe partners.</p>
+                            <a href="/contact" class="text-brand-accent font-bold text-sm hover:text-white" data-cta="portal_cta_contact">Apply for Wholesale Account</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="bg-brand-surface p-8 rounded-2xl border border-gray-700 shadow-2xl">
                     <!-- Form with visual feedback -->
                     <form onsubmit="event.preventDefault(); showSuccessMessage();" class="space-y-5">
-                        <h3 class="text-white text-xl font-bold mb-2" data-i18n="contact.inquire_now.title">Inquire Now</h3>
-                        <div>
-                            <label class="block text-gray-400 text-sm mb-2" data-i18n="contact.email_label">Email</label>
-                            <input type="email" id="contactEmail" class="w-full bg-brand-dark border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-brand-accent transition" required>
-                        </div>
-                        <div>
-                            <label class="block text-gray-400 text-sm mb-2" data-i18n="contact.company_label">Company</label>
-                            <input type="text" id="contactCompany" class="w-full bg-brand-dark border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-brand-accent transition">
-                        </div>
-                        <div>
-                            <label class="block text-gray-400 text-sm mb-2" data-i18n="contact.message_label">Message</label>
-                            <textarea rows="4" id="contactMessage" class="w-full bg-brand-dark border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-brand-accent transition" data-i18n-placeholder="contact.message_placeholder"></textarea>
-                        </div>
-                        <div>
-                            <label class="block text-gray-400 text-sm mb-2">I'm interested in:</label>
-                            <div class="space-y-2">
-                                <label class="flex items-center text-gray-300">
-                                    <input type="checkbox" class="mr-2 bg-brand-dark border-gray-600 rounded text-brand-accent focus:ring-brand-accent">
-                                    <span>Wholesale Pricing</span>
-                                </label>
-                                <label class="flex items-center text-gray-300">
-                                    <input type="checkbox" class="mr-2 bg-brand-dark border-gray-600 rounded text-brand-accent focus:ring-brand-accent">
-                                    <span>Sample Kit</span>
-                                </label>
-                                <label class="flex items-center text-gray-300">
-                                    <input type="checkbox" class="mr-2 bg-brand-dark border-gray-600 rounded text-brand-accent focus:ring-brand-accent">
-                                    <span>OEM/ODM Services</span>
-                                </label>
+                        <h3 class="text-white text-xl font-bold mb-2" data-i18n="contact.inquire_now.title">Apply for Wholesale Account</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-400 text-sm mb-2" data-i18n="contact.company_label">Company</label>
+                                <input type="text" id="contactCompany" class="w-full bg-brand-dark border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-brand-accent transition" placeholder="Distributor / Installer" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-400 text-sm mb-2" data-i18n="contact.email_label">Email</label>
+                                <input type="email" id="contactEmail" class="w-full bg-brand-dark border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-brand-accent transition" required>
                             </div>
                         </div>
-                        <button type="submit" class="w-full bg-brand-accent hover:bg-brand-hover text-white font-bold py-4 rounded-lg transition transform hover:scale-[1.02] shadow-lg">
-                            <span data-i18n="contact.submit_button">Request Price List</span>
+                        <div>
+                            <label class="block text-gray-400 text-sm mb-2">Product</label>
+                            <input type="text" id="contactProduct" class="w-full bg-brand-dark border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-brand-accent transition" placeholder="e.g. Nice/Came compatible remote" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-400 text-sm mb-2">Quantity</label>
+                            <input type="number" id="contactQuantity" min="1" class="w-full bg-brand-dark border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-brand-accent transition" placeholder="MOQ or expected order" required>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-accent hover:bg-brand-hover text-white font-bold py-4 rounded-lg transition transform hover:scale-[1.02] shadow-lg" data-cta="form_submit_contact">
+                            <span data-i18n="contact.submit_button">Apply for Wholesale Account</span>
                         </button>
                     </form>
                     
@@ -405,8 +411,23 @@
             }, obj);
         }
 
+        function trackCtaClick(label) {
+            if (typeof gtag === 'function') {
+                gtag('event', 'cta_click', { event_category: 'engagement', event_label: label });
+            }
+        }
+
+        function attachCtaTracking() {
+            document.querySelectorAll('[data-cta]').forEach(el => {
+                if (el.dataset.ctaBound === 'true') return;
+                el.addEventListener('click', () => trackCtaClick(el.dataset.cta));
+                el.dataset.ctaBound = 'true';
+            });
+        }
+
         // Show success message
         function showSuccessMessage() {
+            trackCtaClick('form_submit_contact');
             const successMsg = document.getElementById('successMessage');
             successMsg.classList.remove('hidden');
             
@@ -526,6 +547,7 @@
 
         // Initialize
         loadTranslations('en');
+        attachCtaTracking();
 
         // Language detection
         const supportedLangs = ['en', 'es', 'de', 'it', 'fr'];

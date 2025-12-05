@@ -6,8 +6,8 @@
     
     <!-- SEO Meta Tags -->
     <title id="meta-title">Catalog | GateRemoteSource | Wholesale Aftermarket Garage Door Remotes & Receivers</title>
-    <meta id="meta-description" name="description" content="Comprehensive catalog of 100% compatible garage door remotes and universal receivers. High-margin aftermarket solutions for professional installers.">
-    <meta id="meta-keywords" name="keywords" content="Garage Remote Catalog, Universal Receivers, Aftermarket Remotes, Wholesale Gate Controls, Locksmith Supplies">
+    <meta id="meta-description" name="description" content="Comprehensive catalog of 100% compatible garage door remotes and universal receivers. Gate remote manufacturer in Dongguan powering UK/EU distributors of 433MHz and Nice/Came compatible remotes across Europe.">
+    <meta id="meta-keywords" name="keywords" content="Garage Remote Catalog, Universal Receivers, Aftermarket Remotes, Wholesale Gate Controls, Locksmith Supplies, gate remote manufacturer Dongguan, wholesale 433MHz remote control UK distributor, Nice Came compatible remote Europe">
     <meta name="author" content="GateRemoteSource">
     
     <!-- Favicon -->
@@ -21,6 +21,15 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
 
     <!-- Custom Configuration -->
     <script>
@@ -75,6 +84,19 @@
             outline: none;
         }
         .lang-select option { background-color: #0f172a; color: white; }
+
+        /* Mobile-first compatibility cards */
+        .compat-card {
+            border: 1px solid #334155;
+            background: #0f172a;
+            border-radius: 0.75rem;
+        }
+        .compat-card .label {
+            color: #9ca3af;
+            font-size: 0.75rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
     </style>
 </head>
 <body class="font-sans text-gray-300 bg-brand-dark selection:bg-brand-accent selection:text-white flex flex-col min-h-screen">
@@ -135,8 +157,8 @@
                         </div>
                     </div>
 
-                    <a href="/contact" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-2 rounded-lg font-bold transition shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login">
-                        Dealer Login
+                    <a href="/contact" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-2 rounded-lg font-bold transition shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_distributor_portal_catalog">
+                        Distributor Portal
                     </a>
                 </div>
 
@@ -157,7 +179,7 @@
                 <a href="/oem" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.oem">OEM/ODM</a>
                 <a href="/about" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.about">About</a>
                 <a href="/blog" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.blog">Blog</a>
-                <a href="/contact" class="block px-3 py-3 rounded-md text-base font-medium text-brand-accent font-bold" data-i18n="navigation.contact">Contact Us</a>
+                <a href="/contact" class="block px-3 py-3 rounded-md text-base font-medium text-brand-accent font-bold" data-i18n="navigation.contact" data-cta="mobile_apply_wholesale_catalog">Apply for Wholesale Account</a>
             </div>
         </div>
     </nav>
@@ -168,6 +190,7 @@
             <div class="text-center mb-16">
                 <h1 class="text-4xl md:text-5xl font-bold text-white mb-6" data-i18n="products_page.title">Wholesale Catalog</h1>
                 <p class="text-gray-400 max-w-2xl mx-auto text-lg" data-i18n="products_page.subtitle">Comprehensive aftermarket solutions for professional installers.</p>
+                <p class="text-sm text-amber-300 max-w-2xl mx-auto">Wholesale 433MHz remote control UK distributor ready stock; Nice/Came compatible remote options for Europe.</p>
             </div>
             
             <!-- Category Filter -->
@@ -192,7 +215,7 @@
                         <p class="text-gray-400 text-sm mb-4" data-i18n="products_page.nice_description">Compatible with SM2/SM4. Round black styling. High durability buttons.</p>
                         <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-700">
                             <span class="text-xs text-gray-500" data-i18n="products_page.moq_50pcs">MOQ: 50pcs</span>
-                            <a href="/contact" class="text-brand-accent font-bold text-sm hover:text-white" data-i18n="products_page.get_price">Get Price -></a>
+                            <a href="/contact" class="text-brand-accent font-bold text-sm hover:text-white" data-i18n="products_page.get_price" data-cta="catalog_card_apply_wholesale_cloner">Apply for Wholesale Account</a>
                         </div>
                     </div>
                 </div>
@@ -209,7 +232,7 @@
                         <p class="text-gray-400 text-sm mb-4" data-i18n="products_page.universal_description">4-Channel duplicator. Copies 95% of fixed codes and many rolling codes (HCS301).</p>
                         <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-700">
                             <span class="text-xs text-gray-500" data-i18n="products_page.moq_100pcs">MOQ: 100pcs</span>
-                            <a href="/contact" class="text-brand-accent font-bold text-sm hover:text-white" data-i18n="products_page.get_price">Get Price -></a>
+                            <a href="/contact" class="text-brand-accent font-bold text-sm hover:text-white" data-i18n="products_page.get_price" data-cta="catalog_card_apply_wholesale_facecopy">Apply for Wholesale Account</a>
                         </div>
                     </div>
                 </div>
@@ -226,7 +249,7 @@
                         <p class="text-gray-400 text-sm mb-4" data-i18n="products_page.mini_description">Compact design fits in motor box. AC/DC 12-24V input. 400 user capacity.</p>
                         <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-700">
                             <span class="text-xs text-gray-500" data-i18n="products_page.moq_50pcs">MOQ: 50pcs</span>
-                            <a href="/contact" class="text-brand-accent font-bold text-sm hover:text-white" data-i18n="products_page.get_price">Get Price -></a>
+                            <a href="/contact" class="text-brand-accent font-bold text-sm hover:text-white" data-i18n="products_page.get_price" data-cta="catalog_card_apply_wholesale_receiver">Apply for Wholesale Account</a>
                         </div>
                     </div>
                 </div>
@@ -236,7 +259,7 @@
             <div class="bg-brand-surface p-8 rounded-2xl border border-gray-700 text-center">
                 <h2 class="text-2xl font-bold text-white mb-4" data-i18n="products_page.catalog_download">Need the Full 2025 Catalog?</h2>
                 <p class="text-gray-400 mb-8" data-i18n="products_page.catalog_description">Download our complete PDF catalog with technical specifications for over 200 products.</p>
-                <a href="/contact" class="bg-white text-brand-dark px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition shadow-lg">
+                <a href="/contact" class="bg-white text-brand-dark px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition shadow-lg" data-cta="download_catalog_pdf">
                     <span data-i18n="products_page.download_pdf_catalog">Download PDF Catalog</span>
                 </a>
             </div>
@@ -285,6 +308,36 @@
                     <p class="text-gray-300 leading-relaxed">"Sample kit closed my first dealership order in a week. Clients love the metal build quality."</p>
                 </div>
             </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden">
+                <div class="compat-card p-5 border border-gray-700">
+                    <p class="label mb-1">OEM Model</p>
+                    <h4 class="text-white font-bold text-lg">Nice FLO2R</h4>
+                    <p class="text-gray-300 text-sm mt-1">Our Compatible: <span class="text-brand-accent font-semibold">GRS-FLO2</span></p>
+                    <p class="text-gray-400 text-sm">Frequency: 433.92MHz</p>
+                    <p class="text-gray-400 text-sm">Fixed code, metal frame, high range</p>
+                </div>
+                <div class="compat-card p-5 border border-gray-700">
+                    <p class="label mb-1">OEM Model</p>
+                    <h4 class="text-white font-bold text-lg">CAME TOP432EV</h4>
+                    <p class="text-gray-300 text-sm mt-1">Our Compatible: <span class="text-brand-accent font-semibold">GRS-CAME2</span></p>
+                    <p class="text-gray-400 text-sm">Frequency: 433.92MHz</p>
+                    <p class="text-gray-400 text-sm">Face-to-face clone in 10s</p>
+                </div>
+                <div class="compat-card p-5 border border-gray-700">
+                    <p class="label mb-1">OEM Model</p>
+                    <h4 class="text-white font-bold text-lg">HORMANN HSE2 BS</h4>
+                    <p class="text-gray-300 text-sm mt-1">Our Compatible: <span class="text-brand-accent font-semibold">GRS-HM868</span></p>
+                    <p class="text-gray-400 text-sm">Frequency: 868.3MHz</p>
+                    <p class="text-gray-400 text-sm">Rolling code, blue button</p>
+                </div>
+                <div class="compat-card p-5 border border-gray-700">
+                    <p class="label mb-1">OEM Model</p>
+                    <h4 class="text-white font-bold text-lg">LIFTMASTER 971LM</h4>
+                    <p class="text-gray-300 text-sm mt-1">Our Compatible: <span class="text-brand-accent font-semibold">GRS-LM390</span></p>
+                    <p class="text-gray-400 text-sm">Frequency: 390MHz</p>
+                    <p class="text-gray-400 text-sm">Includes visor clip</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -295,7 +348,7 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Top Requested Compatibilities</h2>
                 <p class="text-gray-400 max-w-3xl mx-auto">Quick reference for your sales reps when customers ask for replacements.</p>
             </div>
-            <div class="overflow-x-auto">
+            <div class="hidden md:block overflow-x-auto">
                 <table class="w-full text-left text-gray-300 border border-gray-700 rounded-2xl overflow-hidden">
                     <thead class="bg-brand-dark text-gray-200 uppercase text-xs tracking-wider">
                         <tr>
@@ -447,6 +500,20 @@
             }, obj);
         }
 
+        function trackCtaClick(label) {
+            if (typeof gtag === 'function') {
+                gtag('event', 'cta_click', { event_category: 'engagement', event_label: label });
+            }
+        }
+
+        function attachCtaTracking() {
+            document.querySelectorAll('[data-cta]').forEach(el => {
+                if (el.dataset.ctaBound === 'true') return;
+                el.addEventListener('click', () => trackCtaClick(el.dataset.cta));
+                el.dataset.ctaBound = 'true';
+            });
+        }
+
         // Apply translations to DOM
         function applyTranslations() {
             // Update meta tags
@@ -546,6 +613,7 @@
 
         // Initialize
         loadTranslations('en');
+        attachCtaTracking();
 
         // Language detection
         const supportedLangs = ['en', 'es', 'de', 'it', 'fr'];

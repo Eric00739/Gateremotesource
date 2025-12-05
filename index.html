@@ -6,8 +6,8 @@
     
     <!-- SEO Meta Tags (Final Polish) -->
     <title id="meta-title">GateRemoteSource | Wholesale Aftermarket Garage Door Remotes & Receivers</title>
-    <meta id="meta-description" name="description" content="Your #1 Source for Brand Compatible Garage Door Remotes & Universal Receivers. High-margin aftermarket solutions specifically for Installers & Locksmiths. Replaces Nice, Came, Liftmaster & more.">
-    <meta id="meta-keywords" name="keywords" content="Aftermarket Garage Remote, Universal Gate Receiver, Rolling Code Replacement, Remote Control Duplicator, Wholesale Gate Clickers, Locksmith Supplies, GateRemoteSource">
+    <meta id="meta-description" name="description" content="Your #1 Source for Brand Compatible Garage Door Remotes & Universal Receivers. High-margin aftermarket solutions specifically for Installers & Locksmiths. Gate remote manufacturer in Dongguan serving UK/EU wholesale distributors for 433MHz remotes and Nice/Came compatible remotes across Europe.">
+    <meta id="meta-keywords" name="keywords" content="Aftermarket Garage Remote, Universal Gate Receiver, Rolling Code Replacement, Remote Control Duplicator, Wholesale Gate Clickers, Locksmith Supplies, GateRemoteSource, gate remote manufacturer Dongguan, wholesale 433MHz remote control UK distributor, Nice Came compatible remote Europe">
     <meta name="author" content="GateRemoteSource">
     <link rel="canonical" href="https://gateremotesource.com/">
     <link rel="alternate" href="https://gateremotesource.com/" hreflang="x-default">
@@ -40,6 +40,15 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
 
     <!-- Custom Configuration (Strictly Preserved Dark/Cyan Theme) -->
     <script>
@@ -117,13 +126,9 @@
         .nav-link.active { color: #06b6d4 !important; font-weight: 700; border-bottom: 2px solid #06b6d4; }
         
         /* Page Visibility Logic (SPA) */
-        .page-view { display: none; animation: fadeIn 0.5s ease-out; }
-        .page-view.active { display: block; }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        .page-view { display: none; opacity: 0; transition: opacity 0.35s ease; }
+        .page-view.active { display: block; opacity: 1; }
+        .page-view.fade-visible { opacity: 1; }
 
         /* Language Selector */
         .lang-select {
@@ -150,6 +155,19 @@
         }
         @media (min-width: 768px) {
             .process-line { display: none; }
+        }
+
+        /* Mobile-first compatibility cards */
+        .compat-card {
+            border: 1px solid #334155;
+            background: #0f172a;
+            border-radius: 0.75rem;
+        }
+        .compat-card .label {
+            color: #9ca3af;
+            font-size: 0.75rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
         }
     </style>
     <script type="application/ld+json">
@@ -263,8 +281,8 @@
                         </div>
                     </div>
 
-                    <a href="/contact" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-2 rounded-lg font-bold transition shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login">
-                        Get Trade Prices
+                    <a href="/contact" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-2 rounded-lg font-bold transition shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_distributor_portal">
+                        Distributor Portal
                     </a>
                 </div>
 
@@ -285,7 +303,7 @@
                 <a href="/oem" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.oem">OEM/ODM</a>
                 <a href="/about" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.about">About</a>
                 <a href="/blog" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.blog">Blog</a>
-                <a href="/contact" class="block px-3 py-3 rounded-md text-base font-medium text-brand-accent font-bold" data-i18n="navigation.contact">Contact Us</a>
+                <a href="/contact" class="block px-3 py-3 rounded-md text-base font-medium text-brand-accent font-bold" data-i18n="navigation.contact" data-cta="mobile_apply_wholesale">Apply for Wholesale Account</a>
             </div>
         </div>
     </nav>
@@ -313,8 +331,8 @@
                         Don't lose a sale because the original remote is expensive or discontinued. Stock our Compatible Remotes & Universal Receivers for maximum profit.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-5">
-                        <a href="/contact" class="bg-[#FF6600] hover:bg-[#e65c00] text-white text-center px-10 py-4 rounded-lg font-bold text-lg transition transform hover:-translate-y-1 shadow-lg shadow-amber-400/50 inline-block" data-i18n="hero.cta_catalog">
-                            Request B2B Wholesale Price List
+                        <a href="/contact" class="bg-[#FF6600] hover:bg-[#e65c00] text-white text-center px-10 py-4 rounded-lg font-bold text-lg transition transform hover:-translate-y-1 shadow-lg shadow-amber-400/50 inline-block" data-i18n="hero.cta_catalog" data-cta="hero_apply_wholesale">
+                            Apply for Wholesale Account
                         </a>
                         <a href="#compatibility" class="flex items-center justify-center gap-3 border border-brand-accent text-brand-accent hover:border-white hover:text-white hover:bg-white/5 text-center px-10 py-4 rounded-lg font-bold text-lg transition backdrop-blur-sm">
                             <i class="fa-solid fa-database text-2xl"></i> 
@@ -325,6 +343,7 @@
                             <span>Call Sales (GMT+8)</span>
                         </a>
                     </div>
+                    <p class="text-sm text-gray-400 mt-3 max-w-2xl" data-i18n="hero.regional_line">Gate remote manufacturer in Dongguan supporting UK distributors of 433.92MHz remotes and Nice/Came compatible remotes across Europe.</p>
                 </div>
             </div>
             <a href="#" onclick="document.getElementById('products-preview').scrollIntoView({behavior: 'smooth'}); return false;" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-gray-400 hover:text-brand-accent cursor-pointer p-4">
@@ -373,7 +392,10 @@
                         <div class="h-64 bg-gray-900 relative flex items-center justify-center p-4">
                             <div class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded shadow-lg z-10" data-i18n="inventory.card1.badge">High Profit</div>
                             <div class="bg-gray-800 rounded-lg p-8 flex items-center justify-center w-full h-full">
-                                <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=900&q=80" alt="Remote product lineup with brand icons" class="h-full w-full object-cover">
+                                <picture class="w-full h-full">
+                                    <source type="image/webp" srcset="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=900&q=80&fm=webp">
+                                    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=900&q=80" alt="Remote product lineup with brand icons" class="h-full w-full object-cover">
+                                </picture>
                             </div>
                             <!-- Placeholder for: Close-up of a Remote PCB/Circuit Board -->
                         </div>
@@ -393,7 +415,10 @@
                         <div class="h-64 bg-gray-900 relative flex items-center justify-center p-4">
                             <div class="absolute top-4 right-4 bg-brand-accent text-white text-xs font-bold px-3 py-1 rounded shadow-lg z-10" data-i18n="inventory.card2.badge">The Fixer</div>
                             <div class="bg-gray-800 rounded-lg p-8 flex items-center justify-center w-full h-full">
-                                <img src="https://images.unsplash.com/photo-1582719478248-54e9f2b35aff?auto=format&fit=crop&w=900&q=80" alt="Receiver PCB close-up" class="h-full w-full object-cover">
+                                <picture class="w-full h-full">
+                                    <source type="image/webp" srcset="https://images.unsplash.com/photo-1582719478248-54e9f2b35aff?auto=format&fit=crop&w=900&q=80&fm=webp">
+                                    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1582719478248-54e9f2b35aff?auto=format&fit=crop&w=900&q=80" alt="Receiver PCB close-up" class="h-full w-full object-cover">
+                                </picture>
                             </div>
                             <!-- Placeholder for: Receiver wiring diagram or Port Close-up -->
                         </div>
@@ -407,7 +432,10 @@
                         <div class="h-64 bg-gray-900 relative flex items-center justify-center p-4">
                             <div class="absolute top-4 right-4 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded shadow-lg z-10" data-i18n="inventory.card3.badge">Multi-Freq</div>
                             <div class="bg-gray-800 rounded-lg p-8 flex items-center justify-center w-full h-full">
-                                <img src="https://images.unsplash.com/photo-1582719478250-ccd13fcb9a62?auto=format&fit=crop&w=900&q=80" alt="Hand holding remote during pairing" class="h-full w-full object-cover">
+                                <picture class="w-full h-full">
+                                    <source type="image/webp" srcset="https://images.unsplash.com/photo-1582719478250-ccd13fcb9a62?auto=format&fit=crop&w=900&q=80&fm=webp">
+                                    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1582719478250-ccd13fcb9a62?auto=format&fit=crop&w=900&q=80" alt="Hand holding remote during pairing" class="h-full w-full object-cover">
+                                </picture>
                             </div>
                             <!-- Placeholder for: Two remotes cloning signal -->
                         </div>
@@ -438,6 +466,73 @@
                             <a href="/contact" class="bg-white text-brand-dark font-bold px-8 py-4 rounded-xl hover:bg-brand-accent hover:text-white transition shadow-lg transform hover:scale-105 inline-block">
                                 <i class="fa-solid fa-download mr-2"></i> <span data-i18n="inventory.request_full_list">Request Full List</span>
                             </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden">
+                    <div class="compat-card p-5 border border-gray-700">
+                        <p class="label mb-1">OEM Model</p>
+                        <h4 class="text-white font-bold text-lg">Nice FLO2R</h4>
+                        <p class="text-gray-300 text-sm mt-1">Our Compatible: <span class="text-brand-accent font-semibold">GRS-FLO2</span></p>
+                        <p class="text-gray-400 text-sm">Frequency: 433.92MHz</p>
+                        <p class="text-gray-400 text-sm">Fixed code, metal frame, high range</p>
+                    </div>
+                    <div class="compat-card p-5 border border-gray-700">
+                        <p class="label mb-1">OEM Model</p>
+                        <h4 class="text-white font-bold text-lg">CAME TOP432EV</h4>
+                        <p class="text-gray-300 text-sm mt-1">Our Compatible: <span class="text-brand-accent font-semibold">GRS-CAME2</span></p>
+                        <p class="text-gray-400 text-sm">Frequency: 433.92MHz</p>
+                        <p class="text-gray-400 text-sm">Face-to-face clone in 10s</p>
+                    </div>
+                    <div class="compat-card p-5 border border-gray-700">
+                        <p class="label mb-1">OEM Model</p>
+                        <h4 class="text-white font-bold text-lg">HORMANN HSE2 BS</h4>
+                        <p class="text-gray-300 text-sm mt-1">Our Compatible: <span class="text-brand-accent font-semibold">GRS-HM868</span></p>
+                        <p class="text-gray-400 text-sm">Frequency: 868.3MHz</p>
+                        <p class="text-gray-400 text-sm">Rolling code, blue button</p>
+                    </div>
+                    <div class="compat-card p-5 border border-gray-700">
+                        <p class="label mb-1">OEM Model</p>
+                        <h4 class="text-white font-bold text-lg">LIFTMASTER 971LM</h4>
+                        <p class="text-gray-300 text-sm mt-1">Our Compatible: <span class="text-brand-accent font-semibold">GRS-LM390</span></p>
+                        <p class="text-gray-400 text-sm">Frequency: 390MHz</p>
+                        <p class="text-gray-400 text-sm">Includes visor clip</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Distributor Portal CTA -->
+        <section class="py-16 bg-brand-surface border-t border-b border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
+                    <div class="lg:col-span-1 space-y-4">
+                        <span class="text-brand-accent font-bold uppercase tracking-wider text-sm">Distributor Portal</span>
+                        <h3 class="text-3xl font-bold text-white leading-tight">Price List & Sample Kit in One Secure Entry</h3>
+                        <p class="text-gray-400">Built for wholesale 433MHz remote control UK/EU distributors who need fast access to Nice/Came compatible remotes across Europe.</p>
+                        <a href="/contact" class="inline-flex items-center gap-2 bg-[#FF6600] hover:bg-[#e65c00] text-white px-6 py-3 rounded-lg font-bold transition shadow-lg shadow-amber-400/40" data-cta="portal_access">
+                            Apply for Wholesale Account
+                            <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </a>
+                    </div>
+                    <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="compat-card p-6 border border-gray-700 shadow-lg">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="h-10 w-10 rounded-full bg-brand-accent/15 flex items-center justify-center text-brand-accent"><i class="fa-solid fa-list"></i></div>
+                                <p class="label">Price List</p>
+                            </div>
+                            <h4 class="text-white font-bold text-xl mb-2">Live Margin-Ready Pricing</h4>
+                            <p class="text-gray-400 text-sm mb-3">Download current FOB Dongguan sheets with distributor tiers and suggested UK retail.</p>
+                            <button onclick="navigateTo('contact')" class="text-brand-accent font-bold hover:text-white text-sm" data-cta="portal_price_list">Get Updated Sheet</button>
+                        </div>
+                        <div class="compat-card p-6 border border-gray-700 shadow-lg">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="h-10 w-10 rounded-full bg-amber-400/20 flex items-center justify-center text-amber-300"><i class="fa-solid fa-box-open"></i></div>
+                                <p class="label">Sample Kit</p>
+                            </div>
+                            <h4 class="text-white font-bold text-xl mb-2">Pre-Loaded Demo Box</h4>
+                            <p class="text-gray-400 text-sm mb-3">Includes Nice/Came compatible remotes and universal receivers ready for UK site demos.</p>
+                            <a href="/contact" class="text-amber-300 font-bold hover:text-white text-sm" data-cta="portal_sample_kit">Request Sample Kit</a>
                         </div>
                     </div>
                 </div>
@@ -648,7 +743,7 @@
                             <p class="text-gray-400 text-sm mb-4" data-i18n="products_page.nice_description">Compatible with SM2/SM4. Round black styling. High durability buttons.</p>
                             <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-700">
                                 <span class="text-xs text-gray-500" data-i18n="products_page.moq_50pcs">MOQ: 50pcs</span>
-                                <button onclick="navigateTo('contact')" class="text-brand-accent font-bold text-sm hover:text-white" data-i18n="products_page.get_price">Get Price -></button>
+                                <button onclick="navigateTo('contact')" class="text-brand-accent font-bold text-sm hover:text-white" data-i18n="products_page.get_price" data-cta="card_apply_wholesale_cloner">Apply for Wholesale Account</button>
                             </div>
                         </div>
                     </div>
@@ -665,7 +760,7 @@
                             <p class="text-gray-400 text-sm mb-4" data-i18n="products_page.universal_description">4-Channel duplicator. Copies 95% of fixed codes and many rolling codes (HCS301).</p>
                             <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-700">
                                 <span class="text-xs text-gray-500" data-i18n="products_page.moq_100pcs">MOQ: 100pcs</span>
-                                <button onclick="navigateTo('contact')" class="text-brand-accent font-bold text-sm hover:text-white" data-i18n="products_page.get_price">Get Price -></button>
+                                <button onclick="navigateTo('contact')" class="text-brand-accent font-bold text-sm hover:text-white" data-i18n="products_page.get_price" data-cta="card_apply_wholesale_receiver">Apply for Wholesale Account</button>
                             </div>
                         </div>
                     </div>
@@ -682,7 +777,7 @@
                             <p class="text-gray-400 text-sm mb-4" data-i18n="products_page.mini_description">Compact design fits in motor box. AC/DC 12-24V input. 400 user capacity.</p>
                             <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-700">
                                 <span class="text-xs text-gray-500" data-i18n="products_page.moq_50pcs">MOQ: 50pcs</span>
-                                <button onclick="navigateTo('contact')" class="text-brand-accent font-bold text-sm hover:text-white" data-i18n="products_page.get_price">Get Price -></button>
+                                <button onclick="navigateTo('contact')" class="text-brand-accent font-bold text-sm hover:text-white" data-i18n="products_page.get_price" data-cta="card_apply_wholesale_facecopy">Apply for Wholesale Account</button>
                             </div>
                         </div>
                     </div>
@@ -750,8 +845,9 @@
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Top Requested Compatibilities</h2>
                     <p class="text-gray-400 max-w-3xl mx-auto">Quick reference for your sales reps when customers ask for replacements.</p>
+                    <p class="text-sm text-amber-300">Nice Came compatible remote Europe ready for distributor rollouts.</p>
                 </div>
-                <div class="overflow-x-auto">
+                <div class="hidden md:block overflow-x-auto">
                     <table class="w-full text-left text-gray-300 border border-gray-700 rounded-2xl overflow-hidden">
                         <thead class="bg-brand-dark text-gray-200 uppercase text-xs tracking-wider">
                             <tr>
@@ -894,7 +990,10 @@
                         </div>
                     </div>
                     <div>
-                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop" class="rounded-2xl shadow-2xl border border-gray-700 w-full mb-6">
+                        <picture>
+                            <source type="image/webp" srcset="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80&fm=webp">
+                            <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop" class="rounded-2xl shadow-2xl border border-gray-700 w-full mb-6" alt="Factory production in Dongguan">
+                        </picture>
                     </div>
                 </div>
 
@@ -1032,18 +1131,28 @@
                     <div class="bg-brand-surface p-8 rounded-2xl border border-gray-700 shadow-2xl">
                         <!-- Form with visual feedback -->
                         <form id="contactForm" class="space-y-5">
-                            <h3 class="text-white text-xl font-bold mb-2" data-i18n="contact.inquire_now.title">Inquire Now</h3>
-                            <div>
-                                <label class="block text-gray-400 text-sm mb-2" data-i18n="contact.email_label">Email</label>
-                                <input type="email" name="email" class="w-full bg-brand-dark border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-brand-accent transition" required>
+                            <h3 class="text-white text-xl font-bold mb-2" data-i18n="contact.inquire_now.title">Apply for Wholesale Account</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-gray-400 text-sm mb-2">Company Name</label>
+                                    <input type="text" name="company" class="w-full bg-brand-dark border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-brand-accent transition" placeholder="Distributor / Installer" required>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-400 text-sm mb-2" data-i18n="contact.email_label">Email</label>
+                                    <input type="email" name="email" class="w-full bg-brand-dark border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-brand-accent transition" required>
+                                </div>
                             </div>
                             <div>
-                                <label class="block text-gray-400 text-sm mb-2" data-i18n="contact.message_label">Message</label>
-                                <textarea rows="4" name="message" class="w-full bg-brand-dark border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-brand-accent transition" data-i18n-placeholder="contact.message_placeholder" required></textarea>
+                                <label class="block text-gray-400 text-sm mb-2">Product Needed</label>
+                                <input type="text" name="product" class="w-full bg-brand-dark border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-brand-accent transition" placeholder="e.g. Nice/Came compatible remote" required>
                             </div>
-                            <input type="hidden" name="_subject" value="Wholesale inquiry from GateRemoteSource.com">
-                            <button type="submit" class="w-full bg-brand-accent hover:bg-brand-hover text-white font-bold py-4 rounded-lg transition transform hover:scale-[1.02] shadow-lg">
-                                <span data-i18n="contact.submit_button">Request Price List</span>
+                            <div>
+                                <label class="block text-gray-400 text-sm mb-2">Quantity</label>
+                                <input type="number" name="quantity" min="1" class="w-full bg-brand-dark border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-brand-accent transition" placeholder="MOQ or expected order" required>
+                            </div>
+                            <input type="hidden" name="_subject" value="Wholesale account application from GateRemoteSource.com">
+                            <button type="submit" class="w-full bg-brand-accent hover:bg-brand-hover text-white font-bold py-4 rounded-lg transition transform hover:scale-[1.02] shadow-lg" data-cta="form_submit_home">
+                                <span data-i18n="contact.submit_button">Apply for Wholesale Account</span>
                             </button>
                             <p id="form-status" class="text-sm text-gray-300 hidden"></p>
                         </form>
@@ -1201,28 +1310,28 @@
                 title: "How to Clone Rolling Code Remotes in 10 Seconds",
                 category: "TUTORIAL",
                 summary: "Stop wasting time on site. Our new face-to-face duplicator series copies HCS301 instantly.",
-                image: "https://images.unsplash.com/photo-1558002038-1091a166111c?q=80&w=800&auto=format&fit=crop",
+                image: "https://images.unsplash.com/photo-1558002038-1091a166111c?auto=format&fit=crop&w=800&q=80&fm=webp",
                 link: "#"
             },
             {
                 title: "Top 5 High-Margin Aftermarket Remotes for 2025",
                 category: "PROFIT TIPS",
                 summary: "Which brands have the most demand? We analyze the market data to help you stock right.",
-                image: "https://plus.unsplash.com/premium_photo-1677005095384-477921810046?q=80&w=800&auto=format&fit=crop",
+                image: "https://plus.unsplash.com/premium_photo-1677005095384-477921810046?auto=format&fit=crop&w=800&q=80&fm=webp",
                 link: "#"
             },
             {
                 title: "Universal Receivers: The Fix for Old Gates",
                 category: "TECHNICAL",
                 summary: "When an old receiver board dies, don't replace the motor. Install our $5 receiver.",
-                image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
+                image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80&fm=webp",
                 link: "#"
             },
             {
                 title: "Troubleshooting 433MHz Interference",
                 category: "TECHNICAL",
                 summary: "Customer complaining about short range? Here is a checklist to identify and fix signal interference on site.",
-                image: "https://images.unsplash.com/photo-1587582541194-591b5c22d9eb?q=80&w=800&auto=format&fit=crop",
+                image: "https://images.unsplash.com/photo-1587582541194-591b5c22d9eb?auto=format&fit=crop&w=800&q=80&fm=webp",
                 link: "#"
             }
         ];
@@ -1365,26 +1474,44 @@
             updateView(pageId);
         }
 
+        function trackCtaClick(label) {
+            if (typeof gtag === 'function') {
+                gtag('event', 'cta_click', { event_category: 'engagement', event_label: label });
+            }
+        }
+
+        function attachCtaTracking() {
+            document.querySelectorAll('[data-cta]').forEach(el => {
+                if (el.dataset.ctaBound === 'true') return;
+                el.addEventListener('click', () => trackCtaClick(el.dataset.cta));
+                el.dataset.ctaBound = 'true';
+            });
+        }
+
         function updateView(pageId) {
             const mobileMenuEl = document.getElementById('mobile-menu');
             if (mobileMenuEl) mobileMenuEl.classList.add('hidden');
             window.scrollTo(0, 0);
 
-            // Show only the requested page
             document.querySelectorAll('.page-view').forEach(el => {
+                el.classList.remove('fade-visible');
                 el.classList.remove('active');
                 el.style.display = 'none';
             });
             const target = document.getElementById('page-' + pageId);
             if (target) {
-                target.classList.add('active');
                 target.style.display = 'block';
+                target.classList.add('active');
+                requestAnimationFrame(() => target.classList.add('fade-visible'));
             }
 
-            // Update nav active state
             document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
             const activeNav = document.getElementById('nav-' + pageId);
             if (activeNav) activeNav.classList.add('active');
+
+            if (typeof gtag === 'function') {
+                gtag('event', 'page_view', { page_path: location.pathname + '#' + pageId });
+            }
         }
 
         function mobileNavigate(pageId) { navigateTo(pageId); }
@@ -1400,6 +1527,7 @@
 
         const initialHash = location.hash.replace('#', '') || 'home';
         updateView(initialHash);
+        attachCtaTracking();
 
         // Search functionality
         function performSearch() {
@@ -1487,7 +1615,7 @@
                 homeContainer.innerHTML = posts.slice(0, 3).map(post => `
                     <article class="bg-brand-surface rounded-xl border border-gray-700 overflow-hidden hover:border-brand-accent transition group cursor-pointer" onclick="navigateTo('blog')">
                          <div class="h-48 relative overflow-hidden">
-                            <img src="${post.image}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 opacity-80 group-hover:opacity-100">
+                            <img loading="lazy" decoding="async" src="${post.image}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 opacity-80 group-hover:opacity-100">
                             <div class="absolute top-4 left-4 bg-black/50 backdrop-blur text-white text-xs font-bold px-2 py-1 rounded">${post.category}</div>
                         </div>
                         <div class="p-6">
@@ -1520,7 +1648,7 @@
                     listArea.innerHTML = items.map(post => `
                         <article class="flex flex-col md:flex-row gap-6 bg-brand-surface p-6 rounded-xl border border-gray-700 hover:border-brand-accent transition group">
                             <div class="w-full md:w-48 h-48 md:h-32 flex-shrink-0 rounded-lg overflow-hidden relative">
-                                <img src="${post.image}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img loading="lazy" decoding="async" src="${post.image}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             </div>
                             <div class="flex-1 flex flex-col justify-center">
                                 <div class="flex items-center gap-3 mb-2">
@@ -1535,6 +1663,7 @@
                 }
             }
             renderList(posts);
+            attachCtaTracking();
         }
         // Initial render with English fallback, then update when translations load
         renderBlogs(getBlogPosts());
@@ -1568,6 +1697,7 @@
                     });
                     if (response.ok) {
                         if (statusEl) statusEl.textContent = 'Received. We will email your wholesale pricing shortly.';
+                        trackCtaClick('form_submit_home');
                         contactForm.reset();
                     } else {
                         if (statusEl) statusEl.textContent = 'Send failed. Please email sales@gateremotesource.com or WhatsApp +86 158 9964 8898.';
