@@ -157,8 +157,8 @@
                         </div>
                     </div>
 
-                    <a href="/contact" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-2 rounded-lg font-bold transition shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_distributor_portal_catalog">
-                        Distributor Portal
+                    <a href="/contact" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-2 rounded-lg font-bold transition shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_get_price_list_catalog">
+                        Get Wholesale Price List
                     </a>
                 </div>
 
@@ -179,7 +179,7 @@
                 <a href="/oem" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.oem">OEM/ODM</a>
                 <a href="/about" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.about">About</a>
                 <a href="/blog" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.blog">Blog</a>
-                <a href="/contact" class="block px-3 py-3 rounded-md text-base font-medium text-brand-accent font-bold" data-i18n="navigation.contact" data-cta="mobile_apply_wholesale_catalog">Apply for Wholesale Account</a>
+                <a href="/contact" class="block px-3 py-3 rounded-md text-base font-medium text-brand-accent font-bold" data-i18n="navigation.contact" data-cta="mobile_get_price_list_catalog">Get Wholesale Price List</a>
             </div>
         </div>
     </nav>
@@ -215,7 +215,7 @@
                         <p class="text-gray-400 text-sm mb-4" data-i18n="products_page.nice_description">Compatible with SM2/SM4. Round black styling. High durability buttons.</p>
                         <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-700">
                             <span class="text-xs text-gray-500" data-i18n="products_page.moq_50pcs">MOQ: 50pcs</span>
-                            <a href="/contact" class="text-brand-accent font-bold text-sm hover:text-white" data-i18n="products_page.get_price" data-cta="catalog_card_apply_wholesale_cloner">Apply for Wholesale Account</a>
+                            <a href="/contact" class="text-brand-accent font-bold text-sm hover:text-white" data-i18n="products_page.get_price" data-cta="catalog_card_get_price_list_cloner">Get Wholesale Price List</a>
                         </div>
                     </div>
                 </div>
@@ -232,7 +232,7 @@
                         <p class="text-gray-400 text-sm mb-4" data-i18n="products_page.universal_description">4-Channel duplicator. Copies 95% of fixed codes and many rolling codes (HCS301).</p>
                         <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-700">
                             <span class="text-xs text-gray-500" data-i18n="products_page.moq_100pcs">MOQ: 100pcs</span>
-                            <a href="/contact" class="text-brand-accent font-bold text-sm hover:text-white" data-i18n="products_page.get_price" data-cta="catalog_card_apply_wholesale_facecopy">Apply for Wholesale Account</a>
+                            <a href="/contact" class="text-brand-accent font-bold text-sm hover:text-white" data-i18n="products_page.get_price" data-cta="catalog_card_get_price_list_facecopy">Get Wholesale Price List</a>
                         </div>
                     </div>
                 </div>
@@ -249,7 +249,7 @@
                         <p class="text-gray-400 text-sm mb-4" data-i18n="products_page.mini_description">Compact design fits in motor box. AC/DC 12-24V input. 400 user capacity.</p>
                         <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-700">
                             <span class="text-xs text-gray-500" data-i18n="products_page.moq_50pcs">MOQ: 50pcs</span>
-                            <a href="/contact" class="text-brand-accent font-bold text-sm hover:text-white" data-i18n="products_page.get_price" data-cta="catalog_card_apply_wholesale_receiver">Apply for Wholesale Account</a>
+                            <a href="/contact" class="text-brand-accent font-bold text-sm hover:text-white" data-i18n="products_page.get_price" data-cta="catalog_card_get_price_list_receiver">Get Wholesale Price List</a>
                         </div>
                     </div>
                 </div>
@@ -556,6 +556,7 @@
         function changeLanguage(lang) {
             currentLanguage = lang;
             loadTranslations(lang);
+            try { localStorage.setItem('preferredLang', lang); } catch (e) {}
             
             // Update language dropdown
             const flags = {
@@ -616,12 +617,15 @@
         attachCtaTracking();
 
         // Language detection
-        const supportedLangs = ['en', 'es', 'de', 'it', 'fr'];
+        const supportedLangs = ['en', 'es', 'de', 'it', 'fr', 'pt'];
         const urlParams = new URLSearchParams(window.location.search);
         const searchLang = urlParams.get('lang');
-        
-        // Set initial language from URL or default to English
-        const initialLang = supportedLangs.includes(searchLang) ? searchLang : 'en';
+        let initialLang = 'en';
+        try {
+            const storedLang = localStorage.getItem('preferredLang');
+            if (storedLang && supportedLangs.includes(storedLang)) initialLang = storedLang;
+        } catch (e) {}
+        if (supportedLangs.includes(searchLang)) initialLang = searchLang;
         
         // Only change language if different from default (English)
         if (initialLang !== 'en') {

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -248,41 +248,41 @@
                     <div class="flex items-center ml-2 border-l border-gray-700 pl-4">
                         <div class="relative">
                             <button id="languageDropdownBtn" class="flex items-center gap-2 text-white hover:text-brand-accent transition">
-                                <span id="currentFlag">🇬🇧</span>
-                                <span id="currentLang">EN</span>
+                                <span id="currentFlag" class="text-xs font-semibold tracking-wide">EN</span>
+                                <span id="currentLang" class="text-sm">English</span>
                                 <i class="fa-solid fa-chevron-down text-xs"></i>
                             </button>
                             <div id="languageDropdown" class="absolute right-0 mt-2 w-48 bg-brand-surface border border-gray-700 rounded-lg shadow-lg hidden z-50">
                                 <a href="#" onclick="changeLanguage('en')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
-                                    <span>🇬🇧</span>
+                                    <span class="text-xs font-semibold">EN</span>
                                     <span class="text-white">English</span>
                                 </a>
                                 <a href="#" onclick="changeLanguage('es')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
-                                    <span>🇪🇸</span>
+                                    <span class="text-xs font-semibold">ES</span>
                                     <span class="text-white">Español</span>
                                 </a>
                                 <a href="#" onclick="changeLanguage('de')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
-                                    <span>🇩🇪</span>
+                                    <span class="text-xs font-semibold">DE</span>
                                     <span class="text-white">Deutsch</span>
                                 </a>
                                 <a href="#" onclick="changeLanguage('it')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
-                                    <span>🇮🇹</span>
+                                    <span class="text-xs font-semibold">IT</span>
                                     <span class="text-white">Italiano</span>
                                 </a>
                                 <a href="#" onclick="changeLanguage('fr')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
-                                    <span>🇫🇷</span>
+                                    <span class="text-xs font-semibold">FR</span>
                                     <span class="text-white">Français</span>
                                 </a>
                                 <a href="#" onclick="changeLanguage('pt')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
-                                    <span>????</span>
-                                    <span class="text-white">Portugu?s</span>
+                                    <span class="text-xs font-semibold">PT</span>
+                                    <span class="text-white">Português</span>
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <a href="/contact" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-2 rounded-lg font-bold transition shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_distributor_portal">
-                        Distributor Portal
+                    <a href="/contact" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-2 rounded-lg font-bold transition shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_get_price_list">
+                        Get Wholesale Price List
                     </a>
                 </div>
 
@@ -303,7 +303,7 @@
                 <a href="/oem" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.oem">OEM/ODM</a>
                 <a href="/about" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.about">About</a>
                 <a href="/blog" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.blog">Blog</a>
-                <a href="/contact" class="block px-3 py-3 rounded-md text-base font-medium text-brand-accent font-bold" data-i18n="navigation.contact" data-cta="mobile_apply_wholesale">Apply for Wholesale Account</a>
+                <a href="/contact" class="block px-3 py-3 rounded-md text-base font-medium text-brand-accent font-bold" data-i18n="navigation.contact" data-cta="mobile_get_price_list">Get Wholesale Price List</a>
             </div>
         </div>
     </nav>
@@ -323,32 +323,63 @@
                         <i class="fa-solid fa-check-circle text-brand-accent mr-2"></i>
                         <span class="text-white font-semibold text-sm tracking-wide uppercase" data-i18n="hero.badge">For Garage Door & Gate Professionals</span>
                     </div>
-                    <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6 drop-shadow-2xl">
-                        <span data-i18n="hero.title">Boost Your Margins</span> <br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-white" data-i18n="hero.title_highlight">with 100% Compatible Gate Remotes</span>
+                    <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-4 drop-shadow-2xl">
+                        Factory-direct B2B Gate & Garage Remotes
                     </h1>
-                    <p class="text-xl text-gray-200 mb-10 leading-relaxed max-w-2xl drop-shadow-lg font-semibold" data-i18n="hero.description">
-                        Don't lose a sale because the original remote is expensive or discontinued. Stock our Compatible Remotes & Universal Receivers for maximum profit.
+                    <p class="text-xl text-gray-200 mb-6 leading-relaxed max-w-2xl drop-shadow-lg font-semibold">
+                        For locksmiths, installers, and distributors who need OEM-compatible remotes with higher margins.
                     </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-industry text-brand-accent mt-1"></i>
+                            <p class="text-gray-200 text-sm">Factory-direct pricing keeps your projects profitable.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-sitemap text-brand-accent mt-1"></i>
+                            <p class="text-gray-200 text-sm">600+ OEM models covered (LiftMaster, Nice, Came, Hörmann).</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-rocket text-brand-accent mt-1"></i>
+                            <p class="text-gray-200 text-sm">48h sample shipping &lt;0.5% defect rate.</p>
+                        </div>
+                    </div>
                     <div class="flex flex-col sm:flex-row gap-5">
-                        <a href="/contact" class="bg-[#FF6600] hover:bg-[#e65c00] text-white text-center px-10 py-4 rounded-lg font-bold text-lg transition transform hover:-translate-y-1 shadow-lg shadow-amber-400/50 inline-block" data-i18n="hero.cta_catalog" data-cta="hero_apply_wholesale">
-                            Apply for Wholesale Account
+                        <a href="/contact" class="bg-[#FF6600] hover:bg-[#e65c00] text-white text-center px-10 py-4 rounded-lg font-bold text-lg transition transform hover:-translate-y-1 shadow-lg shadow-amber-400/50 inline-block" data-cta="hero_get_price_list">
+                            Get Wholesale Price List
                         </a>
-                        <a href="#compatibility" class="flex items-center justify-center gap-3 border border-brand-accent text-brand-accent hover:border-white hover:text-white hover:bg-white/5 text-center px-10 py-4 rounded-lg font-bold text-lg transition backdrop-blur-sm">
-                            <i class="fa-solid fa-database text-2xl"></i> 
-                            <span data-i18n="hero.cta_samples">Find Compatible Remote (Database)</span>
+                        <a href="/catalog" class="flex items-center justify-center gap-3 border border-brand-accent text-brand-accent hover:border-white hover:text-white hover:bg-white/5 text-center px-10 py-4 rounded-lg font-bold text-lg transition backdrop-blur-sm" data-cta="hero_download_catalog">
+                            <i class="fa-solid fa-file-pdf text-2xl"></i> 
+                            Download Full Catalog (PDF)
                         </a>
                         <a href="tel:+8615899648898" class="flex items-center justify-center gap-3 border border-amber-400 text-amber-300 hover:bg-amber-400 hover:text-brand-dark text-center px-10 py-4 rounded-lg font-bold text-lg transition backdrop-blur-sm">
                             <i class="fa-solid fa-phone text-xl"></i>
                             <span>Call Sales (GMT+8)</span>
                         </a>
                     </div>
-                    <p class="text-sm text-gray-400 mt-3 max-w-2xl" data-i18n="hero.regional_line">Gate remote manufacturer in Dongguan supporting UK distributors of 433.92MHz remotes and Nice/Came compatible remotes across Europe.</p>
+                    <div class="flex flex-wrap gap-3 mt-6">
+                        <span class="bg-brand-accent/20 text-brand-accent px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Locksmiths</span>
+                        <span class="bg-brand-accent/20 text-brand-accent px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Gate/Garage Installers</span>
+                        <span class="bg-brand-accent/20 text-brand-accent px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Distributors</span>
+                    </div>
+                    <p class="text-sm text-gray-400 mt-3 max-w-2xl">Gate remote manufacturer in Dongguan supporting UK distributors of 433.92MHz remotes and Nice/Came compatible remotes across Europe.</p>
                 </div>
             </div>
             <a href="#" onclick="document.getElementById('products-preview').scrollIntoView({behavior: 'smooth'}); return false;" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-gray-400 hover:text-brand-accent cursor-pointer p-4">
                 <i class="fa-solid fa-chevron-down text-3xl"></i>
             </a>
+        </section>
+
+        <!-- Key Numbers -->
+        <section class="bg-brand-dark border-b border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4 py-8 text-center text-sm font-semibold text-white">
+                    <div class="bg-brand-surface/60 border border-gray-800 rounded-xl py-4">15+ years RF experience</div>
+                    <div class="bg-brand-surface/60 border border-gray-800 rounded-xl py-4">600+ OEM models</div>
+                    <div class="bg-brand-surface/60 border border-gray-800 rounded-xl py-4">500k+ remotes/year</div>
+                    <div class="bg-brand-surface/60 border border-gray-800 rounded-xl py-4">Defect rate &lt;0.5%</div>
+                    <div class="bg-brand-surface/60 border border-gray-800 rounded-xl py-4">48h sample shipping</div>
+                </div>
+            </div>
         </section>
         
         <!-- Trust Bar -->
@@ -455,7 +486,7 @@
                             <h3 class="text-3xl font-bold text-white mb-4" data-i18n="inventory.supported_models">500+ Supported Models</h3>
                             <p class="text-gray-400 mb-6" data-i18n="inventory.database_description">We provide a comprehensive Excel list matching original part numbers to our compatible models.</p>
                             <div class="flex flex-wrap gap-3">
-                                <span class="bg-gray-700 text-white text-xs px-3 py-1 rounded-full">Hormann Compatible</span>
+                                <span class="bg-gray-700 text-white text-xs px-3 py-1 rounded-full">HORMANN Compatible</span>
                                 <span class="bg-gray-700 text-white text-xs px-3 py-1 rounded-full">Marantec Compatible</span>
                                 <span class="bg-gray-700 text-white text-xs px-3 py-1 rounded-full">Faac Compatible</span>
                                 <span class="bg-gray-700 text-white text-xs px-3 py-1 rounded-full">Sommer Compatible</span>
@@ -511,7 +542,7 @@
                         <h3 class="text-3xl font-bold text-white leading-tight">Price List & Sample Kit in One Secure Entry</h3>
                         <p class="text-gray-400">Built for wholesale 433MHz remote control UK/EU distributors who need fast access to Nice/Came compatible remotes across Europe.</p>
                         <a href="/contact" class="inline-flex items-center gap-2 bg-[#FF6600] hover:bg-[#e65c00] text-white px-6 py-3 rounded-lg font-bold transition shadow-lg shadow-amber-400/40" data-cta="portal_access">
-                            Apply for Wholesale Account
+                            Get Wholesale Price List
                             <i class="fa-solid fa-arrow-right text-sm"></i>
                         </a>
                     </div>
@@ -553,7 +584,7 @@
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2" data-i18n="factory_trust.iso_certified.title">ISO9001 Certified Factory</h3>
                         <p class="text-gray-400 text-sm" data-i18n="factory_trust.iso_certified.description">Quality management systems certified</p>
-                        <a href="/contact#cert-request" class="text-[10px] text-[#00C2CB] hover:underline mt-2 block">Request ISO Certificate →</a>
+                        <a href="/contact#cert-request" class="text-[10px] text-[#00C2CB] hover:underline mt-2 block">Request ISO Certificate ¡ú</a>
                     </div>
                     <div class="text-center group">
                         <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-brand-accent transition duration-300">
@@ -743,7 +774,7 @@
                             <p class="text-gray-400 text-sm mb-4" data-i18n="products_page.nice_description">Compatible with SM2/SM4. Round black styling. High durability buttons.</p>
                             <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-700">
                                 <span class="text-xs text-gray-500" data-i18n="products_page.moq_50pcs">MOQ: 50pcs</span>
-                                <button onclick="navigateTo('contact')" class="text-brand-accent font-bold text-sm hover:text-white" data-i18n="products_page.get_price" data-cta="card_apply_wholesale_cloner">Apply for Wholesale Account</button>
+                                <button onclick="navigateTo('contact')" class="text-brand-accent font-bold text-sm hover:text-white" data-i18n="products_page.get_price" data-cta="card_get_price_list_cloner">Get Wholesale Price List</button>
                             </div>
                         </div>
                     </div>
@@ -760,7 +791,7 @@
                             <p class="text-gray-400 text-sm mb-4" data-i18n="products_page.universal_description">4-Channel duplicator. Copies 95% of fixed codes and many rolling codes (HCS301).</p>
                             <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-700">
                                 <span class="text-xs text-gray-500" data-i18n="products_page.moq_100pcs">MOQ: 100pcs</span>
-                                <button onclick="navigateTo('contact')" class="text-brand-accent font-bold text-sm hover:text-white" data-i18n="products_page.get_price" data-cta="card_apply_wholesale_receiver">Apply for Wholesale Account</button>
+                                <button onclick="navigateTo('contact')" class="text-brand-accent font-bold text-sm hover:text-white" data-i18n="products_page.get_price" data-cta="card_get_price_list_receiver">Get Wholesale Price List</button>
                             </div>
                         </div>
                     </div>
@@ -777,7 +808,7 @@
                             <p class="text-gray-400 text-sm mb-4" data-i18n="products_page.mini_description">Compact design fits in motor box. AC/DC 12-24V input. 400 user capacity.</p>
                             <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-700">
                                 <span class="text-xs text-gray-500" data-i18n="products_page.moq_50pcs">MOQ: 50pcs</span>
-                                <button onclick="navigateTo('contact')" class="text-brand-accent font-bold text-sm hover:text-white" data-i18n="products_page.get_price" data-cta="card_apply_wholesale_facecopy">Apply for Wholesale Account</button>
+                                <button onclick="navigateTo('contact')" class="text-brand-accent font-bold text-sm hover:text-white" data-i18n="products_page.get_price" data-cta="card_get_price_list_facecopy">Get Wholesale Price List</button>
                             </div>
                         </div>
                     </div>
@@ -871,7 +902,7 @@
                                 <td class="px-6 py-4">Face-to-face clone in 10s</td>
                             </tr>
                             <tr>
-                                <td class="px-6 py-4">HÖRMANN HSE2 BS</td>
+                                <td class="px-6 py-4">HORMANN HSE2 BS</td>
                                 <td class="px-6 py-4">GRS-HM868</td>
                                 <td class="px-6 py-4">868.3MHz</td>
                                 <td class="px-6 py-4">Rolling code, blue button</td>
@@ -898,7 +929,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="bg-brand-surface border border-gray-700 rounded-2xl p-6">
                         <h3 class="text-xl font-bold text-white mb-3">Stock Buffers</h3>
-                        <p class="text-gray-400 text-sm">Priority allocation for repeat POs so you don’t run out mid-project.</p>
+                        <p class="text-gray-400 text-sm">Priority allocation for repeat POs so you don't run out mid-project.</p>
                     </div>
                     <div class="bg-brand-surface border border-gray-700 rounded-2xl p-6">
                         <h3 class="text-xl font-bold text-white mb-3">Kitting & Labeling</h3>
@@ -921,24 +952,52 @@
                     <h1 class="text-4xl md:text-5xl font-bold text-white mb-4" data-i18n="oem_odm.title">OEM/ODM Solutions</h1>
                     <p class="text-gray-400 max-w-2xl mx-auto text-lg" data-i18n="oem_odm.subtitle">Turn your idea into a product. We provide turnkey manufacturing services.</p>
                 </div>
-                <div class="bg-brand-surface p-12 rounded-2xl border border-gray-700 text-center">
-                        <h2 class="text-2xl font-bold text-white mb-6" data-i18n="oem_page.title">Ready to engineer your custom remote?</h2>
-                    <p class="text-gray-400 mb-8" data-i18n="oem_page.subtitle">We offer PCB Design, ID Design, Mold Tooling, and Firmware Development.</p>
-                    <button onclick="navigateTo('contact')" class="bg-brand-accent text-white px-8 py-3 rounded-lg font-bold hover:bg-brand-hover" data-i18n="oem_page.start_consultation">Start Consultation</button>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-                    <div class="bg-brand-surface border border-gray-700 rounded-2xl p-6 shadow-lg">
-                        <h3 class="text-xl font-bold text-white mb-3">RF & Firmware Lab</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">HCS301/rolling code, 433/868MHz auto-scan, remote range tuning, and encryption key management.</p>
+                <div class="bg-brand-surface p-12 rounded-2xl border border-gray-700">
+                    <div class="text-center mb-10">
+                        <h2 class="text-2xl font-bold text-white mb-4">OEM/ODM Project Journey</h2>
+                        <p class="text-gray-400">Customer-first milestones that take you from idea to repeatable production.</p>
                     </div>
-                    <div class="bg-brand-surface border border-gray-700 rounded-2xl p-6 shadow-lg">
-                        <h3 class="text-xl font-bold text-white mb-3">Tooling & ID</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Industrial design, silicone keypads, metal shells, rapid molds, and PP/PC material selection.</p>
+                    <div class="space-y-6">
+                        <div class="flex gap-4 items-start">
+                            <div class="h-10 w-10 rounded-full bg-brand-accent/20 text-brand-accent font-bold flex items-center justify-center">1</div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Share your idea & target market</h4>
+                                <p class="text-gray-400 text-sm">We map SKUs, target regions, and OEMs you need to replace.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="h-10 w-10 rounded-full bg-brand-accent/20 text-brand-accent font-bold flex items-center justify-center">2</div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">RF & ID design proposal (1–2 weeks)</h4>
+                                <p class="text-gray-400 text-sm">PCB, ID, and shell options with BOM transparency and cost targets.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="h-10 w-10 rounded-full bg-brand-accent/20 text-brand-accent font-bold flex items-center justify-center">3</div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Prototype & field testing</h4>
+                                <p class="text-gray-400 text-sm">48h sample build + feedback cycles to validate range and compatibility.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="h-10 w-10 rounded-full bg-brand-accent/20 text-brand-accent font-bold flex items-center justify-center">4</div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Certification support (FCC/CE)</h4>
+                                <p class="text-gray-400 text-sm">Pre-test guidance, lab coordination, and documentation packs.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="h-10 w-10 rounded-full bg-brand-accent/20 text-brand-accent font-bold flex items-center justify-center">5</div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Mass production & optimization</h4>
+                                <p class="text-gray-400 text-sm">4,000㎡ SMT + aging rooms, &lt;0.5% defect rate, firmware tweaks as you scale.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-brand-surface border border-gray-700 rounded-2xl p-6 shadow-lg">
-                        <h3 class="text-xl font-bold text-white mb-3">Certification Ready</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">FCC/CE test support, ISO9001 QA flow, traceable batches, and burn-in testing.</p>
+                    <div class="text-center mt-10">
+                        <button onclick="navigateTo('contact')" class="bg-brand-accent text-white px-10 py-4 rounded-lg font-bold hover:bg-brand-hover shadow-lg" data-cta="oem_get_price_list">
+                            Get Wholesale Price List
+                        </button>
                     </div>
                 </div>
 
@@ -1131,7 +1190,7 @@
                     <div class="bg-brand-surface p-8 rounded-2xl border border-gray-700 shadow-2xl">
                         <!-- Form with visual feedback -->
                         <form id="contactForm" class="space-y-5">
-                            <h3 class="text-white text-xl font-bold mb-2" data-i18n="contact.inquire_now.title">Apply for Wholesale Account</h3>
+                            <h3 class="text-white text-xl font-bold mb-2" data-i18n="contact.inquire_now.title">Get Wholesale Price List</h3>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-gray-400 text-sm mb-2">Company Name</label>
@@ -1152,7 +1211,7 @@
                             </div>
                             <input type="hidden" name="_subject" value="Wholesale account application from GateRemoteSource.com">
                             <button type="submit" class="w-full bg-brand-accent hover:bg-brand-hover text-white font-bold py-4 rounded-lg transition transform hover:scale-[1.02] shadow-lg" data-cta="form_submit_home">
-                                <span data-i18n="contact.submit_button">Apply for Wholesale Account</span>
+                                <span data-i18n="contact.submit_button">Get Wholesale Price List</span>
                             </button>
                             <p id="form-status" class="text-sm text-gray-300 hidden"></p>
                         </form>
@@ -1215,7 +1274,7 @@
                 </div>
             </div>
             <div class="text-center pt-8 border-t border-gray-800">
-                <span data-i18n="footer.copyright">© 2024 GateRemoteSource. All rights reserved.</span>
+                <span data-i18n="footer.copyright">? 2024 GateRemoteSource. All rights reserved.</span>
             </div>
         </div>
     </footer>
@@ -1229,6 +1288,7 @@
         // i18n System
         let currentLanguage = 'en';
         let translations = {};
+        const supportedLangs = ['en', 'es', 'de', 'it', 'fr', 'pt'];
         const defaultLanguageSnapshot = {
             meta: {},
             text: {},
@@ -1389,8 +1449,10 @@
 
         // Language switching
         function changeLanguage(lang) {
+            if (!supportedLangs.includes(lang)) lang = 'en';
             if (lang === currentLanguage && lang === 'en') return;
             currentLanguage = lang;
+            try { localStorage.setItem('preferredLang', lang); } catch (e) {}
             
             if (lang === 'en') {
                 translations = {};
@@ -1401,21 +1463,21 @@
             
             // Update language dropdown
             const flags = {
-                'en': '🇬🇧',
-                'es': '🇪🇸',
-                'de': '🇩🇪',
-                'it': '🇮🇹',
-                'fr': '🇫🇷',
-                'pt': '🇵🇹'
-            };
-            
-            const langNames = {
                 'en': 'EN',
                 'es': 'ES',
                 'de': 'DE',
                 'it': 'IT',
                 'fr': 'FR',
                 'pt': 'PT'
+            };
+            
+            const langNames = {
+                'en': 'English',
+                'es': 'Español',
+                'de': 'Deutsch',
+                'it': 'Italiano',
+                'fr': 'Français',
+                'pt': 'Português'
             };
             
             const flagElement = document.getElementById('currentFlag');
@@ -1455,12 +1517,20 @@
 
         // Language detection optimized for non-language subdirectory deployments
         // Only uses query parameters to avoid conflicts with paths like /app/, /admin/, etc.
-        const supportedLangs = ['en', 'es', 'de', 'it', 'fr', 'pt'];
         const urlParams = new URLSearchParams(window.location.search);
         const searchLang = urlParams.get('lang');
+        let initialLang = 'en';
+        try {
+            const storedLang = localStorage.getItem('preferredLang');
+            if (storedLang && supportedLangs.includes(storedLang)) initialLang = storedLang;
+        } catch (e) {}
+        if (supportedLangs.includes(searchLang)) initialLang = searchLang;
         
-        // Set initial language from URL or default to English
-        const initialLang = supportedLangs.includes(searchLang) ? searchLang : 'en';
+        // Set initial language from URL/localStorage or default to English
+        // Only change language if different from default (English)
+        if (initialLang !== 'en') {
+            changeLanguage(initialLang);
+        }
         
         // Only change language if different from default (English)
         if (initialLang !== 'en') {
@@ -1555,10 +1625,10 @@
                     <div class="bg-brand-dark/50 border border-gray-700 rounded-lg p-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                         <div>
                             <p class="font-bold text-white">${item.name}</p>
-                            <p class="text-xs text-gray-400">Freq: ${item.freq} • Chip: ${item.chip} • Protocol: ${item.protocol}</p>
+                            <p class="text-xs text-gray-400">Freq: ${item.freq} ? Chip: ${item.chip} ? Protocol: ${item.protocol}</p>
                             <p class="text-xs text-gray-500">OEM: ${item.oem} | SKU: ${item.sku}</p>
                         </div>
-                        <a href="/contact" class="text-brand-accent font-bold text-sm hover:text-white">Request Quote →</a>
+                        <a href="/contact" class="text-brand-accent font-bold text-sm hover:text-white">Request Quote ¡ú</a>
                     </div>
                 `).join('');
             }
