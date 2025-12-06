@@ -104,7 +104,7 @@
                 
                 <!-- Desktop Menu -->
                 <div class="hidden lg:flex space-x-8 items-center">
-                    <a href="/" class="nav-link text-gray-300 hover:text-brand-accent transition font-medium py-2" data-i18n="navigation.home">Home</a>
+                    <a href="/" class="nav-link text-gray-300 hover:text-brand-accent transition font-medium py-2" id="nav-home" data-i18n="navigation.home">Home</a>
                     <a href="/catalog" class="nav-link text-gray-300 hover:text-brand-accent transition font-medium py-2" id="nav-products" data-i18n="navigation.catalog">Catalog</a>
                     <a href="/oem" class="nav-link text-gray-300 hover:text-brand-accent transition font-medium py-2" id="nav-oem" data-i18n="navigation.oem">OEM/ODM</a>
                     <a href="/about" class="nav-link text-gray-300 hover:text-brand-accent transition font-medium py-2" id="nav-about" data-i18n="navigation.about">About</a>
@@ -115,36 +115,40 @@
                     <div class="flex items-center ml-2 border-l border-gray-700 pl-4">
                         <div class="relative">
                             <button id="languageDropdownBtn" class="flex items-center gap-2 text-white hover:text-brand-accent transition">
-                                <span id="currentFlag">🇬🇧</span>
-                                <span id="currentLang">EN</span>
+                                <span id="currentFlag" class="text-xs font-semibold tracking-wide">EN</span>
+                                <span id="currentLang" class="text-sm">English</span>
                                 <i class="fa-solid fa-chevron-down text-xs"></i>
                             </button>
                             <div id="languageDropdown" class="absolute right-0 mt-2 w-48 bg-brand-surface border border-gray-700 rounded-lg shadow-lg hidden z-50">
                                 <a href="#" onclick="changeLanguage('en')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
-                                    <span>🇬🇧</span>
+                                    <span class="text-xs font-semibold">EN</span>
                                     <span class="text-white">English</span>
                                 </a>
                                 <a href="#" onclick="changeLanguage('es')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
-                                    <span>🇪🇸</span>
+                                    <span class="text-xs font-semibold">ES</span>
                                     <span class="text-white">Español</span>
                                 </a>
                                 <a href="#" onclick="changeLanguage('de')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
-                                    <span>🇩🇪</span>
+                                    <span class="text-xs font-semibold">DE</span>
                                     <span class="text-white">Deutsch</span>
                                 </a>
                                 <a href="#" onclick="changeLanguage('it')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
-                                    <span>🇮🇹</span>
+                                    <span class="text-xs font-semibold">IT</span>
                                     <span class="text-white">Italiano</span>
                                 </a>
                                 <a href="#" onclick="changeLanguage('fr')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
-                                    <span>🇫🇷</span>
+                                    <span class="text-xs font-semibold">FR</span>
                                     <span class="text-white">Français</span>
+                                </a>
+                                <a href="#" onclick="changeLanguage('pt')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
+                                    <span class="text-xs font-semibold">PT</span>
+                                    <span class="text-white">Português</span>
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <a href="/contact" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-2 rounded-lg font-bold transition shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_get_price_list_contact">
+                    <a href="/contact" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-2 rounded-lg font-bold transition shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_get_price_list">
                         Get Wholesale Price List
                     </a>
                 </div>
@@ -166,7 +170,7 @@
                 <a href="/oem" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.oem">OEM/ODM</a>
                 <a href="/about" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.about">About</a>
                 <a href="/blog" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.blog">Blog</a>
-                <a href="/contact" class="block px-3 py-3 rounded-md text-base font-medium text-brand-accent font-bold" data-i18n="navigation.contact" data-cta="mobile_get_price_list_contact">Get Wholesale Price List</a>
+                <a href="/contact" class="block px-3 py-3 rounded-md text-base font-medium text-brand-accent font-bold" data-i18n="navigation.contact" data-cta="mobile_get_price_list">Get Wholesale Price List</a>
             </div>
         </div>
     </nav>
@@ -493,19 +497,21 @@
             
             // Update language dropdown
             const flags = {
-                'en': '🇬🇧',
-                'es': '🇪🇸',
-                'de': '🇩🇪',
-                'it': '🇮🇹',
-                'fr': '🇫🇷'
-            };
-            
-            const langNames = {
                 'en': 'EN',
                 'es': 'ES',
                 'de': 'DE',
                 'it': 'IT',
-                'fr': 'FR'
+                'fr': 'FR',
+                'pt': 'PT'
+            };
+            
+            const langNames = {
+                'en': 'English',
+                'es': 'Español',
+                'de': 'Deutsch',
+                'it': 'Italiano',
+                'fr': 'Français',
+                'pt': 'Português'
             };
             
             const flagElement = document.getElementById('currentFlag');
@@ -550,7 +556,7 @@
         attachCtaTracking();
 
         // Language detection
-        const supportedLangs = ['en', 'es', 'de', 'it', 'fr'];
+        const supportedLangs = ['en', 'es', 'de', 'it', 'fr', 'pt'];
         const urlParams = new URLSearchParams(window.location.search);
         const searchLang = urlParams.get('lang');
         let initialLang = 'en';
