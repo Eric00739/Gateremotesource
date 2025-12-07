@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -36,9 +36,10 @@
         ::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
 
         .article-shell { max-width: 1200px; }
-        .article-content { max-width: 760px; }
+        .article-content { max-width: 780px; }
         .article-content p { margin-bottom: 1.4em; line-height: 1.75; }
         .article-content h2 { margin-top: 1.8em; margin-bottom: 0.8em; }
+        .article-content h3 { margin-top: 1.2em; margin-bottom: 0.6em; }
         .article-content ul, .article-content ol { margin-bottom: 1.4em; }
 
         .callout {
@@ -49,6 +50,18 @@
         .highlight-card {
             background: #0f172a;
             border: 1px solid #1f2937;
+        }
+        .img-frame {
+            overflow: hidden;
+            border: 1px solid #1f2937;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+        }
+        .img-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
         }
     </style>
 </head>
@@ -84,9 +97,9 @@
                         <span class="px-3 py-1 rounded-full bg-brand-surface text-gray-300">Content Marketing Director</span>
                     </div>
                 </div>
-                <div class="rounded-2xl overflow-hidden border border-gray-800 shadow-2xl">
-                    <img src="/assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-01.webp" alt="Remote shell next to burnt phenolic PCB" class="w-full h-[320px] md:h-[440px] object-cover">
-                </div>
+                <figure class="img-frame">
+                    <img src="/assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-01.webp" alt="Remote shell next to burnt phenolic PCB">
+                </figure>
             </header>
 
             <div class="article-content space-y-10 text-[17px]">
@@ -103,8 +116,8 @@
 
                 <p>For a distributor, choosing the cheaper option is tempting. It promises higher margins. But as a source factory with 10 years of experience in RF manufacturing, Gateremotesource knows the uncomfortable truth: the casing is just a mask. When a customer calls you three months later saying their gate won’t open in the rain, or the remote has lost its programming, the plastic shell isn’t to blame. The failure lies inside the “Black Box”—the PCBA (Printed Circuit Board Assembly).</p>
 
-                <figure class="my-6">
-                    <img src="/assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-02.webp" alt="Close-up of FR-4 PCB with crystal and IC" class="w-full rounded-xl border border-gray-800 object-cover">
+                <figure class="img-frame">
+                    <img src="/assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-02.webp" alt="Close-up of FR-4 PCB with crystal and IC">
                 </figure>
 
                 <p>This guide dismantles the technical differences between “market junk” and industrial-grade hardware, providing verifiable data points to help you spot the difference before you place an order.</p>
@@ -149,8 +162,8 @@
 
                 <section>
                     <h2 class="text-2xl font-bold text-white">5) Manufacturing: The Invisible 10%</h2>
-                    <figure class="my-6">
-                        <img src="/assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-03.webp" alt="AOI inspection pass on SMT line" class="w-full rounded-xl border border-gray-800 object-cover">
+                    <figure class="img-frame">
+                        <img src="/assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-03.webp" alt="AOI inspection pass on SMT line">
                     </figure>
                     <p>Design is half the battle; manufacturing consistency is the other half.</p>
                     <ul class="list-disc list-inside space-y-2">
@@ -192,8 +205,8 @@
                     </ul>
                 </section>
 
-                <figure class="my-6">
-                    <img src="/assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-04.webp" alt="UV inspection of assembled PCB" class="w-full rounded-xl border border-gray-800 object-cover">
+                <figure class="img-frame">
+                    <img src="/assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-04.webp" alt="UV inspection of assembled PCB">
                 </figure>
 
                 <section class="space-y-4">
