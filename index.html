@@ -312,8 +312,17 @@
         <!-- Hero -->
         <section class="hero-bg min-h-screen flex items-center relative pt-24">
             <div class="hero-video">
-                <video autoplay muted loop playsinline preload="auto" poster="/assets/videos/V1.3-poster.jpg" onloadeddata="this.style.opacity=1;">
-                    <source src="/assets/videos/V1.3.mp4" type="video/mp4">
+                <video 
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline 
+                    preload="auto" 
+                    poster="assets/videos/V1.3-poster.jpg" 
+                    onloadeddata="this.style.opacity=1;" 
+                    oncanplay="this.style.opacity=1;" 
+                    onerror="this.style.opacity=1;">
+                    <source src="assets/videos/V1.3.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/50 via-transparent to-brand-dark"></div>
