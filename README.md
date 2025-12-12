@@ -58,14 +58,13 @@ This is a professionally refactored B2B e-commerce website for GateRemoteSource,
 
 ## Language Implementation
 
-### Current Languages
+### Available Languages
 - **English (en)** - Default language
-- **Spanish (es)** - Complete translation
-- **German (de)** - Complete translation
-
-### Planned Languages
-- **Italian (it)** - Ready for implementation
-- **French (fr)** - Ready for implementation
+- **Spanish (es)**
+- **German (de)**
+- **Italian (it)**
+- **French (fr)**
+- **Portuguese (pt)**
 
 ### Adding New Languages
 1. Create a new JSON file in `locales/` directory (e.g., `it.json`)
@@ -128,7 +127,7 @@ function applyTranslations() {
 - **Fast loading** with optimized assets
 
 ## Future Enhancements
-1. **Complete remaining language files** (Italian, French)
+1. **Polish translations** (it/fr/pt)
 2. **Implement URL-based routing** for language sub-directories
 3. **Add language-specific SEO** meta tags
 4. **Implement server-side rendering** for better SEO
@@ -137,10 +136,13 @@ function applyTranslations() {
 ## Usage Instructions
 
 ### For Development
-1. Open `index.html` in a modern browser
-2. Use the language dropdown to test different languages
-3. Test the search functionality with various FCC IDs
-4. Verify responsive design on different screen sizes
+1. Start a local static server (recommended so `fetch()` can load `locales/*.json`):
+   - Python: `python -m http.server 8080`
+   - Node: `npx http-server -p 8080`
+2. Open `http://localhost:8080/index.html`
+3. Use the language dropdown to test different languages
+4. Test the search functionality with various FCC IDs
+5. Verify responsive design on different screen sizes
 
 ### For Production
 1. Upload all files to web server
