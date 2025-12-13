@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gateremotesource.com/sitemap.xml
+Sitemap: https://www.gateremotesource.com/sitemap.xml
