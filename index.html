@@ -146,6 +146,9 @@
             letter-spacing: 0.04em;
             text-transform: uppercase;
         }
+        @media (max-width: 768px) {
+            .hero-bg { background-attachment: scroll; }
+        }
     </style>
     <script type="application/ld+json">
     {
@@ -294,11 +297,13 @@
                     muted 
                     loop 
                     playsinline 
-                    preload="metadata" 
+                    preload="none" 
                     poster="assets/videos/V1.3-poster.jpg" 
                     onloadeddata="this.style.opacity=1;" 
                     oncanplay="this.style.opacity=1;" 
                     onerror="this.style.opacity=1;">
+                    <source src="assets/videos/V1.3-mobile.webm" type="video/webm" media="(max-width: 768px)">
+                    <source src="assets/videos/V1.3-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
                     <source src="assets/videos/V1.3.webm" type="video/webm">
                     <source src="assets/videos/V1.3.mp4" type="video/mp4">
                 </video>
@@ -1776,6 +1781,27 @@
                     if (statusEl) statusEl.textContent = 'Network issue. Email sales@gateremotesource.com or WhatsApp +86 158 9964 8898.';
                 }
             });
+        }
+
+        // Defer hero video load on mobile but keep autoplay when visible
+        const heroVideo = document.querySelector('.hero-video video');
+        if (heroVideo) {
+            const loadAndPlay = () => {
+                heroVideo.load();
+                const playPromise = heroVideo.play();
+                if (playPromise && typeof playPromise.catch === 'function') {
+                    playPromise.catch(() => {});
+                }
+            };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        loadAndPlay();
+                        observer.disconnect();
+                    }
+                });
+            }, { threshold: 0.2 });
+            observer.observe(heroVideo);
         }
     </script>
     
