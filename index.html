@@ -39,14 +39,20 @@
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preload" as="image" href="assets/videos/V1.3-poster.jpg">
 
-    <!-- Tailwind CSS -->
-    <link rel="stylesheet" href="assets/css/tailwind.css">
+    <!-- Tailwind CSS (deferred to avoid render-blocking) -->
+    <link rel="preload" href="assets/css/tailwind.css" as="style">
+    <link rel="stylesheet" href="assets/css/tailwind.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="assets/css/tailwind.css"></noscript>
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome (non-blocking) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'" crossorigin>
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin></noscript>
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts (non-blocking) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet"></noscript>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZF8T77R309"></script>
@@ -67,7 +73,7 @@
         ::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
         
         .hero-bg {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)), url('assets/factory/smt-line.webp');
+            background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8));
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -147,10 +153,20 @@
             letter-spacing: 0.04em;
             text-transform: uppercase;
         }
+        /* Avoid parsing/rendering hidden SPA sections */
+        .page-view:not(.active) {
+            content-visibility: auto;
+            contain-intrinsic-size: 1200px 2400px;
+        }
         @media (max-width: 768px) {
             .hero-bg { 
                 background-attachment: scroll; 
                 background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8));
+            }
+        }
+        @media (min-width: 769px) {
+            .hero-bg {
+                background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)), url('assets/factory/smt-line.webp');
             }
         }
     </style>
@@ -297,16 +313,13 @@
         <section class="hero-bg min-h-screen flex items-center relative pt-24">
             <div class="hero-video">
                 <video 
+                    id="heroVideo"
                     autoplay 
                     muted 
                     loop 
                     playsinline 
                     preload="none" 
                     poster="assets/videos/V1.3-poster.jpg">
-                    <source src="assets/videos/V1.3-mobile.webm" type="video/webm" media="(max-width: 768px)">
-                    <source src="assets/videos/V1.3-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
-                    <source src="assets/videos/V1.3.webm" type="video/webm">
-                    <source src="assets/videos/V1.3.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/50 via-transparent to-brand-dark"></div>
@@ -1787,6 +1800,23 @@
         // Defer hero video load on mobile but keep autoplay when visible
         const heroVideo = document.querySelector('.hero-video video');
         if (heroVideo) {
+            const mobileSources = [
+                { src: 'assets/videos/V1.3-mobile.webm', type: 'video/webm' },
+                { src: 'assets/videos/V1.3-mobile.mp4', type: 'video/mp4' }
+            ];
+            const desktopSources = [
+                { src: 'assets/videos/V1.3.webm', type: 'video/webm' },
+                { src: 'assets/videos/V1.3.mp4', type: 'video/mp4' }
+            ];
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+            const chosenSources = isMobile ? mobileSources : desktopSources;
+            chosenSources.forEach(cfg => {
+                const s = document.createElement('source');
+                s.src = cfg.src;
+                s.type = cfg.type;
+                heroVideo.appendChild(s);
+            });
+
             const loadAndPlay = () => {
                 heroVideo.load();
                 const playPromise = heroVideo.play();
