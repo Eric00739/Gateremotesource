@@ -13,8 +13,14 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="logo/favicon.png.png">
 
-    <!-- Tailwind CSS (CDN) -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Preconnects -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="assets/css/tailwind.css">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -30,37 +36,6 @@
         gtag('js', new Date());
 
         gtag('config', 'G-ZF8T77R309');
-    </script>
-
-    <!-- Custom Configuration -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            dark: '#0f172a',
-                            accent: '#06b6d4',
-                            hover: '#0891b2',
-                            light: '#f8fafc',
-                            surface: '#1e293b',
-                        }
-                    },
-                    animation: {
-                        'fade-in-up': 'fadeInUp 0.8s ease-out',
-                    },
-                    keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        }
-                    }
-                }
-            }
-        }
     </script>
 
     <style>
@@ -97,7 +72,7 @@
                 <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
                     <a href="index.html" class="flex items-center gap-3">
                         <div class="bg-white p-1.5 rounded-lg h-10 w-10 flex items-center justify-center">
-                            <img src="logo/logo.png.png" alt="GateRemoteSource Logo" class="h-full w-full object-contain">
+                            <img src="logo/logo.png.png" width="1024" height="1024" alt="GateRemoteSource Logo" class="h-full w-full object-contain">
                         </div>
                         <span class="font-bold text-2xl text-white tracking-tight">GateRemote<span class="text-brand-accent">Source</span></span>
                     </a>
@@ -150,7 +125,7 @@
                     </div>
 
                     <a href="contact.html" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-2 rounded-lg font-bold transition shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_get_price_list">
-                        Get Wholesale Price List
+                        Quote Now
                     </a>
                 </div>
 
@@ -171,7 +146,7 @@
                 <a href="oem.html" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.oem">OEM/ODM</a>
                 <a href="about.html" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.about">About</a>
                 <a href="blog.html" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.blog">Blog</a>
-                <a href="contact.html" class="block px-3 py-3 rounded-md text-base font-medium text-brand-accent font-bold" data-i18n="navigation.contact" data-cta="mobile_get_price_list">Get Wholesale Price List</a>
+                <a href="contact.html" class="block px-3 py-3 rounded-md text-base font-medium text-brand-accent font-bold" data-i18n="navigation.contact" data-cta="mobile_get_price_list">Quote Now</a>
             </div>
         </div>
     </nav>
@@ -190,7 +165,7 @@
                     </p>
                     <div class="grid grid-cols-2 gap-6">
                         <div class="bg-brand-surface p-6 rounded-xl border border-gray-700 text-center">
-                            <span class="block text-4xl font-bold text-brand-accent mb-2" data-i18n="about.years_experience">15+</span>
+                            <span class="block text-4xl font-bold text-brand-accent mb-2" data-i18n="about.years_experience">10+</span>
                             <span class="text-sm text-gray-400 uppercase tracking-wider" data-i18n="about.years_label">Years Experience</span>
                         </div>
                         <div class="bg-brand-surface p-6 rounded-xl border border-gray-700 text-center">
@@ -389,7 +364,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <div>
                     <div class="flex items-center gap-3 mb-4 text-white">
-                        <img src="logo/logo.png.png" alt="GateRemoteSource logo" class="h-10 w-auto object-contain">
+                        <img src="logo/logo.png.png" width="1024" height="1024" alt="GateRemoteSource logo" class="h-10 w-auto object-contain">
                     </div>
                     <p class="mb-4" data-i18n="footer.company_description">Your Profit Partner in Access Control. Supplying locksmiths worldwide.</p>
                 </div>

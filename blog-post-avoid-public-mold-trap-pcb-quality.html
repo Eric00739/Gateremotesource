@@ -8,7 +8,14 @@
     <meta name="keywords" content="433.92MHz, OEM manufacturing, PCB quality, gate remote, rolling code, Gateremotesource">
     <meta name="author" content="Eric Huang">
     <link rel="icon" type="image/png" href="logo/favicon.png.png">
-    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Preconnects -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+
+    <link rel="stylesheet" href="assets/css/tailwind.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <!-- Google tag (gtag.js) -->
@@ -19,24 +26,6 @@
         gtag('js', new Date());
 
         gtag('config', 'G-ZF8T77R309');
-    </script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: {
-                        brand: {
-                            dark: '#0f172a',
-                            accent: '#06b6d4',
-                            hover: '#0891b2',
-                            light: '#f8fafc',
-                            surface: '#1e293b',
-                        }
-                    }
-                }
-            }
-        }
     </script>
     <style>
         ::-webkit-scrollbar { width: 10px; }
@@ -254,7 +243,7 @@
                 <div class="bg-brand-surface border border-gray-700 rounded-xl p-6 shadow-lg space-y-4">
                     <h3 class="text-white font-bold text-lg">Need a Teardown Sample Kit?</h3>
                     <p class="text-gray-400 text-sm">See FR-4 boards, crystal oscillators, and AOI quality up close. Built for locksmiths & distributors.</p>
-                    <a href="contact.html" class="block text-center bg-brand-accent hover:bg-brand-hover text-white px-4 py-3 rounded-lg font-bold transition" data-cta="blog_detail_teardown_kit">Get Wholesale Price List</a>
+                    <a href="contact.html" class="block text-center bg-brand-accent hover:bg-brand-hover text-white px-4 py-3 rounded-lg font-bold transition" data-cta="blog_detail_teardown_kit">Quote Now</a>
                     <a href="catalog.html" class="block text-center border border-brand-accent text-brand-accent hover:text-white hover:border-white hover:bg-white/5 px-4 py-3 rounded-lg font-bold transition" data-cta="blog_detail_view_catalog">View Catalog</a>
                     <div class="flex items-center gap-3 text-sm text-gray-300 pt-2">
                         <i class="fa-solid fa-shield-halved text-brand-accent"></i>
@@ -292,7 +281,7 @@
     <footer class="bg-brand-dark border-t border-gray-800 py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
             <div class="flex items-center gap-2 text-white">
-                <img src="logo/logo.png.png" alt="GateRemoteSource logo" class="h-8 w-auto object-contain">
+                <img src="logo/logo.png.png" width="1024" height="1024" alt="GateRemoteSource logo" class="h-8 w-auto object-contain">
                 <span class="font-bold">GateRemote<span class="text-brand-accent">Source</span></span>
             </div>
             <div class="flex items-center gap-4">

@@ -136,13 +136,14 @@ function applyTranslations() {
 ## Usage Instructions
 
 ### For Development
-1. Start a local static server (recommended so `fetch()` can load `locales/*.json`):
+1. Build Tailwind once after edits: `npx --yes tailwindcss@3.4.13 -c tailwind.config.js -i styles/tailwind.css -o assets/css/tailwind.css --minify`
+2. Start a local static server (recommended so `fetch()` can load `locales/*.json`):
    - Python: `python -m http.server 8080`
    - Node: `npx http-server -p 8080`
-2. Open `http://localhost:8080/index.html`
-3. Use the language dropdown to test different languages
-4. Test the search functionality with various FCC IDs
-5. Verify responsive design on different screen sizes
+3. Open `http://localhost:8080/index.html`
+4. Use the language dropdown to test different languages
+5. Test the search functionality with various FCC IDs
+6. Verify responsive design on different screen sizes
 
 ### For Production
 1. Upload all files to web server
