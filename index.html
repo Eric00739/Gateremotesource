@@ -812,55 +812,77 @@
                 <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" data-i18n="faq.title">Distributor FAQ</h2>
                 </div>
-                <div class="space-y-4">
-                    <div class="bg-brand-dark p-6 rounded-xl border border-gray-700">
-                        <h3 class="text-lg font-bold text-white mb-2 flex items-center"><i class="fa-solid fa-circle-question text-brand-accent mr-3"></i>Do you sell to end users?</h3>
-                        <p class="text-gray-400 pl-8">No. We are a B2B manufacturer and supply locksmiths, installers, and distributors only.</p>
-                    </div>
-                    <div class="bg-brand-dark p-6 rounded-xl border border-gray-700 grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <h3 class="text-lg font-bold text-white mb-2 flex items-center"><i class="fa-solid fa-circle-question text-brand-accent mr-3"></i>What is your MOQ?</h3>
-                            <p class="text-gray-400 pl-8">50 pcs.</p>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-white mb-2 flex items-center"><i class="fa-solid fa-circle-question text-brand-accent mr-3"></i>Which currency can you quote in?</h3>
-                            <p class="text-gray-400 pl-8">USD or EUR.</p>
-                        </div>
-                    </div>
-                    <div class="bg-brand-dark p-6 rounded-xl border border-gray-700 grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <h3 class="text-lg font-bold text-white mb-2 flex items-center"><i class="fa-solid fa-circle-question text-brand-accent mr-3"></i>Do you have distributor tier pricing levels?</h3>
-                            <p class="text-gray-400 pl-8">No. We do not use tiered distributor pricing.</p>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-white mb-2 flex items-center"><i class="fa-solid fa-circle-question text-brand-accent mr-3"></i>Is packaging included? Custom packaging/labels?</h3>
-                            <p class="text-gray-400 pl-8">Standard packaging is included by default. Custom packaging/labels require an additional cost.</p>
-                        </div>
-                    </div>
-                    <div class="bg-brand-dark p-6 rounded-xl border border-gray-700 grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <h3 class="text-lg font-bold text-white mb-2 flex items-center"><i class="fa-solid fa-circle-question text-brand-accent mr-3"></i>Payment terms and methods?</h3>
-                            <p class="text-gray-400 pl-8">Standard terms: T/T 30/70. We also accept PayPal (samples), L/C, and Alibaba Trade Assurance.</p>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-white mb-2 flex items-center"><i class="fa-solid fa-circle-question text-brand-accent mr-3"></i>Which Incoterms and lanes?</h3>
-                            <p class="text-gray-400 pl-8">FOB / DAP / DDP for EU / US / South America / Australia.</p>
-                        </div>
-                    </div>
-                    <div class="bg-brand-dark p-6 rounded-xl border border-gray-700 grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <h3 class="text-lg font-bold text-white mb-2 flex items-center"><i class="fa-solid fa-circle-question text-brand-accent mr-3"></i>Warranty period?</h3>
-                            <p class="text-gray-400 pl-8">1-year warranty for both remotes and receivers.</p>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-white mb-2 flex items-center"><i class="fa-solid fa-circle-question text-brand-accent mr-3"></i>MOQ for OEM/ODM customization?</h3>
-                            <p class="text-gray-400 pl-8">500 pcs.</p>
-                        </div>
-                    </div>
-                    <div class="bg-brand-dark p-6 rounded-xl border border-gray-700">
-                        <h3 class="text-lg font-bold text-white mb-2 flex items-center"><i class="fa-solid fa-circle-question text-brand-accent mr-3"></i>Typical OEM costs and timelines?</h3>
-                        <p class="text-gray-400 pl-8">Tooling (shell mold set incl. silicone/button parts): USD 4,800. Development fee: USD 350 (refundable on orders &gt; 2,000 pcs). Mold lead time: 30–45 days; development: 10–15 working days. Certification if needed: CE USD 500 / FCC USD 800 / KC USD 5,000.</p>
-                    </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <details class="group bg-brand-dark p-5 rounded-xl border border-gray-700 hover:border-brand-accent transition">
+                        <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>Do you sell to end users?</span>
+                            <i class="fa-solid fa-chevron-down text-xs text-gray-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-gray-400 mt-2 pl-7">No. We are a B2B manufacturer and supply locksmiths, installers, and distributors only.</p>
+                    </details>
+                    <details class="group bg-brand-dark p-5 rounded-xl border border-gray-700 hover:border-brand-accent transition">
+                        <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>What is your MOQ?</span>
+                            <i class="fa-solid fa-chevron-down text-xs text-gray-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-gray-400 mt-2 pl-7">50 pcs.</p>
+                    </details>
+                    <details class="group bg-brand-dark p-5 rounded-xl border border-gray-700 hover:border-brand-accent transition">
+                        <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>Which currency can you quote in?</span>
+                            <i class="fa-solid fa-chevron-down text-xs text-gray-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-gray-400 mt-2 pl-7">USD or EUR.</p>
+                    </details>
+                    <details class="group bg-brand-dark p-5 rounded-xl border border-gray-700 hover:border-brand-accent transition">
+                        <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>Do you have distributor tier pricing levels?</span>
+                            <i class="fa-solid fa-chevron-down text-xs text-gray-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-gray-400 mt-2 pl-7">No. We do not use tiered distributor pricing.</p>
+                    </details>
+                    <details class="group bg-brand-dark p-5 rounded-xl border border-gray-700 hover:border-brand-accent transition">
+                        <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>Is packaging included? Custom packaging/labels?</span>
+                            <i class="fa-solid fa-chevron-down text-xs text-gray-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-gray-400 mt-2 pl-7">Standard packaging is included by default. Custom packaging/labels require an additional cost.</p>
+                    </details>
+                    <details class="group bg-brand-dark p-5 rounded-xl border border-gray-700 hover:border-brand-accent transition">
+                        <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>Payment terms and methods?</span>
+                            <i class="fa-solid fa-chevron-down text-xs text-gray-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-gray-400 mt-2 pl-7">Standard terms: T/T 30/70. We also accept PayPal (samples), L/C, and Alibaba Trade Assurance.</p>
+                    </details>
+                    <details class="group bg-brand-dark p-5 rounded-xl border border-gray-700 hover:border-brand-accent transition">
+                        <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>Which Incoterms and lanes?</span>
+                            <i class="fa-solid fa-chevron-down text-xs text-gray-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-gray-400 mt-2 pl-7">FOB / DAP / DDP for EU / US / South America / Australia.</p>
+                    </details>
+                    <details class="group bg-brand-dark p-5 rounded-xl border border-gray-700 hover:border-brand-accent transition">
+                        <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>What is your warranty period?</span>
+                            <i class="fa-solid fa-chevron-down text-xs text-gray-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-gray-400 mt-2 pl-7">1-year warranty for both remotes and receivers.</p>
+                    </details>
+                    <details class="group bg-brand-dark p-5 rounded-xl border border-gray-700 hover:border-brand-accent transition">
+                        <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>What is the MOQ for OEM/ODM customization?</span>
+                            <i class="fa-solid fa-chevron-down text-xs text-gray-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-gray-400 mt-2 pl-7">500 pcs.</p>
+                    </details>
+                    <details class="group bg-brand-dark p-5 rounded-xl border border-gray-700 hover:border-brand-accent transition md:col-span-2">
+                        <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>What are the typical OEM costs and timelines?</span>
+                            <i class="fa-solid fa-chevron-down text-xs text-gray-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-gray-400 mt-2 pl-7">Tooling (shell mold set incl. silicone/button parts): USD 4,800. Development fee: USD 350 (refundable on orders &gt; 2,000 pcs). Mold lead time: 30–45 days; development: 10–15 working days. Certification if needed: CE USD 500 / FCC USD 800 / KC USD 5,000.</p>
+                    </details>
                 </div>
             </div>
         </section>
