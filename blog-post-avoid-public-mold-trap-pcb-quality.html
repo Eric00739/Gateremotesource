@@ -10,9 +10,13 @@
     <link rel="canonical" href="https://www.gateremotesource.com/blog-post-avoid-public-mold-trap-pcb-quality.html">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.gateremotesource.com/blog-post-avoid-public-mold-trap-pcb-quality.html">
-    <meta property="og:image" content="https://www.gateremotesource.com/logo/logo.png.png">
-    <meta name="twitter:image" content="https://www.gateremotesource.com/logo/logo.png.png">
-    <link rel="icon" type="image/png" href="logo/favicon.png.png">
+    <meta property="og:image" content="https://www.gateremotesource.com/logo/logo.png">
+    <meta name="twitter:image" content="https://www.gateremotesource.com/logo/logo.png">
+    <link rel="icon" type="image/x-icon" href="/logo/favicon.ico?v=1">
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon-32.png?v=1">
+    <link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon-16.png?v=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo/apple-touch-icon.png?v=1">
+    <link rel="manifest" href="/site.webmanifest?v=1">
 
     <!-- Preconnects -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,9 +24,16 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://www.googletagmanager.com">
 
-    <link rel="stylesheet" href="assets/css/tailwind.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS (non-blocking) -->
+    <link rel="preload" href="assets/css/tailwind.css" as="style">
+    <link rel="stylesheet" href="assets/css/tailwind.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="assets/css/tailwind.css"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'" crossorigin>
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin></noscript>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet"></noscript>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZF8T77R309"></script>
     <script>
@@ -101,7 +112,7 @@
                     </div>
                 </div>
                 <figure class="img-frame">
-                    <img src="assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-01.webp" alt="Remote shell next to burnt phenolic PCB">
+                    <img loading="lazy" decoding="async" src="assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-01.webp" alt="Remote shell next to burnt phenolic PCB">
                 </figure>
             </header>
 
@@ -120,7 +131,7 @@
                 <p>For a distributor, choosing the cheaper option is tempting. It promises higher margins. But as a source factory with 10 years of experience in RF manufacturing, Gateremotesource knows the uncomfortable truth: the casing is just a mask. When a customer calls you three months later saying their gate won’t open in the rain, or the remote has lost its programming, the plastic shell isn’t to blame. The failure lies inside the “Black Box”—the PCBA (Printed Circuit Board Assembly).</p>
 
                 <figure class="img-frame">
-                    <img src="assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-02.webp" alt="Close-up of FR-4 PCB with crystal and IC">
+                    <img loading="lazy" decoding="async" src="assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-02.webp" alt="Close-up of FR-4 PCB with crystal and IC">
                 </figure>
 
                 <p>This guide dismantles the technical differences between “market junk” and industrial-grade hardware, providing verifiable data points to help you spot the difference before you place an order.</p>
@@ -166,7 +177,7 @@
                 <section>
                     <h2 class="text-2xl font-bold text-white">5) Manufacturing: The Invisible 10%</h2>
                     <figure class="img-frame">
-                    <img src="assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-03.webp" alt="AOI inspection pass on SMT line">
+                    <img loading="lazy" decoding="async" src="assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-03.webp" alt="AOI inspection pass on SMT line">
                     </figure>
                     <p>Design is half the battle; manufacturing consistency is the other half.</p>
                     <ul class="list-disc list-inside space-y-2">
@@ -209,7 +220,7 @@
                 </section>
 
                 <figure class="img-frame">
-                    <img src="assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-04.webp" alt="UV inspection of assembled PCB">
+                    <img loading="lazy" decoding="async" src="assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-04.webp" alt="UV inspection of assembled PCB">
                 </figure>
 
                 <section class="space-y-4">
@@ -286,7 +297,7 @@
     <footer class="bg-brand-dark border-t border-gray-800 py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
             <div class="flex items-center gap-2 text-white">
-                <img src="logo/logo.png.png" width="1024" height="1024" alt="GateRemoteSource logo" class="h-8 w-auto object-contain">
+                <img src="logo/logo.png" width="1024" height="1024" alt="GateRemoteSource logo" class="h-8 w-auto object-contain">
                 <span class="font-bold">GateRemote<span class="text-brand-accent">Source</span></span>
             </div>
             <div class="flex items-center gap-4">

@@ -51,7 +51,7 @@ This is a professionally refactored B2B e-commerce website for GateRemoteSource,
 │   ├── de.json            # German
 │   ├── it.json            # Italian (to be created)
 │   └── fr.json            # French (to be created)
-├── favicon.png.png        # Website favicon
+├── favicon-16.png / favicon-32.png / favicon.ico   # Website favicon set
 ├── logo.png.png          # Company logo
 └── README.md             # This documentation file
 ```

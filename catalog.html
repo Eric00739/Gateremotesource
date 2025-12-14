@@ -12,11 +12,15 @@
     <link rel="canonical" href="https://www.gateremotesource.com/catalog">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.gateremotesource.com/catalog">
-    <meta property="og:image" content="https://www.gateremotesource.com/logo/logo.png.png">
-    <meta name="twitter:image" content="https://www.gateremotesource.com/logo/logo.png.png">
+    <meta property="og:image" content="https://www.gateremotesource.com/logo/logo.png">
+    <meta name="twitter:image" content="https://www.gateremotesource.com/logo/logo.png">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="logo/favicon.png.png">
+    <link rel="icon" type="image/x-icon" href="/logo/favicon.ico?v=1">
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon-32.png?v=1">
+    <link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon-16.png?v=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo/apple-touch-icon.png?v=1">
+    <link rel="manifest" href="/site.webmanifest?v=1">
 
     <!-- Preconnects -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,14 +28,20 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://www.googletagmanager.com">
 
-    <!-- Tailwind CSS -->
-    <link rel="stylesheet" href="assets/css/tailwind.css">
+    <!-- Tailwind CSS (non-blocking) -->
+    <link rel="preload" href="assets/css/tailwind.css" as="style">
+    <link rel="stylesheet" href="assets/css/tailwind.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="assets/css/tailwind.css"></noscript>
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome (non-blocking) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'" crossorigin>
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin></noscript>
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts (non-blocking) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet"></noscript>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZF8T77R309"></script>
@@ -90,7 +100,7 @@
                 <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
                     <a href="/" class="flex items-center gap-3">
                         <div class="bg-white p-1.5 rounded-lg h-10 w-10 flex items-center justify-center">
-                            <img src="logo/logo.png.png" width="1024" height="1024" alt="GateRemoteSource Logo" class="h-full w-full object-contain">
+                            <img src="logo/logo.png" width="1024" height="1024" alt="GateRemoteSource Logo" class="h-full w-full object-contain">
                         </div>
                         <span class="font-bold text-2xl text-white tracking-tight">GateRemote<span class="text-brand-accent">Source</span></span>
                     </a>
@@ -426,7 +436,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <div>
                     <div class="flex items-center gap-3 mb-4 text-white">
-                        <img src="logo/logo.png.png" width="1024" height="1024" alt="GateRemoteSource logo" class="h-10 w-auto object-contain">
+                        <img src="logo/logo.png" width="1024" height="1024" alt="GateRemoteSource logo" class="h-10 w-auto object-contain">
                     </div>
                     <p class="mb-4" data-i18n="footer.company_description">Your Profit Partner in Access Control. Supplying locksmiths worldwide.</p>
                 </div>
