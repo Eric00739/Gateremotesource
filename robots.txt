@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Allow: /logo/
 
 Sitemap: https://www.gateremotesource.com/sitemap.xml
