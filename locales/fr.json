@@ -205,5 +205,20 @@
       "title": "Logistique Fiable",
       "body": "Stocks tampons, exp?dition 48h sur r?assorts et ?tiquettes carton pr?tes pour vos entrep?ts."
     }
+  },
+  "about": {
+    "description": "Founded in 2015 in Shenzhen as a PCBA workshop, later relocated to Dongguan (2021) with a 4,000 m? facility?now a full OEM/ODM manufacturer for the global access control market.",
+    "timeline_2015_title": "Foundation",
+    "timeline_2015_description": "Founded in 2015 in Shenzhen, China, starting as a PCBA assembly workshop.",
+    "timeline_2018_title": "ISO Certification",
+    "timeline_2018_description": "Achieved ISO certification to strengthen our quality management system.",
+    "timeline_2020_title": "Product Milestone",
+    "timeline_2020_description": "Launched our first Universal Rolling Code remote series.",
+    "timeline_2021_relocation_title": "Expansion & Relocation",
+    "timeline_2021_relocation_description": "Relocated our factory from Shenzhen to Dongguan and expanded the workshop to 4,000 m?.",
+    "timeline_2021_hightech_title": "High-Tech Recognition",
+    "timeline_2021_hightech_description": "Awarded the China National High-Tech Enterprise certificate.",
+    "timeline_2023_title": "Global Reach",
+    "timeline_2023_description": "Exporting to 40+ countries, 100% focused on B2B aftermarket solutions."
   }
 }
