@@ -325,16 +325,20 @@
         <!-- Hero -->
         <section class="hero-bg min-h-screen flex items-center relative pt-24">
             <div class="hero-video">
-                <video 
-                    id="heroVideo"
-                    autoplay 
-                    muted 
-                    loop 
-                    playsinline 
-                    preload="none" 
-                    poster="/assets/videos/V1.3-poster.jpg">
-                </video>
-            </div>
+                <video 
+                    id="heroVideo"
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline 
+                    preload="none" 
+                    poster="/assets/videos/V1.3-poster.jpg">
+                    <source src="/assets/videos/V1.3.webm" type="video/webm" media="(min-width: 769px)">
+                    <source src="/assets/videos/V1.3.mp4" type="video/mp4" media="(min-width: 769px)">
+                    <source src="/assets/videos/V1.3-mobile.webm" type="video/webm" media="(max-width: 768px)">
+                    <source src="/assets/videos/V1.3-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+                </video>
+            </div>
             <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/50 via-transparent to-brand-dark"></div>
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20 relative z-10">
                 <div class="max-w-3xl animate-fade-in-up">
@@ -1984,25 +1988,28 @@
             });
         }
 
-        // Defer hero video load on mobile but keep autoplay when visible
-        const heroVideo = document.querySelector('.hero-video video');
-        if (heroVideo) {
-            const mobileSources = [
-                { src: '/assets/videos/V1.3-mobile.webm', type: 'video/webm' },
-                { src: '/assets/videos/V1.3-mobile.mp4', type: 'video/mp4' }
-            ];
-            const desktopSources = [
-                { src: '/assets/videos/V1.3.webm', type: 'video/webm' },
-                { src: '/assets/videos/V1.3.mp4', type: 'video/mp4' }
-            ];
-            const isMobile = window.matchMedia('(max-width: 768px)').matches;
-            const chosenSources = isMobile ? mobileSources : desktopSources;
-            chosenSources.forEach(cfg => {
-                const s = document.createElement('source');
-                s.src = cfg.src;
-                s.type = cfg.type;
-                heroVideo.appendChild(s);
-            });
+        // Defer hero video load on mobile but keep autoplay when visible
+        const heroVideo = document.querySelector('.hero-video video');
+        if (heroVideo) {
+            const hasSource = heroVideo.querySelector('source');
+            if (!hasSource) {
+                const mobileSources = [
+                    { src: '/assets/videos/V1.3-mobile.webm', type: 'video/webm' },
+                    { src: '/assets/videos/V1.3-mobile.mp4', type: 'video/mp4' }
+                ];
+                const desktopSources = [
+                    { src: '/assets/videos/V1.3.webm', type: 'video/webm' },
+                    { src: '/assets/videos/V1.3.mp4', type: 'video/mp4' }
+                ];
+                const isMobile = window.matchMedia('(max-width: 768px)').matches;
+                const chosenSources = isMobile ? mobileSources : desktopSources;
+                chosenSources.forEach(cfg => {
+                    const s = document.createElement('source');
+                    s.src = cfg.src;
+                    s.type = cfg.type;
+                    heroVideo.appendChild(s);
+                });
+            }
 
             const loadAndPlay = () => {
                 heroVideo.load();
@@ -2011,16 +2018,20 @@
                     playPromise.catch(() => {});
                 }
             };
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        loadAndPlay();
-                        observer.disconnect();
-                    }
-                });
-            }, { threshold: 0.2 });
-            observer.observe(heroVideo);
-        }
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            loadAndPlay();
+                            observer.disconnect();
+                        }
+                    });
+                }, { threshold: 0.2 });
+                observer.observe(heroVideo);
+            } else {
+                loadAndPlay();
+            }
+        }
     </script>
     
     <style>
