@@ -19,21 +19,22 @@
     <link rel="manifest" href="/site.webmanifest?v=1">
 
     <!-- Preconnects -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://www.googletagmanager.com">
 
     <!-- Tailwind CSS (non-blocking) -->
     <link rel="preload" href="/assets/css/tailwind.css" as="style">
     <link rel="stylesheet" href="/assets/css/tailwind.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="/assets/css/tailwind.css"></noscript>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'" crossorigin>
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin></noscript>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Font Awesome (local) -->
+    <link rel="preload" href="/assets/vendor/fontawesome/css/all.min.css" as="style">
+    <link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css"></noscript>
+
+    <!-- Local Fonts (non-blocking) -->
+    <link rel="preload" href="/assets/css/fonts.css" as="style">
+    <link rel="stylesheet" href="/assets/css/fonts.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/fonts.css"></noscript>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZF8T77R309"></script>
     <script>
@@ -104,7 +105,7 @@
                     <span class="text-gray-400">9 min read</span>
                 </div>
                 <div class="article-content">
-                    <h1 class="text-3xl md:text-4xl font-extrabold text-white leading-tight">Avoid the "Public Mold" Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls</h1>
+                    <h1 class="text-3xl md:text-4xl font-bold text-white leading-tight">Avoid the "Public Mold" Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls</h1>
                     <p class="text-gray-300 text-lg">Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation.</p>
                     <div class="flex flex-wrap items-center gap-4 text-sm text-gray-400">
                         <span>By <span class="text-white font-semibold">Eric Huang</span></span>
@@ -297,7 +298,7 @@
     <footer class="bg-brand-dark border-t border-gray-800 py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
             <div class="flex items-center gap-2 text-white">
-                <img src="logo/logo.png" width="1024" height="1024" alt="GateRemoteSource logo" class="h-8 w-auto object-contain">
+                <img src="/logo/logo.png" width="1024" height="1024" alt="GateRemoteSource logo" class="h-8 w-auto object-contain">
                 <span class="font-bold">GateRemote<span class="text-brand-accent">Source</span></span>
             </div>
             <div class="flex items-center gap-4">
