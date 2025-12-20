@@ -1850,25 +1850,25 @@
 
                 <!-- Category Filter -->
 
-                <div class="flex flex-wrap justify-center gap-4 mb-16">
+                <div class="flex flex-wrap justify-center gap-4 mb-16" data-filter-group="products" data-filter-target="#products-grid" data-default-filter="all">
 
-                    <button class="px-6 py-2 rounded-full bg-brand-accent text-white font-bold shadow-lg" data-i18n="products_page.all_products">All Products</button>
+                    <button type="button" class="px-6 py-2 rounded-full bg-brand-accent text-white font-bold shadow-lg" data-filter="all" data-i18n="products_page.all_products">All Products</button>
 
-                    <button class="px-6 py-2 rounded-full bg-brand-surface border border-gray-700 text-gray-400 hover:bg-brand-accent hover:text-white hover:border-brand-accent transition" data-i18n="products_page.rolling_code_remotes">Rolling Code Remotes</button>
+                    <button type="button" class="px-6 py-2 rounded-full bg-brand-surface border border-gray-700 text-gray-400 hover:bg-brand-accent hover:text-white hover:border-brand-accent transition" data-filter="rolling" data-i18n="products_page.rolling_code_remotes">Rolling Code Remotes</button>
 
-                    <button class="px-6 py-2 rounded-full bg-brand-surface border border-gray-700 text-gray-400 hover:bg-brand-accent hover:text-white hover:border-brand-accent transition" data-i18n="products_page.universal_receivers">Universal Receivers</button>
+                    <button type="button" class="px-6 py-2 rounded-full bg-brand-surface border border-gray-700 text-gray-400 hover:bg-brand-accent hover:text-white hover:border-brand-accent transition" data-filter="receivers" data-i18n="products_page.universal_receivers">Universal Receivers</button>
 
-                    <button class="px-6 py-2 rounded-full bg-brand-surface border border-gray-700 text-gray-400 hover:bg-brand-accent hover:text-white hover:border-brand-accent transition" data-i18n="products_page.duplicators">Programmable Replacements</button>
+                    <button type="button" class="px-6 py-2 rounded-full bg-brand-surface border border-gray-700 text-gray-400 hover:bg-brand-accent hover:text-white hover:border-brand-accent transition" data-filter="duplicators" data-i18n="products_page.duplicators">Programmable Replacements</button>
 
                 </div>
 
 
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+                <div id="products-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
 
                     <!-- Product Card 1 -->
 
-                    <div class="bg-brand-surface border border-gray-700 rounded-xl overflow-hidden group hover:border-brand-accent transition">
+                    <div class="bg-brand-surface border border-gray-700 rounded-xl overflow-hidden group hover:border-brand-accent transition" data-category="rolling">
 
                         <div class="h-64 bg-gray-900 relative flex items-center justify-center p-4">
 
@@ -1902,7 +1902,7 @@
 
                     <!-- Product Card 2 -->
 
-                    <div class="bg-brand-surface border border-gray-700 rounded-xl overflow-hidden group hover:border-brand-accent transition">
+                    <div class="bg-brand-surface border border-gray-700 rounded-xl overflow-hidden group hover:border-brand-accent transition" data-category="duplicators">
 
                         <div class="h-64 bg-gray-900 relative flex items-center justify-center p-4">
 
@@ -1936,7 +1936,7 @@
 
                     <!-- Product Card 3 -->
 
-                    <div class="bg-brand-surface border border-gray-700 rounded-xl overflow-hidden group hover:border-brand-accent transition">
+                    <div class="bg-brand-surface border border-gray-700 rounded-xl overflow-hidden group hover:border-brand-accent transition" data-category="receivers">
 
                         <div class="h-64 bg-gray-900 relative flex items-center justify-center p-4">
 
@@ -2666,19 +2666,9 @@
 
                 
 
-                <!-- Pagination (Visual Placeholder) -->
+                <!-- Pagination -->
 
-                <div class="mt-16 flex justify-center gap-2">
-
-                    <button class="w-10 h-10 rounded-lg bg-brand-accent text-white font-bold flex items-center justify-center">1</button>
-
-                    <button class="w-10 h-10 rounded-lg bg-brand-dark border border-gray-700 text-gray-400 hover:border-brand-accent hover:text-white transition flex items-center justify-center">2</button>
-
-                    <button class="w-10 h-10 rounded-lg bg-brand-dark border border-gray-700 text-gray-400 hover:border-brand-accent hover:text-white transition flex items-center justify-center">3</button>
-
-                    <button class="w-10 h-10 rounded-lg bg-brand-dark border border-gray-700 text-gray-400 hover:border-brand-accent hover:text-white transition flex items-center justify-center"><i class="fa-solid fa-chevron-right"></i></button>
-
-                </div>
+                <div id="blog-pagination" class="mt-16 flex justify-center gap-2" aria-label="Blog pagination"></div>
 
             </div>
 
@@ -3663,6 +3653,7 @@
         attachCtaTracking();
 
         initTestimonialPager();
+        initProductFilters();
 
 
 
@@ -3865,14 +3856,18 @@
             // Blog Page List (Rich)
 
             const listArea = document.getElementById('blog-list-area');
+            const pagination = document.getElementById('blog-pagination');
+            const pageSize = 3;
+            let currentPage = 1;
+            let filteredPosts = posts;
 
             
 
             window.filterBlogs = function() {
 
-                const query = document.getElementById('blogSearch').value.toLowerCase();
-
-                const filtered = posts.filter(post => 
+                const searchInput = document.getElementById('blogSearch');
+                const query = searchInput ? searchInput.value.toLowerCase() : '';
+                filteredPosts = posts.filter(post => 
 
                     post.title.toLowerCase().includes(query) || 
 
@@ -3880,7 +3875,8 @@
 
                 );
 
-                renderList(filtered);
+                currentPage = 1;
+                renderPage();
 
             }
 
@@ -3932,10 +3928,101 @@
 
             }
 
-            renderList(posts);
+            function renderPagination(totalPages) {
+                if (!pagination) return;
+                pagination.innerHTML = '';
+                if (totalPages <= 1) return;
 
-            attachCtaTracking();
+                const activeClass = 'w-10 h-10 rounded-lg bg-brand-accent text-white font-bold flex items-center justify-center';
+                const inactiveClass = 'w-10 h-10 rounded-lg bg-brand-dark border border-gray-700 text-gray-400 hover:border-brand-accent hover:text-white transition flex items-center justify-center';
 
+                for (let page = 1; page <= totalPages; page += 1) {
+                    const btn = document.createElement('button');
+                    const isActive = page === currentPage;
+                    btn.type = 'button';
+                    btn.className = isActive ? activeClass : inactiveClass;
+                    btn.textContent = page.toString();
+                    if (isActive) {
+                        btn.setAttribute('aria-current', 'page');
+                    } else {
+                        btn.addEventListener('click', () => {
+                            currentPage = page;
+                            renderPage();
+                        });
+                    }
+                    pagination.appendChild(btn);
+                }
+
+                const nextBtn = document.createElement('button');
+                nextBtn.type = 'button';
+                nextBtn.className = inactiveClass;
+                nextBtn.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
+                nextBtn.setAttribute('aria-label', 'Next page');
+                if (currentPage >= totalPages) {
+                    nextBtn.disabled = true;
+                    nextBtn.classList.add('opacity-50', 'cursor-default');
+                } else {
+                    nextBtn.addEventListener('click', () => {
+                        currentPage += 1;
+                        renderPage();
+                    });
+                }
+                pagination.appendChild(nextBtn);
+            }
+
+            function renderPage() {
+                const totalPages = Math.max(1, Math.ceil(filteredPosts.length / pageSize));
+                if (currentPage > totalPages) currentPage = totalPages;
+                const start = (currentPage - 1) * pageSize;
+                const pageItems = filteredPosts.slice(start, start + pageSize);
+                renderList(pageItems);
+                renderPagination(totalPages);
+                attachCtaTracking();
+            }
+
+            renderPage();
+
+        }
+
+        function initProductFilters() {
+            document.querySelectorAll('[data-filter-group="products"]').forEach(group => {
+                const targetSelector = group.getAttribute('data-filter-target');
+                const target = targetSelector ? document.querySelector(targetSelector) : null;
+                if (!target) return;
+
+                const buttons = Array.from(group.querySelectorAll('[data-filter]'));
+                const cards = Array.from(target.querySelectorAll('[data-category]'));
+                if (!buttons.length || !cards.length) return;
+
+                const defaultFilter = group.getAttribute('data-default-filter') || buttons[0].dataset.filter;
+                const activeButton = buttons.find(btn => btn.dataset.filter === defaultFilter) || buttons[0];
+                const inactiveButton = buttons.find(btn => btn !== activeButton);
+                const activeClass = activeButton ? activeButton.className : '';
+                const inactiveClass = inactiveButton ? inactiveButton.className : activeClass;
+
+                const applyFilter = (filter) => {
+                    const normalized = (filter || '').toLowerCase();
+                    cards.forEach(card => {
+                        const categories = (card.dataset.category || '')
+                            .split(',')
+                            .map(value => value.trim().toLowerCase())
+                            .filter(Boolean);
+                        const isMatch = normalized === 'all' || categories.includes(normalized);
+                        card.classList.toggle('hidden', !isMatch);
+                    });
+                    buttons.forEach(btn => {
+                        const isActive = btn.dataset.filter === filter;
+                        btn.className = isActive ? activeClass : inactiveClass;
+                        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+                    });
+                };
+
+                buttons.forEach(btn => {
+                    btn.addEventListener('click', () => applyFilter(btn.dataset.filter));
+                });
+
+                applyFilter(defaultFilter);
+            });
         }
 
         // Initial render with English fallback, then update when translations load
