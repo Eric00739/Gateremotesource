@@ -29,7 +29,7 @@
       "subtitle": "Direct Factory Price"
     },
     "compatible": {
-      "title": "100% Compatible",
+      "title": "1-Year Warranty",
       "subtitle": "Tested & Guaranteed"
     },
     "low_moq": {
@@ -149,7 +149,9 @@
     "read_article": "Read Article"
   },
   "faq": {
-    "title": "Distributor FAQ",
+    "title": "FAQs for Distributors & OEM Buyers",
+    "distributor_title": "Distributor FAQ",
+    "oem_title": "OEM/ODM FAQ",
     "q1": {
       "question": "Do you sell to end-users?",
       "answer": "No. We are a B2B manufacturer protecting our distributors. We do not sell single units to the public."

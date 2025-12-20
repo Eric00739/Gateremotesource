@@ -228,6 +228,43 @@
                                 <input type="email" id="contactEmail" class="w-full bg-brand-dark border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-brand-accent transition" required>
                             </div>
                         </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-400 text-sm mb-2">I am a</label>
+                                <select name="role" id="contactRole" class="w-full bg-brand-dark border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-brand-accent transition" required>
+                                    <option value="" disabled selected>Select your role</option>
+                                    <option value="Distributor">Distributor</option>
+                                    <option value="Installer">Installer</option>
+                                    <option value="Locksmith">Locksmith</option>
+                                    <option value="E-commerce">E-commerce</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-400 text-sm mb-2">Region</label>
+                                <select name="region" id="contactRegion" class="w-full bg-brand-dark border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-brand-accent transition" required>
+                                    <option value="" disabled selected>Select region</option>
+                                    <option value="EU">EU</option>
+                                    <option value="UK">UK</option>
+                                    <option value="US">US</option>
+                                    <option value="LATAM">LATAM</option>
+                                    <option value="AU">AU</option>
+                                    <option value="MEA">MEA</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-gray-400 text-sm mb-2">What you need</label>
+                            <select name="need" id="contactNeed" class="w-full bg-brand-dark border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-brand-accent transition" required>
+                                <option value="" disabled selected>Select request type</option>
+                                <option value="Price list">Price list</option>
+                                <option value="Sample kit">Sample kit</option>
+                                <option value="Compliance pack">Compliance pack</option>
+                                <option value="Compatibility list">Compatibility list</option>
+                                <option value="OEM project">OEM project</option>
+                            </select>
+                        </div>
                         <div>
                             <label class="block text-gray-400 text-sm mb-2">Product</label>
                             <input type="text" id="contactProduct" class="w-full bg-brand-dark border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-brand-accent transition" placeholder="e.g. Nice/Came compatible remote" required>
@@ -412,6 +449,38 @@
             }, 5000);
         }
 
+        function applyContactPrefill() {
+            const params = new URLSearchParams(window.location.search);
+            if (!params || params.size === 0) return;
+
+            const normalize = (value) => value.toLowerCase().replace(/[-_]+/g, ' ').trim();
+            const setSelect = (id, paramKey) => {
+                const raw = params.get(paramKey);
+                if (!raw) return;
+                const select = document.getElementById(id);
+                if (!select) return;
+                const target = normalize(raw);
+                const match = Array.from(select.options).find(option => {
+                    const value = normalize(option.value || '');
+                    const label = normalize(option.textContent || '');
+                    return value === target || label === target;
+                });
+                if (match) select.value = match.value;
+            };
+            const setInput = (id, paramKey) => {
+                const raw = params.get(paramKey);
+                if (!raw) return;
+                const input = document.getElementById(id);
+                if (input && !input.value) input.value = raw;
+            };
+
+            setSelect('contactRole', 'role');
+            setSelect('contactRegion', 'region');
+            setSelect('contactNeed', 'need');
+            setInput('contactProduct', 'product');
+            setInput('contactProduct', 'model');
+        }
+
         // Apply translations to DOM
         function applyTranslations() {
             // Update meta tags
@@ -515,6 +584,7 @@
         // Initialize
         loadTranslations('en');
         attachCtaTracking();
+        applyContactPrefill();
 
         // Language detection
         const supportedLangs = ['en', 'es', 'de', 'it', 'fr', 'pt'];

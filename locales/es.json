@@ -29,7 +29,7 @@
       "subtitle": "Precio Directo de Fábrica"
     },
     "compatible": {
-      "title": "100% Compatible",
+      "title": "Garant?a de 1 a?o",
       "subtitle": "Probado y Garantizado"
     },
     "low_moq": {
@@ -149,7 +149,9 @@
     "read_article": "Leer artículo"
   },
   "faq": {
-    "title": "FAQ para Distribuidores",
+    "title": "FAQ para distribuidores y compradores OEM",
+    "distributor_title": "FAQ de distribuidores",
+    "oem_title": "FAQ OEM/ODM",
     "q1": {
       "question": "¿Venden a usuarios finales?",
       "answer": "No. Somos un fabricante B2B que protege a nuestros distribuidores. No vendemos unidades individuales al público."
