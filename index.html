@@ -1346,9 +1346,9 @@
 
                         <div class="flex gap-2">
 
-                            <button id="testimonial-prev" class="px-3 py-2 rounded-lg border border-gray-700 text-gray-200 hover:text-white hover:border-brand-accent transition text-sm flex items-center gap-2"><i class="fa-solid fa-chevron-left text-xs"></i> Prev</button>
+                            <button id="testimonial-prev" type="button" class="px-3 py-2 rounded-lg border border-gray-700 text-gray-200 hover:text-white hover:border-brand-accent transition text-sm flex items-center gap-2"><i class="fa-solid fa-chevron-left text-xs"></i> Prev</button>
 
-                            <button id="testimonial-next" class="px-3 py-2 rounded-lg bg-brand-accent text-white hover:bg-brand-hover transition text-sm flex items-center gap-2">Next <i class="fa-solid fa-chevron-right text-xs"></i></button>
+                            <button id="testimonial-next" type="button" class="px-3 py-2 rounded-lg bg-brand-accent text-white hover:bg-brand-hover transition text-sm flex items-center gap-2">Next <i class="fa-solid fa-chevron-right text-xs"></i></button>
 
                         </div>
 
@@ -3484,7 +3484,8 @@
 
             const next = document.getElementById('testimonial-next');
 
-            let idx = 0;
+            let idx = pages.findIndex(page => !page.classList.contains('hidden'));
+            if (idx < 0) idx = 0;
 
 
 
@@ -3500,11 +3501,11 @@
 
 
 
-            prev?.addEventListener('click', () => show(idx - 1));
+            if (prev) prev.onclick = () => show(idx - 1);
 
-            next?.addEventListener('click', () => show(idx + 1));
+            if (next) next.onclick = () => show(idx + 1);
 
-            show(0);
+            show(idx);
 
         }
 
