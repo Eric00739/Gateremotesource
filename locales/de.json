@@ -181,6 +181,7 @@
     "email_sales": "sales@gateremotesource.com",
     "whatsapp": "+86 158 9964 8898",
     "address": "Adresse",
+    "address_text": "Huawei Kegu Industrial Park, Dalingshan Town, Dongguan, Guangdong, China",
     "company_description": "Ihr Gewinnpartner im Zugangskontrolle. Wir beliefern Schlüsseldienste weltweit."
   },
   "products": {
@@ -268,19 +269,19 @@
     }
   },
   "advantages": {
-    "title": "Warum Distributoren GateRemoteSource w?hlen",
-    "subtitle": "Mehr als Fernbedienungen: Sales-Tools, technischer Support und planbare Logistik f?r B2B-Kunden.",
+    "title": "Warum Distributoren GateRemoteSource wählen",
+    "subtitle": "Mehr als Fernbedienungen: Sales-Tools, technischer Support und planbare Logistik für B2B-Kunden.",
     "card1": {
       "title": "Pre-Sales Leitfaden",
-      "body": "Versandfertige Kompatibilit?tslisten und Preisvorlagen helfen Ihrem Vertrieb schneller abzuschlie?en."
+      "body": "Versandfertige Kompatibilitätslisten und Preisvorlagen helfen Ihrem Vertrieb schneller abzuschließen."
     },
     "card2": {
       "title": "Technischer Support",
-      "body": "Programmier-Videos, Verdrahtungs-Guides und OEM-Ingenieure auf Abruf f?r Ihre Monteure."
+      "body": "Programmier-Videos, Verdrahtungs-Guides und OEM-Ingenieure auf Abruf für Ihre Monteure."
     },
     "card3": {
-      "title": "Zuverl?ssige Logistik",
-      "body": "Sicherheitsbestand, 48h Versand bei Nachbestellungen und Kartonetiketten fertig f?r Ihr Lager."
+      "title": "Zuverlässige Logistik",
+      "body": "Sicherheitsbestand, 48h Versand bei Nachbestellungen und Kartonetiketten fertig für Ihr Lager."
     }
   }
 }

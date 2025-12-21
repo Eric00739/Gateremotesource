@@ -18,7 +18,7 @@
     "title": "Augmentez Vos Marges",
     "title_highlight": "avec Télécommandes de Portail 100% Compatibles",
     "description": "Ne perdez pas une vente parce que la télécommande originale est chère ou discontinuée. Stockez nos <strong>Télécommandes Compatibles et Récepteurs Universels</strong> pour profit maximum.",
-    "search_placeholder": "Recherchez ID FCC, Puce (ex. HCS301) ou Fr?quence...",
+    "search_placeholder": "Recherchez ID FCC, Puce (ex. HCS301) ou Fréquence...",
     "search_button": "Rechercher",
     "cta_catalog": "Voir Catalogue Remplacements",
     "cta_samples": "Commande Kit d'Échantillons"
@@ -180,7 +180,8 @@
   },
   "footer": {
     "legal_disclaimer": "Avis: Tous les noms de produits, logos et marques sont la propriété de leurs propriétaires respectifs. Tous les noms d'entreprise, de produits et de services utilisés dans ce site web sont uniquement à des fins d'identification. L'utilisation de ces noms, logos et marques n'implique pas d'approbation.",
-    "copyright": "© {year} GateRemoteSource. Tous droits réservés."
+    "copyright": "© {year} GateRemoteSource. Tous droits réservés.",
+    "address_text": "Huawei Kegu Industrial Park, Dalingshan Town, Dongguan, Guangdong, China"
   },
   "products_page": {
     "frequency_433": "433,92MHz",
@@ -192,18 +193,18 @@
   },
   "advantages": {
     "title": "Pourquoi les distributeurs choisissent GateRemoteSource",
-    "subtitle": "Plus que des t?l?commandes : outils de vente, support technique et logistique fiable pour les acheteurs B2B.",
+    "subtitle": "Plus que des télécommandes : outils de vente, support technique et logistique fiable pour les acheteurs B2B.",
     "card1": {
       "title": "Kit Avant-Vente",
-      "body": "Fiches de compatibilit? et mod?les de prix pr?ts ? envoyer pour conclure plus vite."
+      "body": "Fiches de compatibilité et modèles de prix prêts à envoyer pour conclure plus vite."
     },
     "card2": {
       "title": "Support Technique",
-      "body": "Vid?os de programmation, guides de c?blage et ing?nieurs OEM pr?ts pour vos installateurs."
+      "body": "Vidéos de programmation, guides de câblage et ingénieurs OEM prêts pour vos installateurs."
     },
     "card3": {
       "title": "Logistique Fiable",
-      "body": "Stocks tampons, exp?dition 48h sur r?assorts et ?tiquettes carton pr?tes pour vos entrep?ts."
+      "body": "Stocks tampons, expédition 48h sur réassorts et étiquettes carton prêtes pour vos entrepôts."
     }
   },
   "about": {

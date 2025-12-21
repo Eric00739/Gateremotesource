@@ -29,7 +29,7 @@
       "subtitle": "Precio Directo de Fábrica"
     },
     "compatible": {
-      "title": "Garant?a de 1 a?o",
+      "title": "Garantía de 1 año",
       "subtitle": "Probado y Garantizado"
     },
     "low_moq": {
@@ -181,6 +181,7 @@
     "email_sales": "sales@gateremotesource.com",
     "whatsapp": "+86 158 9964 8898",
     "address": "Dirección",
+    "address_text": "Huawei Kegu Industrial Park, Dalingshan Town, Dongguan, Guangdong, China",
     "company_description": "Tu Socio de Ganancias en Control de Acceso. Abasteciendo a cerrajeros en todo el mundo."
   },
   "products": {
@@ -268,19 +269,19 @@
     }
   },
   "advantages": {
-    "title": "Por qu? los distribuidores eligen GateRemoteSource",
-    "subtitle": "M?s que mandos: herramientas de venta, soporte t?cnico y log?stica predecible pensadas para compradores B2B.",
+    "title": "Por qué los distribuidores eligen GateRemoteSource",
+    "subtitle": "Más que mandos: herramientas de venta, soporte técnico y logística predecible pensadas para compradores B2B.",
     "card1": {
-      "title": "Gu?a de Preventa",
-      "body": "Hojas de compatibilidad y plantillas de precios listas para enviar ayudan a cerrar m?s r?pido."
+      "title": "Guía de Preventa",
+      "body": "Hojas de compatibilidad y plantillas de precios listas para enviar ayudan a cerrar más rápido."
     },
     "card2": {
-      "title": "Soporte T?cnico",
-      "body": "Videos de programaci?n, gu?as de cableado y t?cnicos OEM en espera para tus instaladores."
+      "title": "Soporte Técnico",
+      "body": "Videos de programación, guías de cableado y técnicos OEM en espera para tus instaladores."
     },
     "card3": {
-      "title": "Log?stica Confiable",
-      "body": "Stock de seguridad, despacho en 48h en repetidos y etiquetas de cart?n listas para tus almacenes."
+      "title": "Logística Confiable",
+      "body": "Stock de seguridad, despacho en 48h en repetidos y etiquetas de cartón listas para tus almacenes."
     }
   }
 }
