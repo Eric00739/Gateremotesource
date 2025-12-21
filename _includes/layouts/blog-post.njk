@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="{{ lang or site.lang }}" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} | {{ site.blogTitle }}</title>
+    <meta name="description" content="{{ summary }}">
+    {% set keywordItems = { "tags": tags, "category": category, "brand": brand, "frequency": frequency, "scene": scene } | keywordList %}
+    <meta name="keywords" content="{{ keywordItems | unique | join(', ') }}">
+    <meta name="author" content="{{ author or 'GateRemoteSource' }}">
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{ title }} | {{ site.blogTitle }}">
+    <meta property="og:description" content="{{ summary }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:image" content="{{ hero_image or '/logo/logo.png' }}">
+    <meta name="twitter:title" content="{{ title }} | {{ site.blogTitle }}">
+    <meta name="twitter:description" content="{{ summary }}">
+    <meta name="twitter:image" content="{{ hero_image or '/logo/logo.png' }}">
+
+    <link rel="icon" type="image/x-icon" href="/logo/favicon.ico?v=1">
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon-32.png?v=1">
+    <link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon-16.png?v=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo/apple-touch-icon.png?v=1">
+    <link rel="manifest" href="/site.webmanifest?v=1">
+
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+
+    <link rel="preload" href="/assets/css/tailwind.css" as="style">
+    <link rel="stylesheet" href="/assets/css/tailwind.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/tailwind.css"></noscript>
+
+    <link rel="preload" href="/assets/vendor/fontawesome/css/all.min.css" as="style">
+    <link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css"></noscript>
+
+    <link rel="preload" href="/assets/css/fonts.css" as="style">
+    <link rel="stylesheet" href="/assets/css/fonts.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/fonts.css"></noscript>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZF8T77R309"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZF8T77R309');
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
+
+        .article-shell { max-width: 1100px; }
+        .article-content { max-width: 780px; }
+        .article-content p { margin-bottom: 1.2em; line-height: 1.75; }
+        .article-content h2 { margin-top: 1.8em; margin-bottom: 0.8em; }
+        .article-content h3 { margin-top: 1.2em; margin-bottom: 0.6em; }
+        .article-content ul, .article-content ol { margin-bottom: 1.2em; }
+        .article-content table { width: 100%; border-collapse: collapse; }
+        .article-content table th { text-align: left; color: #e2e8f0; padding: 0.75rem 0.5rem; }
+        .article-content table td { padding: 0.75rem 0.5rem; border-top: 1px solid #1f2937; color: #e2e8f0; }
+        .article-content blockquote { border-left: 3px solid #06b6d4; padding-left: 1rem; color: #e2e8f0; margin-bottom: 1.2em; }
+
+        .callout {
+            background: linear-gradient(135deg, rgba(6,182,212,0.08), rgba(15,23,42,0.9));
+            border: 1px solid rgba(6,182,212,0.35);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+        }
+        .highlight-card {
+            background: #0f172a;
+            border: 1px solid #1f2937;
+        }
+        .img-frame {
+            overflow: hidden;
+            border: 1px solid #1f2937;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+        }
+        .img-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-300 bg-brand-dark selection:bg-brand-accent selection:text-white flex flex-col min-h-screen">
+    <header class="bg-brand-dark/95 backdrop-blur border-b border-gray-800 sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <a href="/blog/" class="text-brand-accent font-bold text-sm flex items-center gap-2 hover:text-white">
+                <i class="fa-solid fa-arrow-left text-xs"></i>
+                Back to Blog
+            </a>
+            <div class="flex items-center gap-3 text-xs text-gray-400">
+                {% if category %}
+                <span class="px-3 py-1 rounded-full bg-brand-accent/15 text-brand-accent font-bold uppercase tracking-wide">{{ category }}</span>
+                {% endif %}
+                <span class="text-gray-500">{{ date | htmlDate }}</span>
+                {% if read_time %}
+                <span class="text-gray-500">{{ read_time }}</span>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1">
+        <article class="article-shell mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+            <header class="space-y-4">
+                <div class="flex flex-wrap items-center gap-3 text-xs">
+                    {% if category %}
+                    <span class="px-3 py-1 rounded-full bg-brand-accent/15 text-brand-accent font-bold uppercase tracking-[0.15em]">{{ category }}</span>
+                    {% endif %}
+                    <span class="text-gray-400">{{ date | readableDate }}</span>
+                    {% if read_time %}
+                    <span class="text-gray-400">{{ read_time }}</span>
+                    {% endif %}
+                </div>
+                <div class="article-content">
+                    <h1 class="text-3xl md:text-4xl font-bold text-white leading-tight">{{ title }}</h1>
+                    <p class="text-gray-300 text-lg">{{ summary }}</p>
+                    <div class="flex flex-wrap items-center gap-4 text-sm text-gray-400">
+                        <span>By <span class="text-white font-semibold">{{ author or 'GateRemoteSource' }}</span></span>
+                        {% if author_role %}
+                        <span class="px-3 py-1 rounded-full bg-brand-surface text-gray-300">{{ author_role }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+                {% if hero_image %}
+                <figure class="img-frame">
+                    <img loading="lazy" decoding="async" src="{{ hero_image }}" alt="{{ hero_alt or title }}">
+                </figure>
+                {% endif %}
+            </header>
+
+            <div class="article-content space-y-8 text-[17px]">
+                {{ content | safe }}
+            </div>
+
+            {% if series %}
+            {% set seriesPosts = collections.posts | seriesPosts(series) %}
+            {% if seriesPosts.length %}
+            <section class="bg-brand-surface border border-gray-700 rounded-2xl p-6">
+                <h3 class="text-white font-bold text-lg mb-4">Series: {{ series }}</h3>
+                <div class="space-y-3 text-sm text-gray-300">
+                    {% for entry in seriesPosts %}
+                    <a href="{{ entry.url }}" class="flex items-center justify-between p-3 rounded-xl bg-brand-dark border border-gray-700 hover:border-brand-accent transition {% if entry.url == page.url %}border-brand-accent{% endif %}">
+                        <span>{{ entry.data.title }}</span>
+                        {% if entry.url == page.url %}
+                        <span class="text-xs text-brand-accent font-bold">Current</span>
+                        {% endif %}
+                    </a>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+            {% endif %}
+
+            {% set related = collections.posts | relatedPosts(page, 3) %}
+            {% if related.length %}
+            <section class="bg-brand-surface border border-gray-700 rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-white font-bold text-lg">Related Articles</h3>
+                    <a href="/blog/" class="text-brand-accent text-sm font-bold hover:text-white">View all</a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-300">
+                    {% for entry in related %}
+                    <a href="{{ entry.url }}" class="p-4 rounded-xl bg-brand-dark border border-gray-700 hover:border-brand-accent transition block">
+                        <p class="text-xs text-brand-accent font-bold uppercase tracking-wide mb-1">{{ entry.data.category or 'Guide' }}</p>
+                        <p class="text-white font-semibold mb-1">{{ entry.data.title }}</p>
+                        <p class="text-gray-400 text-xs">{{ entry.data.summary }}</p>
+                    </a>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+                <div class="lg:col-span-2 space-y-4">
+                    <a href="/blog/" class="inline-flex items-center text-brand-accent font-bold hover:text-white">
+                        <i class="fa-solid fa-arrow-left mr-2"></i> Back to Blog
+                    </a>
+                    {% set contentTags = tags | contentTags %}
+                    {% if contentTags.length %}
+                    <div class="flex flex-wrap gap-3 text-xs text-gray-300">
+                        {% for tag in contentTags %}
+                        <span class="px-3 py-1 rounded-full border border-gray-700">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="bg-brand-surface border border-gray-700 rounded-xl p-6 shadow-lg space-y-4">
+                    <h3 class="text-white font-bold text-lg">Need a Teardown Sample Kit?</h3>
+                    <p class="text-gray-400 text-sm">See FR-4 boards, crystal oscillators, and AOI quality up close. Built for locksmiths and distributors.</p>
+                    <a href="/contact/" class="block text-center bg-brand-accent hover:bg-brand-hover text-white px-4 py-3 rounded-lg font-bold transition" data-cta="blog_detail_teardown_kit">Quote now</a>
+                    <a href="/catalog/" class="block text-center border border-brand-accent text-brand-accent hover:text-white hover:border-white hover:bg-white/5 px-4 py-3 rounded-lg font-bold transition" data-cta="blog_detail_view_catalog">View Catalog</a>
+                    <div class="flex items-center gap-3 text-sm text-gray-300 pt-2">
+                        <i class="fa-solid fa-shield-halved text-brand-accent"></i>
+                        <span>Defect rate &lt;0.1% | AOI inspected</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="bg-brand-dark border-t border-gray-800 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+            <div class="flex items-center gap-2 text-white">
+                <img src="/logo/logo.png" width="1024" height="1024" alt="GateRemoteSource logo" class="h-8 w-auto object-contain">
+                <span class="font-bold">GateRemote<span class="text-brand-accent">Source</span></span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="/catalog/" class="hover:text-brand-accent">Catalog</a>
+                <a href="/contact/" class="hover:text-brand-accent">Contact</a>
+                <a href="/blog/" class="hover:text-brand-accent">Blog</a>
+            </div>
+            <span class="text-xs">&copy; 2025 GateRemoteSource. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+        {{ {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": title,
+            "description": summary,
+            "image": hero_image,
+            "author": {
+                "@type": "Person",
+                "name": author or "GateRemoteSource"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": site.name,
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": site.url + "/logo/logo.png"
+                }
+            },
+            "datePublished": date | htmlDate,
+            "mainEntityOfPage": site.url + page.url
+        } | json | safe }}
+    </script>
+</body>
+</html>

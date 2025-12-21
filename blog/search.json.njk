@@ -1,0 +1,18 @@
+---
+permalink: "blog/search.json"
+eleventyExcludeFromCollections: true
+---
+[
+{% for post in collections.posts %}
+  {
+    "title": {{ post.data.title | json }},
+    "summary": {{ post.data.summary | json }},
+    "category": {{ post.data.category | json }},
+    "tags": {{ (post.data.tags | contentTags) | json }},
+    "brand": {{ post.data.brand | asArray | json }},
+    "frequency": {{ post.data.frequency | asArray | json }},
+    "scene": {{ post.data.scene | asArray | json }},
+    "url": {{ post.url | json }}
+  }{% if not loop.last %},{% endif %}
+{% endfor %}
+]
