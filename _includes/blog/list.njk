@@ -799,21 +799,25 @@
 
         const url = new URL(window.location.href);
         const paramLang = url.searchParams.get('lang');
+        let redirecting = false;
         if (supportedLangs.includes(paramLang)) {
             const targetPath = buildLangPath(paramLang, url.pathname);
             url.searchParams.delete('lang');
             if (targetPath !== url.pathname) {
                 url.pathname = targetPath;
                 window.location.replace(url.toString());
-                return;
+                redirecting = true;
+            } else if (history.replaceState) {
+                history.replaceState(null, '', url.toString());
             }
-            if (history.replaceState) history.replaceState(null, '', url.toString());
         }
 
-        const initialLang = getLangFromPath(window.location.pathname) || defaultLang;
-        currentLanguage = initialLang;
-        setLanguageUI(initialLang);
-        loadTranslations(initialLang);
+        if (!redirecting) {
+            const initialLang = getLangFromPath(window.location.pathname) || defaultLang;
+            currentLanguage = initialLang;
+            setLanguageUI(initialLang);
+            loadTranslations(initialLang);
+        }
     </script>
 
     <style>

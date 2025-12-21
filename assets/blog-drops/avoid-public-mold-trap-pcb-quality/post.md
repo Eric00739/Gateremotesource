@@ -1,5 +1,5 @@
 ---
-title: Avoid the "Public Mold" Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls
+title: "Avoid the \"Public Mold\" Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls"
 subtitle: A deep dive into PCB architecture, RF stability, and manufacturing protocols for professional locksmiths and distributors.
 date: 2025-02-10
 summary: Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation.

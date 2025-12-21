@@ -3274,7 +3274,7 @@ eleventyComputed:
 
                 const value = getNestedValue(translations, key);
 
-                if (value) {
+                if (value !== null && value !== undefined) {
 
                     element.placeholder = value;
 

@@ -301,7 +301,8 @@ module.exports = function (eleventyConfig) {
       const key = element.getAttribute("data-i18n");
       const value = getNestedValue(translations, key);
       if (value === null || value === undefined) return;
-      if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
+      const tagName = element.tagName ? element.tagName.toLowerCase() : "";
+      if (tagName === "input" || tagName === "textarea") {
         element.setAttribute("placeholder", String(value));
       } else {
         element.set_content(escapeHtml(value));
@@ -324,7 +325,15 @@ module.exports = function (eleventyConfig) {
       });
     }
 
-    return root.toString();
+    const rendered = root.toString();
+    const hasDoctype = /<!doctype html/i.test(content);
+    if (hasDoctype && !/<!doctype html/i.test(rendered)) {
+      const doctypeMatch = content.match(/<!doctype html[^>]*>/i);
+      const doctype = doctypeMatch ? doctypeMatch[0] : "<!doctype html>";
+      return `${doctype}\n${rendered}`;
+    }
+
+    return rendered;
   });
 
   return {
