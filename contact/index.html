@@ -238,7 +238,13 @@
                         </div>
                         <div>
                             <label class="block text-gray-400 text-sm mb-2">Attachment (optional)</label>
-                            <input type="file" id="contactAttachment" name="attachment" class="w-full bg-brand-dark border border-gray-600 rounded-lg px-4 py-3 text-gray-300 focus:border-brand-accent transition">
+                            <div class="relative">
+                                <input type="file" id="contactAttachment" name="attachment" class="hidden">
+                                <div id="fileInputDisplay" class="w-full bg-brand-dark border border-gray-600 rounded-lg px-4 py-3 text-gray-300 focus:border-brand-accent transition cursor-pointer flex items-center justify-between">
+                                    <span id="fileName">No file selected</span>
+                                    <button type="button" id="browseButton" class="bg-brand-accent hover:bg-brand-hover text-white px-3 py-1 rounded text-sm font-medium transition">Choose File</button>
+                                </div>
+                            </div>
                         </div>
                         <button type="submit" class="w-full bg-brand-accent hover:bg-brand-hover text-white font-bold py-4 rounded-lg transition transform hover:scale-[1.02] shadow-lg" data-cta="form_submit_contact">
                             <span data-i18n="contact.submit_button">Quote now</span>
@@ -528,6 +534,32 @@
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+
+        // Custom file input functionality
+        const fileInput = document.getElementById('contactAttachment');
+        const fileInputDisplay = document.getElementById('fileInputDisplay');
+        const fileName = document.getElementById('fileName');
+        const browseButton = document.getElementById('browseButton');
+
+        // Click handler for the custom file input display
+        fileInputDisplay.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        // Click handler for the browse button (prevent event bubbling)
+        browseButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            fileInput.click();
+        });
+
+        // Change handler for the actual file input
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                fileName.textContent = e.target.files[0].name;
+            } else {
+                fileName.textContent = 'No file selected';
+            }
+        });
 
         // Initialize
         loadTranslations('en');
