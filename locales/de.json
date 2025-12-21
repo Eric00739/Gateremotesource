@@ -1,8 +1,35 @@
 {
   "meta": {
-    "title": "GateRemoteSource | Großhandel für Aftermarket Garagenfernbedienungen & Empfänger",
-    "description": "Ihre Nr. 1 Quelle für markenkompatible Garagenfernbedienungen & Universalempfänger. Aftermarket-Lösungen mit hoher Marge speziell für Installateure & Schlüsseldienste. Kompatibel mit Nice, Came, Liftmaster & mehr.",
-    "keywords": "Aftermarket Garagenfernbedienung, Universal-Tor-Empfänger, Rolling-Code-Ersatz, Fernbedienungs-Duplizierer, Großhandel-Tor-Fernbedienungen, Schlüsseldienst-Bedarf, GateRemoteSource"
+    "home": {
+      "title": "GateRemoteSource | Großhandel für Aftermarket Garagenfernbedienungen & Empfänger",
+      "description": "Ihre Nr. 1 Quelle für markenkompatible Garagenfernbedienungen & Universalempfänger. Aftermarket-Lösungen mit hoher Marge speziell für Installateure & Schlüsseldienste. Kompatibel mit Nice, Came, Liftmaster & mehr.",
+      "keywords": "Aftermarket Garagenfernbedienung, Universal-Tor-Empfänger, Rolling-Code-Ersatz, Fernbedienungs-Duplizierer, Großhandel-Tor-Fernbedienungen, Schlüsseldienst-Bedarf, GateRemoteSource"
+    },
+    "about": {
+      "title": "Über GateRemoteSource | Hersteller in Dongguan für Installateure & Schlüsseldienste",
+      "description": "Werksteam liefert markenkompatible Fernbedienungen und Universalempfänger an EU/US/SA/AU-Distributoren mit QC, Werkzeugbau und technischem Support.",
+      "keywords": "Über GateRemoteSource, Unternehmensgeschichte, ISO9001 zertifiziert, Zutrittskontroll-Hersteller, Fabrik Dongguan"
+    },
+    "contact": {
+      "title": "Kontakt GateRemoteSource | Großhandelsangebote & Support",
+      "description": "Preise, MOQ und Versandoptionen anfragen. WhatsApp/Email-Support für Installateure und Schlüsseldienst-Distributoren. Antwort meist unter 24 Std.",
+      "keywords": "Kontakt GateRemoteSource, Großhandelskonto, Preisliste, Garagenfernbedienung Distributor, WhatsApp Support"
+    },
+    "catalog": {
+      "title": "Katalog für Fernbedienungen | 433MHz kompatibel & Universalempfänger",
+      "description": "Durchsuchen Sie kompatible Garagentor-Fernbedienungen und Universalempfänger: 433MHz, Rolling Code, Nice/Came/FAAC/Beninca kompatibel, Kits, Antennen, Bulk.",
+      "keywords": "Katalog Fernbedienungen, Universalempfänger, Aftermarket Fernbedienungen, Großhandel Torsteuerung, Schlüsseldienstbedarf"
+    },
+    "oem": {
+      "title": "OEM/ODM Lösungen | Private Label 433MHz & Rolling Code",
+      "description": "Individuelle Formen, Firmware-Tuning und Branding für Garagen- und Tor-Fernbedienungen. CE/FCC-ready, niedrige MOQ, Engineering-Support.",
+      "keywords": "OEM Fertigung, ODM Services, Custom Remotes, PCB Design, RF Engineering, Zertifizierung Support"
+    },
+    "blog": {
+      "title": "Installer Hub Blog | Programmierung & Fehlerdiagnose",
+      "description": "Technische Guides zur Fernbedienungs-Klonung, Empfänger-Setup, RF-Fehleranalyse und Zugangskontrolle.",
+      "keywords": "Garagenfernbedienung programmieren, Schlüsseldienst Ressourcen, Installationsleitfäden, Technisches Blog"
+    }
   },
   "navigation": {
     "home": "Startseite",

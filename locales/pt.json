@@ -1,8 +1,35 @@
 {
   "meta": {
-    "title": "GateRemoteSource | Controles Remotos e Receptores para Portões no Atacado",
-    "description": "Sua fonte nº1 de controles remotos compatíveis e receptores universais. Soluções de alta margem para instaladores e chaveiros. Substitui Nice, Came, LiftMaster e mais.",
-    "keywords": "controle remoto portão compatível, receptor universal 433MHz, substituto rolling code, duplicador de controle, atacado de controles de portão, fornecedor para chaveiros, GateRemoteSource"
+    "home": {
+      "title": "GateRemoteSource | Controles Remotos e Receptores para Portões no Atacado",
+      "description": "Sua fonte nº1 de controles remotos compatíveis e receptores universais. Soluções de alta margem para instaladores e chaveiros. Substitui Nice, Came, LiftMaster e mais.",
+      "keywords": "controle remoto portão compatível, receptor universal 433MHz, substituto rolling code, duplicador de controle, atacado de controles de portão, fornecedor para chaveiros, GateRemoteSource"
+    },
+    "about": {
+      "title": "Sobre a GateRemoteSource | Fabricante em Dongguan para Instaladores e Chaveiros",
+      "description": "Equipe de fabrica fornecendo controles compativeis e receptores universais para distribuidores UE/EUA/AmSul/AU com QC, tooling e suporte tecnico.",
+      "keywords": "Sobre GateRemoteSource, Historia da Empresa, ISO9001 Certificada, Fabricante de Controle de Acesso, Fabrica Dongguan"
+    },
+    "contact": {
+      "title": "Contato GateRemoteSource | Orcamentos e Suporte no Atacado",
+      "description": "Solicite precos, MOQ e opcoes de envio. Suporte WhatsApp/Email para instaladores e distribuidores. Resposta tipica em menos de 24 h.",
+      "keywords": "Contato GateRemoteSource, Conta no Atacado, Lista de Precos, Distribuidor de Controles, Suporte WhatsApp"
+    },
+    "catalog": {
+      "title": "Catalogo de Controles | Compativeis 433MHz e Receptores Universais",
+      "description": "Veja controles compativeis e receptores universais: 433MHz, rolling code, compativeis Nice/Came/FAAC/Beninca, kits, antenas, opcoes em lote.",
+      "keywords": "Catalogo de Controles, Receptores Universais, Controles Aftermarket, Atacado Automacao, Suprimentos para chaveiros"
+    },
+    "oem": {
+      "title": "Solucoes OEM/ODM | Marca Propria 433MHz e Rolling Code",
+      "description": "Moldes personalizados, ajuste de firmware e branding para controles e receptores de garagem e portao. CE/FCC, MOQ baixo, suporte de engenharia.",
+      "keywords": "Fabricacao OEM, Servicos ODM, Controles Customizados, Design PCB, Engenharia RF, Suporte a certificacao"
+    },
+    "blog": {
+      "title": "Blog Installer Hub | Guias e Diagnostico",
+      "description": "Guias tecnicos sobre clonagem de controles, configuracao de receptores, troubleshooting RF e dicas de acesso para instaladores.",
+      "keywords": "Programacao de controles, Recursos para chaveiros, Guias de instalacao, Blog tecnico"
+    }
   },
   "navigation": {
     "home": "Início",

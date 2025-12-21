@@ -10,6 +10,24 @@
     <meta id="meta-keywords" name="keywords" content="OEM Manufacturing, ODM Services, Custom Remotes, PCB Design, RF Engineering, Certification Support">
     <meta name="author" content="GateRemoteSource">
     <link rel="canonical" href="https://www.gateremotesource.com/oem/">
+    <link rel="alternate" href="https://www.gateremotesource.com/oem/" hreflang="x-default">
+    <link rel="alternate" href="https://www.gateremotesource.com/oem/?lang=en" hreflang="en">
+    <link rel="alternate" href="https://www.gateremotesource.com/oem/?lang=es" hreflang="es">
+    <link rel="alternate" href="https://www.gateremotesource.com/oem/?lang=de" hreflang="de">
+    <link rel="alternate" href="https://www.gateremotesource.com/oem/?lang=it" hreflang="it">
+    <link rel="alternate" href="https://www.gateremotesource.com/oem/?lang=fr" hreflang="fr">
+    <link rel="alternate" href="https://www.gateremotesource.com/oem/?lang=pt" hreflang="pt">
+    <script>
+        (function() {
+            var preferredHost = "www.gateremotesource.com";
+            if (location.hostname === "gateremotesource.com" || (location.hostname === preferredHost && location.protocol !== "https:")) {
+                var target = "https://" + preferredHost + location.pathname + location.search + location.hash;
+                if (target !== location.href) {
+                    location.replace(target);
+                }
+            }
+        })();
+    </script>
     <meta property="og:type" content="website">
     <meta property="og:title" content="OEM/ODM Remote Solutions | Private Label 433MHz & Rolling Code">
     <meta property="og:description" content="Custom molds, firmware tuning, and branding for garage and gate remotes and receivers. CE/FCC-ready, low MOQs, and engineering support for private label programs.">
@@ -78,7 +96,7 @@
         .lang-select option { background-color: #0f172a; color: white; }
     </style>
 </head>
-<body class="font-sans text-gray-300 bg-brand-dark selection:bg-brand-accent selection:text-white flex flex-col min-h-screen">
+<body class="font-sans text-gray-300 bg-brand-dark selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="oem">
 
     <!-- ================= NAVIGATION ================= -->
     <nav class="fixed w-full z-50 bg-brand-dark/95 backdrop-blur border-b border-gray-800 transition-all duration-300">
@@ -443,10 +461,13 @@
         // Apply translations to DOM
         function applyTranslations() {
             // Update meta tags
-            if (translations.meta) {
-                document.getElementById('meta-title').textContent = translations.meta.title;
-                document.getElementById('meta-description').content = translations.meta.description;
-                document.getElementById('meta-keywords').content = translations.meta.keywords;
+            const metaOverride = document.body && document.body.dataset && document.body.dataset.metaOverride === 'true';
+            const metaPage = document.body && document.body.dataset ? document.body.dataset.metaPage : '';
+            const pageMeta = translations.meta && metaPage && translations.meta[metaPage] ? translations.meta[metaPage] : translations.meta;
+            if (metaOverride && pageMeta) {
+                if (pageMeta.title) document.getElementById('meta-title').textContent = pageMeta.title;
+                if (pageMeta.description) document.getElementById('meta-description').content = pageMeta.description;
+                if (pageMeta.keywords) document.getElementById('meta-keywords').content = pageMeta.keywords;
             }
 
             // Update elements with data-i18n attribute
@@ -512,8 +533,17 @@
             
             // Persist language in query string
             const url = new URL(window.location);
-            url.searchParams.set('lang', lang);
+            if (lang === 'en') {
+                url.searchParams.delete('lang');
+            } else {
+                url.searchParams.set('lang', lang);
+            }
             if (history.replaceState) history.replaceState(null, '', url.toString());
+
+            const canonical = document.querySelector('link[rel="canonical"]');
+            if (canonical) canonical.href = url.toString();
+            const ogUrl = document.querySelector('meta[property="og:url"]');
+            if (ogUrl) ogUrl.content = url.toString();
             
             // Hide dropdown
             const dropdown = document.getElementById('languageDropdown');

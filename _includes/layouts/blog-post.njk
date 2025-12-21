@@ -9,6 +9,17 @@
     <meta name="keywords" content="{{ keywordItems | unique | join(', ') }}">
     <meta name="author" content="{{ author or 'GateRemoteSource' }}">
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    <script>
+        (function() {
+            var preferredHost = "www.gateremotesource.com";
+            if (location.hostname === "gateremotesource.com" || (location.hostname === preferredHost && location.protocol !== "https:")) {
+                var target = "https://" + preferredHost + location.pathname + location.search + location.hash;
+                if (target !== location.href) {
+                    location.replace(target);
+                }
+            }
+        })();
+    </script>
     <meta property="og:type" content="article">
     <meta property="og:title" content="{{ title }} | {{ site.blogTitle }}">
     <meta property="og:description" content="{{ summary }}">

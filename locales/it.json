@@ -1,8 +1,35 @@
 {
   "meta": {
-    "title": "GateRemoteSource | Allingrosso Controlli Remoti Aftermarket per Portoni Garage",
-    "description": "La tua fonte #1 di Controlli Remoti Compatibili e Ricevitori Universali per Portoni Garage. Soluzioni aftermarket ad alto margine specificamente per Installatori e Serraturelli. Compatibile con Nice, Came, Liftmaster e altri.",
-    "keywords": "Controllo Remoto Aftermarket, Ricevitore Universale Portone, Sostituzione Codice Rotante, Duplicatore Controllo Remoto, Allingrosso Controlli Portone, Forniture Serraturelli, GateRemoteSource"
+    "home": {
+      "title": "GateRemoteSource | Allingrosso Controlli Remoti Aftermarket per Portoni Garage",
+      "description": "La tua fonte #1 di Controlli Remoti Compatibili e Ricevitori Universali per Portoni Garage. Soluzioni aftermarket ad alto margine specificamente per Installatori e Serraturelli. Compatibile con Nice, Came, Liftmaster e altri.",
+      "keywords": "Controllo Remoto Aftermarket, Ricevitore Universale Portone, Sostituzione Codice Rotante, Duplicatore Controllo Remoto, Allingrosso Controlli Portone, Forniture Serraturelli, GateRemoteSource"
+    },
+    "about": {
+      "title": "Chi e GateRemoteSource | Produttore a Dongguan per Installatori e Fabbri",
+      "description": "Team di fabbrica che fornisce telecomandi compatibili e ricevitori universali a distributori EU/USA/SA/AU con QC, tooling e supporto tecnico.",
+      "keywords": "Chi e GateRemoteSource, Storia Aziendale, Certificazione ISO9001, Produttore Controllo Accessi, Fabbrica Dongguan"
+    },
+    "contact": {
+      "title": "Contatta GateRemoteSource | Preventivi e Supporto Ingrosso",
+      "description": "Richiedi prezzi, MOQ e opzioni di spedizione. Supporto WhatsApp/Email per installatori e distributori. Risposta tipica entro 24 ore.",
+      "keywords": "Contatta GateRemoteSource, Account Ingrosso, Listino Prezzi, Distributore Telecomandi, Supporto WhatsApp"
+    },
+    "catalog": {
+      "title": "Catalogo Telecomandi | Compatibili 433MHz e Ricevitori Universali",
+      "description": "Sfoglia telecomandi compatibili e ricevitori universali: 433MHz, rolling code, compatibili Nice/Came/FAAC/Beninca, kit, antenne, bulk pack.",
+      "keywords": "Catalogo Telecomandi, Ricevitori Universali, Telecomandi Aftermarket, Ingrosso Automazioni, Forniture Fabbri"
+    },
+    "oem": {
+      "title": "Soluzioni OEM/ODM | Private Label 433MHz e Rolling Code",
+      "description": "Stampi personalizzati, tuning firmware e branding per telecomandi e ricevitori garage/cancelli. CE/FCC, MOQ bassi, supporto tecnico.",
+      "keywords": "Produzione OEM, Servizi ODM, Telecomandi Custom, Design PCB, Ingegneria RF, Supporto Certificazioni"
+    },
+    "blog": {
+      "title": "Blog Installer Hub | Guide e Troubleshooting",
+      "description": "Guide tecniche su clonazione telecomandi, setup ricevitori, problemi RF e access control per installatori.",
+      "keywords": "Programmazione telecomandi, Risorse per fabbri, Guide installazione, Blog tecnico"
+    }
   },
   "navigation": {
     "home": "Home",
