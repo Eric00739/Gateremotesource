@@ -1,0 +1,10 @@
+---
+pagination:
+  data: collections.posts
+  size: 12
+  alias: posts
+  reverse: true
+permalink: "it/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
+lang: it
+---
+{% include "blog/list.njk" %}

@@ -1,5 +1,14 @@
+---
+pagination:
+  data: i18n.languages
+  size: 1
+  alias: lang
+permalink: "{% if lang == i18n.defaultLang %}about/index.html{% else %}{{ lang }}/about/index.html{% endif %}"
+eleventyComputed:
+  lang: "{{ lang }}"
+---
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="{{ lang or site.lang }}" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +18,11 @@
     <meta id="meta-description" name="description" content="Factory team supplying brand-compatible remotes and universal receivers to EU/US/SA/AU distributors with QC, tooling, and technical support.">
     <meta id="meta-keywords" name="keywords" content="About GateRemoteSource, Company History, ISO9001 Certified, Access Control Manufacturer, Dongguan Factory">
     <meta name="author" content="GateRemoteSource">
-    <link rel="canonical" href="https://www.gateremotesource.com/about/">
-    <link rel="alternate" href="https://www.gateremotesource.com/about/" hreflang="x-default">
-    <link rel="alternate" href="https://www.gateremotesource.com/about/?lang=en" hreflang="en">
-    <link rel="alternate" href="https://www.gateremotesource.com/about/?lang=es" hreflang="es">
-    <link rel="alternate" href="https://www.gateremotesource.com/about/?lang=de" hreflang="de">
-    <link rel="alternate" href="https://www.gateremotesource.com/about/?lang=it" hreflang="it">
-    <link rel="alternate" href="https://www.gateremotesource.com/about/?lang=fr" hreflang="fr">
-    <link rel="alternate" href="https://www.gateremotesource.com/about/?lang=pt" hreflang="pt">
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(i18n.defaultLang) }}" hreflang="x-default">
+    {% for code in i18n.languages %}
+    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(code) }}" hreflang="{{ code }}">
+    {% endfor %}
     <script>
         (function() {
             var preferredHost = "www.gateremotesource.com";
@@ -31,7 +37,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="About GateRemoteSource | Dongguan Manufacturer for Installers & Locksmiths">
     <meta property="og:description" content="Factory team supplying brand-compatible remotes and universal receivers to EU/US/SA/AU distributors with QC, tooling, and technical support.">
-    <meta property="og:url" content="https://www.gateremotesource.com/about/">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:image" content="https://www.gateremotesource.com/logo/logo.png">
     <meta name="twitter:title" content="About GateRemoteSource | Dongguan Manufacturer for Installers & Locksmiths">
     <meta name="twitter:description" content="Factory team supplying brand-compatible remotes and universal receivers to EU/US/SA/AU distributors with QC, tooling, and technical support.">
@@ -504,7 +510,9 @@
     <!-- LOGIC -->
     <script>
         // i18n System
-        let currentLanguage = 'en';
+        const supportedLangs = ['en', 'es', 'de', 'it', 'fr', 'pt'];
+        const defaultLang = 'en';
+        let currentLanguage = defaultLang;
         let translations = {};
 
         // Load translations
@@ -538,10 +546,18 @@
             }
 
             // Update elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n-html]').forEach(element => {
+                const key = element.getAttribute('data-i18n-html');
+                const value = getNestedValue(translations, key);
+                if (value !== null && value !== undefined) {
+                    element.innerHTML = value;
+                }
+            });
+
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
                 const value = getNestedValue(translations, key);
-                if (value) {
+                if (value !== null && value !== undefined) {
                     if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                         element.placeholder = value;
                     } else {
@@ -554,7 +570,7 @@
             document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
                 const key = element.getAttribute('data-i18n-placeholder');
                 const value = getNestedValue(translations, key);
-                if (value) {
+                if (value !== null && value !== undefined) {
                     element.placeholder = value;
                 }
             });
@@ -566,12 +582,27 @@
             }
         }
 
-        // Language switching
-        function changeLanguage(lang) {
-            currentLanguage = lang;
-            loadTranslations(lang);
-            
-            // Update language dropdown
+        function stripLangPrefix(pathname) {
+            const parts = pathname.split('/');
+            if (parts.length > 1 && supportedLangs.includes(parts[1])) {
+                const remainder = '/' + parts.slice(2).join('/');
+                return remainder === '/' ? '/' : remainder;
+            }
+            return pathname;
+        }
+
+        function getLangFromPath(pathname) {
+            const parts = pathname.split('/');
+            return parts.length > 1 && supportedLangs.includes(parts[1]) ? parts[1] : null;
+        }
+
+        function buildLangPath(lang, pathname = window.location.pathname) {
+            const cleanPath = stripLangPrefix(pathname);
+            if (lang === defaultLang) return cleanPath;
+            return cleanPath === '/' ? `/${lang}/` : `/${lang}${cleanPath}`;
+        }
+
+        function setLanguageUI(lang) {
             const flags = {
                 'en': 'EN',
                 'es': 'ES',
@@ -580,7 +611,7 @@
                 'fr': 'FR',
                 'pt': 'PT'
             };
-            
+
             const langNames = {
                 'en': 'English',
                 'es': 'Español',
@@ -589,30 +620,29 @@
                 'fr': 'Français',
                 'pt': 'Português'
             };
-            
+
             const flagElement = document.getElementById('currentFlag');
             const langElement = document.getElementById('currentLang');
-            if (flagElement) flagElement.textContent = flags[lang];
-            if (langElement) langElement.textContent = langNames[lang];
-            
-            // Update HTML lang attribute for SEO
+            if (flagElement) flagElement.textContent = flags[lang] || flags[defaultLang];
+            if (langElement) langElement.textContent = langNames[lang] || langNames[defaultLang];
             document.documentElement.setAttribute('lang', lang);
-            
-            // Persist language in query string
-            const url = new URL(window.location);
-            if (lang === 'en') {
-                url.searchParams.delete('lang');
-            } else {
-                url.searchParams.set('lang', lang);
-            }
-            if (history.replaceState) history.replaceState(null, '', url.toString());
+        }
 
-            const canonical = document.querySelector('link[rel="canonical"]');
-            if (canonical) canonical.href = url.toString();
-            const ogUrl = document.querySelector('meta[property="og:url"]');
-            if (ogUrl) ogUrl.content = url.toString();
-            
-            // Hide dropdown
+        // Language switching (navigate to static language paths)
+        function changeLanguage(lang) {
+            if (!supportedLangs.includes(lang)) lang = defaultLang;
+            const targetPath = buildLangPath(lang, window.location.pathname);
+            if (targetPath !== window.location.pathname) {
+                const url = new URL(window.location.href);
+                url.pathname = targetPath;
+                url.searchParams.delete('lang');
+                window.location.href = url.toString();
+                return;
+            }
+            currentLanguage = lang;
+            setLanguageUI(lang);
+            loadTranslations(lang);
+
             const dropdown = document.getElementById('languageDropdown');
             if (dropdown) dropdown.classList.add('hidden');
         }
@@ -636,23 +666,23 @@
         const mobileMenu = document.getElementById('mobile-menu');
         mobileBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
 
-        // Initialize
-        loadTranslations('en');
-
-        // Language detection
-        const supportedLangs = ['en', 'es', 'de', 'it', 'fr', 'pt'];
-        const urlParams = new URLSearchParams(window.location.search);
-        const searchLang = urlParams.get('lang');
-        
-        // Set initial language from URL or default to English
-        const initialLang = supportedLangs.includes(searchLang) ? searchLang : 'en';
-        
-        // Only change language if different from default (English)
-        if (initialLang !== 'en') {
-            loadTranslations(initialLang).then(() => {
-                changeLanguage(initialLang);
-            });
+        const url = new URL(window.location.href);
+        const paramLang = url.searchParams.get('lang');
+        if (supportedLangs.includes(paramLang)) {
+            const targetPath = buildLangPath(paramLang, url.pathname);
+            url.searchParams.delete('lang');
+            if (targetPath !== url.pathname) {
+                url.pathname = targetPath;
+                window.location.replace(url.toString());
+                return;
+            }
+            if (history.replaceState) history.replaceState(null, '', url.toString());
         }
+
+        const initialLang = getLangFromPath(window.location.pathname) || defaultLang;
+        currentLanguage = initialLang;
+        setLanguageUI(initialLang);
+        loadTranslations(initialLang);
     </script>
     
     <style>

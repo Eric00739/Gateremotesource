@@ -1,3 +1,84 @@
+const { parse } = require("node-html-parser");
+const i18n = require("./_data/i18n");
+
+const languageSet = new Set(i18n.languages);
+const ogLocaleMap = {
+  en: "en_US",
+  es: "es_ES",
+  de: "de_DE",
+  it: "it_IT",
+  fr: "fr_FR",
+  pt: "pt_PT",
+};
+
+const escapeHtml = (value) => {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+};
+
+const getNestedValue = (obj, path) => {
+  return path.split(".").reduce((current, key) => {
+    return current && current[key] !== undefined ? current[key] : null;
+  }, obj);
+};
+
+const stripLangPrefix = (urlPath) => {
+  if (!urlPath || !urlPath.startsWith("/")) return urlPath;
+  const parts = urlPath.split("/");
+  const first = parts[1];
+  if (!languageSet.has(first)) return urlPath;
+  const remainder = "/" + parts.slice(2).join("/");
+  return remainder === "/" ? "/" : remainder;
+};
+
+const isBlogPostPath = (path) => {
+  if (!path || !path.startsWith("/blog")) return false;
+  const normalized = path.endsWith("/") ? path : `${path}/`;
+  if (normalized === "/blog/") return false;
+  if (normalized.startsWith("/blog/page/")) return false;
+  return true;
+};
+
+const splitHref = (href) => {
+  const match = href.match(/^([^?#]*)(.*)$/);
+  return { path: match ? match[1] : href, suffix: match ? match[2] : "" };
+};
+
+const shouldSkipHref = (path) => {
+  if (!path) return true;
+  if (!path.startsWith("/")) return true;
+  if (path.startsWith("//")) return true;
+  if (path.startsWith("/assets/")) return true;
+  if (path.startsWith("/logo/")) return true;
+  if (path.startsWith("/locales/")) return true;
+  if (path.startsWith("/Products Photo/")) return true;
+  if (path.startsWith("/factroy photo/")) return true;
+  if (path.startsWith("/styles/")) return true;
+  if (path.startsWith("/favicon")) return true;
+  if (path.startsWith("/blog-post-")) return true;
+  if (path === "/robots.txt") return true;
+  if (path === "/sitemap.xml") return true;
+  if (path === "/site.webmanifest") return true;
+  return false;
+};
+
+const rewriteHref = (href, lang) => {
+  if (!href || lang === i18n.defaultLang) return href;
+  if (/^[a-z][a-z0-9+.-]*:/.test(href)) return href;
+  if (href.startsWith("#") || href.startsWith("?")) return href;
+  const { path, suffix } = splitHref(href);
+  if (shouldSkipHref(path)) return href;
+  const parts = path.split("/");
+  if (languageSet.has(parts[1])) return href;
+  if (isBlogPostPath(path)) return href;
+  const newPath = path === "/" ? `/${lang}/` : `/${lang}${path}`;
+  return `${newPath}${suffix}`;
+};
+
 const slugify = (value) => {
   if (!value) return "";
   return value
@@ -79,6 +160,14 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("json", (value) => JSON.stringify(value));
 
+  eleventyConfig.addFilter("langUrl", (urlPath, lang) => {
+    if (!urlPath) return urlPath;
+    const cleanPath = stripLangPrefix(urlPath);
+    if (!lang || lang === i18n.defaultLang) return cleanPath;
+    if (cleanPath === "/") return `/${lang}/`;
+    return `/${lang}${cleanPath}`;
+  });
+
   eleventyConfig.addFilter("asArray", (value) => {
     if (!value) return [];
     return Array.isArray(value) ? value : [value];
@@ -153,6 +242,89 @@ module.exports = function (eleventyConfig) {
     return collectionApi
       .getFilteredByTag("post")
       .sort((a, b) => b.date - a.date);
+  });
+
+  eleventyConfig.addTransform("i18n", function (content, outputPath) {
+    if (!outputPath || !outputPath.endsWith(".html")) return content;
+
+    const pageData = this.page && this.page.data ? this.page.data : {};
+    const lang = pageData.lang || i18n.defaultLang;
+    const translations = i18n.locales[lang];
+    if (!translations) return content;
+
+    const root = parse(content);
+    const htmlEl = root.querySelector("html");
+    if (htmlEl) htmlEl.setAttribute("lang", lang);
+
+    const body = root.querySelector("body");
+    const metaOverride = body && body.getAttribute("data-meta-override") === "true";
+    const metaPage = body ? body.getAttribute("data-meta-page") : "";
+    const pageMeta =
+      metaOverride && translations.meta
+        ? metaPage && translations.meta[metaPage]
+          ? translations.meta[metaPage]
+          : translations.meta
+        : null;
+
+    if (pageMeta) {
+      const titleEl = root.querySelector("#meta-title") || root.querySelector("title");
+      if (titleEl && pageMeta.title) titleEl.set_content(escapeHtml(pageMeta.title));
+      const descEl = root.querySelector("#meta-description");
+      if (descEl && pageMeta.description) descEl.setAttribute("content", pageMeta.description);
+      const keywordsEl = root.querySelector("#meta-keywords");
+      if (keywordsEl && pageMeta.keywords) keywordsEl.setAttribute("content", pageMeta.keywords);
+
+      const ogTitle = root.querySelector('meta[property="og:title"]');
+      if (ogTitle && pageMeta.title) ogTitle.setAttribute("content", pageMeta.title);
+      const ogDesc = root.querySelector('meta[property="og:description"]');
+      if (ogDesc && pageMeta.description) ogDesc.setAttribute("content", pageMeta.description);
+      const twitterTitle = root.querySelector('meta[name="twitter:title"]');
+      if (twitterTitle && pageMeta.title) twitterTitle.setAttribute("content", pageMeta.title);
+      const twitterDesc = root.querySelector('meta[name="twitter:description"]');
+      if (twitterDesc && pageMeta.description) twitterDesc.setAttribute("content", pageMeta.description);
+    }
+
+    const ogLocale = root.querySelector('meta[property="og:locale"]');
+    if (ogLocale && ogLocaleMap[lang]) {
+      ogLocale.setAttribute("content", ogLocaleMap[lang]);
+    }
+
+    root.querySelectorAll("[data-i18n-html]").forEach((element) => {
+      const key = element.getAttribute("data-i18n-html");
+      const value = getNestedValue(translations, key);
+      if (value !== null && value !== undefined) {
+        element.set_content(String(value));
+      }
+    });
+
+    root.querySelectorAll("[data-i18n]").forEach((element) => {
+      const key = element.getAttribute("data-i18n");
+      const value = getNestedValue(translations, key);
+      if (value === null || value === undefined) return;
+      if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
+        element.setAttribute("placeholder", String(value));
+      } else {
+        element.set_content(escapeHtml(value));
+      }
+    });
+
+    root.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+      const key = element.getAttribute("data-i18n-placeholder");
+      const value = getNestedValue(translations, key);
+      if (value === null || value === undefined) return;
+      element.setAttribute("placeholder", String(value));
+    });
+
+    if (lang !== i18n.defaultLang) {
+      root.querySelectorAll("a").forEach((anchor) => {
+        const href = anchor.getAttribute("href");
+        if (!href) return;
+        const rewritten = rewriteHref(href, lang);
+        if (rewritten !== href) anchor.setAttribute("href", rewritten);
+      });
+    }
+
+    return root.toString();
   });
 
   return {

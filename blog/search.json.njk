@@ -1,5 +1,9 @@
 ---
-permalink: "blog/search.json"
+pagination:
+  data: i18n.languages
+  size: 1
+  alias: lang
+permalink: "{% if lang == i18n.defaultLang %}blog/search.json{% else %}{{ lang }}/blog/search.json{% endif %}"
 eleventyExcludeFromCollections: true
 ---
 [

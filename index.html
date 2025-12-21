@@ -1,6 +1,15 @@
+---
+pagination:
+  data: i18n.languages
+  size: 1
+  alias: lang
+permalink: "{% if lang == i18n.defaultLang %}index.html{% else %}{{ lang }}/index.html{% endif %}"
+eleventyComputed:
+  lang: "{{ lang }}"
+---
 <!DOCTYPE html>
 
-<html lang="en" class="scroll-smooth">
+<html lang="{{ lang or site.lang }}" class="scroll-smooth">
 
 <head>
 
@@ -20,21 +29,12 @@
 
     <meta name="author" content="GateRemoteSource">
 
-    <link rel="canonical" href="https://www.gateremotesource.com/">
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 
-    <link rel="alternate" href="https://www.gateremotesource.com/" hreflang="x-default">
-
-    <link rel="alternate" href="https://www.gateremotesource.com/?lang=en" hreflang="en">
-
-    <link rel="alternate" href="https://www.gateremotesource.com/?lang=es" hreflang="es">
-
-    <link rel="alternate" href="https://www.gateremotesource.com/?lang=de" hreflang="de">
-
-    <link rel="alternate" href="https://www.gateremotesource.com/?lang=it" hreflang="it">
-
-    <link rel="alternate" href="https://www.gateremotesource.com/?lang=fr" hreflang="fr">
-
-    <link rel="alternate" href="https://www.gateremotesource.com/?lang=pt" hreflang="pt">
+    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(i18n.defaultLang) }}" hreflang="x-default">
+    {% for code in i18n.languages %}
+    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(code) }}" hreflang="{{ code }}">
+    {% endfor %}
 
     <script>
         (function() {
@@ -56,7 +56,7 @@
 
     <meta property="og:description" content="Your #1 Source for brand compatible gate and garage remotes. High-margin aftermarket solutions for installers & locksmiths.">
 
-    <meta property="og:url" content="https://www.gateremotesource.com/">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 
     <meta property="og:image" content="https://www.gateremotesource.com/logo/logo.png">
 
@@ -419,13 +419,13 @@
 
           "@type": "WebSite",
 
-          "@id": "https://www.gateremotesource.com/#website",
+          "@id": "{{ site.url }}/#website",
 
-          "url": "https://www.gateremotesource.com/",
+          "url": "{{ site.url }}/",
 
           "name": "GateRemoteSource",
 
-          "inLanguage": "en",
+          "inLanguage": "{{ lang or site.lang }}",
 
           "publisher": { "@id": "https://www.gateremotesource.com/#org" },
 
@@ -445,13 +445,13 @@
 
           "@type": "WebPage",
 
-          "@id": "https://www.gateremotesource.com/#webpage",
+          "@id": "{{ site.url }}{{ page.url }}#webpage",
 
-          "url": "https://www.gateremotesource.com/",
+          "url": "{{ site.url }}{{ page.url }}",
 
           "name": "GateRemoteSource | Wholesale Aftermarket Garage Door Remotes & Receivers",
 
-          "inLanguage": "en",
+          "inLanguage": "{{ lang or site.lang }}",
 
           "isPartOf": { "@id": "https://www.gateremotesource.com/#website" },
 
@@ -2972,11 +2972,10 @@
 
         // i18n System
 
-        let currentLanguage = 'en';
-
-        let translations = {};
-
         const supportedLangs = ['en', 'es', 'de', 'it', 'fr', 'pt'];
+        const defaultLang = 'en';
+        let currentLanguage = defaultLang;
+        let translations = {};
 
         const defaultLanguageSnapshot = {
 
@@ -3142,7 +3141,7 @@
 
                 image: "/assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-01.webp",
 
-                link: "blog-post-avoid-public-mold-trap-pcb-quality.html"
+                link: "/blog/avoid-public-mold-trap-pcb-quality/"
 
             },
 
@@ -3231,6 +3230,14 @@
 
 
 
+            document.querySelectorAll('[data-i18n-html]').forEach(element => {
+                const key = element.getAttribute('data-i18n-html');
+                const value = getNestedValue(translations, key);
+                if (value !== null && value !== undefined) {
+                    element.innerHTML = value;
+                }
+            });
+
             // Update elements with data-i18n attribute (preserve data-i18n attributes)
 
             document.querySelectorAll('[data-i18n]').forEach(element => {
@@ -3239,7 +3246,7 @@
 
                 const value = getNestedValue(translations, key);
 
-                if (value) {
+                if (value !== null && value !== undefined) {
 
                     // Preserve data-i18n attribute, only update text content
 
@@ -3297,36 +3304,47 @@
 
 
 
-        // Language switching
-
-        function changeLanguage(lang) {
-
-            if (!supportedLangs.includes(lang)) lang = 'en';
-
-            if (lang === currentLanguage && lang === 'en') return;
-
-            currentLanguage = lang;
-
-            try { localStorage.setItem('preferredLang', lang); } catch (e) {}
-
-            
-
-            if (lang === 'en') {
-
-                translations = {};
-
-                applyDefaultLanguage();
-
-            } else {
-
-                loadTranslations(lang);
-
+        function stripLangPrefix(pathname) {
+            const parts = pathname.split('/');
+            if (parts.length > 1 && supportedLangs.includes(parts[1])) {
+                const remainder = '/' + parts.slice(2).join('/');
+                return remainder === '/' ? '/' : remainder;
             }
+            return pathname;
+        }
 
-            
+        function getLangFromPath(pathname) {
+            const parts = pathname.split('/');
+            return parts.length > 1 && supportedLangs.includes(parts[1]) ? parts[1] : null;
+        }
 
-            // Update language dropdown
+        function isBlogPostPath(pathname) {
+            const normalized = pathname.endsWith('/') ? pathname : `${pathname}/`;
+            if (normalized === '/blog/' || normalized === '/blog/page/') return false;
+            return normalized.startsWith('/blog/') && !normalized.startsWith('/blog/page/');
+        }
 
+        function buildLangPath(lang, pathname = window.location.pathname) {
+            const cleanPath = stripLangPrefix(pathname);
+            if (lang === defaultLang) return cleanPath;
+            if (isBlogPostPath(cleanPath)) return `/${lang}/blog/`;
+            return cleanPath === '/' ? `/${lang}/` : `/${lang}${cleanPath}`;
+        }
+
+        function localizeBlogLink(link) {
+            if (!link) return link;
+            const match = link.match(/^([^?#]*)(.*)$/);
+            const path = match ? match[1] : link;
+            const suffix = match ? match[2] : '';
+            if (!path.startsWith('/')) return link;
+            if (currentLanguage === defaultLang) return link;
+            const cleanPath = stripLangPrefix(path);
+            if (isBlogPostPath(cleanPath)) return link;
+            const localized = cleanPath === '/' ? `/${currentLanguage}/` : `/${currentLanguage}${cleanPath}`;
+            return `${localized}${suffix}`;
+        }
+
+        function setLanguageUI(lang) {
             const flags = {
                 'en': 'EN',
                 'es': 'ES',
@@ -3336,67 +3354,39 @@
                 'pt': 'PT'
             };
 
-            
-
             const langNames = {
-
                 'en': 'English',
-
                 'es': 'Spanish',
-
                 'de': 'Deutsch',
-
                 'it': 'Italiano',
-
                 'fr': 'French',
-
                 'pt': 'Portuguese'
-
             };
 
-            
-
             const flagElement = document.getElementById('currentFlag');
-
             const langElement = document.getElementById('currentLang');
-
-            if (flagElement) flagElement.textContent = flags[lang];
-
-            if (langElement) langElement.textContent = langNames[lang];
-
-            
-
-            // Update HTML lang attribute for SEO
-
+            if (flagElement) flagElement.textContent = flags[lang] || flags[defaultLang];
+            if (langElement) langElement.textContent = langNames[lang] || langNames[defaultLang];
             document.documentElement.setAttribute('lang', lang);
+        }
 
-            
-
-            // Persist language in query string without interfering with SPA hash routing
-
-            const url = new URL(window.location);
-
-            if (lang === 'en') {
+        // Language switching (navigate to static language paths)
+        function changeLanguage(lang) {
+            if (!supportedLangs.includes(lang)) lang = defaultLang;
+            const targetPath = buildLangPath(lang, window.location.pathname);
+            if (targetPath !== window.location.pathname) {
+                const url = new URL(window.location.href);
+                url.pathname = targetPath;
                 url.searchParams.delete('lang');
-            } else {
-                url.searchParams.set('lang', lang);
+                window.location.href = url.toString();
+                return;
             }
-
-            if (history.replaceState) history.replaceState(null, '', url.toString());
-
-            const canonical = document.querySelector('link[rel=\"canonical\"]');
-            if (canonical) canonical.href = url.toString();
-            const ogUrl = document.querySelector('meta[property=\"og:url\"]');
-            if (ogUrl) ogUrl.content = url.toString();
-
-            
-
-            // Hide dropdown
+            currentLanguage = lang;
+            setLanguageUI(lang);
+            loadTranslations(lang);
 
             const dropdown = document.getElementById('languageDropdown');
-
             if (dropdown) dropdown.classList.add('hidden');
-
         }
 
 
@@ -3435,46 +3425,26 @@
 
 
 
-        // Language detection optimized for non-language subdirectory deployments
-
-        // Only uses query parameters to avoid conflicts with paths like /app/, /admin/, etc.
-
-        const urlParams = new URLSearchParams(window.location.search);
-
-        const searchLang = urlParams.get('lang');
-
-        let initialLang = 'en';
-
-        try {
-
-            const storedLang = localStorage.getItem('preferredLang');
-
-            if (storedLang && supportedLangs.includes(storedLang)) initialLang = storedLang;
-
-        } catch (e) {}
-
-        if (supportedLangs.includes(searchLang)) initialLang = searchLang;
-
-        
-
-        // Set initial language from URL/localStorage or default to English
-
-        // Only change language if different from default (English)
-
-        if (initialLang !== 'en') {
-
-            changeLanguage(initialLang);
-
+        const url = new URL(window.location.href);
+        const paramLang = url.searchParams.get('lang');
+        let redirecting = false;
+        if (supportedLangs.includes(paramLang)) {
+            const targetPath = buildLangPath(paramLang, url.pathname);
+            url.searchParams.delete('lang');
+            if (targetPath !== url.pathname) {
+                url.pathname = targetPath;
+                window.location.replace(url.toString());
+                redirecting = true;
+            } else if (history.replaceState) {
+                history.replaceState(null, '', url.toString());
+            }
         }
 
-        
-
-        // Only change language if different from default (English)
-
-        if (initialLang !== 'en') {
-
-            changeLanguage(initialLang);
-
+        if (!redirecting) {
+            const initialLang = getLangFromPath(window.location.pathname) || defaultLang;
+            currentLanguage = initialLang;
+            setLanguageUI(initialLang);
+            loadTranslations(initialLang);
         }
 
 
@@ -3741,7 +3711,7 @@
 
                 image: fallback[0].image,
 
-                link: fallback[0].link || "blog-post-avoid-public-mold-trap-pcb-quality.html"
+                link: fallback[0].link || "/blog/avoid-public-mold-trap-pcb-quality/"
 
             },
 
@@ -3904,7 +3874,7 @@
 
                                 <p class="text-gray-400 text-sm mb-2 line-clamp-2">${post.summary}</p>
 
-                                <a href="${post.link || '/blog/'}" class="text-brand-accent font-bold text-sm hover:text-white inline-flex items-center">${readArticleLabel} <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                                <a href="${localizeBlogLink(post.link || '/blog/')}" class="text-brand-accent font-bold text-sm hover:text-white inline-flex items-center">${readArticleLabel} <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
 
                             </div>
 
@@ -4018,26 +3988,6 @@
         renderBlogs(getBlogPosts());
 
         
-
-        // Update blog posts when language changes
-
-        const originalChangeLanguage = changeLanguage;
-
-        changeLanguage = function(lang) {
-
-            originalChangeLanguage(lang);
-
-            // Re-render blogs after translations are loaded
-
-            setTimeout(() => {
-
-                renderBlogs(getBlogPosts());
-
-            }, 100);
-
-        };
-
-
 
         // Contact form submission with fallback messaging
 
