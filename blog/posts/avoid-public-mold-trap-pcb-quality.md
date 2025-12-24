@@ -7,7 +7,7 @@ date: 2025-02-10
 summary: "Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation."
 category: "Engineering"
 tags:
-  - post
+  - "post"
   - PCB Quality
   - Rolling Code
   - OEM Manufacturing
