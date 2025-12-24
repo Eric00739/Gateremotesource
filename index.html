@@ -99,11 +99,11 @@ eleventyComputed:
 
 
 
-    <!-- Tailwind CSS (deferred to avoid render-blocking) -->
+    <!-- Tailwind CSS -->
 
     <link rel="preload" href="/assets/css/tailwind.css" as="style">
 
-    <link rel="stylesheet" href="/assets/css/tailwind.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
 
     <noscript><link rel="stylesheet" href="/assets/css/tailwind.css"></noscript>
 
@@ -111,7 +111,7 @@ eleventyComputed:
 
 <!-- Font Awesome (local) -->
     <link rel="preload" href="/assets/vendor/fontawesome/css/all.min.css" as="style">
-    <link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css">
     <noscript><link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css"></noscript>
 
 
@@ -119,9 +119,12 @@ eleventyComputed:
 
     
 
-<!-- Local Fonts (non-blocking) -->
+<!-- Local Fonts -->
+    <link rel="preload" href="/assets/fonts/inter/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/inter/inter-600.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/inter/inter-700.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/css/fonts.css" as="style">
-    <link rel="stylesheet" href="/assets/css/fonts.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/assets/css/fonts.css">
     <noscript><link rel="stylesheet" href="/assets/css/fonts.css"></noscript>
 
 
@@ -1988,7 +1991,7 @@ eleventyComputed:
 
                 <div class="bg-brand-surface p-8 rounded-2xl border border-gray-700 text-center">
 
-                    <h2 class="text-2xl font-bold text-white mb-4" data-i18n="products_page.catalog_download">Need the Full 2025 Catalog?</h2>
+                    <h2 class="text-2xl font-bold text-white mb-4" data-i18n="products_page.catalog_download">Need the Full 2026 Catalog?</h2>
 
                     <p class="text-gray-400 mb-8" data-i18n="products_page.catalog_description">Download our complete PDF catalog with technical specifications for over 200 products.</p>
 
@@ -2458,7 +2461,7 @@ eleventyComputed:
 
                             <source type="image/webp" srcset="/assets/factory/team.webp">
 
-                            <img loading="lazy" decoding="async" src="/assets/factory/team.webp" class="rounded-2xl shadow-2xl border border-gray-700 w-full mb-6" alt="GateRemoteSource team 2025 group photo">
+                            <img loading="lazy" decoding="async" src="/assets/factory/team.webp" class="rounded-2xl shadow-2xl border border-gray-700 w-full mb-6" alt="GateRemoteSource team 2026 group photo">
 
                         </picture>
 
@@ -2948,7 +2951,7 @@ eleventyComputed:
 
             <div class="text-center pt-8 border-t border-gray-800">
 
-                <span data-i18n="footer.copyright">&copy; 2025 GateRemoteSource. All rights reserved.</span>
+                <span data-i18n="footer.copyright">&copy; 2026 GateRemoteSource. All rights reserved.</span>
 
             </div>
 
@@ -3147,7 +3150,7 @@ eleventyComputed:
 
             {
 
-                title: "Top 5 High-Margin Aftermarket Remotes for 2025",
+                title: "Top 5 High-Margin Aftermarket Remotes for 2026",
 
                 category: "PROFIT TIPS",
 
@@ -3608,10 +3611,20 @@ eleventyComputed:
 
         updateView(initialHash);
 
-        attachCtaTracking();
+        const scheduleNonCritical = (callback) => {
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(callback, { timeout: 1500 });
+            } else {
+                setTimeout(callback, 1);
+            }
+        };
 
-        initTestimonialPager();
-        initProductFilters();
+        scheduleNonCritical(() => {
+            attachCtaTracking();
+            initTestimonialPager();
+            initProductFilters();
+            renderBlogs(getBlogPosts());
+        });
 
 
 
@@ -3983,9 +3996,7 @@ eleventyComputed:
             });
         }
 
-        // Initial render with English fallback, then update when translations load
-
-        renderBlogs(getBlogPosts());
+        // Initial render with English fallback is scheduled when idle.
 
         
 

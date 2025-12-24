@@ -3,7 +3,7 @@ pagination:
   data: i18n.languages
   size: 1
   alias: lang
-permalink: "{% if lang == i18n.defaultLang %}catalog/index.html{% else %}{{ lang }}/catalog/index.html{% endif %}"
+  permalink: "{% if lang == i18n.defaultLang %}catalog/index.html{% else %}{{ lang }}/catalog/index.html{% endif %}"
 eleventyComputed:
   lang: "{{ lang }}"
 ---
@@ -42,42 +42,45 @@ eleventyComputed:
     <meta name="twitter:title" content="Garage Remote Catalog | Compatible 433MHz & Universal Receivers">
     <meta name="twitter:description" content="Browse brand-compatible garage door remotes and universal receivers: 433MHz, rolling code, Nice/Came/FAAC/Beninca compatibles, kits, antennas, bulk-pack options.">
     <meta name="twitter:image" content="https://www.gateremotesource.com/logo/logo.png">
-
+    
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/logo/favicon.ico?v=1">
     <link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon-32.png?v=1">
     <link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon-16.png?v=1">
     <link rel="apple-touch-icon" sizes="180x180" href="/logo/apple-touch-icon.png?v=1">
     <link rel="manifest" href="/site.webmanifest?v=1">
-
+    
     <!-- Preconnects -->
     <link rel="preconnect" href="https://www.googletagmanager.com">
-
-    <!-- Tailwind CSS (non-blocking) -->
+    
+    <!-- Tailwind CSS -->
     <link rel="preload" href="/assets/css/tailwind.css" as="style">
-    <link rel="stylesheet" href="/assets/css/tailwind.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
     <noscript><link rel="stylesheet" href="/assets/css/tailwind.css"></noscript>
     
 <!-- Font Awesome (local) -->
     <link rel="preload" href="/assets/vendor/fontawesome/css/all.min.css" as="style">
-    <link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css">
     <noscript><link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css"></noscript>
     
-<!-- Local Fonts (non-blocking) -->
+<!-- Local Fonts -->
+    <link rel="preload" href="/assets/fonts/inter/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/inter/inter-600.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/inter/inter-700.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/css/fonts.css" as="style">
-    <link rel="stylesheet" href="/assets/css/fonts.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/assets/css/fonts.css">
     <noscript><link rel="stylesheet" href="/assets/css/fonts.css"></noscript>
-
+    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZF8T77R309"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
+        
         gtag('config', 'G-ZF8T77R309');
     </script>
-
+    
     <style>
         /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 10px; }
@@ -87,12 +90,12 @@ eleventyComputed:
         
         /* Navigation State */
         .nav-link.active { color: #06b6d4 !important; font-weight: 700; border-bottom: 2px solid #06b6d4; }
-
+        
         /* Language Selector */
         .lang-select {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255,255,255, 0.1);
             color: white;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255,255,255, 0.2);
             padding: 0.25rem 0.5rem;
             border-radius: 0.375rem;
             font-size: 0.875rem;
@@ -100,7 +103,7 @@ eleventyComputed:
             outline: none;
         }
         .lang-select option { background-color: #0f172a; color: white; }
-
+        
         /* Mobile-first compatibility cards */
         .compat-card {
             border: 1px solid #334155;
@@ -116,7 +119,7 @@ eleventyComputed:
     </style>
 </head>
 <body class="font-sans text-gray-300 bg-brand-dark selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="catalog">
-
+    
     <!-- ================= NAVIGATION ================= -->
     <nav class="fixed w-full z-50 bg-brand-dark/95 backdrop-blur border-b border-gray-800 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -176,12 +179,12 @@ eleventyComputed:
                             </div>
                         </div>
                     </div>
-
+                    
                     <a href="/contact/" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-2 rounded-lg font-bold transition shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_get_price_list">
                         Quote now
                     </a>
                 </div>
-
+                
                 <!-- Mobile Menu Button -->
                 <div class="lg:hidden flex items-center gap-4">
                     <button id="mobile-menu-btn" class="text-white text-2xl focus:outline-none">
@@ -190,7 +193,7 @@ eleventyComputed:
                 </div>
             </div>
         </div>
-
+        
         <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="lg:hidden bg-brand-surface border-b border-gray-700 hidden">
             <div class="px-4 pt-2 pb-6 space-y-2">
@@ -203,7 +206,7 @@ eleventyComputed:
             </div>
         </div>
     </nav>
-
+    
     <!-- ================= PAGE CONTENT ================= -->
     <main class="pt-32 pb-24 bg-brand-dark min-h-screen">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -221,7 +224,7 @@ eleventyComputed:
                 <button type="button" class="px-6 py-2 rounded-full bg-brand-surface border border-gray-700 text-gray-400 hover:bg-brand-accent hover:text-white hover:border-brand-accent transition" data-filter="receivers" data-i18n="products_page.universal_receivers">Universal Receivers</button>
                     <button type="button" class="px-6 py-2 rounded-full bg-brand-surface border border-gray-700 text-gray-400 hover:bg-brand-accent hover:text-white hover:border-brand-accent transition" data-filter="duplicators" data-i18n="products_page.duplicators">Programmable Replacements</button>
             </div>
-
+ 
             <div id="catalog-products-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
                 <!-- Product Card 1 -->
                 <div class="bg-brand-surface border border-gray-700 rounded-xl overflow-hidden group hover:border-brand-accent transition" data-category="rolling">
@@ -275,10 +278,10 @@ eleventyComputed:
                     </div>
                 </div>
             </div>
-
+            
             <!-- Catalog Download CTA -->
             <div class="bg-brand-surface p-8 rounded-2xl border border-gray-700 text-center">
-                <h2 class="text-2xl font-bold text-white mb-4" data-i18n="products_page.catalog_download">Need the Full 2025 Catalog?</h2>
+                <h2 class="text-2xl font-bold text-white mb-4" data-i18n="products_page.catalog_download">Need Full 2026 Catalog?</h2>
                 <p class="text-gray-400 mb-8" data-i18n="products_page.catalog_description">Download our complete PDF catalog with technical specifications for over 200 products.</p>
                 <a href="/contact/" class="bg-white text-brand-dark px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition shadow-lg" data-cta="download_catalog_pdf">
                     <span data-i18n="products_page.download_pdf_catalog">Download PDF Catalog</span>
@@ -286,7 +289,7 @@ eleventyComputed:
             </div>
         </div>
     </main>
-
+    
     <!-- Social Proof -->
     <section class="py-24 bg-brand-dark border-t border-gray-800">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -346,7 +349,7 @@ eleventyComputed:
                 </div>
                 <div class="compat-card p-5 border border-gray-700">
                     <p class="label mb-1">OEM Model</p>
-                    <h4 class="text-white font-bold text-lg">HORMANN HSE2 BS</h4>
+                    <h4 class="text-white font-bold text-lg">HÖRMANN HSE2 BS</h4>
                     <p class="text-gray-300 text-sm mt-1">Our Compatible: <span class="text-brand-accent font-semibold">GRS-HM868</span></p>
                     <p class="text-gray-400 text-sm">Frequency: 868.3MHz</p>
                     <p class="text-gray-400 text-sm">Rolling code, blue button</p>
@@ -361,7 +364,7 @@ eleventyComputed:
             </div>
         </div>
     </section>
-
+    
     <!-- Compatibility Matrix -->
     <section class="py-24 bg-brand-surface border-t border-gray-800">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -409,7 +412,7 @@ eleventyComputed:
             </div>
         </div>
     </section>
-
+    
     <!-- Fulfillment -->
     <section class="py-24 bg-brand-dark border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -433,7 +436,7 @@ eleventyComputed:
             </div>
         </div>
     </section>
-
+    
     <!-- ================= PRE-FOOTER ================= -->
     <section class="py-16 bg-brand-accent relative overflow-hidden">
         <div class="absolute inset-0 bg-black/10"></div>
@@ -447,7 +450,7 @@ eleventyComputed:
             </a>
         </div>
     </section>
-
+    
     <!-- ================= FOOTER ================= -->
     <footer class="bg-brand-dark pt-20 pb-10 border-t border-gray-800 text-gray-400 text-base">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -486,16 +489,16 @@ eleventyComputed:
                 </div>
             </div>
             <div class="text-center pt-8 border-t border-gray-800">
-                <span data-i18n="footer.copyright">© 2025 GateRemoteSource. All rights reserved.</span>
+                <span data-i18n="footer.copyright">© 2026 GateRemoteSource. All rights reserved.</span>
             </div>
         </div>
     </footer>
-
+    
     <!-- Floating WhatsApp -->
     <a href="https://wa.me/8615899648898" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-green-600 text-white rounded-full p-4 shadow-lg flex items-center justify-center transition transform hover:scale-110 animate-bounce-slow">
         <i class="fa-brands fa-whatsapp text-4xl"></i>
     </a>
-
+    
     <!-- LOGIC -->
     <script>
         // i18n System
@@ -503,7 +506,7 @@ eleventyComputed:
         const defaultLang = 'en';
         let currentLanguage = defaultLang;
         let translations = {};
-
+        
         // Load translations
         async function loadTranslations(lang) {
             try {
@@ -514,20 +517,20 @@ eleventyComputed:
                 console.error('Error loading translations:', error);
             }
         }
-
+        
         // Helper function to get nested object values by dot notation
         function getNestedValue(obj, path) {
             return path.split('.').reduce((current, key) => {
                 return current && current[key] !== undefined ? current[key] : null;
             }, obj);
         }
-
+        
         function trackCtaClick(label) {
             if (typeof gtag === 'function') {
                 gtag('event', 'cta_click', { event_category: 'engagement', event_label: label });
             }
         }
-
+        
         function attachCtaTracking() {
             document.querySelectorAll('[data-cta]').forEach(el => {
                 if (el.dataset.ctaBound === 'true') return;
@@ -535,23 +538,23 @@ eleventyComputed:
                 el.dataset.ctaBound = 'true';
             });
         }
-
+        
         function initProductFilters() {
             document.querySelectorAll('[data-filter-group="products"]').forEach(group => {
                 const targetSelector = group.getAttribute('data-filter-target');
                 const target = targetSelector ? document.querySelector(targetSelector) : null;
                 if (!target) return;
-
+                
                 const buttons = Array.from(group.querySelectorAll('[data-filter]'));
                 const cards = Array.from(target.querySelectorAll('[data-category]'));
                 if (!buttons.length || !cards.length) return;
-
+                
                 const defaultFilter = group.getAttribute('data-default-filter') || buttons[0].dataset.filter;
                 const activeButton = buttons.find(btn => btn.dataset.filter === defaultFilter) || buttons[0];
                 const inactiveButton = buttons.find(btn => btn !== activeButton);
                 const activeClass = activeButton ? activeButton.className : '';
                 const inactiveClass = inactiveButton ? inactiveButton.className : activeClass;
-
+                
                 const applyFilter = (filter) => {
                     const normalized = (filter || '').toLowerCase();
                     cards.forEach(card => {
@@ -568,15 +571,15 @@ eleventyComputed:
                         btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
                     });
                 };
-
+                
                 buttons.forEach(btn => {
                     btn.addEventListener('click', () => applyFilter(btn.dataset.filter));
                 });
-
+                
                 applyFilter(defaultFilter);
             });
         }
-
+        
         // Apply translations to DOM
         function applyTranslations() {
             // Update meta tags
@@ -588,7 +591,7 @@ eleventyComputed:
                 if (pageMeta.description) document.getElementById('meta-description').content = pageMeta.description;
                 if (pageMeta.keywords) document.getElementById('meta-keywords').content = pageMeta.keywords;
             }
-
+            
             // Update elements with data-i18n attribute
             document.querySelectorAll('[data-i18n-html]').forEach(element => {
                 const key = element.getAttribute('data-i18n-html');
@@ -597,7 +600,7 @@ eleventyComputed:
                     element.innerHTML = value;
                 }
             });
-
+            
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
                 const value = getNestedValue(translations, key);
@@ -609,7 +612,7 @@ eleventyComputed:
                     }
                 }
             });
-
+            
             // Update placeholders
             document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
                 const key = element.getAttribute('data-i18n-placeholder');
@@ -618,14 +621,14 @@ eleventyComputed:
                     element.placeholder = value;
                 }
             });
-
+            
             // Update copyright year
             const copyrightElement = document.querySelector('[data-i18n="footer.copyright"]');
             if (copyrightElement && translations.footer && translations.footer.copyright) {
                 copyrightElement.textContent = translations.footer.copyright.replace('{year}', new Date().getFullYear());
             }
         }
-
+        
         function stripLangPrefix(pathname) {
             const parts = pathname.split('/');
             if (parts.length > 1 && supportedLangs.includes(parts[1])) {
@@ -634,18 +637,18 @@ eleventyComputed:
             }
             return pathname;
         }
-
+        
         function getLangFromPath(pathname) {
             const parts = pathname.split('/');
             return parts.length > 1 && supportedLangs.includes(parts[1]) ? parts[1] : null;
         }
-
+        
         function buildLangPath(lang, pathname = window.location.pathname) {
             const cleanPath = stripLangPrefix(pathname);
             if (lang === defaultLang) return cleanPath;
             return cleanPath === '/' ? `/${lang}/` : `/${lang}${cleanPath}`;
         }
-
+        
         function setLanguageUI(lang) {
             const flags = {
                 'en': 'EN',
@@ -671,7 +674,7 @@ eleventyComputed:
             if (langElement) langElement.textContent = langNames[lang] || langNames[defaultLang];
             document.documentElement.setAttribute('lang', lang);
         }
-
+        
         // Language switching (navigate to static language paths)
         function changeLanguage(lang) {
             if (!supportedLangs.includes(lang)) lang = defaultLang;
@@ -690,12 +693,12 @@ eleventyComputed:
             const dropdown = document.getElementById('languageDropdown');
             if (dropdown) dropdown.classList.add('hidden');
         }
-
+        
         // Language dropdown toggle
         document.getElementById('languageDropdownBtn').addEventListener('click', function() {
             document.getElementById('languageDropdown').classList.toggle('hidden');
         });
-
+        
         // Close dropdown when clicking outside
         document.addEventListener('click', function(event) {
             const dropdown = document.getElementById('languageDropdown');
@@ -704,12 +707,12 @@ eleventyComputed:
                 dropdown.classList.add('hidden');
             }
         });
-
+        
         // Mobile menu
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
-
+        
         const url = new URL(window.location.href);
         const paramLang = url.searchParams.get('lang');
         let redirecting = false;
@@ -724,7 +727,7 @@ eleventyComputed:
                 history.replaceState(null, '', url.toString());
             }
         }
-
+        
         if (!redirecting) {
             const initialLang = getLangFromPath(window.location.pathname) || defaultLang;
             currentLanguage = initialLang;
