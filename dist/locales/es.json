@@ -1,0 +1,314 @@
+{
+  "meta": {
+    "home": {
+      "title": "GateRemoteSource | Mayorista de Controles Remotos y Receptores Aftermarket",
+      "description": "Tu fuente #1 de Controles Remotos Compatibles y Receptores Universales. Soluciones aftermarket de alto margen específicamente para Instaladores y Cerrajeros. Compatible con Nice, Came, Liftmaster y más.",
+      "keywords": "Control Remoto Aftermarket, Receptor Universal de Puerta, Reemplazo de Código Rodante, Duplicador de Control Remoto, Controles de Puerta Mayorista, Suministros para Cerrajeros, GateRemoteSource"
+    },
+    "about": {
+      "title": "Sobre GateRemoteSource | Fabricante en Dongguan para Instaladores y Cerrajeros",
+      "description": "Equipo de fábrica que suministra controles compatibles y receptores universales a distribuidores de Europa/EE.UU./Sudamérica/Australia con QC, tooling y soporte técnico.",
+      "keywords": "Sobre GateRemoteSource, Historia de la Empresa, ISO9001 Certificado, Fabricante de Control de Acceso, Fábrica en Dongguan"
+    },
+    "contact": {
+      "title": "Contactar GateRemoteSource | Cotizaciones y Soporte Mayorista",
+      "description": "Solicita precios, MOQ y opciones de envío. Soporte por WhatsApp/Email para instaladores y distribuidores de cerrajería. Respuesta típica en menos de 24 h.",
+      "keywords": "Contactar GateRemoteSource, Cuenta Mayorista, Lista de Precios, Distribuidor de Controles, Soporte WhatsApp, fabricante de controles en Dongguan, mayorista 433MHz"
+    },
+    "catalog": {
+      "title": "Catálogo de Controles | Compatibles 433MHz y Receptores Universales",
+      "description": "Explora controles compatibles y receptores universales: 433MHz, rolling code, compatibles Nice/Came/FAAC/Beninca, kits, antenas y opciones a granel.",
+      "keywords": "Catálogo de Controles, Receptores Universales, Controles Aftermarket, Mayorista, Suministros Cerrajeros"
+    },
+    "oem": {
+      "title": "Soluciones OEM/ODM | Marca Privada 433MHz y Rolling Code",
+      "description": "Moldes personalizados, ajuste de firmware y branding para controles y receptores de garaje y portón. CE/FCC, bajos MOQ y soporte de ingeniería.",
+      "keywords": "Fabricación OEM, Servicios ODM, Controles Personalizados, Diseño PCB, Ingeniería RF, Soporte Certificación"
+    },
+    "blog": {
+      "title": "Blog Installer Hub | Guías y Diagnóstico",
+      "description": "Guías técnicas sobre clonación de controles, configuración de receptores, RF y consejos de acceso para instaladores.",
+      "keywords": "Programación de controles, Recursos para cerrajeros, Guías de instalación, Blog técnico"
+    }
+  },
+  "navigation": {
+    "home": "Inicio",
+    "catalog": "Catálogo",
+    "oem": "OEM/ODM",
+    "about": "Nosotros",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "dealer_login": "Quote Now"
+  },
+  "hero": {
+    "badge": "Para Profesionales de Puertas de Garaje y Portones",
+    "title": "Aumenta Tus Márgenes",
+    "title_highlight": "con Controles de Puerta 100% Compatibles",
+    "description": "No pierdas una venta porque el control original es caro o discontinuado. Stockea nuestros <strong>Controles Remotos Compatibles y Receptores Universales</strong> para máximo beneficio.",
+    "search_placeholder": "Buscar ID FCC, Chip (ej. HCS301) o Frecuencia...",
+    "search_button": "Buscar",
+    "cta_catalog": "Ver Catálogo de Reemplazos",
+    "cta_samples": "Pedido de Kit de Muestras"
+  },
+  "trust_bar": {
+    "high_margins": {
+      "title": "Altos Márgenes",
+      "subtitle": "Precio Directo de Fábrica"
+    },
+    "compatible": {
+      "title": "Garantía de 1 año",
+      "subtitle": "Probado y Garantizado"
+    },
+    "low_moq": {
+      "title": "MOQ Bajo",
+      "subtitle": "Desde 50 unidades"
+    },
+    "fast_dispatch": {
+      "title": "Despacho Rápido",
+      "subtitle": "Prioridad DHL/FedEx"
+    }
+  },
+  "inventory": {
+    "top_sellers": "Más Vendidos",
+    "title": "El Inventario \"Imprescindible\"",
+    "subtitle": "Herramientas esenciales para cada cerrajero e instalador de automatización de portones.",
+    "database_access": "Acceso a Base de Datos",
+    "supported_models": "500+ Modelos Soportados",
+    "database_description": "Proporcionamos una lista Excel completa coincidiendo números de pieza originales con nuestros modelos compatibles.",
+    "request_full_list": "Solicitar Lista Completa",
+    "card1": {
+      "title": "Compatibilidad Aftermarket",
+      "description": "Alternativas de alto margen compatibles con las principales marcas.",
+      "image_alt": "Close-up de PCB/Circuito de Control Remoto",
+      "badge": "Alta Ganancia",
+      "cta": "Ver Lista de Compatibilidad ->"
+    },
+    "card2": {
+      "title": "Receptores Universales",
+      "description": "Resuelve problemas de portones heredados con módulos auto-scan 433/868MHz.",
+      "image_alt": "Diagrama de cableado de receptor o Close-up de Puerto",
+      "badge": "El Solucionador",
+      "cta": "Ver Especificaciones ->"
+    },
+    "card3": {
+      "title": "Controles Auto-Aprendizaje",
+      "description": "Clona controles de código fijo en segundos. Sin herramientas requeridas.",
+      "image_alt": "Dos controles clonando señal",
+      "badge": "Multi-Frec",
+      "cta": "Ver Demo ->"
+    }
+  },
+  "factory_trust": {
+    "title": "Por Qué Confiar en GateRemoteSource",
+    "subtitle": "Somos una fábrica, no un dropshipper.",
+    "iso_certified": {
+      "title": "Fábrica Certificada ISO9001",
+      "description": "Sistemas de gestión de calidad certificados"
+    },
+    "authentic_components": {
+      "title": "Componentes Auténticos Microchip/NXP",
+      "description": "Chips genuinos para rendimiento confiable"
+    },
+    "aging_test": {
+      "title": "Sala de Prueba de Envejecimiento 100%",
+      "description": "Todos los productos pasan por pruebas rigurosas"
+    },
+    "production_base": {
+      "title": "Base de Producción de 4,000m²",
+      "description": "Capacidad de fabricación a gran escala"
+    }
+  },
+  "testimonials": {
+    "title": "Lo Que Dicen Nuestros Socios B2B",
+    "subtitle": "Comentarios reales de cerrajeros y distribuidores en todo el mundo.",
+    "review1": {
+      "text": "El alcance de estos controles HCS301 es mejor que el original. A mis instaladores les encantan.",
+      "author": "Juan D.",
+      "company": "Distribuidor UK"
+    },
+    "review2": {
+      "text": "La prototipación OEM más rápida que he visto en Shenzhen. Gran socio.",
+      "author": "Carlos M.",
+      "company": "España"
+    },
+    "review3": {
+      "text": "La compatibilidad es 100% perfecta. Hemos duplicado nuestro volumen de ventas de controles desde que cambiamos.",
+      "author": "Marco T.",
+      "company": "Italia"
+    }
+  },
+  "blog": {
+    "installer_resources": "Recursos para Instaladores",
+    "technical_guides": "Guías Técnicas",
+    "read_all": "Leer Todo ->",
+    "title": "Centro de Instaladores",
+    "subtitle": "Guías técnicas, tutoriales de programación y noticias de la industria para cerrajeros.",
+    "topics": "Temas",
+    "programming_guides": "Guías de Programación",
+    "market_trends": "Tendencias del Mercado",
+    "troubleshooting": "Solución de Problemas",
+    "new_products": "Nuevos Productos",
+    "become_distributor_title": "Conviértase en Distribuidor",
+    "become_distributor_description": "Acceda a precios mayoristas y materiales de marketing.",
+    "apply_now": "Solicitar Ahora",
+    "post1": {
+      "title": "Cómo Clonar Controles Remotos de Código Rodante en 10 Segundos",
+      "category": "TUTORIAL",
+      "summary": "Deje de perder tiempo en sitio. Nuestra nueva serie de duplicadores cara a cara copia HCS301 instantáneamente."
+    },
+    "post2": {
+      "title": "Top 5 Controles Remotos Aftermarket de Alto Margen para 2025",
+      "category": "CONSEJOS DE GANANCIA",
+      "summary": "¿Qué marcas tienen más demanda? Analizamos los datos del mercado para ayudarle a stockear correctamente."
+    },
+    "post3": {
+      "title": "Receptores Universales: La Solución para Puertas Antiguas",
+      "category": "TÉCNICO",
+      "summary": "Cuando una placa de receptor vieja falla, no reemplace el motor. Instale nuestro receptor de $5."
+    },
+    "post4": {
+      "title": "Solución de Problemas de Interferencia 433MHz",
+      "category": "TÉCNICO",
+      "summary": "¿Cliente quejándose de corto alcance? Aquí hay una lista para identificar y solucionar interferencia de señal en sitio."
+    },
+    "read_more": "Leer más ->",
+    "no_articles": "No se encontraron artículos.",
+    "read_article": "Leer artículo"
+  },
+  "faq": {
+    "title": "FAQ para distribuidores y compradores OEM",
+    "distributor_title": "FAQ de distribuidores",
+    "oem_title": "FAQ OEM/ODM",
+    "q1": {
+      "question": "¿Venden a usuarios finales?",
+      "answer": "No. Somos un fabricante B2B que protege a nuestros distribuidores. No vendemos unidades individuales al público."
+    },
+    "q2": {
+      "question": "¿Puedo mezclar diferentes marcas?",
+      "answer": "Absolutamente. Puedes mezclar 50pz compatibles con Nice + 50pz compatibles con Came para cumplir el MOQ."
+    },
+    "q3": {
+      "question": "¿Los receptores vienen con controles remotos?",
+      "answer": "Puedes comprar receptores solos, o como kit con 2 controles remotos por un precio de paquete especial."
+    }
+  },
+  "pre_footer": {
+    "title": "¿Necesitas un Paquete de Muestras?",
+    "subtitle": "Prueba nuestro rango y compatibilidad antes de comprar en bulk.",
+    "order_samples": "Pedir Muestras"
+  },
+  "footer": {
+    "legal_disclaimer": "Aviso Legal: Todos los nombres de productos, logotipos y marcas son propiedad de sus respectivos dueños. Todos los nombres de empresas, productos y servicios utilizados en este sitio web son solo para fines de identificación. El uso de estos nombres, logotipos y marcas no implica respaldo.",
+    "copyright": "© {year} GateRemoteSource. Todos los derechos reservados.",
+    "products": "Productos",
+    "remotes": "Controles Remotos",
+    "receivers": "Receptores",
+    "smart_home": "Hogar Inteligente",
+    "contact": "Contacto",
+    "email_sales": "sales@gateremotesource.com",
+    "whatsapp": "+86 158 9964 8898",
+    "address": "Dirección",
+    "address_text": "Huawei Kegu Industrial Park, Dalingshan Town, Dongguan, Guangdong, China",
+    "company_description": "Tu Socio de Ganancias en Control de Acceso. Abasteciendo a cerrajeros en todo el mundo."
+  },
+  "products": {
+    "all_products": "Todos los Productos",
+    "rolling_code_remotes": "Controles Remotos de Código Rodante",
+    "universal_receivers": "Receptores Universales",
+    "duplicators": "Duplicadores",
+    "get_price": "Obtener Precio",
+    "moq_50pcs": "MOQ: 50pz",
+    "moq_100pcs": "MOQ: 100pz",
+    "frequency_433": "433.92MHz",
+    "multi_freq": "Multi-Freq",
+    "receiver": "Receptor"
+  },
+  "products_page": {
+    "title": "Catálogo Mayorista",
+    "subtitle": "Soluciones alternativas integrales para instaladores profesionales.",
+    "nice_smilo": "Compatible con Nice SMILO",
+    "nice_description": "Compatible con SM2/SM4. Estilo redondo negro. Botones de alta durabilidad.",
+    "universal_face_copy": "Copia Universal de Cara",
+    "universal_description": "Duplicador de 4 canales. Copia el 95% de códigos fijos y muchos códigos rodantes (HCS301).",
+    "mini_receiver": "Receptor Mini 2CH",
+    "mini_description": "Diseño compacto que cabe en la caja del motor. Entrada AC/DC 12-24V. Capacidad para 400 usuarios.",
+    "catalog_download": "¿Necesita el Catálogo Completo 2025?",
+    "catalog_description": "Descargue nuestro catálogo PDF completo con especificaciones técnicas para más de 200 productos.",
+    "download_pdf_catalog": "Descargar Catálogo PDF",
+    "trusted_by_pros": "Confiado por Profesionales",
+    "what_installers_say": "Lo que Dicen los Instaladores",
+    "installers_feedback": "Comentarios reales de cerrajeros e instaladores de puertas que usan nuestros controles remotos y receptores compatibles.",
+    "frequency_433": "433.92MHz",
+    "multi_freq": "Multi-Frec",
+    "receiver": "Receptor",
+    "moq_50pcs": "MOQ: 50 uds",
+    "moq_100pcs": "MOQ: 100 uds",
+    "get_price": "Solicitar Precio ->"
+  },
+  "oem_odm": {
+    "title": "Soluciones OEM/ODM",
+    "subtitle": "Convierta su idea en un producto. Ofrecemos servicios de fabricación llave en mano."
+  },
+  "oem_page": {
+    "title": "¿Listo para diseñar tu control remoto personalizado?",
+    "subtitle": "Ofrecemos Diseño de PCB, Diseño de ID, Fabricación de Moldes y Desarrollo de Firmware.",
+    "start_consultation": "Iniciar Consulta"
+  },
+  "about": {
+    "title": "Acerca de GateRemoteSource",
+    "description": "Founded in 2015 in Shenzhen as a PCBA workshop, later relocated to Dongguan (2021) with a 4,000 m2 facility - now a full OEM/ODM manufacturer for the global access control market.",
+    "mission": "Nuestra misión es empoderar a cerrajeros e instaladores con soluciones alternativas de alta calidad y alto margen que simplemente funcionan.",
+    "years_experience": "10+",
+    "years_label": "Años de Experiencia",
+    "remotes_per_year": "500k+",
+    "remotes_label": "Controles Remotos / Año",
+    "our_journey": "Nuestro Viaje",
+    "timeline_2015_title": "Foundation",
+    "timeline_2015_description": "Founded in 2015 in Shenzhen, China, starting as a PCBA assembly workshop.",
+    "timeline_2023_title": "Global Reach",
+    "timeline_2023_description": "Exporting to 40+ countries, 100% focused on B2B aftermarket solutions.",
+    "timeline_2018_title": "ISO Certification",
+    "timeline_2018_description": "Achieved ISO certification to strengthen our quality management system.",
+    "timeline_2020_title": "Product Milestone",
+    "timeline_2020_description": "Launched our first Universal Rolling Code remote series.",
+    "timeline_2021_relocation_title": "Expansion & Relocation",
+    "timeline_2021_relocation_description": "Relocated our factory from Shenzhen to Dongguan and expanded the workshop to 4,000 m2.",
+    "timeline_2021_hightech_title": "High-Tech Recognition",
+    "timeline_2021_hightech_description": "Awarded the China National High-Tech Enterprise certificate."
+  },
+  "contact": {
+    "title": "Abrir Cuenta Mayorista",
+    "subtitle": "Únete a nuestra red de 500+ distribuidores. Obtén la lista de precios hoy.",
+    "fastest_response": {
+      "title": "Respuesta Más Rápida",
+      "description": "Ponte en contacto con nuestro equipo de ventas vía WhatsApp para asistencia inmediata."
+    },
+    "email_sales": {
+      "title": "Email de Ventas",
+      "description": "Comunícate con nuestro equipo de ventas para pedidos al por mayor y soporte técnico."
+    },
+    "inquire_now": {
+      "title": "Consultar Ahora",
+      "email_label": "Email",
+      "message_label": "Mensaje",
+      "message_placeholder": "Estoy buscando reemplazos para...",
+      "submit_button": "Solicitar Lista de Precios"
+    }
+  },
+  "advantages": {
+    "title": "Por qué los distribuidores eligen GateRemoteSource",
+    "subtitle": "Más que mandos: herramientas de venta, soporte técnico y logística predecible pensadas para compradores B2B.",
+    "card1": {
+      "title": "Guía de Preventa",
+      "body": "Hojas de compatibilidad y plantillas de precios listas para enviar ayudan a cerrar más rápido."
+    },
+    "card2": {
+      "title": "Soporte Técnico",
+      "body": "Videos de programación, guías de cableado y técnicos OEM en espera para tus instaladores."
+    },
+    "card3": {
+      "title": "Logística Confiable",
+      "body": "Stock de seguridad, despacho en 48h en repetidos y etiquetas de cartón listas para tus almacenes."
+    }
+  }
+}

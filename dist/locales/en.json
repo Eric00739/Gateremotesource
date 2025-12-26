@@ -1,0 +1,322 @@
+{
+  "meta": {
+    "home": {
+      "title": "GateRemoteSource | Wholesale Aftermarket Garage Door Remotes & Receivers",
+      "description": "Your #1 Source for Brand Compatible Garage Door Remotes & Universal Receivers. High-margin aftermarket solutions specifically for Installers & Locksmiths. Gate remote manufacturer in Dongguan serving European, US, South American, and Australian wholesale distributors for 433MHz remotes and Nice/Came compatible remotes across Europe.",
+      "keywords": "Aftermarket Garage Remote, Universal Gate Receiver, Rolling Code Replacement, Remote Control Duplicator, Wholesale Gate Clickers, Locksmith Supplies, GateRemoteSource, gate remote manufacturer Dongguan, wholesale 433MHz remote control European, US, South American, and Australian distributors, Nice Came compatible remote Europe"
+    },
+    "about": {
+      "title": "About GateRemoteSource | Dongguan Manufacturer for Installers & Locksmiths",
+      "description": "Factory team supplying brand-compatible remotes and universal receivers to EU/US/SA/AU distributors with QC, tooling, and technical support.",
+      "keywords": "About GateRemoteSource, Company History, ISO9001 Certified, Access Control Manufacturer, Dongguan Factory"
+    },
+    "contact": {
+      "title": "Contact GateRemoteSource | Wholesale Quotes & Support",
+      "description": "Request pricing, MOQs, and shipping options. WhatsApp/Email support for installers and locksmith distributors. Typical response under 24h.",
+      "keywords": "Contact GateRemoteSource, Wholesale Account, Price List, Garage Remote Distributor, WhatsApp Support, gate remote manufacturer Dongguan, wholesale 433MHz remote control European, US, South American, and Australian distributors, Nice Came compatible remote Europe"
+    },
+    "catalog": {
+      "title": "Garage Remote Catalog | Compatible 433MHz & Universal Receivers",
+      "description": "Browse brand-compatible garage door remotes and universal receivers: 433MHz, rolling code, Nice/Came/FAAC/Beninca compatibles, kits, antennas, bulk-pack options.",
+      "keywords": "Garage Remote Catalog, Universal Receivers, Aftermarket Remotes, Wholesale Gate Controls, Locksmith Supplies, gate remote manufacturer Dongguan, wholesale 433MHz remote control European, US, South American, and Australian distributors, Nice Came compatible remote Europe"
+    },
+    "oem": {
+      "title": "OEM/ODM Remote Solutions | Private Label 433MHz & Rolling Code",
+      "description": "Custom molds, firmware tuning, and branding for garage and gate remotes and receivers. CE/FCC-ready, low MOQs, and engineering support for private label programs.",
+      "keywords": "OEM Manufacturing, ODM Services, Custom Remotes, PCB Design, RF Engineering, Certification Support"
+    },
+    "blog": {
+      "title": "Installer Hub Blog | Programming Guides & Troubleshooting",
+      "description": "Technical guides on remote cloning, receiver setup, RF troubleshooting, and access control tips for gate and garage installers.",
+      "keywords": "Garage Remote Programming, Locksmith Resources, Gate Installation Guides, Technical Tutorials, Access Control Blog"
+    }
+  },
+  "navigation": {
+    "home": "Home",
+    "catalog": "Catalog",
+    "oem": "OEM/ODM",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact",
+    "dealer_login": "Quote Now"
+  },
+  "hero": {
+    "badge": "For Garage Door & Gate Professionals",
+    "title": "Boost Your Margins",
+    "title_highlight": "with 100% Compatible Gate Remotes",
+    "description": "Don't lose a sale because the original remote is expensive or discontinued. Stock our <strong>Compatible Remotes & Universal Receivers</strong> for maximum profit.",
+    "search_placeholder": "Search FCC ID, Chip (e.g. HCS301), or Frequency...",
+    "search_button": "Search",
+    "cta_catalog": "View Replacement Catalog",
+    "cta_samples": "Sample Kit Order"
+  },
+  "trust_bar": {
+    "high_margins": {
+      "title": "High Margins",
+      "subtitle": "Direct Factory Price"
+    },
+    "compatible": {
+      "title": "1-Year Warranty",
+      "subtitle": "Tested & Guaranteed"
+    },
+    "low_moq": {
+      "title": "Low MOQ",
+      "subtitle": "Start from 50pcs"
+    },
+    "fast_dispatch": {
+      "title": "Fast Dispatch",
+      "subtitle": "DHL/FedEx Priority"
+    }
+  },
+  "inventory": {
+    "top_sellers": "Top Sellers",
+    "title": "The \"Must-Have\" Inventory",
+    "subtitle": "Essential tools for every locksmith and gate automation installer.",
+    "database_access": "Database Access",
+    "supported_models": "500+ Supported Models",
+    "database_description": "We provide a comprehensive Excel list matching original part numbers to our compatible models.",
+    "request_full_list": "Request Full List",
+    "card1": {
+      "title": "Aftermarket Compatibility",
+      "description": "High-margin alternatives compatible with top brands.",
+      "image_alt": "Close-up of a Remote PCB/Circuit Board",
+      "badge": "High Profit",
+      "cta": "See Compatibility List ->"
+    },
+    "card2": {
+      "title": "Universal Receivers",
+      "description": "Solve legacy gate issues with 433/868MHz auto-scan modules.",
+      "image_alt": "Receiver wiring diagram or Port Close-up",
+      "badge": "The Fixer",
+      "cta": "View Specs ->"
+    },
+    "card3": {
+      "title": "Self-Learning Remotes",
+      "description": "Clone fixed-code remotes in seconds. No tools required.",
+      "image_alt": "Two remotes cloning signal",
+      "badge": "Multi-Freq",
+      "cta": "Watch Demo ->"
+    }
+  },
+  "factory_trust": {
+    "title": "Why Trust GateRemoteSource",
+    "subtitle": "We are a factory, not a dropshipper.",
+    "iso_certified": {
+      "title": "ISO9001 Certified Factory",
+      "description": "Quality management systems certified"
+    },
+    "authentic_components": {
+      "title": "Authentic Microchip/NXP Components",
+      "description": "Genuine chips for reliable performance"
+    },
+    "aging_test": {
+      "title": "100% Aging Test Room",
+      "description": "All products undergo rigorous testing"
+    },
+    "production_base": {
+      "title": "4,000sqm Production Base",
+      "description": "Large-scale manufacturing capacity"
+    }
+  },
+  "testimonials": {
+    "title": "What Our B2B Partners Say",
+    "subtitle": "Real feedback from locksmiths and distributors worldwide.",
+    "review1": {
+      "text": "The range on these HCS301 remotes is better than the original. My installers love them.",
+      "author": "John D.",
+      "company": "UK Distributor"
+    },
+    "review2": {
+      "text": "Fastest OEM prototyping I've seen in Shenzhen. Great partner.",
+      "author": "Carlos M.",
+      "company": "Spain"
+    },
+    "review3": {
+      "text": "Compatibility is 100% spot-on. We've doubled our remote sales volume since switching.",
+      "author": "Marco T.",
+      "company": "Italy"
+    }
+  },
+  "blog": {
+    "installer_resources": "Installer Resources",
+    "technical_guides": "Technical Guides",
+    "read_all": "Read All ->",
+    "title": "Installer Hub",
+    "subtitle": "Technical guides, programming tutorials, and industry news for locksmiths.",
+    "topics": "Topics",
+    "programming_guides": "Programming Guides",
+    "market_trends": "Market Trends",
+    "troubleshooting": "Troubleshooting",
+    "new_products": "New Products",
+    "become_distributor_title": "Become a Distributor",
+    "become_distributor_description": "Get access to wholesale pricing and marketing materials.",
+    "apply_now": "Apply Now",
+    "post1": {
+      "title": "How to Clone Rolling Code Remotes in 10 Seconds",
+      "category": "TUTORIAL",
+      "summary": "Stop wasting time on site. Our new face-to-face duplicator series copies HCS301 instantly."
+    },
+    "post2": {
+      "title": "Top 5 High-Margin Aftermarket Remotes for 2025",
+      "category": "PROFIT TIPS",
+      "summary": "Which brands have the most demand? We analyze the market data to help you stock right."
+    },
+    "post3": {
+      "title": "Universal Receivers: The Fix for Old Gates",
+      "category": "TECHNICAL",
+      "summary": "When an old receiver board dies, don't replace the motor. Install our $5 receiver."
+    },
+    "post4": {
+      "title": "Troubleshooting 433MHz Interference",
+      "category": "TECHNICAL",
+      "summary": "Customer complaining about short range? Here is a checklist to identify and fix signal interference on site."
+    },
+    "read_more": "Read More ->",
+    "no_articles": "No articles found.",
+    "read_article": "Read Article"
+  },
+  "faq": {
+    "title": "FAQs for Distributors & OEM Buyers",
+    "distributor_title": "Distributor FAQ",
+    "oem_title": "OEM/ODM FAQ",
+    "q1": {
+      "question": "Do you sell to end-users?",
+      "answer": "No. We are a B2B manufacturer protecting our distributors. We do not sell single units to the public."
+    },
+    "q2": {
+      "question": "Can I mix different brands?",
+      "answer": "Absolutely. You can mix 50pcs of Nice compatible + 50pcs of Came compatible to meet the MOQ."
+    },
+    "q3": {
+      "question": "Do receivers come with remotes?",
+      "answer": "You can purchase receivers separately, or as a kit with 2 remotes at a special bundle price."
+    },
+    "q4": {
+      "question": "What is your typical lead time for bulk orders?",
+      "answer": "Standard orders: 3-5 business days. Express orders: 1-2 business days. All orders shipped via DHL/FedEx."
+    },
+    "q5": {
+      "question": "Do you offer technical support?",
+      "answer": "Yes, we provide comprehensive technical support, programming guides, and video tutorials for all our products."
+    }
+  },
+  "pre_footer": {
+    "title": "Need a Sample Pack?",
+    "subtitle": "Test our range & compatibility before you buy in bulk.",
+    "order_samples": "Order Samples"
+  },
+  "contact": {
+    "title": "Open Wholesale Account",
+    "subtitle": "Join our network of 500+ distributors. Get the price list today.",
+    "fastest_response": {
+      "title": "Fastest Response",
+      "description": "Get in touch with our sales team via WhatsApp for immediate assistance."
+    },
+    "email_sales": {
+      "title": "Email Sales",
+      "description": "Reach out to our sales team for bulk orders and technical support."
+    },
+    "inquire_now": {
+      "title": "Inquire Now",
+      "email_label": "Email",
+      "message_label": "Message",
+      "message_placeholder": "I am looking for replacements for...",
+      "submit_button": "Request Price List"
+    }
+  },
+  "footer": {
+    "legal_disclaimer": "Disclaimer: All product names, logos, and brands are property of their respective owners. All company, product and service names used in this website are for identification purposes only. Use of these names, logos, and brands does not imply endorsement.",
+    "copyright": "© {year} GateRemoteSource. All rights reserved.",
+    "products": "Products",
+    "remotes": "Remotes",
+    "receivers": "Receivers",
+    "smart_home": "Smart Home",
+    "contact": "Contact",
+    "email_sales": "sales@gateremotesource.com",
+    "whatsapp": "+86 158 9964 8898",
+    "address": "Address",
+    "address_text": "Huawei Kegu Industrial Park, Dalingshan Town, Dongguan, Guangdong, China",
+    "company_description": "Your Profit Partner in Access Control. Supplying locksmiths worldwide."
+  },
+  "products": {
+    "all_products": "All Products",
+    "rolling_code_remotes": "Rolling Code Remotes",
+    "universal_receivers": "Universal Receivers",
+    "duplicators": "Duplicators",
+    "get_price": "Get Price",
+    "moq_50pcs": "MOQ: 50pcs",
+    "moq_100pcs": "MOQ: 100pcs",
+    "frequency_433": "433.92MHz",
+    "multi_freq": "Multi-Freq",
+    "receiver": "Receiver"
+  },
+  "products_page": {
+    "title": "Wholesale Catalog",
+    "subtitle": "Comprehensive aftermarket solutions for professional installers.",
+    "nice_smilo": "Nice SMILO Compatible",
+    "nice_description": "Compatible with SM2/SM4. Round black styling. High durability buttons.",
+    "universal_face_copy": "Universal Face Copy",
+    "universal_description": "4-Channel duplicator. Copies 95% of fixed codes and many rolling codes (HCS301).",
+    "mini_receiver": "2CH Mini Receiver",
+    "mini_description": "Compact design fits in motor box. AC/DC 12-24V input. 400 user capacity.",
+    "catalog_download": "Need the Full 2025 Catalog?",
+    "catalog_description": "Download our complete PDF catalog with technical specifications for over 200 products.",
+    "download_pdf_catalog": "Download PDF Catalog",
+    "trusted_by_pros": "Trusted by Pros",
+    "what_installers_say": "What Installers Say",
+    "installers_feedback": "Real feedback from locksmiths and gate installers using our compatible remotes and receivers.",
+    "frequency_433": "433.92MHz",
+    "multi_freq": "Multi-Freq",
+    "receiver": "Receiver",
+    "moq_50pcs": "MOQ: 50pcs",
+    "moq_100pcs": "MOQ: 100pcs",
+    "get_price": "Get Price ->"
+  },
+  "oem_odm": {
+    "title": "OEM/ODM Solutions",
+    "subtitle": "Turn your idea into a product. We provide turnkey manufacturing services."
+  },
+  "oem_page": {
+    "title": "Ready to engineer your custom remote?",
+    "subtitle": "We offer PCB Design, ID Design, Mold Tooling, and Firmware Development.",
+    "start_consultation": "Start Consultation"
+  },
+  "about": {
+    "title": "About GateRemoteSource",
+    "description": "Founded in 2015 in Shenzhen as a PCBA workshop, later relocated to Dongguan (2021) with a 4,000 m2 facility - now a full OEM/ODM manufacturer for the global access control market.",
+    "mission": "Our mission is to empower locksmiths and installers with high-quality, high-margin aftermarket solutions that just work.",
+    "years_experience": "10+",
+    "years_label": "Years Experience",
+    "remotes_per_year": "500k+",
+    "remotes_label": "Remotes / Year",
+    "our_journey": "Our Journey",
+    "timeline_2015_title": "Foundation",
+    "timeline_2015_description": "Founded in 2015 in Shenzhen, China, starting as a PCBA assembly workshop.",
+    "timeline_2023_title": "Global Reach",
+    "timeline_2023_description": "Exporting to 40+ countries, 100% focused on B2B aftermarket solutions.",
+    "timeline_2018_title": "ISO Certification",
+    "timeline_2018_description": "Achieved ISO certification to strengthen our quality management system.",
+    "timeline_2020_title": "Product Milestone",
+    "timeline_2020_description": "Launched our first Universal Rolling Code remote series.",
+    "timeline_2021_relocation_title": "Expansion & Relocation",
+    "timeline_2021_relocation_description": "Relocated our factory from Shenzhen to Dongguan and expanded the workshop to 4,000 m2.",
+    "timeline_2021_hightech_title": "High-Tech Recognition",
+    "timeline_2021_hightech_description": "Awarded the China National High-Tech Enterprise certificate."
+  },
+  "advantages": {
+    "title": "Why Distributors Choose GateRemoteSource",
+    "subtitle": "More than remotes: sales tools, technical backup, and predictable logistics tailored for B2B buyers.",
+    "card1": {
+      "title": "Pre-Sales Playbook",
+      "body": "Ready-to-send compatibility sheets and pricing templates help your reps close faster."
+    },
+    "card2": {
+      "title": "Tech Support Coverage",
+      "body": "Programming videos, wiring guides, and OEM engineers on standby for your installers."
+    },
+    "card3": {
+      "title": "Logistics You Can Promise",
+      "body": "Stock buffers, 48h dispatch on repeats, and carton labels ready for your warehouses."
+    }
+  }
+}

@@ -1,0 +1,314 @@
+{
+  "meta": {
+    "home": {
+      "title": "GateRemoteSource | Großhandel für Aftermarket Garagenfernbedienungen & Empfänger",
+      "description": "Ihre Nr. 1 Quelle für markenkompatible Garagenfernbedienungen & Universalempfänger. Aftermarket-Lösungen mit hoher Marge speziell für Installateure & Schlüsseldienste. Kompatibel mit Nice, Came, Liftmaster & mehr.",
+      "keywords": "Aftermarket Garagenfernbedienung, Universal-Tor-Empfänger, Rolling-Code-Ersatz, Fernbedienungs-Duplizierer, Großhandel-Tor-Fernbedienungen, Schlüsseldienst-Bedarf, GateRemoteSource"
+    },
+    "about": {
+      "title": "Über GateRemoteSource | Hersteller in Dongguan für Installateure & Schlüsseldienste",
+      "description": "Werksteam liefert markenkompatible Fernbedienungen und Universalempfänger an EU/US/SA/AU-Distributoren mit QC, Werkzeugbau und technischem Support.",
+      "keywords": "Über GateRemoteSource, Unternehmensgeschichte, ISO9001 zertifiziert, Zutrittskontroll-Hersteller, Fabrik Dongguan"
+    },
+    "contact": {
+      "title": "Kontakt GateRemoteSource | Großhandelsangebote & Support",
+      "description": "Preise, MOQ und Versandoptionen anfragen. WhatsApp/Email-Support für Installateure und Schlüsseldienst-Distributoren. Antwort meist unter 24 Std.",
+      "keywords": "Kontakt GateRemoteSource, Großhandelskonto, Preisliste, Garagenfernbedienung Distributor, WhatsApp Support"
+    },
+    "catalog": {
+      "title": "Katalog für Fernbedienungen | 433MHz kompatibel & Universalempfänger",
+      "description": "Durchsuchen Sie kompatible Garagentor-Fernbedienungen und Universalempfänger: 433MHz, Rolling Code, Nice/Came/FAAC/Beninca kompatibel, Kits, Antennen, Bulk.",
+      "keywords": "Katalog Fernbedienungen, Universalempfänger, Aftermarket Fernbedienungen, Großhandel Torsteuerung, Schlüsseldienstbedarf"
+    },
+    "oem": {
+      "title": "OEM/ODM Lösungen | Private Label 433MHz & Rolling Code",
+      "description": "Individuelle Formen, Firmware-Tuning und Branding für Garagen- und Tor-Fernbedienungen. CE/FCC-ready, niedrige MOQ, Engineering-Support.",
+      "keywords": "OEM Fertigung, ODM Services, Custom Remotes, PCB Design, RF Engineering, Zertifizierung Support"
+    },
+    "blog": {
+      "title": "Installer Hub Blog | Programmierung & Fehlerdiagnose",
+      "description": "Technische Guides zur Fernbedienungs-Klonung, Empfänger-Setup, RF-Fehleranalyse und Zugangskontrolle.",
+      "keywords": "Garagenfernbedienung programmieren, Schlüsseldienst Ressourcen, Installationsleitfäden, Technisches Blog"
+    }
+  },
+  "navigation": {
+    "home": "Startseite",
+    "catalog": "Katalog",
+    "oem": "OEM/ODM",
+    "about": "Über uns",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "dealer_login": "Quote Now"
+  },
+  "hero": {
+    "badge": "Für Garagentor- & Tor-Profis",
+    "title": "Steigern Sie Ihre Margen",
+    "title_highlight": "mit 100% kompatiblen Tor-Fernbedienungen",
+    "description": "Verlieren Sie keinen Verkauf mehr, weil die Originalfernbedienung teuer oder eingestellt ist. Lagern Sie unsere <strong>kompatiblen Fernbedienungen & Universalempfänger</strong> für maximalen Gewinn.",
+    "search_placeholder": "Suche nach FCC ID, Chip (z.B. HCS301) oder Frequenz...",
+    "search_button": "Suchen",
+    "cta_catalog": "Ersatzkatalog ansehen",
+    "cta_samples": "Musterset-Bestellung"
+  },
+  "trust_bar": {
+    "high_margins": {
+      "title": "Hohe Margen",
+      "subtitle": "Direkter Fabrikpreis"
+    },
+    "compatible": {
+      "title": "1-Jahr-Garantie",
+      "subtitle": "Getestet & Garantiert"
+    },
+    "low_moq": {
+      "title": "Niedrige MOQ",
+      "subtitle": "Ab 50 Stück"
+    },
+    "fast_dispatch": {
+      "title": "Schneller Versand",
+      "subtitle": "DHL/FedEx Priorität"
+    }
+  },
+  "inventory": {
+    "top_sellers": "Top Verkäufer",
+    "title": "Die \"Muss-Haben\"-Inventur",
+    "subtitle": "Wesentliche Werkzeuge für jeden Schlüsseldienst und Tor-Automatisierungsinstallateur.",
+    "database_access": "Datenbankzugriff",
+    "supported_models": "500+ Unterstützte Modelle",
+    "database_description": "Wir bieten eine umfassende Excel-Liste, die Originalteilenummern mit unseren kompatiblen Modellen abgleicht.",
+    "request_full_list": "Vollständige Liste Anfordern",
+    "card1": {
+      "title": "Aftermarket-Kompatibilität",
+      "description": "Alternativen mit hoher Marge kompatibel mit Top-Marken.",
+      "image_alt": "Nahaufnahme einer Fernbedienungs-PCB/Platine",
+      "badge": "Hohe Marge",
+      "cta": "Kompatibilitätsliste anzeigen ->"
+    },
+    "card2": {
+      "title": "Universalempfänger",
+      "description": "Lösen Sie Legacy-Tor-Probleme mit 433/868MHz Auto-Scan-Modulen.",
+      "image_alt": "Empfänger-Verdrahtungsdiagramm oder Port-Nahaufnahme",
+      "badge": "Der Problemlöser",
+      "cta": "Spezifikationen anzeigen ->"
+    },
+    "card3": {
+      "title": "Selbstlernende Fernbedienungen",
+      "description": "Klonen Sie Festcode-Fernbedienungen in Sekunden. Keine Werkzeuge erforderlich.",
+      "image_alt": "Zwei Fernbedienungen klonen Signal",
+      "badge": "Multi-Frequenz",
+      "cta": "Demo ansehen ->"
+    }
+  },
+  "factory_trust": {
+    "title": "Warum GateRemoteSource Vertrauen",
+    "subtitle": "Wir sind eine Fabrik, kein Dropshipper.",
+    "iso_certified": {
+      "title": "ISO9001-zertifizierte Fabrik",
+      "description": "Zertifizierte Qualitätsmanagementsysteme"
+    },
+    "authentic_components": {
+      "title": "Echte Microchip/NXP-Komponenten",
+      "description": "Originale Chips für zuverlässige Leistung"
+    },
+    "aging_test": {
+      "title": "100% Alterungsprüfraum",
+      "description": "Alle Produkte durchlaufen rigorose Tests"
+    },
+    "production_base": {
+      "title": "4.000m² Produktionsbasis",
+      "description": "Großmaßstäbliche Fertigungskapazität"
+    }
+  },
+  "testimonials": {
+    "title": "Was Unsere B2B-Partner Sagen",
+    "subtitle": "Echtes Feedback von Schlüsseldiensten und Distributoren weltweit.",
+    "review1": {
+      "text": "Die Reichweite dieser HCS301-Fernbedienungen ist besser als das Original. Meine Installateure lieben sie.",
+      "author": "John D.",
+      "company": "UK Distributor"
+    },
+    "review2": {
+      "text": "Schnellste OEM-Prototypenfertigung, die ich in Shenzhen gesehen habe. Großer Partner.",
+      "author": "Carlos M.",
+      "company": "Spanien"
+    },
+    "review3": {
+      "text": "Die Kompatibilität ist 100% perfekt. Wir haben unser Fernbedienungsvolumen seit dem Wechsel verdoppelt.",
+      "author": "Marco T.",
+      "company": "Italien"
+    }
+  },
+  "blog": {
+    "installer_resources": "Installateur-Ressourcen",
+    "technical_guides": "Technische Anleitungen",
+    "read_all": "Alles lesen ->",
+    "title": "Installateur-Hub",
+    "subtitle": "Technische Anleitungen, Programmierungstutorials und Branchennachrichten für Schlüsseldienste.",
+    "topics": "Themen",
+    "programming_guides": "Programmierungsanleitungen",
+    "market_trends": "Markttrends",
+    "troubleshooting": "Fehlerbehebung",
+    "new_products": "Neue Produkte",
+    "become_distributor_title": "Werden Sie Distributor",
+    "become_distributor_description": "Erhalten Sie Zugang zu Großhandelspreisen und Marketingmaterialien.",
+    "apply_now": "Jetzt Bewerben",
+    "post1": {
+      "title": "Wie man Rolling-Code-Fernbedienungen in 10 Sekunden kloniert",
+      "category": "TUTORIAL",
+      "summary": "Hören Sie auf, Zeit auf der Baustelle zu verschwenden. Unsere neue Face-to-Face-Duplizatorserie kopiert HCS301 sofort."
+    },
+    "post2": {
+      "title": "Top 5 High-Margin Aftermarket-Fernbedienungen für 2025",
+      "category": "PROFIT TIPPS",
+      "summary": "Welche Marken haben die meiste Nachfrage? Wir analysieren Marktdaten, um Ihnen beim richtigen Stock zu helfen."
+    },
+    "post3": {
+      "title": "Universalempfänger: Die Lösung für alte Tore",
+      "category": "TECHNISCH",
+      "summary": "Wenn eine alte Empfängerplatine ausfällt, ersetzen Sie nicht den Motor. Installieren Sie unseren $5 Empfänger."
+    },
+    "post4": {
+      "title": "Fehlerbehebung bei 433MHz-Interferenz",
+      "category": "TECHNISCH",
+      "summary": "Kunde beschwert sich über kurze Reichweite? Hier ist eine Checkliste, um Signalinterferenzen auf der Baustelle zu identifizieren und zu beheben."
+    },
+    "read_more": "Mehr lesen ->",
+    "no_articles": "Keine Artikel gefunden.",
+    "read_article": "Artikel lesen"
+  },
+  "faq": {
+    "title": "FAQs für Distributoren und OEM-Käufer",
+    "distributor_title": "Distributor-FAQ",
+    "oem_title": "OEM/ODM-FAQ",
+    "q1": {
+      "question": "Verkaufen Sie an Endkunden?",
+      "answer": "Nein. Wir sind ein B2B-Hersteller, der unsere Distributoren schützt. Wir verkaufen keine Einzelgeräte an die Öffentlichkeit."
+    },
+    "q2": {
+      "question": "Kann ich verschiedene Marken mischen?",
+      "answer": "Absolut. Sie können 50stk Nice-kompatibel + 50stk Came-kompatibel mischen, um die MOQ zu erfüllen."
+    },
+    "q3": {
+      "question": "Liefern Empfänger mit Fernbedienungen?",
+      "answer": "Sie können Empfänger separat oder als Set mit 2 Fernbedienungen zu einem speziellen Bundle-Preis kaufen."
+    }
+  },
+  "pre_footer": {
+    "title": "Musterset Benötigt?",
+    "subtitle": "Testen Sie unsere Reichweite & Kompatibilität vor dem Bulk-Kauf.",
+    "order_samples": "Muster Bestellen"
+  },
+  "footer": {
+    "legal_disclaimer": "Haftungsausschluss: Alle Produktnamen, Logos und Marken sind Eigentum ihrer jeweiligen Eigentümer. Alle Unternehmens-, Produkt- und Dienstleistungsnamen, die auf dieser Website verwendet werden, dienen nur zur Identifizierung. Die Verwendung dieser Namen, Logos und Marken impliziert keine Billigung.",
+    "copyright": "© {year} GateRemoteSource. Alle Rechte vorbehalten.",
+    "products": "Produkte",
+    "remotes": "Fernbedienungen",
+    "receivers": "Empfänger",
+    "smart_home": "Smart Home",
+    "contact": "Kontakt",
+    "email_sales": "sales@gateremotesource.com",
+    "whatsapp": "+86 158 9964 8898",
+    "address": "Adresse",
+    "address_text": "Huawei Kegu Industrial Park, Dalingshan Town, Dongguan, Guangdong, China",
+    "company_description": "Ihr Gewinnpartner im Zugangskontrolle. Wir beliefern Schlüsseldienste weltweit."
+  },
+  "products": {
+    "all_products": "Alle Produkte",
+    "rolling_code_remotes": "Rolling-Code-Fernbedienungen",
+    "universal_receivers": "Universalempfänger",
+    "duplicators": "Duplizierer",
+    "get_price": "Preis erhalten",
+    "moq_50pcs": "MOQ: 50stk",
+    "moq_100pcs": "MOQ: 100stk",
+    "frequency_433": "433.92MHz",
+    "multi_freq": "Multi-Freq",
+    "receiver": "Empfänger"
+  },
+  "products_page": {
+    "title": "Großhandelskatalog",
+    "subtitle": "Umfassende Aftermarket-Lösungen für professionelle Installateure.",
+    "nice_smilo": "Nice SMILO Kompatibel",
+    "nice_description": "Kompatibel mit SM2/SM4. Runde schwarze Optik. Hochwertige Tasten.",
+    "universal_face_copy": "Universal Face Copy",
+    "universal_description": "4-Kanal-Duplizierer. Kopiert 95% der Festcodes und viele Rolling-Codes (HCS301).",
+    "mini_receiver": "2CH Mini-Empfänger",
+    "mini_description": "Kompaktes Design passt in Motorbox. AC/DC 12-24V Eingang. 400 Benutzer Kapazität.",
+    "catalog_download": "Benötigen Sie den vollständigen 2025 Katalog?",
+    "catalog_description": "Laden Sie unseren vollständigen PDF-Katalog mit technischen Spezifikationen für über 200 Produkte herunter.",
+    "download_pdf_catalog": "PDF-Katalog herunterladen",
+    "trusted_by_pros": "Von Profis vertraut",
+    "what_installers_say": "Was Installateure sagen",
+    "installers_feedback": "Echtes Feedback von Schlüsseldiensten und Torinstallateuren, die unsere kompatiblen Fernbedienungen und Empfänger verwenden.",
+    "frequency_433": "433,92MHz",
+    "multi_freq": "Multi-Frequenz",
+    "receiver": "Empfänger",
+    "moq_50pcs": "MOQ: 50 Stk",
+    "moq_100pcs": "MOQ: 100 Stk",
+    "get_price": "Preis anfragen ->"
+  },
+  "oem_odm": {
+    "title": "OEM/ODM Lösungen",
+    "subtitle": "Verwandeln Sie Ihre Idee in ein Produkt. Wir bieten schlüsselfertige Fertigungsdienstleistungen."
+  },
+  "oem_page": {
+    "title": "Bereit, Ihre benutzerdefinierte Fernbedienung zu entwickeln?",
+    "subtitle": "Wir bieten PCB-Design, ID-Design, Formenbau und Firmware-Entwicklung.",
+    "start_consultation": "Beratung beginnen"
+  },
+  "about": {
+    "title": "Über GateRemoteSource",
+    "description": "Founded in 2015 in Shenzhen as a PCBA workshop, later relocated to Dongguan (2021) with a 4,000 m2 facility - now a full OEM/ODM manufacturer for the global access control market.",
+    "mission": "Unsere Mission ist es, Schlüsseldienste und Installateure mit hochwertigen, hochmargigen Aftermarket-Lösungen zu ermächtigen, die einfach funktionieren.",
+    "years_experience": "10+",
+    "years_label": "Jahre Erfahrung",
+    "remotes_per_year": "500k+",
+    "remotes_label": "Fernbedienungen / Jahr",
+    "our_journey": "Unsere Reise",
+    "timeline_2015_title": "Foundation",
+    "timeline_2015_description": "Founded in 2015 in Shenzhen, China, starting as a PCBA assembly workshop.",
+    "timeline_2023_title": "Global Reach",
+    "timeline_2023_description": "Exporting to 40+ countries, 100% focused on B2B aftermarket solutions.",
+    "timeline_2018_title": "ISO Certification",
+    "timeline_2018_description": "Achieved ISO certification to strengthen our quality management system.",
+    "timeline_2020_title": "Product Milestone",
+    "timeline_2020_description": "Launched our first Universal Rolling Code remote series.",
+    "timeline_2021_relocation_title": "Expansion & Relocation",
+    "timeline_2021_relocation_description": "Relocated our factory from Shenzhen to Dongguan and expanded the workshop to 4,000 m2.",
+    "timeline_2021_hightech_title": "High-Tech Recognition",
+    "timeline_2021_hightech_description": "Awarded the China National High-Tech Enterprise certificate."
+  },
+  "contact": {
+    "title": "Großhandelskonto eröffnen",
+    "subtitle": "Treten Sie unserem Netzwerk von 500+ Distributoren bei. Erhalten Sie heute die Preisliste.",
+    "fastest_response": {
+      "title": "Schnellste Antwort",
+      "description": "Kontaktieren Sie unser Vertriebsteam über WhatsApp für sofortige Hilfe."
+    },
+    "email_sales": {
+      "title": "E-Mail-Vertrieb",
+      "description": "Kontaktieren Sie unser Vertriebsteam für Großbestellungen und technischen Support."
+    },
+    "inquire_now": {
+      "title": "Jetzt anfragen",
+      "email_label": "E-Mail",
+      "message_label": "Nachricht",
+      "message_placeholder": "Ich suche Ersatz für...",
+      "submit_button": "Preisliste anfordern"
+    }
+  },
+  "advantages": {
+    "title": "Warum Distributoren GateRemoteSource wählen",
+    "subtitle": "Mehr als Fernbedienungen: Sales-Tools, technischer Support und planbare Logistik für B2B-Kunden.",
+    "card1": {
+      "title": "Pre-Sales Leitfaden",
+      "body": "Versandfertige Kompatibilitätslisten und Preisvorlagen helfen Ihrem Vertrieb schneller abzuschließen."
+    },
+    "card2": {
+      "title": "Technischer Support",
+      "body": "Programmier-Videos, Verdrahtungs-Guides und OEM-Ingenieure auf Abruf für Ihre Monteure."
+    },
+    "card3": {
+      "title": "Zuverlässige Logistik",
+      "body": "Sicherheitsbestand, 48h Versand bei Nachbestellungen und Kartonetiketten fertig für Ihr Lager."
+    }
+  }
+}
