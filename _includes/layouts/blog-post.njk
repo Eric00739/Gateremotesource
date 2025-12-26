@@ -8,7 +8,7 @@
     {% set keywordItems = { "tags": tags, "category": category, "brand": brand, "frequency": frequency, "scene": scene } | keywordList %}
     <meta name="keywords" content="{{ keywordItems | unique | join(', ') }}">
     <meta name="author" content="{{ author or 'GateRemoteSource' }}">
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    <link rel="canonical" href="{{ site.url }}{{ page.url | canonicalPath }}">
     <script>
         (function() {
             var preferredHost = "www.gateremotesource.com";
@@ -23,7 +23,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="{{ title }} | {{ site.blogTitle }}">
     <meta property="og:description" content="{{ summary }}">
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url | canonicalPath }}">
     <meta property="og:image" content="{{ hero_image or '/logo/logo.png' }}">
     <meta name="twitter:title" content="{{ title }} | {{ site.blogTitle }}">
     <meta name="twitter:description" content="{{ summary }}">

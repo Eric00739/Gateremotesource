@@ -29,11 +29,11 @@ eleventyComputed:
 
     <meta name="author" content="GateRemoteSource">
 
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    <link rel="canonical" href="{{ site.url }}{{ page.url | canonicalPath }}">
 
-    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(i18n.defaultLang) }}" hreflang="x-default">
+    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(i18n.defaultLang) | canonicalPath }}" hreflang="x-default">
     {% for code in i18n.languages %}
-    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(code) }}" hreflang="{{ code }}">
+    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(code) | canonicalPath }}" hreflang="{{ code }}">
     {% endfor %}
 
     <script>
@@ -56,7 +56,7 @@ eleventyComputed:
 
     <meta property="og:description" content="Your #1 Source for brand compatible gate and garage remotes. High-margin aftermarket solutions for installers & locksmiths.">
 
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url | canonicalPath }}">
 
     <meta property="og:image" content="https://www.gateremotesource.com/logo/logo.png">
 

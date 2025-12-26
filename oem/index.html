@@ -18,10 +18,10 @@ eleventyComputed:
     <meta id="meta-description" name="description" content="Custom molds, firmware tuning, and branding for garage and gate remotes and receivers. CE/FCC-ready, low MOQs, and engineering support for private label programs.">
     <meta id="meta-keywords" name="keywords" content="OEM Manufacturing, ODM Services, Custom Remotes, PCB Design, RF Engineering, Certification Support">
     <meta name="author" content="GateRemoteSource">
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(i18n.defaultLang) }}" hreflang="x-default">
+    <link rel="canonical" href="{{ site.url }}{{ page.url | canonicalPath }}">
+    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(i18n.defaultLang) | canonicalPath }}" hreflang="x-default">
     {% for code in i18n.languages %}
-    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(code) }}" hreflang="{{ code }}">
+    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(code) | canonicalPath }}" hreflang="{{ code }}">
     {% endfor %}
     <script>
         (function() {
@@ -37,7 +37,7 @@ eleventyComputed:
     <meta property="og:type" content="website">
     <meta property="og:title" content="OEM/ODM Remote Solutions | Private Label 433MHz & Rolling Code">
     <meta property="og:description" content="Custom molds, firmware tuning, and branding for garage and gate remotes and receivers. CE/FCC-ready, low MOQs, and engineering support for private label programs.">
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url | canonicalPath }}">
     <meta property="og:image" content="https://www.gateremotesource.com/logo/logo.png">
     <meta name="twitter:title" content="OEM/ODM Remote Solutions | Private Label 433MHz & Rolling Code">
     <meta name="twitter:description" content="Custom molds, firmware tuning, and branding for garage and gate remotes and receivers. CE/FCC-ready, low MOQs, and engineering support for private label programs.">

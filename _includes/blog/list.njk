@@ -8,10 +8,10 @@
     <meta id="meta-description" name="description" content="Technical guides on remote cloning, receiver setup, RF troubleshooting, and access control tips for gate and garage installers.">
     <meta id="meta-keywords" name="keywords" content="Garage Remote Programming, Locksmith Resources, Gate Installation Guides, Technical Tutorials, Access Control Blog">
     <meta name="author" content="GateRemoteSource">
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(i18n.defaultLang) }}" hreflang="x-default">
+    <link rel="canonical" href="{{ site.url }}{{ page.url | canonicalPath }}">
+    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(i18n.defaultLang) | canonicalPath }}" hreflang="x-default">
     {% for code in i18n.languages %}
-    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(code) }}" hreflang="{{ code }}">
+    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(code) | canonicalPath }}" hreflang="{{ code }}">
     {% endfor %}
     <script>
         (function() {
@@ -27,7 +27,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Installer Hub Blog | Programming Guides & Troubleshooting">
     <meta property="og:description" content="Technical guides on remote cloning, receiver setup, RF troubleshooting, and access control tips for gate and garage installers.">
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url | canonicalPath }}">
     <meta property="og:image" content="{{ site.url }}/logo/logo.png">
     <meta name="twitter:title" content="Installer Hub Blog | Programming Guides & Troubleshooting">
     <meta name="twitter:description" content="Technical guides on remote cloning, receiver setup, RF troubleshooting, and access control tips for gate and garage installers.">

@@ -3,7 +3,7 @@ pagination:
   data: i18n.languages
   size: 1
   alias: lang
-  permalink: "{% if lang == i18n.defaultLang %}catalog/index.html{% else %}{{ lang }}/catalog/index.html{% endif %}"
+permalink: "{% if lang == i18n.defaultLang %}catalog/index.html{% else %}{{ lang }}/catalog/index.html{% endif %}"
 eleventyComputed:
   lang: "{{ lang }}"
 ---
@@ -18,10 +18,10 @@ eleventyComputed:
     <meta id="meta-description" name="description" content="Browse brand-compatible garage door remotes and universal receivers: 433MHz, rolling code, Nice/Came/FAAC/Beninca compatibles, kits, antennas, bulk-pack options.">
     <meta id="meta-keywords" name="keywords" content="Garage Remote Catalog, Universal Receivers, Aftermarket Remotes, Wholesale Gate Controls, Locksmith Supplies, gate remote manufacturer Dongguan, wholesale 433MHz remote control European, US, South American, and Australian distributors, Nice Came compatible remote Europe">
     <meta name="author" content="GateRemoteSource">
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(i18n.defaultLang) }}" hreflang="x-default">
+    <link rel="canonical" href="{{ site.url }}{{ page.url | canonicalPath }}">
+    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(i18n.defaultLang) | canonicalPath }}" hreflang="x-default">
     {% for code in i18n.languages %}
-    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(code) }}" hreflang="{{ code }}">
+    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(code) | canonicalPath }}" hreflang="{{ code }}">
     {% endfor %}
     <script>
         (function() {
@@ -37,7 +37,7 @@ eleventyComputed:
     <meta property="og:type" content="website">
     <meta property="og:title" content="Garage Remote Catalog | Compatible 433MHz & Universal Receivers">
     <meta property="og:description" content="Browse brand-compatible garage door remotes and universal receivers: 433MHz, rolling code, Nice/Came/FAAC/Beninca compatibles, kits, antennas, bulk-pack options.">
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url | canonicalPath }}">
     <meta property="og:image" content="https://www.gateremotesource.com/logo/logo.png">
     <meta name="twitter:title" content="Garage Remote Catalog | Compatible 433MHz & Universal Receivers">
     <meta name="twitter:description" content="Browse brand-compatible garage door remotes and universal receivers: 433MHz, rolling code, Nice/Came/FAAC/Beninca compatibles, kits, antennas, bulk-pack options.">

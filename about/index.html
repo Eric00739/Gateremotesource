@@ -18,10 +18,10 @@ eleventyComputed:
     <meta id="meta-description" name="description" content="Factory team supplying brand-compatible remotes and universal receivers to EU/US/SA/AU distributors with QC, tooling, and technical support.">
     <meta id="meta-keywords" name="keywords" content="About GateRemoteSource, Company History, ISO9001 Certified, Access Control Manufacturer, Dongguan Factory">
     <meta name="author" content="GateRemoteSource">
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(i18n.defaultLang) }}" hreflang="x-default">
+    <link rel="canonical" href="{{ site.url }}{{ page.url | canonicalPath }}">
+    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(i18n.defaultLang) | canonicalPath }}" hreflang="x-default">
     {% for code in i18n.languages %}
-    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(code) }}" hreflang="{{ code }}">
+    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(code) | canonicalPath }}" hreflang="{{ code }}">
     {% endfor %}
     <script>
         (function() {
@@ -37,7 +37,7 @@ eleventyComputed:
     <meta property="og:type" content="website">
     <meta property="og:title" content="About GateRemoteSource | Dongguan Manufacturer for Installers & Locksmiths">
     <meta property="og:description" content="Factory team supplying brand-compatible remotes and universal receivers to EU/US/SA/AU distributors with QC, tooling, and technical support.">
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url | canonicalPath }}">
     <meta property="og:image" content="https://www.gateremotesource.com/logo/logo.png">
     <meta name="twitter:title" content="About GateRemoteSource | Dongguan Manufacturer for Installers & Locksmiths">
     <meta name="twitter:description" content="Factory team supplying brand-compatible remotes and universal receivers to EU/US/SA/AU distributors with QC, tooling, and technical support.">

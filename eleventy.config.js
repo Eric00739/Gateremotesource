@@ -35,6 +35,12 @@ const stripLangPrefix = (urlPath) => {
   return remainder === "/" ? "/" : remainder;
 };
 
+const canonicalPath = (urlPath) => {
+  if (!urlPath) return urlPath;
+  if (urlPath === "/index.html") return "/";
+  return urlPath.replace(/\/index\.html$/, "/");
+};
+
 const isBlogPostPath = (path) => {
   if (!path || !path.startsWith("/blog")) return false;
   const normalized = path.endsWith("/") ? path : `${path}/`;
@@ -167,6 +173,8 @@ module.exports = function (eleventyConfig) {
     if (cleanPath === "/") return `/${lang}/`;
     return `/${lang}${cleanPath}`;
   });
+
+  eleventyConfig.addFilter("canonicalPath", canonicalPath);
 
   eleventyConfig.addFilter("asArray", (value) => {
     if (!value) return [];

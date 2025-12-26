@@ -18,10 +18,10 @@ eleventyComputed:
     <meta id="meta-description" name="description" content="Request pricing, MOQs, and shipping options. WhatsApp/Email support for installers and locksmith distributors. Typical response under 24h.">
     <meta id="meta-keywords" name="keywords" content="Contact GateRemoteSource, Wholesale Account, Price List, Garage Remote Distributor, WhatsApp Support, gate remote manufacturer Dongguan, wholesale 433MHz remote control European, US, South American, and Australian distributors, Nice Came compatible remote Europe">
     <meta name="author" content="GateRemoteSource">
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(i18n.defaultLang) }}" hreflang="x-default">
+    <link rel="canonical" href="{{ site.url }}{{ page.url | canonicalPath }}">
+    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(i18n.defaultLang) | canonicalPath }}" hreflang="x-default">
     {% for code in i18n.languages %}
-    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(code) }}" hreflang="{{ code }}">
+    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(code) | canonicalPath }}" hreflang="{{ code }}">
     {% endfor %}
     <script>
         (function() {
@@ -37,7 +37,7 @@ eleventyComputed:
     <meta property="og:type" content="website">
     <meta property="og:title" content="Contact GateRemoteSource | Wholesale Quotes & Support">
     <meta property="og:description" content="Request pricing, MOQs, and shipping options. WhatsApp/Email support for installers and locksmith distributors. Typical response under 24h.">
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url | canonicalPath }}">
     <meta property="og:image" content="https://www.gateremotesource.com/logo/logo.png">
     <meta name="twitter:title" content="Contact GateRemoteSource | Wholesale Quotes & Support">
     <meta name="twitter:description" content="Request pricing, MOQs, and shipping options. WhatsApp/Email support for installers and locksmith distributors. Typical response under 24h.">
