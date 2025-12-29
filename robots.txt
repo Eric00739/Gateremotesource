@@ -1,4 +1,15 @@
 User-agent: *
+Disallow: /http://*
+Disallow: /*.html$
+Disallow: /*.html?$
+Disallow: /de/blog/
+Disallow: /es/blog/
+Disallow: /fr/blog/
+Disallow: /it/blog/
+Disallow: /pt/blog/
+Disallow: /blog/page/
+Disallow: /blog/posts/
+
 Allow: /
 Allow: /logo/
 
