@@ -1,4 +1,3 @@
-﻿
 ---
 layout: layouts/blog-post.njk
 title: "Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls"
