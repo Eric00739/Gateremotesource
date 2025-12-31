@@ -96,6 +96,7 @@ const slugify = (value) => {
 };
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy("logo");
   eleventyConfig.addPassthroughCopy("locales");
   eleventyConfig.addPassthroughCopy("robots.txt");
