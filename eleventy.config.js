@@ -13,11 +13,11 @@ const ogLocaleMap = {
 
 const escapeHtml = (value) => {
   return String(value)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/\"/g, "&quot;")
-    .replace(/'/g, "&#39;");
+    .replace(/&/g, "&")
+    .replace(/</g, "<")
+    .replace(/>/g, ">")
+    .replace(/\"/g, """)
+    .replace(/'/g, "'");
 };
 
 const getNestedValue = (obj, path) => {
@@ -41,14 +41,6 @@ const canonicalPath = (urlPath) => {
   return urlPath.replace(/\/index\.html$/, "/");
 };
 
-const isBlogPostPath = (path) => {
-  if (!path || !path.startsWith("/blog")) return false;
-  const normalized = path.endsWith("/") ? path : `${path}/`;
-  if (normalized === "/blog/") return false;
-  if (normalized.startsWith("/blog/page/")) return false;
-  return true;
-};
-
 const splitHref = (href) => {
   const match = href.match(/^([^?#]*)(.*)$/);
   return { path: match ? match[1] : href, suffix: match ? match[2] : "" };
@@ -65,7 +57,6 @@ const shouldSkipHref = (path) => {
   if (path.startsWith("/factroy photo/")) return true;
   if (path.startsWith("/styles/")) return true;
   if (path.startsWith("/favicon")) return true;
-  if (path.startsWith("/blog-post-")) return true;
   if (path === "/robots.txt") return true;
   if (path === "/sitemap.xml") return true;
   if (path === "/site.webmanifest") return true;
@@ -80,7 +71,6 @@ const rewriteHref = (href, lang) => {
   if (shouldSkipHref(path)) return href;
   const parts = path.split("/");
   if (languageSet.has(parts[1])) return href;
-  if (isBlogPostPath(path)) return href;
   const newPath = path === "/" ? `/${lang}/` : `/${lang}${path}`;
   return `${newPath}${suffix}`;
 };
