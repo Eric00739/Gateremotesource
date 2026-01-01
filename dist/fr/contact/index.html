@@ -24,10 +24,24 @@
     
     <link rel="alternate" href="https://www.gateremotesource.com/pt/contact/" hreflang="pt">
     
+    
     <script>
         (function() {
             var preferredHost = "www.gateremotesource.com";
-            if (location.hostname === "gateremotesource.com" || (location.hostname === preferredHost && location.protocol !== "https:")) {
+            var currentProtocol = location.protocol;
+            var currentHost = location.hostname;
+            
+            // Force HTTPS redirect
+            if (currentProtocol !== "https:") {
+                var target = "https://" + currentHost + location.pathname + location.search + location.hash;
+                if (target !== location.href) {
+                    location.replace(target);
+                }
+                return;
+            }
+            
+            // Force www redirect
+            if (currentHost !== preferredHost) {
                 var target = "https://" + preferredHost + location.pathname + location.search + location.hash;
                 if (target !== location.href) {
                     location.replace(target);

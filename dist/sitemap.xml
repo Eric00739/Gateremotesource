@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://www.gateremotesource.com/blog/avoid-public-mold-trap-pcb-quality/</loc>
+    
+    <lastmod>2025-02-09</lastmod>
+    
+    <changefreq>weekly</changefreq>
+  </url>
 
   <url>
     <loc>https://www.gateremotesource.com/about/</loc>
     
-    <lastmod>2025-12-06</lastmod>
+    <lastmod>2025-12-29</lastmod>
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/blog/</loc>
+    
+    <lastmod>2025-12-29</lastmod>
     
     <changefreq>weekly</changefreq>
   </url>
@@ -12,7 +28,7 @@
   <url>
     <loc>https://www.gateremotesource.com/catalog/</loc>
     
-    <lastmod>2025-12-06</lastmod>
+    <lastmod>2025-12-29</lastmod>
     
     <changefreq>weekly</changefreq>
   </url>
@@ -20,15 +36,31 @@
   <url>
     <loc>https://www.gateremotesource.com/contact/</loc>
     
-    <lastmod>2025-12-06</lastmod>
+    <lastmod>2025-12-29</lastmod>
     
     <changefreq>weekly</changefreq>
   </url>
 
   <url>
-    <loc>https://www.gateremotesource.com/oem/</loc>
+    <loc>https://www.gateremotesource.com/de/blog/</loc>
     
-    <lastmod>2025-12-06</lastmod>
+    <lastmod>2025-12-29</lastmod>
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/es/blog/</loc>
+    
+    <lastmod>2025-12-29</lastmod>
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/fr/blog/</loc>
+    
+    <lastmod>2025-12-29</lastmod>
     
     <changefreq>weekly</changefreq>
   </url>
@@ -36,15 +68,39 @@
   <url>
     <loc>https://www.gateremotesource.com/</loc>
     
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2025-12-29</lastmod>
     
     <changefreq>weekly</changefreq>
   </url>
 
   <url>
-    <loc>https://www.gateremotesource.com/blog/posts/avoid-public-mold-trap-pcb-quality/</loc>
+    <loc>https://www.gateremotesource.com/it/blog/</loc>
     
-    <lastmod>2025-12-21</lastmod>
+    <lastmod>2025-12-29</lastmod>
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/oem/</loc>
+    
+    <lastmod>2025-12-29</lastmod>
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/pt/blog/</loc>
+    
+    <lastmod>2025-12-29</lastmod>
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/blog/posts/</loc>
+    
+    <lastmod>2025-12-29</lastmod>
     
     <changefreq>weekly</changefreq>
   </url>

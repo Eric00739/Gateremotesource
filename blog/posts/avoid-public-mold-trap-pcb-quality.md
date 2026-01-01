@@ -19,7 +19,7 @@ author_role: "Content Marketing Director"
 read_time: "9 min read"
 featured: true
 lang: en
-permalink: "blog/{{ slug }}/index.html"
+permalink: "/blog/{{ slug }}/index.html"
 ---
 
 <div class="highlight-card rounded-2xl p-6 border border-brand-accent/30 shadow-xl">

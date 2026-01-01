@@ -13,11 +13,11 @@ const ogLocaleMap = {
 
 const escapeHtml = (value) => {
   return String(value)
-    .replace(/&/g, "&")
-    .replace(/</g, "<")
-    .replace(/>/g, ">")
-    .replace(/\"/g, """)
-    .replace(/'/g, "'");
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 };
 
 const getNestedValue = (obj, path) => {
@@ -156,6 +156,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("json", (value) => JSON.stringify(value));
+  eleventyConfig.addFilter("url_encode", (value) => encodeURIComponent(value || ""));
 
   eleventyConfig.addFilter("langUrl", (urlPath, lang) => {
     if (!urlPath) return urlPath;
@@ -200,12 +201,16 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("relatedPosts", (collection, current, limit = 3) => {
     if (!Array.isArray(collection) || !current) return [];
-    const currentTags = new Set(current.data.tags || []);
+    const currentItem = current.data
+      ? current
+      : collection.find((item) => item.url === current.url) || null;
+    if (!currentItem || !currentItem.data) return [];
+    const currentTags = new Set(currentItem.data.tags || []);
     return collection
-      .filter((item) => item.url !== current.url)
+      .filter((item) => item.url !== currentItem.url)
       .map((item) => {
         let score = 0;
-        if (item.data.category && item.data.category === current.data.category) {
+        if (item.data.category && item.data.category === currentItem.data.category) {
           score += 2;
         }
         if (Array.isArray(item.data.tags)) {

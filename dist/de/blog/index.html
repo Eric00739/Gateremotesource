@@ -1,26 +1,28 @@
----
-pagination:
-  data: collections.posts
-  size: 12
-  alias: posts
-  reverse: true
-permalink: "blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
-lang: en
----
 <!DOCTYPE html>
-<html lang="{{ lang or site.lang }}" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="meta-title">{{ site.blogTitle }} | GateRemoteSource</title>
-    <meta id="meta-description" name="description" content="{{ site.blogDescription }}">
+
+    <title id="meta-title">Installer Hub Blog | Programming Guides &amp; Troubleshooting</title>
+    <meta id="meta-description" name="description" content="Technical guides on remote cloning, receiver setup, RF troubleshooting, and access control tips for gate and garage installers.">
     <meta id="meta-keywords" name="keywords" content="Garage Remote Programming, Locksmith Resources, Gate Installation Guides, Technical Tutorials, Access Control Blog">
     <meta name="author" content="GateRemoteSource">
-    <link rel="canonical" href="{{ site.url }}{{ page.url | canonicalPath }}">
-    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(i18n.defaultLang) | canonicalPath }}" hreflang="x-default">
-    {% for code in i18n.languages %}
-    <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(code) | canonicalPath }}" hreflang="{{ code }}">
-    {% endfor %}
+    <link rel="canonical" href="https://www.gateremotesource.com/de/blog/">
+    <link rel="alternate" href="https://www.gateremotesource.com/blog/" hreflang="x-default">
+    
+    <link rel="alternate" href="https://www.gateremotesource.com/blog/" hreflang="en">
+    
+    <link rel="alternate" href="https://www.gateremotesource.com/es/blog/" hreflang="es">
+    
+    <link rel="alternate" href="https://www.gateremotesource.com/de/blog/" hreflang="de">
+    
+    <link rel="alternate" href="https://www.gateremotesource.com/it/blog/" hreflang="it">
+    
+    <link rel="alternate" href="https://www.gateremotesource.com/fr/blog/" hreflang="fr">
+    
+    <link rel="alternate" href="https://www.gateremotesource.com/pt/blog/" hreflang="pt">
+    
     
     <script>
         (function() {
@@ -28,6 +30,7 @@ lang: en
             var currentProtocol = location.protocol;
             var currentHost = location.hostname;
             
+            // Force HTTPS redirect
             if (currentProtocol !== "https:") {
                 var target = "https://" + currentHost + location.pathname + location.search + location.hash;
                 if (target !== location.href) {
@@ -36,6 +39,7 @@ lang: en
                 return;
             }
             
+            // Force www redirect
             if (currentHost !== preferredHost) {
                 var target = "https://" + preferredHost + location.pathname + location.search + location.hash;
                 if (target !== location.href) {
@@ -44,38 +48,38 @@ lang: en
             }
         })();
     </script>
-    
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ site.blogTitle }} | GateRemoteSource">
-    <meta property="og:description" content="{{ site.blogDescription }}">
-    <meta property="og:url" content="{{ site.url }}{{ page.url | canonicalPath }}">
-    <meta property="og:image" content="{{ site.url }}/logo/logo.png">
-    <meta name="twitter:title" content="{{ site.blogTitle }} | GateRemoteSource">
-    <meta name="twitter:description" content="{{ site.blogDescription }}">
-    <meta name="twitter:image" content="{{ site.url }}/logo/logo.png">
-    
+    <meta property="og:title" content="Installer Hub Blog | Programming Guides & Troubleshooting">
+    <meta property="og:description" content="Technical guides on remote cloning, receiver setup, RF troubleshooting, and access control tips for gate and garage installers.">
+    <meta property="og:url" content="https://www.gateremotesource.com/de/blog/">
+    <meta property="og:image" content="https://www.gateremotesource.com/logo/logo.png">
+    <meta name="twitter:title" content="Installer Hub Blog | Programming Guides & Troubleshooting">
+    <meta name="twitter:description" content="Technical guides on remote cloning, receiver setup, RF troubleshooting, and access control tips for gate and garage installers.">
+    <meta name="twitter:image" content="https://www.gateremotesource.com/logo/logo.png">
+
     <link rel="icon" type="image/x-icon" href="/logo/favicon.ico?v=1">
     <link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon-32.png?v=1">
     <link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon-16.png?v=1">
     <link rel="apple-touch-icon" sizes="180x180" href="/logo/apple-touch-icon.png?v=1">
     <link rel="manifest" href="/site.webmanifest?v=1">
-    
+
     <link rel="preconnect" href="https://www.googletagmanager.com">
+
     <link rel="preload" href="/assets/css/tailwind.css" as="style">
     <link rel="stylesheet" href="/assets/css/tailwind.css">
     <noscript><link rel="stylesheet" href="/assets/css/tailwind.css"></noscript>
-    
+
     <link rel="preload" href="/assets/vendor/fontawesome/css/all.min.css" as="style">
     <link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css">
     <noscript><link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css"></noscript>
-    
+
     <link rel="preload" href="/assets/fonts/inter/inter-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/inter/inter-600.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/inter/inter-700.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/css/fonts.css" as="style">
     <link rel="stylesheet" href="/assets/css/fonts.css">
     <noscript><link rel="stylesheet" href="/assets/css/fonts.css"></noscript>
-    
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZF8T77R309"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -83,15 +87,15 @@ lang: en
         gtag('js', new Date());
         gtag('config', 'G-ZF8T77R309');
     </script>
-    
+
     <style>
         ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-track { background: #0f172a; }
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 5px; }
         ::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
-        
+
         .nav-link.active { color: #06b6d4 !important; font-weight: 700; border-bottom: 2px solid #06b6d4; }
-        
+
         .lang-select {
             background-color: rgba(255, 255, 255, 0.1);
             color: white;
@@ -103,33 +107,9 @@ lang: en
             outline: none;
         }
         .lang-select option { background-color: #0f172a; color: white; }
-        
-        .article-card {
-            transition: all 0.3s ease;
-        }
-        .article-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-        
-        .filter-btn.active {
-            background-color: #06b6d4;
-            color: white;
-            border-color: #06b6d4;
-        }
-        
-        .tag-pill {
-            transition: all 0.2s ease;
-        }
-        .tag-pill:hover {
-            background-color: #06b6d4;
-            color: white;
-            border-color: #06b6d4;
-        }
     </style>
 </head>
 <body class="font-sans text-gray-300 bg-brand-surface selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="blog">
-    <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-brand-dark/95 backdrop-blur border-b border-gray-800 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
@@ -141,7 +121,7 @@ lang: en
                         <span class="font-bold text-2xl text-white tracking-tight">GateRemote<span class="text-brand-accent">Source</span></span>
                     </a>
                 </div>
-                
+
                 <div class="hidden lg:flex space-x-8 items-center">
                     <a href="/" class="nav-link text-gray-300 hover:text-brand-accent transition font-semibold py-2" id="nav-home" data-i18n="navigation.home">Home</a>
                     <a href="/catalog/" class="nav-link text-gray-300 hover:text-brand-accent transition font-semibold py-2" id="nav-products" data-i18n="navigation.catalog">Catalog</a>
@@ -149,7 +129,7 @@ lang: en
                     <a href="/about/" class="nav-link text-gray-300 hover:text-brand-accent transition font-semibold py-2" id="nav-about" data-i18n="navigation.about">About</a>
                     <a href="/blog/" class="nav-link text-gray-300 hover:text-brand-accent transition font-semibold py-2 active" id="nav-blog" data-i18n="navigation.blog">Blog</a>
                     <a href="/contact/" class="nav-link text-gray-300 hover:text-brand-accent transition font-semibold py-2" id="nav-contact" data-i18n="navigation.contact">Contact</a>
-                    
+
                     <div class="flex items-center ml-2 border-l border-gray-700 pl-4">
                         <div class="relative">
                             <button id="languageDropdownBtn" class="flex items-center gap-2 text-white hover:text-brand-accent transition">
@@ -185,12 +165,10 @@ lang: en
                             </div>
                         </div>
                     </div>
-                    
-                    <a href="/contact/" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-2 rounded-lg font-bold transition shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_get_price_list">
-                        Quote now
-                    </a>
+
+                    <a href="/contact/" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-2 rounded-lg font-bold transition shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_get_price_list">Quote Now</a>
                 </div>
-                
+
                 <div class="lg:hidden flex items-center gap-4">
                     <button id="mobile-menu-btn" class="text-white text-2xl focus:outline-none">
                         <i class="fa-solid fa-bars"></i>
@@ -198,7 +176,7 @@ lang: en
                 </div>
             </div>
         </div>
-        
+
         <div id="mobile-menu" class="lg:hidden bg-brand-surface border-b border-gray-700 hidden">
             <div class="px-4 pt-2 pb-6 space-y-2">
                 <a href="/" class="block px-3 py-3 rounded-md text-base font-semibold text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.home">Home</a>
@@ -206,21 +184,20 @@ lang: en
                 <a href="/oem/" class="block px-3 py-3 rounded-md text-base font-semibold text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.oem">OEM/ODM</a>
                 <a href="/about/" class="block px-3 py-3 rounded-md text-base font-semibold text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.about">About</a>
                 <a href="/blog/" class="block px-3 py-3 rounded-md text-base font-semibold text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.blog">Blog</a>
-                <a href="/contact/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-accent font-bold" data-i18n="navigation.contact" data-cta="mobile_get_price_list">Quote now</a>
+                <a href="/contact/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-accent font-bold" data-i18n="navigation.contact" data-cta="mobile_get_price_list">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
     <main class="pt-28 pb-24 bg-brand-surface min-h-screen">
-        <!-- Hero Section -->
+        
         <section class="pb-12">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div class="space-y-6">
                         <span class="text-xs uppercase tracking-wider text-brand-accent font-bold">Installer Hub</span>
-                        <h1 class="text-4xl md:text-5xl font-bold text-white" data-i18n="blog.title">{{ site.blogTitle }}</h1>
-                        <p class="text-gray-400 max-w-2xl" data-i18n="blog.subtitle">{{ site.blogDescription }}</p>
+                        <h1 class="text-4xl md:text-5xl font-bold text-white" data-i18n="blog.title">Installer Hub</h1>
+                        <p class="text-gray-400 max-w-2xl" data-i18n="blog.subtitle">Technical guides, programming tutorials, and industry news for locksmiths.</p>
                         <div class="flex flex-wrap gap-3 text-sm text-gray-400">
                             <span class="flex items-center gap-2 bg-brand-dark/50 border border-gray-700 rounded-full px-3 py-1">
                                 <i class="fa-solid fa-circle-check text-brand-accent"></i>
@@ -237,7 +214,7 @@ lang: en
                         </div>
                         <div class="flex flex-wrap gap-4 items-center text-sm text-gray-400">
                             <div class="bg-brand-dark/50 border border-gray-700 rounded-lg px-4 py-2">
-                                <span class="text-white font-bold">{{ collections.posts.length }}</span> total guides
+                                <span class="text-white font-bold">1</span> total guides
                             </div>
                             <div class="bg-brand-dark/50 border border-gray-700 rounded-lg px-4 py-2">
                                 Updated weekly by factory engineers
@@ -248,8 +225,6 @@ lang: en
                             <a href="/catalog/" class="border border-brand-accent text-brand-accent hover:border-white hover:text-white hover:bg-white/5 px-6 py-3 rounded-lg font-bold transition" data-cta="blog_hero_catalog">Download catalog</a>
                         </div>
                     </div>
-                    
-                    <!-- Search & Quick Actions Card -->
                     <div class="bg-brand-dark border border-gray-700 rounded-2xl p-6 shadow-xl space-y-6">
                         <div>
                             <h3 class="text-white font-bold text-lg mb-2">Search the library</h3>
@@ -260,7 +235,6 @@ lang: en
                             </div>
                             <div id="searchSuggestions" class="mt-3 space-y-2 hidden"></div>
                         </div>
-                        
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div class="bg-brand-surface border border-gray-700 rounded-xl p-4">
                                 <p class="text-xs text-gray-500 uppercase tracking-wide mb-2">Fast quote</p>
@@ -276,23 +250,20 @@ lang: en
                             </div>
                         </div>
                         
-                        {% set categoryOptions = collections.posts | pluck("category") | unique %}
-                        {% if categoryOptions.length %}
                         <div>
                             <p class="text-xs uppercase tracking-wider text-gray-500 mb-3">Quick topics</p>
                             <div class="flex flex-wrap gap-2">
-                                {% for option in categoryOptions | slice(0, 8) %}
-                                <button type="button" class="tag-pill px-3 py-1 rounded-full border border-gray-700 text-xs text-gray-300" data-quick-filter="category" data-value="{{ option | slugify }}">{{ option }}</button>
-                                {% endfor %}
+                                
+                                <button type="button" class="px-3 py-1 rounded-full border border-gray-700 text-xs text-gray-300 hover:border-brand-accent hover:text-white transition" data-quick-filter="category" data-value="engineering">Engineering</button>
+                                
                             </div>
                         </div>
-                        {% endif %}
+                        
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Filter Bar -->
         <section class="pb-8">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="bg-brand-dark/50 border border-gray-700 rounded-xl p-4">
@@ -312,118 +283,58 @@ lang: en
             </div>
         </section>
 
-        <!-- Blog Posts Grid -->
         <section>
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                    <!-- Main Content -->
                     <div class="lg:col-span-2 space-y-10">
-                        {% if pagination.pageNumber == 0 %}
-                        {% set featured = collections.posts | getFeatured %}
-                        {% if featured %}
-                        <article class="bg-brand-dark border border-gray-700 rounded-2xl overflow-hidden shadow-xl article-card group" data-post-card data-title="{{ featured.data.title | escape }}" data-summary="{{ featured.data.summary | escape }}" data-category="{{ featured.data.category | slugify }}" data-tags="{{ featured.data.tags | contentTags | joinSlugList }}" data-brand="{{ featured.data.brand | joinSlugList }}" data-frequency="{{ featured.data.frequency | joinSlugList }}" data-scene="{{ featured.data.scene | joinSlugList }}">
+                        
+                        
+                        
+                        <section class="bg-brand-dark border border-gray-700 rounded-2xl overflow-hidden shadow-xl group" data-post-card data-title="Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls" data-summary="Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation." data-category="engineering" data-tags="pcb-quality|rolling-code|oem-manufacturing" data-brand="" data-frequency="433-92mhz" data-scene="">
                             <div class="grid grid-cols-1 md:grid-cols-2">
                                 <div class="relative">
-                                    <img src="{{ featured.data.hero_image }}" alt="{{ featured.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                    <img src="/assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-01.webp" alt="Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                                     <div class="absolute top-4 left-4 bg-brand-accent text-white text-xs font-bold px-3 py-1 rounded-full">Featured</div>
                                 </div>
                                 <div class="p-6 flex flex-col justify-between">
                                     <div>
                                         <div class="flex items-center gap-3 text-xs text-gray-400 mb-3">
-                                            <span class="uppercase tracking-wider text-brand-accent font-bold">{{ featured.data.category }}</span>
-                                            <span>{{ featured.date | readableDate }}</span>
-                                            <span>{{ featured.data.read_time }}</span>
+                                            <span class="uppercase tracking-wider text-brand-accent font-bold">Engineering</span>
+                                            <span>February 09, 2025</span>
+                                            <span>9 min read</span>
                                         </div>
-                                        <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-brand-accent transition">{{ featured.data.title }}</h2>
-                                        <p class="text-gray-400 text-sm mb-4">{{ featured.data.summary }}</p>
+                                        <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-brand-accent transition">Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls</h2>
+                                        <p class="text-gray-400 text-sm mb-4">Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation.</p>
                                     </div>
-                                    <a href="{{ featured.url }}" class="text-brand-accent font-bold text-sm hover:text-white inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                                    <a href="/blog/avoid-public-mold-trap-pcb-quality/" class="text-brand-accent font-bold text-sm hover:text-white inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
                                 </div>
                             </div>
-                        </article>
-                        {% endif %}
-                        {% endif %}
+                        </section>
+                        
+                        
 
-                        {% set visiblePosts = posts %}
-                        {% if pagination.pageNumber == 0 %}
-                        {% set visiblePosts = posts | excludeFeatured %}
-                        {% endif %}
-                        {% set gridPosts = visiblePosts | slice(0, 8) %}
-                        {% set listPosts = visiblePosts | slice(8) %}
+                        
+                        
+                        
+                        
+                        
+                        
 
-                        <!-- Grid Posts -->
                         <section class="space-y-6">
                             <div class="flex items-center justify-between">
                                 <h3 class="text-white font-bold text-lg">Fresh from the lab</h3>
                                 <span class="text-xs text-gray-500">Newest updates first</span>
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                {% for post in gridPosts %}
-                                <article class="bg-brand-dark p-6 rounded-xl border border-gray-700 hover:border-brand-accent transition flex flex-col gap-4 group article-card" data-post-card data-title="{{ post.data.title | escape }}" data-summary="{{ post.data.summary | escape }}" data-category="{{ post.data.category | slugify }}" data-tags="{{ post.data.tags | contentTags | joinSlugList }}" data-brand="{{ post.data.brand | joinSlugList }}" data-frequency="{{ post.data.frequency | joinSlugList }}" data-scene="{{ post.data.scene | joinSlugList }}">
-                                    <div class="h-48 rounded-lg overflow-hidden">
-                                        <img loading="lazy" decoding="async" src="{{ post.data.hero_image }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="{{ post.data.title }}">
-                                    </div>
-                                    <div class="flex items-center gap-3 text-xs text-gray-400">
-                                        <span class="uppercase tracking-wider text-brand-accent font-bold">{{ post.data.category }}</span>
-                                        <span>{{ post.date | readableDate }}</span>
-                                        <span>{{ post.data.read_time }}</span>
-                                    </div>
-                                    <h3 class="text-lg font-bold text-white group-hover:text-brand-accent transition">{{ post.data.title }}</h3>
-                                    <p class="text-gray-400 text-sm line-clamp-2">{{ post.data.summary }}</p>
-                                    <a href="{{ post.url }}" class="text-brand-accent font-bold text-sm hover:text-white inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
-                                </article>
-                                {% endfor %}
+                                
                             </div>
                         </section>
 
-                        <!-- List Posts -->
-                        {% if listPosts.length %}
-                        <section class="bg-brand-dark border border-gray-700 rounded-2xl overflow-hidden">
-                            <div class="flex items-center justify-between px-6 py-4 border-b border-gray-800">
-                                <h3 class="text-white font-bold text-lg">More from the field</h3>
-                                <span class="text-xs text-gray-500">Short reads and updates</span>
-                            </div>
-                            <div class="divide-y divide-gray-800">
-                                {% for post in listPosts %}
-                                <div class="px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4" data-post-card data-title="{{ post.data.title | escape }}" data-summary="{{ post.data.summary | escape }}" data-category="{{ post.data.category | slugify }}" data-tags="{{ post.data.tags | contentTags | joinSlugList }}" data-brand="{{ post.data.brand | joinSlugList }}" data-frequency="{{ post.data.frequency | joinSlugList }}" data-scene="{{ post.data.scene | joinSlugList }}">
-                                    <div>
-                                        <p class="text-xs text-brand-accent uppercase tracking-wide font-bold">{{ post.data.category }}</p>
-                                        <a href="{{ post.url }}" class="text-white font-semibold hover:text-brand-accent">{{ post.data.title }}</a>
-                                        <p class="text-xs text-gray-500">{{ post.date | readableDate }} - {{ post.data.read_time }}</p>
-                                    </div>
-                                    <div class="flex items-center gap-4">
-                                        <p class="text-xs text-gray-400 max-w-md hidden md:block line-clamp-2">{{ post.data.summary }}</p>
-                                        <a href="{{ post.url }}" class="text-brand-accent text-sm font-bold hover:text-white">View</a>
-                                    </div>
-                                </div>
-                                {% endfor %}
-                            </div>
-                        </section>
-                        {% endif %}
+                        
 
-                        <!-- Pagination -->
-                        {% if pagination.pages.length > 1 %}
-                        <div class="mt-8 flex justify-center gap-2" aria-label="Blog pagination">
-                            {% if pagination.previousPageHref %}
-                            <a href="{{ pagination.previousPageHref }}" class="w-10 h-10 rounded-lg bg-brand-dark border border-gray-700 text-gray-400 hover:border-brand-accent hover:text-white transition flex items-center justify-center" aria-label="Previous page">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </a>
-                            {% endif %}
-                            {% for href in pagination.hrefs %}
-                            <a href="{{ href }}" class="w-10 h-10 rounded-lg {% if pagination.pageNumber == loop.index0 %}bg-brand-accent text-white font-bold{% else %}bg-brand-dark border border-gray-700 text-gray-400 hover:border-brand-accent hover:text-white{% endif %} transition flex items-center justify-center">{{ loop.index }}</a>
-                            {% endfor %}
-                            {% if pagination.nextPageHref %}
-                            <a href="{{ pagination.nextPageHref }}" class="w-10 h-10 rounded-lg bg-brand-dark border border-gray-700 text-gray-400 hover:border-brand-accent hover:text-white transition flex items-center justify-center" aria-label="Next page">
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </a>
-                            {% endif %}
-                        </div>
-                        {% endif %}
+                        
                     </div>
-
-                    <!-- Sidebar -->
                     <aside class="space-y-8">
-                        <!-- Filters Widget -->
                         <div class="bg-brand-dark p-6 rounded-xl border border-gray-700 shadow-lg">
                             <div class="flex items-center justify-between mb-4">
                                 <h3 class="font-bold text-white">Filters</h3>
@@ -431,83 +342,68 @@ lang: en
                             </div>
                             <p class="text-xs text-gray-500 mb-4">Stack filters to narrow down results.</p>
                             <div class="space-y-6 text-sm text-gray-300">
-                                {% if categoryOptions.length %}
+                                
                                 <div>
                                     <p class="text-white font-semibold mb-2">Topics</p>
                                     <div class="grid grid-cols-2 gap-2">
-                                        {% for option in categoryOptions %}
-                                        <label class="flex items-center gap-2 cursor-pointer hover:text-brand-accent transition">
-                                            <input type="checkbox" class="accent-brand-accent" data-filter="category" data-label="{{ option }}" value="{{ option | slugify }}">
-                                            <span>{{ option }}</span>
+                                        
+                                        <label class="flex items-center gap-2">
+                                            <input type="checkbox" class="accent-brand-accent" data-filter="category" data-label="Engineering" value="engineering">
+                                            <span>Engineering</span>
                                         </label>
-                                        {% endfor %}
+                                        
                                     </div>
                                 </div>
-                                {% endif %}
+                                
 
-                                {% set tagOptions = collections.posts | pluck("tags") | contentTags | unique %}
-                                {% if tagOptions.length %}
+                                
+                                
                                 <div>
                                     <p class="text-white font-semibold mb-2">Tags</p>
                                     <div class="flex flex-wrap gap-2">
-                                        {% for option in tagOptions %}
-                                        <label class="flex items-center gap-2 bg-brand-surface border border-gray-700 rounded-full px-3 py-1 cursor-pointer hover:border-brand-accent transition">
-                                            <input type="checkbox" class="accent-brand-accent" data-filter="tags" data-label="{{ option }}" value="{{ option | slugify }}">
-                                            <span>{{ option }}</span>
+                                        
+                                        <label class="flex items-center gap-2 bg-brand-surface border border-gray-700 rounded-full px-3 py-1">
+                                            <input type="checkbox" class="accent-brand-accent" data-filter="tags" data-label="PCB Quality" value="pcb-quality">
+                                            <span>PCB Quality</span>
                                         </label>
-                                        {% endfor %}
+                                        
+                                        <label class="flex items-center gap-2 bg-brand-surface border border-gray-700 rounded-full px-3 py-1">
+                                            <input type="checkbox" class="accent-brand-accent" data-filter="tags" data-label="Rolling Code" value="rolling-code">
+                                            <span>Rolling Code</span>
+                                        </label>
+                                        
+                                        <label class="flex items-center gap-2 bg-brand-surface border border-gray-700 rounded-full px-3 py-1">
+                                            <input type="checkbox" class="accent-brand-accent" data-filter="tags" data-label="OEM Manufacturing" value="oem-manufacturing">
+                                            <span>OEM Manufacturing</span>
+                                        </label>
+                                        
                                     </div>
                                 </div>
-                                {% endif %}
+                                
 
-                                {% set brandOptions = collections.posts | pluck("brand") | unique %}
-                                {% if brandOptions.length %}
-                                <div>
-                                    <p class="text-white font-semibold mb-2">Brand</p>
-                                    <div class="flex flex-wrap gap-2">
-                                        {% for option in brandOptions %}
-                                        <label class="flex items-center gap-2 bg-brand-surface border border-gray-700 rounded-full px-3 py-1 cursor-pointer hover:border-brand-accent transition">
-                                            <input type="checkbox" class="accent-brand-accent" data-filter="brand" data-label="{{ option }}" value="{{ option | slugify }}">
-                                            <span>{{ option }}</span>
-                                        </label>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                {% endif %}
+                                
+                                
 
-                                {% set frequencyOptions = collections.posts | pluck("frequency") | unique %}
-                                {% if frequencyOptions.length %}
+                                
+                                
                                 <div>
                                     <p class="text-white font-semibold mb-2">Frequency</p>
                                     <div class="flex flex-wrap gap-2">
-                                        {% for option in frequencyOptions %}
-                                        <label class="flex items-center gap-2 bg-brand-surface border border-gray-700 rounded-full px-3 py-1 cursor-pointer hover:border-brand-accent transition">
-                                            <input type="checkbox" class="accent-brand-accent" data-filter="frequency" data-label="{{ option }}" value="{{ option | slugify }}">
-                                            <span>{{ option }}</span>
+                                        
+                                        <label class="flex items-center gap-2 bg-brand-surface border border-gray-700 rounded-full px-3 py-1">
+                                            <input type="checkbox" class="accent-brand-accent" data-filter="frequency" data-label="433.92MHz" value="433-92mhz">
+                                            <span>433.92MHz</span>
                                         </label>
-                                        {% endfor %}
+                                        
                                     </div>
                                 </div>
-                                {% endif %}
+                                
 
-                                {% set sceneOptions = collections.posts | pluck("scene") | unique %}
-                                {% if sceneOptions.length %}
-                                <div>
-                                    <p class="text-white font-semibold mb-2">Scene</p>
-                                    <div class="flex flex-wrap gap-2">
-                                        {% for option in sceneOptions %}
-                                        <label class="flex items-center gap-2 bg-brand-surface border border-gray-700 rounded-full px-3 py-1 cursor-pointer hover:border-brand-accent transition">
-                                            <input type="checkbox" class="accent-brand-accent" data-filter="scene" data-label="{{ option }}" value="{{ option | slugify }}">
-                                            <span>{{ option }}</span>
-                                        </label>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                {% endif %}
+                                
+                                
                             </div>
                         </div>
 
-                        <!-- Distributor CTA -->
                         <div class="bg-gradient-to-br from-brand-accent to-blue-600 p-8 rounded-xl text-center text-white shadow-xl relative overflow-hidden">
                             <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
                             <h3 class="font-bold text-xl mb-2 relative z-10" data-i18n="blog.become_distributor_title">Become a Distributor</h3>
@@ -515,34 +411,32 @@ lang: en
                             <a href="/contact/" class="bg-white text-brand-accent px-6 py-3 rounded-full font-bold text-sm shadow-lg hover:bg-gray-100 transition relative z-10 w-full" data-i18n="blog.apply_now">Apply Now</a>
                         </div>
 
-                        <!-- Latest Posts Widget -->
-                        {% set latestPosts = collections.posts | slice(0, 3) %}
-                        {% if latestPosts.length %}
+                        
+                        
                         <div class="bg-brand-dark p-6 rounded-xl border border-gray-700 shadow-lg">
                             <h3 class="font-bold text-white mb-4">Newest guides</h3>
                             <div class="space-y-4">
-                                {% for post in latestPosts %}
-                                <a href="{{ post.url }}" class="flex gap-3 group">
+                                
+                                <a href="/blog/avoid-public-mold-trap-pcb-quality/" class="flex gap-3 group">
                                     <div class="w-16 h-16 bg-gray-800 rounded-lg flex-shrink-0 overflow-hidden">
-                                        <img loading="lazy" decoding="async" src="{{ post.data.hero_image }}" class="w-full h-full object-cover" alt="{{ post.data.title }}">
+                                        <img loading="lazy" decoding="async" src="/assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-01.webp" class="w-full h-full object-cover" alt="Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls">
                                     </div>
                                     <div>
-                                        <p class="text-xs text-brand-accent uppercase tracking-wide font-bold">{{ post.data.category }}</p>
-                                        <p class="text-sm font-bold text-white group-hover:text-brand-accent transition">{{ post.data.title }}</p>
-                                        <p class="text-xs text-gray-500 mt-1">{{ post.date | readableDate }}</p>
+                                        <p class="text-xs text-brand-accent uppercase tracking-wide font-bold">Engineering</p>
+                                        <p class="text-sm font-bold text-white group-hover:text-brand-accent transition">Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls</p>
+                                        <p class="text-xs text-gray-500 mt-1">February 09, 2025</p>
                                     </div>
                                 </a>
-                                {% endfor %}
+                                
                             </div>
                         </div>
-                        {% endif %}
+                        
                     </aside>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Newsletter Section -->
     <section class="py-16 bg-brand-dark border-t border-gray-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl font-bold text-white mb-4">Stay Updated with Latest Tips</h2>
@@ -555,27 +449,23 @@ lang: en
         </div>
     </section>
 
-    <!-- Pre-Footer CTA -->
     <section class="py-16 bg-brand-accent relative overflow-hidden">
         <div class="absolute inset-0 bg-black/10"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
             <div>
-                <h2 class="text-3xl font-bold text-white mb-2" data-i18n="pre_footer.title">Need Technical Support?</h2>
-                <p class="text-white/90 text-lg" data-i18n="pre_footer.subtitle">Our engineering team is here to help with your installation challenges.</p>
+                <h2 class="text-3xl font-bold text-white mb-2" data-i18n="pre_footer.title">Need a Sample Pack?</h2>
+                <p class="text-white/90 text-lg" data-i18n="pre_footer.subtitle">Test our range &amp; compatibility before you buy in bulk.</p>
             </div>
             <a href="/contact/" class="bg-amber-400 text-brand-dark px-8 py-3 rounded-full font-bold hover:bg-amber-300 transition shadow-lg shadow-amber-200/50">
-                <span data-i18n="pre_footer.order_samples">Get Support</span>
+                <span data-i18n="pre_footer.order_samples">Order Samples</span>
             </a>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-brand-dark pt-20 pb-10 border-t border-gray-800 text-gray-400 text-base">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-brand-surface border border-gray-700 rounded-xl p-6 mb-12">
-                <p class="text-sm text-gray-400 text-center" data-i18n="footer.legal_disclaimer">
-                    Disclaimer: All product names, logos, and brands are property of their respective owners. All company, product and service names used in this website are for identification purposes only. Use of these names, logos, and brands does not imply endorsement.
-                </p>
+                <p class="text-sm text-gray-400 text-center" data-i18n="footer.legal_disclaimer">Disclaimer: All product names, logos, and brands are property of their respective owners. All company, product and service names used in this website are for identification purposes only. Use of these names, logos, and brands does not imply endorsement.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
@@ -606,12 +496,11 @@ lang: en
                 </div>
             </div>
             <div class="text-center pt-8 border-t border-gray-800">
-                <span data-i18n="footer.copyright">&copy; 2026 GateRemoteSource. All rights reserved.</span>
+                <span data-i18n="footer.copyright">© {year} GateRemoteSource. All rights reserved.</span>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Button -->
     <a href="https://wa.me/8615899648898" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-green-600 text-white rounded-full p-4 shadow-lg flex items-center justify-center transition transform hover:scale-110 animate-bounce-slow">
         <i class="fa-brands fa-whatsapp text-4xl"></i>
     </a>
@@ -648,6 +537,14 @@ lang: en
                 if (pageMeta.keywords) document.getElementById('meta-keywords').content = pageMeta.keywords;
             }
 
+            document.querySelectorAll('[data-i18n-html]').forEach(element => {
+                const key = element.getAttribute('data-i18n-html');
+                const value = getNestedValue(translations, key);
+                if (value !== null && value !== undefined) {
+                    element.innerHTML = value;
+                }
+            });
+
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
                 const value = getNestedValue(translations, key);
@@ -680,7 +577,7 @@ lang: en
             return parts.length > 1 && supportedLangs.includes(parts[1]) ? parts[1] : null;
         }
 
-        function isBlogPostPath(path) {
+        function isBlogPostPath(pathname) {
             const normalized = pathname.endsWith('/') ? pathname : `${pathname}/`;
             if (normalized === '/blog/' || normalized === '/blog/page/') return false;
             return normalized.startsWith('/blog/') && !normalized.startsWith('/blog/page/');
@@ -811,11 +708,11 @@ lang: en
 
         function escapeHtml(value) {
             return String(value)
-                .replace(/&/g, '&')
-                .replace(/</g, '<')
-                .replace(/>/g, '>')
-                .replace(/"/g, '"')
-                .replace(/'/g, ''');
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
         }
 
         function normalizeValue(value) {
@@ -1089,3 +986,4 @@ lang: en
     </style>
 </body>
 </html>
+
