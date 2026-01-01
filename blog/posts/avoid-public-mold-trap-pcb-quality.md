@@ -17,7 +17,7 @@ hero_alt: "Remote shell next to FR-4 PCB"
 author: "Eric Huang"
 author_role: "Content Marketing Director"
 read_time: "9 min read"
-featured: true
+featured: false
 lang: en
 permalink: "/blog/{{ slug }}/index.html"
 ---

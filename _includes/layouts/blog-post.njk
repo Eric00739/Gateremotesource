@@ -9,7 +9,15 @@
     {% set keywordString = keywordItems | unique | join(', ') %}
     {% set contentTags = tags | contentTags %}
     {% set canonicalUrl = site.url ~ (page.url | canonicalPath) %}
-    {% set heroUrl = site.url ~ (hero_image or '/logo/logo.png') %}
+    {% set defaultHero = hero_image or '/logo/logo.png' %}
+    {% set ogImages = (og_images or defaultHero) | asArray %}
+    {% set ogPrimary = ogImages[0] %}
+    {% if ogPrimary.url %}
+    {% set ogPrimaryPath = ogPrimary.url %}
+    {% else %}
+    {% set ogPrimaryPath = ogPrimary %}
+    {% endif %}
+    {% set heroUrl = site.url ~ ogPrimaryPath %}
     <meta name="keywords" content="{{ keywordString }}">
     <meta name="author" content="{{ author or 'GateRemoteSource' }}">
     <link rel="canonical" href="{{ canonicalUrl }}">
@@ -43,8 +51,17 @@
     <meta property="og:title" content="{{ title }} | {{ site.blogTitle }}">
     <meta property="og:description" content="{{ summary }}">
     <meta property="og:url" content="{{ canonicalUrl }}">
-    <meta property="og:image" content="{{ heroUrl }}">
-    <meta property="og:image:alt" content="{{ hero_alt or title }}">
+    {% for image in ogImages %}
+    {% if image.url %}
+    {% set imagePath = image.url %}
+    {% set imageAlt = image.alt or hero_alt or title %}
+    {% else %}
+    {% set imagePath = image %}
+    {% set imageAlt = hero_alt or title %}
+    {% endif %}
+    <meta property="og:image" content="{{ site.url ~ imagePath }}">
+    <meta property="og:image:alt" content="{{ imageAlt }}">
+    {% endfor %}
     {% if date %}
     <meta property="article:published_time" content="{{ date | htmlDate }}">
     {% endif %}
@@ -137,7 +154,7 @@
         .article-content li { margin-bottom: 0.5em; line-height: 1.7; }
         .article-content ul { list-style-type: disc; }
         .article-content ol { list-style-type: decimal; }
-        .article-content table { width: 100%; border-collapse: collapse; margin: 2em 0; }
+        .article-content table { width: 100%; border-collapse: collapse; margin: 2em 0; display: block; overflow-x: auto; }
         .article-content table th { text-align: left; color: #ffffff; padding: 0.875rem 0.75rem; background: #1e293b; font-weight: 600; }
         .article-content table td { padding: 0.875rem 0.75rem; border-top: 1px solid #334155; color: #e2e8f0; }
         .article-content blockquote { border-left: 4px solid #06b6d4; padding-left: 1.5rem; margin: 2em 0; color: #cbd5e1; font-style: italic; }
@@ -473,7 +490,7 @@
             "@type": "BlogPosting",
             "headline": title,
             "description": summary,
-            "image": hero_image,
+            "image": heroUrl,
             "author": {
                 "@type": "Person",
                 "name": author or "GateRemoteSource"
