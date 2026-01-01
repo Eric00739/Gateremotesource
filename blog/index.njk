@@ -17,6 +17,57 @@ lang: en
     <meta id="meta-keywords" name="keywords" content="Garage Remote Programming, Locksmith Resources, Gate Installation Guides, Technical Tutorials, Access Control Blog">
     <meta name="author" content="GateRemoteSource">
     <link rel="canonical" href="{{ site.url }}{{ page.url | canonicalPath }}">
+    
+    <!-- Schema.org 结构化数据 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "{{ site.blogTitle }}",
+        "description": "{{ site.blogDescription }}",
+        "url": "{{ site.url }}{{ page.url | canonicalPath }}",
+        "inLanguage": "{{ lang or site.lang }}",
+        {% if pagination.pageNumber == 0 %}
+        "blogPost": [
+            {% set featured = collections.posts | getFeatured %}
+            {% set schemaPosts = posts | slice(0, 5) %}
+            {% if featured %}
+            {
+                "@type": "BlogPosting",
+                "@id": "{{ site.url }}{{ featured.url | canonicalPath }}",
+                "headline": "{{ featured.data.title | escape }}",
+                "description": "{{ featured.data.summary | escape }}",
+                "image": "{{ site.url }}{{ featured.data.hero_image }}",
+                "author": {
+                    "@type": "Organization",
+                    "name": "{{ featured.data.author }}"
+                },
+                "datePublished": "{{ featured.date | htmlDate }}",
+                "category": "{{ featured.data.category }}",
+                "url": "{{ site.url }}{{ featured.url | canonicalPath }}"
+            }{% if schemaPosts.length %},{% endif %}
+            {% endif %}
+            {% for post in schemaPosts %}
+            {
+                "@type": "BlogPosting",
+                "@id": "{{ site.url }}{{ post.url | canonicalPath }}",
+                "headline": "{{ post.data.title | escape }}",
+                "description": "{{ post.data.summary | escape }}",
+                "image": "{{ site.url }}{{ post.data.hero_image }}",
+                "author": {
+                    "@type": "Organization",
+                    "name": "{{ post.data.author }}"
+                },
+                "datePublished": "{{ post.date | htmlDate }}",
+                "category": "{{ post.data.category }}",
+                "url": "{{ site.url }}{{ post.url | canonicalPath }}"
+            }{% if not loop.last %},{% endif %}
+            {% endfor %}
+        ]
+        {% endif %}
+    }
+    </script>
+    
     <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(i18n.defaultLang) | canonicalPath }}" hreflang="x-default">
     {% for code in i18n.languages %}
     <link rel="alternate" href="{{ site.url }}{{ page.url | langUrl(code) | canonicalPath }}" hreflang="{{ code }}">
@@ -46,10 +97,14 @@ lang: en
     </script>
     
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ site.name }}">
+    <meta property="og:locale" content="en_US">
     <meta property="og:title" content="{{ site.blogTitle }} | GateRemoteSource">
     <meta property="og:description" content="{{ site.blogDescription }}">
     <meta property="og:url" content="{{ site.url }}{{ page.url | canonicalPath }}">
     <meta property="og:image" content="{{ site.url }}/logo/logo.png">
+    <meta property="og:image:alt" content="{{ site.name }} logo">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ site.blogTitle }} | GateRemoteSource">
     <meta name="twitter:description" content="{{ site.blogDescription }}">
     <meta name="twitter:image" content="{{ site.url }}/logo/logo.png">
@@ -358,7 +413,8 @@ lang: en
                                 <span class="text-xs text-gray-500">Newest updates first</span>
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                {% for post in gridPosts %}
+                                {% if gridPosts.length %}
+                                    {% for post in gridPosts %}
                                 <article class="bg-brand-dark p-6 rounded-xl border border-gray-700 hover:border-brand-accent transition flex flex-col gap-4 group article-card" data-post-card data-title="{{ post.data.title | escape }}" data-summary="{{ post.data.summary | escape }}" data-category="{{ post.data.category | slugify }}" data-tags="{{ post.data.tags | contentTags | joinSlugList }}" data-brand="{{ post.data.brand | joinSlugList }}" data-frequency="{{ post.data.frequency | joinSlugList }}" data-scene="{{ post.data.scene | joinSlugList }}">
                                     <div class="h-48 rounded-lg overflow-hidden">
                                         <img loading="lazy" decoding="async" src="{{ post.data.hero_image }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="{{ post.data.title }}">
@@ -374,6 +430,23 @@ lang: en
                                 </article>
                                 {% endfor %}
                             </div>
+                            {% else %}
+                            <div class="bg-brand-dark/30 border border-gray-700 rounded-xl p-8 text-center">
+                                <i class="fa-solid fa-flask text-4xl text-brand-accent mb-4"></i>
+                                <h4 class="text-white font-bold text-lg mb-2">更多内容即将推出</h4>
+                                <p class="text-gray-400 mb-4">我们的工程师团队正在努力准备更多技术指南和教程。</p>
+                                <div class="flex flex-wrap justify-center gap-4">
+                                    <a href="/contact/" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-3 rounded-lg font-bold transition">
+                                        <i class="fa-solid fa-envelope mr-2"></i>
+                                        订阅更新通知
+                                    </a>
+                                    <a href="/catalog/" class="border border-brand-accent text-brand-accent hover:border-white hover:text-white px-6 py-3 rounded-lg font-bold transition">
+                                        <i class="fa-solid fa-book mr-2"></i>
+                                        浏览产品目录
+                                    </a>
+                                </div>
+                            </div>
+                            {% endif %}
                         </section>
 
                         <!-- List Posts -->
