@@ -1,6 +1,17 @@
 [
 
   {
+    "title": &quot;How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance&quot;,
+    "summary": &quot;A field-proven checklist for OEM teams to turn range and compliance into measurable KPIs: link margin, blocking, protocol airtime, and regulator-limited transmit behavior.&quot;,
+    "category": &quot;RF Engineering&quot;,
+    "tags": [&quot;433.92MHz&quot;,&quot;RF Compliance&quot;,&quot;Link Budget&quot;,&quot;OEM Procurement&quot;,&quot;Garage Doors&quot;],
+    "brand": [],
+    "frequency": [&quot;433.92MHz&quot;],
+    "scene": [],
+    "url": &quot;/blog/choose-433-92mhz-remote-control/&quot;
+  },
+
+  {
     "title": &quot;Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls&quot;,
     "summary": &quot;Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation.&quot;,
     "category": &quot;Engineering&quot;,

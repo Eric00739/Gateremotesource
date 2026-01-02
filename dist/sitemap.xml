@@ -105,4 +105,28 @@
     <changefreq>weekly</changefreq>
   </url>
 
+  <url>
+    <loc>https://www.gateremotesource.com/blog/choose-433-92mhz-remote-control/</loc>
+    
+    <lastmod>2025-12-31</lastmod>
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/docs/AUTO_GIT_SETUP/</loc>
+    
+    <lastmod>2026-01-02</lastmod>
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/docs/BLOG_SETUP_GUIDE/</loc>
+    
+    <lastmod>2026-01-02</lastmod>
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
 </urlset>

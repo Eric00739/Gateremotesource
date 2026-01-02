@@ -1,6 +1,10 @@
 /** Tailwind config extracted from prior inline config. */
 module.exports = {
-  content: ["./*.html"],
+  content: [
+    "./**/*.{html,njk,md}",
+    "_includes/**/*.njk",
+    "_site/**/*.html"
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -26,5 +30,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };
