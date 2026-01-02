@@ -492,7 +492,7 @@ eleventyComputed:
 
     <!-- ================= NAVIGATION ================= -->
 
-    <nav class="fixed w-full z-50 bg-brand-dark/95 backdrop-blur border-b border-gray-800 transition-all duration-300">
+    <nav class="fixed w-full z-50 bg-brand-surface border-b border-brand-border backdrop-blur transition-all duration-200 ease-in-out">
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -504,13 +504,13 @@ eleventyComputed:
 
                     <a href="/" class="flex items-center gap-3">
 
-                    <div class="bg-white p-1.5 rounded-lg h-10 w-10 flex items-center justify-center">
+                    <div class="bg-brand-light p-1.5 rounded-lg h-10 w-10 flex items-center justify-center border border-brand-border">
 
                         <img src="/logo/logo.png" width="1024" height="1024" alt="GateRemoteSource Logo" class="h-full w-full object-contain">
 
                     </div>
 
-                        <span class="font-bold text-2xl text-white tracking-tight">GateRemote<span class="text-brand-accent">Source</span></span>
+                        <span class="font-bold text-2xl text-brand-dark tracking-tight transition-colors duration-200 ease-in-out">GateRemote<span class="text-brand-accent">Source</span></span>
 
                     </a>
 
@@ -522,27 +522,27 @@ eleventyComputed:
 
                 <div class="hidden lg:flex space-x-8 items-center">
 
-                    <a href="/" class="nav-link text-gray-300 hover:text-brand-accent transition font-semibold py-2 active" id="nav-home" data-i18n="navigation.home">Home</a>
+                    <a href="/" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent active" id="nav-home" data-i18n="navigation.home">Home</a>
 
-                    <a href="/catalog/" class="nav-link text-gray-300 hover:text-brand-accent transition font-semibold py-2" id="nav-products" data-i18n="navigation.catalog">Catalog</a>
+                    <a href="/catalog/" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-products" data-i18n="navigation.catalog">Catalog</a>
 
-                    <a href="/oem/" class="nav-link text-gray-300 hover:text-brand-accent transition font-semibold py-2" id="nav-oem" data-i18n="navigation.oem">OEM/ODM</a>
+                    <a href="/oem/" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-oem" data-i18n="navigation.oem">OEM/ODM</a>
 
-                    <a href="/about/" class="nav-link text-gray-300 hover:text-brand-accent transition font-semibold py-2" id="nav-about" data-i18n="navigation.about">About</a>
+                    <a href="/about/" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-about" data-i18n="navigation.about">About</a>
 
-                    <a href="/blog/" class="nav-link text-gray-300 hover:text-brand-accent transition font-semibold py-2" id="nav-blog" data-i18n="navigation.blog">Blog</a>
+                    <a href="/blog/" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-blog" data-i18n="navigation.blog">Blog</a>
 
-                    <a href="/contact/" class="nav-link text-gray-300 hover:text-brand-accent transition font-semibold py-2" id="nav-contact" data-i18n="navigation.contact">Contact</a>
+                    <a href="/contact/" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-contact" data-i18n="navigation.contact">Contact</a>
 
                     
 
                     <!-- Language Switcher -->
 
-                    <div class="flex items-center ml-2 border-l border-gray-700 pl-4">
+                    <div class="flex items-center ml-2 border-l border-brand-border pl-4">
 
                         <div class="relative">
 
-                            <button id="languageDropdownBtn" class="flex items-center gap-2 text-white hover:text-brand-accent transition">
+                            <button id="languageDropdownBtn" class="flex items-center gap-2 text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out">
 
                                 <span id="currentFlag" class="text-xs font-semibold tracking-wide">EN</span>
 
@@ -552,53 +552,53 @@ eleventyComputed:
 
                             </button>
 
-                            <div id="languageDropdown" class="absolute right-0 mt-2 w-48 bg-brand-surface border border-gray-700 rounded-lg shadow-lg hidden z-50">
+                            <div id="languageDropdown" class="absolute right-0 mt-2 w-48 bg-brand-surface border border-brand-border rounded-lg shadow-md hidden z-50">
 
-                                <a href="#" onclick="changeLanguage('en')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
+                                <a href="#" onclick="changeLanguage('en')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-light transition-colors duration-200 ease-in-out">
 
-                                    <span class="text-xs font-semibold">EN</span>
+                                    <span class="text-xs font-semibold text-brand-dark">EN</span>
 
-                                    <span class="text-white">English</span>
-
-                                </a>
-
-                                <a href="#" onclick="changeLanguage('es')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
-
-                                    <span class="text-xs font-semibold">ES</span>
-
-                                    <span class="text-white">Spanish</span>
+                                    <span class="text-brand-dark">English</span>
 
                                 </a>
 
-                                <a href="#" onclick="changeLanguage('de')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
+                                <a href="#" onclick="changeLanguage('es')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-light transition-colors duration-200 ease-in-out">
 
-                                    <span class="text-xs font-semibold">DE</span>
+                                    <span class="text-xs font-semibold text-brand-dark">ES</span>
 
-                                    <span class="text-white">Deutsch</span>
-
-                                </a>
-
-                                <a href="#" onclick="changeLanguage('it')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
-
-                                    <span class="text-xs font-semibold">IT</span>
-
-                                    <span class="text-white">Italiano</span>
+                                    <span class="text-brand-dark">Spanish</span>
 
                                 </a>
 
-                                <a href="#" onclick="changeLanguage('fr')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
+                                <a href="#" onclick="changeLanguage('de')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-light transition-colors duration-200 ease-in-out">
 
-                                    <span class="text-xs font-semibold">FR</span>
+                                    <span class="text-xs font-semibold text-brand-dark">DE</span>
 
-                                    <span class="text-white">French</span>
+                                    <span class="text-brand-dark">Deutsch</span>
 
                                 </a>
 
-                                <a href="#" onclick="changeLanguage('pt')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
+                                <a href="#" onclick="changeLanguage('it')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-light transition-colors duration-200 ease-in-out">
 
-                                    <span class="text-xs font-semibold">PT</span>
+                                    <span class="text-xs font-semibold text-brand-dark">IT</span>
 
-                                    <span class="text-white">Portuguese</span>
+                                    <span class="text-brand-dark">Italiano</span>
+
+                                </a>
+
+                                <a href="#" onclick="changeLanguage('fr')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-light transition-colors duration-200 ease-in-out">
+
+                                    <span class="text-xs font-semibold text-brand-dark">FR</span>
+
+                                    <span class="text-brand-dark">French</span>
+
+                                </a>
+
+                                <a href="#" onclick="changeLanguage('pt')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-light transition-colors duration-200 ease-in-out">
+
+                                    <span class="text-xs font-semibold text-brand-dark">PT</span>
+
+                                    <span class="text-brand-dark">Portuguese</span>
 
                                 </a>
 
@@ -608,9 +608,9 @@ eleventyComputed:
 
                     </div>
 
+                    
 
-
-                    <a href="/contact/" class="bg-[#FF6600] hover:bg-[#e65c00] text-white px-6 py-2 rounded-lg font-bold transition shadow-[0_0_15px_rgba(255,102,0,0.35)] hover:shadow-[0_0_25px_rgba(255,102,0,0.55)] transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_get_price_list">
+                    <a href="/contact/" class="bg-brand-accent hover:bg-brand-hover text-brand-surface px-6 py-2 rounded-lg font-bold transition-all duration-200 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_get_price_list">
 
                         Quote now
 
@@ -618,13 +618,13 @@ eleventyComputed:
 
                 </div>
 
-
+                
 
                 <!-- Mobile Menu Button -->
 
                 <div class="lg:hidden flex items-center gap-4">
 
-                    <button id="mobile-menu-btn" class="text-white text-2xl focus:outline-none">
+                    <button id="mobile-menu-btn" class="text-brand-dark text-2xl focus:outline-none transition-colors duration-200 ease-in-out hover:text-brand-accent">
 
                         <i class="fa-solid fa-bars"></i>
 
@@ -636,25 +636,25 @@ eleventyComputed:
 
         </div>
 
-
+        
 
         <!-- Mobile Menu Dropdown -->
 
-        <div id="mobile-menu" class="lg:hidden bg-brand-surface border-b border-gray-700 hidden">
+        <div id="mobile-menu" class="lg:hidden bg-brand-surface border-b border-brand-border hidden">
 
             <div class="px-4 pt-2 pb-6 space-y-2">
 
-                <a href="/" class="block px-3 py-3 rounded-md text-base font-semibold text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.home">Home</a>
+                <a href="/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-accent transition-colors duration-200 ease-in-out" data-i18n="navigation.home">Home</a>
 
-                <a href="/catalog/" class="block px-3 py-3 rounded-md text-base font-semibold text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.catalog">Catalog</a>
+                <a href="/catalog/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-accent transition-colors duration-200 ease-in-out" data-i18n="navigation.catalog">Catalog</a>
 
-                <a href="/oem/" class="block px-3 py-3 rounded-md text-base font-semibold text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.oem">OEM/ODM</a>
+                <a href="/oem/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-accent transition-colors duration-200 ease-in-out" data-i18n="navigation.oem">OEM/ODM</a>
 
-                <a href="/about/" class="block px-3 py-3 rounded-md text-base font-semibold text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.about">About</a>
+                <a href="/about/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-accent transition-colors duration-200 ease-in-out" data-i18n="navigation.about">About</a>
 
-                <a href="/blog/" class="block px-3 py-3 rounded-md text-base font-semibold text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.blog">Blog</a>
+                <a href="/blog/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-accent transition-colors duration-200 ease-in-out" data-i18n="navigation.blog">Blog</a>
 
-                <a href="/contact/" class="block px-3 py-3 rounded-md text-base font-semibold text-[#FF6600] font-bold" data-i18n="navigation.contact" data-cta="mobile_get_price_list">Quote now</a>
+                <a href="/contact/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-accent font-bold" data-i18n="navigation.contact" data-cta="mobile_get_price_list">Quote now</a>
 
             </div>
 
@@ -668,120 +668,124 @@ eleventyComputed:
 
         <!-- Hero -->
 
-        <section class="hero-bg min-h-screen flex items-center relative pt-24">
-
-            <div class="hero-video">
-
-                <video 
-                    id="heroVideo"
-                    autoplay 
-                    muted 
-                    loop 
-                    playsinline 
-                    preload="none" 
-                    poster="/assets/videos/V1.3-poster.jpg">
-                    <source src="/assets/videos/V1.3-mobile.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/50 via-transparent to-brand-dark"></div>
+        <section class="min-h-screen flex items-center relative pt-24 bg-brand-surface">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20 relative z-10">
 
-                <div class="max-w-3xl animate-fade-in-up">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-                    <div class="inline-flex items-center bg-brand-accent/20 border border-brand-accent/50 rounded-full px-4 py-1.5 mb-8 backdrop-blur-md">
+                    <!-- Left: Content -->
+                    <div class="animate-fade-in-up">
 
-                        <i class="fa-solid fa-check-circle text-brand-accent mr-2"></i>
+                        <div class="inline-flex items-center bg-brand-light border border-brand-accent/30 rounded-full px-4 py-1.5 mb-8 transition-all duration-200 ease-in-out">
 
-                        <span class="text-white font-semibold text-sm tracking-wide uppercase" data-i18n="hero.badge">For Garage Door & Gate Professionals</span>
+                            <i class="fa-solid fa-check-circle text-brand-accent mr-2"></i>
 
-                    </div>
+                            <span class="text-brand-dark font-semibold text-sm tracking-wide uppercase" data-i18n="hero.badge">For Garage Door & Gate Professionals</span>
 
-                    <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-4 drop-shadow-2xl">
+                        </div>
 
-                        Factory-direct B2B Gate & Garage Remotes
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-dark leading-[1.2] mb-6">
 
-                    </h1>
+                            Factory-direct B2B Gate & Garage Remotes
 
-                    <p class="text-xl text-gray-200 mb-4 leading-relaxed max-w-2xl drop-shadow-lg font-semibold">
+                        </h1>
 
-                        For locksmiths, installers, and distributors who need OEM-compatible remotes with higher margins.
+                        <p class="text-lg text-brand-muted mb-4 leading-relaxed max-w-2xl">
 
-                    </p>
+                            For locksmiths, installers, and distributors who need OEM-compatible remotes with higher margins.
 
-                    <p class="text-sm text-gray-300 mb-6 max-w-2xl">
+                        </p>
 
-                        10+ years RF manufacturing - 48h repeat dispatch - CE/FCC docs on file - DAP/DDP EU/US/SA/AU available.
+                        <p class="text-sm text-brand-muted mb-6 max-w-2xl">
 
-                    </p>
+                            10+ years RF manufacturing - 48h repeat dispatch - CE/FCC docs on file - DAP/DDP EU/US/SA/AU available.
+
+                        </p>
 
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
 
-                        <div class="flex items-start gap-3">
+                        <div class="flex items-start gap-3 transition-all duration-200 ease-in-out">
 
                             <i class="fa-solid fa-industry text-brand-accent mt-1"></i>
 
-                            <p class="text-gray-200 text-sm">Factory-direct pricing keeps your projects profitable.</p>
+                            <p class="text-brand-dark text-sm">Factory-direct pricing keeps your projects profitable.</p>
 
                         </div>
 
-                        <div class="flex items-start gap-3">
+                        <div class="flex items-start gap-3 transition-all duration-200 ease-in-out">
 
                             <i class="fa-solid fa-sitemap text-brand-accent mt-1"></i>
 
-                            <p class="text-gray-200 text-sm">60+ OEM models covered (LiftMaster, Nice, Came, Hormann).</p>
+                            <p class="text-brand-dark text-sm">60+ OEM models covered (LiftMaster, Nice, Came, Hormann).</p>
 
                         </div>
 
-                        <div class="flex items-start gap-3">
+                        <div class="flex items-start gap-3 transition-all duration-200 ease-in-out">
 
                             <i class="fa-solid fa-rocket text-brand-accent mt-1"></i>
 
-                            <p class="text-gray-200 text-sm">48h sample shipping &lt;0.5% defect rate.</p>
+                            <p class="text-brand-dark text-sm">48h sample shipping &lt;0.5% defect rate.</p>
 
                         </div>
 
                     </div>
 
-                    <p class="text-xs text-gray-400 mb-6">Authorized replacement & programming workflow for installers; compatibility verified per OEM receiver series; distributor-protected B2B supply (end-users not supported).</p>
+                        <p class="text-xs text-brand-muted mb-6">Authorized replacement & programming workflow for installers; compatibility verified per OEM receiver series; distributor-protected B2B supply (end-users not supported).</p>
 
-                    <div class="flex flex-col sm:flex-row gap-5">
+                        <div class="flex flex-col sm:flex-row gap-5">
 
-                        <a href="/contact/" class="bg-[#FF6600] hover:bg-[#e65c00] text-white text-center px-10 py-4 rounded-lg font-bold text-lg transition transform hover:-translate-y-1 shadow-lg shadow-amber-400/50 inline-block" data-cta="hero_get_price_list">
+                            <a href="/contact/" class="bg-brand-accent hover:bg-brand-hover text-brand-surface text-center px-10 py-4 rounded-lg font-bold text-lg transition-all duration-200 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-1 inline-block" data-cta="hero_get_price_list">
 
-                            Quote now
+                                Quote now
 
-                        </a>
+                            </a>
 
-                        <a href="/catalog/" class="flex items-center justify-center gap-3 border border-brand-accent text-brand-accent hover:border-white hover:text-white hover:bg-white/5 text-center px-10 py-4 rounded-lg font-bold text-lg transition backdrop-blur-sm" data-cta="hero_download_catalog">
+                            <a href="/catalog/" class="flex items-center justify-center gap-3 border border-brand-accent text-brand-accent hover:border-brand-hover hover:text-brand-hover hover:bg-brand-light/50 text-center px-10 py-4 rounded-lg font-bold text-lg transition-all duration-200 ease-in-out" data-cta="hero_download_catalog">
 
-                            <i class="fa-solid fa-file-pdf text-2xl"></i> 
+                                <i class="fa-solid fa-file-pdf text-2xl"></i>
 
-                            Download Full Catalog (PDF)
+                                Download Full Catalog (PDF)
 
-                        </a>
+                            </a>
+
+                        </div>
+
+                        <p class="text-sm text-brand-muted mt-3">MOQ 50pcs | T/T 30/70 | 48h dispatch on repeats | Freight: FOB/DAP/DDP EU/US/SA/AU.</p>
+
+                        <div class="flex flex-wrap gap-3 mt-6">
+
+                            <span class="bg-brand-light text-brand-accent px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide border border-brand-accent/20">Locksmiths</span>
+
+                            <span class="bg-brand-light text-brand-accent px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide border border-brand-accent/20">Gate/Garage Installers</span>
+
+                            <span class="bg-brand-light text-brand-accent px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide border border-brand-accent/20">Distributors</span>
+
+                        </div>
+
+                        <p class="text-sm text-brand-muted mt-3 max-w-2xl">Gate remote manufacturer in Dongguan supporting European, US, South American, and Australian distributors of 433.92MHz remotes and Nice/Came compatible remotes across Europe.</p>
 
                     </div>
 
-                    <p class="text-sm text-gray-300 mt-3">MOQ 50pcs | T/T 30/70 | 48h dispatch on repeats | Freight: FOB/DAP/DDP EU/US/SA/AU.</p>
+                    <!-- Right: Image -->
+                    <div class="bg-brand-light rounded-2xl p-8 shadow-md relative overflow-hidden transition-all duration-200 ease-in-out hover:shadow-lg aspect-square flex items-center justify-center">
 
-                    <div class="flex flex-wrap gap-3 mt-6">
+                        <div class="absolute inset-0 bg-gradient-to-br from-brand-accent/5 to-brand-dark/5 pointer-events-none"></div>
 
-                        <span class="bg-brand-accent/20 text-brand-accent px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Locksmiths</span>
-
-                        <span class="bg-brand-accent/20 text-brand-accent px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Gate/Garage Installers</span>
-
-                        <span class="bg-brand-accent/20 text-brand-accent px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Distributors</span>
+                        <div class="relative z-10 w-full h-full flex items-center justify-center">
+                            <picture class="w-full h-full">
+                                <source type="image/webp" srcset="/assets/factory/smt-line.webp">
+                                <img loading="lazy" decoding="async" src="/assets/factory/smt-line.webp" alt="SMT production line at GateRemoteSource factory" class="w-full h-full object-contain rounded-lg">
+                            </picture>
+                        </div>
 
                     </div>
-
-                    <p class="text-sm text-gray-400 mt-3 max-w-2xl">Gate remote manufacturer in Dongguan supporting European, US, South American, and Australian distributors of 433.92MHz remotes and Nice/Came compatible remotes across Europe.</p>
 
                 </div>
 
             </div>
 
-            <a href="#" onclick="document.getElementById('products-preview').scrollIntoView({behavior: 'smooth'}); return false;" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-gray-400 hover:text-brand-accent cursor-pointer p-4">
+            <a href="#" onclick="document.getElementById('products-preview').scrollIntoView({behavior: 'smooth'}); return false;" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-brand-muted hover:text-brand-accent cursor-pointer p-4 transition-colors duration-200 ease-in-out">
 
                 <i class="fa-solid fa-chevron-down text-3xl"></i>
 
@@ -827,41 +831,41 @@ eleventyComputed:
 
                     <div class="flex flex-col items-center group">
 
-                        <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mb-3 group-hover:bg-brand-accent transition duration-300"><i class="fa-solid fa-hand-holding-dollar text-brand-accent text-3xl group-hover:text-white transition"></i></div>
+                        <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mb-3 group-hover:bg-brand-accent transition-all duration-200 ease-in-out"><i class="fa-solid fa-hand-holding-dollar text-brand-accent text-3xl group-hover:text-white transition-all duration-200 ease-in-out"></i></div>
 
-                        <h4 class="font-bold text-white text-lg" data-i18n="trust_bar.high_margins.title">Defect Rate &lt; 0.5%</h4>
+                        <h4 class="font-bold text-brand-dark text-lg" data-i18n="trust_bar.high_margins.title">Defect Rate &lt; 0.5%</h4>
 
-                        <p class="text-sm text-gray-500" data-i18n="trust_bar.high_margins.subtitle">ICT + aging test on every batch</p>
-
-                    </div>
-
-                    <div class="flex flex-col items-center group">
-
-                        <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mb-3 group-hover:bg-brand-accent transition duration-300"><i class="fa-solid fa-sync text-brand-accent text-3xl group-hover:text-white transition"></i></div>
-
-                        <h4 class="font-bold text-white text-lg" data-i18n="trust_bar.compatible.title">1-Year Warranty</h4>
-
-                        <p class="text-sm text-gray-500" data-i18n="trust_bar.compatible.subtitle">Relay/EEPROM validated for installers</p>
+                        <p class="text-sm text-brand-muted" data-i18n="trust_bar.high_margins.subtitle">ICT + aging test on every batch</p>
 
                     </div>
 
                     <div class="flex flex-col items-center group">
-
-                        <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mb-3 group-hover:bg-brand-accent transition duration-300"><i class="fa-solid fa-box-open text-brand-accent text-3xl group-hover:text-white transition"></i></div>
-
-                        <h4 class="font-bold text-white text-lg" data-i18n="trust_bar.low_moq.title">CE & FCC Certified</h4>
-
-                        <p class="text-sm text-gray-500" data-i18n="trust_bar.low_moq.subtitle">Docs ready for your importers</p>
+                        
+                        <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mb-3 group-hover:bg-brand-accent transition-all duration-200 ease-in-out"><i class="fa-solid fa-sync text-brand-accent text-3xl group-hover:text-white transition"></i></div>
+                        
+                        <h4 class="font-bold text-brand-dark text-lg" data-i18n="trust_bar.compatible.title">1-Year Warranty</h4>
+                        
+                        <p class="text-sm text-brand-muted" data-i18n="trust_bar.compatible.subtitle">Relay/EEPROM validated for installers</p>
 
                     </div>
 
                     <div class="flex flex-col items-center group">
+                        
+                        <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mb-3 group-hover:bg-brand-accent transition-all duration-200 ease-in-out"><i class="fa-solid fa-box-open text-brand-accent text-3xl group-hover:text-white transition"></i></div>
+                        
+                        <h4 class="font-bold text-brand-dark text-lg" data-i18n="trust_bar.low_moq.title">CE & FCC Certified</h4>
+                        
+                        <p class="text-sm text-brand-muted" data-i18n="trust_bar.low_moq.subtitle">Docs ready for your importers</p>
 
-                        <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mb-3 group-hover:bg-brand-accent transition duration-300"><i class="fa-solid fa-shipping-fast text-brand-accent text-3xl group-hover:text-white transition"></i></div>
+                    </div>
 
-                        <h4 class="font-bold text-white text-lg" data-i18n="trust_bar.fast_dispatch.title">ISO9001 Factory</h4>
-
-                        <p class="text-sm text-gray-500" data-i18n="trust_bar.fast_dispatch.subtitle">SMT + aging rooms in Dongguan</p>
+                    <div class="flex flex-col items-center group">
+                        
+                        <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mb-3 group-hover:bg-brand-accent transition-all duration-200 ease-in-out"><i class="fa-solid fa-shipping-fast text-brand-accent text-3xl group-hover:text-white transition"></i></div>
+                        
+                        <h4 class="font-bold text-brand-dark text-lg" data-i18n="trust_bar.fast_dispatch.title">ISO9001 Factory</h4>
+                        
+                        <p class="text-sm text-brand-muted" data-i18n="trust_bar.fast_dispatch.subtitle">SMT + aging rooms in Dongguan</p>
 
                     </div>
 
@@ -891,13 +895,13 @@ eleventyComputed:
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
 
-                    <div class="bg-brand-surface rounded-2xl border border-gray-700 hover:border-brand-accent transition duration-300 group overflow-hidden cursor-pointer">
+                    <div class="bg-brand-surface rounded-2xl border border-brand-border hover:border-brand-accent transition-all duration-200 ease-in-out group overflow-hidden cursor-pointer hover:shadow-md">
 
-                        <div class="h-64 bg-gray-900 relative flex items-center justify-center p-4">
+                        <div class="aspect-square bg-gray-900 relative flex items-center justify-center p-4">
 
                             <div class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded shadow-lg z-10" data-i18n="inventory.card1.badge">Multifrequency Copy</div>
 
-                            <div class="bg-gray-800 rounded-lg p-8 flex items-center justify-center w-full h-full">
+                            <div class="bg-gray-900 rounded-lg p-8 flex items-center justify-center w-full h-full">
 
                                 <picture class="w-full h-full">
 
@@ -915,7 +919,7 @@ eleventyComputed:
 
                         <div class="p-8">
 
-                            <h3 class="text-2xl font-bold text-white mb-2" data-i18n="inventory.card1.title">Multi-Frequency Cloners (280-868MHz)</h3>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-2" data-i18n="inventory.card1.title">Multi-Frequency Cloners (280-868MHz)</h3>
 
                             <p class="text-gray-400 text-sm mb-4 line-clamp-2" data-i18n="inventory.card1.description">Authorized replacement & installer programming; compatibility verified for HCS301, Security+2.0, SM1527.</p>
 
@@ -937,13 +941,13 @@ eleventyComputed:
 
                     </div>
 
-                    <div class="bg-brand-surface rounded-2xl border border-gray-700 hover:border-brand-accent transition duration-300 group overflow-hidden cursor-pointer">
+                    <div class="bg-brand-surface rounded-2xl border border-brand-border hover:border-brand-accent transition-all duration-200 ease-in-out group overflow-hidden cursor-pointer hover:shadow-md">
 
-                        <div class="h-64 bg-gray-900 relative flex items-center justify-center p-4">
+                        <div class="aspect-square bg-gray-900 relative flex items-center justify-center p-4">
 
                             <div class="absolute top-4 right-4 bg-brand-accent text-white text-xs font-bold px-3 py-1 rounded shadow-lg z-10" data-i18n="inventory.card2.badge">Super Receiver</div>
 
-                            <div class="bg-gray-800 rounded-lg p-8 flex items-center justify-center w-full h-full">
+                            <div class="bg-gray-900 rounded-lg p-8 flex items-center justify-center w-full h-full">
 
                                 <picture class="w-full h-full">
 
@@ -961,7 +965,7 @@ eleventyComputed:
 
                         <div class="p-8">
 
-                            <h3 class="text-2xl font-bold text-white mb-2" data-i18n="inventory.card2.title">2-Channel External Receivers (AC/DC 9-30V)</h3>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-2" data-i18n="inventory.card2.title">2-Channel External Receivers (AC/DC 9-30V)</h3>
 
                             <p class="text-gray-400 text-sm mb-6 line-clamp-2" data-i18n="inventory.card2.description">Auto-learn 433/868MHz, dry-contact relays, 400-user memory for retrofits.</p>
 
@@ -971,13 +975,13 @@ eleventyComputed:
 
                     </div>
 
-                    <div class="bg-brand-surface rounded-2xl border border-gray-700 hover:border-brand-accent transition duration-300 group overflow-hidden cursor-pointer">
+                    <div class="bg-brand-surface rounded-2xl border border-brand-border hover:border-brand-accent transition-all duration-200 ease-in-out group overflow-hidden cursor-pointer hover:shadow-md">
 
-                        <div class="h-64 bg-gray-900 relative flex items-center justify-center p-4">
+                        <div class="aspect-square bg-gray-900 relative flex items-center justify-center p-4">
 
                             <div class="absolute top-4 right-4 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded shadow-lg z-10" data-i18n="inventory.card3.badge">WIFI + RF</div>
 
-                            <div class="bg-gray-800 rounded-lg p-8 flex items-center justify-center w-full h-full">
+                            <div class="bg-gray-900 rounded-lg p-8 flex items-center justify-center w-full h-full">
 
                                 <picture class="w-full h-full">
 
@@ -995,7 +999,7 @@ eleventyComputed:
 
                         <div class="p-8">
 
-                            <h3 class="text-2xl font-bold text-white mb-2" data-i18n="inventory.card3.title">Smart WiFi In-Wall Switch (App/RF/Dual-Control)</h3>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-2" data-i18n="inventory.card3.title">Smart WiFi In-Wall Switch (App/RF/Dual-Control)</h3>
 
                             <p class="text-gray-400 text-sm mb-6 line-clamp-2" data-i18n="inventory.card3.description">Phone + RF remote + voice control; 100-240V inline module for dual-control smart home scenes.</p>
 
@@ -1009,7 +1013,7 @@ eleventyComputed:
 
 
 
-                <div class="bg-gradient-to-r from-gray-900 to-brand-dark rounded-2xl p-10 border border-gray-700 relative overflow-hidden group">
+                <div class="bg-gradient-to-r from-gray-900 to-brand-dark rounded-2xl p-10 border border-brand-border relative overflow-hidden group">
 
                     <div class="absolute top-0 right-0 w-64 h-64 bg-brand-accent/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
 
@@ -1059,7 +1063,7 @@ eleventyComputed:
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden">
 
-                    <div class="compat-card p-5 border border-gray-700">
+                    <div class="compat-card p-5 border border-brand-border">
 
                         <p class="label mb-1">OEM Model</p>
 
@@ -1073,7 +1077,7 @@ eleventyComputed:
 
                     </div>
 
-                    <div class="compat-card p-5 border border-gray-700">
+                    <div class="compat-card p-5 border border-brand-border">
 
                         <p class="label mb-1">OEM Model</p>
 
@@ -1087,7 +1091,7 @@ eleventyComputed:
 
                     </div>
 
-                    <div class="compat-card p-5 border border-gray-700">
+                    <div class="compat-card p-5 border border-brand-border">
 
                         <p class="label mb-1">OEM Model</p>
 
@@ -1101,7 +1105,7 @@ eleventyComputed:
 
                     </div>
 
-                    <div class="compat-card p-5 border border-gray-700">
+                    <div class="compat-card p-5 border border-brand-border">
 
                         <p class="label mb-1">OEM Model</p>
 
@@ -1135,7 +1139,7 @@ eleventyComputed:
 
                         <span class="text-brand-accent font-bold uppercase tracking-wider text-sm">Distributor Portal</span>
 
-                        <h3 class="text-3xl font-bold text-white leading-tight">Price List & Sample Kit in One Secure Entry</h3>
+                        <h3 class="text-3xl font-bold text-brand-dark leading-tight">Price List & Sample Kit in One Secure Entry</h3>
 
                         <p class="text-gray-400">Built for wholesale 433MHz remote control European, US, South American, and Australian distributors who need fast access to Nice/Came compatible remotes across Europe.</p>
 
@@ -1151,7 +1155,7 @@ eleventyComputed:
 
                     <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                        <div class="compat-card p-6 border border-gray-700 shadow-lg">
+                        <div class="compat-card p-6 border border-brand-border hover:shadow-md transition-all duration-200 ease-in-out">
 
                             <div class="flex items-center gap-3 mb-3">
 
@@ -1161,7 +1165,7 @@ eleventyComputed:
 
                             </div>
 
-                            <h4 class="text-white font-bold text-xl mb-2">Live Margin-Ready Pricing</h4>
+                            <h4 class="text-brand-dark font-bold text-xl mb-2">Live Margin-Ready Pricing</h4>
 
                             <p class="text-gray-400 text-sm mb-3">Download current FOB Dongguan sheets with distributor tiers and suggested UK retail.</p>
 
@@ -1169,7 +1173,7 @@ eleventyComputed:
 
                         </div>
 
-                        <div class="compat-card p-6 border border-gray-700 shadow-lg">
+                        <div class="compat-card p-6 border border-brand-border hover:shadow-md transition-all duration-200 ease-in-out">
 
                             <div class="flex items-center gap-3 mb-3">
 
@@ -1179,7 +1183,7 @@ eleventyComputed:
 
                             </div>
 
-                            <h4 class="text-white font-bold text-xl mb-2">Pre-Loaded Demo Box</h4>
+                            <h4 class="text-brand-dark font-bold text-xl mb-2">Pre-Loaded Demo Box</h4>
 
                             <p class="text-gray-400 text-sm mb-3">Includes Nice/Came compatible remotes and universal receivers ready for UK site demos.</p>
 
@@ -1205,7 +1209,7 @@ eleventyComputed:
 
                 <div class="text-center mb-16">
 
-                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-4" data-i18n="factory_trust.title">Why Trust GateRemoteSource</h2>
+                    <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-4" data-i18n="factory_trust.title">Why Trust GateRemoteSource</h2>
 
                     <p class="text-gray-400 max-w-2xl mx-auto text-lg" data-i18n="factory_trust.subtitle">Real photos from our ISO9001 Dongguan factory - not stock imagery.</p>
 
@@ -1215,33 +1219,33 @@ eleventyComputed:
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
-                        <figure class="relative rounded-2xl overflow-hidden border border-gray-700 bg-brand-dark/40 h-44 sm:h-52 group">
+                        <figure class="relative rounded-2xl overflow-hidden border border-brand-border bg-brand-dark/40 h-44 sm:h-52 group">
 
                             <img loading="lazy" decoding="async" src="factroy%20photo/gate%20remote%20(11).webp" alt="ISO9001 certificate and factory credentials" class="w-full h-full object-cover">
 
                             <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/10 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
 
-                            <figcaption class="absolute bottom-3 left-3 text-xs font-semibold text-white bg-black/40 px-2 py-1 rounded">ISO9001 Certificate</figcaption>
+                            <figcaption class="absolute bottom-3 left-3 text-xs font-semibold text-brand-dark bg-black/40 px-2 py-1 rounded">ISO9001 Certificate</figcaption>
 
                         </figure>
 
-                        <figure class="relative rounded-2xl overflow-hidden border border-gray-700 bg-brand-dark/40 h-44 sm:h-52 group">
+                        <figure class="relative rounded-2xl overflow-hidden border border-brand-border bg-brand-dark/40 h-44 sm:h-52 group">
 
                             <img loading="lazy" decoding="async" src="factroy%20photo/gate%20remote%20(18).webp" alt="SMT line inside GateRemoteSource factory" class="w-full h-full object-cover">
 
                             <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/10 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
 
-                            <figcaption class="absolute bottom-3 left-3 text-xs font-semibold text-white bg-black/40 px-2 py-1 rounded">SMT Line</figcaption>
+                            <figcaption class="absolute bottom-3 left-3 text-xs font-semibold text-brand-dark bg-black/40 px-2 py-1 rounded">SMT Line</figcaption>
 
                         </figure>
 
-                        <figure class="relative rounded-2xl overflow-hidden border border-gray-700 bg-brand-dark/40 h-44 sm:h-52 group">
+                        <figure class="relative rounded-2xl overflow-hidden border border-brand-border bg-brand-dark/40 h-44 sm:h-52 group">
 
                             <img loading="lazy" decoding="async" src="factroy%20photo/gate%20remote%20(10).webp" alt="Quality control with PASS verification screens" class="w-full h-full object-cover">
 
                             <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/10 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
 
-                            <figcaption class="absolute bottom-3 left-3 text-xs font-semibold text-white bg-black/40 px-2 py-1 rounded">QC & Verification</figcaption>
+                            <figcaption class="absolute bottom-3 left-3 text-xs font-semibold text-brand-dark bg-black/40 px-2 py-1 rounded">QC & Verification</figcaption>
 
                         </figure>
 
@@ -1251,13 +1255,13 @@ eleventyComputed:
 
                         <div class="group">
 
-                            <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-brand-accent transition duration-300">
+                            <div class="w-20 h-20 bg-brand-light rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-brand-accent transition duration-300">
 
                                 <i class="fa-solid fa-certificate text-brand-accent text-3xl group-hover:text-white transition"></i>
 
                             </div>
 
-                            <h3 class="text-xl font-bold text-white mb-2" data-i18n="factory_trust.iso_certified.title">ISO9001 Certified Factory</h3>
+                            <h3 class="text-xl font-bold text-brand-dark mb-2" data-i18n="factory_trust.iso_certified.title">ISO9001 Certified Factory</h3>
 
                             <p class="text-gray-400 text-sm" data-i18n="factory_trust.iso_certified.description">Quality management systems certified</p>
 
@@ -1267,13 +1271,13 @@ eleventyComputed:
 
                         <div class="group">
 
-                            <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-brand-accent transition duration-300">
+                            <div class="w-20 h-20 bg-brand-light rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-brand-accent transition duration-300">
 
                                 <i class="fa-solid fa-microchip text-brand-accent text-3xl group-hover:text-white transition"></i>
 
                             </div>
 
-                            <h3 class="text-xl font-bold text-white mb-2" data-i18n="factory_trust.authentic_components.title">Authentic Microchip/NXP Components</h3>
+                            <h3 class="text-xl font-bold text-brand-dark mb-2" data-i18n="factory_trust.authentic_components.title">Authentic Microchip/NXP Components</h3>
 
                             <p class="text-gray-400 text-sm" data-i18n="factory_trust.authentic_components.description">Genuine chips for reliable performance</p>
 
@@ -1281,13 +1285,13 @@ eleventyComputed:
 
                         <div class="group">
 
-                            <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-brand-accent transition duration-300">
+                            <div class="w-20 h-20 bg-brand-light rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-brand-accent transition duration-300">
 
                                 <i class="fa-solid fa-clipboard-check text-brand-accent text-3xl group-hover:text-white transition"></i>
 
                             </div>
 
-                            <h3 class="text-xl font-bold text-white mb-2" data-i18n="factory_trust.aging_test.title">100% Aging Test Room</h3>
+                            <h3 class="text-xl font-bold text-brand-dark mb-2" data-i18n="factory_trust.aging_test.title">100% Aging Test Room</h3>
 
                             <p class="text-gray-400 text-sm" data-i18n="factory_trust.aging_test.description">All products undergo rigorous testing</p>
 
@@ -1295,13 +1299,13 @@ eleventyComputed:
 
                         <div class="group">
 
-                            <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-brand-accent transition duration-300">
+                            <div class="w-20 h-20 bg-brand-light rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-brand-accent transition duration-300">
 
                                 <i class="fa-solid fa-industry text-brand-accent text-3xl group-hover:text-white transition"></i>
 
                             </div>
 
-                            <h3 class="text-xl font-bold text-white mb-2" data-i18n="factory_trust.production_base.title">4,000sqm Production Base</h3>
+                            <h3 class="text-xl font-bold text-brand-dark mb-2" data-i18n="factory_trust.production_base.title">4,000sqm Production Base</h3>
 
                             <p class="text-gray-400 text-sm" data-i18n="factory_trust.production_base.description">Large-scale manufacturing capacity</p>
 
@@ -1311,7 +1315,7 @@ eleventyComputed:
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
-                        <figure class="relative rounded-2xl overflow-hidden border border-gray-700 bg-brand-dark/40 h-44 sm:h-52 group">
+                        <figure class="relative rounded-2xl overflow-hidden border border-brand-border bg-brand-dark/40 h-44 sm:h-52 group">
 
                             <img loading="lazy" decoding="async" src="factroy%20photo/gate%20remote%20(20).webp" alt="Aging and test bench for remotes and receivers" class="w-full h-full object-cover">
 
@@ -1321,7 +1325,7 @@ eleventyComputed:
 
                         </figure>
 
-                        <figure class="relative rounded-2xl overflow-hidden border border-gray-700 bg-brand-dark/40 h-44 sm:h-52 group">
+                        <figure class="relative rounded-2xl overflow-hidden border border-brand-border bg-brand-dark/40 h-44 sm:h-52 group">
 
                             <img loading="lazy" decoding="async" src="factroy%20photo/gate%20remote%20(21).webp" alt="Production team assembling RF products" class="w-full h-full object-cover">
 
@@ -1331,7 +1335,7 @@ eleventyComputed:
 
                         </figure>
 
-                        <figure class="relative rounded-2xl overflow-hidden border border-gray-700 bg-brand-dark/40 h-44 sm:h-52 group">
+                        <figure class="relative rounded-2xl overflow-hidden border border-brand-border bg-brand-dark/40 h-44 sm:h-52 group">
 
                             <img loading="lazy" decoding="async" src="factroy%20photo/gate%20remote%20(28).webp" alt="Finished goods in warehouse ready for dispatch" class="w-full h-full object-cover">
 
@@ -1375,7 +1379,7 @@ eleventyComputed:
 
                         <div class="flex gap-2">
 
-                            <button id="testimonial-prev" type="button" class="px-3 py-2 rounded-lg border border-gray-700 text-gray-200 hover:text-white hover:border-brand-accent transition text-sm flex items-center gap-2"><i class="fa-solid fa-chevron-left text-xs"></i> Prev</button>
+                            <button id="testimonial-prev" type="button" class="px-3 py-2 rounded-lg border border-brand-border text-gray-200 hover:text-white hover:border-brand-accent transition text-sm flex items-center gap-2"><i class="fa-solid fa-chevron-left text-xs"></i> Prev</button>
 
                             <button id="testimonial-next" type="button" class="px-3 py-2 rounded-lg bg-brand-accent text-white hover:bg-brand-hover transition text-sm flex items-center gap-2">Next <i class="fa-solid fa-chevron-right text-xs"></i></button>
 
@@ -1389,7 +1393,7 @@ eleventyComputed:
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-testimonial-page="0">
 
-                        <div class="bg-brand-surface border border-gray-700 rounded-2xl p-8 shadow-lg hover:border-brand-accent transition duration-300">
+                        <div class="bg-brand-surface border border-brand-border rounded-2xl p-8 hover:shadow-md transition-all duration-200 ease-in-out">
 
                             <div class="flex items-center justify-between mb-4">
 
@@ -1399,7 +1403,7 @@ eleventyComputed:
 
                                     <div>
 
-                                        <p class="text-white font-semibold">Anke Fischer</p>
+                                        <p class="text-brand-dark font-semibold">Anke Fischer</p>
 
                                         <p class="text-gray-400 text-xs">Germany - Wholesale Distributor</p>
 
@@ -1417,11 +1421,11 @@ eleventyComputed:
 
                             <p class="text-gray-300 mb-4 italic">"Authorized replacements cover nearly all LiftMaster/Nice jobs. Programming is simple enough that new techs handle it on the first call."</p>
 
-                            <p class="text-xs text-gray-500">Focus: verified compatibility + easy operation.</p>
+                            <p class="text-xs text-brand-muted">Focus: verified compatibility + easy operation.</p>
 
                         </div>
 
-                        <div class="bg-brand-surface border border-gray-700 rounded-2xl p-8 shadow-lg hover:border-brand-accent transition duration-300">
+                        <div class="bg-brand-surface border border-brand-border rounded-2xl p-8 hover:shadow-md transition-all duration-200 ease-in-out">
 
                             <div class="flex items-center justify-between mb-4">
 
@@ -1431,7 +1435,7 @@ eleventyComputed:
 
                                     <div>
 
-                                        <p class="text-white font-semibold">Derrick Cole</p>
+                                        <p class="text-brand-dark font-semibold">Derrick Cole</p>
 
                                         <p class="text-gray-400 text-xs">USA - Wholesale Distributor</p>
 
@@ -1449,11 +1453,11 @@ eleventyComputed:
 
                             <p class="text-gray-300 mb-4 italic">"Receivers and remotes are consistent batch to batch - zero DOA in six months. Quality is reliable and installers trust the range."</p>
 
-                            <p class="text-xs text-gray-500">Focus: quality reliability + stable RF performance.</p>
+                            <p class="text-xs text-brand-muted">Focus: quality reliability + stable RF performance.</p>
 
                         </div>
 
-                        <div class="bg-brand-surface border border-gray-700 rounded-2xl p-8 shadow-lg hover:border-brand-accent transition duration-300">
+                        <div class="bg-brand-surface border border-brand-border rounded-2xl p-8 hover:shadow-md transition-all duration-200 ease-in-out">
 
                             <div class="flex items-center justify-between mb-4">
 
@@ -1463,7 +1467,7 @@ eleventyComputed:
 
                                     <div>
 
-                                        <p class="text-white font-semibold">Joao Pereira</p>
+                                        <p class="text-brand-dark font-semibold">Joao Pereira</p>
 
                                         <p class="text-gray-400 text-xs">Brazil - Wholesale Distributor</p>
 
@@ -1481,7 +1485,7 @@ eleventyComputed:
 
                             <p class="text-gray-300 mb-4 italic">"Installer programming is quick and our service tickets dropped. Support responds within hours on programming questions."</p>
 
-                            <p class="text-xs text-gray-500">Focus: fast installer workflow + responsive service.</p>
+                            <p class="text-xs text-brand-muted">Focus: fast installer workflow + responsive service.</p>
 
                         </div>
 
@@ -1491,7 +1495,7 @@ eleventyComputed:
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 hidden" data-testimonial-page="1">
 
-                        <div class="bg-brand-surface border border-gray-700 rounded-2xl p-8 shadow-lg hover:border-brand-accent transition duration-300">
+                        <div class="bg-brand-surface border border-brand-border rounded-2xl p-8 hover:shadow-md transition-all duration-200 ease-in-out">
 
                             <div class="flex items-center justify-between mb-4">
 
@@ -1501,7 +1505,7 @@ eleventyComputed:
 
                                     <div>
 
-                                        <p class="text-white font-semibold">Omar Haddad</p>
+                                        <p class="text-brand-dark font-semibold">Omar Haddad</p>
 
                                         <p class="text-gray-400 text-xs">UAE - Wholesale Distributor</p>
 
@@ -1519,11 +1523,11 @@ eleventyComputed:
 
                             <p class="text-gray-300 mb-4 italic">"Compatibility by OEM receiver series is broad, and support is proactive with wiring diagrams for our installers."</p>
 
-                            <p class="text-xs text-gray-500">Focus: brand coverage + localized service.</p>
+                            <p class="text-xs text-brand-muted">Focus: brand coverage + localized service.</p>
 
                         </div>
 
-                        <div class="bg-brand-surface border border-gray-700 rounded-2xl p-8 shadow-lg hover:border-brand-accent transition duration-300">
+                        <div class="bg-brand-surface border border-brand-border rounded-2xl p-8 hover:shadow-md transition-all duration-200 ease-in-out">
 
                             <div class="flex items-center justify-between mb-4">
 
@@ -1533,7 +1537,7 @@ eleventyComputed:
 
                                     <div>
 
-                                        <p class="text-white font-semibold">Lucia Ramos</p>
+                                        <p class="text-brand-dark font-semibold">Lucia Ramos</p>
 
                                         <p class="text-gray-400 text-xs">Spain - Wholesale Distributor</p>
 
@@ -1551,11 +1555,11 @@ eleventyComputed:
 
                             <p class="text-gray-300 mb-4 italic">"Installers like the simple learn button flow; visits shortened because replacements program in under a minute."</p>
 
-                            <p class="text-xs text-gray-500">Focus: easy operation + time savings.</p>
+                            <p class="text-xs text-brand-muted">Focus: easy operation + time savings.</p>
 
                         </div>
 
-                        <div class="bg-brand-surface border border-gray-700 rounded-2xl p-8 shadow-lg hover:border-brand-accent transition duration-300">
+                        <div class="bg-brand-surface border border-brand-border rounded-2xl p-8 hover:shadow-md transition-all duration-200 ease-in-out">
 
                             <div class="flex items-center justify-between mb-4">
 
@@ -1565,7 +1569,7 @@ eleventyComputed:
 
                                     <div>
 
-                                        <p class="text-white font-semibold">Mateo Silva</p>
+                                        <p class="text-brand-dark font-semibold">Mateo Silva</p>
 
                                         <p class="text-gray-400 text-xs">Chile - Wholesale Distributor</p>
 
@@ -1583,7 +1587,7 @@ eleventyComputed:
 
                             <p class="text-gray-300 mb-4 italic">"Receivers survive coastal humidity and keep working. After-sales swapped a batch label for us within a day ? service is on point."</p>
 
-                            <p class="text-xs text-gray-500">Focus: durability + responsive service.</p>
+                            <p class="text-xs text-brand-muted">Focus: durability + responsive service.</p>
 
                         </div>
 
@@ -1637,7 +1641,7 @@ eleventyComputed:
 
                 <div class="text-center mb-16">
 
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" data-i18n="faq.title">FAQs for Distributors & OEM Buyers</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4" data-i18n="faq.title">FAQs for Distributors & OEM Buyers</h2>
 
                 </div>
 
@@ -1827,7 +1831,7 @@ eleventyComputed:
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-                    <div class="bg-brand-surface border border-gray-700 rounded-2xl p-6 shadow-lg">
+                    <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 hover:shadow-md transition-all duration-200 ease-in-out">
 
                         <h3 class="text-xl font-bold text-white mb-3" data-i18n="advantages.card1.title">Pre-Sales Playbook</h3>
 
@@ -1835,7 +1839,7 @@ eleventyComputed:
 
                     </div>
 
-                    <div class="bg-brand-surface border border-gray-700 rounded-2xl p-6 shadow-lg">
+                    <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 hover:shadow-md transition-all duration-200 ease-in-out">
 
                         <h3 class="text-xl font-bold text-white mb-3" data-i18n="advantages.card2.title">Tech Support Coverage</h3>
 
@@ -1843,7 +1847,7 @@ eleventyComputed:
 
                     </div>
 
-                    <div class="bg-brand-surface border border-gray-700 rounded-2xl p-6 shadow-lg">
+                    <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 hover:shadow-md transition-all duration-200 ease-in-out">
 
                         <h3 class="text-xl font-bold text-white mb-3" data-i18n="advantages.card3.title">Logistics You Can Promise</h3>
 
@@ -1897,9 +1901,9 @@ eleventyComputed:
 
                     <!-- Product Card 1 -->
 
-                    <div class="bg-brand-surface border border-gray-700 rounded-xl overflow-hidden group hover:border-brand-accent transition" data-category="rolling">
+                    <div class="bg-brand-surface border border-brand-border rounded-xl overflow-hidden group hover:border-brand-accent transition-all duration-200 ease-in-out hover:shadow-md" data-category="rolling">
 
-                        <div class="h-64 bg-gray-900 relative flex items-center justify-center p-4">
+                        <div class="aspect-square bg-gray-900 relative flex items-center justify-center p-4">
 
                             <div class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur text-brand-accent text-xs font-bold px-2 py-1 rounded border border-brand-accent/20" data-i18n="products_page.frequency_433">433.92MHz</div>
 
@@ -1913,7 +1917,7 @@ eleventyComputed:
 
                         <div class="p-6">
 
-                            <h3 class="text-xl font-bold text-white mb-2" data-i18n="products_page.nice_smilo">Nice SMILO Compatible</h3>
+                            <h3 class="text-xl font-bold text-brand-dark mb-2" data-i18n="products_page.nice_smilo">Nice SMILO Compatible</h3>
 
                             <p class="text-gray-400 text-sm mb-4" data-i18n="products_page.nice_description">Compatible with SM2/SM4. Round black styling. High durability buttons.</p>
 
@@ -1931,9 +1935,9 @@ eleventyComputed:
 
                     <!-- Product Card 2 -->
 
-                    <div class="bg-brand-surface border border-gray-700 rounded-xl overflow-hidden group hover:border-brand-accent transition" data-category="duplicators">
+                    <div class="bg-brand-surface border border-brand-border rounded-xl overflow-hidden group hover:border-brand-accent transition-all duration-200 ease-in-out hover:shadow-md" data-category="duplicators">
 
-                        <div class="h-64 bg-gray-900 relative flex items-center justify-center p-4">
+                        <div class="aspect-square bg-gray-900 relative flex items-center justify-center p-4">
 
                             <div class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur text-brand-accent text-xs font-bold px-2 py-1 rounded border border-brand-accent/20" data-i18n="products_page.multi_freq">WIFI + RF</div>
 
@@ -1947,7 +1951,7 @@ eleventyComputed:
 
                         <div class="p-6">
 
-                            <h3 class="text-xl font-bold text-white mb-2" data-i18n="products_page.universal_face_copy">Universal Face-Programmed Replacement</h3>
+                            <h3 class="text-xl font-bold text-brand-dark mb-2" data-i18n="products_page.universal_face_copy">Universal Face-Programmed Replacement</h3>
 
                             <p class="text-gray-400 text-sm mb-4" data-i18n="products_page.universal_description">4-channel installer workflow; covers 95% of fixed codes and many rolling codes (HCS301) with authorized programming.</p>
 
@@ -1965,9 +1969,9 @@ eleventyComputed:
 
                     <!-- Product Card 3 -->
 
-                    <div class="bg-brand-surface border border-gray-700 rounded-xl overflow-hidden group hover:border-brand-accent transition" data-category="receivers">
+                    <div class="bg-brand-surface border border-brand-border rounded-xl overflow-hidden group hover:border-brand-accent transition-all duration-200 ease-in-out hover:shadow-md" data-category="receivers">
 
-                        <div class="h-64 bg-gray-900 relative flex items-center justify-center p-4">
+                        <div class="aspect-square bg-gray-900 relative flex items-center justify-center p-4">
 
                             <div class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur text-brand-accent text-xs font-bold px-2 py-1 rounded border border-brand-accent/20" data-i18n="products_page.receiver">Receiver</div>
 
@@ -1981,7 +1985,7 @@ eleventyComputed:
 
                         <div class="p-6">
 
-                            <h3 class="text-xl font-bold text-white mb-2" data-i18n="products_page.mini_receiver">2CH Mini Receiver</h3>
+                            <h3 class="text-xl font-bold text-brand-dark mb-2" data-i18n="products_page.mini_receiver">2CH Mini Receiver</h3>
 
                             <p class="text-gray-400 text-sm mb-4" data-i18n="products_page.mini_description">Compact design fits in motor box. AC/DC 12-24V input. 400 user capacity.</p>
 
@@ -2121,7 +2125,7 @@ eleventyComputed:
 
                 <div class="text-center mb-12">
 
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Top Requested Compatibilities</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Top Requested Compatibilities</h2>
 
                     <p class="text-gray-400 max-w-3xl mx-auto">Quick reference for your sales reps when customers ask for replacements.</p>
 
@@ -2131,9 +2135,9 @@ eleventyComputed:
 
                 <div class="hidden md:block overflow-x-auto">
 
-                    <table class="w-full text-left text-gray-300 border border-gray-700 rounded-2xl overflow-hidden">
+                    <table class="w-full text-left text-brand-dark border border-brand-border rounded-2xl overflow-hidden transition-all duration-200 ease-in-out">
 
-                        <thead class="bg-brand-dark text-gray-200 uppercase text-xs tracking-wider">
+                        <thead class="bg-brand-dark text-white uppercase text-xs tracking-wider font-bold">
 
                             <tr>
 
@@ -2157,19 +2161,19 @@ eleventyComputed:
 
                                 <td class="px-6 py-4">GRS-FLO2</td>
 
-                                <td class="px-6 py-4">433.92MHz</td>
+                                <td class="px-6 py-4 font-bold">433.92MHz</td>
 
                                 <td class="px-6 py-4">Fixed code, metal frame, high range</td>
 
                             </tr>
 
-                            <tr class="bg-brand-dark/40">
+                            <tr class="bg-brand-light">
 
                                 <td class="px-6 py-4">CAME TOP432EV</td>
 
                                 <td class="px-6 py-4">GRS-CAME2</td>
 
-                                <td class="px-6 py-4">433.92MHz</td>
+                                <td class="px-6 py-4 font-bold">433.92MHz</td>
 
                                 <td class="px-6 py-4">Installer programming in ~10s</td>
 
@@ -2181,19 +2185,19 @@ eleventyComputed:
 
                                 <td class="px-6 py-4">GRS-HM868</td>
 
-                                <td class="px-6 py-4">868.3MHz</td>
+                                <td class="px-6 py-4 font-bold">868.3MHz</td>
 
                                 <td class="px-6 py-4">Rolling code, blue button</td>
 
                             </tr>
 
-                            <tr class="bg-brand-dark/40">
+                            <tr class="bg-brand-light">
 
                                 <td class="px-6 py-4">LIFTMASTER 971LM</td>
 
                                 <td class="px-6 py-4">GRS-LM390</td>
 
-                                <td class="px-6 py-4">390MHz</td>
+                                <td class="px-6 py-4 font-bold">390MHz</td>
 
                                 <td class="px-6 py-4">Includes visor clip</td>
 
@@ -2611,7 +2615,7 @@ eleventyComputed:
 
                 <div class="text-center mb-16">
 
-                    <h1 class="text-4xl font-bold text-white mb-4" data-i18n="blog.title">Installer Hub</h1>
+                    <h1 class="text-4xl font-bold text-brand-dark mb-4" data-i18n="blog.title">Installer Hub</h1>
 
                     <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="blog.subtitle">Technical guides, programming tutorials, and industry news for locksmiths.</p>
 
