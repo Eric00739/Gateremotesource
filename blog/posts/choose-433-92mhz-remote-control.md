@@ -122,7 +122,7 @@ This buffer protects against multipath fading and human-hand detuning.
   <p class="text-brand-light/80">Send your OEM/ODM RFQ for compliance-ready firmware timers, blocking reports, and real-world range validation.</p>
   <div class="flex flex-wrap gap-3">
     <a href="/contact/" class="bg-brand-accent hover:bg-brand-hover text-white font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_mid_cta_contact">Talk to Engineering</a>
-    <a href="/catalog/" class="border border-white/40 hover:border-white text-white font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_mid_cta_catalog">View Compatible Models</a>
+    <a href="/catalog/" class="border border-brand-border/60 hover:border-brand-accent text-brand-light font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_mid_cta_catalog">View Compatible Models</a>
   </div>
 </div>
 
@@ -211,7 +211,7 @@ That is how OEM teams avoid "datasheet dreams" and ship reliable products.
   <p class="text-brand-light/80">Our engineering team can align firmware timers, antennas, and blocking to your target range.</p>
   <div class="flex flex-wrap gap-3">
     <a href="/contact/" class="bg-brand-accent hover:bg-brand-hover text-white font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_bottom_cta_contact">Request OEM Support</a>
-    <a href="/catalog/" class="border border-white/40 hover:border-white text-white font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_bottom_cta_catalog">Browse 433.92MHz Models</a>
+    <a href="/catalog/" class="border border-brand-border/60 hover:border-brand-accent text-brand-light font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_bottom_cta_catalog">Browse 433.92MHz Models</a>
   </div>
 </div>
 

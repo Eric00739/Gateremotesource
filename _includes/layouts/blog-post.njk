@@ -351,16 +351,16 @@
                                 Share this article
                             </h4>
                             <div class="flex gap-3">
-                                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url | safe }}{{ page.url | canonicalPath | safe }}" target="_blank" class="w-10 h-10 rounded-lg bg-[#0077b5] hover:bg-[#006097] text-white flex items-center justify-center transition" title="Share on LinkedIn">
+                                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url | safe }}{{ page.url | canonicalPath | safe }}" target="_blank" class="w-10 h-10 rounded-lg bg-brand-dark/70 backdrop-blur border border-brand-dark/60 text-brand-light flex items-center justify-center transition hover:bg-brand-accent hover:border-brand-accent hover:text-white" title="Share on LinkedIn">
                                     <i class="fa-brands fa-linkedin-in"></i>
                                 </a>
-                                <a href="https://twitter.com/intent/tweet?text={{ title | url_encode }}&url={{ site.url | safe }}{{ page.url | canonicalPath | safe }}" target="_blank" class="w-10 h-10 rounded-lg bg-[#1da1f2] hover:bg-[#1a91da] text-white flex items-center justify-center transition" title="Share on Twitter">
+                                <a href="https://twitter.com/intent/tweet?text={{ title | url_encode }}&url={{ site.url | safe }}{{ page.url | canonicalPath | safe }}" target="_blank" class="w-10 h-10 rounded-lg bg-brand-dark/70 backdrop-blur border border-brand-dark/60 text-brand-light flex items-center justify-center transition hover:bg-brand-accent hover:border-brand-accent hover:text-white" title="Share on Twitter">
                                     <i class="fa-brands fa-x-twitter"></i>
                                 </a>
-                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url | safe }}{{ page.url | canonicalPath | safe }}" target="_blank" class="w-10 h-10 rounded-lg bg-[#1877f2] hover:bg-[#166fe5] text-white flex items-center justify-center transition" title="Share on Facebook">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url | safe }}{{ page.url | canonicalPath | safe }}" target="_blank" class="w-10 h-10 rounded-lg bg-brand-dark/70 backdrop-blur border border-brand-dark/60 text-brand-light flex items-center justify-center transition hover:bg-brand-accent hover:border-brand-accent hover:text-white" title="Share on Facebook">
                                     <i class="fa-brands fa-facebook-f"></i>
                                 </a>
-                                <a href="mailto:?subject={{ title | url_encode }}&body=Check out this article: {{ site.url | safe }}{{ page.url | canonicalPath | safe }}" class="w-10 h-10 rounded-lg bg-brand-dark/60 hover:bg-brand-dark/80 text-white flex items-center justify-center transition" title="Share via Email">
+                                <a href="mailto:?subject={{ title | url_encode }}&body=Check out this article: {{ site.url | safe }}{{ page.url | canonicalPath | safe }}" class="w-10 h-10 rounded-lg bg-brand-dark/70 backdrop-blur border border-brand-dark/60 text-brand-light flex items-center justify-center transition hover:bg-brand-accent hover:border-brand-accent hover:text-white" title="Share via Email">
                                     <i class="fa-solid fa-envelope"></i>
                                 </a>
                             </div>
@@ -419,11 +419,11 @@
 
                     <!-- Newsletter Signup -->
                     <div class="bg-gradient-to-br from-brand-accent to-brand-hover p-6 rounded-xl text-center text-white shadow-xl relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full blur-2xl -mr-8 -mt-8"></div>
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-brand-light/10 rounded-full blur-2xl -mr-8 -mt-8"></div>
                         <h3 class="font-bold text-lg mb-2 relative z-10">Stay Updated</h3>
                         <p class="text-sm opacity-90 mb-4 relative z-10">Get weekly guides and tips delivered to your inbox.</p>
                         <form id="newsletterForm" class="space-y-3 relative z-10">
-                            <input id="newsletterEmail" name="email" type="email" placeholder="Your email" required class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/60 focus:border-white focus:outline-none transition">
+                            <input id="newsletterEmail" name="email" type="email" placeholder="Your email" required class="w-full bg-brand-surface/20 backdrop-blur border border-brand-light/30 rounded-lg px-4 py-3 text-brand-light placeholder-brand-light/70 focus:border-brand-accent focus:outline-none transition">
                             <button type="submit" class="w-full bg-brand-surface text-brand-accent px-4 py-3 rounded-lg font-bold hover:bg-brand-light transition">Subscribe</button>
                         </form>
                         <p id="newsletter-status" class="text-sm text-white/80 mt-2 hidden relative z-10" aria-live="polite"></p>
@@ -455,7 +455,7 @@
     </button>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/8615899648898" target="_blank" class="fixed bottom-6 left-6 z-50 bg-[#25D366] hover:bg-green-600 text-white rounded-full p-4 shadow-lg flex items-center justify-center transition transform hover:scale-110 animate-bounce-slow">
+    <a href="https://wa.me/8615899648898" target="_blank" class="fixed bottom-6 left-6 z-50 bg-brand-accent hover:bg-brand-hover text-white rounded-full p-4 shadow-lg flex items-center justify-center transition transform hover:scale-110 animate-bounce-slow">
         <i class="fa-brands fa-whatsapp text-4xl"></i>
     </a>
 

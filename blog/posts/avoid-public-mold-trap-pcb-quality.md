@@ -68,7 +68,7 @@ It holds structural integrity from -40 C to 100 C.
   <p class="text-brand-light/80">Get a teardown sample kit showing FR-4 boards, crystal references, and AOI reports before you commit volume.</p>
   <div class="flex flex-wrap gap-3">
     <a href="/contact/" class="bg-brand-accent hover:bg-brand-hover text-white font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_mid_cta_contact">Request Samples and Pricing</a>
-    <a href="/catalog/" class="border border-white/40 hover:border-white text-white font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_mid_cta_catalog">Download Catalog</a>
+    <a href="/catalog/" class="border border-brand-border/60 hover:border-brand-accent text-brand-light font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_mid_cta_catalog">Download Catalog</a>
   </div>
 </div>
 
@@ -153,7 +153,7 @@ We leverage 10 years of manufacturing heritage to ensure what is inside the shel
   <p class="text-brand-light/80">Get a teardown sample kit and wholesale pricing tailored to your SKUs.</p>
   <div class="flex flex-wrap gap-3">
     <a href="/contact/" class="bg-brand-accent hover:bg-brand-hover text-white font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_bottom_cta_contact">Talk to Engineering</a>
-    <a href="/catalog/" class="border border-white/40 hover:border-white text-white font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_bottom_cta_catalog">View Compatible Models</a>
+    <a href="/catalog/" class="border border-brand-border/60 hover:border-brand-accent text-brand-light font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_bottom_cta_catalog">View Compatible Models</a>
   </div>
 </div>
 

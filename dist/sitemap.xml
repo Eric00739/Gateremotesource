@@ -58,31 +58,7 @@
   </url>
 
   <url>
-    <loc>https://www.gateremotesource.com/catalog/</loc>
-    
-    <lastmod>2026-01-03</lastmod>
-    
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
     <loc>https://www.gateremotesource.com/pt/blog/</loc>
-    
-    <lastmod>2026-01-03</lastmod>
-    
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://www.gateremotesource.com/about/</loc>
-    
-    <lastmod>2026-01-03</lastmod>
-    
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://www.gateremotesource.com/blog/</loc>
     
     <lastmod>2026-01-03</lastmod>
     
@@ -98,7 +74,15 @@
   </url>
 
   <url>
-    <loc>https://www.gateremotesource.com/</loc>
+    <loc>https://www.gateremotesource.com/it/blog/</loc>
+    
+    <lastmod>2026-01-03</lastmod>
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/blog/</loc>
     
     <lastmod>2026-01-03</lastmod>
     
@@ -114,7 +98,7 @@
   </url>
 
   <url>
-    <loc>https://www.gateremotesource.com/it/blog/</loc>
+    <loc>https://www.gateremotesource.com/oem/</loc>
     
     <lastmod>2026-01-03</lastmod>
     
@@ -122,7 +106,23 @@
   </url>
 
   <url>
-    <loc>https://www.gateremotesource.com/oem/</loc>
+    <loc>https://www.gateremotesource.com/catalog/</loc>
+    
+    <lastmod>2026-01-03</lastmod>
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/about/</loc>
+    
+    <lastmod>2026-01-03</lastmod>
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/</loc>
     
     <lastmod>2026-01-03</lastmod>
     
