@@ -8,25 +8,34 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
+        sans: [
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "SF Pro Display",
+          "SF Pro Text",
+          "Segoe UI",
+          "Helvetica Neue",
+          "Arial",
+          "sans-serif",
+        ],
       },
       colors: {
-        // Industrial Tech-Clean 视觉系统
+        // Apple glass-inspired palette
         brand: {
-          dark: "#0B1F3B",        // 品牌核心色：信任深海军蓝
-          accent: "#2F6FE4",      // 交互点睛色：信号蓝
-          hover: "#1F4E79",       // Hover 状态
-          light: "#F2F4F7",       // 次级背景：中性浅灰
-          surface: "#FFFFFF",    // 基础背景：纯白
-          muted: "#475569",       // 文字颜色：石墨灰
-          success: "#1F8A70",     // 成功状态
-          border: "#D7DDE5",      // 边框颜色
-          cta: "#F58220",         // CTA：安全橙
-          ctaHover: "#E76E12",    // CTA Hover
+          dark: "#1D1D1F",        // Dark surface
+          accent: "#0A84FF",      // Apple blue
+          hover: "#0071E3",       // Accent hover
+          light: "#F5F5F7",       // Light background
+          surface: "#FFFFFF",    // Glass base (opacity set via CSS)
+          muted: "#6E6E73",       // Secondary text
+          success: "#34C759",     // Success
+          border: "#D1D1D6",      // Separator
+          cta: "#0A84FF",         // CTA
+          ctaHover: "#0071E3",    // CTA Hover
         },
         // 兼容旧版颜色
-        primary: "#0B1F3B",
-        secondary: "#F2F4F7",
+        primary: "#1D1D1F",
+        secondary: "#F5F5F7",
       },
       boxShadow: {
         'sm': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',

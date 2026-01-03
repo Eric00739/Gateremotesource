@@ -134,9 +134,6 @@ eleventyComputed:
     
 
 <!-- Local Fonts -->
-    <link rel="preload" href="/assets/fonts/inter/inter-400.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/assets/fonts/inter/inter-600.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/assets/fonts/inter/inter-700.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/css/fonts.css" as="style">
     <link rel="stylesheet" href="/assets/css/fonts.css">
     <noscript><link rel="stylesheet" href="/assets/css/fonts.css"></noscript>
@@ -174,17 +171,17 @@ eleventyComputed:
 
         ::-webkit-scrollbar { width: 10px; }
 
-        ::-webkit-scrollbar-track { background: #0B1F3B; }
+        ::-webkit-scrollbar-track { background: #1D1D1F; }
 
-        ::-webkit-scrollbar-thumb { background: #475569; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb { background: #6E6E73; border-radius: 5px; }
 
-        ::-webkit-scrollbar-thumb:hover { background: #2F6FE4; }
+        ::-webkit-scrollbar-thumb:hover { background: #0A84FF; }
 
         
 
         .hero-bg {
 
-            background-image: linear-gradient(rgba(11, 31, 59, 0.9), rgba(11, 31, 59, 0.8));
+            background-image: linear-gradient(rgba(29, 29, 31, 0.88), rgba(29, 29, 31, 0.72));
 
             background-size: cover;
 
@@ -206,7 +203,7 @@ eleventyComputed:
 
             inset: 0;
 
-            background: rgba(11, 31, 59, 0.35);
+            background: rgba(29, 29, 31, 0.35);
 
             z-index: 1;
 
@@ -252,7 +249,7 @@ eleventyComputed:
 
         /* Navigation State */
 
-        .nav-link.active { color: #2F6FE4 !important; font-weight: 700; border-bottom: 2px solid #2F6FE4; }
+        .nav-link.active { color: #0A84FF !important; font-weight: 700; border-bottom: 2px solid #0A84FF; }
 
         
 
@@ -288,7 +285,7 @@ eleventyComputed:
 
         }
 
-        .lang-select option { background-color: #0B1F3B; color: white; }
+        .lang-select option { background-color: #1D1D1F; color: white; }
 
 
 
@@ -306,7 +303,7 @@ eleventyComputed:
 
             width: 2px;
 
-            background-color: #D7DDE5;
+            background-color: #D1D1D6;
 
             z-index: 0;
 
@@ -324,17 +321,23 @@ eleventyComputed:
 
         .compat-card {
 
-            border: 1px solid #D7DDE5;
+            border: 1px solid rgba(60, 60, 67, 0.16);
 
-            background: #FFFFFF;
+            background: rgba(255, 255, 255, 0.72);
 
             border-radius: 0.75rem;
+
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+
+            backdrop-filter: blur(16px);
+
+            -webkit-backdrop-filter: blur(16px);
 
         }
 
         .compat-card .label {
 
-            color: #64748B;
+            color: #6E6E73;
 
             font-size: 0.75rem;
 
@@ -360,7 +363,7 @@ eleventyComputed:
 
                 background-attachment: scroll; 
 
-                background-image: linear-gradient(rgba(11, 31, 59, 0.9), rgba(11, 31, 59, 0.8));
+                background-image: linear-gradient(rgba(29, 29, 31, 0.88), rgba(29, 29, 31, 0.72));
 
             }
 
@@ -370,7 +373,7 @@ eleventyComputed:
 
             .hero-bg {
 
-                background-image: linear-gradient(rgba(11, 31, 59, 0.9), rgba(11, 31, 59, 0.8)), url('/assets/factory/smt-line.webp');
+                background-image: linear-gradient(rgba(29, 29, 31, 0.88), rgba(29, 29, 31, 0.72)), url('/assets/factory/smt-line.webp');
 
             }
 
@@ -492,7 +495,7 @@ eleventyComputed:
 
     <!-- ================= NAVIGATION ================= -->
 
-    <nav class="fixed w-full z-50 bg-brand-surface border-b border-brand-border backdrop-blur transition-all duration-200 ease-in-out">
+    <nav class="fixed w-full z-50 bg-brand-dark/70 border-b border-brand-dark/60 backdrop-blur transition-all duration-200 ease-in-out">
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -504,13 +507,13 @@ eleventyComputed:
 
                     <a href="/" class="flex items-center gap-3">
 
-                    <div class="bg-brand-light p-1.5 rounded-lg h-10 w-10 flex items-center justify-center border border-brand-border">
+                    <div class="bg-brand-light p-1.5 rounded-lg h-10 w-10 flex items-center justify-center border border-brand-dark/60">
 
                         <img src="/logo/logo.png" width="1024" height="1024" alt="GateRemoteSource Logo" class="h-full w-full object-contain">
 
                     </div>
 
-                        <span class="font-bold text-2xl text-brand-dark tracking-tight transition-colors duration-200 ease-in-out">GateRemote<span class="text-brand-accent">Source</span></span>
+                        <span class="font-bold text-2xl text-white tracking-tight transition-colors duration-200 ease-in-out">GateRemote<span class="text-brand-accent">Source</span></span>
 
                     </a>
 
@@ -522,27 +525,27 @@ eleventyComputed:
 
                 <div class="hidden lg:flex space-x-8 items-center">
 
-                    <a href="/" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent active" id="nav-home" data-i18n="navigation.home">Home</a>
+                    <a href="/" class="nav-link text-brand-light/80 hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent active" id="nav-home" data-i18n="navigation.home">Home</a>
 
-                    <a href="/catalog/" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-products" data-i18n="navigation.catalog">Catalog</a>
+                    <a href="/catalog/" class="nav-link text-brand-light/80 hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-products" data-i18n="navigation.catalog">Catalog</a>
 
-                    <a href="/oem/" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-oem" data-i18n="navigation.oem">OEM/ODM</a>
+                    <a href="/oem/" class="nav-link text-brand-light/80 hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-oem" data-i18n="navigation.oem">OEM/ODM</a>
 
-                    <a href="/about/" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-about" data-i18n="navigation.about">About</a>
+                    <a href="/about/" class="nav-link text-brand-light/80 hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-about" data-i18n="navigation.about">About</a>
 
-                    <a href="/blog/" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-blog" data-i18n="navigation.blog">Blog</a>
+                    <a href="/blog/" class="nav-link text-brand-light/80 hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-blog" data-i18n="navigation.blog">Blog</a>
 
-                    <a href="/contact/" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-contact" data-i18n="navigation.contact">Contact</a>
+                    <a href="/contact/" class="nav-link text-brand-light/80 hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-contact" data-i18n="navigation.contact">Contact</a>
 
                     
 
                     <!-- Language Switcher -->
 
-                    <div class="flex items-center ml-2 border-l border-brand-border pl-4">
+                    <div class="flex items-center ml-2 border-l border-brand-dark/60 pl-4">
 
                         <div class="relative">
 
-                            <button id="languageDropdownBtn" class="flex items-center gap-2 text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out">
+                            <button id="languageDropdownBtn" class="flex items-center gap-2 text-brand-light hover:text-brand-accent transition-colors duration-200 ease-in-out">
 
                                 <span id="currentFlag" class="text-xs font-semibold tracking-wide">EN</span>
 
@@ -624,7 +627,7 @@ eleventyComputed:
 
                 <div class="lg:hidden flex items-center gap-4">
 
-                    <button id="mobile-menu-btn" class="text-brand-dark text-2xl focus:outline-none transition-colors duration-200 ease-in-out hover:text-brand-accent">
+                    <button id="mobile-menu-btn" class="text-brand-light text-2xl focus:outline-none transition-colors duration-200 ease-in-out hover:text-brand-accent">
 
                         <i class="fa-solid fa-bars"></i>
 
@@ -640,7 +643,7 @@ eleventyComputed:
 
         <!-- Mobile Menu Dropdown -->
 
-        <div id="mobile-menu" class="lg:hidden bg-brand-surface border-b border-brand-border hidden">
+        <div id="mobile-menu" class="lg:hidden bg-brand-dark/70 border-b border-brand-dark/60 hidden">
 
             <div class="px-4 pt-2 pb-6 space-y-2">
 
@@ -829,7 +832,7 @@ eleventyComputed:
 
         <!-- Trust Bar -->
 
-        <div id="products-preview" class="bg-brand-surface border-b border-brand-border">
+        <div id="products-preview" class="bg-brand-dark/70 border-b border-brand-dark/60">
 
             <div class="max-w-7xl mx-auto px-4 py-10">
 

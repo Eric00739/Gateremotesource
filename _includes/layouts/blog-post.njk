@@ -123,9 +123,6 @@
     <link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css">
     <noscript><link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css"></noscript>
     
-    <link rel="preload" href="/assets/fonts/inter/inter-400.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/assets/fonts/inter/inter-600.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/assets/fonts/inter/inter-700.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/css/fonts.css" as="style">
     <link rel="stylesheet" href="/assets/css/fonts.css">
     <noscript><link rel="stylesheet" href="/assets/css/fonts.css"></noscript>
@@ -140,25 +137,25 @@
     
     <style>
         ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: #0B1F3B; }
-        ::-webkit-scrollbar-thumb { background: #475569; border-radius: 5px; }
-        ::-webkit-scrollbar-thumb:hover { background: #2F6FE4; }
+        ::-webkit-scrollbar-track { background: #1D1D1F; }
+        ::-webkit-scrollbar-thumb { background: #6E6E73; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0A84FF; }
         
         /* Custom styles for special components */
         .callout {
-            background: linear-gradient(135deg, rgba(47,111,228,0.12), rgba(11,31,59,0.95));
-            border: 1px solid rgba(47,111,228,0.4);
+            background: linear-gradient(135deg, rgba(10, 132, 255, 0.12), rgba(29, 29, 31, 0.92));
+            border: 1px solid rgba(10, 132, 255, 0.35);
             box-shadow: 0 10px 40px rgba(0,0,0,0.3);
         }
         
         .highlight-card {
-            background: #0B1F3B;
-            border: 1px solid rgba(215,221,229,0.2);
+            background: #1D1D1F;
+            border: 1px solid rgba(209, 209, 214, 0.22);
         }
         
         .img-frame {
             overflow: hidden;
-            border: 1px solid rgba(215,221,229,0.2);
+            border: 1px solid rgba(209, 209, 214, 0.22);
             border-radius: 1rem;
             box-shadow: 0 12px 30px rgba(0,0,0,0.25);
         }
@@ -174,12 +171,12 @@
             transition: all 0.2s ease;
         }
         .toc-item:hover {
-            color: #2F6FE4;
+            color: #0A84FF;
             padding-left: 0.5rem;
         }
         
         .toc-item.active {
-            color: #2F6FE4;
+            color: #0A84FF;
             font-weight: 600;
         }
         
@@ -188,7 +185,7 @@
             top: 0;
             left: 0;
             height: 3px;
-            background: linear-gradient(90deg, #2F6FE4, #1F4E79);
+            background: linear-gradient(90deg, #0A84FF, #0071E3);
             z-index: 9999;
             transition: width 0.1s ease;
         }
@@ -209,7 +206,7 @@
     <div id="progressBar" class="progress-bar" style="width: 0%"></div>
     
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-brand-dark/95 backdrop-blur border-b border-brand-dark/60 transition-all duration-300">
+    <nav class="fixed w-full z-50 bg-brand-dark/70 backdrop-blur border-b border-brand-dark/60 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center gap-3">
