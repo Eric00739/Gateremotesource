@@ -117,7 +117,7 @@
         .lang-select option { background-color: #1D1D1F; color: white; }
     </style>
 </head>
-<body class="font-sans text-brand-light/80 bg-brand-dark selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="about">
+<body class="font-sans text-brand-light/80 bg-brand-dark/70 backdrop-blur selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="about">
 
     
     <nav class="fixed w-full z-50 bg-brand-dark/70 backdrop-blur border-b border-brand-dark/60 transition-all duration-300">
@@ -151,27 +151,27 @@
                                 <i class="fa-solid fa-chevron-down text-xs"></i>
                             </button>
                             <div id="languageDropdown" class="absolute right-0 mt-2 w-48 bg-brand-surface border border-brand-border rounded-lg shadow-lg hidden z-50">
-                                <a href="#" onclick="changeLanguage('en')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
+                                <a href="#" onclick="changeLanguage('en')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light/40 transition">
                                     <span class="text-xs font-semibold">EN</span>
                                     <span class="text-brand-dark">English</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('es')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
+                                <a href="#" onclick="changeLanguage('es')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light/40 transition">
                                     <span class="text-xs font-semibold">ES</span>
                                     <span class="text-brand-dark">Español</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('de')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
+                                <a href="#" onclick="changeLanguage('de')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light/40 transition">
                                     <span class="text-xs font-semibold">DE</span>
                                     <span class="text-brand-dark">Deutsch</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('it')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
+                                <a href="#" onclick="changeLanguage('it')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light/40 transition">
                                     <span class="text-xs font-semibold">IT</span>
                                     <span class="text-brand-dark">Italiano</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('fr')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
+                                <a href="#" onclick="changeLanguage('fr')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light/40 transition">
                                     <span class="text-xs font-semibold">FR</span>
                                     <span class="text-brand-dark">Français</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('pt')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
+                                <a href="#" onclick="changeLanguage('pt')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light/40 transition">
                                     <span class="text-xs font-semibold">PT</span>
                                     <span class="text-brand-dark">Português</span>
                                 </a>
@@ -179,7 +179,7 @@
                         </div>
                     </div>
 
-                    <a href="/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-white px-6 py-2 rounded-lg font-bold transition shadow-[0_0_15px_rgba(245,130,32,0.35)] hover:shadow-[0_0_25px_rgba(245,130,32,0.55)] transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_get_price_list">Quote Now</a>
+                    <a href="/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-white px-6 py-2 rounded-lg font-bold transition shadow-md shadow-brand-accent/20 hover:shadow-lg transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_get_price_list">Quote Now</a>
                 </div>
 
                 
@@ -205,7 +205,7 @@
     </nav>
 
     
-    <main class="pt-32 pb-24 bg-brand-dark min-h-screen">
+    <main class="pt-32 pb-24 bg-brand-dark/70 backdrop-blur min-h-screen">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-20">
                 <div>
@@ -235,35 +235,35 @@
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
                     <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 text-center">
-                        <div class="h-24 w-24 rounded-full bg-brand-dark border border-brand-dark/60 flex items-center justify-center text-brand-muted mx-auto">
+                        <div class="h-24 w-24 rounded-full bg-brand-dark/70 backdrop-blur border border-brand-dark/60 flex items-center justify-center text-brand-muted mx-auto">
                             <i class="fa-solid fa-user"></i>
                         </div>
                         <p class="text-brand-dark font-semibold mt-4">General Manager</p>
                         <p class="text-brand-muted text-sm">Operations</p>
                     </div>
                     <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 text-center">
-                        <div class="h-24 w-24 rounded-full bg-brand-dark border border-brand-dark/60 flex items-center justify-center text-brand-muted mx-auto">
+                        <div class="h-24 w-24 rounded-full bg-brand-dark/70 backdrop-blur border border-brand-dark/60 flex items-center justify-center text-brand-muted mx-auto">
                             <i class="fa-solid fa-user"></i>
                         </div>
                         <p class="text-brand-dark font-semibold mt-4">Sales Lead</p>
                         <p class="text-brand-muted text-sm">Global Sales</p>
                     </div>
                     <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 text-center">
-                        <div class="h-24 w-24 rounded-full bg-brand-dark border border-brand-dark/60 flex items-center justify-center text-brand-muted mx-auto">
+                        <div class="h-24 w-24 rounded-full bg-brand-dark/70 backdrop-blur border border-brand-dark/60 flex items-center justify-center text-brand-muted mx-auto">
                             <i class="fa-solid fa-user"></i>
                         </div>
                         <p class="text-brand-dark font-semibold mt-4">Engineering Lead</p>
                         <p class="text-brand-muted text-sm">R&amp;D</p>
                     </div>
                     <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 text-center">
-                        <div class="h-24 w-24 rounded-full bg-brand-dark border border-brand-dark/60 flex items-center justify-center text-brand-muted mx-auto">
+                        <div class="h-24 w-24 rounded-full bg-brand-dark/70 backdrop-blur border border-brand-dark/60 flex items-center justify-center text-brand-muted mx-auto">
                             <i class="fa-solid fa-user"></i>
                         </div>
                         <p class="text-brand-dark font-semibold mt-4">Quality Lead</p>
                         <p class="text-brand-muted text-sm">QC &amp; Compliance</p>
                     </div>
                     <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 text-center">
-                        <div class="h-24 w-24 rounded-full bg-brand-dark border border-brand-dark/60 flex items-center justify-center text-brand-muted mx-auto">
+                        <div class="h-24 w-24 rounded-full bg-brand-dark/70 backdrop-blur border border-brand-dark/60 flex items-center justify-center text-brand-muted mx-auto">
                             <i class="fa-solid fa-user"></i>
                         </div>
                         <p class="text-brand-dark font-semibold mt-4">Logistics Lead</p>
@@ -279,7 +279,7 @@
                         <div class="flex gap-6">
                             <div class="w-24 text-right font-bold text-brand-accent pt-1">2015</div>
                             <div class="flex-1 border-l-2 border-brand-dark/60 pl-8 pb-8 relative">
-                                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark border-2 border-brand-accent rounded-full"></div>
+                                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark/70 backdrop-blur border-2 border-brand-accent rounded-full"></div>
                                 <h4 class="text-white font-bold text-lg" data-i18n="about.timeline_2015_title">Foundation</h4>
                                 <p class="text-brand-light/70 mt-2" data-i18n="about.timeline_2015_description">Founded in 2015 in Shenzhen, China, starting as a PCBA assembly workshop.</p>
                             </div>
@@ -287,7 +287,7 @@
                         <div class="flex gap-6">
                             <div class="w-24 text-right font-bold text-brand-accent pt-1">2018</div>
                             <div class="flex-1 border-l-2 border-brand-dark/60 pl-8 pb-8 relative">
-                                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark border-2 border-brand-accent rounded-full"></div>
+                                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark/70 backdrop-blur border-2 border-brand-accent rounded-full"></div>
                                 <h4 class="text-white font-bold text-lg" data-i18n="about.timeline_2018_title">ISO Certification</h4>
                                 <p class="text-brand-light/70 mt-2" data-i18n="about.timeline_2018_description">Achieved ISO certification to strengthen our quality management system.</p>
                             </div>
@@ -295,7 +295,7 @@
                         <div class="flex gap-6">
                             <div class="w-24 text-right font-bold text-brand-accent pt-1">2020</div>
                             <div class="flex-1 border-l-2 border-brand-dark/60 pl-8 pb-0 relative">
-                                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark border-2 border-brand-accent rounded-full"></div>
+                                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark/70 backdrop-blur border-2 border-brand-accent rounded-full"></div>
                                 <h4 class="text-white font-bold text-lg" data-i18n="about.timeline_2020_title">Product Milestone</h4>
                                 <p class="text-brand-light/70 mt-2" data-i18n="about.timeline_2020_description">Launched our first Universal Rolling Code remote series.</p>
                             </div>
@@ -303,7 +303,7 @@
                         <div class="flex gap-6">
                             <div class="w-24 text-right font-bold text-brand-accent pt-1">2021</div>
                             <div class="flex-1 border-l-2 border-brand-dark/60 pl-8 pb-8 relative">
-                                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark border-2 border-brand-accent rounded-full"></div>
+                                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark/70 backdrop-blur border-2 border-brand-accent rounded-full"></div>
                                 <h4 class="text-white font-bold text-lg" data-i18n="about.timeline_2021_relocation_title">Expansion &amp; Relocation</h4>
                                 <p class="text-brand-light/70 mt-2" data-i18n="about.timeline_2021_relocation_description">Relocated our factory from Shenzhen to Dongguan and expanded the workshop to 4,000 m2.</p>
                             </div>
@@ -311,7 +311,7 @@
                         <div class="flex gap-6">
                             <div class="w-24 text-right font-bold text-brand-accent pt-1">2021</div>
                             <div class="flex-1 border-l-2 border-brand-dark/60 pl-8 pb-8 relative">
-                                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark border-2 border-brand-accent rounded-full"></div>
+                                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark/70 backdrop-blur border-2 border-brand-accent rounded-full"></div>
                                 <h4 class="text-white font-bold text-lg" data-i18n="about.timeline_2021_hightech_title">High-Tech Recognition</h4>
                                 <p class="text-brand-light/70 mt-2" data-i18n="about.timeline_2021_hightech_description">Awarded the China National High-Tech Enterprise certificate.</p>
                             </div>
@@ -319,7 +319,7 @@
                         <div class="flex gap-6">
                             <div class="w-24 text-right font-bold text-brand-accent pt-1">2023</div>
                             <div class="flex-1 border-l-2 border-brand-dark/60 pl-8 pb-0 relative">
-                                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark border-2 border-brand-accent rounded-full"></div>
+                                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark/70 backdrop-blur border-2 border-brand-accent rounded-full"></div>
                                 <h4 class="text-white font-bold text-lg" data-i18n="about.timeline_2023_title">Global Reach</h4>
                                 <p class="text-brand-light/70 mt-2" data-i18n="about.timeline_2023_description">Exporting to 40+ countries, 100% focused on B2B aftermarket solutions.</p>
                             </div>
@@ -384,7 +384,7 @@
     </section>
 
     
-    <section class="py-24 bg-brand-dark border-t border-brand-dark/60">
+    <section class="py-24 bg-brand-dark/70 backdrop-blur border-t border-brand-dark/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Our Values</h2>
@@ -443,7 +443,7 @@
             </div>
             
             
-            <div class="mt-16 bg-brand-dark rounded-2xl p-8 border border-brand-dark/60">
+            <div class="mt-16 bg-brand-dark/70 backdrop-blur rounded-2xl p-8 border border-brand-dark/60">
                 <div class="h-64 flex items-center justify-center">
                     <div class="text-center">
                         <i class="fa-solid fa-globe text-brand-accent text-6xl mb-4"></i>
@@ -462,14 +462,14 @@
                 <h2 class="text-3xl font-bold text-white mb-2" data-i18n="pre_footer.title">Need a Sample Pack?</h2>
                 <p class="text-white/90 text-lg" data-i18n="pre_footer.subtitle">Test our range &amp; compatibility before you buy in bulk.</p>
             </div>
-            <a href="/contact/" class="bg-brand-cta text-brand-surface px-8 py-3 rounded-full font-bold hover:bg-brand-ctaHover transition shadow-lg shadow-amber-200/50">
+            <a href="/contact/" class="bg-brand-cta text-brand-surface px-8 py-3 rounded-full font-bold hover:bg-brand-ctaHover transition shadow-lg shadow-brand-accent/20">
                 <span data-i18n="pre_footer.order_samples">Order Samples</span>
             </a>
         </div>
     </section>
 
     
-    <footer class="bg-brand-dark pt-20 pb-10 border-t border-brand-dark/60 text-brand-light/70 text-base">
+    <footer class="bg-brand-dark/70 backdrop-blur pt-20 pb-10 border-t border-brand-dark/60 text-brand-light/70 text-base">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="bg-brand-surface border border-brand-border rounded-xl p-6 mb-12">

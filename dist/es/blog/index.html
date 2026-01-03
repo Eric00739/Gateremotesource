@@ -110,7 +110,7 @@
         .lang-select option { background-color: #1D1D1F; color: white; }
     </style>
 </head>
-<body class="font-sans text-brand-dark bg-brand-light selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="blog">
+<body class="font-sans text-brand-light/80 bg-brand-dark/70 backdrop-blur selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="blog">
     <nav class="fixed w-full z-50 bg-brand-dark/70 backdrop-blur border-b border-brand-dark/60 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
@@ -139,27 +139,27 @@
                                 <i class="fa-solid fa-chevron-down text-xs"></i>
                             </button>
                             <div id="languageDropdown" class="absolute right-0 mt-2 w-48 bg-brand-surface border border-brand-border rounded-lg shadow-lg hidden z-50">
-                                <a href="#" onclick="changeLanguage('en')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
+                                <a href="#" onclick="changeLanguage('en')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light/40 transition">
                                     <span class="text-xs font-semibold">EN</span>
                                     <span class="text-brand-dark">English</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('es')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
+                                <a href="#" onclick="changeLanguage('es')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light/40 transition">
                                     <span class="text-xs font-semibold">ES</span>
                                     <span class="text-brand-dark">Espanol</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('de')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
+                                <a href="#" onclick="changeLanguage('de')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light/40 transition">
                                     <span class="text-xs font-semibold">DE</span>
                                     <span class="text-brand-dark">Deutsch</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('it')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
+                                <a href="#" onclick="changeLanguage('it')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light/40 transition">
                                     <span class="text-xs font-semibold">IT</span>
                                     <span class="text-brand-dark">Italiano</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('fr')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
+                                <a href="#" onclick="changeLanguage('fr')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light/40 transition">
                                     <span class="text-xs font-semibold">FR</span>
                                     <span class="text-brand-dark">Francais</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('pt')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
+                                <a href="#" onclick="changeLanguage('pt')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light/40 transition">
                                     <span class="text-xs font-semibold">PT</span>
                                     <span class="text-brand-dark">Portugues</span>
                                 </a>
@@ -167,7 +167,7 @@
                         </div>
                     </div>
 
-                    <a href="/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-brand-surface px-6 py-2 rounded-lg font-bold transition shadow-[0_0_15px_rgba(245,130,32,0.35)] hover:shadow-[0_0_25px_rgba(245,130,32,0.55)] transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_get_price_list">Quote Now</a>
+                    <a href="/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-brand-surface px-6 py-2 rounded-lg font-bold transition shadow-md shadow-brand-accent/20 hover:shadow-lg transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_get_price_list">Quote Now</a>
                 </div>
 
                 <div class="lg:hidden flex items-center gap-4">
@@ -222,11 +222,11 @@
                             </div>
                         </div>
                         <div class="flex flex-wrap gap-3">
-                            <a href="/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-brand-surface px-6 py-3 rounded-lg font-bold transition shadow-[0_0_15px_rgba(245,130,32,0.35)] hover:shadow-[0_0_25px_rgba(245,130,32,0.55)]" data-cta="blog_hero_get_price">Get price list</a>
+                            <a href="/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-brand-surface px-6 py-3 rounded-lg font-bold transition shadow-md shadow-brand-accent/20 hover:shadow-lg" data-cta="blog_hero_get_price">Get price list</a>
                             <a href="/catalog/" class="border border-brand-accent text-brand-accent hover:border-brand-hover hover:text-brand-hover hover:bg-brand-light/40 px-6 py-3 rounded-lg font-bold transition" data-cta="blog_hero_catalog">Download catalog</a>
                         </div>
                     </div>
-                    <div class="bg-brand-dark border border-brand-dark/60 rounded-2xl p-6 shadow-xl space-y-6">
+                    <div class="bg-brand-dark/70 backdrop-blur border border-brand-dark/60 rounded-2xl p-6 shadow-xl space-y-6">
                         <div>
                             <h3 class="text-brand-light font-bold text-lg mb-2">Search the library</h3>
                             <p class="text-brand-light/70 text-sm mb-4">Find guides by model, brand, frequency, or issue.</p>
@@ -293,7 +293,7 @@
                         
                         
                         
-                        <section class="bg-brand-dark border border-brand-dark/60 rounded-2xl overflow-hidden shadow-xl group" data-post-card data-title="How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance" data-summary="A field-proven checklist for OEM teams to turn range and compliance into measurable KPIs: link margin, blocking, protocol airtime, and regulator-limited transmit behavior." data-category="rf-engineering" data-tags="433-92mhz|rf-compliance|link-budget|oem-procurement|garage-doors" data-brand="" data-frequency="433-92mhz" data-scene="">
+                        <section class="bg-brand-dark/70 backdrop-blur border border-brand-dark/60 rounded-2xl overflow-hidden shadow-xl group" data-post-card data-title="How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance" data-summary="A field-proven checklist for OEM teams to turn range and compliance into measurable KPIs: link margin, blocking, protocol airtime, and regulator-limited transmit behavior." data-category="rf-engineering" data-tags="433-92mhz|rf-compliance|link-budget|oem-procurement|garage-doors" data-brand="" data-frequency="433-92mhz" data-scene="">
                             <div class="grid grid-cols-1 md:grid-cols-2">
                                 <div class="relative">
                                     <img src="/assets/blog-drops/choose-433-92mhz-remote-control/image-01.webp" alt="How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -330,7 +330,7 @@
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 
-                                <article class="bg-brand-dark p-6 rounded-xl border border-brand-dark/60 hover:border-brand-accent transition flex flex-col gap-4 group" data-post-card data-title="Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls" data-summary="Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation." data-category="engineering" data-tags="pcb-quality|rolling-code|oem-manufacturing" data-brand="" data-frequency="433-92mhz" data-scene="">
+                                <article class="bg-brand-dark/70 backdrop-blur p-6 rounded-xl border border-brand-dark/60 hover:border-brand-accent transition flex flex-col gap-4 group" data-post-card data-title="Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls" data-summary="Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation." data-category="engineering" data-tags="pcb-quality|rolling-code|oem-manufacturing" data-brand="" data-frequency="433-92mhz" data-scene="">
                                     <div class="h-48 rounded-lg overflow-hidden">
                                         <img loading="lazy" decoding="async" src="/assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-01.webp" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls">
                                     </div>
@@ -352,7 +352,7 @@
                         
                     </div>
                     <aside class="space-y-8">
-                        <div class="bg-brand-dark p-6 rounded-xl border border-brand-dark/60 shadow-lg">
+                        <div class="bg-brand-dark/70 backdrop-blur p-6 rounded-xl border border-brand-dark/60 shadow-lg">
                             <div class="flex items-center justify-between mb-4">
                                 <h3 class="font-bold text-white">Filters</h3>
                                 <button type="button" class="text-xs text-brand-light/70 hover:text-brand-light" data-clear-filters>Reset</button>
@@ -460,7 +460,7 @@
 
                         
                         
-                        <div class="bg-brand-dark p-6 rounded-xl border border-brand-dark/60 shadow-lg">
+                        <div class="bg-brand-dark/70 backdrop-blur p-6 rounded-xl border border-brand-dark/60 shadow-lg">
                             <h3 class="font-bold text-white mb-4">Newest guides</h3>
                             <div class="space-y-4">
                                 
@@ -495,7 +495,7 @@
         </section>
     </main>
 
-    <section class="py-16 bg-brand-dark border-t border-brand-dark/60">
+    <section class="py-16 bg-brand-dark/70 backdrop-blur border-t border-brand-dark/60">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl font-bold text-white mb-4">Stay Updated with Latest Tips</h2>
             <p class="text-brand-light/70 mb-8">Get weekly technical guides and market insights delivered to your inbox.</p>
@@ -514,13 +514,13 @@
                 <h2 class="text-3xl font-bold text-white mb-2" data-i18n="pre_footer.title">Need a Sample Pack?</h2>
                 <p class="text-white/90 text-lg" data-i18n="pre_footer.subtitle">Test our range &amp; compatibility before you buy in bulk.</p>
             </div>
-            <a href="/contact/" class="bg-brand-cta text-brand-surface px-8 py-3 rounded-full font-bold hover:bg-brand-ctaHover transition shadow-lg shadow-amber-200/50">
+            <a href="/contact/" class="bg-brand-cta text-brand-surface px-8 py-3 rounded-full font-bold hover:bg-brand-ctaHover transition shadow-lg shadow-brand-accent/20">
                 <span data-i18n="pre_footer.order_samples">Order Samples</span>
             </a>
         </div>
     </section>
 
-    <footer class="bg-brand-dark pt-20 pb-10 border-t border-brand-dark/60 text-brand-light/70 text-base">
+    <footer class="bg-brand-dark/70 backdrop-blur pt-20 pb-10 border-t border-brand-dark/60 text-brand-light/70 text-base">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-brand-surface border border-brand-border rounded-xl p-6 mb-12">
                 <p class="text-sm text-brand-muted text-center" data-i18n="footer.legal_disclaimer">Disclaimer: All product names, logos, and brands are property of their respective owners. All company, product and service names used in this website are for identification purposes only. Use of these names, logos, and brands does not imply endorsement.</p>
@@ -855,14 +855,14 @@
                 const label = escapeHtml(item.label);
                 if (item.type === 'search') {
                     return `
-                        <button type="button" class="flex items-center gap-2 px-3 py-1 rounded-full bg-brand-dark border border-brand-dark/60 text-xs text-brand-light/80 hover:border-brand-accent transition" data-remove-filter data-type="search">
+                        <button type="button" class="flex items-center gap-2 px-3 py-1 rounded-full bg-brand-dark/70 backdrop-blur border border-brand-dark/60 text-xs text-brand-light/80 hover:border-brand-accent transition" data-remove-filter data-type="search">
                             <span>${label}</span>
                             <i class="fa-solid fa-xmark text-[10px]"></i>
                         </button>
                     `;
                 }
                 return `
-                    <button type="button" class="flex items-center gap-2 px-3 py-1 rounded-full bg-brand-dark border border-brand-dark/60 text-xs text-brand-light/80 hover:border-brand-accent transition" data-remove-filter data-type="filter" data-group="${escapeHtml(item.group)}" data-value="${escapeHtml(item.value)}">
+                    <button type="button" class="flex items-center gap-2 px-3 py-1 rounded-full bg-brand-dark/70 backdrop-blur border border-brand-dark/60 text-xs text-brand-light/80 hover:border-brand-accent transition" data-remove-filter data-type="filter" data-group="${escapeHtml(item.group)}" data-value="${escapeHtml(item.value)}">
                         <span>${label}</span>
                         <i class="fa-solid fa-xmark text-[10px]"></i>
                     </button>

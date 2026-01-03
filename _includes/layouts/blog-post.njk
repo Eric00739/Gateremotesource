@@ -201,7 +201,7 @@
         }
     </style>
 </head>
-<body class="font-sans text-brand-light/80 bg-brand-dark selection:bg-brand-accent selection:text-white flex flex-col min-h-screen">
+<body class="font-sans text-brand-light/80 bg-brand-dark/70 backdrop-blur selection:bg-brand-accent selection:text-white flex flex-col min-h-screen">
     <!-- Reading Progress Bar -->
     <div id="progressBar" class="progress-bar" style="width: 0%"></div>
     
@@ -295,7 +295,7 @@
                         </h3>
                         <div class="space-y-3 text-sm text-brand-light/80">
                             {% for entry in seriesPosts %}
-                            <a href="{{ entry.url }}" class="flex items-center justify-between p-3 rounded-xl bg-brand-dark border border-brand-dark/60 text-brand-light/80 hover:border-brand-accent transition {% if entry.url == page.url %}border-brand-accent{% endif %}">
+                            <a href="{{ entry.url }}" class="flex items-center justify-between p-3 rounded-xl bg-brand-dark/70 backdrop-blur border border-brand-dark/60 text-brand-light/80 hover:border-brand-accent transition {% if entry.url == page.url %}border-brand-accent{% endif %}">
                                 <span>{{ entry.data.title }}</span>
                                 {% if entry.url == page.url %}
                                 <span class="text-xs text-brand-accent font-bold">Current</span>
@@ -317,7 +317,7 @@
                         </h3>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-brand-muted">
                             {% for entry in related %}
-                            <a href="{{ entry.url }}" class="p-4 rounded-xl bg-brand-dark border border-brand-dark/60 hover:border-brand-accent transition block">
+                            <a href="{{ entry.url }}" class="p-4 rounded-xl bg-brand-dark/70 backdrop-blur border border-brand-dark/60 hover:border-brand-accent transition block">
                                 <p class="text-xs text-brand-accent font-bold uppercase tracking-wide mb-1">{{ entry.data.category or 'Guide' }}</p>
                                 <p class="text-brand-light font-semibold mb-1">{{ entry.data.title }}</p>
                                 <p class="text-brand-light/70 text-xs">{{ entry.data.summary }}</p>
@@ -405,7 +405,7 @@
                     </div>
 
                     <!-- Quick Links -->
-                    <div class="bg-brand-dark p-6 rounded-xl border border-brand-dark/60 shadow-lg">
+                    <div class="bg-brand-dark/70 backdrop-blur p-6 rounded-xl border border-brand-dark/60 shadow-lg">
                         <h3 class="text-brand-light font-bold text-lg mb-4 flex items-center gap-2">
                             <i class="fa-solid fa-link text-brand-accent"></i>
                             Quick Links
@@ -434,7 +434,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-brand-dark border-t border-brand-dark/60 py-10">
+    <footer class="bg-brand-dark/70 backdrop-blur border-t border-brand-dark/60 py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-brand-light/60">
             <div class="flex items-center gap-2 text-white">
                 <img src="/logo/logo.png" width="1024" height="1024" alt="GateRemoteSource logo" class="h-8 w-auto object-contain">
