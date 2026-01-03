@@ -123,7 +123,7 @@ permalink: "/blog/{{ slug }}/index.html"
 
 ### 高亮卡片
 ```html
-<div class="highlight-card rounded-2xl p-6 border border-brand-accent/30 shadow-xl">
+<div class="highlight-card rounded-2xl p-6 border border-brand-accent/30 shadow-lg">
   <h2 class="text-xl font-bold text-white mb-3">标题</h2>
   <ul class="space-y-2 text-gray-200 list-disc list-inside">
     <li>列表项 1</li>

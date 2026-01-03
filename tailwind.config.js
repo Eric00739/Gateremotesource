@@ -38,8 +38,11 @@ module.exports = {
         secondary: "#F5F5F7",
       },
       boxShadow: {
-        'sm': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-        'md': '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+        'sm': '0 1px 2px rgba(0, 0, 0, 0.06)',
+        'md': '0 4px 10px rgba(0, 0, 0, 0.1)',
+        'lg': '0 10px 20px rgba(0, 0, 0, 0.12)',
+        'xl': '0 16px 32px rgba(0, 0, 0, 0.14)',
+        '2xl': '0 24px 48px rgba(0, 0, 0, 0.16)',
       },
       animation: {
         "fade-in-up": "fadeInUp 0.8s ease-out",

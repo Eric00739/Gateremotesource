@@ -252,7 +252,7 @@ eleventyComputed:
                         </div>
                     </div>
                 </div>
-                <div class="bg-brand-surface p-8 rounded-2xl border border-brand-border shadow-2xl">
+                <div class="bg-brand-surface p-8 rounded-2xl border border-brand-border shadow-lg">
                     <!-- Form with visual feedback -->
                     <form onsubmit="event.preventDefault(); showSuccessMessage();" class="space-y-5" enctype="multipart/form-data">
                         <h3 class="text-brand-dark text-xl font-bold mb-2" data-i18n="contact.inquire_now.title">Quote now</h3>
@@ -391,7 +391,7 @@ eleventyComputed:
     </footer>
 
     <!-- Floating WhatsApp -->
-    <a href="https://wa.me/8615899648898" target="_blank" class="fixed bottom-6 right-6 z-50 bg-brand-accent hover:bg-brand-hover text-white rounded-full p-4 shadow-lg flex items-center justify-center transition transform hover:scale-110 animate-bounce-slow">
+    <a href="https://wa.me/8615899648898" target="_blank" class="fixed bottom-6 right-6 z-50 bg-brand-accent hover:bg-brand-hover text-white rounded-full p-4 shadow-lg flex items-center justify-center transition transform hover:scale-105">
         <i class="fa-brands fa-whatsapp text-4xl"></i>
     </a>
 
@@ -658,10 +658,5 @@ eleventyComputed:
             applyContactPrefill();
         }
     </script>
-    
-    <style>
-        @keyframes bounce-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-        .animate-bounce-slow { animation: bounce-slow 3s infinite; }
-    </style>
 </body>
 </html>

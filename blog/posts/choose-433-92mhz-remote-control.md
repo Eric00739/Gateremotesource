@@ -32,7 +32,7 @@ lang: en
 permalink: "/blog/{{ slug }}/index.html"
 ---
 
-<div class="highlight-card rounded-2xl p-6 border border-brand-accent/30 shadow-xl">
+<div class="highlight-card rounded-2xl p-6 border border-brand-accent/30 shadow-lg">
   <h2 class="text-xl font-bold text-white mb-3">Executive Summary</h2>
   <ul class="space-y-2 text-brand-light/80 list-disc list-inside">
     <li>Turn "range" into <strong>Link Margin (链路余量)</strong> and target a measurable 10-15 dB buffer.</li>

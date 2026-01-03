@@ -160,8 +160,8 @@ lang: en
             transition: all 0.3s ease;
         }
         .article-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
         }
         
         .filter-btn.active {
@@ -302,7 +302,7 @@ lang: en
                     </div>
                     
                     <!-- Search & Quick Actions Card -->
-                    <div class="bg-brand-dark/70 backdrop-blur border border-brand-dark/60 rounded-2xl p-6 shadow-xl space-y-6">
+                    <div class="bg-brand-dark/70 backdrop-blur border border-brand-dark/60 rounded-2xl p-6 shadow-lg space-y-6">
                         <div>
                             <h3 class="text-white font-bold text-lg mb-2">Search the library</h3>
                             <p class="text-brand-light/70 text-sm mb-4">Find guides by model, brand, frequency, or issue.</p>
@@ -373,7 +373,7 @@ lang: en
                         {% if pagination.pageNumber == 0 %}
                         {% set featured = collections.posts | getFeatured %}
                         {% if featured %}
-                        <article class="bg-brand-dark/70 backdrop-blur border border-brand-dark/60 rounded-2xl overflow-hidden shadow-xl article-card group" data-post-card data-title="{{ featured.data.title | escape }}" data-summary="{{ featured.data.summary | escape }}" data-category="{{ featured.data.category | slugify }}" data-tags="{{ featured.data.tags | contentTags | joinSlugList }}" data-brand="{{ featured.data.brand | joinSlugList }}" data-frequency="{{ featured.data.frequency | joinSlugList }}" data-scene="{{ featured.data.scene | joinSlugList }}">
+                        <article class="bg-brand-dark/70 backdrop-blur border border-brand-dark/60 rounded-2xl overflow-hidden shadow-lg article-card group" data-post-card data-title="{{ featured.data.title | escape }}" data-summary="{{ featured.data.summary | escape }}" data-category="{{ featured.data.category | slugify }}" data-tags="{{ featured.data.tags | contentTags | joinSlugList }}" data-brand="{{ featured.data.brand | joinSlugList }}" data-frequency="{{ featured.data.frequency | joinSlugList }}" data-scene="{{ featured.data.scene | joinSlugList }}">
                             <div class="grid grid-cols-1 md:grid-cols-2">
                                 <div class="relative">
                                     <img src="{{ featured.data.hero_image }}" alt="{{ featured.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -578,7 +578,7 @@ lang: en
                         </div>
 
                         <!-- Distributor CTA -->
-                        <div class="bg-gradient-to-br from-brand-accent to-brand-hover p-8 rounded-xl text-center text-white shadow-xl relative overflow-hidden">
+                        <div class="bg-brand-dark/70 backdrop-blur border border-brand-accent/30 p-8 rounded-xl text-center text-white shadow-lg relative overflow-hidden">
                             <div class="absolute top-0 right-0 w-32 h-32 bg-brand-light/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
                             <h3 class="font-bold text-xl mb-2 relative z-10" data-i18n="blog.become_distributor_title">Become a Distributor</h3>
                             <p class="text-sm opacity-90 mb-6 relative z-10" data-i18n="blog.become_distributor_description">Get access to wholesale pricing and marketing materials.</p>
@@ -593,7 +593,7 @@ lang: en
                             <div class="space-y-4">
                                 {% for post in latestPosts %}
                                 <a href="{{ post.url }}" class="flex gap-3 group">
-                                    <div class="w-16 h-16 bg-brand-dark/60 rounded-lg flex-shrink-0 overflow-hidden">
+                                    <div class="w-16 h-16 bg-brand-dark/60 backdrop-blur rounded-lg flex-shrink-0 overflow-hidden">
                                         <img loading="lazy" decoding="async" src="{{ post.data.hero_image }}" class="w-full h-full object-cover" alt="{{ post.data.title }}">
                                     </div>
                                     <div>
@@ -682,7 +682,7 @@ lang: en
     </footer>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/8615899648898" target="_blank" class="fixed bottom-6 right-6 z-50 bg-brand-accent hover:bg-brand-hover text-white rounded-full p-4 shadow-lg flex items-center justify-center transition transform hover:scale-110 animate-bounce-slow">
+    <a href="https://wa.me/8615899648898" target="_blank" class="fixed bottom-6 right-6 z-50 bg-brand-accent hover:bg-brand-hover text-white rounded-full p-4 shadow-lg flex items-center justify-center transition transform hover:scale-105">
         <i class="fa-brands fa-whatsapp text-4xl"></i>
     </a>
 
@@ -1028,7 +1028,7 @@ lang: en
             suggestionBox.classList.remove('hidden');
             suggestionBox.innerHTML = results.map((item) => `
                 <a href="${item.url}" class="block px-3 py-2 rounded-lg bg-brand-surface border border-brand-border hover:border-brand-accent transition">
-                    <p class="text-sm text-white font-semibold">${escapeHtml(item.title)}</p>
+                    <p class="text-sm text-brand-dark font-semibold">${escapeHtml(item.title)}</p>
                     <p class="text-xs text-brand-muted">${escapeHtml(item.summary)}</p>
                 </a>
             `).join('');
@@ -1152,10 +1152,5 @@ lang: en
             loadTranslations(initialLang);
         }
     </script>
-
-    <style>
-        @keyframes bounce-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-        .animate-bounce-slow { animation: bounce-slow 3s infinite; }
-    </style>
 </body>
 </html>
