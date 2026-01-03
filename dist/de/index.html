@@ -307,7 +307,7 @@
 
             width: 2px;
 
-            background-color: #475569;
+            background-color: #D7DDE5;
 
             z-index: 0;
 
@@ -325,9 +325,9 @@
 
         .compat-card {
 
-            border: 1px solid #475569;
+            border: 1px solid #D7DDE5;
 
-            background: #0B1F3B;
+            background: #FFFFFF;
 
             border-radius: 0.75rem;
 
@@ -335,7 +335,7 @@
 
         .compat-card .label {
 
-            color: #9ca3af;
+            color: #64748B;
 
             font-size: 0.75rem;
 
@@ -487,7 +487,7 @@
 
 </head>
 
-<body class="font-sans text-gray-300 bg-brand-dark selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="home">
+<body class="font-sans text-brand-light/80 bg-brand-dark selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="home">
 
 
 
@@ -665,7 +665,13 @@
 
         
 
-        <section class="min-h-screen flex items-center relative pt-24 bg-brand-surface">
+        <section class="min-h-screen flex items-center relative pt-24 hero-bg">
+            <div class="hero-video" aria-hidden="true">
+                <video autoplay muted loop playsinline poster="/assets/videos/V1.3-poster.jpg">
+                    <source src="/assets/videos/V1.3-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+                    <source src="/assets/videos/V1.3.mp4" type="video/mp4">
+                </video>
+            </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20 relative z-10">
 
@@ -674,27 +680,27 @@
                     
                     <div class="animate-fade-in-up">
 
-                        <div class="inline-flex items-center bg-brand-light border border-brand-accent/30 rounded-full px-4 py-1.5 mb-8 transition-all duration-200 ease-in-out">
+                        <div class="inline-flex items-center bg-brand-dark/60 border border-brand-accent/30 rounded-full px-4 py-1.5 mb-8 transition-all duration-200 ease-in-out">
 
                             <i class="fa-solid fa-check-circle text-brand-accent mr-2"></i>
 
-                            <span class="text-brand-dark font-semibold text-sm tracking-wide uppercase" data-i18n="hero.badge">For Garage Door &amp; Gate Professionals</span>
+                            <span class="text-brand-light font-semibold text-sm tracking-wide uppercase" data-i18n="hero.badge">For Garage Door &amp; Gate Professionals</span>
 
                         </div>
 
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-dark leading-[1.2] mb-6">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.2] mb-6">
 
                             Factory-direct B2B Gate & Garage Remotes
 
                         </h1>
 
-                        <p class="text-lg text-brand-muted mb-4 leading-relaxed max-w-2xl">
+                        <p class="text-lg text-brand-light/80 mb-4 leading-relaxed max-w-2xl">
 
                             For locksmiths, installers, and distributors who need OEM-compatible remotes with higher margins.
 
                         </p>
 
-                        <p class="text-sm text-brand-muted mb-6 max-w-2xl">
+                        <p class="text-sm text-brand-light/70 mb-6 max-w-2xl">
 
                             10+ years RF manufacturing - 48h repeat dispatch - CE/FCC docs on file - DAP/DDP EU/US/SA/AU available.
 
@@ -706,7 +712,7 @@
 
                             <i class="fa-solid fa-industry text-brand-accent mt-1"></i>
 
-                            <p class="text-brand-dark text-sm">Factory-direct pricing keeps your projects profitable.</p>
+                            <p class="text-brand-light/90 text-sm">Factory-direct pricing keeps your projects profitable.</p>
 
                         </div>
 
@@ -714,7 +720,7 @@
 
                             <i class="fa-solid fa-sitemap text-brand-accent mt-1"></i>
 
-                            <p class="text-brand-dark text-sm">60+ OEM models covered (LiftMaster, Nice, Came, Hormann).</p>
+                            <p class="text-brand-light/90 text-sm">60+ OEM models covered (LiftMaster, Nice, Came, Hormann).</p>
 
                         </div>
 
@@ -722,13 +728,13 @@
 
                             <i class="fa-solid fa-rocket text-brand-accent mt-1"></i>
 
-                            <p class="text-brand-dark text-sm">48h sample shipping &lt;0.5% defect rate.</p>
+                            <p class="text-brand-light/90 text-sm">48h sample shipping &lt;0.5% defect rate.</p>
 
                         </div>
 
                     </div>
 
-                        <p class="text-xs text-brand-muted mb-6">Authorized replacement & programming workflow for installers; compatibility verified per OEM receiver series; distributor-protected B2B supply (end-users not supported).</p>
+                        <p class="text-xs text-brand-light/70 mb-6">Authorized replacement & programming workflow for installers; compatibility verified per OEM receiver series; distributor-protected B2B supply (end-users not supported).</p>
 
                         <div class="flex flex-col sm:flex-row gap-5">
 
@@ -738,7 +744,7 @@
 
                             </a>
 
-                            <a href="/catalog/" class="flex items-center justify-center gap-3 border border-brand-accent text-brand-accent hover:border-brand-hover hover:text-brand-hover hover:bg-brand-light/50 text-center px-10 py-4 rounded-lg font-bold text-lg transition-all duration-200 ease-in-out" data-cta="hero_download_catalog">
+                            <a href="/catalog/" class="flex items-center justify-center gap-3 border border-brand-accent text-brand-accent hover:border-brand-hover hover:text-brand-hover hover:bg-brand-light/10 text-center px-10 py-4 rounded-lg font-bold text-lg transition-all duration-200 ease-in-out" data-cta="hero_download_catalog">
 
                                 <i class="fa-solid fa-file-pdf text-2xl"></i>
 
@@ -748,19 +754,19 @@
 
                         </div>
 
-                        <p class="text-sm text-brand-muted mt-3">MOQ 50pcs | T/T 30/70 | 48h dispatch on repeats | Freight: FOB/DAP/DDP EU/US/SA/AU.</p>
+                        <p class="text-sm text-brand-light/70 mt-3">MOQ 50pcs | T/T 30/70 | 48h dispatch on repeats | Freight: FOB/DAP/DDP EU/US/SA/AU.</p>
 
                         <div class="flex flex-wrap gap-3 mt-6">
 
-                            <span class="bg-brand-light text-brand-accent px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide border border-brand-accent/20">Locksmiths</span>
+                            <span class="bg-brand-light/10 text-brand-light px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide border border-brand-light/20">Locksmiths</span>
 
-                            <span class="bg-brand-light text-brand-accent px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide border border-brand-accent/20">Gate/Garage Installers</span>
+                            <span class="bg-brand-light/10 text-brand-light px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide border border-brand-light/20">Gate/Garage Installers</span>
 
-                            <span class="bg-brand-light text-brand-accent px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide border border-brand-accent/20">Distributors</span>
+                            <span class="bg-brand-light/10 text-brand-light px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide border border-brand-light/20">Distributors</span>
 
                         </div>
 
-                        <p class="text-sm text-brand-muted mt-3 max-w-2xl">Gate remote manufacturer in Dongguan supporting European, US, South American, and Australian distributors of 433.92MHz remotes and Nice/Came compatible remotes across Europe.</p>
+                        <p class="text-sm text-brand-light/70 mt-3 max-w-2xl">Gate remote manufacturer in Dongguan supporting European, US, South American, and Australian distributors of 433.92MHz remotes and Nice/Came compatible remotes across Europe.</p>
 
                     </div>
 
@@ -782,7 +788,7 @@
 
             </div>
 
-            <a href="#" onclick="document.getElementById('products-preview').scrollIntoView({behavior: 'smooth'}); return false;" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-brand-muted hover:text-brand-accent cursor-pointer p-4 transition-colors duration-200 ease-in-out">
+            <a href="#" onclick="document.getElementById('products-preview').scrollIntoView({behavior: 'smooth'}); return false;" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-brand-light/70 hover:text-brand-accent cursor-pointer p-4 transition-colors duration-200 ease-in-out">
 
                 <i class="fa-solid fa-chevron-down text-3xl"></i>
 
@@ -794,21 +800,21 @@
 
         
 
-        <section class="bg-brand-dark border-b border-gray-800">
+        <section class="bg-brand-dark border-b border-brand-dark/60">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div class="grid grid-cols-2 md:grid-cols-5 gap-4 py-8 text-center text-sm font-semibold text-white">
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4 py-8 text-center text-sm font-semibold text-brand-dark">
 
-                    <div class="bg-brand-surface/60 border border-gray-800 rounded-xl py-4">10+ years RF experience</div>
+                    <div class="bg-brand-surface/80 border border-brand-border rounded-xl py-4">10+ years RF experience</div>
 
-                    <div class="bg-brand-surface/60 border border-gray-800 rounded-xl py-4">60+ OEM models</div>
+                    <div class="bg-brand-surface/80 border border-brand-border rounded-xl py-4">60+ OEM models</div>
 
-                    <div class="bg-brand-surface/60 border border-gray-800 rounded-xl py-4">500k+ remotes/year</div>
+                    <div class="bg-brand-surface/80 border border-brand-border rounded-xl py-4">500k+ remotes/year</div>
 
-                    <div class="bg-brand-surface/60 border border-gray-800 rounded-xl py-4">Defect rate &lt;0.5%</div>
+                    <div class="bg-brand-surface/80 border border-brand-border rounded-xl py-4">Defect rate &lt;0.5%</div>
 
-                    <div class="bg-brand-surface/60 border border-gray-800 rounded-xl py-4">48h sample shipping</div>
+                    <div class="bg-brand-surface/80 border border-brand-border rounded-xl py-4">48h sample shipping</div>
 
                 </div>
 
@@ -820,7 +826,7 @@
 
         
 
-        <div id="products-preview" class="bg-brand-surface border-b border-gray-800">
+        <div id="products-preview" class="bg-brand-surface border-b border-brand-border">
 
             <div class="max-w-7xl mx-auto px-4 py-10">
 
@@ -886,7 +892,7 @@
 
                     <h2 class="text-4xl md:text-5xl font-bold text-white mb-6" data-i18n="inventory.title">The &quot;Must-Have&quot; Inventory</h2>
 
-                    <p class="text-gray-400 max-w-2xl mx-auto text-lg" data-i18n="inventory.subtitle">Essential tools for every locksmith and gate automation installer.</p>
+                    <p class="text-brand-light/70 max-w-2xl mx-auto text-lg" data-i18n="inventory.subtitle">Essential tools for every locksmith and gate automation installer.</p>
 
                 </div>
 
@@ -894,11 +900,11 @@
 
                     <div class="bg-brand-surface rounded-2xl border border-brand-border hover:border-brand-accent transition-all duration-200 ease-in-out group overflow-hidden cursor-pointer hover:shadow-md">
 
-                        <div class="aspect-square bg-gray-900 relative flex items-center justify-center p-4">
+                        <div class="aspect-square bg-brand-light relative flex items-center justify-center p-4">
 
-                            <div class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded shadow-lg z-10" data-i18n="inventory.card1.badge">High Profit</div>
+                            <div class="absolute top-4 right-4 bg-brand-success text-white text-xs font-bold px-3 py-1 rounded shadow-lg z-10" data-i18n="inventory.card1.badge">High Profit</div>
 
-                            <div class="bg-gray-900 rounded-lg p-8 flex items-center justify-center w-full h-full">
+                            <div class="bg-brand-light rounded-lg p-8 flex items-center justify-center w-full h-full">
 
                                 <picture class="w-full h-full">
 
@@ -918,21 +924,21 @@
 
                             <h3 class="text-2xl font-bold text-brand-dark mb-2" data-i18n="inventory.card1.title">Aftermarket Compatibility</h3>
 
-                            <p class="text-gray-400 text-sm mb-4 line-clamp-2" data-i18n="inventory.card1.description">High-margin alternatives compatible with top brands.</p>
+                            <p class="text-brand-muted text-sm mb-4 line-clamp-2" data-i18n="inventory.card1.description">High-margin alternatives compatible with top brands.</p>
 
-                            <div class="flex flex-wrap gap-2 mb-4 text-xs text-white">
+                            <div class="flex flex-wrap gap-2 mb-4 text-xs text-brand-light">
 
-                                <span class="bg-gray-700 px-2 py-1 rounded">LiftMaster</span>
+                                <span class="bg-brand-dark px-2 py-1 rounded">LiftMaster</span>
 
-                                <span class="bg-gray-700 px-2 py-1 rounded">Chamberlain</span>
+                                <span class="bg-brand-dark px-2 py-1 rounded">Chamberlain</span>
 
-                                <span class="bg-gray-700 px-2 py-1 rounded">Nice</span>
+                                <span class="bg-brand-dark px-2 py-1 rounded">Nice</span>
 
-                                <span class="bg-gray-700 px-2 py-1 rounded">Came</span>
+                                <span class="bg-brand-dark px-2 py-1 rounded">Came</span>
 
                             </div>
 
-                            <span class="text-brand-accent font-bold hover:text-white transition" data-i18n="inventory.card1.cta">See Compatibility List -&gt;</span>
+                            <span class="text-brand-accent font-bold hover:text-brand-hover transition" data-i18n="inventory.card1.cta">See Compatibility List -&gt;</span>
 
                         </div>
 
@@ -940,11 +946,11 @@
 
                     <div class="bg-brand-surface rounded-2xl border border-brand-border hover:border-brand-accent transition-all duration-200 ease-in-out group overflow-hidden cursor-pointer hover:shadow-md">
 
-                        <div class="aspect-square bg-gray-900 relative flex items-center justify-center p-4">
+                        <div class="aspect-square bg-brand-light relative flex items-center justify-center p-4">
 
                             <div class="absolute top-4 right-4 bg-brand-accent text-white text-xs font-bold px-3 py-1 rounded shadow-lg z-10" data-i18n="inventory.card2.badge">The Fixer</div>
 
-                            <div class="bg-gray-900 rounded-lg p-8 flex items-center justify-center w-full h-full">
+                            <div class="bg-brand-light rounded-lg p-8 flex items-center justify-center w-full h-full">
 
                                 <picture class="w-full h-full">
 
@@ -964,9 +970,9 @@
 
                             <h3 class="text-2xl font-bold text-brand-dark mb-2" data-i18n="inventory.card2.title">Universal Receivers</h3>
 
-                            <p class="text-gray-400 text-sm mb-6 line-clamp-2" data-i18n="inventory.card2.description">Solve legacy gate issues with 433/868MHz auto-scan modules.</p>
+                            <p class="text-brand-muted text-sm mb-6 line-clamp-2" data-i18n="inventory.card2.description">Solve legacy gate issues with 433/868MHz auto-scan modules.</p>
 
-                            <span class="text-brand-accent font-bold hover:text-white transition" data-i18n="inventory.card2.cta">View Specs -&gt;</span>
+                            <span class="text-brand-accent font-bold hover:text-brand-hover transition" data-i18n="inventory.card2.cta">View Specs -&gt;</span>
 
                         </div>
 
@@ -974,11 +980,11 @@
 
                     <div class="bg-brand-surface rounded-2xl border border-brand-border hover:border-brand-accent transition-all duration-200 ease-in-out group overflow-hidden cursor-pointer hover:shadow-md">
 
-                        <div class="aspect-square bg-gray-900 relative flex items-center justify-center p-4">
+                        <div class="aspect-square bg-brand-light relative flex items-center justify-center p-4">
 
-                            <div class="absolute top-4 right-4 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded shadow-lg z-10" data-i18n="inventory.card3.badge">Multi-Freq</div>
+                            <div class="absolute top-4 right-4 bg-brand-hover text-white text-xs font-bold px-3 py-1 rounded shadow-lg z-10" data-i18n="inventory.card3.badge">Multi-Freq</div>
 
-                            <div class="bg-gray-900 rounded-lg p-8 flex items-center justify-center w-full h-full">
+                            <div class="bg-brand-light rounded-lg p-8 flex items-center justify-center w-full h-full">
 
                                 <picture class="w-full h-full">
 
@@ -998,9 +1004,9 @@
 
                             <h3 class="text-2xl font-bold text-brand-dark mb-2" data-i18n="inventory.card3.title">Self-Learning Remotes</h3>
 
-                            <p class="text-gray-400 text-sm mb-6 line-clamp-2" data-i18n="inventory.card3.description">Clone fixed-code remotes in seconds. No tools required.</p>
+                            <p class="text-brand-muted text-sm mb-6 line-clamp-2" data-i18n="inventory.card3.description">Clone fixed-code remotes in seconds. No tools required.</p>
 
-                            <span class="text-brand-accent font-bold hover:text-white transition" data-i18n="inventory.card3.cta">Watch Demo -&gt;</span>
+                            <span class="text-brand-accent font-bold hover:text-brand-hover transition" data-i18n="inventory.card3.cta">Watch Demo -&gt;</span>
 
                         </div>
 
@@ -1010,7 +1016,7 @@
 
 
 
-                <div class="bg-gradient-to-r from-gray-900 to-brand-dark rounded-2xl p-10 border border-brand-border relative overflow-hidden group">
+                <div class="bg-gradient-to-r from-brand-dark to-brand-dark rounded-2xl p-10 border border-brand-dark/60 relative overflow-hidden group">
 
                     <div class="absolute top-0 right-0 w-64 h-64 bg-brand-accent/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
 
@@ -1022,23 +1028,23 @@
 
                             <h3 class="text-3xl font-bold text-white mb-4" data-i18n="inventory.supported_models">500+ Supported Models</h3>
 
-                            <p class="text-gray-400 mb-6" data-i18n="inventory.database_description">We provide a comprehensive Excel list matching original part numbers to our compatible models.</p>
+                            <p class="text-brand-light/70 mb-6" data-i18n="inventory.database_description">We provide a comprehensive Excel list matching original part numbers to our compatible models.</p>
 
                             <div class="flex flex-wrap gap-3">
 
-                                <span class="bg-gray-700 text-white text-xs px-3 py-1 rounded-full">HORMANN Compatible</span>
+                                <span class="bg-brand-dark/60 text-brand-light text-xs px-3 py-1 rounded-full">HORMANN Compatible</span>
 
-                                <span class="bg-gray-700 text-white text-xs px-3 py-1 rounded-full">Marantec Compatible</span>
+                                <span class="bg-brand-dark/60 text-brand-light text-xs px-3 py-1 rounded-full">Marantec Compatible</span>
 
-                                <span class="bg-gray-700 text-white text-xs px-3 py-1 rounded-full">Faac Compatible</span>
+                                <span class="bg-brand-dark/60 text-brand-light text-xs px-3 py-1 rounded-full">Faac Compatible</span>
 
-                                <span class="bg-gray-700 text-white text-xs px-3 py-1 rounded-full">CAME Compatible</span>
+                                <span class="bg-brand-dark/60 text-brand-light text-xs px-3 py-1 rounded-full">CAME Compatible</span>
 
-                                <span class="bg-gray-700 text-white text-xs px-3 py-1 rounded-full">BFT Compatible</span>
+                                <span class="bg-brand-dark/60 text-brand-light text-xs px-3 py-1 rounded-full">BFT Compatible</span>
 
-                                <span class="bg-gray-700 text-white text-xs px-3 py-1 rounded-full">Sommer Compatible</span>
+                                <span class="bg-brand-dark/60 text-brand-light text-xs px-3 py-1 rounded-full">Sommer Compatible</span>
 
-                                <span class="bg-gray-700 text-white text-xs px-3 py-1 rounded-full">DITEC Compatible</span>
+                                <span class="bg-brand-dark/60 text-brand-light text-xs px-3 py-1 rounded-full">DITEC Compatible</span>
 
                             </div>
 
@@ -1046,7 +1052,7 @@
 
                         <div class="text-center md:text-right">
 
-                            <a href="/contact/" class="bg-white text-brand-dark font-bold px-8 py-4 rounded-xl hover:bg-brand-accent hover:text-white transition shadow-lg transform hover:scale-105 inline-block">
+                            <a href="/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-brand-surface font-bold px-8 py-4 rounded-xl transition shadow-lg transform hover:scale-105 inline-block">
 
                                 <i class="fa-solid fa-download mr-2"></i> <span data-i18n="inventory.request_full_list">Request Full List</span>
 
@@ -1064,27 +1070,13 @@
 
                         <p class="label mb-1">OEM Model</p>
 
-                        <h4 class="text-white font-bold text-lg">Nice FLO2R</h4>
+                        <h4 class="text-brand-dark font-bold text-lg">Nice FLO2R</h4>
 
-                        <p class="text-gray-300 text-sm mt-1">Our Compatible: <span class="text-brand-accent font-semibold">GRS-FLO2</span></p>
+                        <p class="text-brand-muted text-sm mt-1">Our Compatible: <span class="text-brand-accent font-semibold">GRS-FLO2</span></p>
 
-                        <p class="text-gray-400 text-sm">Frequency: 433.92MHz</p>
+                        <p class="text-brand-muted text-sm">Frequency: 433.92MHz</p>
 
-                        <p class="text-gray-400 text-sm">Fixed code, metal frame, high range</p>
-
-                    </div>
-
-                    <div class="compat-card p-5 border border-brand-border">
-
-                        <p class="label mb-1">OEM Model</p>
-
-                        <h4 class="text-white font-bold text-lg">CAME TOP432EV</h4>
-
-                        <p class="text-gray-300 text-sm mt-1">Our Compatible: <span class="text-brand-accent font-semibold">GRS-CAME2</span></p>
-
-                        <p class="text-gray-400 text-sm">Frequency: 433.92MHz</p>
-
-                        <p class="text-gray-400 text-sm">Installer programming in under 10s</p>
+                        <p class="text-brand-muted text-sm">Fixed code, metal frame, high range</p>
 
                     </div>
 
@@ -1092,13 +1084,13 @@
 
                         <p class="label mb-1">OEM Model</p>
 
-                        <h4 class="text-white font-bold text-lg">HORMANN HSE2 BS</h4>
+                        <h4 class="text-brand-dark font-bold text-lg">CAME TOP432EV</h4>
 
-                        <p class="text-gray-300 text-sm mt-1">Our Compatible: <span class="text-brand-accent font-semibold">GRS-HM868</span></p>
+                        <p class="text-brand-muted text-sm mt-1">Our Compatible: <span class="text-brand-accent font-semibold">GRS-CAME2</span></p>
 
-                        <p class="text-gray-400 text-sm">Frequency: 868.3MHz</p>
+                        <p class="text-brand-muted text-sm">Frequency: 433.92MHz</p>
 
-                        <p class="text-gray-400 text-sm">Rolling code, blue button</p>
+                        <p class="text-brand-muted text-sm">Installer programming in under 10s</p>
 
                     </div>
 
@@ -1106,13 +1098,27 @@
 
                         <p class="label mb-1">OEM Model</p>
 
-                        <h4 class="text-white font-bold text-lg">LIFTMASTER 971LM</h4>
+                        <h4 class="text-brand-dark font-bold text-lg">HORMANN HSE2 BS</h4>
 
-                        <p class="text-gray-300 text-sm mt-1">Our Compatible: <span class="text-brand-accent font-semibold">GRS-LM390</span></p>
+                        <p class="text-brand-muted text-sm mt-1">Our Compatible: <span class="text-brand-accent font-semibold">GRS-HM868</span></p>
 
-                        <p class="text-gray-400 text-sm">Frequency: 390MHz</p>
+                        <p class="text-brand-muted text-sm">Frequency: 868.3MHz</p>
 
-                        <p class="text-gray-400 text-sm">Includes visor clip</p>
+                        <p class="text-brand-muted text-sm">Rolling code, blue button</p>
+
+                    </div>
+
+                    <div class="compat-card p-5 border border-brand-border">
+
+                        <p class="label mb-1">OEM Model</p>
+
+                        <h4 class="text-brand-dark font-bold text-lg">LIFTMASTER 971LM</h4>
+
+                        <p class="text-brand-muted text-sm mt-1">Our Compatible: <span class="text-brand-accent font-semibold">GRS-LM390</span></p>
+
+                        <p class="text-brand-muted text-sm">Frequency: 390MHz</p>
+
+                        <p class="text-brand-muted text-sm">Includes visor clip</p>
 
                     </div>
 
@@ -1126,7 +1132,7 @@
 
         
 
-        <section class="py-16 bg-brand-surface border-t border-b border-gray-800">
+        <section class="py-16 bg-brand-surface border-t border-b border-brand-border">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -1138,7 +1144,7 @@
 
                         <h3 class="text-3xl font-bold text-brand-dark leading-tight">Price List & Sample Kit in One Secure Entry</h3>
 
-                        <p class="text-gray-400">Built for wholesale 433MHz remote control European, US, South American, and Australian distributors who need fast access to Nice/Came compatible remotes across Europe.</p>
+                        <p class="text-brand-muted">Built for wholesale 433MHz remote control European, US, South American, and Australian distributors who need fast access to Nice/Came compatible remotes across Europe.</p>
 
                         <a href="/contact/" class="inline-flex items-center gap-2 bg-brand-cta hover:bg-brand-ctaHover text-white px-6 py-3 rounded-lg font-bold transition shadow-lg shadow-amber-400/40" data-cta="portal_access">
 
@@ -1164,9 +1170,9 @@
 
                             <h4 class="text-brand-dark font-bold text-xl mb-2">Live Margin-Ready Pricing</h4>
 
-                            <p class="text-gray-400 text-sm mb-3">Download current FOB Dongguan sheets with distributor tiers and suggested UK retail.</p>
+                            <p class="text-brand-muted text-sm mb-3">Download current FOB Dongguan sheets with distributor tiers and suggested UK retail.</p>
 
-                            <button onclick="navigateTo('contact')" class="text-brand-accent font-bold hover:text-white text-sm" data-cta="portal_price_list">Get Updated Sheet</button>
+                            <button onclick="navigateTo('contact')" class="text-brand-accent font-bold hover:text-brand-hover text-sm" data-cta="portal_price_list">Get Updated Sheet</button>
 
                         </div>
 
@@ -1174,7 +1180,7 @@
 
                             <div class="flex items-center gap-3 mb-3">
 
-                                <div class="h-10 w-10 rounded-full bg-amber-400/20 flex items-center justify-center text-amber-300"><i class="fa-solid fa-box-open"></i></div>
+                                <div class="h-10 w-10 rounded-full bg-brand-cta/15 flex items-center justify-center text-brand-cta"><i class="fa-solid fa-box-open"></i></div>
 
                                 <p class="label">Sample Kit</p>
 
@@ -1182,9 +1188,9 @@
 
                             <h4 class="text-brand-dark font-bold text-xl mb-2">Pre-Loaded Demo Box</h4>
 
-                            <p class="text-gray-400 text-sm mb-3">Includes Nice/Came compatible remotes and universal receivers ready for UK site demos.</p>
+                            <p class="text-brand-muted text-sm mb-3">Includes Nice/Came compatible remotes and universal receivers ready for UK site demos.</p>
 
-                            <a href="/contact/" class="text-brand-cta font-bold hover:text-white text-sm" data-cta="portal_sample_kit">Request Sample Kit</a>
+                            <a href="/contact/" class="text-brand-cta font-bold hover:text-brand-ctaHover text-sm" data-cta="portal_sample_kit">Request Sample Kit</a>
 
                         </div>
 
@@ -1200,7 +1206,7 @@
 
                 
 
-        <section id="compatibility" class="py-24 bg-brand-surface border-t border-gray-800">
+        <section id="compatibility" class="py-24 bg-brand-surface border-t border-brand-border">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -1208,7 +1214,7 @@
 
                     <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-4" data-i18n="factory_trust.title">Why Trust GateRemoteSource</h2>
 
-                    <p class="text-gray-400 max-w-2xl mx-auto text-lg" data-i18n="factory_trust.subtitle">We are a factory, not a dropshipper.</p>
+                    <p class="text-brand-muted max-w-2xl mx-auto text-lg" data-i18n="factory_trust.subtitle">We are a factory, not a dropshipper.</p>
 
                 </div>
 
@@ -1222,7 +1228,7 @@
 
                             <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/10 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
 
-                            <figcaption class="absolute bottom-3 left-3 text-xs font-semibold text-brand-dark bg-black/40 px-2 py-1 rounded">ISO9001 Certificate</figcaption>
+                            <figcaption class="absolute bottom-3 left-3 text-xs font-semibold text-brand-light bg-black/40 px-2 py-1 rounded">ISO9001 Certificate</figcaption>
 
                         </figure>
 
@@ -1232,7 +1238,7 @@
 
                             <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/10 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
 
-                            <figcaption class="absolute bottom-3 left-3 text-xs font-semibold text-brand-dark bg-black/40 px-2 py-1 rounded">SMT Line</figcaption>
+                            <figcaption class="absolute bottom-3 left-3 text-xs font-semibold text-brand-light bg-black/40 px-2 py-1 rounded">SMT Line</figcaption>
 
                         </figure>
 
@@ -1242,7 +1248,7 @@
 
                             <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/10 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
 
-                            <figcaption class="absolute bottom-3 left-3 text-xs font-semibold text-brand-dark bg-black/40 px-2 py-1 rounded">QC & Verification</figcaption>
+                            <figcaption class="absolute bottom-3 left-3 text-xs font-semibold text-brand-light bg-black/40 px-2 py-1 rounded">QC & Verification</figcaption>
 
                         </figure>
 
@@ -1260,7 +1266,7 @@
 
                             <h3 class="text-xl font-bold text-brand-dark mb-2" data-i18n="factory_trust.iso_certified.title">ISO9001 Certified Factory</h3>
 
-                            <p class="text-gray-400 text-sm" data-i18n="factory_trust.iso_certified.description">Quality management systems certified</p>
+                            <p class="text-brand-muted text-sm" data-i18n="factory_trust.iso_certified.description">Quality management systems certified</p>
 
                             <a href="/contact#cert-request" class="text-[10px] text-brand-accent hover:underline mt-2 block">Request ISO Certificate -></a>
 
@@ -1276,7 +1282,7 @@
 
                             <h3 class="text-xl font-bold text-brand-dark mb-2" data-i18n="factory_trust.authentic_components.title">Authentic Microchip/NXP Components</h3>
 
-                            <p class="text-gray-400 text-sm" data-i18n="factory_trust.authentic_components.description">Genuine chips for reliable performance</p>
+                            <p class="text-brand-muted text-sm" data-i18n="factory_trust.authentic_components.description">Genuine chips for reliable performance</p>
 
                         </div>
 
@@ -1290,7 +1296,7 @@
 
                             <h3 class="text-xl font-bold text-brand-dark mb-2" data-i18n="factory_trust.aging_test.title">100% Aging Test Room</h3>
 
-                            <p class="text-gray-400 text-sm" data-i18n="factory_trust.aging_test.description">All products undergo rigorous testing</p>
+                            <p class="text-brand-muted text-sm" data-i18n="factory_trust.aging_test.description">All products undergo rigorous testing</p>
 
                         </div>
 
@@ -1304,7 +1310,7 @@
 
                             <h3 class="text-xl font-bold text-brand-dark mb-2" data-i18n="factory_trust.production_base.title">4,000sqm Production Base</h3>
 
-                            <p class="text-gray-400 text-sm" data-i18n="factory_trust.production_base.description">Large-scale manufacturing capacity</p>
+                            <p class="text-brand-muted text-sm" data-i18n="factory_trust.production_base.description">Large-scale manufacturing capacity</p>
 
                         </div>
 
@@ -1318,7 +1324,7 @@
 
                             <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/10 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
 
-                            <figcaption class="absolute bottom-3 left-3 text-xs font-semibold text-white bg-black/40 px-2 py-1 rounded">Aging/Test Room</figcaption>
+                            <figcaption class="absolute bottom-3 left-3 text-xs font-semibold text-brand-light bg-black/40 px-2 py-1 rounded">Aging/Test Room</figcaption>
 
                         </figure>
 
@@ -1328,7 +1334,7 @@
 
                             <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/10 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
 
-                            <figcaption class="absolute bottom-3 left-3 text-xs font-semibold text-white bg-black/40 px-2 py-1 rounded">Assembly Line</figcaption>
+                            <figcaption class="absolute bottom-3 left-3 text-xs font-semibold text-brand-light bg-black/40 px-2 py-1 rounded">Assembly Line</figcaption>
 
                         </figure>
 
@@ -1338,7 +1344,7 @@
 
                             <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/10 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
 
-                            <figcaption class="absolute bottom-3 left-3 text-xs font-semibold text-white bg-black/40 px-2 py-1 rounded">Warehouse</figcaption>
+                            <figcaption class="absolute bottom-3 left-3 text-xs font-semibold text-brand-light bg-black/40 px-2 py-1 rounded">Warehouse</figcaption>
 
                         </figure>
 
@@ -1354,7 +1360,7 @@
 
         
 
-        <section class="py-24 bg-brand-dark border-t border-gray-800">
+        <section class="py-24 bg-brand-dark border-t border-brand-dark/60">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -1362,21 +1368,21 @@
 
                     <h2 class="text-4xl md:text-5xl font-bold text-white mb-4" data-i18n="testimonials.title">What Our B2B Partners Say</h2>
 
-                    <p class="text-gray-400 max-w-2xl mx-auto text-lg" data-i18n="testimonials.subtitle">Real feedback from locksmiths and distributors worldwide.</p>
+                    <p class="text-brand-light/70 max-w-2xl mx-auto text-lg" data-i18n="testimonials.subtitle">Real feedback from locksmiths and distributors worldwide.</p>
 
                 </div>
 
                 <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
 
-                    <p class="text-gray-400 text-sm">Wholesale distributors across EU, Americas, and Middle East on brand coverage, ease, reliability, and service.</p>
+                    <p class="text-brand-light/70 text-sm">Wholesale distributors across EU, Americas, and Middle East on brand coverage, ease, reliability, and service.</p>
 
                     <div class="flex items-center gap-3">
 
-                        <span id="testimonial-page-indicator" class="text-gray-400 text-sm">1/2</span>
+                        <span id="testimonial-page-indicator" class="text-brand-light/70 text-sm">1/2</span>
 
                         <div class="flex gap-2">
 
-                            <button id="testimonial-prev" type="button" class="px-3 py-2 rounded-lg border border-brand-border text-gray-200 hover:text-white hover:border-brand-accent transition text-sm flex items-center gap-2"><i class="fa-solid fa-chevron-left text-xs"></i> Prev</button>
+                            <button id="testimonial-prev" type="button" class="px-3 py-2 rounded-lg border border-brand-light/30 text-brand-light/80 hover:text-white hover:border-brand-accent transition text-sm flex items-center gap-2"><i class="fa-solid fa-chevron-left text-xs"></i> Prev</button>
 
                             <button id="testimonial-next" type="button" class="px-3 py-2 rounded-lg bg-brand-accent text-white hover:bg-brand-hover transition text-sm flex items-center gap-2">Next <i class="fa-solid fa-chevron-right text-xs"></i></button>
 
@@ -1396,13 +1402,13 @@
 
                                 <div class="flex items-center gap-3">
 
-                                    <span class="text-xs font-bold bg-gray-700 text-white px-2 py-1 rounded">DE</span>
+                                    <span class="text-xs font-bold bg-brand-dark text-brand-light px-2 py-1 rounded">DE</span>
 
                                     <div>
 
                                         <p class="text-brand-dark font-semibold">Anke Fischer</p>
 
-                                        <p class="text-gray-400 text-xs">Germany - Wholesale Distributor</p>
+                                        <p class="text-brand-muted text-xs">Germany - Wholesale Distributor</p>
 
                                     </div>
 
@@ -1416,7 +1422,7 @@
 
                             </div>
 
-                            <p class="text-gray-300 mb-4 italic">"Authorized replacements cover nearly all LiftMaster/Nice jobs. Programming is simple enough that new techs handle it on the first call."</p>
+                            <p class="text-brand-muted mb-4 italic">"Authorized replacements cover nearly all LiftMaster/Nice jobs. Programming is simple enough that new techs handle it on the first call."</p>
 
                             <p class="text-xs text-brand-muted">Focus: verified compatibility + easy operation.</p>
 
@@ -1428,13 +1434,13 @@
 
                                 <div class="flex items-center gap-3">
 
-                                    <span class="text-xs font-bold bg-gray-700 text-white px-2 py-1 rounded">US</span>
+                                    <span class="text-xs font-bold bg-brand-dark text-brand-light px-2 py-1 rounded">US</span>
 
                                     <div>
 
                                         <p class="text-brand-dark font-semibold">Derrick Cole</p>
 
-                                        <p class="text-gray-400 text-xs">USA - Wholesale Distributor</p>
+                                        <p class="text-brand-muted text-xs">USA - Wholesale Distributor</p>
 
                                     </div>
 
@@ -1448,7 +1454,7 @@
 
                             </div>
 
-                            <p class="text-gray-300 mb-4 italic">"Receivers and remotes are consistent batch to batch - zero DOA in six months. Quality is reliable and installers trust the range."</p>
+                            <p class="text-brand-muted mb-4 italic">"Receivers and remotes are consistent batch to batch - zero DOA in six months. Quality is reliable and installers trust the range."</p>
 
                             <p class="text-xs text-brand-muted">Focus: quality reliability + stable RF performance.</p>
 
@@ -1460,13 +1466,13 @@
 
                                 <div class="flex items-center gap-3">
 
-                                    <span class="text-xs font-bold bg-gray-700 text-white px-2 py-1 rounded">BR</span>
+                                    <span class="text-xs font-bold bg-brand-dark text-brand-light px-2 py-1 rounded">BR</span>
 
                                     <div>
 
                                         <p class="text-brand-dark font-semibold">Joao Pereira</p>
 
-                                        <p class="text-gray-400 text-xs">Brazil - Wholesale Distributor</p>
+                                        <p class="text-brand-muted text-xs">Brazil - Wholesale Distributor</p>
 
                                     </div>
 
@@ -1480,7 +1486,7 @@
 
                             </div>
 
-                            <p class="text-gray-300 mb-4 italic">"Installer programming is quick and our service tickets dropped. Support responds within hours on programming questions."</p>
+                            <p class="text-brand-muted mb-4 italic">"Installer programming is quick and our service tickets dropped. Support responds within hours on programming questions."</p>
 
                             <p class="text-xs text-brand-muted">Focus: fast installer workflow + responsive service.</p>
 
@@ -1498,13 +1504,13 @@
 
                                 <div class="flex items-center gap-3">
 
-                                    <span class="text-xs font-bold bg-gray-700 text-white px-2 py-1 rounded">AE</span>
+                                    <span class="text-xs font-bold bg-brand-dark text-brand-light px-2 py-1 rounded">AE</span>
 
                                     <div>
 
                                         <p class="text-brand-dark font-semibold">Omar Haddad</p>
 
-                                        <p class="text-gray-400 text-xs">UAE - Wholesale Distributor</p>
+                                        <p class="text-brand-muted text-xs">UAE - Wholesale Distributor</p>
 
                                     </div>
 
@@ -1518,7 +1524,7 @@
 
                             </div>
 
-                            <p class="text-gray-300 mb-4 italic">"Compatibility by OEM receiver series is broad, and support is proactive with wiring diagrams for our installers."</p>
+                            <p class="text-brand-muted mb-4 italic">"Compatibility by OEM receiver series is broad, and support is proactive with wiring diagrams for our installers."</p>
 
                             <p class="text-xs text-brand-muted">Focus: brand coverage + localized service.</p>
 
@@ -1530,13 +1536,13 @@
 
                                 <div class="flex items-center gap-3">
 
-                                    <span class="text-xs font-bold bg-gray-700 text-white px-2 py-1 rounded">ES</span>
+                                    <span class="text-xs font-bold bg-brand-dark text-brand-light px-2 py-1 rounded">ES</span>
 
                                     <div>
 
                                         <p class="text-brand-dark font-semibold">Lucia Ramos</p>
 
-                                        <p class="text-gray-400 text-xs">Spain - Wholesale Distributor</p>
+                                        <p class="text-brand-muted text-xs">Spain - Wholesale Distributor</p>
 
                                     </div>
 
@@ -1550,7 +1556,7 @@
 
                             </div>
 
-                            <p class="text-gray-300 mb-4 italic">"Installers like the simple learn button flow; visits shortened because replacements program in under a minute."</p>
+                            <p class="text-brand-muted mb-4 italic">"Installers like the simple learn button flow; visits shortened because replacements program in under a minute."</p>
 
                             <p class="text-xs text-brand-muted">Focus: easy operation + time savings.</p>
 
@@ -1562,13 +1568,13 @@
 
                                 <div class="flex items-center gap-3">
 
-                                    <span class="text-xs font-bold bg-gray-700 text-white px-2 py-1 rounded">CL</span>
+                                    <span class="text-xs font-bold bg-brand-dark text-brand-light px-2 py-1 rounded">CL</span>
 
                                     <div>
 
                                         <p class="text-brand-dark font-semibold">Mateo Silva</p>
 
-                                        <p class="text-gray-400 text-xs">Chile - Wholesale Distributor</p>
+                                        <p class="text-brand-muted text-xs">Chile - Wholesale Distributor</p>
 
                                     </div>
 
@@ -1582,7 +1588,7 @@
 
                             </div>
 
-                            <p class="text-gray-300 mb-4 italic">"Receivers survive coastal humidity and keep working. After-sales swapped a batch label for us within a day ? service is on point."</p>
+                            <p class="text-brand-muted mb-4 italic">"Receivers survive coastal humidity and keep working. After-sales swapped a batch label for us within a day ? service is on point."</p>
 
                             <p class="text-xs text-brand-muted">Focus: durability + responsive service.</p>
 
@@ -1600,7 +1606,7 @@
 
         
 
-        <section class="py-24 bg-brand-dark border-t border-gray-800">
+        <section class="py-24 bg-brand-dark border-t border-brand-dark/60">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -1632,7 +1638,7 @@
 
         
 
-        <section class="py-24 bg-brand-surface border-t border-gray-800">
+        <section class="py-24 bg-brand-surface border-t border-brand-border">
 
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -1650,115 +1656,115 @@
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-                            <details class="group bg-brand-dark p-5 rounded-xl border border-gray-700 hover:border-brand-accent transition">
+                            <details class="group bg-brand-dark p-5 rounded-xl border border-brand-dark/60 hover:border-brand-accent transition">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
 
                                     <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>Do you sell to end users?</span>
 
-                                    <i class="fa-solid fa-chevron-down text-xs text-gray-400 group-open:rotate-180 transition-transform"></i>
+                                    <i class="fa-solid fa-chevron-down text-xs text-brand-light/60 group-open:rotate-180 transition-transform"></i>
 
                                 </summary>
 
-                                <p class="text-gray-400 mt-2 pl-7">No. We are a B2B manufacturer and supply locksmiths, installers, and distributors only.</p>
+                                <p class="text-brand-light/70 mt-2 pl-7">No. We are a B2B manufacturer and supply locksmiths, installers, and distributors only.</p>
 
                             </details>
 
-                            <details class="group bg-brand-dark p-5 rounded-xl border border-gray-700 hover:border-brand-accent transition">
+                            <details class="group bg-brand-dark p-5 rounded-xl border border-brand-dark/60 hover:border-brand-accent transition">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
 
                                     <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>What is your MOQ?</span>
 
-                                    <i class="fa-solid fa-chevron-down text-xs text-gray-400 group-open:rotate-180 transition-transform"></i>
+                                    <i class="fa-solid fa-chevron-down text-xs text-brand-light/60 group-open:rotate-180 transition-transform"></i>
 
                                 </summary>
 
-                                <p class="text-gray-400 mt-2 pl-7">50 pcs.</p>
+                                <p class="text-brand-light/70 mt-2 pl-7">50 pcs.</p>
 
                             </details>
 
-                            <details class="group bg-brand-dark p-5 rounded-xl border border-gray-700 hover:border-brand-accent transition">
+                            <details class="group bg-brand-dark p-5 rounded-xl border border-brand-dark/60 hover:border-brand-accent transition">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
 
                                     <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>Which currency can you quote in?</span>
 
-                                    <i class="fa-solid fa-chevron-down text-xs text-gray-400 group-open:rotate-180 transition-transform"></i>
+                                    <i class="fa-solid fa-chevron-down text-xs text-brand-light/60 group-open:rotate-180 transition-transform"></i>
 
                                 </summary>
 
-                                <p class="text-gray-400 mt-2 pl-7">USD or EUR.</p>
+                                <p class="text-brand-light/70 mt-2 pl-7">USD or EUR.</p>
 
                             </details>
 
-                            <details class="group bg-brand-dark p-5 rounded-xl border border-gray-700 hover:border-brand-accent transition">
+                            <details class="group bg-brand-dark p-5 rounded-xl border border-brand-dark/60 hover:border-brand-accent transition">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
 
                                     <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>Do you have distributor tier pricing levels?</span>
 
-                                    <i class="fa-solid fa-chevron-down text-xs text-gray-400 group-open:rotate-180 transition-transform"></i>
+                                    <i class="fa-solid fa-chevron-down text-xs text-brand-light/60 group-open:rotate-180 transition-transform"></i>
 
                                 </summary>
 
-                                <p class="text-gray-400 mt-2 pl-7">Yes. We offer tiered pricing based on annual volume and order size. Share your forecast and we will quote the correct tier.</p>
+                                <p class="text-brand-light/70 mt-2 pl-7">Yes. We offer tiered pricing based on annual volume and order size. Share your forecast and we will quote the correct tier.</p>
 
                             </details>
 
-                            <details class="group bg-brand-dark p-5 rounded-xl border border-gray-700 hover:border-brand-accent transition">
+                            <details class="group bg-brand-dark p-5 rounded-xl border border-brand-dark/60 hover:border-brand-accent transition">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
 
                                     <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>Is packaging included? Custom packaging/labels?</span>
 
-                                    <i class="fa-solid fa-chevron-down text-xs text-gray-400 group-open:rotate-180 transition-transform"></i>
+                                    <i class="fa-solid fa-chevron-down text-xs text-brand-light/60 group-open:rotate-180 transition-transform"></i>
 
                                 </summary>
 
-                                <p class="text-gray-400 mt-2 pl-7">Standard packaging is included by default. Custom packaging/labels require an additional cost.</p>
+                                <p class="text-brand-light/70 mt-2 pl-7">Standard packaging is included by default. Custom packaging/labels require an additional cost.</p>
 
                             </details>
 
-                            <details class="group bg-brand-dark p-5 rounded-xl border border-gray-700 hover:border-brand-accent transition">
+                            <details class="group bg-brand-dark p-5 rounded-xl border border-brand-dark/60 hover:border-brand-accent transition">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
 
                                     <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>Payment terms and methods?</span>
 
-                                    <i class="fa-solid fa-chevron-down text-xs text-gray-400 group-open:rotate-180 transition-transform"></i>
+                                    <i class="fa-solid fa-chevron-down text-xs text-brand-light/60 group-open:rotate-180 transition-transform"></i>
 
                                 </summary>
 
-                                <p class="text-gray-400 mt-2 pl-7">Standard terms: T/T 30/70. We also accept PayPal (samples), L/C, and Alibaba Trade Assurance.</p>
+                                <p class="text-brand-light/70 mt-2 pl-7">Standard terms: T/T 30/70. We also accept PayPal (samples), L/C, and Alibaba Trade Assurance.</p>
 
                             </details>
 
-                            <details class="group bg-brand-dark p-5 rounded-xl border border-gray-700 hover:border-brand-accent transition">
+                            <details class="group bg-brand-dark p-5 rounded-xl border border-brand-dark/60 hover:border-brand-accent transition">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
 
                                     <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>Which Incoterms and lanes?</span>
 
-                                    <i class="fa-solid fa-chevron-down text-xs text-gray-400 group-open:rotate-180 transition-transform"></i>
+                                    <i class="fa-solid fa-chevron-down text-xs text-brand-light/60 group-open:rotate-180 transition-transform"></i>
 
                                 </summary>
 
-                                <p class="text-gray-400 mt-2 pl-7">FOB / DAP / DDP for EU / US / South America / Australia.</p>
+                                <p class="text-brand-light/70 mt-2 pl-7">FOB / DAP / DDP for EU / US / South America / Australia.</p>
 
                             </details>
 
-                            <details class="group bg-brand-dark p-5 rounded-xl border border-gray-700 hover:border-brand-accent transition">
+                            <details class="group bg-brand-dark p-5 rounded-xl border border-brand-dark/60 hover:border-brand-accent transition">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
 
                                     <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>What is your warranty period?</span>
 
-                                    <i class="fa-solid fa-chevron-down text-xs text-gray-400 group-open:rotate-180 transition-transform"></i>
+                                    <i class="fa-solid fa-chevron-down text-xs text-brand-light/60 group-open:rotate-180 transition-transform"></i>
 
                                 </summary>
 
-                                <p class="text-gray-400 mt-2 pl-7">1-year warranty for both remotes and receivers.</p>
+                                <p class="text-brand-light/70 mt-2 pl-7">1-year warranty for both remotes and receivers.</p>
 
                             </details>
 
@@ -1772,31 +1778,31 @@
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-                            <details class="group bg-brand-dark p-5 rounded-xl border border-gray-700 hover:border-brand-accent transition">
+                            <details class="group bg-brand-dark p-5 rounded-xl border border-brand-dark/60 hover:border-brand-accent transition">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
 
                                     <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>What is the MOQ for OEM/ODM customization?</span>
 
-                                    <i class="fa-solid fa-chevron-down text-xs text-gray-400 group-open:rotate-180 transition-transform"></i>
+                                    <i class="fa-solid fa-chevron-down text-xs text-brand-light/60 group-open:rotate-180 transition-transform"></i>
 
                                 </summary>
 
-                                <p class="text-gray-400 mt-2 pl-7">500 pcs.</p>
+                                <p class="text-brand-light/70 mt-2 pl-7">500 pcs.</p>
 
                             </details>
 
-                            <details class="group bg-brand-dark p-5 rounded-xl border border-gray-700 hover:border-brand-accent transition md:col-span-2">
+                            <details class="group bg-brand-dark p-5 rounded-xl border border-brand-dark/60 hover:border-brand-accent transition md:col-span-2">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
 
                                     <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>What are the typical OEM costs and timelines?</span>
 
-                                    <i class="fa-solid fa-chevron-down text-xs text-gray-400 group-open:rotate-180 transition-transform"></i>
+                                    <i class="fa-solid fa-chevron-down text-xs text-brand-light/60 group-open:rotate-180 transition-transform"></i>
 
                                 </summary>
 
-                                <p class="text-gray-400 mt-2 pl-7">Tooling (shell mold set incl. silicone/button parts): USD 4,800. Development fee: USD 350 (refundable on orders &gt; 2,000 pcs). Mold lead time: 30-45 days; development: 10-15 working days. Certification if needed: CE USD 500 / FCC USD 800 / KC USD 5,000.</p>
+                                <p class="text-brand-light/70 mt-2 pl-7">Tooling (shell mold set incl. silicone/button parts): USD 4,800. Development fee: USD 350 (refundable on orders &gt; 2,000 pcs). Mold lead time: 30-45 days; development: 10-15 working days. Certification if needed: CE USD 500 / FCC USD 800 / KC USD 5,000.</p>
 
                             </details>
 
@@ -1814,7 +1820,7 @@
 
         
 
-        <section class="py-24 bg-brand-dark border-t border-gray-800">
+        <section class="py-24 bg-brand-dark border-t border-brand-dark/60">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -1822,7 +1828,7 @@
 
                     <h2 class="text-4xl font-bold text-white mb-4" data-i18n="advantages.title">Why Distributors Choose GateRemoteSource</h2>
 
-                    <p class="text-gray-400 max-w-3xl mx-auto" data-i18n="advantages.subtitle">More than remotes: sales tools, technical backup, and predictable logistics tailored for B2B buyers.</p>
+                    <p class="text-brand-light/70 max-w-3xl mx-auto" data-i18n="advantages.subtitle">More than remotes: sales tools, technical backup, and predictable logistics tailored for B2B buyers.</p>
 
                 </div>
 
@@ -1832,7 +1838,7 @@
 
                         <h3 class="text-xl font-bold text-white mb-3" data-i18n="advantages.card1.title">Pre-Sales Playbook</h3>
 
-                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="advantages.card1.body">Ready-to-send compatibility sheets and pricing templates help your reps close faster.</p>
+                        <p class="text-brand-light/70 text-sm leading-relaxed" data-i18n="advantages.card1.body">Ready-to-send compatibility sheets and pricing templates help your reps close faster.</p>
 
                     </div>
 
@@ -1840,7 +1846,7 @@
 
                         <h3 class="text-xl font-bold text-white mb-3" data-i18n="advantages.card2.title">Tech Support Coverage</h3>
 
-                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="advantages.card2.body">Programming videos, wiring guides, and OEM engineers on standby for your installers.</p>
+                        <p class="text-brand-light/70 text-sm leading-relaxed" data-i18n="advantages.card2.body">Programming videos, wiring guides, and OEM engineers on standby for your installers.</p>
 
                     </div>
 
@@ -1848,7 +1854,7 @@
 
                         <h3 class="text-xl font-bold text-white mb-3" data-i18n="advantages.card3.title">Logistics You Can Promise</h3>
 
-                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="advantages.card3.body">Stock buffers, 48h dispatch on repeats, and carton labels ready for your warehouses.</p>
+                        <p class="text-brand-light/70 text-sm leading-relaxed" data-i18n="advantages.card3.body">Stock buffers, 48h dispatch on repeats, and carton labels ready for your warehouses.</p>
 
                     </div>
 
@@ -1872,7 +1878,7 @@
 
                     <h1 class="text-4xl md:text-5xl font-bold text-white mb-6" data-i18n="products_page.title">Wholesale Catalog</h1>
 
-                    <p class="text-gray-400 max-w-2xl mx-auto text-lg" data-i18n="products_page.subtitle">Comprehensive aftermarket solutions for professional installers.</p>
+                    <p class="text-brand-light/70 max-w-2xl mx-auto text-lg" data-i18n="products_page.subtitle">Comprehensive aftermarket solutions for professional installers.</p>
 
                 </div>
 
@@ -1884,11 +1890,11 @@
 
                     <button type="button" class="px-6 py-2 rounded-full bg-brand-accent text-white font-bold shadow-lg" data-filter="all" data-i18n="products_page.all_products">All Products</button>
 
-                    <button type="button" class="px-6 py-2 rounded-full bg-brand-surface border border-gray-700 text-gray-400 hover:bg-brand-accent hover:text-white hover:border-brand-accent transition" data-filter="rolling" data-i18n="products_page.rolling_code_remotes">Rolling Code Remotes</button>
+                    <button type="button" class="px-6 py-2 rounded-full bg-brand-surface border border-brand-border text-brand-muted hover:bg-brand-accent hover:text-white hover:border-brand-accent transition" data-filter="rolling" data-i18n="products_page.rolling_code_remotes">Rolling Code Remotes</button>
 
-                    <button type="button" class="px-6 py-2 rounded-full bg-brand-surface border border-gray-700 text-gray-400 hover:bg-brand-accent hover:text-white hover:border-brand-accent transition" data-filter="receivers" data-i18n="products_page.universal_receivers">Universal Receivers</button>
+                    <button type="button" class="px-6 py-2 rounded-full bg-brand-surface border border-brand-border text-brand-muted hover:bg-brand-accent hover:text-white hover:border-brand-accent transition" data-filter="receivers" data-i18n="products_page.universal_receivers">Universal Receivers</button>
 
-                    <button type="button" class="px-6 py-2 rounded-full bg-brand-surface border border-gray-700 text-gray-400 hover:bg-brand-accent hover:text-white hover:border-brand-accent transition" data-filter="duplicators" data-i18n="products_page.duplicators">Programmable Replacements</button>
+                    <button type="button" class="px-6 py-2 rounded-full bg-brand-surface border border-brand-border text-brand-muted hover:bg-brand-accent hover:text-white hover:border-brand-accent transition" data-filter="duplicators" data-i18n="products_page.duplicators">Programmable Replacements</button>
 
                 </div>
 
@@ -1900,11 +1906,11 @@
 
                     <div class="bg-brand-surface border border-brand-border rounded-xl overflow-hidden group hover:border-brand-accent transition-all duration-200 ease-in-out hover:shadow-md" data-category="rolling">
 
-                        <div class="aspect-square bg-gray-900 relative flex items-center justify-center p-4">
+                        <div class="aspect-square bg-brand-light relative flex items-center justify-center p-4">
 
                             <div class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur text-brand-accent text-xs font-bold px-2 py-1 rounded border border-brand-accent/20" data-i18n="products_page.frequency_433">433.92MHz</div>
 
-                            <div class="bg-gray-800 rounded-lg p-8 flex items-center justify-center w-full h-full">
+                            <div class="bg-brand-light rounded-lg p-8 flex items-center justify-center w-full h-full">
 
                                 <i class="fa-solid fa-microchip text-6xl text-brand-accent"></i>
 
@@ -1916,13 +1922,13 @@
 
                             <h3 class="text-xl font-bold text-brand-dark mb-2" data-i18n="products_page.nice_smilo">Nice SMILO Compatible</h3>
 
-                            <p class="text-gray-400 text-sm mb-4" data-i18n="products_page.nice_description">Compatible with SM2/SM4. Round black styling. High durability buttons.</p>
+                            <p class="text-brand-muted text-sm mb-4" data-i18n="products_page.nice_description">Compatible with SM2/SM4. Round black styling. High durability buttons.</p>
 
-                            <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-700">
+                            <div class="flex justify-between items-center mt-4 pt-4 border-t border-brand-border">
 
-                                <span class="text-xs text-gray-500" data-i18n="products_page.moq_50pcs">MOQ: 50pcs</span>
+                                <span class="text-xs text-brand-muted" data-i18n="products_page.moq_50pcs">MOQ: 50pcs</span>
 
-                                <button onclick="navigateTo('contact')" class="text-brand-cta font-bold text-sm hover:text-white" data-i18n="products_page.get_price" data-cta="card_get_price_list_cloner">Get Price -&gt;</button>
+                                <button onclick="navigateTo('contact')" class="text-brand-cta font-bold text-sm hover:text-brand-ctaHover" data-i18n="products_page.get_price" data-cta="card_get_price_list_cloner">Get Price -&gt;</button>
 
                             </div>
 
@@ -1934,11 +1940,11 @@
 
                     <div class="bg-brand-surface border border-brand-border rounded-xl overflow-hidden group hover:border-brand-accent transition-all duration-200 ease-in-out hover:shadow-md" data-category="duplicators">
 
-                        <div class="aspect-square bg-gray-900 relative flex items-center justify-center p-4">
+                        <div class="aspect-square bg-brand-light relative flex items-center justify-center p-4">
 
                             <div class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur text-brand-accent text-xs font-bold px-2 py-1 rounded border border-brand-accent/20" data-i18n="products_page.multi_freq">Multi-Freq</div>
 
-                            <div class="bg-gray-800 rounded-lg p-8 flex items-center justify-center w-full h-full">
+                            <div class="bg-brand-light rounded-lg p-8 flex items-center justify-center w-full h-full">
 
                                 <i class="fa-solid fa-microchip text-6xl text-brand-accent"></i>
 
@@ -1950,13 +1956,13 @@
 
                             <h3 class="text-xl font-bold text-brand-dark mb-2" data-i18n="products_page.universal_face_copy">Universal Face Copy</h3>
 
-                            <p class="text-gray-400 text-sm mb-4" data-i18n="products_page.universal_description">4-Channel duplicator. Copies 95% of fixed codes and many rolling codes (HCS301).</p>
+                            <p class="text-brand-muted text-sm mb-4" data-i18n="products_page.universal_description">4-Channel duplicator. Copies 95% of fixed codes and many rolling codes (HCS301).</p>
 
-                            <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-700">
+                            <div class="flex justify-between items-center mt-4 pt-4 border-t border-brand-border">
 
-                                <span class="text-xs text-gray-500" data-i18n="products_page.moq_100pcs">MOQ: 100pcs</span>
+                                <span class="text-xs text-brand-muted" data-i18n="products_page.moq_100pcs">MOQ: 100pcs</span>
 
-                                <button onclick="navigateTo('contact')" class="text-brand-cta font-bold text-sm hover:text-white" data-i18n="products_page.get_price" data-cta="card_get_price_list_receiver">Get Price -&gt;</button>
+                                <button onclick="navigateTo('contact')" class="text-brand-cta font-bold text-sm hover:text-brand-ctaHover" data-i18n="products_page.get_price" data-cta="card_get_price_list_receiver">Get Price -&gt;</button>
 
                             </div>
 
@@ -1968,11 +1974,11 @@
 
                     <div class="bg-brand-surface border border-brand-border rounded-xl overflow-hidden group hover:border-brand-accent transition-all duration-200 ease-in-out hover:shadow-md" data-category="receivers">
 
-                        <div class="aspect-square bg-gray-900 relative flex items-center justify-center p-4">
+                        <div class="aspect-square bg-brand-light relative flex items-center justify-center p-4">
 
                             <div class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur text-brand-accent text-xs font-bold px-2 py-1 rounded border border-brand-accent/20" data-i18n="products_page.receiver">Receiver</div>
 
-                            <div class="bg-gray-800 rounded-lg p-8 flex items-center justify-center w-full h-full">
+                            <div class="bg-brand-light rounded-lg p-8 flex items-center justify-center w-full h-full">
 
                                 <i class="fa-solid fa-network-wired text-6xl text-brand-accent"></i>
 
@@ -1984,13 +1990,13 @@
 
                             <h3 class="text-xl font-bold text-brand-dark mb-2" data-i18n="products_page.mini_receiver">2CH Mini Receiver</h3>
 
-                            <p class="text-gray-400 text-sm mb-4" data-i18n="products_page.mini_description">Compact design fits in motor box. AC/DC 12-24V input. 400 user capacity.</p>
+                            <p class="text-brand-muted text-sm mb-4" data-i18n="products_page.mini_description">Compact design fits in motor box. AC/DC 12-24V input. 400 user capacity.</p>
 
-                            <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-700">
+                            <div class="flex justify-between items-center mt-4 pt-4 border-t border-brand-border">
 
-                                <span class="text-xs text-gray-500" data-i18n="products_page.moq_50pcs">MOQ: 50pcs</span>
+                                <span class="text-xs text-brand-muted" data-i18n="products_page.moq_50pcs">MOQ: 50pcs</span>
 
-                                <button onclick="navigateTo('contact')" class="text-brand-cta font-bold text-sm hover:text-white" data-i18n="products_page.get_price" data-cta="card_get_price_list_facecopy">Get Price -&gt;</button>
+                                <button onclick="navigateTo('contact')" class="text-brand-cta font-bold text-sm hover:text-brand-ctaHover" data-i18n="products_page.get_price" data-cta="card_get_price_list_facecopy">Get Price -&gt;</button>
 
                             </div>
 
@@ -2004,13 +2010,13 @@
 
                 
 
-                <div class="bg-brand-surface p-8 rounded-2xl border border-gray-700 text-center">
+                <div class="bg-brand-surface p-8 rounded-2xl border border-brand-border text-center">
 
-                    <h2 class="text-2xl font-bold text-white mb-4" data-i18n="products_page.catalog_download">Need the Full 2025 Catalog?</h2>
+                    <h2 class="text-2xl font-bold text-brand-dark mb-4" data-i18n="products_page.catalog_download">Need the Full 2025 Catalog?</h2>
 
-                    <p class="text-gray-400 mb-8" data-i18n="products_page.catalog_description">Download our complete PDF catalog with technical specifications for over 200 products.</p>
+                    <p class="text-brand-muted mb-8" data-i18n="products_page.catalog_description">Download our complete PDF catalog with technical specifications for over 200 products.</p>
 
-                    <button onclick="navigateTo('contact')" class="bg-white text-brand-dark px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition shadow-lg">
+                    <button onclick="navigateTo('contact')" class="bg-brand-cta hover:bg-brand-ctaHover text-brand-surface px-8 py-3 rounded-full font-bold transition shadow-lg">
 
                         <span data-i18n="products_page.download_pdf_catalog">Download PDF Catalog</span>
 
@@ -2026,7 +2032,7 @@
 
         
 
-        <section class="py-24 bg-brand-dark border-t border-gray-800">
+        <section class="py-24 bg-brand-dark border-t border-brand-dark/60">
 
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -2040,69 +2046,69 @@
 
                     </div>
 
-                    <p class="text-gray-400 max-w-xl" data-i18n="products_page.installers_feedback">Real feedback from locksmiths and gate installers using our compatible remotes and receivers.</p>
+                    <p class="text-brand-light/70 max-w-xl" data-i18n="products_page.installers_feedback">Real feedback from locksmiths and gate installers using our compatible remotes and receivers.</p>
 
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-                    <div class="bg-brand-surface border border-gray-700 rounded-2xl p-6 shadow-lg">
+                    <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 shadow-lg">
 
                         <div class="flex items-center gap-3 mb-3">
 
-                            <div class="h-10 w-10 rounded-full bg-brand-accent/20 flex items-center justify-center text-white font-bold">LJ</div>
+                            <div class="h-10 w-10 rounded-full bg-brand-accent/20 flex items-center justify-center text-brand-dark font-bold">LJ</div>
 
                             <div>
 
-                                <p class="text-white font-semibold">Liang J.</p>
+                                <p class="text-brand-dark font-semibold">Liang J.</p>
 
-                                <p class="text-gray-400 text-sm">Locksmith, Kuala Lumpur</p>
+                                <p class="text-brand-muted text-sm">Locksmith, Kuala Lumpur</p>
 
                             </div>
 
                         </div>
 
-                        <p class="text-gray-300 leading-relaxed">"Dropped-in receivers saved an entire condo project. Programming took minutes and margins went up 40%."</p>
+                        <p class="text-brand-muted leading-relaxed">"Dropped-in receivers saved an entire condo project. Programming took minutes and margins went up 40%."</p>
 
                     </div>
 
-                    <div class="bg-brand-surface border border-gray-700 rounded-2xl p-6 shadow-lg">
+                    <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 shadow-lg">
 
                         <div class="flex items-center gap-3 mb-3">
 
-                            <div class="h-10 w-10 rounded-full bg-brand-accent/20 flex items-center justify-center text-white font-bold">MT</div>
+                            <div class="h-10 w-10 rounded-full bg-brand-accent/20 flex items-center justify-center text-brand-dark font-bold">MT</div>
 
                             <div>
 
-                                <p class="text-white font-semibold">Marco T.</p>
+                                <p class="text-brand-dark font-semibold">Marco T.</p>
 
-                                <p class="text-gray-400 text-sm">Gate Installer, Milan</p>
+                                <p class="text-brand-muted text-sm">Gate Installer, Milan</p>
 
                             </div>
 
                         </div>
 
-                        <p class="text-gray-300 leading-relaxed">"The compatible remotes cover all the Nice and Came jobs I get with authorized programming. Fewer SKUs, better profits."</p>
+                        <p class="text-brand-muted leading-relaxed">"The compatible remotes cover all the Nice and Came jobs I get with authorized programming. Fewer SKUs, better profits."</p>
 
                     </div>
 
-                    <div class="bg-brand-surface border border-gray-700 rounded-2xl p-6 shadow-lg">
+                    <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 shadow-lg">
 
                         <div class="flex items-center gap-3 mb-3">
 
-                            <div class="h-10 w-10 rounded-full bg-brand-accent/20 flex items-center justify-center text-white font-bold">SR</div>
+                            <div class="h-10 w-10 rounded-full bg-brand-accent/20 flex items-center justify-center text-brand-dark font-bold">SR</div>
 
                             <div>
 
-                                <p class="text-white font-semibold">Sarah R.</p>
+                                <p class="text-brand-dark font-semibold">Sarah R.</p>
 
-                                <p class="text-gray-400 text-sm">Access Control, Sydney</p>
+                                <p class="text-brand-muted text-sm">Access Control, Sydney</p>
 
                             </div>
 
                         </div>
 
-                        <p class="text-gray-300 leading-relaxed">"Sample kit closed my first dealership order in a week. Clients love the metal build quality."</p>
+                        <p class="text-brand-muted leading-relaxed">"Sample kit closed my first dealership order in a week. Clients love the metal build quality."</p>
 
                     </div>
 
@@ -2116,7 +2122,7 @@
 
         
 
-        <section class="py-24 bg-brand-surface border-t border-gray-800">
+        <section class="py-24 bg-brand-surface border-t border-brand-border">
 
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -2124,9 +2130,9 @@
 
                     <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Top Requested Compatibilities</h2>
 
-                    <p class="text-gray-400 max-w-3xl mx-auto">Quick reference for your sales reps when customers ask for replacements.</p>
+                    <p class="text-brand-muted max-w-3xl mx-auto">Quick reference for your sales reps when customers ask for replacements.</p>
 
-                    <p class="text-sm text-amber-300">Nice Came compatible remote Europe ready for distributor rollouts.</p>
+                    <p class="text-sm text-brand-cta">Nice Came compatible remote Europe ready for distributor rollouts.</p>
 
                 </div>
 
@@ -2150,7 +2156,7 @@
 
                         </thead>
 
-                        <tbody class="divide-y divide-gray-800">
+                        <tbody class="divide-y divide-brand-border">
 
                             <tr>
 
@@ -2214,7 +2220,7 @@
 
         
 
-        <section class="py-24 bg-brand-dark border-t border-gray-800">
+        <section class="py-24 bg-brand-dark border-t border-brand-dark/60">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -2222,33 +2228,33 @@
 
                     <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Fulfillment Built for B2B</h2>
 
-                    <p class="text-gray-400 max-w-3xl mx-auto">Predictable lead times and packaging that ships direct to your warehouse.</p>
+                    <p class="text-brand-light/70 max-w-3xl mx-auto">Predictable lead times and packaging that ships direct to your warehouse.</p>
 
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-                    <div class="bg-brand-surface border border-gray-700 rounded-2xl p-6">
+                    <div class="bg-brand-surface border border-brand-border rounded-2xl p-6">
 
-                        <h3 class="text-xl font-bold text-white mb-3">Stock Buffers</h3>
+                        <h3 class="text-xl font-bold text-brand-dark mb-3">Stock Buffers</h3>
 
-                        <p class="text-gray-400 text-sm">Priority allocation for repeat POs so you don't run out mid-project.</p>
-
-                    </div>
-
-                    <div class="bg-brand-surface border border-gray-700 rounded-2xl p-6">
-
-                        <h3 class="text-xl font-bold text-white mb-3">Kitting & Labeling</h3>
-
-                        <p class="text-gray-400 text-sm">Carton labels with your SKU/barcode and multi-language inserts; HS codes and CE/FCC/RoHS docs ready.</p>
+                        <p class="text-brand-muted text-sm">Priority allocation for repeat POs so you don't run out mid-project.</p>
 
                     </div>
 
-                    <div class="bg-brand-surface border border-gray-700 rounded-2xl p-6">
+                    <div class="bg-brand-surface border border-brand-border rounded-2xl p-6">
 
-                        <h3 class="text-xl font-bold text-white mb-3">Fast Dispatch</h3>
+                        <h3 class="text-xl font-bold text-brand-dark mb-3">Kitting & Labeling</h3>
 
-                        <p class="text-gray-400 text-sm">48h dispatch on repeats; DHL/FedEx priority lanes by default. Freight: FOB or DAP/DDP EU/US/SA/AU; Payment: T/T 30/70.</p>
+                        <p class="text-brand-muted text-sm">Carton labels with your SKU/barcode and multi-language inserts; HS codes and CE/FCC/RoHS docs ready.</p>
+
+                    </div>
+
+                    <div class="bg-brand-surface border border-brand-border rounded-2xl p-6">
+
+                        <h3 class="text-xl font-bold text-brand-dark mb-3">Fast Dispatch</h3>
+
+                        <p class="text-brand-muted text-sm">48h dispatch on repeats; DHL/FedEx priority lanes by default. Freight: FOB or DAP/DDP EU/US/SA/AU; Payment: T/T 30/70.</p>
 
                     </div>
 
@@ -2274,17 +2280,17 @@
 
                     <h1 class="text-4xl md:text-5xl font-bold text-white mb-4" data-i18n="oem_odm.title">OEM/ODM Solutions</h1>
 
-                    <p class="text-gray-400 max-w-2xl mx-auto text-lg" data-i18n="oem_odm.subtitle">Turn your idea into a product. We provide turnkey manufacturing services.</p>
+                    <p class="text-brand-light/70 max-w-2xl mx-auto text-lg" data-i18n="oem_odm.subtitle">Turn your idea into a product. We provide turnkey manufacturing services.</p>
 
                 </div>
 
-                <div class="bg-brand-surface p-12 rounded-2xl border border-gray-700">
+                <div class="bg-brand-surface p-12 rounded-2xl border border-brand-border">
 
                     <div class="text-center mb-10">
 
-                        <h2 class="text-2xl font-bold text-white mb-4">OEM/ODM Project Journey</h2>
+                        <h2 class="text-2xl font-bold text-brand-dark mb-4">OEM/ODM Project Journey</h2>
 
-                        <p class="text-gray-400">Customer-first milestones that take you from idea to repeatable production.</p>
+                        <p class="text-brand-muted">Customer-first milestones that take you from idea to repeatable production.</p>
 
                     </div>
 
@@ -2296,9 +2302,9 @@
 
                             <div>
 
-                                <h4 class="text-white font-bold text-lg">Share your idea & target market</h4>
+                                <h4 class="text-brand-dark font-bold text-lg">Share your idea & target market</h4>
 
-                                <p class="text-gray-400 text-sm">We map SKUs, target regions, and OEMs you need to replace.</p>
+                                <p class="text-brand-muted text-sm">We map SKUs, target regions, and OEMs you need to replace.</p>
 
                             </div>
 
@@ -2310,9 +2316,9 @@
 
                             <div>
 
-                                <h4 class="text-white font-bold text-lg">RF & ID design proposal (1-2 weeks)</h4>
+                                <h4 class="text-brand-dark font-bold text-lg">RF & ID design proposal (1-2 weeks)</h4>
 
-                                <p class="text-gray-400 text-sm">PCB, ID, and shell options with BOM transparency and cost targets.</p>
+                                <p class="text-brand-muted text-sm">PCB, ID, and shell options with BOM transparency and cost targets.</p>
 
                             </div>
 
@@ -2324,9 +2330,9 @@
 
                             <div>
 
-                                <h4 class="text-white font-bold text-lg">Prototype & field testing</h4>
+                                <h4 class="text-brand-dark font-bold text-lg">Prototype & field testing</h4>
 
-                                <p class="text-gray-400 text-sm">48h sample build + feedback cycles to validate range and compatibility.</p>
+                                <p class="text-brand-muted text-sm">48h sample build + feedback cycles to validate range and compatibility.</p>
 
                             </div>
 
@@ -2338,9 +2344,9 @@
 
                             <div>
 
-                                <h4 class="text-white font-bold text-lg">Certification support (FCC/CE)</h4>
+                                <h4 class="text-brand-dark font-bold text-lg">Certification support (FCC/CE)</h4>
 
-                                <p class="text-gray-400 text-sm">Pre-test guidance, lab coordination, and documentation packs.</p>
+                                <p class="text-brand-muted text-sm">Pre-test guidance, lab coordination, and documentation packs.</p>
 
                             </div>
 
@@ -2352,9 +2358,9 @@
 
                             <div>
 
-                                <h4 class="text-white font-bold text-lg">Mass production & optimization</h4>
+                                <h4 class="text-brand-dark font-bold text-lg">Mass production & optimization</h4>
 
-                                <p class="text-gray-400 text-sm">4,000 m2 SMT + aging rooms, &lt;0.5% defect rate, firmware tweaks as you scale.</p>
+                                <p class="text-brand-muted text-sm">4,000 m2 SMT + aging rooms, &lt;0.5% defect rate, firmware tweaks as you scale.</p>
 
                             </div>
 
@@ -2376,7 +2382,7 @@
 
 
 
-                <div class="bg-brand-surface border border-gray-700 rounded-2xl p-10 mt-16">
+                <div class="bg-brand-surface border border-brand-border rounded-2xl p-10 mt-16">
 
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
 
@@ -2384,7 +2390,7 @@
 
                             <p class="text-3xl font-bold text-brand-accent mb-2">10</p>
 
-                            <p class="text-gray-400 text-sm">RF Engineers</p>
+                            <p class="text-brand-muted text-sm">RF Engineers</p>
 
                         </div>
 
@@ -2392,7 +2398,7 @@
 
                             <p class="text-3xl font-bold text-brand-accent mb-2">6</p>
 
-                            <p class="text-gray-400 text-sm">ID/Mold Designers</p>
+                            <p class="text-brand-muted text-sm">ID/Mold Designers</p>
 
                         </div>
 
@@ -2400,7 +2406,7 @@
 
                             <p class="text-3xl font-bold text-brand-accent mb-2">4</p>
 
-                            <p class="text-gray-400 text-sm">Aging Rooms</p>
+                            <p class="text-brand-muted text-sm">Aging Rooms</p>
 
                         </div>
 
@@ -2408,7 +2414,7 @@
 
                             <p class="text-3xl font-bold text-brand-accent mb-2">48h</p>
 
-                            <p class="text-gray-400 text-sm">Prototype Turnaround</p>
+                            <p class="text-brand-muted text-sm">Prototype Turnaround</p>
 
                         </div>
 
@@ -2436,29 +2442,29 @@
 
                         <h1 class="text-4xl md:text-5xl font-bold text-white mb-6" data-i18n="about.title">About GateRemoteSource</h1>
 
-                        <p class="text-gray-400 text-lg mb-6 leading-relaxed">
+                        <p class="text-brand-light/70 text-lg mb-6 leading-relaxed">
 
                             Founded in 2015 in Shenzhen as a PCBA workshop, later relocated to Dongguan (2021) with a 4,000 m2 facility - now a full OEM/ODM manufacturer for the global access control market.
 
                         </p>
 
-                        <p class="text-gray-400 text-lg mb-8 leading-relaxed" data-i18n="about.mission">Our mission is to empower locksmiths and installers with high-quality, high-margin aftermarket solutions that just work.</p>
+                        <p class="text-brand-light/70 text-lg mb-8 leading-relaxed" data-i18n="about.mission">Our mission is to empower locksmiths and installers with high-quality, high-margin aftermarket solutions that just work.</p>
 
                         <div class="grid grid-cols-2 gap-6">
 
-                            <div class="bg-brand-surface p-6 rounded-xl border border-gray-700 text-center">
+                            <div class="bg-brand-surface p-6 rounded-xl border border-brand-border text-center">
 
                                 <span class="block text-4xl font-bold text-brand-accent mb-2" data-i18n="about.years_experience">10+</span>
 
-                                <span class="text-sm text-gray-400 uppercase tracking-wider" data-i18n="about.years_label">Years Experience</span>
+                                <span class="text-sm text-brand-muted uppercase tracking-wider" data-i18n="about.years_label">Years Experience</span>
 
                             </div>
 
-                            <div class="bg-brand-surface p-6 rounded-xl border border-gray-700 text-center">
+                            <div class="bg-brand-surface p-6 rounded-xl border border-brand-border text-center">
 
                                 <span class="block text-4xl font-bold text-brand-accent mb-2" data-i18n="about.remotes_per_year">500k+</span>
 
-                                <span class="text-sm text-gray-400 uppercase tracking-wider" data-i18n="about.remotes_label">Remotes / Year</span>
+                                <span class="text-sm text-brand-muted uppercase tracking-wider" data-i18n="about.remotes_label">Remotes / Year</span>
 
                             </div>
 
@@ -2472,7 +2478,7 @@
 
                             <source type="image/webp" srcset="/assets/factory/team.webp">
 
-                            <img loading="lazy" decoding="async" src="/assets/factory/team.webp" class="rounded-2xl shadow-2xl border border-gray-700 w-full mb-6" alt="GateRemoteSource team 2026 group photo">
+                        <img loading="lazy" decoding="async" src="/assets/factory/team.webp" class="rounded-2xl shadow-2xl border border-brand-dark/60 w-full mb-6" alt="GateRemoteSource team 2026 group photo">
 
                         </picture>
 
@@ -2484,7 +2490,7 @@
 
                 
 
-                <div class="border-t border-gray-800 pt-20">
+                <div class="border-t border-brand-dark/60 pt-20">
 
                     <h2 class="text-3xl font-bold text-white mb-12 text-center" data-i18n="about.our_journey">Our Journey</h2>
 
@@ -2494,13 +2500,13 @@
 
                             <div class="w-24 text-right font-bold text-brand-accent pt-1">2015</div>
 
-                            <div class="flex-1 border-l-2 border-gray-700 pl-8 pb-8 relative">
+                            <div class="flex-1 border-l-2 border-brand-dark/60 pl-8 pb-8 relative">
 
                                 <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark border-2 border-brand-accent rounded-full"></div>
 
                                 <h4 class="text-white font-bold text-lg">Foundation</h4>
 
-                                <p class="text-gray-400 mt-2">Founded in 2015 in Shenzhen, China, starting as a PCBA assembly workshop.</p>
+                                <p class="text-brand-light/70 mt-2">Founded in 2015 in Shenzhen, China, starting as a PCBA assembly workshop.</p>
 
                             </div>
 
@@ -2510,13 +2516,13 @@
 
                             <div class="w-24 text-right font-bold text-brand-accent pt-1">2018</div>
 
-                            <div class="flex-1 border-l-2 border-gray-700 pl-8 pb-8 relative">
+                            <div class="flex-1 border-l-2 border-brand-dark/60 pl-8 pb-8 relative">
 
                                 <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark border-2 border-brand-accent rounded-full"></div>
 
                                 <h4 class="text-white font-bold text-lg">ISO Certification</h4>
 
-                                <p class="text-gray-400 mt-2">Achieved ISO certification to strengthen our quality management system.</p>
+                                <p class="text-brand-light/70 mt-2">Achieved ISO certification to strengthen our quality management system.</p>
 
                             </div>
 
@@ -2526,13 +2532,13 @@
 
                             <div class="w-24 text-right font-bold text-brand-accent pt-1">2020</div>
 
-                            <div class="flex-1 border-l-2 border-gray-700 pl-8 pb-8 relative">
+                            <div class="flex-1 border-l-2 border-brand-dark/60 pl-8 pb-8 relative">
 
                                 <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark border-2 border-brand-accent rounded-full"></div>
 
                                 <h4 class="text-white font-bold text-lg">Product Milestone</h4>
 
-                                <p class="text-gray-400 mt-2">Launched our first Universal Rolling Code remote series.</p>
+                                <p class="text-brand-light/70 mt-2">Launched our first Universal Rolling Code remote series.</p>
 
                             </div>
 
@@ -2542,13 +2548,13 @@
 
                             <div class="w-24 text-right font-bold text-brand-accent pt-1">2021</div>
 
-                            <div class="flex-1 border-l-2 border-gray-700 pl-8 pb-8 relative">
+                            <div class="flex-1 border-l-2 border-brand-dark/60 pl-8 pb-8 relative">
 
                                 <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark border-2 border-brand-accent rounded-full"></div>
 
                                 <h4 class="text-white font-bold text-lg">Expansion &amp; Relocation</h4>
 
-                                <p class="text-gray-400 mt-2">Relocated our factory from Shenzhen to Dongguan and expanded the workshop to 4,000 m2.</p>
+                                <p class="text-brand-light/70 mt-2">Relocated our factory from Shenzhen to Dongguan and expanded the workshop to 4,000 m2.</p>
 
                             </div>
 
@@ -2558,13 +2564,13 @@
 
                             <div class="w-24 text-right font-bold text-brand-accent pt-1">2021</div>
 
-                            <div class="flex-1 border-l-2 border-gray-700 pl-8 pb-8 relative">
+                            <div class="flex-1 border-l-2 border-brand-dark/60 pl-8 pb-8 relative">
 
                                 <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark border-2 border-brand-accent rounded-full"></div>
 
                                 <h4 class="text-white font-bold text-lg">High-Tech Recognition</h4>
 
-                                <p class="text-gray-400 mt-2">Awarded the China National High-Tech Enterprise certificate.</p>
+                                <p class="text-brand-light/70 mt-2">Awarded the China National High-Tech Enterprise certificate.</p>
 
                             </div>
 
@@ -2574,13 +2580,13 @@
 
                             <div class="w-24 text-right font-bold text-brand-accent pt-1">2023</div>
 
-                            <div class="flex-1 border-l-2 border-gray-700 pl-8 pb-0 relative">
+                            <div class="flex-1 border-l-2 border-brand-dark/60 pl-8 pb-0 relative">
 
                                 <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark border-2 border-brand-accent rounded-full"></div>
 
                                 <h4 class="text-white font-bold text-lg">Global Reach</h4>
 
-                                <p class="text-gray-400 mt-2">Exporting to 40+ countries, 100% focused on B2B aftermarket solutions.</p>
+                                <p class="text-brand-light/70 mt-2">Exporting to 40+ countries, 100% focused on B2B aftermarket solutions.</p>
 
                             </div>
 
@@ -2610,7 +2616,7 @@
 
                     <h1 class="text-4xl font-bold text-brand-dark mb-4" data-i18n="blog.title">Installer Hub</h1>
 
-                    <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="blog.subtitle">Technical guides, programming tutorials, and industry news for locksmiths.</p>
+                    <p class="text-brand-muted max-w-2xl mx-auto" data-i18n="blog.subtitle">Technical guides, programming tutorials, and industry news for locksmiths.</p>
 
                 </div>
 
@@ -2634,15 +2640,15 @@
 
                         
 
-                        <div class="bg-brand-dark p-6 rounded-xl border border-gray-700 shadow-lg">
+                        <div class="bg-brand-dark p-6 rounded-xl border border-brand-dark/60 shadow-lg">
 
-                            <h3 class="font-bold text-white mb-4" data-i18n="blog.installer_resources">Installer Resources</h3>
+                            <h3 class="font-bold text-brand-light mb-4" data-i18n="blog.installer_resources">Installer Resources</h3>
 
                             <div class="relative">
 
-                                <input type="text" id="blogSearch" placeholder="e.g. Programming Nice..." onkeyup="filterBlogs()" class="w-full bg-brand-surface border border-gray-600 rounded-lg pl-4 pr-10 py-3 text-white focus:border-brand-accent outline-none transition">
+                                <input type="text" id="blogSearch" placeholder="e.g. Programming Nice..." onkeyup="filterBlogs()" class="w-full bg-brand-surface border border-brand-border rounded-lg pl-4 pr-10 py-3 text-brand-dark focus:border-brand-accent outline-none transition">
 
-                                <i class="fa-solid fa-search absolute right-3 top-3.5 text-gray-500"></i>
+                                <i class="fa-solid fa-search absolute right-3 top-3.5 text-brand-muted"></i>
 
                             </div>
 
@@ -2652,19 +2658,19 @@
 
                         
 
-                        <div class="bg-brand-dark p-6 rounded-xl border border-gray-700 shadow-lg">
+                        <div class="bg-brand-dark p-6 rounded-xl border border-brand-dark/60 shadow-lg">
 
-                            <h3 class="font-bold text-white mb-4" data-i18n="blog.topics">Topics</h3>
+                            <h3 class="font-bold text-brand-light mb-4" data-i18n="blog.topics">Topics</h3>
 
-                            <ul class="space-y-3 text-gray-400 text-sm">
+                            <ul class="space-y-3 text-brand-light/70 text-sm">
 
-                                <li class="hover:text-brand-accent cursor-pointer flex justify-between border-b border-gray-700 pb-2"><span data-i18n="blog.programming_guides">Programming Guides</span> <span class="bg-gray-700 text-xs px-2 rounded-full">12</span></li>
+                                <li class="hover:text-brand-accent cursor-pointer flex justify-between border-b border-brand-dark/60 pb-2"><span data-i18n="blog.programming_guides">Programming Guides</span> <span class="bg-brand-dark/60 text-brand-light text-xs px-2 rounded-full">12</span></li>
 
-                                <li class="hover:text-brand-accent cursor-pointer flex justify-between border-b border-gray-700 pb-2"><span data-i18n="blog.market_trends">Market Trends</span> <span class="bg-gray-700 text-xs px-2 rounded-full">5</span></li>
+                                <li class="hover:text-brand-accent cursor-pointer flex justify-between border-b border-brand-dark/60 pb-2"><span data-i18n="blog.market_trends">Market Trends</span> <span class="bg-brand-dark/60 text-brand-light text-xs px-2 rounded-full">5</span></li>
 
-                                <li class="hover:text-brand-accent cursor-pointer flex justify-between border-b border-gray-700 pb-2"><span data-i18n="blog.troubleshooting">Troubleshooting</span> <span class="bg-gray-700 text-xs px-2 rounded-full">8</span></li>
+                                <li class="hover:text-brand-accent cursor-pointer flex justify-between border-b border-brand-dark/60 pb-2"><span data-i18n="blog.troubleshooting">Troubleshooting</span> <span class="bg-brand-dark/60 text-brand-light text-xs px-2 rounded-full">8</span></li>
 
-                                <li class="hover:text-brand-accent cursor-pointer flex justify-between"><span data-i18n="blog.new_products">New Products</span> <span class="bg-gray-700 text-xs px-2 rounded-full">3</span></li>
+                                <li class="hover:text-brand-accent cursor-pointer flex justify-between"><span data-i18n="blog.new_products">New Products</span> <span class="bg-brand-dark/60 text-brand-light text-xs px-2 rounded-full">3</span></li>
 
                             </ul>
 
@@ -2674,7 +2680,7 @@
 
                         
 
-                        <div class="bg-gradient-to-br from-brand-accent to-blue-600 p-8 rounded-xl text-center text-white shadow-xl relative overflow-hidden">
+                        <div class="bg-gradient-to-br from-brand-accent to-brand-hover p-8 rounded-xl text-center text-white shadow-xl relative overflow-hidden">
 
                             <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
 
@@ -2682,7 +2688,7 @@
 
                             <p class="text-sm opacity-90 mb-6 relative z-10" data-i18n="blog.become_distributor_description">Get access to wholesale pricing and marketing materials.</p>
 
-                            <button onclick="navigateTo('contact')" class="bg-white text-brand-accent px-6 py-3 rounded-full font-bold text-sm shadow-lg hover:bg-gray-100 transition relative z-10 w-full" data-i18n="blog.apply_now">Apply Now</button>
+                            <button onclick="navigateTo('contact')" class="bg-brand-surface text-brand-accent px-6 py-3 rounded-full font-bold text-sm shadow-lg hover:bg-brand-light transition relative z-10 w-full" data-i18n="blog.apply_now">Apply Now</button>
 
                         </div>
 
@@ -2714,7 +2720,7 @@
 
                     <h1 class="text-4xl md:text-5xl font-bold text-white mb-4" data-i18n="contact.title">Open Wholesale Account</h1>
 
-                    <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="contact.subtitle">Join our network of 500+ distributors. Get the price list today.</p>
+                    <p class="text-brand-light/70 max-w-2xl mx-auto" data-i18n="contact.subtitle">Join our network of 500+ distributors. Get the price list today.</p>
 
                 </div>
 
@@ -2722,29 +2728,29 @@
 
                     <div class="space-y-8">
 
-                        <div class="bg-brand-surface p-6 rounded-xl border border-gray-700 flex items-start gap-4">
+                        <div class="bg-brand-surface p-6 rounded-xl border border-brand-border flex items-start gap-4">
 
                             <div class="bg-brand-accent/20 p-3 rounded-full"><i class="fa-brands fa-whatsapp text-brand-accent text-xl"></i></div>
 
                             <div>
 
-                                <h4 class="text-white font-bold" data-i18n="contact.fastest_response.title">Fastest Response</h4>
+                                <h4 class="text-brand-dark font-bold" data-i18n="contact.fastest_response.title">Fastest Response</h4>
 
                                 <a href="https://wa.me/8615899648898" class="text-brand-accent hover:underline text-lg" data-i18n="contact.fastest_response.description">Get in touch with our sales team via WhatsApp for immediate assistance.</a>
 
-                                <p class="text-gray-400 text-sm mt-2">Prefer voice? <a href="tel:+8615899648898" class="text-amber-300 hover:text-amber-200 font-semibold">Call +86 158 9964 8898</a></p>
+                                <p class="text-brand-muted text-sm mt-2">Prefer voice? <a href="tel:+8615899648898" class="text-brand-cta hover:text-brand-ctaHover font-semibold">Call +86 158 9964 8898</a></p>
 
                             </div>
 
                         </div>
 
-                        <div class="bg-brand-surface p-6 rounded-xl border border-gray-700 flex items-start gap-4">
+                        <div class="bg-brand-surface p-6 rounded-xl border border-brand-border flex items-start gap-4">
 
                             <div class="bg-brand-accent/20 p-3 rounded-full"><i class="fa-solid fa-envelope text-brand-accent text-xl"></i></div>
 
                             <div>
 
-                                <h4 class="text-white font-bold" data-i18n="contact.email_sales.title">Email Sales</h4>
+                                <h4 class="text-brand-dark font-bold" data-i18n="contact.email_sales.title">Email Sales</h4>
 
                                 <a href="mailto:sales@gateremotesource.com" class="text-brand-accent hover:underline" data-i18n="contact.email_sales.description">Reach out to our sales team for bulk orders and technical support.</a>
 
@@ -2752,29 +2758,29 @@
 
                         </div>
 
-                        <div class="bg-brand-surface p-6 rounded-xl border border-gray-700 flex items-start gap-4">
+                        <div class="bg-brand-surface p-6 rounded-xl border border-brand-border flex items-start gap-4">
 
                             <div class="bg-brand-accent/20 p-3 rounded-full"><i class="fa-solid fa-clock text-brand-accent text-xl"></i></div>
 
                             <div>
 
-                                <h4 class="text-white font-bold">Service Hours</h4>
+                                <h4 class="text-brand-dark font-bold">Service Hours</h4>
 
-                                <p class="text-gray-400">Mon-Sat, 9:00-20:00 (GMT+8)</p>
+                                <p class="text-brand-muted">Mon-Sat, 9:00-20:00 (GMT+8)</p>
 
                             </div>
 
                         </div>
 
-                        <div class="bg-brand-surface p-6 rounded-xl border border-gray-700 flex items-start gap-4">
+                        <div class="bg-brand-surface p-6 rounded-xl border border-brand-border flex items-start gap-4">
 
                             <div class="bg-brand-accent/20 p-3 rounded-full"><i class="fa-solid fa-globe text-brand-accent text-xl"></i></div>
 
                             <div>
 
-                                <h4 class="text-white font-bold">Regions</h4>
+                                <h4 class="text-brand-dark font-bold">Regions</h4>
 
-                                <p class="text-gray-400">Priority lanes: European, US, South American, and Australian, Middle East, LATAM; ship via DHL/FedEx.</p>
+                                <p class="text-brand-muted">Priority lanes: European, US, South American, and Australian, Middle East, LATAM; ship via DHL/FedEx.</p>
 
                             </div>
 
@@ -2782,29 +2788,29 @@
 
                     </div>
 
-                    <div class="bg-brand-surface p-8 rounded-2xl border border-gray-700 shadow-2xl">
+                    <div class="bg-brand-surface p-8 rounded-2xl border border-brand-border shadow-2xl">
 
                         
 
                         <form id="contactForm" class="space-y-5" enctype="multipart/form-data">
 
-                            <h3 class="text-white text-xl font-bold mb-2" data-i18n="contact.inquire_now.title">Inquire Now</h3>
+                            <h3 class="text-brand-dark text-xl font-bold mb-2" data-i18n="contact.inquire_now.title">Inquire Now</h3>
 
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
                                 <div>
 
-                                    <label class="block text-gray-400 text-sm mb-2">Name</label>
+                                    <label class="block text-brand-muted text-sm mb-2">Name</label>
 
-                                    <input type="text" id="contactName" name="name" class="w-full bg-brand-dark border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-brand-accent transition" required>
+                                    <input type="text" id="contactName" name="name" class="w-full bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-dark focus:border-brand-accent transition" required>
 
                                 </div>
 
                                 <div>
 
-                                    <label class="block text-gray-400 text-sm mb-2">Company (optional)</label>
+                                    <label class="block text-brand-muted text-sm mb-2">Company (optional)</label>
 
-                                    <input type="text" id="contactCompany" name="company" class="w-full bg-brand-dark border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-brand-accent transition">
+                                    <input type="text" id="contactCompany" name="company" class="w-full bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-dark focus:border-brand-accent transition">
 
                                 </div>
 
@@ -2812,25 +2818,25 @@
 
                             <div>
 
-                                <label class="block text-gray-400 text-sm mb-2" data-i18n="contact.email_label">Email</label>
+                                <label class="block text-brand-muted text-sm mb-2" data-i18n="contact.email_label">Email</label>
 
-                                <input type="email" id="contactEmail" name="email" class="w-full bg-brand-dark border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-brand-accent transition" required>
-
-                            </div>
-
-                            <div>
-
-                                <label class="block text-gray-400 text-sm mb-2">Message</label>
-
-                                <textarea id="contactMessage" name="message" rows="4" class="w-full bg-brand-dark border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-brand-accent transition"></textarea>
+                                <input type="email" id="contactEmail" name="email" class="w-full bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-dark focus:border-brand-accent transition" required>
 
                             </div>
 
                             <div>
 
-                                <label class="block text-gray-400 text-sm mb-2">Attachment (optional)</label>
+                                <label class="block text-brand-muted text-sm mb-2">Message</label>
 
-                                <input type="file" id="contactAttachment" name="attachment" class="w-full bg-brand-dark border border-gray-600 rounded-lg px-4 py-3 text-gray-300 focus:border-brand-accent transition">
+                                <textarea id="contactMessage" name="message" rows="4" class="w-full bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-dark focus:border-brand-accent transition"></textarea>
+
+                            </div>
+
+                            <div>
+
+                                <label class="block text-brand-muted text-sm mb-2">Attachment (optional)</label>
+
+                                <input type="file" id="contactAttachment" name="attachment" class="w-full bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-muted focus:border-brand-accent transition">
 
                             </div>
 
@@ -2842,7 +2848,7 @@
 
                             </button>
 
-                            <p id="form-status" class="text-sm text-gray-300 hidden"></p>
+                            <p id="form-status" class="text-sm text-brand-muted hidden"></p>
 
                         </form>
 
@@ -2874,7 +2880,7 @@
 
             </div>
 
-            <button onclick="navigateTo('contact')" class="bg-brand-cta text-brand-dark px-8 py-3 rounded-full font-bold hover:bg-brand-ctaHover transition shadow-lg shadow-amber-200/50">
+            <button onclick="navigateTo('contact')" class="bg-brand-cta text-brand-surface px-8 py-3 rounded-full font-bold hover:bg-brand-ctaHover transition shadow-lg shadow-amber-200/50">
 
                 <span data-i18n="pre_footer.order_samples">Order Samples</span>
 
@@ -2888,15 +2894,15 @@
 
     
 
-    <footer class="bg-brand-dark pt-20 pb-10 border-t border-gray-800 text-gray-400 text-base">
+    <footer class="bg-brand-dark pt-20 pb-10 border-t border-brand-dark/60 text-brand-light/70 text-base">
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             
 
-            <div class="bg-brand-surface border border-gray-700 rounded-xl p-6 mb-12">
+            <div class="bg-brand-surface border border-brand-border rounded-xl p-6 mb-12">
 
-                <p class="text-sm text-gray-400 text-center" data-i18n="footer.legal_disclaimer">Disclaimer: All product names, logos, and brands are property of their respective owners. All company, product and service names used in this website are for identification purposes only. Use of these names, logos, and brands does not imply endorsement.</p>
+                <p class="text-sm text-brand-muted text-center" data-i18n="footer.legal_disclaimer">Disclaimer: All product names, logos, and brands are property of their respective owners. All company, product and service names used in this website are for identification purposes only. Use of these names, logos, and brands does not imply endorsement.</p>
 
             </div>
 
@@ -2956,7 +2962,7 @@
 
             </div>
 
-            <div class="text-center pt-8 border-t border-gray-800">
+            <div class="text-center pt-8 border-t border-brand-dark/60">
 
                 <span data-i18n="footer.copyright">© {year} GateRemoteSource. All rights reserved.</span>
 
@@ -3651,7 +3657,7 @@
 
             if (!searchTerm) {
 
-                resultsBox.innerHTML = `<span class="text-gray-400">Enter FCC ID, chip (HCS301), or frequency (433.92MHz).</span>`;
+                resultsBox.innerHTML = `<span class="text-brand-light/70">Enter FCC ID, chip (HCS301), or frequency (433.92MHz).</span>`;
 
                 resultsBox.classList.remove('hidden');
 
@@ -3675,25 +3681,25 @@
 
             if (matches.length === 0) {
 
-                resultsBox.innerHTML = `<span class="text-amber-300">No exact match. Try: "433.92MHz", "HCS301", "LiftMaster 893LM".</span>`;
+                resultsBox.innerHTML = `<span class="text-brand-cta">No exact match. Try: "433.92MHz", "HCS301", "LiftMaster 893LM".</span>`;
 
             } else {
 
                 resultsBox.innerHTML = matches.map(item => `
 
-                    <div class="bg-brand-dark/50 border border-gray-700 rounded-lg p-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                    <div class="bg-brand-dark/50 border border-brand-dark/60 rounded-lg p-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
 
                         <div>
 
                             <p class="font-bold text-white">${item.name}</p>
 
-                            <p class="text-xs text-gray-400">Freq: ${item.freq} ? Chip: ${item.chip} ? Protocol: ${item.protocol}</p>
+                            <p class="text-xs text-brand-light/70">Freq: ${item.freq} ? Chip: ${item.chip} ? Protocol: ${item.protocol}</p>
 
-                            <p class="text-xs text-gray-500">OEM: ${item.oem} | SKU: ${item.sku}</p>
+                            <p class="text-xs text-brand-light/60">OEM: ${item.oem} | SKU: ${item.sku}</p>
 
                         </div>
 
-                        <a href="/contact/" class="text-brand-accent font-bold text-sm hover:text-white">Request Quote ->â†?/a>
+                        <a href="/contact/" class="text-brand-accent font-bold text-sm hover:text-brand-light">Request Quote ->â†?/a>
 
                     </div>
 
@@ -3803,7 +3809,7 @@
 
                 homeContainer.innerHTML = posts.slice(0, 3).map(post => `
 
-                    <article class="bg-brand-surface rounded-xl border border-gray-700 overflow-hidden hover:border-brand-accent transition group cursor-pointer" onclick="navigateTo('blog')">
+                    <article class="bg-brand-surface rounded-xl border border-brand-border overflow-hidden hover:border-brand-accent transition group cursor-pointer" onclick="navigateTo('blog')">
 
                          <div class="h-48 relative overflow-hidden">
 
@@ -3817,7 +3823,7 @@
 
                             <h3 class="text-lg font-bold text-white mb-2 leading-tight group-hover:text-brand-accent transition">${post.title}</h3>
 
-                            <p class="text-gray-400 text-xs line-clamp-2 mb-4">${post.summary}</p>
+                            <p class="text-brand-muted text-xs line-clamp-2 mb-4">${post.summary}</p>
 
                             <span class="text-brand-accent text-sm font-bold flex items-center group-hover:translate-x-2 transition">${readMoreLabel} <i class="fa-solid fa-arrow-right ml-2"></i></span>
 
@@ -3866,7 +3872,7 @@
 
                     if(items.length === 0) {
 
-                        listArea.innerHTML = `<p class="text-gray-400">${noArticlesLabel}</p>`;
+                        listArea.innerHTML = `<p class="text-brand-muted">${noArticlesLabel}</p>`;
 
                         return;
 
@@ -3874,7 +3880,7 @@
 
                     listArea.innerHTML = items.map(post => `
 
-                        <article class="flex flex-col md:flex-row gap-6 bg-brand-surface p-6 rounded-xl border border-gray-700 hover:border-brand-accent transition group">
+                        <article class="flex flex-col md:flex-row gap-6 bg-brand-surface p-6 rounded-xl border border-brand-border hover:border-brand-accent transition group">
 
                             <div class="w-full md:w-48 h-48 md:h-32 flex-shrink-0 rounded-lg overflow-hidden relative">
 
@@ -3892,7 +3898,7 @@
 
                                 <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand-accent transition">${post.title}</h3>
 
-                                <p class="text-gray-400 text-sm mb-2 line-clamp-2">${post.summary}</p>
+                                <p class="text-brand-muted text-sm mb-2 line-clamp-2">${post.summary}</p>
 
                                 <a href="${localizeBlogLink(post.link || '/blog/')}" class="text-brand-accent font-bold text-sm hover:text-white inline-flex items-center">${readArticleLabel} <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
 
@@ -3912,7 +3918,7 @@
                 if (totalPages <= 1) return;
 
                 const activeClass = 'w-10 h-10 rounded-lg bg-brand-accent text-white font-bold flex items-center justify-center';
-                const inactiveClass = 'w-10 h-10 rounded-lg bg-brand-dark border border-gray-700 text-gray-400 hover:border-brand-accent hover:text-white transition flex items-center justify-center';
+                const inactiveClass = 'w-10 h-10 rounded-lg bg-brand-dark border border-brand-dark/60 text-brand-light/70 hover:border-brand-accent hover:text-brand-light transition flex items-center justify-center';
 
                 for (let page = 1; page <= totalPages; page += 1) {
                     const btn = document.createElement('button');
@@ -4138,7 +4144,3 @@
 </body>
 
 </html>
-
-
-
-

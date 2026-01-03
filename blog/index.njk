@@ -141,11 +141,11 @@ lang: en
     
     <style>
         ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: #0f172a; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 5px; }
-        ::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
-        
-        .nav-link.active { color: #06b6d4 !important; font-weight: 700; border-bottom: 2px solid #06b6d4; }
+        ::-webkit-scrollbar-track { background: #0B1F3B; }
+        ::-webkit-scrollbar-thumb { background: #475569; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #2F6FE4; }
+
+        .nav-link.active { color: #2F6FE4 !important; font-weight: 700; border-bottom: 2px solid #2F6FE4; }
         
         .lang-select {
             background-color: rgba(255, 255, 255, 0.1);
@@ -157,7 +157,7 @@ lang: en
             cursor: pointer;
             outline: none;
         }
-        .lang-select option { background-color: #0f172a; color: white; }
+        .lang-select option { background-color: #0B1F3B; color: white; }
         
         .article-card {
             transition: all 0.3s ease;
@@ -168,24 +168,24 @@ lang: en
         }
         
         .filter-btn.active {
-            background-color: #06b6d4;
+            background-color: #2F6FE4;
             color: white;
-            border-color: #06b6d4;
+            border-color: #2F6FE4;
         }
         
         .tag-pill {
             transition: all 0.2s ease;
         }
         .tag-pill:hover {
-            background-color: #06b6d4;
+            background-color: #2F6FE4;
             color: white;
-            border-color: #06b6d4;
+            border-color: #2F6FE4;
         }
     </style>
 </head>
-<body class="font-sans text-gray-300 bg-brand-surface selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="blog">
+<body class="font-sans text-brand-dark bg-brand-surface selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="blog">
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-brand-dark/95 backdrop-blur border-b border-gray-800 transition-all duration-300">
+    <nav class="fixed w-full z-50 bg-brand-dark/95 backdrop-blur border-b border-brand-dark/60 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
@@ -198,50 +198,50 @@ lang: en
                 </div>
                 
                 <div class="hidden lg:flex space-x-8 items-center">
-                    <a href="/" class="nav-link text-gray-300 hover:text-brand-accent transition font-semibold py-2" id="nav-home" data-i18n="navigation.home">Home</a>
-                    <a href="/catalog/" class="nav-link text-gray-300 hover:text-brand-accent transition font-semibold py-2" id="nav-products" data-i18n="navigation.catalog">Catalog</a>
-                    <a href="/oem/" class="nav-link text-gray-300 hover:text-brand-accent transition font-semibold py-2" id="nav-oem" data-i18n="navigation.oem">OEM/ODM</a>
-                    <a href="/about/" class="nav-link text-gray-300 hover:text-brand-accent transition font-semibold py-2" id="nav-about" data-i18n="navigation.about">About</a>
-                    <a href="/blog/" class="nav-link text-gray-300 hover:text-brand-accent transition font-semibold py-2 active" id="nav-blog" data-i18n="navigation.blog">Blog</a>
-                    <a href="/contact/" class="nav-link text-gray-300 hover:text-brand-accent transition font-semibold py-2" id="nav-contact" data-i18n="navigation.contact">Contact</a>
+                    <a href="/" class="nav-link text-brand-light/80 hover:text-brand-accent transition font-semibold py-2" id="nav-home" data-i18n="navigation.home">Home</a>
+                    <a href="/catalog/" class="nav-link text-brand-light/80 hover:text-brand-accent transition font-semibold py-2" id="nav-products" data-i18n="navigation.catalog">Catalog</a>
+                    <a href="/oem/" class="nav-link text-brand-light/80 hover:text-brand-accent transition font-semibold py-2" id="nav-oem" data-i18n="navigation.oem">OEM/ODM</a>
+                    <a href="/about/" class="nav-link text-brand-light/80 hover:text-brand-accent transition font-semibold py-2" id="nav-about" data-i18n="navigation.about">About</a>
+                    <a href="/blog/" class="nav-link text-brand-light/80 hover:text-brand-accent transition font-semibold py-2 active" id="nav-blog" data-i18n="navigation.blog">Blog</a>
+                    <a href="/contact/" class="nav-link text-brand-light/80 hover:text-brand-accent transition font-semibold py-2" id="nav-contact" data-i18n="navigation.contact">Contact</a>
                     
-                    <div class="flex items-center ml-2 border-l border-gray-700 pl-4">
+                    <div class="flex items-center ml-2 border-l border-brand-dark/60 pl-4">
                         <div class="relative">
-                            <button id="languageDropdownBtn" class="flex items-center gap-2 text-white hover:text-brand-accent transition">
+                            <button id="languageDropdownBtn" class="flex items-center gap-2 text-brand-light hover:text-brand-accent transition">
                                 <span id="currentFlag" class="text-xs font-semibold tracking-wide">EN</span>
                                 <span id="currentLang" class="text-sm">English</span>
                                 <i class="fa-solid fa-chevron-down text-xs"></i>
                             </button>
-                            <div id="languageDropdown" class="absolute right-0 mt-2 w-48 bg-brand-surface border border-gray-700 rounded-lg shadow-lg hidden z-50">
+                            <div id="languageDropdown" class="absolute right-0 mt-2 w-48 bg-brand-surface border border-brand-border rounded-lg shadow-lg hidden z-50">
                                 <a href="#" onclick="changeLanguage('en')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
                                     <span class="text-xs font-semibold">EN</span>
-                                    <span class="text-white">English</span>
+                                    <span class="text-brand-dark">English</span>
                                 </a>
                                 <a href="#" onclick="changeLanguage('es')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
                                     <span class="text-xs font-semibold">ES</span>
-                                    <span class="text-white">Espanol</span>
+                                    <span class="text-brand-dark">Espanol</span>
                                 </a>
                                 <a href="#" onclick="changeLanguage('de')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
                                     <span class="text-xs font-semibold">DE</span>
-                                    <span class="text-white">Deutsch</span>
+                                    <span class="text-brand-dark">Deutsch</span>
                                 </a>
                                 <a href="#" onclick="changeLanguage('it')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
                                     <span class="text-xs font-semibold">IT</span>
-                                    <span class="text-white">Italiano</span>
+                                    <span class="text-brand-dark">Italiano</span>
                                 </a>
                                 <a href="#" onclick="changeLanguage('fr')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
                                     <span class="text-xs font-semibold">FR</span>
-                                    <span class="text-white">Francais</span>
+                                    <span class="text-brand-dark">Francais</span>
                                 </a>
                                 <a href="#" onclick="changeLanguage('pt')" class="flex items-center gap-3 px-4 py-3 hover:bg-brand-dark transition">
                                     <span class="text-xs font-semibold">PT</span>
-                                    <span class="text-white">Portugues</span>
+                                    <span class="text-brand-dark">Portugues</span>
                                 </a>
                             </div>
                         </div>
                     </div>
                     
-                    <a href="/contact/" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-2 rounded-lg font-bold transition shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_get_price_list">
+                    <a href="/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-brand-surface px-6 py-2 rounded-lg font-bold transition shadow-[0_0_15px_rgba(245,130,32,0.35)] hover:shadow-[0_0_25px_rgba(245,130,32,0.55)] transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_get_price_list">
                         Quote now
                     </a>
                 </div>
@@ -254,14 +254,14 @@ lang: en
             </div>
         </div>
         
-        <div id="mobile-menu" class="lg:hidden bg-brand-surface border-b border-gray-700 hidden">
+        <div id="mobile-menu" class="lg:hidden bg-brand-surface border-b border-brand-border hidden">
             <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="/" class="block px-3 py-3 rounded-md text-base font-semibold text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.home">Home</a>
-                <a href="/catalog/" class="block px-3 py-3 rounded-md text-base font-semibold text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.catalog">Catalog</a>
-                <a href="/oem/" class="block px-3 py-3 rounded-md text-base font-semibold text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.oem">OEM/ODM</a>
-                <a href="/about/" class="block px-3 py-3 rounded-md text-base font-semibold text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.about">About</a>
-                <a href="/blog/" class="block px-3 py-3 rounded-md text-base font-semibold text-white hover:bg-brand-dark hover:text-brand-accent" data-i18n="navigation.blog">Blog</a>
-                <a href="/contact/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-accent font-bold" data-i18n="navigation.contact" data-cta="mobile_get_price_list">Quote now</a>
+                <a href="/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-accent" data-i18n="navigation.home">Home</a>
+                <a href="/catalog/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-accent" data-i18n="navigation.catalog">Catalog</a>
+                <a href="/oem/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-accent" data-i18n="navigation.oem">OEM/ODM</a>
+                <a href="/about/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-accent" data-i18n="navigation.about">About</a>
+                <a href="/blog/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-accent" data-i18n="navigation.blog">Blog</a>
+                <a href="/contact/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-cta font-bold" data-i18n="navigation.contact" data-cta="mobile_get_price_list">Quote now</a>
             </div>
         </div>
     </nav>
@@ -274,70 +274,70 @@ lang: en
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div class="space-y-6">
                         <span class="text-xs uppercase tracking-wider text-brand-accent font-bold">Installer Hub</span>
-                        <h1 class="text-4xl md:text-5xl font-bold text-white" data-i18n="blog.title">{{ site.blogTitle }}</h1>
-                        <p class="text-gray-400 max-w-2xl" data-i18n="blog.subtitle">{{ site.blogDescription }}</p>
-                        <div class="flex flex-wrap gap-3 text-sm text-gray-400">
-                            <span class="flex items-center gap-2 bg-brand-dark/50 border border-gray-700 rounded-full px-3 py-1">
+                        <h1 class="text-4xl md:text-5xl font-bold text-brand-dark" data-i18n="blog.title">{{ site.blogTitle }}</h1>
+                        <p class="text-brand-muted max-w-2xl" data-i18n="blog.subtitle">{{ site.blogDescription }}</p>
+                        <div class="flex flex-wrap gap-3 text-sm text-brand-light/70">
+                            <span class="flex items-center gap-2 bg-brand-dark/50 border border-brand-dark/60 rounded-full px-3 py-1">
                                 <i class="fa-solid fa-circle-check text-brand-accent"></i>
                                 <span>Programming and compatibility guides</span>
                             </span>
-                            <span class="flex items-center gap-2 bg-brand-dark/50 border border-gray-700 rounded-full px-3 py-1">
+                            <span class="flex items-center gap-2 bg-brand-dark/50 border border-brand-dark/60 rounded-full px-3 py-1">
                                 <i class="fa-solid fa-circle-check text-brand-accent"></i>
                                 <span>RF troubleshooting and range fixes</span>
                             </span>
-                            <span class="flex items-center gap-2 bg-brand-dark/50 border border-gray-700 rounded-full px-3 py-1">
+                            <span class="flex items-center gap-2 bg-brand-dark/50 border border-brand-dark/60 rounded-full px-3 py-1">
                                 <i class="fa-solid fa-circle-check text-brand-accent"></i>
                                 <span>Distributor-ready sales playbooks</span>
                             </span>
                         </div>
-                        <div class="flex flex-wrap gap-4 items-center text-sm text-gray-400">
-                            <div class="bg-brand-dark/50 border border-gray-700 rounded-lg px-4 py-2">
+                        <div class="flex flex-wrap gap-4 items-center text-sm text-brand-light/70">
+                            <div class="bg-brand-dark/50 border border-brand-dark/60 rounded-lg px-4 py-2">
                                 <span class="text-white font-bold">{{ collections.posts.length }}</span> total guides
                             </div>
-                            <div class="bg-brand-dark/50 border border-gray-700 rounded-lg px-4 py-2">
+                            <div class="bg-brand-dark/50 border border-brand-dark/60 rounded-lg px-4 py-2">
                                 Updated weekly by factory engineers
                             </div>
                         </div>
                         <div class="flex flex-wrap gap-3">
-                            <a href="/contact/" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-3 rounded-lg font-bold transition shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)]" data-cta="blog_hero_get_price">Get price list</a>
-                            <a href="/catalog/" class="border border-brand-accent text-brand-accent hover:border-white hover:text-white hover:bg-white/5 px-6 py-3 rounded-lg font-bold transition" data-cta="blog_hero_catalog">Download catalog</a>
+                            <a href="/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-brand-surface px-6 py-3 rounded-lg font-bold transition shadow-[0_0_15px_rgba(245,130,32,0.35)] hover:shadow-[0_0_25px_rgba(245,130,32,0.55)]" data-cta="blog_hero_get_price">Get price list</a>
+                            <a href="/catalog/" class="border border-brand-accent text-brand-accent hover:border-brand-hover hover:text-brand-hover hover:bg-brand-light/40 px-6 py-3 rounded-lg font-bold transition" data-cta="blog_hero_catalog">Download catalog</a>
                         </div>
                     </div>
                     
                     <!-- Search & Quick Actions Card -->
-                    <div class="bg-brand-dark border border-gray-700 rounded-2xl p-6 shadow-xl space-y-6">
+                    <div class="bg-brand-dark border border-brand-dark/60 rounded-2xl p-6 shadow-xl space-y-6">
                         <div>
                             <h3 class="text-white font-bold text-lg mb-2">Search the library</h3>
-                            <p class="text-gray-400 text-sm mb-4">Find guides by model, brand, frequency, or issue.</p>
+                            <p class="text-brand-light/70 text-sm mb-4">Find guides by model, brand, frequency, or issue.</p>
                             <div class="relative">
-                                <input type="text" id="blogSearch" placeholder="Search by model, brand, or topic" class="w-full bg-brand-surface border border-gray-600 rounded-lg pl-4 pr-10 py-3 text-white focus:border-brand-accent outline-none transition">
-                                <i class="fa-solid fa-search absolute right-3 top-3.5 text-gray-500"></i>
+                                <input type="text" id="blogSearch" placeholder="Search by model, brand, or topic" class="w-full bg-brand-surface border border-brand-border rounded-lg pl-4 pr-10 py-3 text-brand-dark focus:border-brand-accent outline-none transition">
+                                <i class="fa-solid fa-search absolute right-3 top-3.5 text-brand-muted"></i>
                             </div>
                             <div id="searchSuggestions" class="mt-3 space-y-2 hidden"></div>
                         </div>
                         
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div class="bg-brand-surface border border-gray-700 rounded-xl p-4">
-                                <p class="text-xs text-gray-500 uppercase tracking-wide mb-2">Fast quote</p>
-                                <h4 class="text-white font-semibold mb-2">Pricing in 24 hours</h4>
-                                <p class="text-xs text-gray-400 mb-4">MOQ, lead time, and compatibility pack.</p>
-                                <a href="/contact/" class="text-brand-accent text-sm font-bold hover:text-white">Request quote</a>
+                            <div class="bg-brand-surface border border-brand-border rounded-xl p-4">
+                                <p class="text-xs text-brand-muted uppercase tracking-wide mb-2">Fast quote</p>
+                                <h4 class="text-brand-dark font-semibold mb-2">Pricing in 24 hours</h4>
+                                <p class="text-xs text-brand-muted mb-4">MOQ, lead time, and compatibility pack.</p>
+                                <a href="/contact/" class="text-brand-accent text-sm font-bold hover:text-brand-hover">Request quote</a>
                             </div>
-                            <div class="bg-brand-surface border border-gray-700 rounded-xl p-4">
-                                <p class="text-xs text-gray-500 uppercase tracking-wide mb-2">Distributor kit</p>
-                                <h4 class="text-white font-semibold mb-2">Get the playbook</h4>
-                                <p class="text-xs text-gray-400 mb-4">RF benchmarks and margin guidance.</p>
-                                <a href="/contact/" class="text-brand-accent text-sm font-bold hover:text-white">Send me the kit</a>
+                            <div class="bg-brand-surface border border-brand-border rounded-xl p-4">
+                                <p class="text-xs text-brand-muted uppercase tracking-wide mb-2">Distributor kit</p>
+                                <h4 class="text-brand-dark font-semibold mb-2">Get the playbook</h4>
+                                <p class="text-xs text-brand-muted mb-4">RF benchmarks and margin guidance.</p>
+                                <a href="/contact/" class="text-brand-accent text-sm font-bold hover:text-brand-hover">Send me the kit</a>
                             </div>
                         </div>
                         
                         {% set categoryOptions = collections.posts | pluck("category") | unique %}
                         {% if categoryOptions.length %}
                         <div>
-                            <p class="text-xs uppercase tracking-wider text-gray-500 mb-3">Quick topics</p>
+                            <p class="text-xs uppercase tracking-wider text-brand-muted mb-3">Quick topics</p>
                             <div class="flex flex-wrap gap-2">
                                 {% for option in categoryOptions | slice(0, 8) %}
-                                <button type="button" class="tag-pill px-3 py-1 rounded-full border border-gray-700 text-xs text-gray-300" data-quick-filter="category" data-value="{{ option | slugify }}">{{ option }}</button>
+                                <button type="button" class="tag-pill px-3 py-1 rounded-full border border-brand-border text-xs text-brand-muted hover:border-brand-accent hover:text-brand-hover transition" data-quick-filter="category" data-value="{{ option | slugify }}">{{ option }}</button>
                                 {% endfor %}
                             </div>
                         </div>
@@ -350,20 +350,20 @@ lang: en
         <!-- Filter Bar -->
         <section class="pb-8">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-brand-dark/50 border border-gray-700 rounded-xl p-4">
+                <div class="bg-brand-dark/50 border border-brand-dark/60 rounded-xl p-4">
                     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                         <div>
                             <h2 class="text-white font-bold text-lg">Latest guides</h2>
-                            <p class="text-sm text-gray-400">Browse newest updates or refine by topic and brand.</p>
+                            <p class="text-sm text-brand-light/70">Browse newest updates or refine by topic and brand.</p>
                         </div>
                         <div class="flex flex-wrap items-center gap-3">
-                            <span id="resultsCount" class="text-sm text-gray-400">Showing 0 results</span>
-                            <button type="button" class="px-3 py-2 rounded-lg border border-gray-700 text-gray-300 hover:border-brand-accent hover:text-white transition text-sm" data-clear-filters>Clear filters</button>
+                            <span id="resultsCount" class="text-sm text-brand-light/70">Showing 0 results</span>
+                            <button type="button" class="px-3 py-2 rounded-lg border border-brand-dark/60 text-brand-light/80 hover:border-brand-accent hover:text-brand-light transition text-sm" data-clear-filters>Clear filters</button>
                         </div>
                     </div>
                 </div>
                 <div id="activeFilters" class="mt-4 flex flex-wrap gap-2"></div>
-                <div id="no-results" class="hidden text-gray-400 mt-4">No articles found on this page. Try a different filter.</div>
+                <div id="no-results" class="hidden text-brand-muted mt-4">No articles found on this page. Try a different filter.</div>
             </div>
         </section>
 
@@ -376,7 +376,7 @@ lang: en
                         {% if pagination.pageNumber == 0 %}
                         {% set featured = collections.posts | getFeatured %}
                         {% if featured %}
-                        <article class="bg-brand-dark border border-gray-700 rounded-2xl overflow-hidden shadow-xl article-card group" data-post-card data-title="{{ featured.data.title | escape }}" data-summary="{{ featured.data.summary | escape }}" data-category="{{ featured.data.category | slugify }}" data-tags="{{ featured.data.tags | contentTags | joinSlugList }}" data-brand="{{ featured.data.brand | joinSlugList }}" data-frequency="{{ featured.data.frequency | joinSlugList }}" data-scene="{{ featured.data.scene | joinSlugList }}">
+                        <article class="bg-brand-dark border border-brand-dark/60 rounded-2xl overflow-hidden shadow-xl article-card group" data-post-card data-title="{{ featured.data.title | escape }}" data-summary="{{ featured.data.summary | escape }}" data-category="{{ featured.data.category | slugify }}" data-tags="{{ featured.data.tags | contentTags | joinSlugList }}" data-brand="{{ featured.data.brand | joinSlugList }}" data-frequency="{{ featured.data.frequency | joinSlugList }}" data-scene="{{ featured.data.scene | joinSlugList }}">
                             <div class="grid grid-cols-1 md:grid-cols-2">
                                 <div class="relative">
                                     <img src="{{ featured.data.hero_image }}" alt="{{ featured.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -384,15 +384,15 @@ lang: en
                                 </div>
                                 <div class="p-6 flex flex-col justify-between">
                                     <div>
-                                        <div class="flex items-center gap-3 text-xs text-gray-400 mb-3">
+                                        <div class="flex items-center gap-3 text-xs text-brand-light/70 mb-3">
                                             <span class="uppercase tracking-wider text-brand-accent font-bold">{{ featured.data.category }}</span>
                                             <span>{{ featured.date | readableDate }}</span>
                                             <span>{{ featured.data.read_time }}</span>
                                         </div>
                                         <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-brand-accent transition">{{ featured.data.title }}</h2>
-                                        <p class="text-gray-400 text-sm mb-4">{{ featured.data.summary }}</p>
+                                        <p class="text-brand-light/70 text-sm mb-4">{{ featured.data.summary }}</p>
                                     </div>
-                                    <a href="{{ featured.url }}" class="text-brand-accent font-bold text-sm hover:text-white inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                                    <a href="{{ featured.url }}" class="text-brand-accent font-bold text-sm hover:text-brand-light inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
                                 </div>
                             </div>
                         </article>
@@ -409,38 +409,38 @@ lang: en
                         <!-- Grid Posts -->
                         <section class="space-y-6">
                             <div class="flex items-center justify-between">
-                                <h3 class="text-white font-bold text-lg">Fresh from the lab</h3>
-                                <span class="text-xs text-gray-500">Newest updates first</span>
+                                <h3 class="text-brand-dark font-bold text-lg">Fresh from the lab</h3>
+                                <span class="text-xs text-brand-muted">Newest updates first</span>
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {% if gridPosts.length %}
                                     {% for post in gridPosts %}
-                                <article class="bg-brand-dark p-6 rounded-xl border border-gray-700 hover:border-brand-accent transition flex flex-col gap-4 group article-card" data-post-card data-title="{{ post.data.title | escape }}" data-summary="{{ post.data.summary | escape }}" data-category="{{ post.data.category | slugify }}" data-tags="{{ post.data.tags | contentTags | joinSlugList }}" data-brand="{{ post.data.brand | joinSlugList }}" data-frequency="{{ post.data.frequency | joinSlugList }}" data-scene="{{ post.data.scene | joinSlugList }}">
+                                <article class="bg-brand-dark p-6 rounded-xl border border-brand-dark/60 hover:border-brand-accent transition flex flex-col gap-4 group article-card" data-post-card data-title="{{ post.data.title | escape }}" data-summary="{{ post.data.summary | escape }}" data-category="{{ post.data.category | slugify }}" data-tags="{{ post.data.tags | contentTags | joinSlugList }}" data-brand="{{ post.data.brand | joinSlugList }}" data-frequency="{{ post.data.frequency | joinSlugList }}" data-scene="{{ post.data.scene | joinSlugList }}">
                                     <div class="h-48 rounded-lg overflow-hidden">
                                         <img loading="lazy" decoding="async" src="{{ post.data.hero_image }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="{{ post.data.title }}">
                                     </div>
-                                    <div class="flex items-center gap-3 text-xs text-gray-400">
+                                    <div class="flex items-center gap-3 text-xs text-brand-light/70">
                                         <span class="uppercase tracking-wider text-brand-accent font-bold">{{ post.data.category }}</span>
                                         <span>{{ post.date | readableDate }}</span>
                                         <span>{{ post.data.read_time }}</span>
                                     </div>
                                     <h3 class="text-lg font-bold text-white group-hover:text-brand-accent transition">{{ post.data.title }}</h3>
-                                    <p class="text-gray-400 text-sm line-clamp-2">{{ post.data.summary }}</p>
-                                    <a href="{{ post.url }}" class="text-brand-accent font-bold text-sm hover:text-white inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                                    <p class="text-brand-light/70 text-sm line-clamp-2">{{ post.data.summary }}</p>
+                                    <a href="{{ post.url }}" class="text-brand-accent font-bold text-sm hover:text-brand-light inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
                                 </article>
                                 {% endfor %}
                             </div>
                             {% else %}
-                            <div class="bg-brand-dark/30 border border-gray-700 rounded-xl p-8 text-center">
+                            <div class="bg-brand-dark/30 border border-brand-dark/60 rounded-xl p-8 text-center">
                                 <i class="fa-solid fa-flask text-4xl text-brand-accent mb-4"></i>
                                 <h4 class="text-white font-bold text-lg mb-2">更多内容即将推出</h4>
-                                <p class="text-gray-400 mb-4">我们的工程师团队正在努力准备更多技术指南和教程。</p>
+                                <p class="text-brand-light/70 mb-4">我们的工程师团队正在努力准备更多技术指南和教程。</p>
                                 <div class="flex flex-wrap justify-center gap-4">
-                                    <a href="/contact/" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-3 rounded-lg font-bold transition">
+                                    <a href="/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-brand-surface px-6 py-3 rounded-lg font-bold transition">
                                         <i class="fa-solid fa-envelope mr-2"></i>
                                         订阅更新通知
                                     </a>
-                                    <a href="/catalog/" class="border border-brand-accent text-brand-accent hover:border-white hover:text-white px-6 py-3 rounded-lg font-bold transition">
+                                    <a href="/catalog/" class="border border-brand-accent text-brand-accent hover:border-brand-hover hover:text-brand-hover px-6 py-3 rounded-lg font-bold transition">
                                         <i class="fa-solid fa-book mr-2"></i>
                                         浏览产品目录
                                     </a>
@@ -451,22 +451,22 @@ lang: en
 
                         <!-- List Posts -->
                         {% if listPosts.length %}
-                        <section class="bg-brand-dark border border-gray-700 rounded-2xl overflow-hidden">
-                            <div class="flex items-center justify-between px-6 py-4 border-b border-gray-800">
+                        <section class="bg-brand-dark border border-brand-dark/60 rounded-2xl overflow-hidden">
+                            <div class="flex items-center justify-between px-6 py-4 border-b border-brand-dark/60">
                                 <h3 class="text-white font-bold text-lg">More from the field</h3>
-                                <span class="text-xs text-gray-500">Short reads and updates</span>
+                                <span class="text-xs text-brand-muted">Short reads and updates</span>
                             </div>
-                            <div class="divide-y divide-gray-800">
+                            <div class="divide-y divide-brand-dark/60">
                                 {% for post in listPosts %}
                                 <div class="px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4" data-post-card data-title="{{ post.data.title | escape }}" data-summary="{{ post.data.summary | escape }}" data-category="{{ post.data.category | slugify }}" data-tags="{{ post.data.tags | contentTags | joinSlugList }}" data-brand="{{ post.data.brand | joinSlugList }}" data-frequency="{{ post.data.frequency | joinSlugList }}" data-scene="{{ post.data.scene | joinSlugList }}">
                                     <div>
                                         <p class="text-xs text-brand-accent uppercase tracking-wide font-bold">{{ post.data.category }}</p>
                                         <a href="{{ post.url }}" class="text-white font-semibold hover:text-brand-accent">{{ post.data.title }}</a>
-                                        <p class="text-xs text-gray-500">{{ post.date | readableDate }} - {{ post.data.read_time }}</p>
+                                        <p class="text-xs text-brand-light/60">{{ post.date | readableDate }} - {{ post.data.read_time }}</p>
                                     </div>
                                     <div class="flex items-center gap-4">
-                                        <p class="text-xs text-gray-400 max-w-md hidden md:block line-clamp-2">{{ post.data.summary }}</p>
-                                        <a href="{{ post.url }}" class="text-brand-accent text-sm font-bold hover:text-white">View</a>
+                                        <p class="text-xs text-brand-light/70 max-w-md hidden md:block line-clamp-2">{{ post.data.summary }}</p>
+                                        <a href="{{ post.url }}" class="text-brand-accent text-sm font-bold hover:text-brand-light">View</a>
                                     </div>
                                 </div>
                                 {% endfor %}
@@ -478,15 +478,15 @@ lang: en
                         {% if pagination.pages.length > 1 %}
                         <div class="mt-8 flex justify-center gap-2" aria-label="Blog pagination">
                             {% if pagination.previousPageHref %}
-                            <a href="{{ pagination.previousPageHref }}" class="w-10 h-10 rounded-lg bg-brand-dark border border-gray-700 text-gray-400 hover:border-brand-accent hover:text-white transition flex items-center justify-center" aria-label="Previous page">
+                            <a href="{{ pagination.previousPageHref }}" class="w-10 h-10 rounded-lg bg-brand-dark border border-brand-dark/60 text-brand-light/70 hover:border-brand-accent hover:text-brand-light transition flex items-center justify-center" aria-label="Previous page">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </a>
                             {% endif %}
                             {% for href in pagination.hrefs %}
-                            <a href="{{ href }}" class="w-10 h-10 rounded-lg {% if pagination.pageNumber == loop.index0 %}bg-brand-accent text-white font-bold{% else %}bg-brand-dark border border-gray-700 text-gray-400 hover:border-brand-accent hover:text-white{% endif %} transition flex items-center justify-center">{{ loop.index }}</a>
+                            <a href="{{ href }}" class="w-10 h-10 rounded-lg {% if pagination.pageNumber == loop.index0 %}bg-brand-accent text-white font-bold{% else %}bg-brand-dark border border-brand-dark/60 text-brand-light/70 hover:border-brand-accent hover:text-brand-light{% endif %} transition flex items-center justify-center">{{ loop.index }}</a>
                             {% endfor %}
                             {% if pagination.nextPageHref %}
-                            <a href="{{ pagination.nextPageHref }}" class="w-10 h-10 rounded-lg bg-brand-dark border border-gray-700 text-gray-400 hover:border-brand-accent hover:text-white transition flex items-center justify-center" aria-label="Next page">
+                            <a href="{{ pagination.nextPageHref }}" class="w-10 h-10 rounded-lg bg-brand-dark border border-brand-dark/60 text-brand-light/70 hover:border-brand-accent hover:text-brand-light transition flex items-center justify-center" aria-label="Next page">
                                 <i class="fa-solid fa-chevron-right"></i>
                             </a>
                             {% endif %}
@@ -497,16 +497,16 @@ lang: en
                     <!-- Sidebar -->
                     <aside class="space-y-8">
                         <!-- Filters Widget -->
-                        <div class="bg-brand-dark p-6 rounded-xl border border-gray-700 shadow-lg">
+                        <div class="bg-brand-dark p-6 rounded-xl border border-brand-dark/60 shadow-lg">
                             <div class="flex items-center justify-between mb-4">
                                 <h3 class="font-bold text-white">Filters</h3>
-                                <button type="button" class="text-xs text-gray-400 hover:text-white" data-clear-filters>Reset</button>
+                                <button type="button" class="text-xs text-brand-light/70 hover:text-brand-light" data-clear-filters>Reset</button>
                             </div>
-                            <p class="text-xs text-gray-500 mb-4">Stack filters to narrow down results.</p>
-                            <div class="space-y-6 text-sm text-gray-300">
+                            <p class="text-xs text-brand-light/60 mb-4">Stack filters to narrow down results.</p>
+                            <div class="space-y-6 text-sm text-brand-light/80">
                                 {% if categoryOptions.length %}
                                 <div>
-                                    <p class="text-white font-semibold mb-2">Topics</p>
+                                    <p class="text-brand-light font-semibold mb-2">Topics</p>
                                     <div class="grid grid-cols-2 gap-2">
                                         {% for option in categoryOptions %}
                                         <label class="flex items-center gap-2 cursor-pointer hover:text-brand-accent transition">
@@ -521,10 +521,10 @@ lang: en
                                 {% set tagOptions = collections.posts | pluck("tags") | contentTags | unique %}
                                 {% if tagOptions.length %}
                                 <div>
-                                    <p class="text-white font-semibold mb-2">Tags</p>
+                                    <p class="text-brand-light font-semibold mb-2">Tags</p>
                                     <div class="flex flex-wrap gap-2">
                                         {% for option in tagOptions %}
-                                        <label class="flex items-center gap-2 bg-brand-surface border border-gray-700 rounded-full px-3 py-1 cursor-pointer hover:border-brand-accent transition">
+                                        <label class="flex items-center gap-2 bg-brand-surface border border-brand-border rounded-full px-3 py-1 cursor-pointer hover:border-brand-accent transition">
                                             <input type="checkbox" class="accent-brand-accent" data-filter="tags" data-label="{{ option }}" value="{{ option | slugify }}">
                                             <span>{{ option }}</span>
                                         </label>
@@ -536,10 +536,10 @@ lang: en
                                 {% set brandOptions = collections.posts | pluck("brand") | unique %}
                                 {% if brandOptions.length %}
                                 <div>
-                                    <p class="text-white font-semibold mb-2">Brand</p>
+                                    <p class="text-brand-light font-semibold mb-2">Brand</p>
                                     <div class="flex flex-wrap gap-2">
                                         {% for option in brandOptions %}
-                                        <label class="flex items-center gap-2 bg-brand-surface border border-gray-700 rounded-full px-3 py-1 cursor-pointer hover:border-brand-accent transition">
+                                        <label class="flex items-center gap-2 bg-brand-surface border border-brand-border rounded-full px-3 py-1 cursor-pointer hover:border-brand-accent transition">
                                             <input type="checkbox" class="accent-brand-accent" data-filter="brand" data-label="{{ option }}" value="{{ option | slugify }}">
                                             <span>{{ option }}</span>
                                         </label>
@@ -551,10 +551,10 @@ lang: en
                                 {% set frequencyOptions = collections.posts | pluck("frequency") | unique %}
                                 {% if frequencyOptions.length %}
                                 <div>
-                                    <p class="text-white font-semibold mb-2">Frequency</p>
+                                    <p class="text-brand-light font-semibold mb-2">Frequency</p>
                                     <div class="flex flex-wrap gap-2">
                                         {% for option in frequencyOptions %}
-                                        <label class="flex items-center gap-2 bg-brand-surface border border-gray-700 rounded-full px-3 py-1 cursor-pointer hover:border-brand-accent transition">
+                                        <label class="flex items-center gap-2 bg-brand-surface border border-brand-border rounded-full px-3 py-1 cursor-pointer hover:border-brand-accent transition">
                                             <input type="checkbox" class="accent-brand-accent" data-filter="frequency" data-label="{{ option }}" value="{{ option | slugify }}">
                                             <span>{{ option }}</span>
                                         </label>
@@ -566,10 +566,10 @@ lang: en
                                 {% set sceneOptions = collections.posts | pluck("scene") | unique %}
                                 {% if sceneOptions.length %}
                                 <div>
-                                    <p class="text-white font-semibold mb-2">Scene</p>
+                                    <p class="text-brand-light font-semibold mb-2">Scene</p>
                                     <div class="flex flex-wrap gap-2">
                                         {% for option in sceneOptions %}
-                                        <label class="flex items-center gap-2 bg-brand-surface border border-gray-700 rounded-full px-3 py-1 cursor-pointer hover:border-brand-accent transition">
+                                        <label class="flex items-center gap-2 bg-brand-surface border border-brand-border rounded-full px-3 py-1 cursor-pointer hover:border-brand-accent transition">
                                             <input type="checkbox" class="accent-brand-accent" data-filter="scene" data-label="{{ option }}" value="{{ option | slugify }}">
                                             <span>{{ option }}</span>
                                         </label>
@@ -581,28 +581,28 @@ lang: en
                         </div>
 
                         <!-- Distributor CTA -->
-                        <div class="bg-gradient-to-br from-brand-accent to-blue-600 p-8 rounded-xl text-center text-white shadow-xl relative overflow-hidden">
+                        <div class="bg-gradient-to-br from-brand-accent to-brand-hover p-8 rounded-xl text-center text-white shadow-xl relative overflow-hidden">
                             <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
                             <h3 class="font-bold text-xl mb-2 relative z-10" data-i18n="blog.become_distributor_title">Become a Distributor</h3>
                             <p class="text-sm opacity-90 mb-6 relative z-10" data-i18n="blog.become_distributor_description">Get access to wholesale pricing and marketing materials.</p>
-                            <a href="/contact/" class="bg-white text-brand-accent px-6 py-3 rounded-full font-bold text-sm shadow-lg hover:bg-gray-100 transition relative z-10 w-full" data-i18n="blog.apply_now">Apply Now</a>
+                            <a href="/contact/" class="bg-brand-surface text-brand-accent px-6 py-3 rounded-full font-bold text-sm shadow-lg hover:bg-brand-light transition relative z-10 w-full" data-i18n="blog.apply_now">Apply Now</a>
                         </div>
 
                         <!-- Latest Posts Widget -->
                         {% set latestPosts = collections.posts | slice(0, 3) %}
                         {% if latestPosts.length %}
-                        <div class="bg-brand-dark p-6 rounded-xl border border-gray-700 shadow-lg">
+                        <div class="bg-brand-dark p-6 rounded-xl border border-brand-dark/60 shadow-lg">
                             <h3 class="font-bold text-white mb-4">Newest guides</h3>
                             <div class="space-y-4">
                                 {% for post in latestPosts %}
                                 <a href="{{ post.url }}" class="flex gap-3 group">
-                                    <div class="w-16 h-16 bg-gray-800 rounded-lg flex-shrink-0 overflow-hidden">
+                                    <div class="w-16 h-16 bg-brand-dark/60 rounded-lg flex-shrink-0 overflow-hidden">
                                         <img loading="lazy" decoding="async" src="{{ post.data.hero_image }}" class="w-full h-full object-cover" alt="{{ post.data.title }}">
                                     </div>
                                     <div>
                                         <p class="text-xs text-brand-accent uppercase tracking-wide font-bold">{{ post.data.category }}</p>
                                         <p class="text-sm font-bold text-white group-hover:text-brand-accent transition">{{ post.data.title }}</p>
-                                        <p class="text-xs text-gray-500 mt-1">{{ post.date | readableDate }}</p>
+                                        <p class="text-xs text-brand-light/60 mt-1">{{ post.date | readableDate }}</p>
                                     </div>
                                 </a>
                                 {% endfor %}
@@ -616,15 +616,15 @@ lang: en
     </main>
 
     <!-- Newsletter Section -->
-    <section class="py-16 bg-brand-dark border-t border-gray-800">
+    <section class="py-16 bg-brand-dark border-t border-brand-dark/60">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl font-bold text-white mb-4">Stay Updated with Latest Tips</h2>
-            <p class="text-gray-400 mb-8">Get weekly technical guides and market insights delivered to your inbox.</p>
+            <p class="text-brand-light/70 mb-8">Get weekly technical guides and market insights delivered to your inbox.</p>
             <form id="newsletterForm" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input id="newsletterEmail" name="email" type="email" placeholder="Enter your email" required class="flex-1 bg-brand-surface border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-brand-accent outline-none transition">
-                <button type="submit" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-3 rounded-lg font-bold transition">Subscribe</button>
+                <input id="newsletterEmail" name="email" type="email" placeholder="Enter your email" required class="flex-1 bg-brand-surface border border-brand-border rounded-lg px-4 py-3 text-brand-dark focus:border-brand-accent outline-none transition">
+                <button type="submit" class="bg-brand-cta hover:bg-brand-ctaHover text-brand-surface px-6 py-3 rounded-lg font-bold transition">Subscribe</button>
             </form>
-            <p id="newsletter-status" class="text-sm text-gray-400 mt-3 hidden" aria-live="polite"></p>
+            <p id="newsletter-status" class="text-sm text-brand-light/70 mt-3 hidden" aria-live="polite"></p>
         </div>
     </section>
 
@@ -636,17 +636,17 @@ lang: en
                 <h2 class="text-3xl font-bold text-white mb-2" data-i18n="pre_footer.title">Need Technical Support?</h2>
                 <p class="text-white/90 text-lg" data-i18n="pre_footer.subtitle">Our engineering team is here to help with your installation challenges.</p>
             </div>
-            <a href="/contact/" class="bg-amber-400 text-brand-dark px-8 py-3 rounded-full font-bold hover:bg-amber-300 transition shadow-lg shadow-amber-200/50">
+            <a href="/contact/" class="bg-brand-cta text-brand-surface px-8 py-3 rounded-full font-bold hover:bg-brand-ctaHover transition shadow-lg shadow-amber-200/50">
                 <span data-i18n="pre_footer.order_samples">Get Support</span>
             </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-brand-dark pt-20 pb-10 border-t border-gray-800 text-gray-400 text-base">
+    <footer class="bg-brand-dark pt-20 pb-10 border-t border-brand-dark/60 text-brand-light/70 text-base">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-brand-surface border border-gray-700 rounded-xl p-6 mb-12">
-                <p class="text-sm text-gray-400 text-center" data-i18n="footer.legal_disclaimer">
+            <div class="bg-brand-surface border border-brand-border rounded-xl p-6 mb-12">
+                <p class="text-sm text-brand-muted text-center" data-i18n="footer.legal_disclaimer">
                     Disclaimer: All product names, logos, and brands are property of their respective owners. All company, product and service names used in this website are for identification purposes only. Use of these names, logos, and brands does not imply endorsement.
                 </p>
             </div>
@@ -678,7 +678,7 @@ lang: en
                     <p class="flex items-start gap-2"><i class="fa-solid fa-location-dot mt-1 text-brand-accent"></i><span data-i18n="footer.address_text">Huawei Kegu Industrial Park, Dalingshan Town, Dongguan, Guangdong, China</span></p>
                 </div>
             </div>
-            <div class="text-center pt-8 border-t border-gray-800">
+            <div class="text-center pt-8 border-t border-brand-dark/60">
                 <span data-i18n="footer.copyright">&copy; 2026 GateRemoteSource. All rights reserved.</span>
             </div>
         </div>
@@ -965,7 +965,7 @@ lang: en
             }
 
             if (!items.length) {
-                activeFilters.innerHTML = '<span class="text-sm text-gray-500">No active filters.</span>';
+                activeFilters.innerHTML = '<span class="text-sm text-brand-muted">No active filters.</span>';
                 return;
             }
 
@@ -973,14 +973,14 @@ lang: en
                 const label = escapeHtml(item.label);
                 if (item.type === 'search') {
                     return `
-                        <button type="button" class="flex items-center gap-2 px-3 py-1 rounded-full bg-brand-dark border border-gray-700 text-xs text-gray-300 hover:border-brand-accent transition" data-remove-filter data-type="search">
+                        <button type="button" class="flex items-center gap-2 px-3 py-1 rounded-full bg-brand-dark border border-brand-dark/60 text-xs text-brand-light/80 hover:border-brand-accent transition" data-remove-filter data-type="search">
                             <span>${label}</span>
                             <i class="fa-solid fa-xmark text-[10px]"></i>
                         </button>
                     `;
                 }
                 return `
-                    <button type="button" class="flex items-center gap-2 px-3 py-1 rounded-full bg-brand-dark border border-gray-700 text-xs text-gray-300 hover:border-brand-accent transition" data-remove-filter data-type="filter" data-group="${escapeHtml(item.group)}" data-value="${escapeHtml(item.value)}">
+                    <button type="button" class="flex items-center gap-2 px-3 py-1 rounded-full bg-brand-dark border border-brand-dark/60 text-xs text-brand-light/80 hover:border-brand-accent transition" data-remove-filter data-type="filter" data-group="${escapeHtml(item.group)}" data-value="${escapeHtml(item.value)}">
                         <span>${label}</span>
                         <i class="fa-solid fa-xmark text-[10px]"></i>
                     </button>
@@ -999,7 +999,7 @@ lang: en
                 chip.classList.toggle('border-brand-accent', isActive);
                 chip.classList.toggle('bg-brand-accent/20', isActive);
                 chip.classList.toggle('text-white', isActive);
-                chip.classList.toggle('text-gray-300', !isActive);
+                chip.classList.toggle('text-brand-light/80', !isActive);
             });
         }
 
@@ -1030,9 +1030,9 @@ lang: en
             }
             suggestionBox.classList.remove('hidden');
             suggestionBox.innerHTML = results.map((item) => `
-                <a href="${item.url}" class="block px-3 py-2 rounded-lg bg-brand-surface border border-gray-700 hover:border-brand-accent transition">
+                <a href="${item.url}" class="block px-3 py-2 rounded-lg bg-brand-surface border border-brand-border hover:border-brand-accent transition">
                     <p class="text-sm text-white font-semibold">${escapeHtml(item.title)}</p>
-                    <p class="text-xs text-gray-400">${escapeHtml(item.summary)}</p>
+                    <p class="text-xs text-brand-muted">${escapeHtml(item.summary)}</p>
                 </a>
             `).join('');
         }

@@ -34,7 +34,7 @@ permalink: "/blog/{{ slug }}/index.html"
 
 <div class="highlight-card rounded-2xl p-6 border border-brand-accent/30 shadow-xl">
   <h2 class="text-xl font-bold text-white mb-3">Executive Summary</h2>
-  <ul class="space-y-2 text-gray-200 list-disc list-inside">
+  <ul class="space-y-2 text-brand-light/80 list-disc list-inside">
     <li>Turn "range" into <strong>Link Margin (链路余量)</strong> and target a measurable 10-15 dB buffer.</li>
     <li>Demand <strong>Blocking (阻塞/抗强干扰)</strong> data, not just sensitivity numbers.</li>
     <li>Enforce <strong>Protocol Airtime (空口占用时间)</strong> limits in firmware to meet EU and FCC rules.</li>
@@ -48,21 +48,21 @@ We translate datasheet promises into testable KPIs that survive interference, wa
 > They are a mix of airtime, antenna placement, and blocking interacting with legal transmit limits.
 
 <div class="kpi-grid grid grid-cols-1 md:grid-cols-2 gap-4">
-  <div class="kpi-card bg-brand-surface border border-gray-700 rounded-xl p-5">
-    <p class="kpi-title text-white font-semibold mb-2">KPI 1: Link Margin</p>
-    <p class="kpi-body text-sm text-gray-300">Target <strong>10-15 dB</strong> above sensitivity for 95% first-press success.</p>
+  <div class="kpi-card bg-brand-surface border border-brand-border rounded-xl p-5">
+    <p class="kpi-title text-brand-dark font-semibold mb-2">KPI 1: Link Margin</p>
+    <p class="kpi-body text-sm text-brand-muted">Target <strong>10-15 dB</strong> above sensitivity for 95% first-press success.</p>
   </div>
-  <div class="kpi-card bg-brand-surface border border-gray-700 rounded-xl p-5">
-    <p class="kpi-title text-white font-semibold mb-2">KPI 2: Blocking</p>
-    <p class="kpi-body text-sm text-gray-300">Require <strong>EN 300 220-2 Category 2</strong> blocking performance.</p>
+  <div class="kpi-card bg-brand-surface border border-brand-border rounded-xl p-5">
+    <p class="kpi-title text-brand-dark font-semibold mb-2">KPI 2: Blocking</p>
+    <p class="kpi-body text-sm text-brand-muted">Require <strong>EN 300 220-2 Category 2</strong> blocking performance.</p>
   </div>
-  <div class="kpi-card bg-brand-surface border border-gray-700 rounded-xl p-5">
-    <p class="kpi-title text-white font-semibold mb-2">KPI 3: Airtime</p>
-    <p class="kpi-body text-sm text-gray-300">Control protocol airtime to comply with <strong>duty cycle</strong> limits.</p>
+  <div class="kpi-card bg-brand-surface border border-brand-border rounded-xl p-5">
+    <p class="kpi-title text-brand-dark font-semibold mb-2">KPI 3: Airtime</p>
+    <p class="kpi-body text-sm text-brand-muted">Control protocol airtime to comply with <strong>duty cycle</strong> limits.</p>
   </div>
-  <div class="kpi-card bg-brand-surface border border-gray-700 rounded-xl p-5">
-    <p class="kpi-title text-white font-semibold mb-2">KPI 4: Compliance Logic</p>
-    <p class="kpi-body text-sm text-gray-300">Firmware must enforce <strong>regulator-limited transmit behavior</strong>.</p>
+  <div class="kpi-card bg-brand-surface border border-brand-border rounded-xl p-5">
+    <p class="kpi-title text-brand-dark font-semibold mb-2">KPI 4: Compliance Logic</p>
+    <p class="kpi-body text-sm text-brand-muted">Firmware must enforce <strong>regulator-limited transmit behavior</strong>.</p>
   </div>
 </div>
 
@@ -104,7 +104,7 @@ Your firmware must enforce these timing rules by design.
 Datasheet range is measured in open fields.
 Garages require a real **link budget** that accounts for walls, vehicles, and body loading.
 
-<div class="bg-brand-surface border border-gray-700 rounded-xl p-4 font-mono text-sm text-gray-200">
+<div class="bg-brand-surface border border-brand-border rounded-xl p-4 font-mono text-sm text-brand-dark">
   P_RX = P_TX + G_TX - L_Path + G_RX
 </div>
 
@@ -119,7 +119,7 @@ This buffer protects against multipath fading and human-hand detuning.
 
 <div class="callout rounded-2xl p-6 text-white space-y-3">
   <p class="callout-title text-xl font-bold">Need an OEM/ODM-ready 433.92MHz platform?</p>
-  <p class="text-gray-100">Send your OEM/ODM RFQ for compliance-ready firmware timers, blocking reports, and real-world range validation.</p>
+  <p class="text-brand-light/80">Send your OEM/ODM RFQ for compliance-ready firmware timers, blocking reports, and real-world range validation.</p>
   <div class="flex flex-wrap gap-3">
     <a href="/contact/" class="bg-brand-accent hover:bg-brand-hover text-white font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_mid_cta_contact">Talk to Engineering</a>
     <a href="/catalog/" class="border border-white/40 hover:border-white text-white font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_mid_cta_catalog">View Compatible Models</a>
@@ -208,7 +208,7 @@ That is how OEM teams avoid "datasheet dreams" and ship reliable products.
 
 <div class="callout rounded-2xl p-6 space-y-3">
   <p class="callout-title text-xl font-bold text-white">Need a compliant 433.92MHz remote with documented lab data?</p>
-  <p class="text-gray-100">Our engineering team can align firmware timers, antennas, and blocking to your target range.</p>
+  <p class="text-brand-light/80">Our engineering team can align firmware timers, antennas, and blocking to your target range.</p>
   <div class="flex flex-wrap gap-3">
     <a href="/contact/" class="bg-brand-accent hover:bg-brand-hover text-white font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_bottom_cta_contact">Request OEM Support</a>
     <a href="/catalog/" class="border border-white/40 hover:border-white text-white font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_bottom_cta_catalog">Browse 433.92MHz Models</a>

@@ -157,25 +157,25 @@
     
     <style>
         ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: #0f172a; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 5px; }
-        ::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
+        ::-webkit-scrollbar-track { background: #0B1F3B; }
+        ::-webkit-scrollbar-thumb { background: #475569; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #2F6FE4; }
         
         /* Custom styles for special components */
         .callout {
-            background: linear-gradient(135deg, rgba(6,182,212,0.12), rgba(15,23,42,0.95));
-            border: 1px solid rgba(6,182,212,0.4);
+            background: linear-gradient(135deg, rgba(47,111,228,0.12), rgba(11,31,59,0.95));
+            border: 1px solid rgba(47,111,228,0.4);
             box-shadow: 0 10px 40px rgba(0,0,0,0.3);
         }
         
         .highlight-card {
-            background: #0f172a;
-            border: 1px solid #1e293b;
+            background: #0B1F3B;
+            border: 1px solid rgba(215,221,229,0.2);
         }
         
         .img-frame {
             overflow: hidden;
-            border: 1px solid #1e293b;
+            border: 1px solid rgba(215,221,229,0.2);
             border-radius: 1rem;
             box-shadow: 0 12px 30px rgba(0,0,0,0.25);
         }
@@ -191,12 +191,12 @@
             transition: all 0.2s ease;
         }
         .toc-item:hover {
-            color: #06b6d4;
+            color: #2F6FE4;
             padding-left: 0.5rem;
         }
         
         .toc-item.active {
-            color: #06b6d4;
+            color: #2F6FE4;
             font-weight: 600;
         }
         
@@ -205,7 +205,7 @@
             top: 0;
             left: 0;
             height: 3px;
-            background: linear-gradient(90deg, #06b6d4, #0891b2);
+            background: linear-gradient(90deg, #2F6FE4, #1F4E79);
             z-index: 9999;
             transition: width 0.1s ease;
         }
@@ -221,28 +221,28 @@
         }
     </style>
 </head>
-<body class="font-sans text-gray-300 bg-brand-dark selection:bg-brand-accent selection:text-white flex flex-col min-h-screen">
+<body class="font-sans text-brand-light/80 bg-brand-dark selection:bg-brand-accent selection:text-white flex flex-col min-h-screen">
     
     <div id="progressBar" class="progress-bar" style="width: 0%"></div>
     
     
-    <nav class="fixed w-full z-50 bg-brand-dark/95 backdrop-blur border-b border-gray-800 transition-all duration-300">
+    <nav class="fixed w-full z-50 bg-brand-dark/95 backdrop-blur border-b border-brand-dark/60 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center gap-3">
-                    <a href="/blog/" class="text-brand-accent font-bold text-sm flex items-center gap-2 hover:text-white transition">
+                    <a href="/blog/" class="text-brand-accent font-bold text-sm flex items-center gap-2 hover:text-brand-light transition">
                         <i class="fa-solid fa-arrow-left text-xs"></i>
                         Back to Blog
                     </a>
                 </div>
                 
-                <div class="flex items-center gap-3 text-xs text-gray-400">
+                <div class="flex items-center gap-3 text-xs text-brand-light/70">
                     
                     <span class="px-3 py-1 rounded-full bg-brand-accent/15 text-brand-accent font-bold uppercase tracking-wide">RF Engineering</span>
                     
-                    <span class="text-gray-500">2026-01-01</span>
+                    <span class="text-brand-light/60">2026-01-01</span>
                     
-                    <span class="text-gray-500">12 min read</span>
+                    <span class="text-brand-light/60">12 min read</span>
                     
                 </div>
             </div>
@@ -261,20 +261,20 @@
                             
                             <span class="px-3 py-1 rounded-full bg-brand-accent/15 text-brand-accent font-bold uppercase tracking-[0.15em]">RF Engineering</span>
                             
-                            <span class="text-gray-400">January 01, 2026</span>
+                            <span class="text-brand-light/70">January 01, 2026</span>
                             
-                            <span class="text-gray-400">12 min read</span>
+                            <span class="text-brand-light/70">12 min read</span>
                             
                         </div>
                         
                         <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight">How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance</h1>
                         
-                        <p class="text-gray-300 text-xl leading-relaxed max-w-3xl">A field-proven checklist for OEM teams to turn range and compliance into measurable KPIs: link margin, blocking, protocol airtime, and regulator-limited transmit behavior.</p>
+                        <p class="text-brand-light/80 text-xl leading-relaxed max-w-3xl">A field-proven checklist for OEM teams to turn range and compliance into measurable KPIs: link margin, blocking, protocol airtime, and regulator-limited transmit behavior.</p>
                         
-                        <div class="flex flex-wrap items-center gap-4 text-sm text-gray-400">
+                        <div class="flex flex-wrap items-center gap-4 text-sm text-brand-light/70">
                             <span>By <span class="text-white font-semibold">Eric Huang</span></span>
                             
-                            <span class="px-3 py-1 rounded-full bg-brand-surface text-gray-300">Content Marketing Director</span>
+                            <span class="px-3 py-1 rounded-full bg-brand-surface text-brand-dark">Content Marketing Director</span>
                             
                         </div>
                         
@@ -282,7 +282,7 @@
                         <figure class="img-frame">
                             <img loading="lazy" decoding="async" src="/assets/blog-drops/choose-433-92mhz-remote-control/image-01.webp" alt="Hand holding a 433.92MHz remote in front of a garage door">
                             
-                            <figcaption class="text-center text-gray-500 text-sm mt-3">Real-world garage environments expose link margin, blocking, and antenna placement limits.</figcaption>
+                            <figcaption class="text-center text-brand-light/60 text-sm mt-3">Real-world garage environments expose link margin, blocking, and antenna placement limits.</figcaption>
                             
                         </figure>
                         
@@ -290,12 +290,12 @@
 
                     
                     <div id="tableOfContents" class="mb-12 hidden">
-                        <div class="bg-brand-surface border border-gray-700 rounded-xl p-6">
-                            <h3 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+                        <div class="bg-brand-surface border border-brand-border rounded-xl p-6">
+                            <h3 class="text-brand-dark font-bold text-lg mb-4 flex items-center gap-2">
                                 <i class="fa-solid fa-list text-brand-accent"></i>
                                 Table of Contents
                             </h3>
-                            <ul id="tocList" class="space-y-2 text-sm text-gray-300"></ul>
+                            <ul id="tocList" class="space-y-2 text-sm text-brand-muted"></ul>
                         </div>
                     </div>
 
@@ -303,7 +303,7 @@
                     <article class="prose prose-lg prose-invert max-w-none">
                         <div class="highlight-card rounded-2xl p-6 border border-brand-accent/30 shadow-xl">
   <h2 class="text-xl font-bold text-white mb-3">Executive Summary</h2>
-  <ul class="space-y-2 text-gray-200 list-disc list-inside">
+  <ul class="space-y-2 text-brand-light/80 list-disc list-inside">
     <li>Turn "range" into <strong>Link Margin (链路余量)</strong> and target a measurable 10-15 dB buffer.</li>
     <li>Demand <strong>Blocking (阻塞/抗强干扰)</strong> data, not just sensitivity numbers.</li>
     <li>Enforce <strong>Protocol Airtime (空口占用时间)</strong> limits in firmware to meet EU and FCC rules.</li>
@@ -316,21 +316,21 @@ We translate datasheet promises into testable KPIs that survive interference, wa
 They are a mix of airtime, antenna placement, and blocking interacting with legal transmit limits.</p>
 </blockquote>
 <div class="kpi-grid grid grid-cols-1 md:grid-cols-2 gap-4">
-  <div class="kpi-card bg-brand-surface border border-gray-700 rounded-xl p-5">
-    <p class="kpi-title text-white font-semibold mb-2">KPI 1: Link Margin</p>
-    <p class="kpi-body text-sm text-gray-300">Target <strong>10-15 dB</strong> above sensitivity for 95% first-press success.</p>
+  <div class="kpi-card bg-brand-surface border border-brand-border rounded-xl p-5">
+    <p class="kpi-title text-brand-dark font-semibold mb-2">KPI 1: Link Margin</p>
+    <p class="kpi-body text-sm text-brand-muted">Target <strong>10-15 dB</strong> above sensitivity for 95% first-press success.</p>
   </div>
-  <div class="kpi-card bg-brand-surface border border-gray-700 rounded-xl p-5">
-    <p class="kpi-title text-white font-semibold mb-2">KPI 2: Blocking</p>
-    <p class="kpi-body text-sm text-gray-300">Require <strong>EN 300 220-2 Category 2</strong> blocking performance.</p>
+  <div class="kpi-card bg-brand-surface border border-brand-border rounded-xl p-5">
+    <p class="kpi-title text-brand-dark font-semibold mb-2">KPI 2: Blocking</p>
+    <p class="kpi-body text-sm text-brand-muted">Require <strong>EN 300 220-2 Category 2</strong> blocking performance.</p>
   </div>
-  <div class="kpi-card bg-brand-surface border border-gray-700 rounded-xl p-5">
-    <p class="kpi-title text-white font-semibold mb-2">KPI 3: Airtime</p>
-    <p class="kpi-body text-sm text-gray-300">Control protocol airtime to comply with <strong>duty cycle</strong> limits.</p>
+  <div class="kpi-card bg-brand-surface border border-brand-border rounded-xl p-5">
+    <p class="kpi-title text-brand-dark font-semibold mb-2">KPI 3: Airtime</p>
+    <p class="kpi-body text-sm text-brand-muted">Control protocol airtime to comply with <strong>duty cycle</strong> limits.</p>
   </div>
-  <div class="kpi-card bg-brand-surface border border-gray-700 rounded-xl p-5">
-    <p class="kpi-title text-white font-semibold mb-2">KPI 4: Compliance Logic</p>
-    <p class="kpi-body text-sm text-gray-300">Firmware must enforce <strong>regulator-limited transmit behavior</strong>.</p>
+  <div class="kpi-card bg-brand-surface border border-brand-border rounded-xl p-5">
+    <p class="kpi-title text-brand-dark font-semibold mb-2">KPI 4: Compliance Logic</p>
+    <p class="kpi-body text-sm text-brand-muted">Firmware must enforce <strong>regulator-limited transmit behavior</strong>.</p>
   </div>
 </div>
 <h2>1) 433.92MHz in the EU: SRD Definition and Limits</h2>
@@ -367,7 +367,7 @@ Your firmware must enforce these timing rules by design.</p>
 <h2>3) Link Budget: Turning Range into a KPI</h2>
 <p>Datasheet range is measured in open fields.
 Garages require a real <strong>link budget</strong> that accounts for walls, vehicles, and body loading.</p>
-<div class="bg-brand-surface border border-gray-700 rounded-xl p-4 font-mono text-sm text-gray-200">
+<div class="bg-brand-surface border border-brand-border rounded-xl p-4 font-mono text-sm text-brand-dark">
   P_RX = P_TX + G_TX - L_Path + G_RX
 </div>
 <p>Aim for <strong>10-15 dB Link Margin</strong> above sensitivity to hit a 95% first-press success rate.
@@ -380,7 +380,7 @@ This buffer protects against multipath fading and human-hand detuning.</p>
 </ul>
 <div class="callout rounded-2xl p-6 text-white space-y-3">
   <p class="callout-title text-xl font-bold">Need an OEM/ODM-ready 433.92MHz platform?</p>
-  <p class="text-gray-100">Send your OEM/ODM RFQ for compliance-ready firmware timers, blocking reports, and real-world range validation.</p>
+  <p class="text-brand-light/80">Send your OEM/ODM RFQ for compliance-ready firmware timers, blocking reports, and real-world range validation.</p>
   <div class="flex flex-wrap gap-3">
     <a href="/contact/" class="bg-brand-accent hover:bg-brand-hover text-white font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_mid_cta_contact">Talk to Engineering</a>
     <a href="/catalog/" class="border border-white/40 hover:border-white text-white font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_mid_cta_catalog">View Compatible Models</a>
@@ -483,7 +483,7 @@ It is a <strong>system-level RF design</strong> constrained by legal transmit li
 That is how OEM teams avoid &quot;datasheet dreams&quot; and ship reliable products.</p>
 <div class="callout rounded-2xl p-6 space-y-3">
   <p class="callout-title text-xl font-bold text-white">Need a compliant 433.92MHz remote with documented lab data?</p>
-  <p class="text-gray-100">Our engineering team can align firmware timers, antennas, and blocking to your target range.</p>
+  <p class="text-brand-light/80">Our engineering team can align firmware timers, antennas, and blocking to your target range.</p>
   <div class="flex flex-wrap gap-3">
     <a href="/contact/" class="bg-brand-accent hover:bg-brand-hover text-white font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_bottom_cta_contact">Request OEM Support</a>
     <a href="/catalog/" class="border border-white/40 hover:border-white text-white font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_bottom_cta_catalog">Browse 433.92MHz Models</a>
@@ -499,17 +499,17 @@ That is how OEM teams avoid &quot;datasheet dreams&quot; and ship reliable produ
                     
                     
                     
-                    <section class="mt-16 bg-brand-surface border border-gray-700 rounded-2xl p-6">
-                        <h3 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+                    <section class="mt-16 bg-brand-surface border border-brand-border rounded-2xl p-6">
+                        <h3 class="text-brand-dark font-bold text-lg mb-4 flex items-center gap-2">
                             <i class="fa-solid fa-newspaper text-brand-accent"></i>
                             Related Articles
                         </h3>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-300">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-brand-muted">
                             
-                            <a href="/blog/avoid-public-mold-trap-pcb-quality/" class="p-4 rounded-xl bg-brand-dark border border-gray-700 hover:border-brand-accent transition block">
+                            <a href="/blog/avoid-public-mold-trap-pcb-quality/" class="p-4 rounded-xl bg-brand-dark border border-brand-dark/60 hover:border-brand-accent transition block">
                                 <p class="text-xs text-brand-accent font-bold uppercase tracking-wide mb-1">Engineering</p>
-                                <p class="text-white font-semibold mb-1">Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls</p>
-                                <p class="text-gray-400 text-xs">Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation.</p>
+                                <p class="text-brand-light font-semibold mb-1">Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls</p>
+                                <p class="text-brand-light/70 text-xs">Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation.</p>
                             </a>
                             
                         </div>
@@ -519,31 +519,31 @@ That is how OEM teams avoid &quot;datasheet dreams&quot; and ship reliable produ
                     
                     <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="space-y-4">
-                            <a href="/blog/" class="inline-flex items-center text-brand-accent font-bold hover:text-white transition">
+                            <a href="/blog/" class="inline-flex items-center text-brand-accent font-bold hover:text-brand-light transition">
                                 <i class="fa-solid fa-arrow-left mr-2"></i> Back to Blog
                             </a>
                             
                             
-                            <div class="flex flex-wrap gap-3 text-xs text-gray-300">
-                                <span class="text-gray-500">Tags:</span>
+                            <div class="flex flex-wrap gap-3 text-xs text-brand-light/80">
+                                <span class="text-brand-light/60">Tags:</span>
                                 
-                                <span class="px-3 py-1 rounded-full border border-gray-700 hover:border-brand-accent hover:text-brand-accent transition cursor-pointer">433.92MHz</span>
+                                <span class="px-3 py-1 rounded-full border border-brand-dark/60 hover:border-brand-accent hover:text-brand-accent transition cursor-pointer">433.92MHz</span>
                                 
-                                <span class="px-3 py-1 rounded-full border border-gray-700 hover:border-brand-accent hover:text-brand-accent transition cursor-pointer">RF Compliance</span>
+                                <span class="px-3 py-1 rounded-full border border-brand-dark/60 hover:border-brand-accent hover:text-brand-accent transition cursor-pointer">RF Compliance</span>
                                 
-                                <span class="px-3 py-1 rounded-full border border-gray-700 hover:border-brand-accent hover:text-brand-accent transition cursor-pointer">Link Budget</span>
+                                <span class="px-3 py-1 rounded-full border border-brand-dark/60 hover:border-brand-accent hover:text-brand-accent transition cursor-pointer">Link Budget</span>
                                 
-                                <span class="px-3 py-1 rounded-full border border-gray-700 hover:border-brand-accent hover:text-brand-accent transition cursor-pointer">OEM Procurement</span>
+                                <span class="px-3 py-1 rounded-full border border-brand-dark/60 hover:border-brand-accent hover:text-brand-accent transition cursor-pointer">OEM Procurement</span>
                                 
-                                <span class="px-3 py-1 rounded-full border border-gray-700 hover:border-brand-accent hover:text-brand-accent transition cursor-pointer">Garage Doors</span>
+                                <span class="px-3 py-1 rounded-full border border-brand-dark/60 hover:border-brand-accent hover:text-brand-accent transition cursor-pointer">Garage Doors</span>
                                 
                             </div>
                             
                         </div>
                         
                         
-                        <div class="bg-brand-surface border border-gray-700 rounded-xl p-6">
-                            <h4 class="text-white font-bold mb-4 flex items-center gap-2">
+                        <div class="bg-brand-surface border border-brand-border rounded-xl p-6">
+                            <h4 class="text-brand-dark font-bold mb-4 flex items-center gap-2">
                                 <i class="fa-solid fa-share-nodes text-brand-accent"></i>
                                 Share this article
                             </h4>
@@ -557,7 +557,7 @@ That is how OEM teams avoid &quot;datasheet dreams&quot; and ship reliable produ
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.gateremotesource.com/blog/choose-433-92mhz-remote-control/" target="_blank" class="w-10 h-10 rounded-lg bg-[#1877f2] hover:bg-[#166fe5] text-white flex items-center justify-center transition" title="Share on Facebook">
                                     <i class="fa-brands fa-facebook-f"></i>
                                 </a>
-                                <a href="mailto:?subject=How%20to%20Choose%20a%20433.92MHz%20RF%20Remote%20Control%20for%20Garage%20Doors%20and%20Roller%20Shutters%3A%20Distance%2C%20RF%20Anti-interference%2C%20and%20Compliance&body=Check out this article: https://www.gateremotesource.com/blog/choose-433-92mhz-remote-control/" class="w-10 h-10 rounded-lg bg-gray-600 hover:bg-gray-500 text-white flex items-center justify-center transition" title="Share via Email">
+                                <a href="mailto:?subject=How%20to%20Choose%20a%20433.92MHz%20RF%20Remote%20Control%20for%20Garage%20Doors%20and%20Roller%20Shutters%3A%20Distance%2C%20RF%20Anti-interference%2C%20and%20Compliance&body=Check out this article: https://www.gateremotesource.com/blog/choose-433-92mhz-remote-control/" class="w-10 h-10 rounded-lg bg-brand-dark/60 hover:bg-brand-dark/80 text-white flex items-center justify-center transition" title="Share via Email">
                                     <i class="fa-solid fa-envelope"></i>
                                 </a>
                             </div>
@@ -568,18 +568,18 @@ That is how OEM teams avoid &quot;datasheet dreams&quot; and ship reliable produ
                 
                 <aside class="space-y-8">
                     
-                    <div class="bg-brand-surface border border-gray-700 rounded-xl p-6 shadow-lg">
-                        <h3 class="text-white font-bold text-lg mb-4">About the Author</h3>
+                    <div class="bg-brand-surface border border-brand-border rounded-xl p-6 shadow-lg">
+                        <h3 class="text-brand-dark font-bold text-lg mb-4">About the Author</h3>
                         <div class="flex items-start gap-4">
                             <div class="w-16 h-16 rounded-full bg-brand-accent/20 flex items-center justify-center text-brand-accent text-2xl font-bold flex-shrink-0">
                                 E
                             </div>
                             <div>
-                                <p class="text-white font-semibold text-lg">Eric Huang</p>
+                                <p class="text-brand-dark font-semibold text-lg">Eric Huang</p>
                                 
                                 <p class="text-brand-accent text-sm">Content Marketing Director</p>
                                 
-                                <p class="text-gray-400 text-sm mt-2">Expert in gate remote technology and RF engineering. Sharing practical insights for locksmiths and installers.</p>
+                                <p class="text-brand-muted text-sm mt-2">Expert in gate remote technology and RF engineering. Sharing practical insights for locksmiths and installers.</p>
                             </div>
                         </div>
                     </div>
@@ -590,24 +590,24 @@ That is how OEM teams avoid &quot;datasheet dreams&quot; and ship reliable produ
                             <i class="fa-solid fa-box-open text-brand-accent"></i>
                             Need a Teardown Sample Kit?
                         </h3>
-                        <p class="text-gray-100">See FR-4 boards, crystal oscillators, and AOI quality up close. Built for locksmiths and distributors.</p>
+                        <p class="text-brand-light/90">See FR-4 boards, crystal oscillators, and AOI quality up close. Built for locksmiths and distributors.</p>
                         <div class="space-y-3">
-                            <a href="/contact/" class="block text-center bg-brand-accent hover:bg-brand-hover text-white px-4 py-3 rounded-lg font-bold transition shadow-lg" data-cta="blog_detail_teardown_kit">Quote now</a>
-                            <a href="/catalog/" class="block text-center border border-white/40 hover:border-white text-white font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_view_catalog">View Catalog</a>
+                            <a href="/contact/" class="block text-center bg-brand-cta hover:bg-brand-ctaHover text-brand-surface px-4 py-3 rounded-lg font-bold transition shadow-lg" data-cta="blog_detail_teardown_kit">Quote now</a>
+                            <a href="/catalog/" class="block text-center border border-brand-light/40 hover:border-brand-light text-brand-light font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_view_catalog">View Catalog</a>
                         </div>
-                        <div class="flex items-center gap-3 text-sm text-gray-300 pt-2">
+                        <div class="flex items-center gap-3 text-sm text-brand-light/70 pt-2">
                             <i class="fa-solid fa-shield-halved text-brand-accent"></i>
                             <span>Defect rate <0.1% | AOI inspected</span>
                         </div>
                     </div>
 
                     
-                    <div class="bg-brand-dark p-6 rounded-xl border border-gray-700 shadow-lg">
-                        <h3 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+                    <div class="bg-brand-dark p-6 rounded-xl border border-brand-dark/60 shadow-lg">
+                        <h3 class="text-brand-light font-bold text-lg mb-4 flex items-center gap-2">
                             <i class="fa-solid fa-link text-brand-accent"></i>
                             Quick Links
                         </h3>
-                        <ul class="space-y-3 text-sm text-gray-300">
+                        <ul class="space-y-3 text-sm text-brand-light/80">
                             <li><a href="/catalog/" class="hover:text-brand-accent transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-accent"></i> Browse Products</a></li>
                             <li><a href="/contact/" class="hover:text-brand-accent transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-accent"></i> Get a Quote</a></li>
                             <li><a href="/about/" class="hover:text-brand-accent transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-brand-accent"></i> About Us</a></li>
@@ -615,13 +615,13 @@ That is how OEM teams avoid &quot;datasheet dreams&quot; and ship reliable produ
                     </div>
 
                     
-                    <div class="bg-gradient-to-br from-brand-accent to-blue-600 p-6 rounded-xl text-center text-white shadow-xl relative overflow-hidden">
+                    <div class="bg-gradient-to-br from-brand-accent to-brand-hover p-6 rounded-xl text-center text-white shadow-xl relative overflow-hidden">
                         <div class="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full blur-2xl -mr-8 -mt-8"></div>
                         <h3 class="font-bold text-lg mb-2 relative z-10">Stay Updated</h3>
                         <p class="text-sm opacity-90 mb-4 relative z-10">Get weekly guides and tips delivered to your inbox.</p>
                         <form id="newsletterForm" class="space-y-3 relative z-10">
                             <input id="newsletterEmail" name="email" type="email" placeholder="Your email" required class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/60 focus:border-white focus:outline-none transition">
-                            <button type="submit" class="w-full bg-white text-brand-accent px-4 py-3 rounded-lg font-bold hover:bg-gray-100 transition">Subscribe</button>
+                            <button type="submit" class="w-full bg-brand-surface text-brand-accent px-4 py-3 rounded-lg font-bold hover:bg-brand-light transition">Subscribe</button>
                         </form>
                         <p id="newsletter-status" class="text-sm text-white/80 mt-2 hidden relative z-10" aria-live="polite"></p>
                     </div>
@@ -631,8 +631,8 @@ That is how OEM teams avoid &quot;datasheet dreams&quot; and ship reliable produ
     </main>
 
     
-    <footer class="bg-brand-dark border-t border-gray-800 py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+    <footer class="bg-brand-dark border-t border-brand-dark/60 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-brand-light/60">
             <div class="flex items-center gap-2 text-white">
                 <img src="/logo/logo.png" width="1024" height="1024" alt="GateRemoteSource logo" class="h-8 w-auto object-contain">
                 <span class="font-bold">GateRemote<span class="text-brand-accent">Source</span></span>
@@ -717,7 +717,7 @@ That is how OEM teams avoid &quot;datasheet dreams&quot; and ship reliable produ
                 const a = document.createElement('a');
                 a.href = '#' + id;
                 a.textContent = heading.textContent;
-                a.className = heading.tagName === 'H2' ? 'font-semibold text-white' : 'text-gray-300';
+                a.className = heading.tagName === 'H2' ? 'font-semibold text-brand-light' : 'text-brand-light/80';
                 
                 li.appendChild(a);
                 tocList.appendChild(li);
