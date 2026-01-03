@@ -13,18 +13,20 @@ module.exports = {
       colors: {
         // Industrial Tech-Clean 视觉系统
         brand: {
-          dark: "#0F172A",      // 品牌核心色：深海军蓝
-          accent: "#3B82F6",     // 交互点睛色：亮蓝色
-          hover: "#2563EB",       // Hover 状态
-          light: "#F8FAFC",      // 次级背景：极浅灰蓝
-          surface: "#FFFFFF",      // 基础背景：纯白
-          muted: "#64748B",       // 文字颜色：石墨灰
-          success: "#10B981",     // 成功状态
-          border: "#E2E8F0",     // 边框颜色
+          dark: "#0B1F3B",        // 品牌核心色：信任深海军蓝
+          accent: "#2F6FE4",      // 交互点睛色：信号蓝
+          hover: "#1F4E79",       // Hover 状态
+          light: "#F2F4F7",       // 次级背景：中性浅灰
+          surface: "#FFFFFF",    // 基础背景：纯白
+          muted: "#475569",       // 文字颜色：石墨灰
+          success: "#1F8A70",     // 成功状态
+          border: "#D7DDE5",      // 边框颜色
+          cta: "#F58220",         // CTA：安全橙
+          ctaHover: "#E76E12",    // CTA Hover
         },
         // 兼容旧版颜色
-        primary: "#0F172A",
-        secondary: "#F8FAFC",
+        primary: "#0B1F3B",
+        secondary: "#F2F4F7",
       },
       boxShadow: {
         'sm': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
