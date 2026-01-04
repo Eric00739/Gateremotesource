@@ -252,7 +252,12 @@ module.exports = function (eleventyConfig) {
     if (!outputPath || !outputPath.endsWith(".html")) return content;
 
     const pageData = this.page && this.page.data ? this.page.data : {};
-    const lang = pageData.lang || i18n.defaultLang;
+    const pageUrl = this.page && this.page.url ? this.page.url : "";
+    const urlLang = pageUrl.split("/")[1];
+    const lang =
+      pageData.lang ||
+      (languageSet.has(urlLang) ? urlLang : null) ||
+      i18n.defaultLang;
     const translations = i18n.locales[lang];
     if (!translations) return content;
 
