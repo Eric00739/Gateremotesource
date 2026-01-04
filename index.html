@@ -181,10 +181,10 @@ eleventyComputed:
 
         /* Glass navigation */
         .nav-glass {
-            background: rgba(255, 255, 255, 0.82);
+            background: rgba(255, 255, 255, 0.72);
             border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
         }
 
         /* Hero depth + glass */
@@ -205,13 +205,13 @@ eleventyComputed:
         }
 
         .hero-video video {
-            width: 100%;
+            width: 100vw;
             height: 100%;
             position: absolute;
             top: 0;
             left: 0;
             object-fit: cover;
-            filter: blur(8px) brightness(0.6);
+            filter: blur(2.5px) brightness(0.5);
             transform: scale(1.02);
         }
 
@@ -220,13 +220,17 @@ eleventyComputed:
             inset: 0;
             z-index: 2;
             pointer-events: none;
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3));
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4));
+        }
+
+        .hero-inner {
+            padding: 0 8%;
         }
 
         .hero-content-stack {
             position: relative;
             z-index: 3;
-            margin-left: clamp(1.25rem, 6vw, 10%);
+            margin-left: 0;
             width: min(720px, 100%);
             display: flex;
             flex-direction: column;
@@ -236,11 +240,11 @@ eleventyComputed:
         .hero-content-card {
             width: 100%;
             max-width: 720px;
-            padding: 40px 50px;
+            padding: 48px 60px;
             border-radius: 28px;
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
             backdrop-filter: blur(25px) saturate(180%);
             -webkit-backdrop-filter: blur(25px) saturate(180%);
         }
@@ -248,9 +252,9 @@ eleventyComputed:
         .hero-title {
             font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
             font-weight: 800;
-            font-size: 3.5rem;
-            line-height: 1.05;
-            letter-spacing: -0.02em;
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            line-height: 1.1;
+            letter-spacing: -0.025em;
             color: #fff;
             margin-bottom: 20px;
             background: linear-gradient(180deg, #fff 0%, #ccc 100%);
@@ -286,7 +290,7 @@ eleventyComputed:
             border-radius: 999px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
         }
@@ -304,7 +308,7 @@ eleventyComputed:
             border-radius: 16px;
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
             transition: transform 0.2s ease, background 0.2s ease;
@@ -330,10 +334,46 @@ eleventyComputed:
             font-size: 0.9rem;
             font-weight: 700;
             color: #fff;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+        }
+
+        .trust-card {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .trust-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+        }
+
+        .trust-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .trust-glass {
+            position: absolute;
+            left: 16px;
+            right: 16px;
+            bottom: 16px;
+            padding: 16px 18px;
+            border-radius: 16px;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
         }
 
         .section-gap {
@@ -498,18 +538,17 @@ eleventyComputed:
 
         @media (max-width: 768px) {
             .hero-video video {
-                filter: blur(4px) brightness(0.6);
+                filter: blur(2px) brightness(0.55);
                 transform: scale(1);
             }
 
-            .hero-content-stack {
-                margin: 0 1rem;
-                width: calc(100% - 2rem);
+            .hero-inner {
+                padding: 0 6%;
             }
 
             .hero-content-card {
-                width: 95%;
-                padding: 24px 20px;
+                width: 100%;
+                padding: 32px 24px;
                 border-radius: 22px;
             }
 
@@ -649,7 +688,7 @@ eleventyComputed:
 
     <!-- ================= NAVIGATION ================= -->
 
-    <nav class="fixed w-full z-50 nav-glass transition-all duration-200 ease-in-out">
+    <nav class="sticky top-0 w-full z-50 nav-glass transition-all duration-200 ease-in-out">
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -846,7 +885,7 @@ eleventyComputed:
             </div>
             <div class="hero-overlay" aria-hidden="true"></div>
 
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20 relative z-10">
+            <div class="max-w-7xl mx-auto w-full pt-20 relative z-10 hero-inner">
 
                 <div class="grid grid-cols-1 gap-12 items-center">
 
@@ -1330,7 +1369,7 @@ eleventyComputed:
 
                 <!-- NEW Factory Trust Section -->
 
-        <section id="compatibility" class="py-24 bg-brand-light border-t border-brand-border">
+        <section id="compatibility" class="py-24 bg-brand-light section-gap">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -1342,137 +1381,41 @@ eleventyComputed:
 
                 </div>
 
-                <div class="space-y-10">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <article class="trust-card h-72 md:h-96">
 
-                        <figure class="relative rounded-2xl overflow-hidden border border-brand-border bg-brand-dark/40 h-44 sm:h-52 group">
+                        <img loading="lazy" decoding="async" src="/factroy%20photo/gate%20remote%20(11).webp" alt="ISO9001 certificate and factory credentials">
 
-                            <img loading="lazy" decoding="async" src="/factroy%20photo/gate%20remote%20(11).webp" alt="ISO9001 certificate and factory credentials" class="w-full h-full object-cover">
-
-                            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/10 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
-
-                            <figcaption class="absolute bottom-3 left-3 text-xs font-semibold text-brand-light bg-brand-dark/60 backdrop-blur px-2 py-1 rounded">ISO9001 Certificate</figcaption>
-
-                        </figure>
-
-                        <figure class="relative rounded-2xl overflow-hidden border border-brand-border bg-brand-dark/40 h-44 sm:h-52 group">
-
-                            <img loading="lazy" decoding="async" src="/factroy%20photo/gate%20remote%20(18).webp" alt="SMT line inside GateRemoteSource factory" class="w-full h-full object-cover">
-
-                            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/10 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
-
-                            <figcaption class="absolute bottom-3 left-3 text-xs font-semibold text-brand-light bg-brand-dark/60 backdrop-blur px-2 py-1 rounded">SMT Line</figcaption>
-
-                        </figure>
-
-                        <figure class="relative rounded-2xl overflow-hidden border border-brand-border bg-brand-dark/40 h-44 sm:h-52 group">
-
-                            <img loading="lazy" decoding="async" src="/factroy%20photo/gate%20remote%20(10).webp" alt="Quality control with PASS verification screens" class="w-full h-full object-cover">
-
-                            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/10 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
-
-                            <figcaption class="absolute bottom-3 left-3 text-xs font-semibold text-brand-light bg-brand-dark/60 backdrop-blur px-2 py-1 rounded">QC & Verification</figcaption>
-
-                        </figure>
-
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-
-                        <div class="group">
-
-                            <div class="w-20 h-20 bg-brand-light rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-brand-accent transition duration-300">
-
-                                <i class="fa-solid fa-certificate text-brand-accent text-3xl group-hover:text-white transition"></i>
-
-                            </div>
-
-                            <h3 class="text-xl font-bold text-brand-dark mb-2" data-i18n="factory_trust.iso_certified.title">ISO9001 Certified Factory</h3>
-
-                            <p class="text-brand-muted text-sm" data-i18n="factory_trust.iso_certified.description">Quality management systems certified</p>
-
-                            <a href="/contact#cert-request" class="text-[10px] text-brand-accent hover:underline mt-2 block">Request ISO Certificate -></a>
-
+                        <div class="trust-glass">
+                            <h3 class="text-lg font-bold" data-i18n="factory_trust.iso_certified.title">ISO9001 Certified Factory</h3>
+                            <p class="text-sm text-white/80" data-i18n="factory_trust.iso_certified.description">Quality management systems certified</p>
+                            <a href="/contact#cert-request" class="text-xs text-white/90 hover:text-white underline mt-2 inline-block">Request ISO Certificate</a>
                         </div>
 
-                        <div class="group">
+                    </article>
 
-                            <div class="w-20 h-20 bg-brand-light rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-brand-accent transition duration-300">
+                    <article class="trust-card h-72 md:h-96">
 
-                                <i class="fa-solid fa-microchip text-brand-accent text-3xl group-hover:text-white transition"></i>
+                        <img loading="lazy" decoding="async" src="/factroy%20photo/gate%20remote%20(20).webp" alt="Aging and test bench for remotes and receivers">
 
-                            </div>
-
-                            <h3 class="text-xl font-bold text-brand-dark mb-2" data-i18n="factory_trust.authentic_components.title">Authentic Microchip/NXP Components</h3>
-
-                            <p class="text-brand-muted text-sm" data-i18n="factory_trust.authentic_components.description">Genuine chips for reliable performance</p>
-
+                        <div class="trust-glass">
+                            <h3 class="text-lg font-bold" data-i18n="factory_trust.aging_test.title">100% Aging Test Room</h3>
+                            <p class="text-sm text-white/80" data-i18n="factory_trust.aging_test.description">All products undergo rigorous testing</p>
                         </div>
 
-                        <div class="group">
+                    </article>
 
-                            <div class="w-20 h-20 bg-brand-light rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-brand-accent transition duration-300">
+                    <article class="trust-card h-72 md:h-96">
 
-                                <i class="fa-solid fa-clipboard-check text-brand-accent text-3xl group-hover:text-white transition"></i>
+                        <img loading="lazy" decoding="async" src="/factroy%20photo/gate%20remote%20(21).webp" alt="Production team assembling RF products">
 
-                            </div>
-
-                            <h3 class="text-xl font-bold text-brand-dark mb-2" data-i18n="factory_trust.aging_test.title">100% Aging Test Room</h3>
-
-                            <p class="text-brand-muted text-sm" data-i18n="factory_trust.aging_test.description">All products undergo rigorous testing</p>
-
+                        <div class="trust-glass">
+                            <h3 class="text-lg font-bold" data-i18n="factory_trust.production_base.title">4,000sqm Production Base</h3>
+                            <p class="text-sm text-white/80" data-i18n="factory_trust.production_base.description">Large-scale manufacturing capacity</p>
                         </div>
 
-                        <div class="group">
-
-                            <div class="w-20 h-20 bg-brand-light rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-brand-accent transition duration-300">
-
-                                <i class="fa-solid fa-industry text-brand-accent text-3xl group-hover:text-white transition"></i>
-
-                            </div>
-
-                            <h3 class="text-xl font-bold text-brand-dark mb-2" data-i18n="factory_trust.production_base.title">4,000sqm Production Base</h3>
-
-                            <p class="text-brand-muted text-sm" data-i18n="factory_trust.production_base.description">Large-scale manufacturing capacity</p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-
-                        <figure class="relative rounded-2xl overflow-hidden border border-brand-border bg-brand-dark/40 h-44 sm:h-52 group">
-
-                            <img loading="lazy" decoding="async" src="/factroy%20photo/gate%20remote%20(20).webp" alt="Aging and test bench for remotes and receivers" class="w-full h-full object-cover">
-
-                            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/10 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
-
-                            <figcaption class="absolute bottom-3 left-3 text-xs font-semibold text-brand-light bg-brand-dark/60 backdrop-blur px-2 py-1 rounded">Aging/Test Room</figcaption>
-
-                        </figure>
-
-                        <figure class="relative rounded-2xl overflow-hidden border border-brand-border bg-brand-dark/40 h-44 sm:h-52 group">
-
-                            <img loading="lazy" decoding="async" src="/factroy%20photo/gate%20remote%20(21).webp" alt="Production team assembling RF products" class="w-full h-full object-cover">
-
-                            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/10 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
-
-                            <figcaption class="absolute bottom-3 left-3 text-xs font-semibold text-brand-light bg-brand-dark/60 backdrop-blur px-2 py-1 rounded">Assembly Line</figcaption>
-
-                        </figure>
-
-                        <figure class="relative rounded-2xl overflow-hidden border border-brand-border bg-brand-dark/40 h-44 sm:h-52 group">
-
-                            <img loading="lazy" decoding="async" src="/factroy%20photo/gate%20remote%20(28).webp" alt="Finished goods in warehouse ready for dispatch" class="w-full h-full object-cover">
-
-                            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/10 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
-
-                            <figcaption class="absolute bottom-3 left-3 text-xs font-semibold text-brand-light bg-brand-dark/60 backdrop-blur px-2 py-1 rounded">Warehouse</figcaption>
-
-                        </figure>
-
-                    </div>
+                    </article>
 
                 </div>
 
@@ -1484,7 +1427,7 @@ eleventyComputed:
 
         <!-- NEW Client Testimonials Section -->
 
-        <section class="py-24 bg-brand-light border-t border-brand-border">
+        <section class="py-24 bg-brand-light section-gap">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -1730,7 +1673,7 @@ eleventyComputed:
 
         <!-- 4. Latest News -->
 
-        <section class="py-24 bg-brand-light border-t border-brand-border">
+        <section class="py-24 bg-brand-light section-gap">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -1762,7 +1705,7 @@ eleventyComputed:
 
         <!-- 5. FAQ -->
 
-        <section class="py-24 bg-brand-light border-t border-brand-border">
+        <section class="py-24 bg-brand-light section-gap">
 
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -1944,7 +1887,7 @@ eleventyComputed:
 
         <!-- Added: Distributor Advantages -->
 
-        <section class="py-24 bg-brand-light border-t border-brand-border">
+        <section class="py-24 bg-brand-light section-gap">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -2156,7 +2099,7 @@ eleventyComputed:
 
         <!-- Social Proof -->
 
-        <section class="py-24 bg-brand-light border-t border-brand-border">
+        <section class="py-24 bg-brand-light section-gap">
 
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -2246,7 +2189,7 @@ eleventyComputed:
 
         <!-- Compatibility Matrix -->
 
-        <section class="py-24 bg-brand-surface border-t border-brand-border">
+        <section class="py-24 bg-brand-surface section-gap">
 
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -2262,7 +2205,7 @@ eleventyComputed:
 
                 <div class="hidden md:block overflow-x-auto">
 
-                    <table class="w-full text-left text-brand-dark border border-brand-border rounded-2xl overflow-hidden transition-all duration-200 ease-in-out">
+                    <table class="w-full text-left text-brand-dark rounded-[20px] overflow-hidden bg-brand-light/70 transition-all duration-200 ease-in-out">
 
                         <thead class="bg-brand-surface text-brand-dark uppercase text-xs tracking-wider font-bold">
 
@@ -2280,9 +2223,9 @@ eleventyComputed:
 
                         </thead>
 
-                        <tbody class="divide-y divide-brand-border">
+                        <tbody class="divide-y divide-brand-border/30">
 
-                            <tr>
+                            <tr class="bg-brand-light/70">
 
                                 <td class="px-6 py-4">Nice FLO2R</td>
 
@@ -2294,7 +2237,7 @@ eleventyComputed:
 
                             </tr>
 
-                            <tr class="bg-brand-glass/30">
+                            <tr class="bg-brand-light/50">
 
                                 <td class="px-6 py-4">CAME TOP432EV</td>
 
@@ -2306,7 +2249,7 @@ eleventyComputed:
 
                             </tr>
 
-                            <tr>
+                            <tr class="bg-brand-light/70">
 
                                 <td class="px-6 py-4">HORMANN HSE2 BS</td>
 
@@ -2318,7 +2261,7 @@ eleventyComputed:
 
                             </tr>
 
-                            <tr class="bg-brand-light">
+                            <tr class="bg-brand-light/50">
 
                                 <td class="px-6 py-4">LIFTMASTER 971LM</td>
 
@@ -2344,7 +2287,7 @@ eleventyComputed:
 
         <!-- Fulfillment -->
 
-        <section class="py-24 bg-brand-light border-t border-brand-border">
+        <section class="py-24 bg-brand-light section-gap">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
