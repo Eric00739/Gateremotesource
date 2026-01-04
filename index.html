@@ -181,7 +181,7 @@ eleventyComputed:
 
         .hero-bg {
 
-            background-image: linear-gradient(rgba(29, 29, 31, 0.88), rgba(29, 29, 31, 0.72));
+            background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.15));  /* 25% to 15% black gradient overlay */
 
             background-size: cover;
 
@@ -203,7 +203,7 @@ eleventyComputed:
 
             inset: 0;
 
-            background: rgba(29, 29, 31, 0.35);
+            background: rgba(0, 0, 0, 0.30);  /* 30% black overlay for better text readability */
 
             z-index: 1;
 
@@ -317,17 +317,17 @@ eleventyComputed:
 
 
 
-        /* Mobile-first compatibility cards */
+        /* Mobile-first compatibility cards - soft shadow style */
 
         .compat-card {
 
-            border: 1px solid rgba(60, 60, 67, 0.16);
+            border: 1px solid #E2E8F0;  /* Light smoke gray border */
 
-            background: rgba(255, 255, 255, 0.72);
+            background: #FFFFFF;  /* Pure white background */
 
             border-radius: 0.75rem;
 
-            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);  /* Soft shadow */
 
             backdrop-filter: blur(16px);
 
@@ -359,11 +359,11 @@ eleventyComputed:
 
         @media (max-width: 768px) {
 
-            .hero-bg { 
+            .hero-bg {
 
-                background-attachment: scroll; 
+                background-attachment: scroll;
 
-                background-image: linear-gradient(rgba(29, 29, 31, 0.88), rgba(29, 29, 31, 0.72));
+                background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.15));  /* 25% to 15% black gradient overlay */
 
             }
 
@@ -373,7 +373,7 @@ eleventyComputed:
 
             .hero-bg {
 
-                background-image: linear-gradient(rgba(29, 29, 31, 0.88), rgba(29, 29, 31, 0.72));
+                background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.15));  /* 25% to 15% black gradient overlay */
 
             }
 
@@ -489,13 +489,13 @@ eleventyComputed:
 
 </head>
 
-<body class="font-sans text-brand-light/80 bg-brand-dark/70 backdrop-blur selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="home">
+<body class="font-sans text-brand-light/80 bg-brand-light backdrop-blur selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="home">
 
 
 
     <!-- ================= NAVIGATION ================= -->
 
-    <nav class="fixed w-full z-50 bg-brand-dark/70 border-b border-brand-dark/60 backdrop-blur transition-all duration-200 ease-in-out">
+    <nav class="fixed w-full z-50 bg-brand-surface/90 border-b border-brand-border backdrop-blur transition-all duration-200 ease-in-out">
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -613,7 +613,7 @@ eleventyComputed:
 
                     
 
-                    <a href="/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-brand-surface px-6 py-2 rounded-lg font-bold transition-all duration-200 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_get_price_list">
+                    <a href="/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-brand-surface px-6 py-2 rounded-lg font-bold transition-all duration-200 ease-in-out shadow-sm hover:shadow-md transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_get_price_list">
 
                         Quote now
 
@@ -643,31 +643,31 @@ eleventyComputed:
 
         <!-- Mobile Menu Dropdown -->
 
-        <div id="mobile-menu" class="lg:hidden bg-brand-dark/80 border-b border-brand-dark/60 hidden backdrop-blur">
+        <div id="mobile-menu" class="lg:hidden bg-brand-surface/95 border-b border-brand-border hidden backdrop-blur">
 
             <div class="px-4 pt-2 pb-6 space-y-2">
 
-                <a href="/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-light/80 hover:bg-brand-dark/60 hover:text-brand-accent transition-colors duration-200 ease-in-out" data-i18n="navigation.home">Home</a>
+                <a href="/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-accent transition-colors duration-200 ease-in-out" data-i18n="navigation.home">Home</a>
 
-                <a href="/catalog/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-light/80 hover:bg-brand-dark/60 hover:text-brand-accent transition-colors duration-200 ease-in-out" data-i18n="navigation.catalog">Catalog</a>
+                <a href="/catalog/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-accent transition-colors duration-200 ease-in-out" data-i18n="navigation.catalog">Catalog</a>
 
-                <a href="/oem/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-light/80 hover:bg-brand-dark/60 hover:text-brand-accent transition-colors duration-200 ease-in-out" data-i18n="navigation.oem">OEM/ODM</a>
+                <a href="/oem/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-accent transition-colors duration-200 ease-in-out" data-i18n="navigation.oem">OEM/ODM</a>
 
-                <a href="/about/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-light/80 hover:bg-brand-dark/60 hover:text-brand-accent transition-colors duration-200 ease-in-out" data-i18n="navigation.about">About</a>
+                <a href="/about/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-accent transition-colors duration-200 ease-in-out" data-i18n="navigation.about">About</a>
 
-                <a href="/blog/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-light/80 hover:bg-brand-dark/60 hover:text-brand-accent transition-colors duration-200 ease-in-out" data-i18n="navigation.blog">Blog</a>
+                <a href="/blog/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-accent transition-colors duration-200 ease-in-out" data-i18n="navigation.blog">Blog</a>
 
                 <a href="/contact/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-cta font-bold" data-i18n="navigation.contact" data-cta="mobile_get_price_list">Quote now</a>
 
-                <div class="pt-4 border-t border-brand-dark/60">
+                <div class="pt-4 border-t border-brand-border">
                     <p class="px-3 text-xs uppercase tracking-wide text-brand-light/60">Language</p>
                     <div class="px-3 mt-2 flex flex-wrap gap-2">
-                        <button type="button" onclick="changeLanguage('en')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-light/80 hover:text-brand-accent transition">EN</button>
-                        <button type="button" onclick="changeLanguage('es')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-light/80 hover:text-brand-accent transition">ES</button>
-                        <button type="button" onclick="changeLanguage('de')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-light/80 hover:text-brand-accent transition">DE</button>
-                        <button type="button" onclick="changeLanguage('it')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-light/80 hover:text-brand-accent transition">IT</button>
-                        <button type="button" onclick="changeLanguage('fr')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-light/80 hover:text-brand-accent transition">FR</button>
-                        <button type="button" onclick="changeLanguage('pt')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-light/80 hover:text-brand-accent transition">PT</button>
+                        <button type="button" onclick="changeLanguage('en')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-dark hover:text-brand-accent transition">EN</button>
+                        <button type="button" onclick="changeLanguage('es')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-dark hover:text-brand-accent transition">ES</button>
+                        <button type="button" onclick="changeLanguage('de')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-dark hover:text-brand-accent transition">DE</button>
+                        <button type="button" onclick="changeLanguage('it')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-dark hover:text-brand-accent transition">IT</button>
+                        <button type="button" onclick="changeLanguage('fr')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-dark hover:text-brand-accent transition">FR</button>
+                        <button type="button" onclick="changeLanguage('pt')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-dark hover:text-brand-accent transition">PT</button>
                     </div>
                 </div>
 
@@ -756,7 +756,7 @@ eleventyComputed:
 
                         <div class="flex flex-col sm:flex-row gap-5">
 
-                            <a href="/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-brand-surface text-center px-10 py-4 rounded-lg font-bold text-lg transition-all duration-200 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-1 inline-block" data-cta="hero_get_price_list">
+                            <a href="/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-brand-surface text-center px-10 py-4 rounded-lg font-bold text-lg transition-all duration-200 ease-in-out shadow-sm hover:shadow-md transform hover:-translate-y-1 inline-block" data-cta="hero_get_price_list">
 
                                 Quote now
 
@@ -818,7 +818,7 @@ eleventyComputed:
 
         <!-- Key Numbers -->
 
-        <section class="bg-brand-dark/70 backdrop-blur border-b border-brand-dark/60">
+        <section class="bg-brand-light border-b border-brand-border">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -844,7 +844,7 @@ eleventyComputed:
 
         <!-- Trust Bar -->
 
-        <div id="products-preview" class="bg-brand-dark/70 backdrop-blur border-b border-brand-dark/60">
+        <div id="products-preview" class="bg-brand-light border-b border-brand-border">
 
             <div class="max-w-7xl mx-auto px-4 py-10">
 
@@ -900,7 +900,7 @@ eleventyComputed:
 
         <!-- Featured Products - Updated "Must-Have Inventory" -->
 
-        <section class="py-24 bg-brand-dark/70 backdrop-blur">
+        <section class="py-24 bg-brand-light">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -916,7 +916,7 @@ eleventyComputed:
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
 
-                    <div class="bg-brand-surface rounded-2xl border border-brand-border hover:border-brand-accent transition-all duration-200 ease-in-out group overflow-hidden cursor-pointer hover:shadow-md">
+                    <div class="bg-brand-surface rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 ease-in-out group overflow-hidden cursor-pointer">
 
                         <div class="aspect-square bg-brand-light relative flex items-center justify-center p-4">
 
@@ -962,7 +962,7 @@ eleventyComputed:
 
                     </div>
 
-                    <div class="bg-brand-surface rounded-2xl border border-brand-border hover:border-brand-accent transition-all duration-200 ease-in-out group overflow-hidden cursor-pointer hover:shadow-md">
+                    <div class="bg-brand-surface rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 ease-in-out group overflow-hidden cursor-pointer">
 
                         <div class="aspect-square bg-brand-light relative flex items-center justify-center p-4">
 
@@ -996,7 +996,7 @@ eleventyComputed:
 
                     </div>
 
-                    <div class="bg-brand-surface rounded-2xl border border-brand-border hover:border-brand-accent transition-all duration-200 ease-in-out group overflow-hidden cursor-pointer hover:shadow-md">
+                    <div class="bg-brand-surface rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 ease-in-out group overflow-hidden cursor-pointer">
 
                         <div class="aspect-square bg-brand-light relative flex items-center justify-center p-4">
 
@@ -1070,7 +1070,7 @@ eleventyComputed:
 
                         <div class="text-center md:text-right">
 
-                            <a href="/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-brand-surface font-bold px-8 py-4 rounded-xl transition shadow-lg transform hover:scale-105 inline-block">
+                            <a href="/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-brand-surface font-bold px-8 py-4 rounded-lg transition shadow-sm hover:shadow-md transform hover:scale-105 inline-block">
 
                                 <i class="fa-solid fa-download mr-2"></i> <span data-i18n="inventory.request_full_list">Request Full List</span>
 
@@ -1150,7 +1150,7 @@ eleventyComputed:
 
         <!-- Distributor Portal CTA -->
 
-        <section class="py-16 bg-brand-surface border-t border-b border-brand-border">
+        <section class="py-16 bg-brand-light border-t border-b border-brand-border">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -1164,7 +1164,7 @@ eleventyComputed:
 
                         <p class="text-brand-muted">Built for wholesale 433MHz remote control European, US, South American, and Australian distributors who need fast access to Nice/Came compatible remotes across Europe.</p>
 
-                        <a href="/contact/" class="inline-flex items-center gap-2 bg-brand-cta hover:bg-brand-ctaHover text-white px-6 py-3 rounded-lg font-bold transition shadow-lg shadow-brand-accent/20" data-cta="portal_access">
+                        <a href="/contact/" class="inline-flex items-center gap-2 bg-brand-cta hover:bg-brand-ctaHover text-white px-6 py-3 rounded-lg font-bold transition shadow-sm hover:shadow-md" data-cta="portal_access">
 
                             Quote now
 
@@ -1176,7 +1176,7 @@ eleventyComputed:
 
                     <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                        <div class="compat-card p-6 border border-brand-border hover:shadow-md transition-all duration-200 ease-in-out">
+                        <div class="compat-card p-6 shadow-sm hover:shadow-md transition-all duration-200 ease-in-out">
 
                             <div class="flex items-center gap-3 mb-3">
 
@@ -1194,7 +1194,7 @@ eleventyComputed:
 
                         </div>
 
-                        <div class="compat-card p-6 border border-brand-border hover:shadow-md transition-all duration-200 ease-in-out">
+                        <div class="compat-card p-6 shadow-sm hover:shadow-md transition-all duration-200 ease-in-out">
 
                             <div class="flex items-center gap-3 mb-3">
 
@@ -1224,7 +1224,7 @@ eleventyComputed:
 
                 <!-- NEW Factory Trust Section -->
 
-        <section id="compatibility" class="py-24 bg-brand-surface border-t border-brand-border">
+        <section id="compatibility" class="py-24 bg-brand-light border-t border-brand-border">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -1378,7 +1378,7 @@ eleventyComputed:
 
         <!-- NEW Client Testimonials Section -->
 
-        <section class="py-24 bg-brand-dark/70 backdrop-blur border-t border-brand-dark/60">
+        <section class="py-24 bg-brand-light border-t border-brand-border">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -1414,7 +1414,7 @@ eleventyComputed:
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-testimonial-page="0">
 
-                        <div class="bg-brand-surface border border-brand-border rounded-2xl p-8 hover:shadow-md transition-all duration-200 ease-in-out">
+                        <div class="bg-brand-surface border border-brand-border rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-200 ease-in-out">
 
                             <div class="flex items-center justify-between mb-4">
 
@@ -1446,7 +1446,7 @@ eleventyComputed:
 
                         </div>
 
-                        <div class="bg-brand-surface border border-brand-border rounded-2xl p-8 hover:shadow-md transition-all duration-200 ease-in-out">
+                        <div class="bg-brand-surface border border-brand-border rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-200 ease-in-out">
 
                             <div class="flex items-center justify-between mb-4">
 
@@ -1478,7 +1478,7 @@ eleventyComputed:
 
                         </div>
 
-                        <div class="bg-brand-surface border border-brand-border rounded-2xl p-8 hover:shadow-md transition-all duration-200 ease-in-out">
+                        <div class="bg-brand-surface border border-brand-border rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-200 ease-in-out">
 
                             <div class="flex items-center justify-between mb-4">
 
@@ -1516,7 +1516,7 @@ eleventyComputed:
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 hidden" data-testimonial-page="1">
 
-                        <div class="bg-brand-surface border border-brand-border rounded-2xl p-8 hover:shadow-md transition-all duration-200 ease-in-out">
+                        <div class="bg-brand-surface border border-brand-border rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-200 ease-in-out">
 
                             <div class="flex items-center justify-between mb-4">
 
@@ -1624,7 +1624,7 @@ eleventyComputed:
 
         <!-- 4. Latest News -->
 
-        <section class="py-24 bg-brand-dark/70 backdrop-blur border-t border-brand-dark/60">
+        <section class="py-24 bg-brand-light border-t border-brand-border">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -1656,7 +1656,7 @@ eleventyComputed:
 
         <!-- 5. FAQ -->
 
-        <section class="py-24 bg-brand-surface border-t border-brand-border">
+        <section class="py-24 bg-brand-light border-t border-brand-border">
 
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -1674,115 +1674,115 @@ eleventyComputed:
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-                            <details class="group bg-brand-dark/70 backdrop-blur p-5 rounded-xl border border-brand-dark/60 hover:border-brand-accent transition">
+                            <details class="group bg-brand-surface p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
 
-                                <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
+                                <summary class="flex items-center justify-between cursor-pointer text-brand-dark font-semibold">
 
                                     <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>Do you sell to end users?</span>
 
-                                    <i class="fa-solid fa-chevron-down text-xs text-brand-light/60 group-open:rotate-180 transition-transform"></i>
+                                    <i class="fa-solid fa-chevron-down text-xs text-brand-muted group-open:rotate-180 transition-transform"></i>
 
                                 </summary>
 
-                                <p class="text-brand-light/70 mt-2 pl-7">No. We are a B2B manufacturer and supply locksmiths, installers, and distributors only.</p>
+                                <p class="text-brand-muted mt-2 pl-7">No. We are a B2B manufacturer and supply locksmiths, installers, and distributors only.</p>
 
                             </details>
 
-                            <details class="group bg-brand-dark/70 backdrop-blur p-5 rounded-xl border border-brand-dark/60 hover:border-brand-accent transition">
+                            <details class="group bg-brand-surface p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
 
-                                <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
+                                <summary class="flex items-center justify-between cursor-pointer text-brand-dark font-semibold">
 
                                     <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>What is your MOQ?</span>
 
-                                    <i class="fa-solid fa-chevron-down text-xs text-brand-light/60 group-open:rotate-180 transition-transform"></i>
+                                    <i class="fa-solid fa-chevron-down text-xs text-brand-muted group-open:rotate-180 transition-transform"></i>
 
                                 </summary>
 
-                                <p class="text-brand-light/70 mt-2 pl-7">50 pcs.</p>
+                                <p class="text-brand-muted mt-2 pl-7">50 pcs.</p>
 
                             </details>
 
-                            <details class="group bg-brand-dark/70 backdrop-blur p-5 rounded-xl border border-brand-dark/60 hover:border-brand-accent transition">
+                            <details class="group bg-brand-surface p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
 
-                                <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
+                                <summary class="flex items-center justify-between cursor-pointer text-brand-dark font-semibold">
 
                                     <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>Which currency can you quote in?</span>
 
-                                    <i class="fa-solid fa-chevron-down text-xs text-brand-light/60 group-open:rotate-180 transition-transform"></i>
+                                    <i class="fa-solid fa-chevron-down text-xs text-brand-muted group-open:rotate-180 transition-transform"></i>
 
                                 </summary>
 
-                                <p class="text-brand-light/70 mt-2 pl-7">USD or EUR.</p>
+                                <p class="text-brand-muted mt-2 pl-7">USD or EUR.</p>
 
                             </details>
 
-                            <details class="group bg-brand-dark/70 backdrop-blur p-5 rounded-xl border border-brand-dark/60 hover:border-brand-accent transition">
+                            <details class="group bg-brand-surface p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
 
-                                <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
+                                <summary class="flex items-center justify-between cursor-pointer text-brand-dark font-semibold">
 
                                     <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>Do you have distributor tier pricing levels?</span>
 
-                                    <i class="fa-solid fa-chevron-down text-xs text-brand-light/60 group-open:rotate-180 transition-transform"></i>
+                                    <i class="fa-solid fa-chevron-down text-xs text-brand-muted group-open:rotate-180 transition-transform"></i>
 
                                 </summary>
 
-                                <p class="text-brand-light/70 mt-2 pl-7">Yes. We offer tiered pricing based on annual volume and order size. Share your forecast and we will quote the correct tier.</p>
+                                <p class="text-brand-muted mt-2 pl-7">Yes. We offer tiered pricing based on annual volume and order size. Share your forecast and we will quote the correct tier.</p>
 
                             </details>
 
-                            <details class="group bg-brand-dark/70 backdrop-blur p-5 rounded-xl border border-brand-dark/60 hover:border-brand-accent transition">
+                            <details class="group bg-brand-surface p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
 
-                                <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
+                                <summary class="flex items-center justify-between cursor-pointer text-brand-dark font-semibold">
 
                                     <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>Is packaging included? Custom packaging/labels?</span>
 
-                                    <i class="fa-solid fa-chevron-down text-xs text-brand-light/60 group-open:rotate-180 transition-transform"></i>
+                                    <i class="fa-solid fa-chevron-down text-xs text-brand-muted group-open:rotate-180 transition-transform"></i>
 
                                 </summary>
 
-                                <p class="text-brand-light/70 mt-2 pl-7">Standard packaging is included by default. Custom packaging/labels require an additional cost.</p>
+                                <p class="text-brand-muted mt-2 pl-7">Standard packaging is included by default. Custom packaging/labels require an additional cost.</p>
 
                             </details>
 
-                            <details class="group bg-brand-dark/70 backdrop-blur p-5 rounded-xl border border-brand-dark/60 hover:border-brand-accent transition">
+                            <details class="group bg-brand-surface p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
 
-                                <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
+                                <summary class="flex items-center justify-between cursor-pointer text-brand-dark font-semibold">
 
                                     <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>Payment terms and methods?</span>
 
-                                    <i class="fa-solid fa-chevron-down text-xs text-brand-light/60 group-open:rotate-180 transition-transform"></i>
+                                    <i class="fa-solid fa-chevron-down text-xs text-brand-muted group-open:rotate-180 transition-transform"></i>
 
                                 </summary>
 
-                                <p class="text-brand-light/70 mt-2 pl-7">Standard terms: T/T 30/70. We also accept PayPal (samples), L/C, and Alibaba Trade Assurance.</p>
+                                <p class="text-brand-muted mt-2 pl-7">Standard terms: T/T 30/70. We also accept PayPal (samples), L/C, and Alibaba Trade Assurance.</p>
 
                             </details>
 
-                            <details class="group bg-brand-dark/70 backdrop-blur p-5 rounded-xl border border-brand-dark/60 hover:border-brand-accent transition">
+                            <details class="group bg-brand-surface p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
 
-                                <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
+                                <summary class="flex items-center justify-between cursor-pointer text-brand-dark font-semibold">
 
                                     <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>Which Incoterms and lanes?</span>
 
-                                    <i class="fa-solid fa-chevron-down text-xs text-brand-light/60 group-open:rotate-180 transition-transform"></i>
+                                    <i class="fa-solid fa-chevron-down text-xs text-brand-muted group-open:rotate-180 transition-transform"></i>
 
                                 </summary>
 
-                                <p class="text-brand-light/70 mt-2 pl-7">FOB / DAP / DDP for EU / US / South America / Australia.</p>
+                                <p class="text-brand-muted mt-2 pl-7">FOB / DAP / DDP for EU / US / South America / Australia.</p>
 
                             </details>
 
-                            <details class="group bg-brand-dark/70 backdrop-blur p-5 rounded-xl border border-brand-dark/60 hover:border-brand-accent transition">
+                            <details class="group bg-brand-surface p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
 
-                                <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
+                                <summary class="flex items-center justify-between cursor-pointer text-brand-dark font-semibold">
 
                                     <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>What is your warranty period?</span>
 
-                                    <i class="fa-solid fa-chevron-down text-xs text-brand-light/60 group-open:rotate-180 transition-transform"></i>
+                                    <i class="fa-solid fa-chevron-down text-xs text-brand-muted group-open:rotate-180 transition-transform"></i>
 
                                 </summary>
 
-                                <p class="text-brand-light/70 mt-2 pl-7">1-year warranty for both remotes and receivers.</p>
+                                <p class="text-brand-muted mt-2 pl-7">1-year warranty for both remotes and receivers.</p>
 
                             </details>
 
@@ -1796,17 +1796,17 @@ eleventyComputed:
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-                            <details class="group bg-brand-dark/70 backdrop-blur p-5 rounded-xl border border-brand-dark/60 hover:border-brand-accent transition">
+                            <details class="group bg-brand-surface p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
 
-                                <summary class="flex items-center justify-between cursor-pointer text-white font-semibold">
+                                <summary class="flex items-center justify-between cursor-pointer text-brand-dark font-semibold">
 
                                     <span class="flex items-center gap-2"><i class="fa-solid fa-circle-question text-brand-accent"></i>What is the MOQ for OEM/ODM customization?</span>
 
-                                    <i class="fa-solid fa-chevron-down text-xs text-brand-light/60 group-open:rotate-180 transition-transform"></i>
+                                    <i class="fa-solid fa-chevron-down text-xs text-brand-muted group-open:rotate-180 transition-transform"></i>
 
                                 </summary>
 
-                                <p class="text-brand-light/70 mt-2 pl-7">500 pcs.</p>
+                                <p class="text-brand-muted mt-2 pl-7">500 pcs.</p>
 
                             </details>
 
@@ -1838,7 +1838,7 @@ eleventyComputed:
 
         <!-- Added: Distributor Advantages -->
 
-        <section class="py-24 bg-brand-dark/70 backdrop-blur border-t border-brand-dark/60">
+        <section class="py-24 bg-brand-light border-t border-brand-border">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -1888,7 +1888,7 @@ eleventyComputed:
 
     <div id="page-products" class="page-view">
 
-        <section class="pt-32 pb-24 bg-brand-dark/70 backdrop-blur min-h-screen">
+        <section class="pt-32 pb-24 bg-brand-light min-h-screen">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -1922,7 +1922,7 @@ eleventyComputed:
 
                     <!-- Product Card 1 -->
 
-                    <div class="bg-brand-surface border border-brand-border rounded-xl overflow-hidden group hover:border-brand-accent transition-all duration-200 ease-in-out hover:shadow-md" data-category="rolling">
+                    <div class="bg-brand-surface border border-brand-border rounded-xl overflow-hidden group shadow-sm hover:shadow-md transition-all duration-200 ease-in-out" data-category="rolling">
 
                         <div class="aspect-square bg-brand-light relative flex items-center justify-center p-4">
 
@@ -1956,7 +1956,7 @@ eleventyComputed:
 
                     <!-- Product Card 2 -->
 
-                    <div class="bg-brand-surface border border-brand-border rounded-xl overflow-hidden group hover:border-brand-accent transition-all duration-200 ease-in-out hover:shadow-md" data-category="duplicators">
+                    <div class="bg-brand-surface border border-brand-border rounded-xl overflow-hidden group shadow-sm hover:shadow-md transition-all duration-200 ease-in-out" data-category="duplicators">
 
                         <div class="aspect-square bg-brand-light relative flex items-center justify-center p-4">
 
@@ -1990,7 +1990,7 @@ eleventyComputed:
 
                     <!-- Product Card 3 -->
 
-                    <div class="bg-brand-surface border border-brand-border rounded-xl overflow-hidden group hover:border-brand-accent transition-all duration-200 ease-in-out hover:shadow-md" data-category="receivers">
+                    <div class="bg-brand-surface border border-brand-border rounded-xl overflow-hidden group shadow-sm hover:shadow-md transition-all duration-200 ease-in-out" data-category="receivers">
 
                         <div class="aspect-square bg-brand-light relative flex items-center justify-center p-4">
 
@@ -2050,7 +2050,7 @@ eleventyComputed:
 
         <!-- Social Proof -->
 
-        <section class="py-24 bg-brand-dark/70 backdrop-blur border-t border-brand-dark/60">
+        <section class="py-24 bg-brand-light border-t border-brand-border">
 
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -2070,7 +2070,7 @@ eleventyComputed:
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-                    <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 shadow-lg">
+                    <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 shadow-sm">
 
                         <div class="flex items-center gap-3 mb-3">
 
@@ -2090,7 +2090,7 @@ eleventyComputed:
 
                     </div>
 
-                    <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 shadow-lg">
+                    <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 shadow-sm">
 
                         <div class="flex items-center gap-3 mb-3">
 
@@ -2110,7 +2110,7 @@ eleventyComputed:
 
                     </div>
 
-                    <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 shadow-lg">
+                    <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 shadow-sm">
 
                         <div class="flex items-center gap-3 mb-3">
 
@@ -2158,7 +2158,7 @@ eleventyComputed:
 
                     <table class="w-full text-left text-brand-dark border border-brand-border rounded-2xl overflow-hidden transition-all duration-200 ease-in-out">
 
-                        <thead class="bg-brand-dark/70 backdrop-blur text-white uppercase text-xs tracking-wider font-bold">
+                        <thead class="bg-brand-surface text-brand-dark uppercase text-xs tracking-wider font-bold">
 
                             <tr>
 
@@ -2238,7 +2238,7 @@ eleventyComputed:
 
         <!-- Fulfillment -->
 
-        <section class="py-24 bg-brand-dark/70 backdrop-blur border-t border-brand-dark/60">
+        <section class="py-24 bg-brand-light border-t border-brand-border">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -2290,7 +2290,7 @@ eleventyComputed:
 
     <div id="page-oem" class="page-view">
 
-        <section class="pt-32 pb-24 bg-brand-dark/70 backdrop-blur min-h-screen">
+        <section class="pt-32 pb-24 bg-brand-light min-h-screen">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -2388,7 +2388,7 @@ eleventyComputed:
 
                     <div class="text-center mt-10">
 
-                        <button onclick="navigateTo('contact')" class="bg-brand-cta text-white px-10 py-4 rounded-lg font-bold hover:bg-brand-ctaHover shadow-lg" data-cta="oem_get_price_list">
+                        <button onclick="navigateTo('contact')" class="bg-brand-cta text-white px-10 py-4 rounded-lg font-bold hover:bg-brand-ctaHover shadow-sm hover:shadow-md" data-cta="oem_get_price_list">
 
                             Quote now
 
@@ -2450,7 +2450,7 @@ eleventyComputed:
 
     <div id="page-about" class="page-view">
 
-        <section class="pt-32 pb-24 bg-brand-dark/70 backdrop-blur min-h-screen">
+        <section class="pt-32 pb-24 bg-brand-light min-h-screen">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -2630,7 +2630,7 @@ eleventyComputed:
 
     <div id="page-blog" class="page-view">
 
-        <section class="pt-32 pb-24 bg-brand-surface min-h-screen">
+        <section class="pt-32 pb-24 bg-brand-light min-h-screen">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -2662,13 +2662,13 @@ eleventyComputed:
 
                         <!-- Search Widget -->
 
-                        <div class="bg-brand-dark/70 backdrop-blur p-6 rounded-xl border border-brand-dark/60 shadow-lg">
+                        <div class="bg-brand-surface p-6 rounded-xl border border-brand-border shadow-sm hover:shadow-md transition">
 
-                            <h3 class="font-bold text-brand-light mb-4" data-i18n="blog.installer_resources">Search Guides</h3>
+                            <h3 class="font-bold text-brand-dark mb-4" data-i18n="blog.installer_resources">Search Guides</h3>
 
                             <div class="relative">
 
-                                <input type="text" id="blogSearch" placeholder="e.g. Programming Nice..." onkeyup="filterBlogs()" class="w-full bg-brand-surface border border-brand-border rounded-lg pl-4 pr-10 py-3 text-brand-dark focus:border-brand-accent outline-none transition">
+                                <input type="text" id="blogSearch" placeholder="e.g. Programming Nice..." onkeyup="filterBlogs()" class="w-full bg-brand-light border border-brand-border rounded-lg pl-4 pr-10 py-3 text-brand-dark focus:border-brand-accent outline-none transition">
 
                                 <i class="fa-solid fa-search absolute right-3 top-3.5 text-brand-muted"></i>
 
@@ -2680,19 +2680,19 @@ eleventyComputed:
 
                         <!-- Categories Widget -->
 
-                        <div class="bg-brand-dark/70 backdrop-blur p-6 rounded-xl border border-brand-dark/60 shadow-lg">
+                        <div class="bg-brand-surface p-6 rounded-xl border border-brand-border shadow-sm hover:shadow-md transition">
 
-                            <h3 class="font-bold text-brand-light mb-4" data-i18n="blog.topics">Topics</h3>
+                            <h3 class="font-bold text-brand-dark mb-4" data-i18n="blog.topics">Topics</h3>
 
-                            <ul class="space-y-3 text-brand-light/70 text-sm">
+                            <ul class="space-y-3 text-brand-muted text-sm">
 
-                                <li class="hover:text-brand-accent cursor-pointer flex justify-between border-b border-brand-dark/60 pb-2"><span data-i18n="blog.programming_guides">Programming Guides</span> <span class="bg-brand-dark/60 backdrop-blur text-brand-light text-xs px-2 rounded-full">12</span></li>
+                                <li class="hover:text-brand-accent cursor-pointer flex justify-between border-b border-brand-border pb-2"><span data-i18n="blog.programming_guides">Programming Guides</span> <span class="bg-brand-light text-brand-dark text-xs px-2 rounded-full">12</span></li>
 
-                                <li class="hover:text-brand-accent cursor-pointer flex justify-between border-b border-brand-dark/60 pb-2"><span data-i18n="blog.market_trends">Market Trends</span> <span class="bg-brand-dark/60 backdrop-blur text-brand-light text-xs px-2 rounded-full">5</span></li>
+                                <li class="hover:text-brand-accent cursor-pointer flex justify-between border-b border-brand-border pb-2"><span data-i18n="blog.market_trends">Market Trends</span> <span class="bg-brand-light text-brand-dark text-xs px-2 rounded-full">5</span></li>
 
-                                <li class="hover:text-brand-accent cursor-pointer flex justify-between border-b border-brand-dark/60 pb-2"><span data-i18n="blog.troubleshooting">Troubleshooting</span> <span class="bg-brand-dark/60 backdrop-blur text-brand-light text-xs px-2 rounded-full">8</span></li>
+                                <li class="hover:text-brand-accent cursor-pointer flex justify-between border-b border-brand-border pb-2"><span data-i18n="blog.troubleshooting">Troubleshooting</span> <span class="bg-brand-light text-brand-dark text-xs px-2 rounded-full">8</span></li>
 
-                                <li class="hover:text-brand-accent cursor-pointer flex justify-between"><span data-i18n="blog.new_products">New Products</span> <span class="bg-brand-dark/60 backdrop-blur text-brand-light text-xs px-2 rounded-full">3</span></li>
+                                <li class="hover:text-brand-accent cursor-pointer flex justify-between"><span data-i18n="blog.new_products">New Products</span> <span class="bg-brand-light text-brand-dark text-xs px-2 rounded-full">3</span></li>
 
                             </ul>
 
@@ -2702,15 +2702,15 @@ eleventyComputed:
 
                         <!-- Marketing CTA Widget -->
 
-                        <div class="bg-brand-dark/70 backdrop-blur border border-brand-accent/30 p-8 rounded-xl text-center text-white shadow-lg relative overflow-hidden">
+                        <div class="bg-brand-surface border border-brand-accent/30 p-8 rounded-xl text-center text-brand-dark shadow-sm hover:shadow-md transition relative overflow-hidden">
 
-                            <div class="absolute top-0 right-0 w-32 h-32 bg-brand-light/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-brand-accent/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
 
                             <h3 class="font-bold text-xl mb-2 relative z-10" data-i18n="blog.become_distributor_title">Become a Distributor</h3>
 
                             <p class="text-sm opacity-90 mb-6 relative z-10" data-i18n="blog.become_distributor_description">Get access to wholesale pricing and marketing materials.</p>
 
-                            <button onclick="navigateTo('contact')" class="bg-brand-surface text-brand-accent px-6 py-3 rounded-full font-bold text-sm shadow-lg hover:bg-brand-light transition relative z-10 w-full" data-i18n="blog.apply_now">Apply Now</button>
+                            <button onclick="navigateTo('contact')" class="bg-brand-cta text-brand-surface px-6 py-3 rounded-full font-bold text-sm shadow-sm hover:shadow-md transition relative z-10 w-full" data-i18n="blog.apply_now">Apply Now</button>
 
                         </div>
 
@@ -2734,7 +2734,7 @@ eleventyComputed:
 
     <div id="page-contact" class="page-view">
 
-        <section class="pt-32 pb-24 bg-brand-dark/70 backdrop-blur min-h-screen">
+        <section class="pt-32 pb-24 bg-brand-light min-h-screen">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -2864,7 +2864,7 @@ eleventyComputed:
 
                             <input type="hidden" name="_subject" value="Wholesale account application from GateRemoteSource.com">
 
-                            <button type="submit" class="w-full bg-brand-cta hover:bg-brand-ctaHover text-white font-bold py-4 rounded-lg transition transform hover:scale-[1.02] shadow-lg" data-cta="form_submit_home">
+                            <button type="submit" class="w-full bg-brand-cta hover:bg-brand-ctaHover text-white font-bold py-4 rounded-lg transition transform hover:scale-[1.02] shadow-sm hover:shadow-md" data-cta="form_submit_home">
 
                                 <span data-i18n="contact.submit_button">Quote now</span>
 
@@ -2902,7 +2902,7 @@ eleventyComputed:
 
             </div>
 
-            <button onclick="navigateTo('contact')" class="bg-brand-cta text-brand-surface px-8 py-3 rounded-full font-bold hover:bg-brand-ctaHover transition shadow-lg shadow-brand-accent/20">
+            <button onclick="navigateTo('contact')" class="bg-brand-cta text-brand-surface px-8 py-3 rounded-lg font-bold hover:bg-brand-ctaHover transition shadow-sm hover:shadow-md">
 
                 <span data-i18n="pre_footer.order_samples">Order Samples</span>
 
@@ -2916,7 +2916,7 @@ eleventyComputed:
 
     <!-- ================= FOOTER ================= -->
 
-    <footer class="bg-brand-dark/70 backdrop-blur pt-20 pb-10 border-t border-brand-dark/60 text-brand-light/70 text-base">
+    <footer class="bg-brand-light pt-20 pb-10 border-t border-brand-border text-brand-dark/80 text-base">
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 

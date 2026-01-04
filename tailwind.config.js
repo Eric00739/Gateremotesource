@@ -20,18 +20,18 @@ module.exports = {
         ],
       },
       colors: {
-        // Apple glass-inspired palette
+        // Optimized color scheme for cleaner, premium look
         brand: {
           dark: "#1D1D1F",        // Dark surface
-          accent: "#0A84FF",      // Apple blue
-          hover: "#0071E3",       // Accent hover
-          light: "#F5F5F7",       // Light background
-          surface: "#FFFFFF",    // Glass base (opacity set via CSS)
+          accent: "#2563EB",      // Royal Blue (for hover/key info only)
+          hover: "#1D4ED8",       // Accent hover
+          light: "#F8FAFC",       // Very light gray-white (main background)
+          surface: "#FFFFFF",    // White (card background)
           muted: "#6E6E73",       // Secondary text
           success: "#34C759",     // Success
-          border: "#D1D1D6",      // Separator
-          cta: "#0A84FF",         // CTA
-          ctaHover: "#0071E3",    // CTA Hover
+          border: "#E2E8F0",      // Light smoke gray (separator)
+          cta: "#000000",         // Pure black (Apple style)
+          ctaHover: "#1F2937",    // CTA Hover (dark gray)
         },
         // 兼容旧版颜色
         primary: "#1D1D1F",
