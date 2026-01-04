@@ -373,7 +373,7 @@ eleventyComputed:
 
             .hero-bg {
 
-                background-image: linear-gradient(rgba(29, 29, 31, 0.88), rgba(29, 29, 31, 0.72)), url('/assets/factory/smt-line.webp');
+                background-image: linear-gradient(rgba(29, 29, 31, 0.88), rgba(29, 29, 31, 0.72));
 
             }
 
@@ -555,53 +555,53 @@ eleventyComputed:
 
                             </button>
 
-                            <div id="languageDropdown" class="absolute right-0 mt-2 w-48 bg-brand-surface border border-brand-border rounded-lg shadow-lg hidden z-50">
+                            <div id="languageDropdown" class="absolute right-0 mt-2 w-48 bg-brand-dark/80 border border-brand-dark/60 rounded-lg shadow-lg hidden z-50 backdrop-blur">
 
-                                <a href="#" onclick="changeLanguage('en')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light/40 transition">
+                                <a href="#" onclick="changeLanguage('en')" class="flex items-center gap-3 px-4 py-3 text-brand-light/80 hover:bg-brand-dark/60 transition">
 
-                                    <span class="text-xs font-semibold text-brand-dark">EN</span>
+                                    <span class="text-xs font-semibold text-brand-light/80">EN</span>
 
-                                    <span class="text-brand-dark">English</span>
-
-                                </a>
-
-                                <a href="#" onclick="changeLanguage('es')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light/40 transition">
-
-                                    <span class="text-xs font-semibold text-brand-dark">ES</span>
-
-                                    <span class="text-brand-dark">Spanish</span>
+                                    <span class="text-brand-light/80">English</span>
 
                                 </a>
 
-                                <a href="#" onclick="changeLanguage('de')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light/40 transition">
+                                <a href="#" onclick="changeLanguage('es')" class="flex items-center gap-3 px-4 py-3 text-brand-light/80 hover:bg-brand-dark/60 transition">
 
-                                    <span class="text-xs font-semibold text-brand-dark">DE</span>
+                                    <span class="text-xs font-semibold text-brand-light/80">ES</span>
 
-                                    <span class="text-brand-dark">Deutsch</span>
-
-                                </a>
-
-                                <a href="#" onclick="changeLanguage('it')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light/40 transition">
-
-                                    <span class="text-xs font-semibold text-brand-dark">IT</span>
-
-                                    <span class="text-brand-dark">Italiano</span>
+                                    <span class="text-brand-light/80">Spanish</span>
 
                                 </a>
 
-                                <a href="#" onclick="changeLanguage('fr')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light/40 transition">
+                                <a href="#" onclick="changeLanguage('de')" class="flex items-center gap-3 px-4 py-3 text-brand-light/80 hover:bg-brand-dark/60 transition">
 
-                                    <span class="text-xs font-semibold text-brand-dark">FR</span>
+                                    <span class="text-xs font-semibold text-brand-light/80">DE</span>
 
-                                    <span class="text-brand-dark">French</span>
+                                    <span class="text-brand-light/80">Deutsch</span>
 
                                 </a>
 
-                                <a href="#" onclick="changeLanguage('pt')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light/40 transition">
+                                <a href="#" onclick="changeLanguage('it')" class="flex items-center gap-3 px-4 py-3 text-brand-light/80 hover:bg-brand-dark/60 transition">
 
-                                    <span class="text-xs font-semibold text-brand-dark">PT</span>
+                                    <span class="text-xs font-semibold text-brand-light/80">IT</span>
 
-                                    <span class="text-brand-dark">Portuguese</span>
+                                    <span class="text-brand-light/80">Italiano</span>
+
+                                </a>
+
+                                <a href="#" onclick="changeLanguage('fr')" class="flex items-center gap-3 px-4 py-3 text-brand-light/80 hover:bg-brand-dark/60 transition">
+
+                                    <span class="text-xs font-semibold text-brand-light/80">FR</span>
+
+                                    <span class="text-brand-light/80">French</span>
+
+                                </a>
+
+                                <a href="#" onclick="changeLanguage('pt')" class="flex items-center gap-3 px-4 py-3 text-brand-light/80 hover:bg-brand-dark/60 transition">
+
+                                    <span class="text-xs font-semibold text-brand-light/80">PT</span>
+
+                                    <span class="text-brand-light/80">Portuguese</span>
 
                                 </a>
 
@@ -643,21 +643,33 @@ eleventyComputed:
 
         <!-- Mobile Menu Dropdown -->
 
-        <div id="mobile-menu" class="lg:hidden bg-brand-surface border-b border-brand-border hidden">
+        <div id="mobile-menu" class="lg:hidden bg-brand-dark/80 border-b border-brand-dark/60 hidden backdrop-blur">
 
             <div class="px-4 pt-2 pb-6 space-y-2">
 
-                <a href="/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-accent transition-colors duration-200 ease-in-out" data-i18n="navigation.home">Home</a>
+                <a href="/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-light/80 hover:bg-brand-dark/60 hover:text-brand-accent transition-colors duration-200 ease-in-out" data-i18n="navigation.home">Home</a>
 
-                <a href="/catalog/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-accent transition-colors duration-200 ease-in-out" data-i18n="navigation.catalog">Catalog</a>
+                <a href="/catalog/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-light/80 hover:bg-brand-dark/60 hover:text-brand-accent transition-colors duration-200 ease-in-out" data-i18n="navigation.catalog">Catalog</a>
 
-                <a href="/oem/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-accent transition-colors duration-200 ease-in-out" data-i18n="navigation.oem">OEM/ODM</a>
+                <a href="/oem/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-light/80 hover:bg-brand-dark/60 hover:text-brand-accent transition-colors duration-200 ease-in-out" data-i18n="navigation.oem">OEM/ODM</a>
 
-                <a href="/about/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-accent transition-colors duration-200 ease-in-out" data-i18n="navigation.about">About</a>
+                <a href="/about/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-light/80 hover:bg-brand-dark/60 hover:text-brand-accent transition-colors duration-200 ease-in-out" data-i18n="navigation.about">About</a>
 
-                <a href="/blog/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-accent transition-colors duration-200 ease-in-out" data-i18n="navigation.blog">Blog</a>
+                <a href="/blog/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-light/80 hover:bg-brand-dark/60 hover:text-brand-accent transition-colors duration-200 ease-in-out" data-i18n="navigation.blog">Blog</a>
 
                 <a href="/contact/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-cta font-bold" data-i18n="navigation.contact" data-cta="mobile_get_price_list">Quote now</a>
+
+                <div class="pt-4 border-t border-brand-dark/60">
+                    <p class="px-3 text-xs uppercase tracking-wide text-brand-light/60">Language</p>
+                    <div class="px-3 mt-2 flex flex-wrap gap-2">
+                        <button type="button" onclick="changeLanguage('en')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-light/80 hover:text-brand-accent transition">EN</button>
+                        <button type="button" onclick="changeLanguage('es')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-light/80 hover:text-brand-accent transition">ES</button>
+                        <button type="button" onclick="changeLanguage('de')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-light/80 hover:text-brand-accent transition">DE</button>
+                        <button type="button" onclick="changeLanguage('it')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-light/80 hover:text-brand-accent transition">IT</button>
+                        <button type="button" onclick="changeLanguage('fr')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-light/80 hover:text-brand-accent transition">FR</button>
+                        <button type="button" onclick="changeLanguage('pt')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-light/80 hover:text-brand-accent transition">PT</button>
+                    </div>
+                </div>
 
             </div>
 
@@ -2990,7 +3002,7 @@ eleventyComputed:
 
     <!-- Floating WhatsApp -->
 
-    <a href="https://wa.me/8615899648898" target="_blank" class="whatsapp-float fixed bottom-6 right-6 z-50 bg-brand-accent hover:bg-brand-hover text-white rounded-full p-4 shadow-lg flex items-center justify-center transition transform hover:scale-105">
+    <a href="https://wa.me/8615899648898" target="_blank" class="whatsapp-float fixed bottom-6 right-6 z-50 bg-brand-cta hover:bg-brand-ctaHover text-white rounded-full p-4 shadow-lg flex items-center justify-center transition transform hover:scale-105">
 
         <i class="fa-brands fa-whatsapp text-4xl"></i>
 
@@ -3320,7 +3332,7 @@ eleventyComputed:
 
             if (copyrightElement && translations.footer && translations.footer.copyright) {
 
-                copyrightElement.textContent = translations.footer.copyright.replace('{year}', new Date().getFullYear());
+                copyrightElement.textContent = translations.footer.copyright.replace('{year}', '2026');
 
             }
 

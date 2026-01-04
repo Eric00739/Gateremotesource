@@ -8,6 +8,12 @@
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
   }
+  .whatsapp-float {
+    background-color: #0A84FF !important;
+  }
+  .whatsapp-float:hover {
+    background-color: #0071E3 !important;
+  }
   .whatsapp-float .fa-whatsapp {
     color: #ffffff !important;
   }

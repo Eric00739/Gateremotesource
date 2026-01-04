@@ -84,15 +84,7 @@
   <url>
     <loc>https://www.gateremotesource.com/blog/</loc>
     
-    <lastmod>2026-01-03</lastmod>
-    
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://www.gateremotesource.com/contact/</loc>
-    
-    <lastmod>2026-01-03</lastmod>
+    <lastmod>2026-01-04</lastmod>
     
     <changefreq>weekly</changefreq>
   </url>
@@ -100,7 +92,7 @@
   <url>
     <loc>https://www.gateremotesource.com/oem/</loc>
     
-    <lastmod>2026-01-03</lastmod>
+    <lastmod>2026-01-04</lastmod>
     
     <changefreq>weekly</changefreq>
   </url>
@@ -108,15 +100,7 @@
   <url>
     <loc>https://www.gateremotesource.com/catalog/</loc>
     
-    <lastmod>2026-01-03</lastmod>
-    
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://www.gateremotesource.com/about/</loc>
-    
-    <lastmod>2026-01-03</lastmod>
+    <lastmod>2026-01-04</lastmod>
     
     <changefreq>weekly</changefreq>
   </url>
@@ -124,7 +108,23 @@
   <url>
     <loc>https://www.gateremotesource.com/</loc>
     
-    <lastmod>2026-01-03</lastmod>
+    <lastmod>2026-01-04</lastmod>
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/about/</loc>
+    
+    <lastmod>2026-01-04</lastmod>
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/contact/</loc>
+    
+    <lastmod>2026-01-04</lastmod>
     
     <changefreq>weekly</changefreq>
   </url>

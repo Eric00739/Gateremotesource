@@ -91,159 +91,170 @@
 
     <style>
         ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: #F3F4F6; }
-        ::-webkit-scrollbar-thumb { background: #D1D5DB; border-radius: 5px; }
+        ::-webkit-scrollbar-track { background: #1D1D1F; }
+        ::-webkit-scrollbar-thumb { background: #6E6E73; border-radius: 5px; }
         ::-webkit-scrollbar-thumb:hover { background: #0A84FF; }
 
         .nav-link.active { color: #0A84FF !important; font-weight: 700; border-bottom: 2px solid #0A84FF; }
         
         .lang-select {
-            background-color: rgba(0, 0, 0, 0.05);
-            color: #111827;
-            border: 1px solid #E5E7EB;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #F5F5F7;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             padding: 0.25rem 0.5rem;
             border-radius: 0.375rem;
             font-size: 0.875rem;
             cursor: pointer;
             outline: none;
         }
-        .lang-select option { background-color: #FFFFFF; color: #111827; }
+        .lang-select option { background-color: #F3F4F6; color: #111827; }
     </style>
 </head>
-<body class="font-sans text-gray-700 bg-white selection:bg-blue-500 selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="blog">
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur border-b border-gray-200 transition-all duration-300">
+<body class="font-sans text-brand-light/80 bg-brand-dark/70 backdrop-blur selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="blog">
+    <nav class="fixed w-full z-50 bg-brand-dark/70 backdrop-blur border-b border-brand-dark/60 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
                     <a href="/es/" class="flex items-center gap-3">
-                        <div class="bg-gray-50 border border-gray-200 p-1.5 rounded-lg h-10 w-10 flex items-center justify-center">
+                        <div class="bg-brand-surface border border-brand-border/60 p-1.5 rounded-lg h-10 w-10 flex items-center justify-center">
                             <img src="/logo/logo.png" width="1024" height="1024" alt="GateRemoteSource Logo" class="h-full w-full object-contain">
                         </div>
-                        <span class="font-bold text-2xl text-gray-900 tracking-tight">GateRemote<span class="text-blue-500">Source</span></span>
+                        <span class="font-bold text-2xl text-white tracking-tight">GateRemote<span class="text-brand-accent">Source</span></span>
                     </a>
                 </div>
 
                 <div class="hidden lg:flex space-x-8 items-center">
-                    <a href="/es/" class="nav-link text-gray-600 hover:text-blue-500 transition font-semibold py-2" id="nav-home" data-i18n="navigation.home">Inicio</a>
-                    <a href="/es/catalog/" class="nav-link text-gray-600 hover:text-blue-500 transition font-semibold py-2" id="nav-products" data-i18n="navigation.catalog">Catálogo</a>
-                    <a href="/es/oem/" class="nav-link text-gray-600 hover:text-blue-500 transition font-semibold py-2" id="nav-oem" data-i18n="navigation.oem">OEM/ODM</a>
-                    <a href="/es/about/" class="nav-link text-gray-600 hover:text-blue-500 transition font-semibold py-2" id="nav-about" data-i18n="navigation.about">Nosotros</a>
-                    <a href="/es/blog/" class="nav-link text-gray-600 hover:text-blue-500 transition font-semibold py-2 active" id="nav-blog" data-i18n="navigation.blog">Blog</a>
-                    <a href="/es/contact/" class="nav-link text-gray-600 hover:text-blue-500 transition font-semibold py-2" id="nav-contact" data-i18n="navigation.contact">Contacto</a>
-
-                    <div class="flex items-center ml-2 border-l border-gray-200 pl-4">
+                    <a href="/es/" class="nav-link text-brand-light/80 hover:text-brand-accent transition font-semibold py-2" id="nav-home" data-i18n="navigation.home">Inicio</a>
+                    <a href="/es/catalog/" class="nav-link text-brand-light/80 hover:text-brand-accent transition font-semibold py-2" id="nav-products" data-i18n="navigation.catalog">Catálogo</a>
+                    <a href="/es/oem/" class="nav-link text-brand-light/80 hover:text-brand-accent transition font-semibold py-2" id="nav-oem" data-i18n="navigation.oem">OEM/ODM</a>
+                    <a href="/es/about/" class="nav-link text-brand-light/80 hover:text-brand-accent transition font-semibold py-2" id="nav-about" data-i18n="navigation.about">Nosotros</a>
+                    <a href="/es/blog/" class="nav-link text-brand-light/80 hover:text-brand-accent transition font-semibold py-2 active" id="nav-blog" data-i18n="navigation.blog">Blog</a>
+                    <a href="/es/contact/" class="nav-link text-brand-light/80 hover:text-brand-accent transition font-semibold py-2" id="nav-contact" data-i18n="navigation.contact">Contacto</a>
+                    
+                    <div class="flex items-center ml-2 border-l border-brand-dark/60 pl-4">
                         <div class="relative">
-                            <button id="languageDropdownBtn" class="flex items-center gap-2 text-gray-700 hover:text-blue-500 transition">
+                            <button id="languageDropdownBtn" class="flex items-center gap-2 text-brand-light/80 hover:text-brand-accent transition">
                                 <span id="currentFlag" class="text-xs font-semibold tracking-wide">EN</span>
                                 <span id="currentLang" class="text-sm">English</span>
                                 <i class="fa-solid fa-chevron-down text-xs"></i>
                             </button>
-                            <div id="languageDropdown" class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg hidden z-50">
-                                <a href="#" onclick="changeLanguage('en')" class="flex items-center gap-3 px-4 py-3 text-gray-900 hover:bg-gray-50 transition">
+                            <div id="languageDropdown" class="absolute right-0 mt-2 w-48 bg-brand-dark/80 border border-brand-dark/60 rounded-lg shadow-lg hidden z-50 backdrop-blur">
+                                <a href="#" onclick="changeLanguage('en')" class="flex items-center gap-3 px-4 py-3 text-brand-light/80 hover:bg-brand-dark/60 transition">
                                     <span class="text-xs font-semibold">EN</span>
-                                    <span class="text-gray-900">English</span>
+                                    <span class="text-brand-light/80">English</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('es')" class="flex items-center gap-3 px-4 py-3 text-gray-900 hover:bg-gray-50 transition">
+                                <a href="#" onclick="changeLanguage('es')" class="flex items-center gap-3 px-4 py-3 text-brand-light/80 hover:bg-brand-dark/60 transition">
                                     <span class="text-xs font-semibold">ES</span>
-                                    <span class="text-gray-900">Espanol</span>
+                                    <span class="text-brand-light/80">Espanol</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('de')" class="flex items-center gap-3 px-4 py-3 text-gray-900 hover:bg-gray-50 transition">
+                                <a href="#" onclick="changeLanguage('de')" class="flex items-center gap-3 px-4 py-3 text-brand-light/80 hover:bg-brand-dark/60 transition">
                                     <span class="text-xs font-semibold">DE</span>
-                                    <span class="text-gray-900">Deutsch</span>
+                                    <span class="text-brand-light/80">Deutsch</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('it')" class="flex items-center gap-3 px-4 py-3 text-gray-900 hover:bg-gray-50 transition">
+                                <a href="#" onclick="changeLanguage('it')" class="flex items-center gap-3 px-4 py-3 text-brand-light/80 hover:bg-brand-dark/60 transition">
                                     <span class="text-xs font-semibold">IT</span>
-                                    <span class="text-gray-900">Italiano</span>
+                                    <span class="text-brand-light/80">Italiano</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('fr')" class="flex items-center gap-3 px-4 py-3 text-gray-900 hover:bg-gray-50 transition">
+                                <a href="#" onclick="changeLanguage('fr')" class="flex items-center gap-3 px-4 py-3 text-brand-light/80 hover:bg-brand-dark/60 transition">
                                     <span class="text-xs font-semibold">FR</span>
-                                    <span class="text-gray-900">Francais</span>
+                                    <span class="text-brand-light/80">Francais</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('pt')" class="flex items-center gap-3 px-4 py-3 text-gray-900 hover:bg-gray-50 transition">
+                                <a href="#" onclick="changeLanguage('pt')" class="flex items-center gap-3 px-4 py-3 text-brand-light/80 hover:bg-brand-dark/60 transition">
                                     <span class="text-xs font-semibold">PT</span>
-                                    <span class="text-gray-900">Portugues</span>
+                                    <span class="text-brand-light/80">Portugues</span>
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <a href="/es/contact/" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg font-bold transition shadow-md shadow-blue-500/20 hover:shadow-lg transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_get_price_list">Quote Now</a>
+                    <a href="/es/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-white px-6 py-2 rounded-lg font-bold transition shadow-md shadow-brand-cta/20 hover:shadow-lg transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_get_price_list">Quote Now</a>
                 </div>
 
                 <div class="lg:hidden flex items-center gap-4">
-                    <button id="mobile-menu-btn" class="text-gray-900 text-2xl focus:outline-none">
+                    <button id="mobile-menu-btn" class="text-brand-light/80 text-2xl focus:outline-none">
                         <i class="fa-solid fa-bars"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <div id="mobile-menu" class="lg:hidden bg-white border-b border-gray-200 hidden">
+        <div id="mobile-menu" class="lg:hidden bg-brand-dark/80 border-b border-brand-dark/60 hidden backdrop-blur">
             <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="/es/" class="block px-3 py-3 rounded-md text-base font-semibold text-gray-900 hover:bg-gray-50 hover:text-blue-500" data-i18n="navigation.home">Inicio</a>
-                <a href="/es/catalog/" class="block px-3 py-3 rounded-md text-base font-semibold text-gray-900 hover:bg-gray-50 hover:text-blue-500" data-i18n="navigation.catalog">Catálogo</a>
-                <a href="/es/oem/" class="block px-3 py-3 rounded-md text-base font-semibold text-gray-900 hover:bg-gray-50 hover:text-blue-500" data-i18n="navigation.oem">OEM/ODM</a>
-                <a href="/es/about/" class="block px-3 py-3 rounded-md text-base font-semibold text-gray-900 hover:bg-gray-50 hover:text-blue-500" data-i18n="navigation.about">Nosotros</a>
-                <a href="/es/blog/" class="block px-3 py-3 rounded-md text-base font-semibold text-gray-900 hover:bg-gray-50 hover:text-blue-500" data-i18n="navigation.blog">Blog</a>
-                <a href="/es/contact/" class="block px-3 py-3 rounded-md text-base font-semibold text-blue-500 font-bold" data-i18n="navigation.contact" data-cta="mobile_get_price_list">Contacto</a>
+                <a href="/es/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-light/80 hover:bg-brand-dark/60 hover:text-brand-accent" data-i18n="navigation.home">Inicio</a>
+                <a href="/es/catalog/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-light/80 hover:bg-brand-dark/60 hover:text-brand-accent" data-i18n="navigation.catalog">Catálogo</a>
+                <a href="/es/oem/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-light/80 hover:bg-brand-dark/60 hover:text-brand-accent" data-i18n="navigation.oem">OEM/ODM</a>
+                <a href="/es/about/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-light/80 hover:bg-brand-dark/60 hover:text-brand-accent" data-i18n="navigation.about">Nosotros</a>
+                <a href="/es/blog/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-light/80 hover:bg-brand-dark/60 hover:text-brand-accent" data-i18n="navigation.blog">Blog</a>
+                <a href="/es/contact/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-cta font-bold" data-i18n="navigation.contact" data-cta="mobile_get_price_list">Contacto</a>
+                <div class="pt-4 border-t border-brand-dark/60">
+                    <p class="px-3 text-xs uppercase tracking-wide text-brand-light/60">Language</p>
+                    <div class="px-3 mt-2 flex flex-wrap gap-2">
+                        <button type="button" onclick="changeLanguage('en')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-light/80 hover:text-brand-accent transition">EN</button>
+                        <button type="button" onclick="changeLanguage('es')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-light/80 hover:text-brand-accent transition">ES</button>
+                        <button type="button" onclick="changeLanguage('de')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-light/80 hover:text-brand-accent transition">DE</button>
+                        <button type="button" onclick="changeLanguage('it')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-light/80 hover:text-brand-accent transition">IT</button>
+                        <button type="button" onclick="changeLanguage('fr')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-light/80 hover:text-brand-accent transition">FR</button>
+                        <button type="button" onclick="changeLanguage('pt')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-light/80 hover:text-brand-accent transition">PT</button>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
 
-    <main class="pt-28 pb-24 bg-brand-light min-h-screen">
+    <main class="pt-28 pb-24 bg-brand-dark/70 backdrop-blur min-h-screen">
         
         <section class="pb-12">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div class="space-y-6">
-                        <span class="text-xs uppercase tracking-wider text-brand-accent font-bold">Installer Hub</span>
-                        <h1 class="text-4xl md:text-5xl font-bold text-brand-dark" data-i18n="blog.title">Centro de Instaladores</h1>
-                        <p class="text-brand-muted max-w-2xl" data-i18n="blog.subtitle">Guías técnicas, tutoriales de programación y noticias de la industria para cerrajeros.</p>
-                        <div class="flex flex-wrap gap-3 text-sm text-brand-muted">
-                            <span class="flex items-center gap-2 bg-brand-surface border border-brand-border rounded-full px-3 py-1">
+                        <span class="text-xs uppercase tracking-wider text-brand-light/60 font-semibold">Installer Hub</span>
+                        <h1 class="text-4xl md:text-5xl font-bold text-white" data-i18n="blog.title">Centro de Instaladores</h1>
+                        <p class="text-brand-light/70 max-w-2xl" data-i18n="blog.subtitle">Guías técnicas, tutoriales de programación y noticias de la industria para cerrajeros.</p>
+                        <div class="flex flex-wrap gap-3 text-sm text-brand-light/70">
+                            <span class="flex items-center gap-2 glass-chip text-brand-light/80 rounded-full px-3 py-1">
                                 <i class="fa-solid fa-circle-check text-brand-accent"></i>
                                 <span>Programming and compatibility guides</span>
                             </span>
-                            <span class="flex items-center gap-2 bg-brand-surface border border-brand-border rounded-full px-3 py-1">
+                            <span class="flex items-center gap-2 glass-chip text-brand-light/80 rounded-full px-3 py-1">
                                 <i class="fa-solid fa-circle-check text-brand-accent"></i>
                                 <span>RF troubleshooting and range fixes</span>
                             </span>
-                            <span class="flex items-center gap-2 bg-brand-surface border border-brand-border rounded-full px-3 py-1">
+                            <span class="flex items-center gap-2 glass-chip text-brand-light/80 rounded-full px-3 py-1">
                                 <i class="fa-solid fa-circle-check text-brand-accent"></i>
                                 <span>Distributor-ready sales playbooks</span>
                             </span>
                         </div>
-                        <div class="flex flex-wrap gap-4 items-center text-sm text-brand-muted">
-                            <div class="bg-brand-surface border border-brand-border rounded-lg px-4 py-2">
+                        <div class="flex flex-wrap gap-4 items-center text-sm text-brand-light/70">
+                            <div class="bg-brand-surface border border-brand-border/40 rounded-lg px-4 py-2 text-brand-dark">
                                 <span class="text-brand-dark font-bold">2</span> total guides
                             </div>
-                            <div class="bg-brand-surface border border-brand-border rounded-lg px-4 py-2">
+                            <div class="bg-brand-surface border border-brand-border/40 rounded-lg px-4 py-2 text-brand-dark/80">
                                 Updated weekly by factory engineers
                             </div>
                         </div>
                         <div class="flex flex-wrap gap-3">
-                            <a href="/es/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-white px-6 py-3 rounded-lg font-bold transition shadow-md shadow-brand-accent/20 hover:shadow-lg" data-cta="blog_hero_get_price">Get price list</a>
-                            <a href="/es/catalog/" class="border border-brand-accent text-brand-accent hover:border-brand-hover hover:text-brand-hover hover:bg-brand-light px-6 py-3 rounded-lg font-bold transition" data-cta="blog_hero_catalog">Download catalog</a>
+                            <a href="/es/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-white px-6 py-3 rounded-lg font-bold transition shadow-md shadow-brand-cta/20 hover:shadow-lg" data-cta="blog_hero_get_price">Get price list</a>
+                            <a href="/es/catalog/" class="border border-brand-cta text-brand-cta hover:border-brand-ctaHover hover:text-brand-ctaHover hover:bg-brand-light/80 px-6 py-3 rounded-lg font-bold transition" data-cta="blog_hero_catalog">Download catalog</a>
                         </div>
                     </div>
-                    <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 shadow-lg space-y-6">
+                    <div class="bg-brand-surface border border-brand-border/40 rounded-2xl p-6 shadow-lg space-y-6">
                         <div>
                             <h3 class="text-brand-dark font-bold text-lg mb-2">Search the library</h3>
                             <p class="text-brand-muted text-sm mb-4">Find guides by model, brand, frequency, or issue.</p>
                             <div class="relative">
-                                <input type="text" id="blogSearch" placeholder="Search by model, brand, or topic" class="w-full bg-brand-light border border-brand-border rounded-lg pl-4 pr-10 py-3 text-brand-dark focus:border-brand-accent outline-none transition">
-                                <i class="fa-solid fa-search absolute right-3 top-3.5 text-brand-muted"></i>
+                                <input type="text" id="blogSearch" placeholder="Search by model, brand, or topic" class="w-full bg-brand-light/80 border border-brand-border/60 rounded-lg pl-4 pr-10 py-3 text-brand-dark focus:border-brand-accent outline-none transition">
+                                <i class="fa-solid fa-search absolute right-3 top-3.5 text-brand-muted/70"></i>
                             </div>
                             <div id="searchSuggestions" class="mt-3 space-y-2 hidden"></div>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div class="bg-brand-light border border-brand-border rounded-xl p-4">
+                            <div class="bg-brand-light/80 border border-brand-border/60 rounded-xl p-4">
                                 <p class="text-xs text-brand-muted uppercase tracking-wide mb-2">Fast quote</p>
                                 <h4 class="text-brand-dark font-semibold mb-2">Pricing in 24 hours</h4>
                                 <p class="text-xs text-brand-muted mb-4">MOQ, lead time, and compatibility pack.</p>
                                 <a href="/es/contact/" class="text-brand-accent text-sm font-bold hover:text-brand-hover">Request quote</a>
                             </div>
-                            <div class="bg-brand-light border border-brand-border rounded-xl p-4">
+                            <div class="bg-brand-light/80 border border-brand-border/60 rounded-xl p-4">
                                 <p class="text-xs text-brand-muted uppercase tracking-wide mb-2">Distributor kit</p>
                                 <h4 class="text-brand-dark font-semibold mb-2">Get the playbook</h4>
                                 <p class="text-xs text-brand-muted mb-4">RF benchmarks and margin guidance.</p>
@@ -255,9 +266,9 @@
                             <p class="text-xs uppercase tracking-wider text-brand-muted mb-3">Quick topics</p>
                             <div class="flex flex-wrap gap-2">
                                 
-                                <button type="button" class="px-3 py-1 rounded-full bg-brand-light border border-brand-border text-xs text-brand-muted hover:border-brand-accent hover:text-brand-accent transition" data-quick-filter="category" data-value="rf-engineering">RF Engineering</button>
+                                <button type="button" class="px-3 py-1 rounded-full glass-chip border-brand-border/60 text-xs text-brand-dark hover:border-brand-accent hover:text-brand-accent transition" data-quick-filter="category" data-value="rf-engineering">RF Engineering</button>
                                 
-                                <button type="button" class="px-3 py-1 rounded-full bg-brand-light border border-brand-border text-xs text-brand-muted hover:border-brand-accent hover:text-brand-accent transition" data-quick-filter="category" data-value="engineering">Engineering</button>
+                                <button type="button" class="px-3 py-1 rounded-full glass-chip border-brand-border/60 text-xs text-brand-dark hover:border-brand-accent hover:text-brand-accent transition" data-quick-filter="category" data-value="engineering">Engineering</button>
                                 
                             </div>
                         </div>
@@ -269,7 +280,7 @@
 
         <section class="pb-8">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-brand-surface border border-brand-border rounded-xl p-4">
+                <div class="bg-brand-surface border border-brand-border/40 rounded-xl p-4">
                     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                         <div>
                             <h2 class="text-brand-dark font-bold text-lg">Latest guides</h2>
@@ -277,12 +288,12 @@
                         </div>
                         <div class="flex flex-wrap items-center gap-3">
                             <span id="resultsCount" class="text-sm text-brand-muted">Showing 0 results</span>
-                            <button type="button" class="px-3 py-2 rounded-lg border border-brand-border text-brand-muted hover:border-brand-accent hover:text-brand-dark transition text-sm" data-clear-filters>Clear filters</button>
+                            <button type="button" class="px-3 py-2 rounded-lg border border-brand-border/60 text-brand-muted hover:border-brand-accent hover:text-brand-dark transition text-sm" data-clear-filters>Clear filters</button>
                         </div>
                     </div>
                 </div>
                 <div id="activeFilters" class="mt-4 flex flex-wrap gap-2"></div>
-                <div id="no-results" class="hidden text-brand-muted mt-4">No articles found on this page. Try a different filter.</div>
+                <div id="no-results" class="hidden text-brand-light/60 mt-4">No articles found on this page. Try a different filter.</div>
             </div>
         </section>
 
@@ -293,7 +304,7 @@
                         
                         
                         
-                        <section class="bg-brand-surface border border-brand-border rounded-2xl overflow-hidden shadow-lg group" data-post-card data-title="How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance" data-summary="A field-proven checklist for OEM teams to turn range and compliance into measurable KPIs: link margin, blocking, protocol airtime, and regulator-limited transmit behavior." data-category="rf-engineering" data-tags="433-92mhz|rf-compliance|link-budget|oem-procurement|garage-doors" data-brand="" data-frequency="433-92mhz" data-scene="">
+                        <section class="bg-brand-surface border border-brand-border/40 rounded-2xl overflow-hidden shadow-lg group" data-post-card data-title="How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance" data-summary="A field-proven checklist for OEM teams to turn range and compliance into measurable KPIs: link margin, blocking, protocol airtime, and regulator-limited transmit behavior." data-category="rf-engineering" data-tags="433-92mhz|rf-compliance|link-budget|oem-procurement|garage-doors" data-brand="" data-frequency="433-92mhz" data-scene="">
                             <div class="grid grid-cols-1 md:grid-cols-2">
                                 <div class="relative">
                                     <img src="/assets/blog-drops/choose-433-92mhz-remote-control/image-01.webp" alt="How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -325,12 +336,12 @@
 
                         <section class="space-y-6">
                             <div class="flex items-center justify-between">
-                                <h3 class="text-brand-dark font-bold text-lg">Fresh from the lab</h3>
-                                <span class="text-xs text-brand-muted">Newest updates first</span>
+                                <h3 class="text-brand-light font-bold text-lg">Fresh from the lab</h3>
+                                <span class="text-xs text-brand-light/60">Newest updates first</span>
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 
-                                <article class="bg-brand-surface p-6 rounded-xl border border-brand-border hover:border-brand-accent transition flex flex-col gap-4 group" data-post-card data-title="Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls" data-summary="Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation." data-category="engineering" data-tags="pcb-quality|rolling-code|oem-manufacturing" data-brand="" data-frequency="433-92mhz" data-scene="">
+                                <article class="bg-brand-surface p-6 rounded-xl border border-brand-border/40 hover:border-brand-accent transition flex flex-col gap-4 group" data-post-card data-title="Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls" data-summary="Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation." data-category="engineering" data-tags="pcb-quality|rolling-code|oem-manufacturing" data-brand="" data-frequency="433-92mhz" data-scene="">
                                     <div class="h-48 rounded-lg overflow-hidden">
                                         <img loading="lazy" decoding="async" src="/assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-01.webp" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls">
                                     </div>
@@ -352,13 +363,13 @@
                         
                     </div>
                     <aside class="space-y-8">
-                        <div class="bg-brand-surface p-6 rounded-xl border border-brand-border shadow-lg">
+                        <div class="bg-brand-surface p-6 rounded-xl border border-brand-border/40 shadow-lg">
                             <div class="flex items-center justify-between mb-4">
                                 <h3 class="font-bold text-brand-dark">Filters</h3>
                                 <button type="button" class="text-xs text-brand-muted hover:text-brand-dark" data-clear-filters>Reset</button>
                             </div>
                             <p class="text-xs text-brand-muted mb-4">Stack filters to narrow down results.</p>
-                            <div class="space-y-6 text-sm text-brand-dark">
+                            <div class="space-y-6 text-sm text-brand-dark/80">
                                 
                                 <div>
                                     <p class="text-brand-dark font-semibold mb-2">Topics</p>
@@ -384,42 +395,42 @@
                                     <p class="text-brand-dark font-semibold mb-2">Tags</p>
                                     <div class="flex flex-wrap gap-2">
                                         
-                                        <label class="flex items-center gap-2 bg-brand-light border border-brand-border rounded-full px-3 py-1">
+                                        <label class="flex items-center gap-2 glass-chip border-brand-border/60 rounded-full px-3 py-1 text-brand-dark">
                                             <input type="checkbox" class="accent-brand-accent" data-filter="tags" data-label="433.92MHz" value="433-92mhz">
                                             <span>433.92MHz</span>
                                         </label>
                                         
-                                        <label class="flex items-center gap-2 bg-brand-light border border-brand-border rounded-full px-3 py-1">
+                                        <label class="flex items-center gap-2 glass-chip border-brand-border/60 rounded-full px-3 py-1 text-brand-dark">
                                             <input type="checkbox" class="accent-brand-accent" data-filter="tags" data-label="RF Compliance" value="rf-compliance">
                                             <span>RF Compliance</span>
                                         </label>
                                         
-                                        <label class="flex items-center gap-2 bg-brand-light border border-brand-border rounded-full px-3 py-1">
+                                        <label class="flex items-center gap-2 glass-chip border-brand-border/60 rounded-full px-3 py-1 text-brand-dark">
                                             <input type="checkbox" class="accent-brand-accent" data-filter="tags" data-label="Link Budget" value="link-budget">
                                             <span>Link Budget</span>
                                         </label>
                                         
-                                        <label class="flex items-center gap-2 bg-brand-light border border-brand-border rounded-full px-3 py-1">
+                                        <label class="flex items-center gap-2 glass-chip border-brand-border/60 rounded-full px-3 py-1 text-brand-dark">
                                             <input type="checkbox" class="accent-brand-accent" data-filter="tags" data-label="OEM Procurement" value="oem-procurement">
                                             <span>OEM Procurement</span>
                                         </label>
                                         
-                                        <label class="flex items-center gap-2 bg-brand-light border border-brand-border rounded-full px-3 py-1">
+                                        <label class="flex items-center gap-2 glass-chip border-brand-border/60 rounded-full px-3 py-1 text-brand-dark">
                                             <input type="checkbox" class="accent-brand-accent" data-filter="tags" data-label="Garage Doors" value="garage-doors">
                                             <span>Garage Doors</span>
                                         </label>
                                         
-                                        <label class="flex items-center gap-2 bg-brand-light border border-brand-border rounded-full px-3 py-1">
+                                        <label class="flex items-center gap-2 glass-chip border-brand-border/60 rounded-full px-3 py-1 text-brand-dark">
                                             <input type="checkbox" class="accent-brand-accent" data-filter="tags" data-label="PCB Quality" value="pcb-quality">
                                             <span>PCB Quality</span>
                                         </label>
                                         
-                                        <label class="flex items-center gap-2 bg-brand-light border border-brand-border rounded-full px-3 py-1">
+                                        <label class="flex items-center gap-2 glass-chip border-brand-border/60 rounded-full px-3 py-1 text-brand-dark">
                                             <input type="checkbox" class="accent-brand-accent" data-filter="tags" data-label="Rolling Code" value="rolling-code">
                                             <span>Rolling Code</span>
                                         </label>
                                         
-                                        <label class="flex items-center gap-2 bg-brand-light border border-brand-border rounded-full px-3 py-1">
+                                        <label class="flex items-center gap-2 glass-chip border-brand-border/60 rounded-full px-3 py-1 text-brand-dark">
                                             <input type="checkbox" class="accent-brand-accent" data-filter="tags" data-label="OEM Manufacturing" value="oem-manufacturing">
                                             <span>OEM Manufacturing</span>
                                         </label>
@@ -437,7 +448,7 @@
                                     <p class="text-brand-dark font-semibold mb-2">Frequency</p>
                                     <div class="flex flex-wrap gap-2">
                                         
-                                        <label class="flex items-center gap-2 bg-brand-light border border-brand-border rounded-full px-3 py-1">
+                                        <label class="flex items-center gap-2 glass-chip border-brand-border/60 rounded-full px-3 py-1 text-brand-dark">
                                             <input type="checkbox" class="accent-brand-accent" data-filter="frequency" data-label="433.92MHz" value="433-92mhz">
                                             <span>433.92MHz</span>
                                         </label>
@@ -452,7 +463,7 @@
                         </div>
 
                         <div class="bg-brand-surface border-2 border-brand-accent p-8 rounded-xl text-center text-brand-dark shadow-lg relative overflow-hidden">
-                            <div class="absolute top-0 right-0 w-32 h-32 bg-brand-light rounded-full blur-2xl -mr-10 -mt-10"></div>
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-brand-light/70 rounded-full blur-2xl -mr-10 -mt-10"></div>
                             <h3 class="font-bold text-xl mb-2 relative z-10" data-i18n="blog.become_distributor_title">Conviértase en Distribuidor</h3>
                             <p class="text-sm text-brand-muted mb-6 relative z-10" data-i18n="blog.become_distributor_description">Acceda a precios mayoristas y materiales de marketing.</p>
                             <a href="/es/contact/" class="bg-brand-cta text-white px-6 py-3 rounded-full font-bold text-sm shadow-lg hover:bg-brand-ctaHover transition relative z-10 w-full" data-i18n="blog.apply_now">Solicitar Ahora</a>
@@ -460,12 +471,12 @@
 
                         
                         
-                        <div class="bg-brand-surface p-6 rounded-xl border border-brand-border shadow-lg">
+                        <div class="bg-brand-surface p-6 rounded-xl border border-brand-border/40 shadow-lg">
                             <h3 class="font-bold text-brand-dark mb-4">Newest guides</h3>
                             <div class="space-y-4">
                                 
                                 <a href="/es/blog/choose-433-92mhz-remote-control/" class="flex gap-3 group">
-                                    <div class="w-16 h-16 bg-brand-light rounded-lg flex-shrink-0 overflow-hidden">
+                                    <div class="w-16 h-16 bg-brand-light/80 rounded-lg flex-shrink-0 overflow-hidden">
                                         <img loading="lazy" decoding="async" src="/assets/blog-drops/choose-433-92mhz-remote-control/image-01.webp" class="w-full h-full object-cover" alt="How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance">
                                     </div>
                                     <div>
@@ -476,7 +487,7 @@
                                 </a>
                                 
                                 <a href="/es/blog/avoid-public-mold-trap-pcb-quality/" class="flex gap-3 group">
-                                    <div class="w-16 h-16 bg-brand-light rounded-lg flex-shrink-0 overflow-hidden">
+                                    <div class="w-16 h-16 bg-brand-light/80 rounded-lg flex-shrink-0 overflow-hidden">
                                         <img loading="lazy" decoding="async" src="/assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-01.webp" class="w-full h-full object-cover" alt="Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls">
                                     </div>
                                     <div>
@@ -495,34 +506,34 @@
         </section>
     </main>
 
-    <section class="py-16 bg-brand-surface border-t border-brand-border">
+    <section class="py-16 bg-brand-dark/70 border-t border-brand-dark/60">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl font-bold text-white mb-4">Stay Updated with Latest Tips</h2>
-            <p class="text-brand-muted mb-8">Get weekly technical guides and market insights delivered to your inbox.</p>
+            <p class="text-brand-light/70 mb-8">Get weekly technical guides and market insights delivered to your inbox.</p>
             <form id="newsletterForm" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input id="newsletterEmail" name="email" type="email" placeholder="Enter your email" required class="flex-1 bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-white focus:border-brand-accent outline-none transition">
+                <input id="newsletterEmail" name="email" type="email" placeholder="Enter your email" required class="flex-1 bg-brand-dark/60 border border-brand-dark/40 rounded-lg px-4 py-3 text-brand-light/80 focus:border-brand-accent outline-none transition">
                 <button type="submit" class="bg-brand-cta hover:bg-brand-ctaHover text-white px-6 py-3 rounded-lg font-bold transition">Subscribe</button>
             </form>
-            <p id="newsletter-status" class="text-sm text-brand-muted mt-3 hidden" aria-live="polite"></p>
+            <p id="newsletter-status" class="text-sm text-brand-light/70 mt-3 hidden" aria-live="polite"></p>
         </div>
     </section>
 
-    <section class="py-16 bg-brand-cta relative overflow-hidden">
-        <div class="absolute inset-0 bg-brand-dark/5"></div>
+    <section class="py-16 bg-brand-dark/70 relative overflow-hidden">
+        <div class="absolute inset-0 bg-brand-dark/10"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
             <div>
                 <h2 class="text-3xl font-bold text-white mb-2" data-i18n="pre_footer.title">¿Necesitas un Paquete de Muestras?</h2>
-                <p class="text-white/90 text-lg" data-i18n="pre_footer.subtitle">Prueba nuestro rango y compatibilidad antes de comprar en bulk.</p>
+                <p class="text-brand-light/70 text-lg" data-i18n="pre_footer.subtitle">Prueba nuestro rango y compatibilidad antes de comprar en bulk.</p>
             </div>
-            <a href="/es/contact/" class="bg-brand-surface text-brand-accent px-8 py-3 rounded-full font-bold hover:bg-brand-light transition shadow-lg shadow-brand-accent/20">
+            <a href="/es/contact/" class="bg-brand-cta text-white px-8 py-3 rounded-full font-bold hover:bg-brand-ctaHover transition shadow-lg shadow-brand-cta/20">
                 <span data-i18n="pre_footer.order_samples">Pedir Muestras</span>
             </a>
         </div>
     </section>
 
-    <footer class="bg-brand-surface pt-20 pb-10 border-t border-brand-border text-brand-muted text-base">
+    <footer class="bg-brand-dark/70 pt-20 pb-10 border-t border-brand-dark/60 text-brand-muted/70 text-base">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-brand-light border border-brand-border rounded-xl p-6 mb-12">
+            <div class="bg-brand-dark/60 border border-brand-dark/40 rounded-xl p-6 mb-12">
                 <p class="text-sm text-brand-muted text-center" data-i18n="footer.legal_disclaimer">Aviso Legal: Todos los nombres de productos, logotipos y marcas son propiedad de sus respectivos dueños. Todos los nombres de empresas, productos y servicios utilizados en este sitio web son solo para fines de identificación. El uso de estos nombres, logotipos y marcas no implica respaldo.</p>
             </div>
 
@@ -531,7 +542,7 @@
                     <div class="flex items-center gap-3 mb-4 text-white">
                         <img src="/logo/logo.png" width="1024" height="1024" alt="GateRemoteSource logo" class="h-10 w-auto object-contain">
                     </div>
-                    <p class="mb-4 text-brand-muted" data-i18n="footer.company_description">Tu Socio de Ganancias en Control de Acceso. Abasteciendo a cerrajeros en todo el mundo.</p>
+                    <p class="mb-4 text-brand-muted/70" data-i18n="footer.company_description">Tu Socio de Ganancias en Control de Acceso. Abasteciendo a cerrajeros en todo el mundo.</p>
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-4" data-i18n="footer.products">Productos</h4>
@@ -553,7 +564,7 @@
                     <p class="flex items-start gap-2"><i class="fa-solid fa-location-dot mt-1 text-brand-accent"></i><span data-i18n="footer.address_text">Huawei Kegu Industrial Park, Dalingshan Town, Dongguan, Guangdong, China</span></p>
                 </div>
             </div>
-            <div class="text-center pt-8 border-t border-brand-border">
+            <div class="text-center pt-8 border-t border-brand-dark/60">
                 <span data-i18n="footer.copyright">© 2026 GateRemoteSource. Todos los derechos reservados.</span>
             </div>
         </div>
@@ -617,7 +628,7 @@
 
             const copyrightElement = document.querySelector('[data-i18n="footer.copyright"]');
             if (copyrightElement && translations.footer && translations.footer.copyright) {
-                copyrightElement.textContent = translations.footer.copyright.replace('{year}', new Date().getFullYear());
+                copyrightElement.textContent = translations.footer.copyright.replace('{year}', '2026');
             }
         }
 
@@ -847,7 +858,7 @@
             }
 
             if (!items.length) {
-                activeFilters.innerHTML = '<span class="text-sm text-brand-muted">No active filters.</span>';
+                activeFilters.innerHTML = '<span class="text-sm text-brand-light/60">No active filters.</span>';
                 return;
             }
 
@@ -855,14 +866,14 @@
                 const label = escapeHtml(item.label);
                 if (item.type === 'search') {
                     return `
-                        <button type="button" class="flex items-center gap-2 px-3 py-1 rounded-full bg-brand-surface border border-brand-border text-xs text-brand-muted hover:border-brand-accent transition" data-remove-filter data-type="search">
+                        <button type="button" class="flex items-center gap-2 px-3 py-1 rounded-full glass-chip border-brand-border/60 text-xs text-brand-light/80 hover:border-brand-accent hover:text-brand-accent transition" data-remove-filter data-type="search">
                             <span>${label}</span>
                             <i class="fa-solid fa-xmark text-[10px]"></i>
                         </button>
                     `;
                 }
                 return `
-                    <button type="button" class="flex items-center gap-2 px-3 py-1 rounded-full bg-brand-surface border border-brand-border text-xs text-brand-muted hover:border-brand-accent transition" data-remove-filter data-type="filter" data-group="${escapeHtml(item.group)}" data-value="${escapeHtml(item.value)}">
+                    <button type="button" class="flex items-center gap-2 px-3 py-1 rounded-full glass-chip border-brand-border/60 text-xs text-brand-light/80 hover:border-brand-accent hover:text-brand-accent transition" data-remove-filter data-type="filter" data-group="${escapeHtml(item.group)}" data-value="${escapeHtml(item.value)}">
                         <span>${label}</span>
                         <i class="fa-solid fa-xmark text-[10px]"></i>
                     </button>
@@ -879,9 +890,9 @@
                 const isActive = input && input.checked;
                 chip.setAttribute('aria-pressed', isActive ? 'true' : 'false');
                 chip.classList.toggle('border-brand-accent', isActive);
-                chip.classList.toggle('bg-brand-light', isActive);
+                chip.classList.toggle('bg-brand-light/90', isActive);
                 chip.classList.toggle('text-brand-accent', isActive);
-                chip.classList.toggle('text-brand-muted', !isActive);
+                chip.classList.toggle('text-brand-dark', !isActive);
             });
         }
 
@@ -912,7 +923,7 @@
             }
             suggestionBox.classList.remove('hidden');
             suggestionBox.innerHTML = results.map((item) => `
-                <a href="${item.url}" class="block px-3 py-2 rounded-lg bg-brand-light border border-brand-border hover:border-brand-accent transition">
+                <a href="${item.url}" class="block px-3 py-2 rounded-lg bg-brand-surface/90 border border-brand-border/60 hover:border-brand-accent transition">
                     <p class="text-sm text-brand-dark font-semibold">${escapeHtml(item.title)}</p>
                     <p class="text-xs text-brand-muted">${escapeHtml(item.summary)}</p>
                 </a>
