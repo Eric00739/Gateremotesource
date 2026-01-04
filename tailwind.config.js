@@ -20,18 +20,20 @@ module.exports = {
         ],
       },
       colors: {
-        // Optimized color scheme for cleaner, premium look
+        // Apple Glassmorphism Design System
         brand: {
-          dark: "#1D1D1F",        // Dark surface
-          accent: "#2563EB",      // Royal Blue (for hover/key info only)
-          hover: "#1D4ED8",       // Accent hover
-          light: "#F8FAFC",       // Very light gray-white (main background)
+          dark: "#1D1D1F",        // Deep gray-black (text)
+          accent: "#0071E3",      // Apple Blue (primary action)
+          hover: "#005BB5",       // Accent hover
+          light: "#F5F5F7",       // Rice white/very light gray (main background)
           surface: "#FFFFFF",    // White (card background)
-          muted: "#6E6E73",       // Secondary text
+          muted: "#86868B",       // Secondary text
           success: "#34C759",     // Success
-          border: "#E2E8F0",      // Light smoke gray (separator)
-          cta: "#000000",         // Pure black (Apple style)
-          ctaHover: "#1F2937",    // CTA Hover (dark gray)
+          border: "#D1D1D6",      // Border (subtle)
+          cta: "#0071E3",         // Apple Blue (button)
+          ctaHover: "#005BB5",    // CTA Hover
+          glass: "rgba(255, 255, 255, 0.45)",  // Glass background
+          glassBorder: "rgba(255, 255, 255, 0.3)",  // Glass border
         },
         // 兼容旧版颜色
         primary: "#1D1D1F",
@@ -43,6 +45,8 @@ module.exports = {
         'lg': '0 10px 20px rgba(0, 0, 0, 0.12)',
         'xl': '0 16px 32px rgba(0, 0, 0, 0.14)',
         '2xl': '0 24px 48px rgba(0, 0, 0, 0.16)',
+        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.08)',  // Glass card shadow
+        'glassHover': '0 12px 48px rgba(0, 0, 0, 0.12)',  // Glass card hover shadow
       },
       animation: {
         "fade-in-up": "fadeInUp 0.8s ease-out",

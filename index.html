@@ -181,7 +181,7 @@ eleventyComputed:
 
         .hero-bg {
 
-            background-image: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.30));  /* 40% to 30% black gradient overlay - stronger for text readability */
+            background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0) 100%);  /* Left dark to right transparent gradient - protects text */
 
             background-size: cover;
 
@@ -203,7 +203,7 @@ eleventyComputed:
 
             inset: 0;
 
-            background: rgba(0, 0, 0, 0.45);  /* 45% black overlay for better text readability - increased from 30% */
+            background: rgba(0, 0, 0, 0.3);  /* Additional 30% black overlay for better text readability */
 
             z-index: 1;
 
@@ -241,7 +241,7 @@ eleventyComputed:
 
             transition: opacity 0.2s ease;
 
-            filter: none;
+            filter: brightness(0.7);  /* Reduce video brightness to improve text contrast */
 
         }
 
@@ -317,21 +317,65 @@ eleventyComputed:
 
 
 
+        /* Apple Glassmorphism Cards */
+
+        .glass-card {
+
+            background: rgba(255, 255, 255, 0.45);  /* Glass background */
+
+            backdrop-filter: blur(18px);  /* Frosted glass effect */
+
+            -webkit-backdrop-filter: blur(18px);
+
+            border: 1px solid rgba(255, 255, 255, 0.3);  /* Glass border */
+
+            border-radius: 24px;
+
+            padding: 30px;
+
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);  /* Glass shadow */
+
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);  /* Apple easing */
+
+            text-align: center;
+
+        }
+
+        .glass-card:hover {
+
+            transform: translateY(-12px);
+
+            background: rgba(255, 255, 255, 0.6);
+
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12);
+
+        }
+
+        .glass-card img {
+
+            width: 80%;
+
+            margin-bottom: 20px;
+
+            mix-blend-mode: multiply;  /* Make white background disappear, blend into card */
+
+        }
+
         /* Mobile-first compatibility cards - soft shadow style */
 
         .compat-card {
 
-            border: 1px solid #E2E8F0;  /* Light smoke gray border */
+            border: 1px solid rgba(255, 255, 255, 0.3);  /* Glass border */
 
-            background: #FFFFFF;  /* Pure white background */
+            background: rgba(255, 255, 255, 0.45);  /* Glass background */
 
             border-radius: 0.75rem;
 
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);  /* Soft shadow */
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);  /* Glass shadow */
 
-            backdrop-filter: blur(16px);
+            backdrop-filter: blur(18px);
 
-            -webkit-backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(18px);
 
         }
 
@@ -916,13 +960,13 @@ eleventyComputed:
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
 
-                    <div class="bg-brand-surface rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 ease-in-out group overflow-hidden cursor-pointer">
+                    <div class="glass-card group overflow-hidden cursor-pointer">
 
-                        <div class="aspect-square bg-brand-light relative flex items-center justify-center p-4">
+                        <div class="aspect-square relative flex items-center justify-center p-4">
 
                             <div class="absolute top-4 right-4 bg-brand-success text-white text-xs font-bold px-3 py-1 rounded shadow-lg z-10" data-i18n="inventory.card1.badge">Multifrequency Copy</div>
 
-                            <div class="bg-brand-light rounded-lg p-8 flex items-center justify-center w-full h-full">
+                            <div class="rounded-lg p-8 flex items-center justify-center w-full h-full">
 
                                 <picture class="w-full h-full">
 
@@ -962,13 +1006,13 @@ eleventyComputed:
 
                     </div>
 
-                    <div class="bg-brand-surface rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 ease-in-out group overflow-hidden cursor-pointer">
+                    <div class="glass-card group overflow-hidden cursor-pointer">
 
-                        <div class="aspect-square bg-brand-light relative flex items-center justify-center p-4">
+                        <div class="aspect-square relative flex items-center justify-center p-4">
 
                             <div class="absolute top-4 right-4 bg-brand-accent text-white text-xs font-bold px-3 py-1 rounded shadow-lg z-10" data-i18n="inventory.card2.badge">Super Receiver</div>
 
-                            <div class="bg-brand-light rounded-lg p-8 flex items-center justify-center w-full h-full">
+                            <div class="rounded-lg p-8 flex items-center justify-center w-full h-full">
 
                                 <picture class="w-full h-full">
 
@@ -1176,7 +1220,7 @@ eleventyComputed:
 
                     <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                        <div class="compat-card p-6 shadow-sm hover:shadow-md transition-all duration-200 ease-in-out">
+                        <div class="compat-card p-6 shadow-sm hover:shadow-md transition-all duration-400 ease-in-out">
 
                             <div class="flex items-center gap-3 mb-3">
 
@@ -1674,7 +1718,7 @@ eleventyComputed:
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-                            <details class="group bg-brand-surface p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
+                            <details class="group glass-card p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-brand-dark font-semibold">
 
@@ -1688,7 +1732,7 @@ eleventyComputed:
 
                             </details>
 
-                            <details class="group bg-brand-surface p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
+                            <details class="group glass-card p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-brand-dark font-semibold">
 
@@ -1702,7 +1746,7 @@ eleventyComputed:
 
                             </details>
 
-                            <details class="group bg-brand-surface p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
+                            <details class="group glass-card p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-brand-dark font-semibold">
 
@@ -1716,7 +1760,7 @@ eleventyComputed:
 
                             </details>
 
-                            <details class="group bg-brand-surface p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
+                            <details class="group glass-card p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-brand-dark font-semibold">
 
@@ -1730,7 +1774,7 @@ eleventyComputed:
 
                             </details>
 
-                            <details class="group bg-brand-surface p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
+                            <details class="group glass-card p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-brand-dark font-semibold">
 
@@ -1744,7 +1788,7 @@ eleventyComputed:
 
                             </details>
 
-                            <details class="group bg-brand-surface p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
+                            <details class="group glass-card p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-brand-dark font-semibold">
 
@@ -1758,7 +1802,7 @@ eleventyComputed:
 
                             </details>
 
-                            <details class="group bg-brand-surface p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
+                            <details class="group glass-card p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-brand-dark font-semibold">
 
@@ -1772,7 +1816,7 @@ eleventyComputed:
 
                             </details>
 
-                            <details class="group bg-brand-surface p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
+                            <details class="group glass-card p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-brand-dark font-semibold">
 
@@ -1852,7 +1896,7 @@ eleventyComputed:
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-                    <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 hover:shadow-md transition-all duration-200 ease-in-out">
+                    <div class="glass-card border border-brand-border rounded-2xl p-6 hover:shadow-md transition-all duration-400 ease-in-out">
 
                         <h3 class="text-xl font-bold text-brand-dark mb-3" data-i18n="advantages.card1.title">Pre-Sales Playbook</h3>
 
@@ -1860,7 +1904,7 @@ eleventyComputed:
 
                     </div>
 
-                    <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 hover:shadow-md transition-all duration-200 ease-in-out">
+                    <div class="glass-card border border-brand-border rounded-2xl p-6 hover:shadow-md transition-all duration-400 ease-in-out">
 
                         <h3 class="text-xl font-bold text-brand-dark mb-3" data-i18n="advantages.card2.title">Tech Support Coverage</h3>
 
@@ -1928,7 +1972,7 @@ eleventyComputed:
 
                             <div class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur text-brand-accent text-xs font-bold px-2 py-1 rounded border border-brand-accent/20" data-i18n="products_page.frequency_433">433.92MHz</div>
 
-                            <div class="bg-brand-light rounded-lg p-8 flex items-center justify-center w-full h-full">
+                            <div class="rounded-lg p-8 flex items-center justify-center w-full h-full">
 
                                 <i class="fa-solid fa-microchip text-6xl text-brand-accent"></i>
 
@@ -1962,7 +2006,7 @@ eleventyComputed:
 
                             <div class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur text-brand-accent text-xs font-bold px-2 py-1 rounded border border-brand-accent/20" data-i18n="products_page.multi_freq">WIFI + RF</div>
 
-                            <div class="bg-brand-light rounded-lg p-8 flex items-center justify-center w-full h-full">
+                            <div class="rounded-lg p-8 flex items-center justify-center w-full h-full">
 
                                 <i class="fa-solid fa-microchip text-6xl text-brand-accent"></i>
 
@@ -2070,7 +2114,7 @@ eleventyComputed:
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-                    <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 shadow-sm">
+                    <div class="glass-card p-6 shadow-sm">
 
                         <div class="flex items-center gap-3 mb-3">
 
@@ -2090,7 +2134,7 @@ eleventyComputed:
 
                     </div>
 
-                    <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 shadow-sm">
+                    <div class="glass-card p-6 shadow-sm">
 
                         <div class="flex items-center gap-3 mb-3">
 
@@ -2188,7 +2232,7 @@ eleventyComputed:
 
                             </tr>
 
-                            <tr class="bg-brand-light">
+                            <tr class="bg-brand-glass/30">
 
                                 <td class="px-6 py-4">CAME TOP432EV</td>
 
@@ -2252,7 +2296,7 @@ eleventyComputed:
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-                    <div class="bg-brand-surface border border-brand-border rounded-2xl p-6">
+                    <div class="glass-card p-6 shadow-sm">
 
                         <h3 class="text-xl font-bold text-brand-dark mb-3">Stock Buffers</h3>
 
@@ -2260,7 +2304,7 @@ eleventyComputed:
 
                     </div>
 
-                    <div class="bg-brand-surface border border-brand-border rounded-2xl p-6">
+                    <div class="glass-card p-6 shadow-sm">
 
                         <h3 class="text-xl font-bold text-brand-dark mb-3">Kitting & Labeling</h3>
 
@@ -2474,7 +2518,7 @@ eleventyComputed:
 
                         <div class="grid grid-cols-2 gap-6">
 
-                            <div class="bg-brand-surface p-6 rounded-xl border border-brand-border text-center">
+                            <div class="glass-card p-6 text-center">
 
                                 <span class="block text-4xl font-bold text-brand-accent mb-2" data-i18n="about.years_experience">10+</span>
 
@@ -2524,7 +2568,7 @@ eleventyComputed:
 
                             <div class="flex-1 border-l-2 border-brand-dark/60 pl-8 pb-8 relative">
 
-                                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark/70 backdrop-blur border-2 border-brand-accent rounded-full"></div>
+                                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-surface border-2 border-brand-accent rounded-full shadow-sm"></div>
 
                                 <h4 class="text-brand-dark font-bold text-lg">Foundation</h4>
 
@@ -2540,7 +2584,7 @@ eleventyComputed:
 
                             <div class="flex-1 border-l-2 border-brand-dark/60 pl-8 pb-8 relative">
 
-                                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark/70 backdrop-blur border-2 border-brand-accent rounded-full"></div>
+                                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-surface border-2 border-brand-accent rounded-full shadow-sm"></div>
 
                                 <h4 class="text-brand-dark font-bold text-lg">ISO Certification</h4>
 
@@ -2556,7 +2600,7 @@ eleventyComputed:
 
                             <div class="flex-1 border-l-2 border-brand-dark/60 pl-8 pb-8 relative">
 
-                                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark/70 backdrop-blur border-2 border-brand-accent rounded-full"></div>
+                                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-surface border-2 border-brand-accent rounded-full shadow-sm"></div>
 
                                 <h4 class="text-brand-dark font-bold text-lg">Product Milestone</h4>
 
@@ -2572,7 +2616,7 @@ eleventyComputed:
 
                             <div class="flex-1 border-l-2 border-brand-dark/60 pl-8 pb-8 relative">
 
-                                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark/70 backdrop-blur border-2 border-brand-accent rounded-full"></div>
+                                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-surface border-2 border-brand-accent rounded-full shadow-sm"></div>
 
                                 <h4 class="text-white font-bold text-lg">Expansion &amp; Relocation</h4>
 
@@ -2588,7 +2632,7 @@ eleventyComputed:
 
                             <div class="flex-1 border-l-2 border-brand-dark/60 pl-8 pb-8 relative">
 
-                                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark/70 backdrop-blur border-2 border-brand-accent rounded-full"></div>
+                                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-surface border-2 border-brand-accent rounded-full shadow-sm"></div>
 
                                 <h4 class="text-brand-dark font-bold text-lg">High-Tech Recognition</h4>
 
@@ -2750,7 +2794,7 @@ eleventyComputed:
 
                     <div class="space-y-8">
 
-                        <div class="bg-brand-surface p-6 rounded-xl border border-brand-border flex items-start gap-4">
+                        <div class="glass-card p-6 flex items-start gap-4">
 
                             <div class="bg-brand-accent/20 p-3 rounded-full"><i class="fa-brands fa-whatsapp text-brand-accent text-xl"></i></div>
 
@@ -2766,7 +2810,7 @@ eleventyComputed:
 
                         </div>
 
-                        <div class="bg-brand-surface p-6 rounded-xl border border-brand-border flex items-start gap-4">
+                        <div class="glass-card p-6 flex items-start gap-4">
 
                             <div class="bg-brand-accent/20 p-3 rounded-full"><i class="fa-solid fa-envelope text-brand-accent text-xl"></i></div>
 
@@ -2780,7 +2824,7 @@ eleventyComputed:
 
                         </div>
 
-                        <div class="bg-brand-surface p-6 rounded-xl border border-brand-border flex items-start gap-4">
+                        <div class="glass-card p-6 flex items-start gap-4">
 
                             <div class="bg-brand-accent/20 p-3 rounded-full"><i class="fa-solid fa-clock text-brand-accent text-xl"></i></div>
 
