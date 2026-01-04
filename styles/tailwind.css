@@ -22,7 +22,8 @@
 
   /* 1) Design tokens */
   :root {
-    --font-main: 'Inter', -apple-system, system-ui, sans-serif;
+    --font-main: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue",
+      sans-serif;
 
     --color-navy: #0f172a;
     --color-navy-hover: #1e293b;
@@ -55,8 +56,9 @@
   html,
   body {
     font-family: var(--font-main);
-    background: var(--color-bg-apple);
+    background-color: var(--color-bg-apple);
     color: var(--color-text-body);
+    letter-spacing: -0.015em;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
