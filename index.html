@@ -181,6 +181,8 @@ eleventyComputed:
 
         .hero-bg {
 
+            /* Video background with gradient overlay */
+
             background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0) 100%);  /* Left dark to right transparent gradient - protects text */
 
             background-size: cover;
@@ -192,6 +194,40 @@ eleventyComputed:
             position: relative;
 
             overflow: hidden;
+
+        }
+
+        .hero-video {
+
+            position: absolute;
+
+            inset: 0;
+
+            z-index: 0;
+
+            pointer-events: none;
+
+        }
+
+        .hero-video video {
+
+            width: 100%;
+
+            height: 100%;
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            object-fit: cover;
+
+            opacity: 1;
+
+            transition: opacity 0.2s ease;
+
+            filter: brightness(0.7);  /* Reduce video brightness to improve text contrast */
 
         }
 
@@ -728,7 +764,7 @@ eleventyComputed:
         <!-- Hero -->
 
         <section class="min-h-screen flex items-center relative pt-24 hero-bg">
-            <div class="hero-video" aria-hidden="true">
+            <div class="hero-video" aria-hidden="false">
                 <video autoplay muted loop playsinline poster="/assets/videos/V1.3-poster.jpg">
                     <source src="/assets/videos/V1.3-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
                     <source src="/assets/videos/V1.3.mp4" type="video/mp4">
