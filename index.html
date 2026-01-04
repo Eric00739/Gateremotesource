@@ -179,101 +179,139 @@ eleventyComputed:
 
         
 
-        .hero-bg {
-            /* Video background - no gradient overlay here */
+        /* Glass navigation */
+        .nav-glass {
+            background: rgba(255, 255, 255, 0.82);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+        }
+
+        /* Hero depth + glass */
+        .hero-wrapper {
             position: relative;
+            min-height: 85vh;
+            background: #000;
+            display: flex;
+            align-items: center;
             overflow: hidden;
         }
 
         .hero-video {
-
             position: absolute;
-
             inset: 0;
-
             z-index: 0;
-
             pointer-events: none;
-
         }
 
         .hero-video video {
-
             width: 100%;
-
             height: 100%;
-
             position: absolute;
-
             top: 0;
-
             left: 0;
-
             object-fit: cover;
-
-            opacity: 1;
-
-            transition: opacity 0.2s ease;
-
-            filter: brightness(0.7);  /* Reduce video brightness to improve text contrast */
-
+            filter: blur(5px) brightness(0.65);
+            transform: scale(1.02);
         }
 
-        /* Blur overlay for left side */
-        .hero-blur-overlay {
+        .hero-glass-overlay {
             position: absolute;
             inset: 0;
             z-index: 1;
             pointer-events: none;
-            backdrop-filter: blur(8px) brightness(0.7);  /* Blur and darken */
-            -webkit-backdrop-filter: blur(8px) brightness(0.7);
-            mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0) 70%);  /* Left opaque to right transparent */
-            -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0) 70%);
+            background: linear-gradient(110deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.3) 100%);
         }
 
-        .hero-bg::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.4);  /* Additional dark overlay for text readability */
-            mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0) 70%);  /* Left opaque to right transparent */
-            -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0) 70%);
+        .hero-content-card {
+            position: relative;
             z-index: 2;
-            pointer-events: none;
+            margin-left: clamp(1.25rem, 6vw, 10%);
+            width: min(660px, 100%);
+            padding: 36px;
+            border-radius: 28px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(12px) saturate(180%);
+            -webkit-backdrop-filter: blur(12px) saturate(180%);
         }
 
-        .hero-video {
-
-            position: absolute;
-
-            inset: 0;
-
-            z-index: 0;
-
-            pointer-events: none;
-
+        .hero-title {
+            font-weight: 800;
+            font-size: clamp(32px, 5vw, 56px);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: #fff;
+            margin-bottom: 20px;
         }
 
-        .hero-video video {
+        .hero-cta-primary {
+            background: #0071e3;
+            color: #fff;
+            border-radius: 999px;
+            padding: 16px 32px;
+            font-weight: 700;
+            box-shadow: 0 10px 20px rgba(0, 113, 227, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
 
-            width: 100%;
+        .hero-cta-primary:hover {
+            background: #005bb5;
+            box-shadow: 0 14px 28px rgba(0, 113, 227, 0.35), 0 0 24px rgba(0, 113, 227, 0.25);
+            transform: translateY(-2px);
+        }
 
-            height: 100%;
+        .hero-cta-secondary {
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
 
-            position: absolute;
+        .hero-cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
 
-            top: 0;
+        .hero-trust-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 14px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
 
-            left: 0;
+        .hero-trust-card:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.14);
+        }
 
-            object-fit: cover;
+        .hero-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
 
-            opacity: 1;
-
-            transition: opacity 0.2s ease;
-
-            filter: brightness(0.7);  /* Reduce video brightness to improve text contrast */
-
+        .hero-metric {
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         
@@ -433,30 +471,29 @@ eleventyComputed:
         }
 
         @media (max-width: 768px) {
-            .hero-blur-overlay {
-                backdrop-filter: blur(6px) brightness(0.75);
-                -webkit-backdrop-filter: blur(6px) brightness(0.75);
-                mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
-                -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
+            .hero-video video {
+                filter: brightness(0.6);
+                transform: scale(1);
             }
-            .hero-bg::after {
-                background: rgba(0, 0, 0, 0.4);
-                mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
-                -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
-            }
-        }
 
-        @media (min-width: 769px) {
-            .hero-blur-overlay {
-                backdrop-filter: blur(8px) brightness(0.7);
-                -webkit-backdrop-filter: blur(8px) brightness(0.7);
-                mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0) 70%);
-                -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0) 70%);
+            .hero-content-card {
+                margin: 0 1rem;
+                padding: 24px;
+                border-radius: 22px;
+                background: rgba(0, 0, 0, 0.5);
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
             }
-            .hero-bg::after {
-                background: rgba(0, 0, 0, 0.4);
-                mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0) 70%);
-                -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0) 70%);
+
+            .hero-cta-primary,
+            .hero-cta-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-metric {
+                font-size: 11px;
+                letter-spacing: 0.03em;
             }
         }
 
@@ -576,7 +613,7 @@ eleventyComputed:
 
     <!-- ================= NAVIGATION ================= -->
 
-    <nav class="fixed w-full z-50 bg-brand-surface/90 border-b border-brand-border backdrop-blur transition-all duration-200 ease-in-out">
+    <nav class="fixed w-full z-50 nav-glass transition-all duration-200 ease-in-out">
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -594,7 +631,7 @@ eleventyComputed:
 
                     </div>
 
-                        <span class="font-bold text-2xl text-white tracking-tight transition-colors duration-200 ease-in-out">GateRemote<span class="text-brand-accent">Source</span></span>
+                        <span class="font-bold text-2xl text-brand-dark tracking-tight transition-colors duration-200 ease-in-out">GateRemote<span class="text-brand-accent">Source</span></span>
 
                     </a>
 
@@ -764,22 +801,21 @@ eleventyComputed:
 
         <!-- Hero -->
 
-        <section class="min-h-screen flex items-center relative pt-24 hero-bg">
-            <!-- Blur overlay for left side -->
-            <div class="hero-blur-overlay"></div>
+        <section class="hero-wrapper pt-24">
             <div class="hero-video" aria-hidden="false">
                 <video autoplay muted loop playsinline poster="/assets/videos/V1.3-poster.jpg">
                     <source src="/assets/videos/V1.3-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
                     <source src="/assets/videos/V1.3.mp4" type="video/mp4">
                 </video>
             </div>
+            <div class="hero-glass-overlay" aria-hidden="true"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20 relative z-10">
 
                 <div class="grid grid-cols-1 gap-12 items-center">
 
                     <!-- Left: Content -->
-                    <div class="animate-fade-in-up">
+                    <div class="hero-content-card animate-fade-in-up">
 
                         <div class="inline-flex items-center bg-brand-dark/60 backdrop-blur border border-brand-accent/30 rounded-full px-4 py-1.5 mb-8 transition-all duration-200 ease-in-out">
 
@@ -789,7 +825,7 @@ eleventyComputed:
 
                         </div>
 
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.2] mb-6">
+                        <h1 class="hero-title">
 
                             Factory-direct B2B Gate & Garage Remotes
 
@@ -801,15 +837,15 @@ eleventyComputed:
 
                         </p>
 
-                        <p class="text-sm text-brand-light/70 mb-6 max-w-2xl">
+                        <div class="hero-metrics">
+                            <span class="hero-metric">10+ years RF manufacturing</span>
+                            <span class="hero-metric">48h repeat dispatch</span>
+                            <span class="hero-metric">CE/FCC docs + DAP/DDP EU/US/SA/AU</span>
+                        </div>
 
-                            10+ years RF manufacturing - 48h repeat dispatch - CE/FCC docs on file - DAP/DDP EU/US/SA/AU available.
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
 
-                        </p>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-
-                        <div class="flex items-start gap-3 transition-all duration-200 ease-in-out">
+                        <div class="hero-trust-card">
 
                             <i class="fa-solid fa-industry text-brand-accent mt-1"></i>
 
@@ -817,7 +853,7 @@ eleventyComputed:
 
                         </div>
 
-                        <div class="flex items-start gap-3 transition-all duration-200 ease-in-out">
+                        <div class="hero-trust-card">
 
                             <i class="fa-solid fa-sitemap text-brand-accent mt-1"></i>
 
@@ -825,7 +861,7 @@ eleventyComputed:
 
                         </div>
 
-                        <div class="flex items-start gap-3 transition-all duration-200 ease-in-out">
+                        <div class="hero-trust-card">
 
                             <i class="fa-solid fa-rocket text-brand-accent mt-1"></i>
 
@@ -833,19 +869,19 @@ eleventyComputed:
 
                         </div>
 
-                    </div>
+                        </div>
 
                         <p class="text-xs text-brand-light/70 mb-6">Authorized replacement & programming workflow for installers; compatibility verified per OEM receiver series; distributor-protected B2B supply (end-users not supported).</p>
 
                         <div class="flex flex-col sm:flex-row gap-5">
 
-                            <a href="/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-brand-surface text-center px-10 py-4 rounded-lg font-bold text-lg transition-all duration-200 ease-in-out shadow-sm hover:shadow-md transform hover:-translate-y-1 inline-block" data-cta="hero_get_price_list">
+                            <a href="/contact/" class="hero-cta-primary text-center text-lg inline-flex items-center justify-center" data-cta="hero_get_price_list">
 
                                 Quote now
 
                             </a>
 
-                            <a href="/catalog/" class="flex items-center justify-center gap-3 border border-brand-accent text-brand-accent hover:border-brand-hover hover:text-brand-hover hover:bg-brand-light/10 text-center px-10 py-4 rounded-lg font-bold text-lg transition-all duration-200 ease-in-out" data-cta="hero_download_catalog">
+                            <a href="/catalog/" class="hero-cta-secondary flex items-center justify-center gap-3 text-brand-light text-center px-10 py-4 font-bold text-lg transition-all duration-200 ease-in-out" data-cta="hero_download_catalog">
 
                                 <i class="fa-solid fa-file-pdf text-2xl"></i>
 
