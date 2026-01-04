@@ -180,21 +180,9 @@ eleventyComputed:
         
 
         .hero-bg {
-
-            /* Video background with gradient overlay */
-
-            background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0) 100%);  /* Left dark to right transparent gradient - protects text */
-
-            background-size: cover;
-
-            background-position: center;
-
-            background-attachment: fixed;
-
+            /* Video background - no gradient overlay here */
             position: relative;
-
             overflow: hidden;
-
         }
 
         .hero-video {
@@ -231,20 +219,27 @@ eleventyComputed:
 
         }
 
-        .hero-bg::after {
-
-            content: "";
-
+        /* Blur overlay for left side */
+        .hero-blur-overlay {
             position: absolute;
-
             inset: 0;
-
-            background: rgba(0, 0, 0, 0.3);  /* Additional 30% black overlay for better text readability */
-
             z-index: 1;
-
             pointer-events: none;
+            backdrop-filter: blur(8px) brightness(0.7);  /* Blur and darken */
+            -webkit-backdrop-filter: blur(8px) brightness(0.7);
+            mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0) 70%);  /* Left opaque to right transparent */
+            -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0) 70%);
+        }
 
+        .hero-bg::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);  /* Additional dark overlay for text readability */
+            mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0) 70%);  /* Left opaque to right transparent */
+            -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0) 70%);
+            z-index: 2;
+            pointer-events: none;
         }
 
         .hero-video {
@@ -438,25 +433,31 @@ eleventyComputed:
         }
 
         @media (max-width: 768px) {
-
-            .hero-bg {
-
-                background-attachment: scroll;
-
-                background-image: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.30));  /* 40% to 30% black gradient overlay - stronger for text readability */
-
+            .hero-blur-overlay {
+                backdrop-filter: blur(6px) brightness(0.75);
+                -webkit-backdrop-filter: blur(6px) brightness(0.75);
+                mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
+                -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
             }
-
+            .hero-bg::after {
+                background: rgba(0, 0, 0, 0.4);
+                mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
+                -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
+            }
         }
 
         @media (min-width: 769px) {
-
-            .hero-bg {
-
-                background-image: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.30));  /* 40% to 30% black gradient overlay - stronger for text readability */
-
+            .hero-blur-overlay {
+                backdrop-filter: blur(8px) brightness(0.7);
+                -webkit-backdrop-filter: blur(8px) brightness(0.7);
+                mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0) 70%);
+                -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0) 70%);
             }
-
+            .hero-bg::after {
+                background: rgba(0, 0, 0, 0.4);
+                mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0) 70%);
+                -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0) 70%);
+            }
         }
 
     </style>
@@ -764,6 +765,8 @@ eleventyComputed:
         <!-- Hero -->
 
         <section class="min-h-screen flex items-center relative pt-24 hero-bg">
+            <!-- Blur overlay for left side -->
+            <div class="hero-blur-overlay"></div>
             <div class="hero-video" aria-hidden="false">
                 <video autoplay muted loop playsinline poster="/assets/videos/V1.3-poster.jpg">
                     <source src="/assets/videos/V1.3-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
