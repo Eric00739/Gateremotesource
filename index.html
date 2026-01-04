@@ -181,7 +181,7 @@ eleventyComputed:
 
         .hero-bg {
 
-            background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.15));  /* 25% to 15% black gradient overlay */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.30));  /* 40% to 30% black gradient overlay - stronger for text readability */
 
             background-size: cover;
 
@@ -203,7 +203,7 @@ eleventyComputed:
 
             inset: 0;
 
-            background: rgba(0, 0, 0, 0.30);  /* 30% black overlay for better text readability */
+            background: rgba(0, 0, 0, 0.45);  /* 45% black overlay for better text readability - increased from 30% */
 
             z-index: 1;
 
@@ -363,7 +363,7 @@ eleventyComputed:
 
                 background-attachment: scroll;
 
-                background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.15));  /* 25% to 15% black gradient overlay */
+                background-image: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.30));  /* 40% to 30% black gradient overlay - stronger for text readability */
 
             }
 
@@ -373,7 +373,7 @@ eleventyComputed:
 
             .hero-bg {
 
-                background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.15));  /* 25% to 15% black gradient overlay */
+                background-image: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.30));  /* 40% to 30% black gradient overlay - stronger for text readability */
 
             }
 
@@ -525,27 +525,27 @@ eleventyComputed:
 
                 <div class="hidden lg:flex space-x-8 items-center">
 
-                    <a href="/" class="nav-link text-brand-light/80 hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent active" id="nav-home" data-i18n="navigation.home">Home</a>
+                    <a href="/" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent active" id="nav-home" data-i18n="navigation.home">Home</a>
 
-                    <a href="/catalog/" class="nav-link text-brand-light/80 hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-products" data-i18n="navigation.catalog">Catalog</a>
+                    <a href="/catalog/" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-products" data-i18n="navigation.catalog">Catalog</a>
 
-                    <a href="/oem/" class="nav-link text-brand-light/80 hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-oem" data-i18n="navigation.oem">OEM/ODM</a>
+                    <a href="/oem/" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-oem" data-i18n="navigation.oem">OEM/ODM</a>
 
-                    <a href="/about/" class="nav-link text-brand-light/80 hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-about" data-i18n="navigation.about">About</a>
+                    <a href="/about/" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-about" data-i18n="navigation.about">About</a>
 
-                    <a href="/blog/" class="nav-link text-brand-light/80 hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-blog" data-i18n="navigation.blog">Blog</a>
+                    <a href="/blog/" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-blog" data-i18n="navigation.blog">Blog</a>
 
-                    <a href="/contact/" class="nav-link text-brand-light/80 hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-contact" data-i18n="navigation.contact">Contact</a>
+                    <a href="/contact/" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-contact" data-i18n="navigation.contact">Contact</a>
 
                     
 
                     <!-- Language Switcher -->
 
-                    <div class="flex items-center ml-2 border-l border-brand-dark/60 pl-4">
+                    <div class="flex items-center ml-2 border-l border-brand-border pl-4">
 
                         <div class="relative">
 
-                            <button id="languageDropdownBtn" class="flex items-center gap-2 text-brand-light hover:text-brand-accent transition-colors duration-200 ease-in-out">
+                            <button id="languageDropdownBtn" class="flex items-center gap-2 text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out">
 
                                 <span id="currentFlag" class="text-xs font-semibold tracking-wide">EN</span>
 
@@ -555,53 +555,53 @@ eleventyComputed:
 
                             </button>
 
-                            <div id="languageDropdown" class="absolute right-0 mt-2 w-48 bg-brand-dark/80 border border-brand-dark/60 rounded-lg shadow-lg hidden z-50 backdrop-blur">
+                            <div id="languageDropdown" class="absolute right-0 mt-2 w-48 bg-brand-surface border border-brand-border rounded-lg shadow-lg hidden z-50 backdrop-blur">
 
-                                <a href="#" onclick="changeLanguage('en')" class="flex items-center gap-3 px-4 py-3 text-brand-light/80 hover:bg-brand-dark/60 transition">
+                                <a href="#" onclick="changeLanguage('en')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
 
-                                    <span class="text-xs font-semibold text-brand-light/80">EN</span>
+                                    <span class="text-xs font-semibold text-brand-dark">EN</span>
 
-                                    <span class="text-brand-light/80">English</span>
-
-                                </a>
-
-                                <a href="#" onclick="changeLanguage('es')" class="flex items-center gap-3 px-4 py-3 text-brand-light/80 hover:bg-brand-dark/60 transition">
-
-                                    <span class="text-xs font-semibold text-brand-light/80">ES</span>
-
-                                    <span class="text-brand-light/80">Spanish</span>
+                                    <span class="text-brand-dark">English</span>
 
                                 </a>
 
-                                <a href="#" onclick="changeLanguage('de')" class="flex items-center gap-3 px-4 py-3 text-brand-light/80 hover:bg-brand-dark/60 transition">
+                                <a href="#" onclick="changeLanguage('es')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
 
-                                    <span class="text-xs font-semibold text-brand-light/80">DE</span>
+                                    <span class="text-xs font-semibold text-brand-dark">ES</span>
 
-                                    <span class="text-brand-light/80">Deutsch</span>
-
-                                </a>
-
-                                <a href="#" onclick="changeLanguage('it')" class="flex items-center gap-3 px-4 py-3 text-brand-light/80 hover:bg-brand-dark/60 transition">
-
-                                    <span class="text-xs font-semibold text-brand-light/80">IT</span>
-
-                                    <span class="text-brand-light/80">Italiano</span>
+                                    <span class="text-brand-dark">Spanish</span>
 
                                 </a>
 
-                                <a href="#" onclick="changeLanguage('fr')" class="flex items-center gap-3 px-4 py-3 text-brand-light/80 hover:bg-brand-dark/60 transition">
+                                <a href="#" onclick="changeLanguage('de')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
 
-                                    <span class="text-xs font-semibold text-brand-light/80">FR</span>
+                                    <span class="text-xs font-semibold text-brand-dark">DE</span>
 
-                                    <span class="text-brand-light/80">French</span>
+                                    <span class="text-brand-dark">Deutsch</span>
 
                                 </a>
 
-                                <a href="#" onclick="changeLanguage('pt')" class="flex items-center gap-3 px-4 py-3 text-brand-light/80 hover:bg-brand-dark/60 transition">
+                                <a href="#" onclick="changeLanguage('it')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
 
-                                    <span class="text-xs font-semibold text-brand-light/80">PT</span>
+                                    <span class="text-xs font-semibold text-brand-dark">IT</span>
 
-                                    <span class="text-brand-light/80">Portuguese</span>
+                                    <span class="text-brand-dark">Italiano</span>
+
+                                </a>
+
+                                <a href="#" onclick="changeLanguage('fr')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+
+                                    <span class="text-xs font-semibold text-brand-dark">FR</span>
+
+                                    <span class="text-brand-dark">French</span>
+
+                                </a>
+
+                                <a href="#" onclick="changeLanguage('pt')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+
+                                    <span class="text-xs font-semibold text-brand-dark">PT</span>
+
+                                    <span class="text-brand-dark">Portuguese</span>
 
                                 </a>
 
@@ -627,7 +627,7 @@ eleventyComputed:
 
                 <div class="lg:hidden flex items-center gap-4">
 
-                    <button id="mobile-menu-btn" class="text-brand-light text-2xl focus:outline-none transition-colors duration-200 ease-in-out hover:text-brand-accent">
+                    <button id="mobile-menu-btn" class="text-brand-dark text-2xl focus:outline-none transition-colors duration-200 ease-in-out hover:text-brand-accent">
 
                         <i class="fa-solid fa-bars"></i>
 
@@ -908,7 +908,7 @@ eleventyComputed:
 
                     <span class="text-brand-accent font-bold tracking-wider uppercase text-sm mb-2 block" data-i18n="inventory.top_sellers">Top Sellers</span>
 
-                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6" data-i18n="inventory.title">The "Must-Have" Inventory</h2>
+                    <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-6" data-i18n="inventory.title">The "Must-Have" Inventory</h2>
 
                     <p class="text-brand-light/70 max-w-2xl mx-auto text-lg" data-i18n="inventory.subtitle">Essential tools for every locksmith and gate automation installer.</p>
 
@@ -1044,7 +1044,7 @@ eleventyComputed:
 
                             <span class="text-brand-accent font-bold uppercase tracking-wider text-sm mb-2 block" data-i18n="inventory.database_access">Database Access</span>
 
-                            <h3 class="text-3xl font-bold text-white mb-4" data-i18n="inventory.supported_models">500+ Supported Models</h3>
+                            <h3 class="text-3xl font-bold text-brand-dark mb-4" data-i18n="inventory.supported_models">500+ Supported Models</h3>
 
                             <p class="text-brand-light/70 mb-6" data-i18n="inventory.database_description">We provide a comprehensive Excel list matching original part numbers to our compatible models.</p>
 
@@ -1384,7 +1384,7 @@ eleventyComputed:
 
                 <div class="text-center mb-16">
 
-                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-4" data-i18n="testimonials.title">What Our B2B Partners Say</h2>
+                    <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-4" data-i18n="testimonials.title">What Our B2B Partners Say</h2>
 
                     <p class="text-brand-light/70 max-w-2xl mx-auto text-lg" data-i18n="testimonials.subtitle">Real feedback from locksmiths and distributors worldwide.</p>
 
@@ -1392,15 +1392,15 @@ eleventyComputed:
 
                 <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
 
-                    <p class="text-brand-light/70 text-sm">Wholesale distributors across EU, Americas, and Middle East on brand coverage, ease, reliability, and service.</p>
+                    <p class="text-brand-muted text-sm">Wholesale distributors across EU, Americas, and Middle East on brand coverage, ease, reliability, and service.</p>
 
                     <div class="flex items-center gap-3">
 
-                        <span id="testimonial-page-indicator" class="text-brand-light/70 text-sm">1/2</span>
+                        <span id="testimonial-page-indicator" class="text-brand-muted text-sm">1/2</span>
 
                         <div class="flex gap-2">
 
-                            <button id="testimonial-prev" type="button" class="px-3 py-2 rounded-lg border border-brand-light/30 text-brand-light/80 hover:text-white hover:border-brand-accent transition text-sm flex items-center gap-2"><i class="fa-solid fa-chevron-left text-xs"></i> Prev</button>
+                            <button id="testimonial-prev" type="button" class="px-3 py-2 rounded-lg border border-brand-border text-brand-dark hover:text-brand-accent hover:border-brand-accent transition text-sm flex items-center gap-2"><i class="fa-solid fa-chevron-left text-xs"></i> Prev</button>
 
                             <button id="testimonial-next" type="button" class="px-3 py-2 rounded-lg bg-brand-accent text-white hover:bg-brand-hover transition text-sm flex items-center gap-2">Next <i class="fa-solid fa-chevron-right text-xs"></i></button>
 
@@ -1420,7 +1420,7 @@ eleventyComputed:
 
                                 <div class="flex items-center gap-3">
 
-                                    <span class="text-xs font-bold bg-brand-dark/70 backdrop-blur text-brand-light px-2 py-1 rounded">DE</span>
+                                    <span class="text-xs font-bold bg-brand-light text-brand-dark px-2 py-1 rounded">DE</span>
 
                                     <div>
 
@@ -1452,7 +1452,7 @@ eleventyComputed:
 
                                 <div class="flex items-center gap-3">
 
-                                    <span class="text-xs font-bold bg-brand-dark/70 backdrop-blur text-brand-light px-2 py-1 rounded">US</span>
+                                    <span class="text-xs font-bold bg-brand-light text-brand-dark px-2 py-1 rounded">US</span>
 
                                     <div>
 
@@ -1484,7 +1484,7 @@ eleventyComputed:
 
                                 <div class="flex items-center gap-3">
 
-                                    <span class="text-xs font-bold bg-brand-dark/70 backdrop-blur text-brand-light px-2 py-1 rounded">BR</span>
+                                    <span class="text-xs font-bold bg-brand-light text-brand-dark px-2 py-1 rounded">BR</span>
 
                                     <div>
 
@@ -1522,7 +1522,7 @@ eleventyComputed:
 
                                 <div class="flex items-center gap-3">
 
-                                    <span class="text-xs font-bold bg-brand-dark/70 backdrop-blur text-brand-light px-2 py-1 rounded">AE</span>
+                                    <span class="text-xs font-bold bg-brand-light text-brand-dark px-2 py-1 rounded">AE</span>
 
                                     <div>
 
@@ -1554,7 +1554,7 @@ eleventyComputed:
 
                                 <div class="flex items-center gap-3">
 
-                                    <span class="text-xs font-bold bg-brand-dark/70 backdrop-blur text-brand-light px-2 py-1 rounded">ES</span>
+                                    <span class="text-xs font-bold bg-brand-light text-brand-dark px-2 py-1 rounded">ES</span>
 
                                     <div>
 
@@ -1586,7 +1586,7 @@ eleventyComputed:
 
                                 <div class="flex items-center gap-3">
 
-                                    <span class="text-xs font-bold bg-brand-dark/70 backdrop-blur text-brand-light px-2 py-1 rounded">CL</span>
+                                    <span class="text-xs font-bold bg-brand-light text-brand-dark px-2 py-1 rounded">CL</span>
 
                                     <div>
 
@@ -1634,7 +1634,7 @@ eleventyComputed:
 
                         <span class="text-brand-accent font-bold tracking-wider uppercase text-sm" data-i18n="blog.installer_resources">Installer Resources</span>
 
-                        <h2 class="text-3xl md:text-4xl font-bold text-white mt-2" data-i18n="blog.technical_guides">Technical Guides</h2>
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mt-2" data-i18n="blog.technical_guides">Technical Guides</h2>
 
                     </div>
 
@@ -1670,7 +1670,7 @@ eleventyComputed:
 
                     <div data-faq-group="distributor">
 
-                        <h3 class="text-xl md:text-2xl font-bold text-white mb-4" data-i18n="faq.distributor_title">Distributor FAQ</h3>
+                        <h3 class="text-xl md:text-2xl font-bold text-brand-dark mb-4" data-i18n="faq.distributor_title">Distributor FAQ</h3>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
@@ -1792,7 +1792,7 @@ eleventyComputed:
 
                     <div data-faq-group="oem">
 
-                        <h3 class="text-xl md:text-2xl font-bold text-white mb-4" data-i18n="faq.oem_title">OEM/ODM FAQ</h3>
+                        <h3 class="text-xl md:text-2xl font-bold text-brand-dark mb-4" data-i18n="faq.oem_title">OEM/ODM FAQ</h3>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
@@ -1844,9 +1844,9 @@ eleventyComputed:
 
                 <div class="text-center mb-12">
 
-                    <h2 class="text-4xl font-bold text-white mb-4" data-i18n="advantages.title">Why Distributors Choose GateRemoteSource</h2>
+                    <h2 class="text-4xl font-bold text-brand-dark mb-4" data-i18n="advantages.title">Why Distributors Choose GateRemoteSource</h2>
 
-                    <p class="text-brand-light/70 max-w-3xl mx-auto" data-i18n="advantages.subtitle">More than remotes: sales tools, technical backup, and predictable logistics tailored for B2B buyers.</p>
+                    <p class="text-brand-muted max-w-3xl mx-auto" data-i18n="advantages.subtitle">More than remotes: sales tools, technical backup, and predictable logistics tailored for B2B buyers.</p>
 
                 </div>
 
@@ -1854,25 +1854,25 @@ eleventyComputed:
 
                     <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 hover:shadow-md transition-all duration-200 ease-in-out">
 
-                        <h3 class="text-xl font-bold text-white mb-3" data-i18n="advantages.card1.title">Pre-Sales Playbook</h3>
+                        <h3 class="text-xl font-bold text-brand-dark mb-3" data-i18n="advantages.card1.title">Pre-Sales Playbook</h3>
 
-                        <p class="text-brand-light/70 text-sm leading-relaxed" data-i18n="advantages.card1.body">Ready-to-send compatibility sheets and pricing templates help your reps close faster.</p>
-
-                    </div>
-
-                    <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 hover:shadow-md transition-all duration-200 ease-in-out">
-
-                        <h3 class="text-xl font-bold text-white mb-3" data-i18n="advantages.card2.title">Tech Support Coverage</h3>
-
-                        <p class="text-brand-light/70 text-sm leading-relaxed" data-i18n="advantages.card2.body">Programming videos, wiring guides, and OEM engineers on standby for your installers.</p>
+                        <p class="text-brand-muted text-sm leading-relaxed" data-i18n="advantages.card1.body">Ready-to-send compatibility sheets and pricing templates help your reps close faster.</p>
 
                     </div>
 
                     <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 hover:shadow-md transition-all duration-200 ease-in-out">
 
-                        <h3 class="text-xl font-bold text-white mb-3" data-i18n="advantages.card3.title">Logistics You Can Promise</h3>
+                        <h3 class="text-xl font-bold text-brand-dark mb-3" data-i18n="advantages.card2.title">Tech Support Coverage</h3>
 
-                        <p class="text-brand-light/70 text-sm leading-relaxed" data-i18n="advantages.card3.body">Stock buffers, 48h dispatch on repeats, and carton labels ready for your warehouses.</p>
+                        <p class="text-brand-muted text-sm leading-relaxed" data-i18n="advantages.card2.body">Programming videos, wiring guides, and OEM engineers on standby for your installers.</p>
+
+                    </div>
+
+                    <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 hover:shadow-md transition-all duration-200 ease-in-out">
+
+                        <h3 class="text-xl font-bold text-brand-dark mb-3" data-i18n="advantages.card3.title">Logistics You Can Promise</h3>
+
+                        <p class="text-brand-muted text-sm leading-relaxed" data-i18n="advantages.card3.body">Stock buffers, 48h dispatch on repeats, and carton labels ready for your warehouses.</p>
 
                     </div>
 
@@ -1894,9 +1894,9 @@ eleventyComputed:
 
                 <div class="text-center mb-16">
 
-                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6" data-i18n="products_page.title">Wholesale Catalog</h1>
+                    <h1 class="text-4xl md:text-5xl font-bold text-brand-dark mb-6" data-i18n="products_page.title">Wholesale Catalog</h1>
 
-                    <p class="text-brand-light/70 max-w-2xl mx-auto text-lg" data-i18n="products_page.subtitle">Comprehensive aftermarket solutions for professional installers.</p>
+                    <p class="text-brand-muted max-w-2xl mx-auto text-lg" data-i18n="products_page.subtitle">Comprehensive aftermarket solutions for professional installers.</p>
 
                 </div>
 
@@ -2060,11 +2060,11 @@ eleventyComputed:
 
                         <span class="text-brand-accent font-bold tracking-wider uppercase text-sm" data-i18n="products_page.trusted_by_pros">Trusted by Pros</span>
 
-                        <h2 class="text-3xl md:text-4xl font-bold text-white mt-2" data-i18n="products_page.what_installers_say">What Installers Say</h2>
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mt-2" data-i18n="products_page.what_installers_say">What Installers Say</h2>
 
                     </div>
 
-                    <p class="text-brand-light/70 max-w-xl" data-i18n="products_page.installers_feedback">Real feedback from locksmiths and gate installers using our compatible remotes and receivers.</p>
+                    <p class="text-brand-muted max-w-xl" data-i18n="products_page.installers_feedback">Real feedback from locksmiths and gate installers using our compatible remotes and receivers.</p>
 
                 </div>
 
@@ -2244,9 +2244,9 @@ eleventyComputed:
 
                 <div class="text-center mb-12">
 
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Fulfillment Built for B2B</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Fulfillment Built for B2B</h2>
 
-                    <p class="text-brand-light/70 max-w-3xl mx-auto">Predictable lead times and packaging that ships direct to your warehouse.</p>
+                    <p class="text-brand-muted max-w-3xl mx-auto">Predictable lead times and packaging that ships direct to your warehouse.</p>
 
                 </div>
 
@@ -2296,9 +2296,9 @@ eleventyComputed:
 
                  <div class="text-center mb-16">
 
-                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4" data-i18n="oem_odm.title">OEM/ODM Solutions</h1>
+                    <h1 class="text-4xl md:text-5xl font-bold text-brand-dark mb-4" data-i18n="oem_odm.title">OEM/ODM Solutions</h1>
 
-                    <p class="text-brand-light/70 max-w-2xl mx-auto text-lg" data-i18n="oem_odm.subtitle">Turn your idea into a product. We provide turnkey manufacturing services.</p>
+                    <p class="text-brand-muted max-w-2xl mx-auto text-lg" data-i18n="oem_odm.subtitle">Turn your idea into a product. We provide turnkey manufacturing services.</p>
 
                 </div>
 
@@ -2458,15 +2458,15 @@ eleventyComputed:
 
                     <div>
 
-                        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6" data-i18n="about.title">About GateRemoteSource</h1>
+                        <h1 class="text-4xl md:text-5xl font-bold text-brand-dark mb-6" data-i18n="about.title">About GateRemoteSource</h1>
 
-                        <p class="text-brand-light/70 text-lg mb-6 leading-relaxed">
+                        <p class="text-brand-muted text-lg mb-6 leading-relaxed">
 
                             Founded in 2015 in Shenzhen as a PCBA workshop, later relocated to Dongguan (2021) with a 4,000 m2 facility - now a full OEM/ODM manufacturer for the global access control market.
 
                         </p>
 
-                        <p class="text-brand-light/70 text-lg mb-8 leading-relaxed" data-i18n="about.mission">
+                        <p class="text-brand-muted text-lg mb-8 leading-relaxed" data-i18n="about.mission">
 
                             Our mission is to empower locksmiths and installers with high-quality, high-margin aftermarket solutions that just work.
 
@@ -2514,7 +2514,7 @@ eleventyComputed:
 
                 <div class="border-t border-brand-dark/60 pt-20">
 
-                    <h2 class="text-3xl font-bold text-white mb-12 text-center" data-i18n="about.our_journey">Our Journey</h2>
+                    <h2 class="text-3xl font-bold text-brand-dark mb-12 text-center" data-i18n="about.our_journey">Our Journey</h2>
 
                     <div class="space-y-8 max-w-3xl mx-auto">
 
@@ -2526,9 +2526,9 @@ eleventyComputed:
 
                                 <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark/70 backdrop-blur border-2 border-brand-accent rounded-full"></div>
 
-                                <h4 class="text-white font-bold text-lg">Foundation</h4>
+                                <h4 class="text-brand-dark font-bold text-lg">Foundation</h4>
 
-                                <p class="text-brand-light/70 mt-2">Founded in 2015 in Shenzhen, China, starting as a PCBA assembly workshop.</p>
+                                <p class="text-brand-muted mt-2">Founded in 2015 in Shenzhen, China, starting as a PCBA assembly workshop.</p>
 
                             </div>
 
@@ -2542,9 +2542,9 @@ eleventyComputed:
 
                                 <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark/70 backdrop-blur border-2 border-brand-accent rounded-full"></div>
 
-                                <h4 class="text-white font-bold text-lg">ISO Certification</h4>
+                                <h4 class="text-brand-dark font-bold text-lg">ISO Certification</h4>
 
-                                <p class="text-brand-light/70 mt-2">Achieved ISO certification to strengthen our quality management system.</p>
+                                <p class="text-brand-muted mt-2">Achieved ISO certification to strengthen our quality management system.</p>
 
                             </div>
 
@@ -2558,9 +2558,9 @@ eleventyComputed:
 
                                 <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark/70 backdrop-blur border-2 border-brand-accent rounded-full"></div>
 
-                                <h4 class="text-white font-bold text-lg">Product Milestone</h4>
+                                <h4 class="text-brand-dark font-bold text-lg">Product Milestone</h4>
 
-                                <p class="text-brand-light/70 mt-2">Launched our first Universal Rolling Code remote series.</p>
+                                <p class="text-brand-muted mt-2">Launched our first Universal Rolling Code remote series.</p>
 
                             </div>
 
@@ -2590,9 +2590,9 @@ eleventyComputed:
 
                                 <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark/70 backdrop-blur border-2 border-brand-accent rounded-full"></div>
 
-                                <h4 class="text-white font-bold text-lg">High-Tech Recognition</h4>
+                                <h4 class="text-brand-dark font-bold text-lg">High-Tech Recognition</h4>
 
-                                <p class="text-brand-light/70 mt-2">Awarded the China National High-Tech Enterprise certificate.</p>
+                                <p class="text-brand-muted mt-2">Awarded the China National High-Tech Enterprise certificate.</p>
 
                             </div>
 
@@ -2606,9 +2606,9 @@ eleventyComputed:
 
                                 <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-dark/70 backdrop-blur border-2 border-brand-accent rounded-full"></div>
 
-                                <h4 class="text-white font-bold text-lg">Global Reach</h4>
+                                <h4 class="text-brand-dark font-bold text-lg">Global Reach</h4>
 
-                                <p class="text-brand-light/70 mt-2">Exporting to 40+ countries, 100% focused on B2B aftermarket solutions.</p>
+                                <p class="text-brand-muted mt-2">Exporting to 40+ countries, 100% focused on B2B aftermarket solutions.</p>
 
                             </div>
 
@@ -2938,7 +2938,7 @@ eleventyComputed:
 
                 <div>
 
-                    <div class="flex items-center gap-3 mb-4 text-white">
+                    <div class="flex items-center gap-3 mb-4 text-brand-dark">
 
                         <img src="/logo/logo.png" width="1024" height="1024" alt="GateRemoteSource logo" class="h-10 w-auto object-contain">
 
@@ -2950,7 +2950,7 @@ eleventyComputed:
 
                 <div>
 
-                    <h4 class="text-white font-bold mb-4" data-i18n="footer.products">Products</h4>
+                    <h4 class="text-brand-dark font-bold mb-4" data-i18n="footer.products">Products</h4>
 
                     <ul class="space-y-2">
 
@@ -2966,7 +2966,7 @@ eleventyComputed:
 
                 <div>
 
-                    <h4 class="text-white font-bold mb-4" data-i18n="footer.contact">Contact</h4>
+                    <h4 class="text-brand-dark font-bold mb-4" data-i18n="footer.contact">Contact</h4>
 
                     <ul class="space-y-2">
 
@@ -2980,7 +2980,7 @@ eleventyComputed:
 
                 <div>
 
-                    <h4 class="text-white font-bold mb-4" data-i18n="footer.address">Address</h4>
+                    <h4 class="text-brand-dark font-bold mb-4" data-i18n="footer.address">Address</h4>
 
                     <p class="flex items-start gap-2"><i class="fa-solid fa-location-dot mt-1 text-brand-accent"></i> Huawei Kegu Industrial Park, Dalingshan Town, Dongguan, Guangdong, China</p>
 
@@ -2988,7 +2988,7 @@ eleventyComputed:
 
             </div>
 
-            <div class="text-center pt-8 border-t border-brand-dark/60">
+            <div class="text-center pt-8 border-t border-brand-border">
 
                 <span data-i18n="footer.copyright">&copy; 2026 GateRemoteSource. All rights reserved.</span>
 
