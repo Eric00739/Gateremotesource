@@ -190,7 +190,7 @@ eleventyComputed:
         /* Hero depth + glass */
         .hero-wrapper {
             position: relative;
-            min-height: 85vh;
+            height: 85vh;
             background: #000;
             display: flex;
             align-items: center;
@@ -211,7 +211,7 @@ eleventyComputed:
             top: 0;
             left: 0;
             object-fit: cover;
-            filter: blur(5px) brightness(0.65);
+            filter: blur(12px) brightness(0.5);
             transform: scale(1.02);
         }
 
@@ -223,15 +223,23 @@ eleventyComputed:
             background: linear-gradient(110deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.3) 100%);
         }
 
-        .hero-content-card {
+        .hero-content-stack {
             position: relative;
             z-index: 2;
             margin-left: clamp(1.25rem, 6vw, 10%);
-            width: min(660px, 100%);
-            padding: 36px;
+            width: min(580px, 100%);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .hero-content-card {
+            width: 100%;
+            max-width: 580px;
+            padding: 32px 40px;
             border-radius: 28px;
             background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.16);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
             backdrop-filter: blur(12px) saturate(180%);
             -webkit-backdrop-filter: blur(12px) saturate(180%);
@@ -243,6 +251,13 @@ eleventyComputed:
             line-height: 1.1;
             letter-spacing: -0.02em;
             color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 20px;
         }
 
@@ -293,23 +308,22 @@ eleventyComputed:
             background: rgba(255, 255, 255, 0.14);
         }
 
-        .hero-metrics {
+        .hero-badges {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin-bottom: 16px;
         }
 
-        .hero-metric {
-            padding: 8px 12px;
+        .hero-badge {
+            padding: 8px 14px;
             border-radius: 999px;
             font-size: 12px;
             font-weight: 700;
             letter-spacing: 0.04em;
             text-transform: uppercase;
             color: rgba(255, 255, 255, 0.85);
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.16);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
@@ -472,13 +486,16 @@ eleventyComputed:
 
         @media (max-width: 768px) {
             .hero-video video {
-                filter: brightness(0.6);
+                filter: blur(12px) brightness(0.5);
                 transform: scale(1);
             }
 
-            .hero-content-card {
+            .hero-content-stack {
                 margin: 0 1rem;
-                padding: 24px;
+                width: calc(100% - 2rem);
+            }
+
+            .hero-content-card {
                 border-radius: 22px;
                 background: rgba(0, 0, 0, 0.5);
                 backdrop-filter: none;
@@ -491,7 +508,7 @@ eleventyComputed:
                 justify-content: center;
             }
 
-            .hero-metric {
+            .hero-badge {
                 font-size: 11px;
                 letter-spacing: 0.03em;
             }
@@ -815,7 +832,8 @@ eleventyComputed:
                 <div class="grid grid-cols-1 gap-12 items-center">
 
                     <!-- Left: Content -->
-                    <div class="hero-content-card animate-fade-in-up">
+                    <div class="hero-content-stack animate-fade-in-up">
+                        <div class="hero-content-card">
 
                         <div class="inline-flex items-center bg-brand-dark/60 backdrop-blur border border-brand-accent/30 rounded-full px-4 py-1.5 mb-8 transition-all duration-200 ease-in-out">
 
@@ -831,17 +849,11 @@ eleventyComputed:
 
                         </h1>
 
-                        <p class="text-lg text-brand-light/80 mb-4 leading-relaxed max-w-2xl">
+                        <p class="hero-subtitle max-w-xl">
 
-                            For locksmiths, installers, and distributors who need OEM-compatible remotes with higher margins.
+                            OEM-compatible remotes built for installers, locksmiths, and distributors.
 
                         </p>
-
-                        <div class="hero-metrics">
-                            <span class="hero-metric">10+ years RF manufacturing</span>
-                            <span class="hero-metric">48h repeat dispatch</span>
-                            <span class="hero-metric">CE/FCC docs + DAP/DDP EU/US/SA/AU</span>
-                        </div>
 
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
 
@@ -871,8 +883,6 @@ eleventyComputed:
 
                         </div>
 
-                        <p class="text-xs text-brand-light/70 mb-6">Authorized replacement & programming workflow for installers; compatibility verified per OEM receiver series; distributor-protected B2B supply (end-users not supported).</p>
-
                         <div class="flex flex-col sm:flex-row gap-5">
 
                             <a href="/contact/" class="hero-cta-primary text-center text-lg inline-flex items-center justify-center" data-cta="hero_get_price_list">
@@ -891,8 +901,6 @@ eleventyComputed:
 
                         </div>
 
-                        <p class="text-sm text-brand-light/70 mt-3">MOQ 50pcs | T/T 30/70 | 48h dispatch on repeats | Freight: FOB/DAP/DDP EU/US/SA/AU.</p>
-
                         <div class="flex flex-wrap gap-3 mt-6">
 
                             <span class="bg-brand-light/10 text-brand-light px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide border border-brand-light/20">Locksmiths</span>
@@ -904,6 +912,14 @@ eleventyComputed:
                         </div>
 
                         <p class="text-sm text-brand-light/70 mt-3 max-w-2xl">Gate remote manufacturer in Dongguan supporting European, US, South American, and Australian distributors of 433.92MHz remotes and Nice/Came compatible remotes across Europe.</p>
+
+                        </div>
+
+                        <div class="hero-badges" aria-label="Key terms">
+                            <span class="hero-badge">MOQ: 50pcs</span>
+                            <span class="hero-badge">48h Dispatch</span>
+                            <span class="hero-badge">ISO9001 Certified</span>
+                        </div>
 
                     </div>
 
