@@ -200,7 +200,7 @@ eleventyComputed:
         .hero-video {
             position: absolute;
             inset: 0;
-            z-index: 0;
+            z-index: 1;
             pointer-events: none;
         }
 
@@ -215,17 +215,17 @@ eleventyComputed:
             transform: scale(1.02);
         }
 
-        .hero-glass-overlay {
+        .hero-overlay {
             position: absolute;
             inset: 0;
-            z-index: 1;
+            z-index: 2;
             pointer-events: none;
-            background: linear-gradient(110deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.3) 100%);
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3));
         }
 
         .hero-content-stack {
             position: relative;
-            z-index: 2;
+            z-index: 3;
             margin-left: clamp(1.25rem, 6vw, 10%);
             width: min(580px, 100%);
             display: flex;
@@ -240,9 +240,9 @@ eleventyComputed:
             border-radius: 28px;
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
         }
 
         .hero-title {
@@ -274,16 +274,17 @@ eleventyComputed:
 
         .hero-cta-primary:hover {
             background: #005bb5;
-            box-shadow: 0 14px 28px rgba(0, 113, 227, 0.35), 0 0 24px rgba(0, 113, 227, 0.25);
-            transform: translateY(-2px);
+            box-shadow: 0 14px 28px rgba(0, 113, 227, 0.35), 0 0 28px rgba(0, 113, 227, 0.35);
+            transform: translateY(-2px) scale(1.05);
         }
 
         .hero-cta-secondary {
             border-radius: 999px;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
         }
 
         .hero-cta-secondary:hover {
@@ -297,10 +298,11 @@ eleventyComputed:
             gap: 12px;
             padding: 12px 14px;
             border-radius: 16px;
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
             transition: transform 0.2s ease, background 0.2s ease;
         }
 
@@ -323,10 +325,15 @@ eleventyComputed:
             letter-spacing: 0.04em;
             text-transform: uppercase;
             color: rgba(255, 255, 255, 0.85);
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+        }
+
+        .section-gap {
+            margin-top: 120px;
         }
 
         
@@ -516,6 +523,10 @@ eleventyComputed:
             .hero-badges {
                 flex-direction: column;
                 align-items: flex-start;
+            }
+
+            .section-gap {
+                margin-top: 72px;
             }
         }
 
@@ -830,7 +841,7 @@ eleventyComputed:
                     <source src="/assets/videos/V1.3.mp4" type="video/mp4">
                 </video>
             </div>
-            <div class="hero-glass-overlay" aria-hidden="true"></div>
+            <div class="hero-overlay" aria-hidden="true"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20 relative z-10">
 
@@ -854,6 +865,12 @@ eleventyComputed:
 
                         </div>
 
+                        <div class="hero-badges" aria-label="Key terms">
+                            <span class="hero-badge">10+ Yrs Exp</span>
+                            <span class="hero-badge">MOQ 50pcs</span>
+                            <span class="hero-badge">CE/FCC Certified</span>
+                        </div>
+
                         <div class="flex flex-col sm:flex-row gap-5">
 
                             <a href="/contact/" class="hero-cta-primary text-center text-lg inline-flex items-center justify-center" data-cta="hero_get_price_list">
@@ -870,12 +887,6 @@ eleventyComputed:
 
                             </a>
 
-                        </div>
-
-                        <div class="hero-badges" aria-label="Key terms">
-                            <span class="hero-badge">10+ Yrs Exp</span>
-                            <span class="hero-badge">MOQ 50pcs</span>
-                            <span class="hero-badge">CE/FCC Certified</span>
                         </div>
 
                     </div>
@@ -910,7 +921,7 @@ eleventyComputed:
 
         <!-- Key Numbers -->
 
-        <section class="bg-brand-light border-b border-brand-border">
+        <section class="bg-brand-light section-gap">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -936,7 +947,7 @@ eleventyComputed:
 
         <!-- Trust Bar -->
 
-        <div id="products-preview" class="bg-brand-light border-b border-brand-border">
+        <div id="products-preview" class="bg-brand-light section-gap">
 
             <div class="max-w-7xl mx-auto px-4 py-10">
 
@@ -1242,7 +1253,7 @@ eleventyComputed:
 
         <!-- Distributor Portal CTA -->
 
-        <section class="py-16 bg-brand-light border-t border-b border-brand-border">
+        <section class="py-16 bg-brand-light section-gap">
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
