@@ -211,7 +211,7 @@ eleventyComputed:
             top: 0;
             left: 0;
             object-fit: cover;
-            filter: blur(12px) brightness(0.5);
+            filter: blur(10px) brightness(0.5);
             transform: scale(1.02);
         }
 
@@ -246,6 +246,7 @@ eleventyComputed:
         }
 
         .hero-title {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
             font-weight: 800;
             font-size: clamp(32px, 5vw, 56px);
             line-height: 1.1;
@@ -279,7 +280,7 @@ eleventyComputed:
 
         .hero-cta-secondary {
             border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             background: rgba(255, 255, 255, 0.06);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
@@ -297,7 +298,7 @@ eleventyComputed:
             padding: 12px 14px;
             border-radius: 16px;
             background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.16);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             transition: transform 0.2s ease, background 0.2s ease;
@@ -322,10 +323,10 @@ eleventyComputed:
             letter-spacing: 0.04em;
             text-transform: uppercase;
             color: rgba(255, 255, 255, 0.85);
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
 
         
@@ -486,7 +487,7 @@ eleventyComputed:
 
         @media (max-width: 768px) {
             .hero-video video {
-                filter: blur(12px) brightness(0.5);
+                filter: blur(10px) brightness(0.5);
                 transform: scale(1);
             }
 
@@ -496,6 +497,7 @@ eleventyComputed:
             }
 
             .hero-content-card {
+                width: 95%;
                 border-radius: 22px;
                 background: rgba(0, 0, 0, 0.5);
                 backdrop-filter: none;
@@ -511,6 +513,11 @@ eleventyComputed:
             .hero-badge {
                 font-size: 11px;
                 letter-spacing: 0.03em;
+            }
+
+            .hero-badges {
+                flex-direction: column;
+                align-items: flex-start;
             }
         }
 
@@ -851,37 +858,9 @@ eleventyComputed:
 
                         <p class="hero-subtitle max-w-xl">
 
-                            OEM-compatible remotes built for installers, locksmiths, and distributors.
+                            Factory-direct OEM-compatible remotes for installers, locksmiths, and distributors.
 
                         </p>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-
-                        <div class="hero-trust-card">
-
-                            <i class="fa-solid fa-industry text-brand-accent mt-1"></i>
-
-                            <p class="text-brand-light/90 text-sm">Factory-direct pricing keeps your projects profitable.</p>
-
-                        </div>
-
-                        <div class="hero-trust-card">
-
-                            <i class="fa-solid fa-sitemap text-brand-accent mt-1"></i>
-
-                            <p class="text-brand-light/90 text-sm">60+ OEM models covered (LiftMaster, Nice, Came, Hormann).</p>
-
-                        </div>
-
-                        <div class="hero-trust-card">
-
-                            <i class="fa-solid fa-rocket text-brand-accent mt-1"></i>
-
-                            <p class="text-brand-light/90 text-sm">48h sample shipping &lt;0.5% defect rate.</p>
-
-                        </div>
-
-                        </div>
 
                         <div class="flex flex-col sm:flex-row gap-5">
 
@@ -916,9 +895,9 @@ eleventyComputed:
                         </div>
 
                         <div class="hero-badges" aria-label="Key terms">
-                            <span class="hero-badge">MOQ: 50pcs</span>
-                            <span class="hero-badge">48h Dispatch</span>
-                            <span class="hero-badge">ISO9001 Certified</span>
+                            <span class="hero-badge">10+ Yrs RF Manufacturing</span>
+                            <span class="hero-badge">MOQ: 50pcs | T/T 30/70</span>
+                            <span class="hero-badge">CE / FCC / RoHS Certified</span>
                         </div>
 
                     </div>
