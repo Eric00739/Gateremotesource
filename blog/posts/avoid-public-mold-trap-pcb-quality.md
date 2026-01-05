@@ -24,7 +24,7 @@ permalink: "/blog/{{ slug }}/index.html"
 
 <div class="highlight-card rounded-2xl p-6 border border-brand-accent/30 shadow-lg">
   <h2 class="text-xl font-bold text-white mb-3">Key Takeaways</h2>
-  <ul class="space-y-2 text-brand-light/80 list-disc list-inside">
+  <ul class="space-y-2 text-brand-muted list-disc list-inside">
     <li>Public mold remotes cut costs at PCB, oscillator, and QA, causing drift, desync, and early failures.</li>
     <li>Industrial-grade requires FR-4, crystal or SAW references, proper RF layout, and 100% AOI.</li>
     <li>Field tests: squeeze, drop, and inspect board color or oscillator to spot paper boards and LC designs.</li>
@@ -65,10 +65,10 @@ It holds structural integrity from -40 C to 100 C.
 
 <div class="callout rounded-2xl p-6 text-white space-y-3">
   <h3 class="text-xl font-bold">Need FR-4 and AOI-verified remotes?</h3>
-  <p class="text-brand-light/80">Get a teardown sample kit showing FR-4 boards, crystal references, and AOI reports before you commit volume.</p>
+  <p class="text-brand-muted">Get a teardown sample kit showing FR-4 boards, crystal references, and AOI reports before you commit volume.</p>
   <div class="flex flex-wrap gap-3">
     <a href="/contact/" class="bg-brand-accent hover:bg-brand-hover text-white font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_mid_cta_contact">Request Samples and Pricing</a>
-    <a href="/catalog/" class="border border-brand-border/60 hover:border-brand-accent text-brand-light font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_mid_cta_catalog">Download Catalog</a>
+    <a href="/catalog/" class="border border-brand-border/60 hover:border-brand-accent text-brand-dark font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_mid_cta_catalog">Download Catalog</a>
   </div>
 </div>
 
@@ -150,10 +150,10 @@ We leverage 10 years of manufacturing heritage to ensure what is inside the shel
 
 <div class="callout rounded-2xl p-6 space-y-3">
   <h3 class="text-xl font-bold text-white">Ready to upgrade your supply chain?</h3>
-  <p class="text-brand-light/80">Get a teardown sample kit and wholesale pricing tailored to your SKUs.</p>
+  <p class="text-brand-muted">Get a teardown sample kit and wholesale pricing tailored to your SKUs.</p>
   <div class="flex flex-wrap gap-3">
     <a href="/contact/" class="bg-brand-accent hover:bg-brand-hover text-white font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_bottom_cta_contact">Talk to Engineering</a>
-    <a href="/catalog/" class="border border-brand-border/60 hover:border-brand-accent text-brand-light font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_bottom_cta_catalog">View Compatible Models</a>
+    <a href="/catalog/" class="border border-brand-border/60 hover:border-brand-accent text-brand-dark font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_bottom_cta_catalog">View Compatible Models</a>
   </div>
 </div>
 

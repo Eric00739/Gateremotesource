@@ -142,6 +142,13 @@ lang: en
         ::-webkit-scrollbar-thumb { background: #6E6E73; border-radius: 5px; }
         ::-webkit-scrollbar-thumb:hover { background: #0A84FF; }
 
+        .nav-glass {
+            background: rgba(255, 255, 255, 0.72);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+        }
+
         .nav-link.active { color: #0A84FF !important; font-weight: 700; border-bottom: 2px solid #0A84FF; }
         
         .lang-select {
@@ -180,9 +187,9 @@ lang: en
         }
     </style>
 </head>
-<body class="font-sans text-brand-light/80 bg-brand-dark/70 backdrop-blur selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="blog">
+<body class="font-sans text-brand-dark/80 bg-brand-light backdrop-blur selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="blog">
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-brand-dark/70 backdrop-blur border-b border-brand-dark/60 transition-all duration-300">
+    <nav class="fixed w-full z-50 nav-glass transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
@@ -190,84 +197,84 @@ lang: en
                         <div class="bg-brand-surface border border-brand-border/60 p-1.5 rounded-lg h-10 w-10 flex items-center justify-center">
                             <img src="/logo/logo.png" width="1024" height="1024" alt="GateRemoteSource Logo" class="h-full w-full object-contain">
                         </div>
-                        <span class="font-bold text-2xl text-white tracking-tight">GateRemote<span class="text-brand-accent">Source</span></span>
+                        <span class="font-bold text-2xl text-brand-dark tracking-tight">GateRemote<span class="text-brand-accent">Source</span></span>
                     </a>
                 </div>
                 
                 <div class="hidden lg:flex space-x-8 items-center">
-                    <a href="/" class="nav-link text-brand-light/80 hover:text-brand-accent transition font-semibold py-2" id="nav-home" data-i18n="navigation.home">Home</a>
-                    <a href="/catalog/" class="nav-link text-brand-light/80 hover:text-brand-accent transition font-semibold py-2" id="nav-products" data-i18n="navigation.catalog">Catalog</a>
-                    <a href="/oem/" class="nav-link text-brand-light/80 hover:text-brand-accent transition font-semibold py-2" id="nav-oem" data-i18n="navigation.oem">OEM/ODM</a>
-                    <a href="/about/" class="nav-link text-brand-light/80 hover:text-brand-accent transition font-semibold py-2" id="nav-about" data-i18n="navigation.about">About</a>
-                    <a href="/blog/" class="nav-link text-brand-light/80 hover:text-brand-accent transition font-semibold py-2 active" id="nav-blog" data-i18n="navigation.blog">Blog</a>
-                    <a href="/contact/" class="nav-link text-brand-light/80 hover:text-brand-accent transition font-semibold py-2" id="nav-contact" data-i18n="navigation.contact">Contact</a>
+                    <a href="/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2" id="nav-home" data-i18n="navigation.home">Home</a>
+                    <a href="/catalog/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2" id="nav-products" data-i18n="navigation.catalog">Catalog</a>
+                    <a href="/oem/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2" id="nav-oem" data-i18n="navigation.oem">OEM/ODM</a>
+                    <a href="/about/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2" id="nav-about" data-i18n="navigation.about">About</a>
+                    <a href="/blog/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2 active" id="nav-blog" data-i18n="navigation.blog">Blog</a>
+                    <a href="/contact/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2" id="nav-contact" data-i18n="navigation.contact">Contact</a>
                     
-                    <div class="flex items-center ml-2 border-l border-brand-dark/60 pl-4">
+                    <div class="flex items-center ml-2 border-l border-brand-border pl-4">
                         <div class="relative">
-                            <button id="languageDropdownBtn" class="flex items-center gap-2 text-brand-light/80 hover:text-brand-accent transition">
+                            <button id="languageDropdownBtn" class="flex items-center gap-2 text-brand-dark hover:text-brand-accent transition">
                                 <span id="currentFlag" class="text-xs font-semibold tracking-wide">EN</span>
                                 <span id="currentLang" class="text-sm">English</span>
                                 <i class="fa-solid fa-chevron-down text-xs"></i>
                             </button>
-                            <div id="languageDropdown" class="absolute right-0 mt-2 w-48 bg-brand-dark/80 border border-brand-dark/60 rounded-lg shadow-lg hidden z-50 backdrop-blur">
-                                <a href="#" onclick="changeLanguage('en')" class="flex items-center gap-3 px-4 py-3 text-brand-light/80 hover:bg-brand-dark/60 transition">
+                            <div id="languageDropdown" class="absolute right-0 mt-2 w-48 bg-brand-surface border border-brand-border rounded-lg shadow-lg hidden z-50 backdrop-blur">
+                                <a href="#" onclick="changeLanguage('en')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
                                     <span class="text-xs font-semibold">EN</span>
-                                    <span class="text-brand-light/80">English</span>
+                                    <span class="text-brand-dark">English</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('es')" class="flex items-center gap-3 px-4 py-3 text-brand-light/80 hover:bg-brand-dark/60 transition">
+                                <a href="#" onclick="changeLanguage('es')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
                                     <span class="text-xs font-semibold">ES</span>
-                                    <span class="text-brand-light/80">Espanol</span>
+                                    <span class="text-brand-dark">Espanol</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('de')" class="flex items-center gap-3 px-4 py-3 text-brand-light/80 hover:bg-brand-dark/60 transition">
+                                <a href="#" onclick="changeLanguage('de')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
                                     <span class="text-xs font-semibold">DE</span>
-                                    <span class="text-brand-light/80">Deutsch</span>
+                                    <span class="text-brand-dark">Deutsch</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('it')" class="flex items-center gap-3 px-4 py-3 text-brand-light/80 hover:bg-brand-dark/60 transition">
+                                <a href="#" onclick="changeLanguage('it')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
                                     <span class="text-xs font-semibold">IT</span>
-                                    <span class="text-brand-light/80">Italiano</span>
+                                    <span class="text-brand-dark">Italiano</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('fr')" class="flex items-center gap-3 px-4 py-3 text-brand-light/80 hover:bg-brand-dark/60 transition">
+                                <a href="#" onclick="changeLanguage('fr')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
                                     <span class="text-xs font-semibold">FR</span>
-                                    <span class="text-brand-light/80">Francais</span>
+                                    <span class="text-brand-dark">Francais</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('pt')" class="flex items-center gap-3 px-4 py-3 text-brand-light/80 hover:bg-brand-dark/60 transition">
+                                <a href="#" onclick="changeLanguage('pt')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
                                     <span class="text-xs font-semibold">PT</span>
-                                    <span class="text-brand-light/80">Portugues</span>
+                                    <span class="text-brand-dark">Portugues</span>
                                 </a>
                             </div>
                         </div>
                     </div>
                     
-                    <a href="/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-white px-6 py-2 rounded-lg font-bold transition shadow-md shadow-brand-cta/20 hover:shadow-lg transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_get_price_list">
+                    <a href="/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-brand-surface px-6 py-2 rounded-lg font-bold transition shadow-md shadow-brand-cta/20 hover:shadow-lg transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_get_price_list">
                         Quote now
                     </a>
                 </div>
                 
                 <div class="lg:hidden flex items-center gap-4">
-                    <button id="mobile-menu-btn" class="text-brand-light/80 text-2xl focus:outline-none">
+                    <button id="mobile-menu-btn" class="text-brand-dark text-2xl focus:outline-none">
                         <i class="fa-solid fa-bars"></i>
                     </button>
                 </div>
             </div>
         </div>
         
-        <div id="mobile-menu" class="lg:hidden bg-brand-dark/80 border-b border-brand-dark/60 hidden backdrop-blur">
+        <div id="mobile-menu" class="lg:hidden bg-brand-surface/95 border-b border-brand-border hidden backdrop-blur">
             <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-light/80 hover:bg-brand-dark/60 hover:text-brand-accent" data-i18n="navigation.home">Home</a>
-                <a href="/catalog/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-light/80 hover:bg-brand-dark/60 hover:text-brand-accent" data-i18n="navigation.catalog">Catalog</a>
-                <a href="/oem/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-light/80 hover:bg-brand-dark/60 hover:text-brand-accent" data-i18n="navigation.oem">OEM/ODM</a>
-                <a href="/about/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-light/80 hover:bg-brand-dark/60 hover:text-brand-accent" data-i18n="navigation.about">About</a>
-                <a href="/blog/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-light/80 hover:bg-brand-dark/60 hover:text-brand-accent" data-i18n="navigation.blog">Blog</a>
+                <a href="/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-accent" data-i18n="navigation.home">Home</a>
+                <a href="/catalog/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-accent" data-i18n="navigation.catalog">Catalog</a>
+                <a href="/oem/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-accent" data-i18n="navigation.oem">OEM/ODM</a>
+                <a href="/about/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-accent" data-i18n="navigation.about">About</a>
+                <a href="/blog/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-accent" data-i18n="navigation.blog">Blog</a>
                 <a href="/contact/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-cta font-bold" data-i18n="navigation.contact" data-cta="mobile_get_price_list">Quote now</a>
-                <div class="pt-4 border-t border-brand-dark/60">
+                <div class="pt-4 border-t border-brand-border">
                     <p class="px-3 text-xs uppercase tracking-wide text-brand-light/60">Language</p>
                     <div class="px-3 mt-2 flex flex-wrap gap-2">
-                        <button type="button" onclick="changeLanguage('en')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-light/80 hover:text-brand-accent transition">EN</button>
-                        <button type="button" onclick="changeLanguage('es')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-light/80 hover:text-brand-accent transition">ES</button>
-                        <button type="button" onclick="changeLanguage('de')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-light/80 hover:text-brand-accent transition">DE</button>
-                        <button type="button" onclick="changeLanguage('it')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-light/80 hover:text-brand-accent transition">IT</button>
-                        <button type="button" onclick="changeLanguage('fr')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-light/80 hover:text-brand-accent transition">FR</button>
-                        <button type="button" onclick="changeLanguage('pt')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-light/80 hover:text-brand-accent transition">PT</button>
+                        <button type="button" onclick="changeLanguage('en')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-dark hover:text-brand-accent transition">EN</button>
+                        <button type="button" onclick="changeLanguage('es')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-dark hover:text-brand-accent transition">ES</button>
+                        <button type="button" onclick="changeLanguage('de')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-dark hover:text-brand-accent transition">DE</button>
+                        <button type="button" onclick="changeLanguage('it')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-dark hover:text-brand-accent transition">IT</button>
+                        <button type="button" onclick="changeLanguage('fr')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-dark hover:text-brand-accent transition">FR</button>
+                        <button type="button" onclick="changeLanguage('pt')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-dark hover:text-brand-accent transition">PT</button>
                     </div>
                 </div>
             </div>
@@ -275,30 +282,30 @@ lang: en
     </nav>
 
     <!-- Main Content -->
-    <main class="pt-28 pb-24 bg-brand-dark/70 backdrop-blur min-h-screen">
+    <main class="pt-28 pb-24 bg-brand-light backdrop-blur min-h-screen">
         <!-- Hero Section -->
         <section class="pb-12">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div class="space-y-6">
-                        <span class="text-xs uppercase tracking-wider text-brand-light/60 font-semibold">Installer Hub</span>
-                        <h1 class="text-4xl md:text-5xl font-bold text-white" data-i18n="blog.title">{{ site.blogTitle }}</h1>
-                        <p class="text-brand-light/70 max-w-2xl" data-i18n="blog.subtitle">{{ site.blogDescription }}</p>
-                        <div class="flex flex-wrap gap-3 text-sm text-brand-light/70">
-                            <span class="flex items-center gap-2 glass-chip text-brand-light/80 rounded-full px-3 py-1">
+                        <span class="text-xs uppercase tracking-wider text-brand-muted font-semibold">Installer Hub</span>
+                        <h1 class="text-4xl md:text-5xl font-bold text-brand-dark" data-i18n="blog.title">{{ site.blogTitle }}</h1>
+                        <p class="text-brand-muted max-w-2xl" data-i18n="blog.subtitle">{{ site.blogDescription }}</p>
+                        <div class="flex flex-wrap gap-3 text-sm text-brand-muted">
+                            <span class="flex items-center gap-2 glass-chip text-brand-dark rounded-full px-3 py-1">
                                 <i class="fa-solid fa-circle-check text-brand-accent"></i>
                                 <span>Programming and compatibility guides</span>
                             </span>
-                            <span class="flex items-center gap-2 glass-chip text-brand-light/80 rounded-full px-3 py-1">
+                            <span class="flex items-center gap-2 glass-chip text-brand-dark rounded-full px-3 py-1">
                                 <i class="fa-solid fa-circle-check text-brand-accent"></i>
                                 <span>RF troubleshooting and range fixes</span>
                             </span>
-                            <span class="flex items-center gap-2 glass-chip text-brand-light/80 rounded-full px-3 py-1">
+                            <span class="flex items-center gap-2 glass-chip text-brand-dark rounded-full px-3 py-1">
                                 <i class="fa-solid fa-circle-check text-brand-accent"></i>
                                 <span>Distributor-ready sales playbooks</span>
                             </span>
                         </div>
-                        <div class="flex flex-wrap gap-4 items-center text-sm text-brand-light/70">
+                        <div class="flex flex-wrap gap-4 items-center text-sm text-brand-muted">
                             <div class="bg-brand-surface border border-brand-border/40 rounded-lg px-4 py-2 text-brand-dark">
                                 <span class="text-brand-dark font-bold">{{ collections.posts.length }}</span> total guides
                             </div>
@@ -371,7 +378,7 @@ lang: en
                     </div>
                 </div>
                 <div id="activeFilters" class="mt-4 flex flex-wrap gap-2"></div>
-                <div id="no-results" class="hidden text-brand-light/60 mt-4">No articles found on this page. Try a different filter.</div>
+                <div id="no-results" class="hidden text-brand-muted mt-4">No articles found on this page. Try a different filter.</div>
             </div>
         </section>
 
@@ -417,8 +424,8 @@ lang: en
                         <!-- Grid Posts -->
                         <section class="space-y-6">
                             <div class="flex items-center justify-between">
-                                <h3 class="text-brand-light font-bold text-lg">Fresh from the lab</h3>
-                                <span class="text-xs text-brand-light/60">Newest updates first</span>
+                                <h3 class="text-brand-dark font-bold text-lg">Fresh from the lab</h3>
+                                <span class="text-xs text-brand-muted">Newest updates first</span>
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {% if gridPosts.length %}
@@ -624,25 +631,25 @@ lang: en
     </main>
 
     <!-- Newsletter Section -->
-    <section class="py-16 bg-brand-dark/70 border-t border-brand-dark/60">
+    <section class="py-16 bg-brand-light border-t border-brand-border">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-white mb-4">Stay Updated with Latest Tips</h2>
-            <p class="text-brand-light/70 mb-8">Get weekly technical guides and market insights delivered to your inbox.</p>
+            <h2 class="text-3xl font-bold text-brand-dark mb-4">Stay Updated with Latest Tips</h2>
+            <p class="text-brand-muted mb-8">Get weekly technical guides and market insights delivered to your inbox.</p>
             <form id="newsletterForm" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input id="newsletterEmail" name="email" type="email" placeholder="Enter your email" required class="flex-1 bg-brand-dark/60 border border-brand-dark/40 rounded-lg px-4 py-3 text-brand-light/80 focus:border-brand-accent outline-none transition">
+                <input id="newsletterEmail" name="email" type="email" placeholder="Enter your email" required class="flex-1 bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-dark focus:border-brand-accent outline-none transition">
                 <button type="submit" class="bg-brand-cta hover:bg-brand-ctaHover text-white px-6 py-3 rounded-lg font-bold transition">Subscribe</button>
             </form>
-            <p id="newsletter-status" class="text-sm text-brand-light/70 mt-3 hidden" aria-live="polite"></p>
+            <p id="newsletter-status" class="text-sm text-brand-muted mt-3 hidden" aria-live="polite"></p>
         </div>
     </section>
 
     <!-- Pre-Footer CTA -->
-    <section class="py-16 bg-brand-dark/70 relative overflow-hidden">
+    <section class="py-16 bg-brand-light relative overflow-hidden">
         <div class="absolute inset-0 bg-brand-dark/10"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
             <div>
-                <h2 class="text-3xl font-bold text-white mb-2" data-i18n="pre_footer.title">Need Technical Support?</h2>
-                <p class="text-brand-light/70 text-lg" data-i18n="pre_footer.subtitle">Our engineering team is here to help with your installation challenges.</p>
+                <h2 class="text-3xl font-bold text-brand-dark mb-2" data-i18n="pre_footer.title">Need Technical Support?</h2>
+                <p class="text-brand-muted text-lg" data-i18n="pre_footer.subtitle">Our engineering team is here to help with your installation challenges.</p>
             </div>
             <a href="/contact/" class="bg-brand-cta text-white px-8 py-3 rounded-full font-bold hover:bg-brand-ctaHover transition shadow-lg shadow-brand-cta/20">
                 <span data-i18n="pre_footer.order_samples">Get Support</span>
@@ -651,9 +658,9 @@ lang: en
     </section>
 
     <!-- Footer -->
-    <footer class="bg-brand-dark/70 pt-20 pb-10 border-t border-brand-dark/60 text-brand-muted/70 text-base">
+    <footer class="bg-brand-light pt-20 pb-10 border-t border-brand-border text-brand-dark/80 text-base">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-brand-dark/60 border border-brand-dark/40 rounded-xl p-6 mb-12">
+            <div class="bg-brand-surface border border-brand-border rounded-xl p-6 mb-12">
                 <p class="text-sm text-brand-muted text-center" data-i18n="footer.legal_disclaimer">
                     Disclaimer: All product names, logos, and brands are property of their respective owners. All company, product and service names used in this website are for identification purposes only. Use of these names, logos, and brands does not imply endorsement.
                 </p>
@@ -661,13 +668,13 @@ lang: en
 
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <div>
-                    <div class="flex items-center gap-3 mb-4 text-white">
+                    <div class="flex items-center gap-3 mb-4 text-brand-dark">
                         <img src="/logo/logo.png" width="1024" height="1024" alt="GateRemoteSource logo" class="h-10 w-auto object-contain">
                     </div>
                     <p class="mb-4 text-brand-muted/70" data-i18n="footer.company_description">Your Profit Partner in Access Control. Supplying locksmiths worldwide.</p>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-4" data-i18n="footer.products">Products</h4>
+                    <h4 class="text-brand-dark font-bold mb-4" data-i18n="footer.products">Products</h4>
                     <ul class="space-y-2">
                         <li><a href="/catalog/" class="hover:text-brand-accent" data-i18n="footer.remotes">Remotes</a></li>
                         <li><a href="/catalog/" class="hover:text-brand-accent" data-i18n="footer.receivers">Receivers</a></li>
@@ -675,18 +682,18 @@ lang: en
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-4" data-i18n="footer.contact">Contact</h4>
+                    <h4 class="text-brand-dark font-bold mb-4" data-i18n="footer.contact">Contact</h4>
                     <ul class="space-y-2">
                         <li><a href="mailto:sales@gateremotesource.com" class="hover:text-brand-accent" data-i18n="footer.email_sales">sales@gateremotesource.com</a></li>
                         <li><a href="https://wa.me/8615899648898" class="hover:text-brand-accent" data-i18n="footer.whatsapp">+86 158 9964 8898</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-4" data-i18n="footer.address">Address</h4>
+                    <h4 class="text-brand-dark font-bold mb-4" data-i18n="footer.address">Address</h4>
                     <p class="flex items-start gap-2"><i class="fa-solid fa-location-dot mt-1 text-brand-accent"></i><span data-i18n="footer.address_text">Huawei Kegu Industrial Park, Dalingshan Town, Dongguan, Guangdong, China</span></p>
                 </div>
             </div>
-            <div class="text-center pt-8 border-t border-brand-dark/60">
+            <div class="text-center pt-8 border-t border-brand-border">
                 <span data-i18n="footer.copyright">&copy; 2026 GateRemoteSource. All rights reserved.</span>
             </div>
         </div>
@@ -973,7 +980,7 @@ lang: en
             }
 
             if (!items.length) {
-                activeFilters.innerHTML = '<span class="text-sm text-brand-light/60">No active filters.</span>';
+                activeFilters.innerHTML = '<span class="text-sm text-brand-muted">No active filters.</span>';
                 return;
             }
 
@@ -981,14 +988,14 @@ lang: en
                 const label = escapeHtml(item.label);
                 if (item.type === 'search') {
                     return `
-                        <button type="button" class="flex items-center gap-2 px-3 py-1 rounded-full glass-chip border-brand-border/60 text-xs text-brand-light/80 hover:border-brand-accent hover:text-brand-accent transition" data-remove-filter data-type="search">
+                        <button type="button" class="flex items-center gap-2 px-3 py-1 rounded-full glass-chip border-brand-border/60 text-xs text-brand-dark hover:border-brand-accent hover:text-brand-accent transition" data-remove-filter data-type="search">
                             <span>${label}</span>
                             <i class="fa-solid fa-xmark text-[10px]"></i>
                         </button>
                     `;
                 }
                 return `
-                    <button type="button" class="flex items-center gap-2 px-3 py-1 rounded-full glass-chip border-brand-border/60 text-xs text-brand-light/80 hover:border-brand-accent hover:text-brand-accent transition" data-remove-filter data-type="filter" data-group="${escapeHtml(item.group)}" data-value="${escapeHtml(item.value)}">
+                    <button type="button" class="flex items-center gap-2 px-3 py-1 rounded-full glass-chip border-brand-border/60 text-xs text-brand-dark hover:border-brand-accent hover:text-brand-accent transition" data-remove-filter data-type="filter" data-group="${escapeHtml(item.group)}" data-value="${escapeHtml(item.value)}">
                         <span>${label}</span>
                         <i class="fa-solid fa-xmark text-[10px]"></i>
                     </button>

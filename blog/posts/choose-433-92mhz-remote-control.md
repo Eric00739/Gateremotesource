@@ -34,7 +34,7 @@ permalink: "/blog/{{ slug }}/index.html"
 
 <div class="highlight-card rounded-2xl p-6 border border-brand-accent/30 shadow-lg">
   <h2 class="text-xl font-bold text-white mb-3">Executive Summary</h2>
-  <ul class="space-y-2 text-brand-light/80 list-disc list-inside">
+  <ul class="space-y-2 text-brand-muted list-disc list-inside">
     <li>Turn "range" into <strong>Link Margin (链路余量)</strong> and target a measurable 10-15 dB buffer.</li>
     <li>Demand <strong>Blocking (阻塞/抗强干扰)</strong> data, not just sensitivity numbers.</li>
     <li>Enforce <strong>Protocol Airtime (空口占用时间)</strong> limits in firmware to meet EU and FCC rules.</li>
@@ -119,10 +119,10 @@ This buffer protects against multipath fading and human-hand detuning.
 
 <div class="callout rounded-2xl p-6 text-white space-y-3">
   <p class="callout-title text-xl font-bold">Need an OEM/ODM-ready 433.92MHz platform?</p>
-  <p class="text-brand-light/80">Send your OEM/ODM RFQ for compliance-ready firmware timers, blocking reports, and real-world range validation.</p>
+  <p class="text-brand-muted">Send your OEM/ODM RFQ for compliance-ready firmware timers, blocking reports, and real-world range validation.</p>
   <div class="flex flex-wrap gap-3">
     <a href="/contact/" class="bg-brand-accent hover:bg-brand-hover text-white font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_mid_cta_contact">Talk to Engineering</a>
-    <a href="/catalog/" class="border border-brand-border/60 hover:border-brand-accent text-brand-light font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_mid_cta_catalog">View Compatible Models</a>
+    <a href="/catalog/" class="border border-brand-border/60 hover:border-brand-accent text-brand-dark font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_mid_cta_catalog">View Compatible Models</a>
   </div>
 </div>
 
@@ -208,10 +208,10 @@ That is how OEM teams avoid "datasheet dreams" and ship reliable products.
 
 <div class="callout rounded-2xl p-6 space-y-3">
   <p class="callout-title text-xl font-bold text-white">Need a compliant 433.92MHz remote with documented lab data?</p>
-  <p class="text-brand-light/80">Our engineering team can align firmware timers, antennas, and blocking to your target range.</p>
+  <p class="text-brand-muted">Our engineering team can align firmware timers, antennas, and blocking to your target range.</p>
   <div class="flex flex-wrap gap-3">
     <a href="/contact/" class="bg-brand-accent hover:bg-brand-hover text-white font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_bottom_cta_contact">Request OEM Support</a>
-    <a href="/catalog/" class="border border-brand-border/60 hover:border-brand-accent text-brand-light font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_bottom_cta_catalog">Browse 433.92MHz Models</a>
+    <a href="/catalog/" class="border border-brand-border/60 hover:border-brand-accent text-brand-dark font-bold px-4 py-3 rounded-lg transition" data-cta="blog_detail_bottom_cta_catalog">Browse 433.92MHz Models</a>
   </div>
 </div>
 
