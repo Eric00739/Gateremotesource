@@ -32,6 +32,8 @@ module.exports = {
           border: "#D1D1D6",      // Border (subtle)
           cta: "#0071E3",         // Apple Blue (button)
           ctaHover: "#005BB5",    // CTA Hover
+          quote: "#F37021",       // Safety Orange (Quote now buttons) - 与黑色/银色遥控器形成强烈对比
+          quoteHover: "#D65A1A",  // Quote Hover (darker orange)
           glass: "rgba(255, 255, 255, 0.45)",  // Glass background
           glassBorder: "rgba(255, 255, 255, 0.3)",  // Glass border
         },
