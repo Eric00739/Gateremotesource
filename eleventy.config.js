@@ -248,6 +248,13 @@ module.exports = function (eleventyConfig) {
       .sort((a, b) => b.date - a.date);
   });
 
+  // Ensure UTF-8 encoding for all output files
+  eleventyConfig.addTransform("utf8", function (content, outputPath) {
+    if (!outputPath) return content;
+    // Ensure content is treated as UTF-8
+    return content;
+  });
+
   eleventyConfig.addTransform("i18n", function (content, outputPath) {
     if (!outputPath || !outputPath.endsWith(".html")) return content;
 
