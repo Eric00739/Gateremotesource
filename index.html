@@ -3,6 +3,7 @@ pagination:
   data: i18n.languages
   size: 1
   alias: lang
+  addAllPagesToCollections: true
 permalink: "{% if lang == i18n.defaultLang %}index.html{% else %}{{ lang }}/index.html{% endif %}"
 eleventyComputed:
   lang: "{{ lang }}"

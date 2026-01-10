@@ -4,6 +4,7 @@ pagination:
   size: 12
   alias: posts
   reverse: true
+  addAllPagesToCollections: true
 permalink: "blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
 lang: en
 ---

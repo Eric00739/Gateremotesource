@@ -1,0 +1,13 @@
+---
+permalink: "robots.txt"
+eleventyExcludeFromCollections: true
+sitemap: false
+---
+User-agent: *
+{% for path in seo.robotsDisallow -%}
+Disallow: {{ path }}
+{% endfor -%}
+{% for path in seo.robotsAllow -%}
+Allow: {{ path }}
+{% endfor -%}
+Sitemap: {{ site.url }}/sitemap.xml

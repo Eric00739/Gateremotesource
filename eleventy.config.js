@@ -1,5 +1,6 @@
 const { parse } = require("node-html-parser");
 const i18n = require("./_data/i18n");
+const seo = require("./_data/seo");
 
 const languageSet = new Set(i18n.languages);
 const ogLocaleMap = {
@@ -89,7 +90,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy("logo");
   eleventyConfig.addPassthroughCopy("locales");
-  eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("site.webmanifest");
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("Products Photo");
@@ -237,7 +237,14 @@ module.exports = function (eleventyConfig) {
     return collection.filter((item) => {
       if (!item.url) return false;
       if (item.data && item.data.eleventyExcludeFromCollections) return false;
+      if (item.data && item.data.sitemap === false) return false;
       if (item.url.endsWith(".json")) return false;
+      if (
+        Array.isArray(seo.sitemapExcludePrefixes) &&
+        seo.sitemapExcludePrefixes.some((prefix) => item.url.startsWith(prefix))
+      ) {
+        return false;
+      }
       return true;
     });
   });

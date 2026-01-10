@@ -7,8 +7,14 @@ eleventyExcludeFromCollections: true
 {% for item in collections.all | sitemapEntries %}
   <url>
     <loc>{{ site.url }}{{ item.url | canonicalPath }}</loc>
-    {% if item.date %}
-    <lastmod>{{ item.date | htmlDate }}</lastmod>
+    {% set lastmod = null %}
+    {% if item.data and item.data.lastmod %}
+    {% set lastmod = item.data.lastmod %}
+    {% elif item.data and item.data.tags and item.data.tags.indexOf("post") > -1 %}
+    {% set lastmod = item.date %}
+    {% endif %}
+    {% if lastmod %}
+    <lastmod>{{ lastmod | htmlDate }}</lastmod>
     {% endif %}
     <changefreq>weekly</changefreq>
   </url>
