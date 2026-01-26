@@ -206,32 +206,21 @@
             width: 100%;
         }
 
-        /* Topic filter button styles - Perfected */
+        /* Topic filter button styles - Silicon Labs: Simple Pills */
         .topic-filter-btn {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
+            transition: all 0.2s ease;
+            color: #6B7280;
+            background: transparent;
         }
 
-        .topic-filter-btn::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at center, rgba(0, 123, 255, 0.1) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .topic-filter-btn:hover::before {
-            opacity: 1;
+        .topic-filter-btn:hover {
+            color: #0071E3;
+            background: #F3F4F6;
         }
 
         .topic-filter-btn.active {
             background-color: #0071E3 !important;
             color: #ffffff !important;
-            border-color: #0071E3 !important;
-            box-shadow: 0 4px 12px rgba(0, 113, 227, 0.25);
-            transform: scale(1.02);
         }
 
         .topic-filter-btn:focus-visible {
@@ -239,47 +228,14 @@
             outline-offset: 2px;
         }
 
-        /* Article card animations - Subtle and elegant */
+        /* Remove all card animations - Silicon Labs is clean and simple */
         .article-card {
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                        box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: none;
         }
 
-        .article-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-        }
-
-        .article-card:hover .card-image {
-            transform: scale(1.08);
-        }
-
-        .card-image {
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* Category pill - Refined colors */
-        .category-pill {
-            display: inline-block;
-            padding: 0.375rem 0.875rem;
-            border-radius: 9999px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
-            color: #0071E3;
-            box-shadow: 0 1px 3px rgba(0, 113, 227, 0.1);
-        }
-
-        /* Meta divider - Subtle */
-        .meta-divider {
-            display: inline-block;
-            width: 3px;
-            height: 3px;
-            border-radius: 50%;
-            background-color: rgba(0, 0, 0, 0.15);
-            margin: 0 0.625rem;
+        /* Simple image hover effect */
+        .group:hover .group-hover\\:scale-105 {
+            transform: scale(1.05);
         }
 
         /* Skip link for accessibility */
@@ -510,102 +466,71 @@
     </nav>
 
     
-    <main id="main-content" class="pt-24 pb-20 bg-brand-light min-h-screen" role="main">
+    <main id="main-content" class="pt-16 pb-20 bg-brand-light min-h-screen" role="main">
         
-        <nav class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-3" aria-label="Breadcrumb">
-            <ol class="flex items-center space-x-2 text-sm" role="list">
-                <li>
-                    <a href="/" class="text-brand-muted/70 hover:text-brand-accent transition-colors" rel="home">
-                        <i class="fa-solid fa-house text-xs" aria-hidden="true"></i>
-                        <span class="sr-only">Home</span>
-                    </a>
-                </li>
-                <li class="text-brand-muted/40" aria-hidden="true">/</li>
-                <li>
-                    <span class="text-brand-dark/90 font-medium" aria-current="page">Blog</span>
-                </li>
-            </ol>
-        </nav>
-
-        
-        <header class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pb-6">
-            <h1 class="text-5xl md:text-6xl font-bold text-brand-dark mb-3 tracking-tight">Installer Hub</h1>
-            <p class="text-lg text-brand-muted/80 max-w-3xl leading-relaxed">Technical guides, programming tutorials, and industry news for locksmiths.</p>
-        </header>
-
-        
-        <section class="sticky top-16 z-40 bg-brand-light/90 backdrop-blur-xl border-b border-brand-border/30 py-4 shadow-sm" aria-label="Article filters">
-            <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                    
-                    <div class="flex flex-wrap items-center gap-2" role="group" aria-label="Filter by topic">
-                        <button type="button" class="topic-filter-btn active px-5 py-2.5 rounded-xl text-sm font-semibold bg-brand-accent text-white shadow-sm" data-topic="all" aria-pressed="true">
-                            All
-                        </button>
-                        <button type="button" class="topic-filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-brand-surface border border-brand-border/50 text-brand-dark/90 hover:border-brand-accent hover:text-brand-accent hover:shadow-md" data-topic="technical" aria-pressed="false">
-                            Technical Guides
-                        </button>
-                        <button type="button" class="topic-filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-brand-surface border border-brand-border/50 text-brand-dark/90 hover:border-brand-accent hover:text-brand-accent hover:shadow-md" data-topic="case-studies" aria-pressed="false">
-                            Case Studies
-                        </button>
-                        <button type="button" class="topic-filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-brand-surface border border-brand-border/50 text-brand-dark/90 hover:border-brand-accent hover:text-brand-accent hover:shadow-md" data-topic="industry" aria-pressed="false">
-                            Industry News
-                        </button>
-                    </div>
-
-                    
-                    <div class="relative w-full sm:w-72">
-                        <label for="blogSearch" class="sr-only">Search articles</label>
-                        <input type="search" id="blogSearch" placeholder="Search articles..." class="w-full bg-brand-surface/80 border border-brand-border/50 rounded-xl pl-10 pr-4 py-2.5 text-sm text-brand-dark/90 focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 outline-none transition-all placeholder:text-brand-muted/50" aria-label="Search articles">
-                        <i class="fa-solid fa-search absolute left-3.5 top-1/2 -translate-y-1/2 text-brand-muted/60 text-sm" aria-hidden="true"></i>
-                    </div>
+        <section class="border-b border-brand-border bg-white sticky top-16 z-40" aria-label="Article filters">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center gap-6 py-4 overflow-x-auto">
+                    <button type="button" class="topic-filter-btn active px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors" data-topic="all" aria-pressed="true">
+                        All
+                    </button>
+                    <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors" data-topic="technical" aria-pressed="false">
+                        Technical Guides
+                    </button>
+                    <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors" data-topic="case-studies" aria-pressed="false">
+                        Case Studies
+                    </button>
+                    <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors" data-topic="industry" aria-pressed="false">
+                        Industry News
+                    </button>
                 </div>
             </div>
         </section>
 
         
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4" aria-label="Breadcrumb">
+            <ol class="flex items-center space-x-2 text-sm" role="list">
+                <li>
+                    <a href="/" class="text-brand-muted hover:text-brand-accent transition-colors" rel="home">
+                        <i class="fa-solid fa-house text-xs" aria-hidden="true"></i>
+                        <span class="sr-only">Home</span>
+                    </a>
+                </li>
+                <li class="text-brand-muted/60" aria-hidden="true">/</li>
+                <li>
+                    <span class="text-brand-dark font-medium" aria-current="page">Blog</span>
+                </li>
+            </ol>
+        </nav>
+
         
         
         
-        <section aria-labelledby="featured-heading">
-            <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-10">
-                <article class="bg-brand-surface border border-brand-border/30 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-500">
-                    <div class="grid grid-cols-1 lg:grid-cols-2">
-                        
-                        <div class="relative h-72 lg:h-auto overflow-hidden">
-                            <img src="/assets/blog-drops/choose-433-92mhz-remote-control/image-01.webp" alt="" width="800" height="600" class="w-full h-full object-cover card-image" fetchpriority="high">
-                            <div class="absolute top-5 left-5">
-                                <span class="featured-badge text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider">Featured</span>
-                            </div>
+        
+        <section aria-labelledby="featured-heading" class="border-b border-brand-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                <article class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    
+                    <div class="relative aspect-[16/10] overflow-hidden rounded-xl">
+                        <img src="/assets/blog-drops/choose-433-92mhz-remote-control/image-01.webp" alt="" width="800" height="500" class="w-full h-full object-cover" fetchpriority="high">
+                    </div>
+
+                    
+                    <div class="flex flex-col justify-center">
+                        <span class="inline-block text-brand-accent text-sm font-semibold uppercase tracking-wide mb-3">RF Engineering</span>
+                        <h2 id="featured-heading" class="text-3xl md:text-4xl font-bold text-brand-dark mb-4 leading-tight">
+                            <a href="/blog/choose-433-92mhz-remote-control/" class="hover:text-brand-accent transition-colors">How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance</a>
+                        </h2>
+                        <div class="flex items-center gap-3 text-sm text-brand-muted mb-4">
+                            <time datetime="2025-02-20">February 20, 2025</time>
+                            <span class="text-brand-muted/40">•</span>
+                            <span>12 min read</span>
                         </div>
-
-                        
-                        <div class="p-8 lg:p-10 flex flex-col justify-between">
-                            <div>
-                                <h2 id="featured-heading" class="sr-only">How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance</h2>
-                                <div class="flex flex-wrap items-center gap-2 text-xs text-brand-muted/70 mb-4">
-                                    <span class="category-pill" aria-label="Category: RF Engineering">RF Engineering</span>
-                                    <span class="meta-divider" aria-hidden="true"></span>
-                                    <time datetime="2025-02-20" aria-label="Published date">February 20, 2025</time>
-                                    <span class="meta-divider" aria-hidden="true"></span>
-                                    <span aria-label="Author">Eric Huang</span>
-                                    <span class="meta-divider" aria-hidden="true"></span>
-                                    <span aria-label="Reading time">12 min read</span>
-                                </div>
-
-                                <h3 class="text-3xl lg:text-4xl font-bold text-brand-dark/95 mb-4 hover:text-brand-accent transition-colors leading-tight">
-                                    <a href="/blog/choose-433-92mhz-remote-control/">How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance</a>
-                                </h3>
-
-                                <p class="text-brand-muted/80 mb-8 line-clamp-3 leading-relaxed">A field-proven checklist for OEM teams to turn range and compliance into measurable KPIs: link margin, blocking, protocol airtime, and regulator-limited transmit behavior.</p>
-                            </div>
-
-                            <a href="/blog/choose-433-92mhz-remote-control/" class="inline-flex items-center text-brand-accent font-semibold hover:text-brand-hover transition-colors group text-sm">
-                                Read Article
-                                <i class="fa-solid fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true"></i>
-                                <span class="sr-only">about How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance</span>
-                            </a>
-                        </div>
+                        <p class="text-brand-muted text-base leading-relaxed mb-6">A field-proven checklist for OEM teams to turn range and compliance into measurable KPIs: link margin, blocking, protocol airtime, and regulator-limited transmit behavior.</p>
+                        <a href="/blog/choose-433-92mhz-remote-control/" class="inline-flex items-center text-brand-accent font-semibold hover:text-brand-hover transition-colors group">
+                            Read
+                            <i class="fa-solid fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </article>
             </div>
@@ -615,53 +540,48 @@
 
         
         <section aria-labelledby="articles-heading">
-            <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
                 <h2 id="articles-heading" class="sr-only">Latest Articles</h2>
                 
                 
                 
                 
 
-                <div class="blog-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
-                    <article class="article-card bg-brand-surface rounded-2xl border border-brand-border/30 overflow-hidden flex flex-col h-full" data-post-card data-title="Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls" data-summary="Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation." data-category="engineering" data-tags="pcb-quality|rolling-code|oem-manufacturing">
+                    <article class="group flex flex-col" data-post-card data-title="Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls" data-summary="Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation." data-category="engineering" data-tags="pcb-quality|rolling-code|oem-manufacturing">
                         
-                        <div class="relative h-52 overflow-hidden bg-brand-light/50">
-                            <img loading="lazy" decoding="async" src="/assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-01.webp" alt="" width="400" height="300" class="w-full h-full object-cover card-image">
+                        <div class="relative aspect-[16/10] overflow-hidden rounded-xl mb-4">
+                            <img loading="lazy" decoding="async" src="/assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-01.webp" alt="" width="640" height="400" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-4 left-4">
+                                <span class="inline-block bg-brand-accent text-white text-xs font-semibold px-3 py-1.5 rounded-md uppercase tracking-wide">
+                                    Engineering
+                                </span>
+                            </div>
                         </div>
 
                         
-                        <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex-1 flex flex-col">
                             
-                            <div class="mb-3">
-                                <span class="category-pill" aria-label="Category: Engineering">Engineering</span>
-                            </div>
-
-                            
-                            <h3 class="text-lg font-bold text-brand-dark/95 mb-3 line-clamp-2 hover:text-brand-accent transition-colors leading-snug">
-                                <a href="/blog/avoid-public-mold-trap-pcb-quality/">Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls</a>
+                            <h3 class="text-xl font-bold text-brand-dark mb-3 line-clamp-2 leading-tight">
+                                <a href="/blog/avoid-public-mold-trap-pcb-quality/" class="hover:text-brand-accent transition-colors">Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls</a>
                             </h3>
 
                             
-                            <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-brand-muted/70 mb-4">
-                                <time datetime="2025-02-10" aria-label="Published date">February 10, 2025</time>
-                                <span class="meta-divider" aria-hidden="true"></span>
-                                <span aria-label="Author">Eric Huang</span>
-                                <span class="meta-divider" aria-hidden="true"></span>
-                                <span aria-label="Reading time">9 min read</span>
+                            <p class="text-brand-muted text-sm mb-4 line-clamp-3 flex-1 leading-relaxed">Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation.</p>
+
+                            
+                            <div class="flex items-center gap-2 text-xs text-brand-muted mb-4">
+                                <time datetime="2025-02-10">February 10, 2025</time>
+                                <span class="text-brand-muted/40">•</span>
+                                <span>9 min read</span>
                             </div>
 
                             
-                            <p class="text-brand-muted/80 text-sm mb-6 line-clamp-3 flex-1 leading-relaxed">Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation.</p>
-
-                            
-                            <div class="mt-auto">
-                                <a href="/blog/avoid-public-mold-trap-pcb-quality/" class="inline-flex items-center text-brand-accent font-semibold hover:text-brand-hover transition-colors group text-sm">
-                                    Read Article
-                                    <i class="fa-solid fa-arrow-right ml-1.5 text-xs transform group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true"></i>
-                                    <span class="sr-only">about Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls</span>
-                                </a>
-                            </div>
+                            <a href="/blog/avoid-public-mold-trap-pcb-quality/" class="inline-flex items-center text-brand-accent font-semibold hover:text-brand-hover transition-colors text-sm">
+                                Read
+                                <i class="fa-solid fa-arrow-right ml-1.5 transform group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                            </a>
                         </div>
                     </article>
                     
