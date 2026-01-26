@@ -148,83 +148,123 @@ lang: en
     </script>
 
     <style>
-        /* Custom scrollbar for WebKit browsers */
-        ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: #1D1D1F; }
-        ::-webkit-scrollbar-thumb { background: #6E6E73; border-radius: 5px; }
-        ::-webkit-scrollbar-thumb:hover { background: #0A84FF; }
+        /* Custom scrollbar for WebKit browsers - Refined */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(0, 123, 255, 0.3); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(0, 123, 255, 0.5); }
 
-        /* Navigation glass effect */
+        /* Navigation glass effect - Perfected */
         .nav-glass {
-            background: rgba(255, 255, 255, 0.72);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            background: rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
         }
 
-        .nav-link.active {
-            color: #007BFF !important;
-            font-weight: 700;
-            border-bottom: 2px solid #007BFF;
+        .nav-link {
+            position: relative;
+            transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Topic filter button styles */
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #007BFF;
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.active {
+            color: #0071E3 !important;
+            font-weight: 600;
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Topic filter button styles - Perfected */
         .topic-filter-btn {
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .topic-filter-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(0, 123, 255, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .topic-filter-btn:hover::before {
+            opacity: 1;
         }
 
         .topic-filter-btn.active {
-            background-color: #007BFF !important;
+            background-color: #0071E3 !important;
             color: #ffffff !important;
-            border-color: #007BFF !important;
-            box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+            border-color: #0071E3 !important;
+            box-shadow: 0 4px 12px rgba(0, 113, 227, 0.25);
+            transform: scale(1.02);
         }
 
         .topic-filter-btn:focus-visible {
-            outline: 2px solid #007BFF;
+            outline: 2px solid #0071E3;
             outline-offset: 2px;
         }
 
-        /* Article card animations */
+        /* Article card animations - Subtle and elegant */
         .article-card {
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                        box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .article-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
         }
 
         .article-card:hover .card-image {
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
 
         .card-image {
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Category pill with better contrast */
+        /* Category pill - Refined colors */
         .category-pill {
             display: inline-block;
-            padding: 0.25rem 0.75rem;
+            padding: 0.375rem 0.875rem;
             border-radius: 9999px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            background-color: #E3F2FD;
-            color: #007BFF;
+            letter-spacing: 0.08em;
+            background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+            color: #0071E3;
+            box-shadow: 0 1px 3px rgba(0, 113, 227, 0.1);
         }
 
-        /* Meta divider */
+        /* Meta divider - Subtle */
         .meta-divider {
             display: inline-block;
-            width: 4px;
-            height: 4px;
+            width: 3px;
+            height: 3px;
             border-radius: 50%;
-            background-color: #D1D5DB;
-            margin: 0 0.5rem;
+            background-color: rgba(0, 0, 0, 0.15);
+            margin: 0 0.625rem;
         }
 
         /* Skip link for accessibility */
@@ -232,11 +272,13 @@ lang: en
             position: absolute;
             top: -40px;
             left: 0;
-            background: #007BFF;
+            background: #0071E3;
             color: white;
-            padding: 8px;
+            padding: 10px 16px;
             z-index: 100;
-            transition: top 0.3s;
+            transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 500;
+            font-size: 0.875rem;
         }
 
         .skip-link:focus {
@@ -258,7 +300,7 @@ lang: en
 
         /* Focus visible styles for keyboard navigation */
         *:focus-visible {
-            outline: 2px solid #007BFF;
+            outline: 2px solid #0071E3;
             outline-offset: 2px;
         }
 
@@ -272,6 +314,82 @@ lang: en
                 transition-duration: 0.01ms !important;
             }
         }
+
+        /* Enhanced search input */
+        #blogSearch {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        #blogSearch:focus {
+            box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
+        }
+
+        /* Button hover effects - Refined */
+        .btn-primary {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        /* WhatsApp button - Enhanced */
+        .whatsapp-float {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 113, 227, 0.3);
+        }
+
+        /* Typography refinements */
+        h1 {
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        h2 {
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+
+        h3 {
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+
+        /* Featured section enhancements */
+        .featured-badge {
+            background: linear-gradient(135deg, #0071E3 0%, #005BB5 100%);
+            box-shadow: 0 2px 8px rgba(0, 113, 227, 0.3);
+        }
+
+        /* Link animations */
+        a {
+            transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Smooth image loading */
+        img {
+            background: linear-gradient(90deg, #F5F5F7 0%, #E8E8ED 50%, #F5F5F7 100%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+
+        img[src] {
+            animation: none;
+            background: transparent;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
     </style>
 </head>
 <body class="font-sans text-brand-dark/80 bg-brand-light backdrop-blur selection:bg-brand-accent selection:text-white flex flex-col min-h-screen">
@@ -280,26 +398,26 @@ lang: en
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 nav-glass transition-all duration-300" role="navigation" aria-label="Main navigation">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center gap-3">
                     <a href="/" class="flex items-center gap-3" aria-label="GateRemoteSource Home">
-                        <div class="bg-brand-surface border border-brand-border/60 p-1.5 rounded-lg h-10 w-10 flex items-center justify-center">
-                            <img src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource Logo" class="h-full w-full object-contain">
+                        <div class="bg-brand-surface border border-brand-border/50 p-1.5 rounded-xl h-9 w-9 flex items-center justify-center shadow-sm hover:shadow-md transition-shadow duration-200">
+                            <img src="/logo/logo.png" width="36" height="36" alt="GateRemoteSource Logo" class="h-full w-full object-contain">
                         </div>
-                        <span class="font-bold text-2xl text-brand-dark tracking-tight">GateRemote<span class="text-brand-accent">Source</span></span>
+                        <span class="font-bold text-xl text-brand-dark tracking-tight">GateRemote<span class="text-brand-accent">Source</span></span>
                     </a>
                 </div>
 
                 <!-- Desktop Navigation -->
-                <div class="hidden lg:flex space-x-8 items-center">
-                    <a href="/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2">Home</a>
-                    <a href="/catalog/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2">Catalog</a>
-                    <a href="/oem/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2">OEM/ODM</a>
-                    <a href="/about/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2">About</a>
-                    <a href="/blog/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2 active" aria-current="page">Blog</a>
-                    <a href="/contact/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2">Contact</a>
+                <div class="hidden lg:flex space-x-1 items-center">
+                    <a href="/" class="nav-link text-brand-dark/90 hover:text-brand-accent transition font-medium py-2 px-3 text-sm">Home</a>
+                    <a href="/catalog/" class="nav-link text-brand-dark/90 hover:text-brand-accent transition font-medium py-2 px-3 text-sm">Catalog</a>
+                    <a href="/oem/" class="nav-link text-brand-dark/90 hover:text-brand-accent transition font-medium py-2 px-3 text-sm">OEM/ODM</a>
+                    <a href="/about/" class="nav-link text-brand-dark/90 hover:text-brand-accent transition font-medium py-2 px-3 text-sm">About</a>
+                    <a href="/blog/" class="nav-link text-brand-dark/90 hover:text-brand-accent transition font-medium py-2 px-3 text-sm active" aria-current="page">Blog</a>
+                    <a href="/contact/" class="nav-link text-brand-dark/90 hover:text-brand-accent transition font-medium py-2 px-3 text-sm">Contact</a>
 
                     <!-- Language Selector -->
                     <div class="flex items-center ml-2 border-l border-brand-border pl-4">
@@ -338,7 +456,7 @@ lang: en
                         </div>
                     </div>
 
-                    <a href="/contact/" class="bg-brand-quote hover:bg-brand-quoteHover text-brand-surface px-6 py-2 rounded-lg font-bold transition shadow-md shadow-brand-cta/20 hover:shadow-lg transform hover:-translate-y-0.5">
+                    <a href="/contact/" class="btn-primary bg-brand-quote hover:bg-brand-quoteHover text-brand-surface px-5 py-2.5 rounded-xl font-semibold transition shadow-md shadow-brand-cta/20 hover:shadow-lg text-sm">
                         Quote now
                     </a>
                 </div>
@@ -377,54 +495,54 @@ lang: en
     </nav>
 
     <!-- Main Content -->
-    <main id="main-content" class="pt-28 pb-24 bg-brand-light min-h-screen" role="main">
+    <main id="main-content" class="pt-24 pb-20 bg-brand-light min-h-screen" role="main">
         <!-- Breadcrumb Navigation for SEO -->
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4" aria-label="Breadcrumb">
+        <nav class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-3" aria-label="Breadcrumb">
             <ol class="flex items-center space-x-2 text-sm" role="list">
                 <li>
-                    <a href="/" class="text-brand-muted hover:text-brand-accent transition" rel="home">
-                        <i class="fa-solid fa-house" aria-hidden="true"></i>
+                    <a href="/" class="text-brand-muted/70 hover:text-brand-accent transition-colors" rel="home">
+                        <i class="fa-solid fa-house text-xs" aria-hidden="true"></i>
                         <span class="sr-only">Home</span>
                     </a>
                 </li>
-                <li class="text-brand-muted/60" aria-hidden="true">/</li>
+                <li class="text-brand-muted/40" aria-hidden="true">/</li>
                 <li>
-                    <span class="text-brand-dark font-medium" aria-current="page">Blog</span>
+                    <span class="text-brand-dark/90 font-medium" aria-current="page">Blog</span>
                 </li>
             </ol>
         </nav>
 
         <!-- Page Header with H1 -->
-        <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
-            <h1 class="text-4xl md:text-5xl font-bold text-brand-dark mb-4">{{ site.blogTitle }}</h1>
-            <p class="text-xl text-brand-muted max-w-3xl">{{ site.blogDescription }}</p>
+        <header class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pb-6">
+            <h1 class="text-5xl md:text-6xl font-bold text-brand-dark mb-3 tracking-tight">{{ site.blogTitle }}</h1>
+            <p class="text-lg text-brand-muted/80 max-w-3xl leading-relaxed">{{ site.blogDescription }}</p>
         </header>
 
         <!-- Topic Filter Navigation Bar -->
-        <section class="sticky top-20 z-40 bg-brand-light/95 backdrop-blur-md border-b border-brand-border/40 py-4 shadow-sm" aria-label="Article filters">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section class="sticky top-16 z-40 bg-brand-light/90 backdrop-blur-xl border-b border-brand-border/30 py-4 shadow-sm" aria-label="Article filters">
+            <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
                 <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                     <!-- Topic Filters -->
                     <div class="flex flex-wrap items-center gap-2" role="group" aria-label="Filter by topic">
-                        <button type="button" class="topic-filter-btn active px-4 py-2.5 rounded-lg text-sm font-semibold bg-brand-accent text-white shadow-sm" data-topic="all" aria-pressed="true">
+                        <button type="button" class="topic-filter-btn active px-5 py-2.5 rounded-xl text-sm font-semibold bg-brand-accent text-white shadow-sm" data-topic="all" aria-pressed="true">
                             All
                         </button>
-                        <button type="button" class="topic-filter-btn px-4 py-2.5 rounded-lg text-sm font-semibold bg-brand-surface border border-brand-border/60 text-brand-dark hover:border-brand-accent hover:text-brand-accent hover:shadow-sm" data-topic="technical" aria-pressed="false">
+                        <button type="button" class="topic-filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-brand-surface border border-brand-border/50 text-brand-dark/90 hover:border-brand-accent hover:text-brand-accent hover:shadow-md" data-topic="technical" aria-pressed="false">
                             Technical Guides
                         </button>
-                        <button type="button" class="topic-filter-btn px-4 py-2.5 rounded-lg text-sm font-semibold bg-brand-surface border border-brand-border/60 text-brand-dark hover:border-brand-accent hover:text-brand-accent hover:shadow-sm" data-topic="case-studies" aria-pressed="false">
+                        <button type="button" class="topic-filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-brand-surface border border-brand-border/50 text-brand-dark/90 hover:border-brand-accent hover:text-brand-accent hover:shadow-md" data-topic="case-studies" aria-pressed="false">
                             Case Studies
                         </button>
-                        <button type="button" class="topic-filter-btn px-4 py-2.5 rounded-lg text-sm font-semibold bg-brand-surface border border-brand-border/60 text-brand-dark hover:border-brand-accent hover:text-brand-accent hover:shadow-sm" data-topic="industry" aria-pressed="false">
+                        <button type="button" class="topic-filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-brand-surface border border-brand-border/50 text-brand-dark/90 hover:border-brand-accent hover:text-brand-accent hover:shadow-md" data-topic="industry" aria-pressed="false">
                             Industry News
                         </button>
                     </div>
 
                     <!-- Compact Search -->
-                    <div class="relative w-full sm:w-64">
+                    <div class="relative w-full sm:w-72">
                         <label for="blogSearch" class="sr-only">Search articles</label>
-                        <input type="search" id="blogSearch" placeholder="Search articles..." class="w-full bg-brand-surface border border-brand-border/60 rounded-lg pl-10 pr-4 py-2.5 text-sm text-brand-dark focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 outline-none transition-all" aria-label="Search articles">
-                        <i class="fa-solid fa-search absolute left-3.5 top-1/2 -translate-y-1/2 text-brand-muted/70 text-sm" aria-hidden="true"></i>
+                        <input type="search" id="blogSearch" placeholder="Search articles..." class="w-full bg-brand-surface/80 border border-brand-border/50 rounded-xl pl-10 pr-4 py-2.5 text-sm text-brand-dark/90 focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 outline-none transition-all placeholder:text-brand-muted/50" aria-label="Search articles">
+                        <i class="fa-solid fa-search absolute left-3.5 top-1/2 -translate-y-1/2 text-brand-muted/60 text-sm" aria-hidden="true"></i>
                     </div>
                 </div>
             </div>
@@ -435,22 +553,22 @@ lang: en
         {% set featured = collections.posts | getFeatured %}
         {% if featured %}
         <section aria-labelledby="featured-heading">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <article class="bg-brand-surface border border-brand-border/40 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-10">
+                <article class="bg-brand-surface border border-brand-border/30 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-500">
                     <div class="grid grid-cols-1 lg:grid-cols-2">
                         <!-- Featured Image -->
-                        <div class="relative h-64 lg:h-auto overflow-hidden">
+                        <div class="relative h-72 lg:h-auto overflow-hidden">
                             <img src="{{ featured.data.hero_image }}" alt="" width="800" height="600" class="w-full h-full object-cover card-image" fetchpriority="high">
-                            <div class="absolute top-4 left-4">
-                                <span class="bg-brand-accent text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide shadow-sm">Featured</span>
+                            <div class="absolute top-5 left-5">
+                                <span class="featured-badge text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider">Featured</span>
                             </div>
                         </div>
 
                         <!-- Featured Content -->
-                        <div class="p-8 flex flex-col justify-between">
+                        <div class="p-8 lg:p-10 flex flex-col justify-between">
                             <div>
                                 <h2 id="featured-heading" class="sr-only">{{ featured.data.title }}</h2>
-                                <div class="flex flex-wrap items-center gap-2 text-xs text-brand-muted mb-4">
+                                <div class="flex flex-wrap items-center gap-2 text-xs text-brand-muted/70 mb-4">
                                     <span class="category-pill" aria-label="Category: {{ featured.data.category }}">{{ featured.data.category }}</span>
                                     <span class="meta-divider" aria-hidden="true"></span>
                                     <time datetime="{{ featured.date | htmlDate }}" aria-label="Published date">{{ featured.date | readableDate }}</time>
@@ -460,16 +578,16 @@ lang: en
                                     <span aria-label="Reading time">{{ featured.data.read_time }}</span>
                                 </div>
 
-                                <h3 class="text-3xl font-bold text-brand-dark mb-4 hover:text-brand-accent transition-colors">
+                                <h3 class="text-3xl lg:text-4xl font-bold text-brand-dark/95 mb-4 hover:text-brand-accent transition-colors leading-tight">
                                     <a href="{{ featured.url }}">{{ featured.data.title }}</a>
                                 </h3>
 
-                                <p class="text-brand-muted mb-6 line-clamp-3 leading-relaxed">{{ featured.data.summary }}</p>
+                                <p class="text-brand-muted/80 mb-8 line-clamp-3 leading-relaxed">{{ featured.data.summary }}</p>
                             </div>
 
-                            <a href="{{ featured.url }}" class="inline-flex items-center text-brand-accent font-semibold hover:text-brand-hover transition-colors group">
+                            <a href="{{ featured.url }}" class="inline-flex items-center text-brand-accent font-semibold hover:text-brand-hover transition-colors group text-sm">
                                 Read Article
-                                <i class="fa-solid fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                                <i class="fa-solid fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true"></i>
                                 <span class="sr-only">about {{ featured.data.title }}</span>
                             </a>
                         </div>
@@ -482,18 +600,18 @@ lang: en
 
         <!-- Article Grid - Standard 3-Column Layout -->
         <section aria-labelledby="articles-heading">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-8">
                 <h2 id="articles-heading" class="sr-only">Latest Articles</h2>
                 {% set visiblePosts = posts %}
                 {% if pagination.pageNumber == 0 %}
                 {% set visiblePosts = posts | excludeFeatured %}
                 {% endif %}
 
-                <div class="blog-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="blog-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
                     {% for post in visiblePosts %}
-                    <article class="article-card bg-brand-surface rounded-xl border border-brand-border/40 overflow-hidden flex flex-col h-full" data-post-card data-title="{{ post.data.title | escape }}" data-summary="{{ post.data.summary | escape }}" data-category="{{ post.data.category | slugify }}" data-tags="{{ post.data.tags | contentTags | joinSlugList }}">
+                    <article class="article-card bg-brand-surface rounded-2xl border border-brand-border/30 overflow-hidden flex flex-col h-full" data-post-card data-title="{{ post.data.title | escape }}" data-summary="{{ post.data.summary | escape }}" data-category="{{ post.data.category | slugify }}" data-tags="{{ post.data.tags | contentTags | joinSlugList }}">
                         <!-- Article Image -->
-                        <div class="relative h-48 overflow-hidden bg-brand-light">
+                        <div class="relative h-52 overflow-hidden bg-brand-light/50">
                             <img loading="lazy" decoding="async" src="{{ post.data.hero_image }}" alt="" width="400" height="300" class="w-full h-full object-cover card-image">
                         </div>
 
@@ -505,12 +623,12 @@ lang: en
                             </div>
 
                             <!-- Title -->
-                            <h3 class="text-lg font-bold text-brand-dark mb-3 line-clamp-2 hover:text-brand-accent transition-colors">
+                            <h3 class="text-lg font-bold text-brand-dark/95 mb-3 line-clamp-2 hover:text-brand-accent transition-colors leading-snug">
                                 <a href="{{ post.url }}">{{ post.data.title }}</a>
                             </h3>
 
                             <!-- Metadata Row -->
-                            <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-brand-muted mb-4">
+                            <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-brand-muted/70 mb-4">
                                 <time datetime="{{ post.date | htmlDate }}" aria-label="Published date">{{ post.date | readableDate }}</time>
                                 <span class="meta-divider" aria-hidden="true"></span>
                                 <span aria-label="Author">{{ post.data.author }}</span>
@@ -519,13 +637,13 @@ lang: en
                             </div>
 
                             <!-- Summary -->
-                            <p class="text-brand-muted text-sm mb-6 line-clamp-3 flex-1 leading-relaxed">{{ post.data.summary }}</p>
+                            <p class="text-brand-muted/80 text-sm mb-6 line-clamp-3 flex-1 leading-relaxed">{{ post.data.summary }}</p>
 
                             <!-- Read Article Link -->
                             <div class="mt-auto">
                                 <a href="{{ post.url }}" class="inline-flex items-center text-brand-accent font-semibold hover:text-brand-hover transition-colors group text-sm">
                                     Read Article
-                                    <i class="fa-solid fa-arrow-right ml-1.5 text-xs transform group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-arrow-right ml-1.5 text-xs transform group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true"></i>
                                     <span class="sr-only">about {{ post.data.title }}</span>
                                 </a>
                             </div>
@@ -536,11 +654,11 @@ lang: en
 
                 <!-- Empty State -->
                 {% if visiblePosts.length === 0 %}
-                <div class="bg-brand-surface border border-brand-border/40 rounded-xl p-12 text-center" role="status" aria-live="polite">
-                    <i class="fa-solid fa-search text-5xl text-brand-muted/40 mb-4" aria-hidden="true"></i>
-                    <h3 class="text-xl font-bold text-brand-dark mb-2">No articles found</h3>
-                    <p class="text-brand-muted mb-6">Try adjusting your search or filter criteria</p>
-                    <button type="button" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-3 rounded-lg font-semibold transition" data-clear-filters>
+                <div class="bg-brand-surface border border-brand-border/30 rounded-2xl p-16 text-center" role="status" aria-live="polite">
+                    <i class="fa-solid fa-search text-6xl text-brand-muted/30 mb-5" aria-hidden="true"></i>
+                    <h3 class="text-2xl font-bold text-brand-dark/90 mb-3">No articles found</h3>
+                    <p class="text-brand-muted/80 mb-8">Try adjusting your search or filter criteria</p>
+                    <button type="button" class="btn-primary bg-brand-accent hover:bg-brand-hover text-white px-8 py-3 rounded-xl font-semibold transition shadow-md" data-clear-filters>
                         Clear all filters
                     </button>
                 </div>
@@ -550,28 +668,28 @@ lang: en
 
         <!-- Load More Button or Pagination -->
         {% if pagination.pages.length > 1 %}
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" aria-label="Blog pagination">
+        <nav class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16" aria-label="Blog pagination">
             <div class="flex justify-center">
                 <ul class="flex items-center gap-2" role="list">
                     {% if pagination.previousPageHref %}
                     <li>
-                        <a href="{{ pagination.previousPageHref }}" class="w-10 h-10 rounded-lg bg-brand-surface border border-brand-border/60 text-brand-muted hover:border-brand-accent hover:text-brand-dark transition flex items-center justify-center" aria-label="Previous page" rel="prev">
-                            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                        <a href="{{ pagination.previousPageHref }}" class="w-11 h-11 rounded-xl bg-brand-surface border border-brand-border/40 text-brand-muted/70 hover:border-brand-accent hover:text-brand-dark transition-all duration-200 flex items-center justify-center hover:shadow-md" aria-label="Previous page" rel="prev">
+                            <i class="fa-solid fa-chevron-left text-sm" aria-hidden="true"></i>
                             <span class="sr-only">Previous</span>
                         </a>
                     </li>
                     {% endif %}
                     {% for href in pagination.hrefs %}
                     <li>
-                        <a href="{{ href }}" class="w-10 h-10 rounded-lg {% if pagination.pageNumber == loop.index0 %}bg-brand-accent text-white font-bold{% else %}bg-brand-surface border border-brand-border/60 text-brand-muted hover:border-brand-accent hover:text-brand-dark{% endif %} transition flex items-center justify-center font-semibold" aria-label="Page {{ loop.index }}" {% if pagination.pageNumber == loop.index0 %}aria-current="page"{% endif %}>
+                        <a href="{{ href }}" class="w-11 h-11 rounded-xl {% if pagination.pageNumber == loop.index0 %}bg-brand-accent text-white font-semibold shadow-md{% else %}bg-brand-surface border border-brand-border/40 text-brand-muted/70 hover:border-brand-accent hover:text-brand-dark hover:shadow-md{% endif %} transition-all duration-200 flex items-center justify-center font-medium text-sm" aria-label="Page {{ loop.index }}" {% if pagination.pageNumber == loop.index0 %}aria-current="page"{% endif %}>
                             {{ loop.index }}
                         </a>
                     </li>
                     {% endfor %}
                     {% if pagination.nextPageHref %}
                     <li>
-                        <a href="{{ pagination.nextPageHref }}" class="w-10 h-10 rounded-lg bg-brand-surface border border-brand-border/60 text-brand-muted hover:border-brand-accent hover:text-brand-dark transition flex items-center justify-center" aria-label="Next page" rel="next">
-                            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                        <a href="{{ pagination.nextPageHref }}" class="w-11 h-11 rounded-xl bg-brand-surface border border-brand-border/40 text-brand-muted/70 hover:border-brand-accent hover:text-brand-dark transition-all duration-200 flex items-center justify-center hover:shadow-md" aria-label="Next page" rel="next">
+                            <i class="fa-solid fa-chevron-right text-sm" aria-hidden="true"></i>
                             <span class="sr-only">Next</span>
                         </a>
                     </li>
@@ -583,28 +701,28 @@ lang: en
     </main>
 
     <!-- Newsletter Section -->
-    <section class="py-16 bg-brand-light border-t border-brand-border" aria-labelledby="newsletter-heading">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 id="newsletter-heading" class="text-3xl font-bold text-brand-dark mb-4">Stay Updated with Latest Tips</h2>
-            <p class="text-brand-muted mb-8">Get weekly technical guides and market insights delivered to your inbox.</p>
-            <form id="newsletterForm" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" novalidate>
+    <section class="py-20 bg-brand-light border-t border-brand-border/30" aria-labelledby="newsletter-heading">
+        <div class="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
+            <h2 id="newsletter-heading" class="text-4xl font-bold text-brand-dark/95 mb-4 tracking-tight">Stay Updated with Latest Tips</h2>
+            <p class="text-brand-muted/80 mb-10 text-lg leading-relaxed">Get weekly technical guides and market insights delivered to your inbox.</p>
+            <form id="newsletterForm" class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto" novalidate>
                 <label for="newsletterEmail" class="sr-only">Email address</label>
-                <input id="newsletterEmail" name="email" type="email" placeholder="Enter your email" required class="flex-1 bg-brand-surface border border-brand-border rounded-lg px-4 py-3 text-brand-dark focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 outline-none transition" aria-required="true">
-                <button type="submit" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-3 rounded-lg font-bold transition shadow-md">Subscribe</button>
+                <input id="newsletterEmail" name="email" type="email" placeholder="Enter your email" required class="flex-1 bg-brand-surface border border-brand-border/50 rounded-xl px-5 py-3.5 text-brand-dark/90 focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 outline-none transition-all text-sm placeholder:text-brand-muted/50" aria-required="true">
+                <button type="submit" class="btn-primary bg-brand-accent hover:bg-brand-hover text-white px-8 py-3.5 rounded-xl font-semibold transition shadow-md hover:shadow-lg text-sm">Subscribe</button>
             </form>
-            <p id="newsletter-status" class="text-sm text-brand-muted mt-3 hidden" aria-live="polite" role="status"></p>
+            <p id="newsletter-status" class="text-sm text-brand-muted/80 mt-4 hidden" aria-live="polite" role="status"></p>
         </div>
     </section>
 
     <!-- Pre-Footer CTA -->
-    <section class="py-16 bg-brand-light relative overflow-hidden" aria-labelledby="support-heading">
-        <div class="absolute inset-0 bg-brand-dark/10" aria-hidden="true"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+    <section class="py-20 bg-brand-light relative overflow-hidden" aria-labelledby="support-heading">
+        <div class="absolute inset-0 bg-brand-dark/5" aria-hidden="true"></div>
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
             <div>
-                <h2 id="support-heading" class="text-3xl font-bold text-brand-dark mb-2">Need Technical Support?</h2>
-                <p class="text-brand-muted text-lg">Our engineering team is here to help with your installation challenges.</p>
+                <h2 id="support-heading" class="text-4xl font-bold text-brand-dark/95 mb-3 tracking-tight">Need Technical Support?</h2>
+                <p class="text-brand-muted/80 text-lg leading-relaxed">Our engineering team is here to help with your installation challenges.</p>
             </div>
-            <a href="/contact/" class="bg-brand-accent text-white px-8 py-3 rounded-full font-bold hover:bg-brand-hover transition shadow-lg shadow-brand-accent/20">
+            <a href="/contact/" class="btn-primary bg-brand-accent text-white px-10 py-4 rounded-2xl font-semibold hover:bg-brand-hover transition shadow-lg shadow-brand-accent/20 text-sm">
                 Get Support
             </a>
         </div>
