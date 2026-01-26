@@ -114,14 +114,6 @@
   </url>
 
   <url>
-    <loc>https://www.gateremotesource.com/blog/</loc>
-    
-    
-    
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
     <loc>https://www.gateremotesource.com/catalog/</loc>
     
     
@@ -307,6 +299,14 @@
 
   <url>
     <loc>https://www.gateremotesource.com/pt/oem/</loc>
+    
+    
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/blog/</loc>
     
     
     
