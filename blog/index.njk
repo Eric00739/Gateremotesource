@@ -191,36 +191,29 @@ lang: en
             width: 100%;
         }
 
-        /* Topic filter button styles - Silicon Labs: Simple Pills */
+        /* Topic filter button styles - Silicon Labs: Minimal */
         .topic-filter-btn {
             transition: all 0.2s ease;
-            color: #6B7280;
+            color: #4B5563;
             background: transparent;
+            border: 1px solid transparent;
         }
 
         .topic-filter-btn:hover {
-            color: #0071E3;
-            background: #F3F4F6;
+            color: #111827;
+            background: white;
+            border-color: #E5E7EB;
         }
 
         .topic-filter-btn.active {
             background-color: #0071E3 !important;
             color: #ffffff !important;
+            border-color: #0071E3 !important;
         }
 
         .topic-filter-btn:focus-visible {
             outline: 2px solid #0071E3;
             outline-offset: 2px;
-        }
-
-        /* Remove all card animations - Silicon Labs is clean and simple */
-        .article-card {
-            transition: none;
-        }
-
-        /* Simple image hover effect */
-        .group:hover .group-hover\\:scale-105 {
-            transform: scale(1.05);
         }
 
         /* Skip link for accessibility */
@@ -451,68 +444,83 @@ lang: en
     </nav>
 
     <!-- Main Content -->
-    <main id="main-content" class="pt-16 pb-20 bg-brand-light min-h-screen" role="main">
+    <main id="main-content" class="pt-16 pb-20 bg-white min-h-screen" role="main">
         <!-- Topic Filter Navigation Bar - Silicon Labs Style: AT THE TOP -->
-        <section class="border-b border-brand-border bg-white sticky top-16 z-40" aria-label="Article filters">
+        <section class="border-b border-gray-200 bg-gray-50 sticky top-16 z-40" aria-label="Article filters">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center gap-6 py-4 overflow-x-auto">
-                    <button type="button" class="topic-filter-btn active px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors" data-topic="all" aria-pressed="true">
-                        All
+                <div class="flex items-center justify-between py-4">
+                    <!-- Topic Filters -->
+                    <div class="flex items-center gap-2 overflow-x-auto">
+                        <button type="button" class="topic-filter-btn active px-4 py-2 rounded-md text-sm font-medium whitespace-nowrap transition-colors" data-topic="all" aria-pressed="true">
+                            All
+                        </button>
+                        <button type="button" class="topic-filter-btn px-4 py-2 rounded-md text-sm font-medium whitespace-nowrap transition-colors" data-topic="technical" aria-pressed="false">
+                            Technical Guides
+                        </button>
+                        <button type="button" class="topic-filter-btn px-4 py-2 rounded-md text-sm font-medium whitespace-nowrap transition-colors" data-topic="case-studies" aria-pressed="false">
+                            Case Studies
+                        </button>
+                        <button type="button" class="topic-filter-btn px-4 py-2 rounded-md text-sm font-medium whitespace-nowrap transition-colors" data-topic="industry" aria-pressed="false">
+                            Industry News
+                        </button>
+                    </div>
+
+                    <!-- Search Icon - Silicon Labs Style -->
+                    <button id="searchToggle" class="ml-4 p-2 hover:bg-gray-200 rounded-md transition-colors" aria-label="Search" type="button">
+                        <i class="fa-solid fa-search text-gray-600"></i>
                     </button>
-                    <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors" data-topic="technical" aria-pressed="false">
-                        Technical Guides
-                    </button>
-                    <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors" data-topic="case-studies" aria-pressed="false">
-                        Case Studies
-                    </button>
-                    <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors" data-topic="industry" aria-pressed="false">
-                        Industry News
-                    </button>
+                </div>
+
+                <!-- Search Dropdown (Hidden by default) -->
+                <div id="searchDropdown" class="hidden pb-4">
+                    <div class="relative">
+                        <label for="blogSearch" class="sr-only">Search articles</label>
+                        <input type="search" id="blogSearch" placeholder="Search articles..." class="w-full bg-white border border-gray-300 rounded-md px-4 py-2.5 text-sm text-gray-900 focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 outline-none transition-all placeholder:text-gray-500">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Breadcrumb Navigation for SEO -->
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4" aria-label="Breadcrumb">
+        <!-- Breadcrumb Navigation for SEO - Silicon Labs: Minimal -->
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3" aria-label="Breadcrumb">
             <ol class="flex items-center space-x-2 text-sm" role="list">
                 <li>
-                    <a href="/" class="text-brand-muted hover:text-brand-accent transition-colors" rel="home">
-                        <i class="fa-solid fa-house text-xs" aria-hidden="true"></i>
-                        <span class="sr-only">Home</span>
+                    <a href="/" class="text-gray-500 hover:text-gray-900 transition-colors" rel="home">
+                        Home
                     </a>
                 </li>
-                <li class="text-brand-muted/60" aria-hidden="true">/</li>
+                <li class="text-gray-400">/</li>
                 <li>
-                    <span class="text-brand-dark font-medium" aria-current="page">Blog</span>
+                    <span class="text-gray-900 font-medium" aria-current="page">Blog</span>
                 </li>
             </ol>
         </nav>
 
-        <!-- Featured Article Section - Silicon Labs Style: Full Width Horizontal -->
+        <!-- Featured Article Section - Silicon Labs Style: Clean Layout -->
         {% if pagination.pageNumber == 0 %}
         {% set featured = collections.posts | getFeatured %}
         {% if featured %}
-        <section aria-labelledby="featured-heading" class="border-b border-brand-border">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-                <article class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <section aria-labelledby="featured-heading" class="border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <article class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <!-- Featured Image -->
-                    <div class="relative aspect-[16/10] overflow-hidden rounded-xl">
+                    <div class="relative aspect-[16/10] overflow-hidden rounded-lg">
                         <img src="{{ featured.data.hero_image }}" alt="" width="800" height="500" class="w-full h-full object-cover" fetchpriority="high">
                     </div>
 
                     <!-- Featured Content -->
-                    <div class="flex flex-col justify-center">
+                    <div class="flex flex-col">
                         <span class="inline-block text-brand-accent text-sm font-semibold uppercase tracking-wide mb-3">{{ featured.data.category }}</span>
-                        <h2 id="featured-heading" class="text-3xl md:text-4xl font-bold text-brand-dark mb-4 leading-tight">
+                        <h2 id="featured-heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
                             <a href="{{ featured.url }}" class="hover:text-brand-accent transition-colors">{{ featured.data.title }}</a>
                         </h2>
-                        <div class="flex items-center gap-3 text-sm text-brand-muted mb-4">
+                        <div class="flex items-center gap-3 text-sm text-gray-500 mb-4">
                             <time datetime="{{ featured.date | htmlDate }}">{{ featured.date | readableDate }}</time>
-                            <span class="text-brand-muted/40">•</span>
+                            <span class="text-gray-300">•</span>
                             <span>{{ featured.data.read_time }}</span>
                         </div>
-                        <p class="text-brand-muted text-base leading-relaxed mb-6">{{ featured.data.summary }}</p>
-                        <a href="{{ featured.url }}" class="inline-flex items-center text-brand-accent font-semibold hover:text-brand-hover transition-colors group">
+                        <p class="text-gray-600 text-base leading-relaxed mb-6 line-clamp-3">{{ featured.data.summary }}</p>
+                        <a href="{{ featured.url }}" class="inline-flex items-center text-brand-accent font-semibold hover:text-brand-hover transition-colors group text-sm">
                             Read
                             <i class="fa-solid fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
                         </a>
@@ -523,9 +531,9 @@ lang: en
         {% endif %}
         {% endif %}
 
-        <!-- Article Grid - Silicon Labs Style: Large Images + Floating Category Badge -->
+        <!-- Article Grid - Silicon Labs Style -->
         <section aria-labelledby="articles-heading">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <h2 id="articles-heading" class="sr-only">Latest Articles</h2>
                 {% set visiblePosts = posts %}
                 {% if pagination.pageNumber == 0 %}
@@ -536,10 +544,10 @@ lang: en
                     {% for post in visiblePosts %}
                     <article class="group flex flex-col" data-post-card data-title="{{ post.data.title | escape }}" data-summary="{{ post.data.summary | escape }}" data-category="{{ post.data.category | slugify }}" data-tags="{{ post.data.tags | contentTags | joinSlugList }}">
                         <!-- Article Image with Floating Category Badge -->
-                        <div class="relative aspect-[16/10] overflow-hidden rounded-xl mb-4">
-                            <img loading="lazy" decoding="async" src="{{ post.data.hero_image }}" alt="" width="640" height="400" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-4 left-4">
-                                <span class="inline-block bg-brand-accent text-white text-xs font-semibold px-3 py-1.5 rounded-md uppercase tracking-wide">
+                        <div class="relative aspect-[16/10] overflow-hidden rounded-lg mb-4">
+                            <img loading="lazy" decoding="async" src="{{ post.data.hero_image }}" alt="" width="640" height="400" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                            <div class="absolute top-3 left-3">
+                                <span class="inline-block bg-brand-accent text-white text-xs font-semibold px-2.5 py-1 rounded uppercase tracking-wide">
                                     {{ post.data.category }}
                                 </span>
                             </div>
@@ -548,17 +556,17 @@ lang: en
                         <!-- Article Content -->
                         <div class="flex-1 flex flex-col">
                             <!-- Title -->
-                            <h3 class="text-xl font-bold text-brand-dark mb-3 line-clamp-2 leading-tight">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2 line-clamp-2 leading-tight">
                                 <a href="{{ post.url }}" class="hover:text-brand-accent transition-colors">{{ post.data.title }}</a>
                             </h3>
 
                             <!-- Summary -->
-                            <p class="text-brand-muted text-sm mb-4 line-clamp-3 flex-1 leading-relaxed">{{ post.data.summary }}</p>
+                            <p class="text-gray-600 text-sm mb-3 line-clamp-3 flex-1 leading-relaxed">{{ post.data.summary }}</p>
 
                             <!-- Metadata Row -->
-                            <div class="flex items-center gap-2 text-xs text-brand-muted mb-4">
+                            <div class="flex items-center gap-2 text-xs text-gray-500 mb-3">
                                 <time datetime="{{ post.date | htmlDate }}">{{ post.date | readableDate }}</time>
-                                <span class="text-brand-muted/40">•</span>
+                                <span class="text-gray-300">•</span>
                                 <span>{{ post.data.read_time }}</span>
                             </div>
 
@@ -575,10 +583,10 @@ lang: en
                 <!-- Empty State -->
                 {% if visiblePosts.length === 0 %}
                 <div class="text-center py-20" role="status" aria-live="polite">
-                    <i class="fa-solid fa-search text-6xl text-brand-muted/30 mb-4" aria-hidden="true"></i>
-                    <h3 class="text-2xl font-bold text-brand-dark mb-2">No articles found</h3>
-                    <p class="text-brand-muted mb-6">Try adjusting your search or filter criteria</p>
-                    <button type="button" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-3 rounded-lg font-semibold transition" data-clear-filters>
+                    <i class="fa-solid fa-search text-5xl text-gray-300 mb-4" aria-hidden="true"></i>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">No articles found</h3>
+                    <p class="text-gray-500 mb-6">Try adjusting your search or filter criteria</p>
+                    <button type="button" class="bg-brand-accent hover:bg-brand-hover text-white px-6 py-2.5 rounded-md font-medium transition text-sm" data-clear-filters>
                         Clear all filters
                     </button>
                 </div>
@@ -918,6 +926,28 @@ lang: en
                         statusEl.textContent = 'Network issue. Please email sales@gateremotesource.com.';
                         statusEl.classList.add('text-red-600');
                     }
+                }
+            });
+        }
+
+        // Search toggle functionality - Silicon Labs style
+        const searchToggle = document.getElementById('searchToggle');
+        const searchDropdown = document.getElementById('searchDropdown');
+        if (searchToggle && searchDropdown) {
+            searchToggle.addEventListener('click', () => {
+                const isHidden = searchDropdown.classList.contains('hidden');
+                searchDropdown.classList.toggle('hidden');
+                if (isHidden) {
+                    // Focus on search input when opened
+                    const searchInput = document.getElementById('blogSearch');
+                    if (searchInput) searchInput.focus();
+                }
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (event) => {
+                if (!searchToggle.contains(event.target) && !searchDropdown.contains(event.target)) {
+                    searchDropdown.classList.add('hidden');
                 }
             });
         }
