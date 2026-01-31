@@ -105,6 +105,25 @@
             outline: none;
         }
         .lang-select option { background-color: #F3F4F6; color: #111827; }
+
+        .topic-filter-btn {
+            border: 1px solid transparent;
+            color: #1D1D1F;
+            background: transparent;
+            transition: all 0.2s ease;
+        }
+
+        .topic-filter-btn:hover {
+            border-color: #D1D1D6;
+            background: rgba(255, 255, 255, 0.9);
+            color: #1D1D1F;
+        }
+
+        .topic-filter-btn.active {
+            background: #0071E3;
+            border-color: #0071E3;
+            color: #ffffff;
+        }
     </style>
 </head>
 <body class="font-sans text-brand-dark/80 bg-brand-light backdrop-blur selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="blog">
@@ -201,317 +220,149 @@
     </nav>
 
     <main class="pt-28 pb-24 bg-brand-light backdrop-blur min-h-screen">
-        {% set categoryOptions = collections.posts | pluck("category") | unique %}
-        <section class="pb-12">
+        <section class="pb-10">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="space-y-6">
-                        <span class="text-xs uppercase tracking-wider text-brand-muted font-semibold">Installer Hub</span>
+                <div class="flex flex-col gap-6">
+                    <div class="space-y-3">
+                        <p class="text-xs uppercase tracking-wider text-brand-muted font-semibold">Installer Hub</p>
                         <h1 class="text-4xl md:text-5xl font-bold text-brand-dark" data-i18n="blog.title">{{ site.blogTitle }}</h1>
                         <p class="text-brand-muted max-w-2xl" data-i18n="blog.subtitle">{{ site.blogDescription }}</p>
-                        <div class="flex flex-wrap gap-3 text-sm text-brand-muted">
-                            <span class="flex items-center gap-2 glass-chip text-brand-dark rounded-full px-3 py-1">
-                                <i class="fa-solid fa-circle-check text-brand-accent"></i>
-                                <span>Programming and compatibility guides</span>
-                            </span>
-                            <span class="flex items-center gap-2 glass-chip text-brand-dark rounded-full px-3 py-1">
-                                <i class="fa-solid fa-circle-check text-brand-accent"></i>
-                                <span>RF troubleshooting and range fixes</span>
-                            </span>
-                            <span class="flex items-center gap-2 glass-chip text-brand-dark rounded-full px-3 py-1">
-                                <i class="fa-solid fa-circle-check text-brand-accent"></i>
-                                <span>Distributor-ready sales playbooks</span>
-                            </span>
-                        </div>
-                        <div class="flex flex-wrap gap-4 items-center text-sm text-brand-muted">
-                            <div class="bg-brand-surface border border-brand-border/40 rounded-lg px-4 py-2 text-brand-dark">
-                                <span class="text-brand-dark font-bold">{{ collections.posts.length }}</span> total guides
-                            </div>
-                            <div class="bg-brand-surface border border-brand-border/40 rounded-lg px-4 py-2 text-brand-dark/80">
-                                Updated weekly by factory engineers
-                            </div>
-                        </div>
-                        <div class="flex flex-wrap gap-3">
-                            <a href="/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-white px-6 py-3 rounded-lg font-bold transition shadow-md shadow-brand-cta/20 hover:shadow-lg" data-cta="blog_hero_get_price">Get price list</a>
-                            <a href="/catalog/" class="border border-brand-cta text-brand-cta hover:border-brand-ctaHover hover:text-brand-ctaHover hover:bg-brand-light/80 px-6 py-3 rounded-lg font-bold transition" data-cta="blog_hero_catalog">Download catalog</a>
-                        </div>
                     </div>
-                    <div class="bg-brand-surface border border-brand-border/40 rounded-2xl p-6 shadow-lg space-y-6">
-                        <div>
-                            <h3 class="text-brand-dark font-bold text-lg mb-2">Search the library</h3>
-                            <p class="text-brand-muted text-sm mb-4">Find guides by model, brand, frequency, or issue.</p>
-                            <div class="relative">
-                                <input type="text" id="blogSearch" placeholder="Search by model, brand, or topic" class="w-full bg-brand-light/80 border border-brand-border/60 rounded-lg pl-4 pr-10 py-3 text-brand-dark focus:border-brand-accent outline-none transition">
-                                <i class="fa-solid fa-search absolute right-3 top-3.5 text-brand-muted/70"></i>
-                            </div>
-                            <div id="searchSuggestions" class="mt-3 space-y-2 hidden"></div>
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 border border-brand-border/60 bg-brand-surface/80 rounded-xl px-4 py-3">
+                        <div class="flex items-center gap-2 overflow-x-auto pb-1 lg:pb-0" role="tablist" aria-label="Topic filters">
+                            <button type="button" class="topic-filter-btn active px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="all" aria-pressed="true">All</button>
+                            <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="technical-guides" aria-pressed="false">Technical Guides</button>
+                            <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="case-studies" aria-pressed="false">Case Studies</button>
+                            <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="industry-news" aria-pressed="false">Industry News</button>
+                            <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="rf-basics" aria-pressed="false">RF Basics</button>
+                            <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="installation-guides" aria-pressed="false">Installation Guides</button>
+                            <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="programming" aria-pressed="false">Programming</button>
                         </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div class="bg-brand-light/80 border border-brand-border/60 rounded-xl p-4">
-                                <p class="text-xs text-brand-muted uppercase tracking-wide mb-2">Fast quote</p>
-                                <h4 class="text-brand-dark font-semibold mb-2">Pricing in 24 hours</h4>
-                                <p class="text-xs text-brand-muted mb-4">MOQ, lead time, and compatibility pack.</p>
-                                <a href="/contact/" class="text-brand-accent text-sm font-bold hover:text-brand-hover">Request quote</a>
-                            </div>
-                            <div class="bg-brand-light/80 border border-brand-border/60 rounded-xl p-4">
-                                <p class="text-xs text-brand-muted uppercase tracking-wide mb-2">Distributor kit</p>
-                                <h4 class="text-brand-dark font-semibold mb-2">Get the playbook</h4>
-                                <p class="text-xs text-brand-muted mb-4">RF benchmarks and margin guidance.</p>
-                                <a href="/contact/" class="text-brand-accent text-sm font-bold hover:text-brand-hover">Send me the kit</a>
-                            </div>
+                        <div class="relative w-full lg:w-64">
+                            <label for="blogSearch" class="sr-only">Search articles</label>
+                            <input type="search" id="blogSearch" placeholder="Search articles..." class="w-full bg-brand-light border border-brand-border/60 rounded-lg pl-10 pr-4 py-2.5 text-sm text-brand-dark focus:border-brand-accent outline-none transition">
+                            <i class="fa-solid fa-search absolute left-3 top-3 text-brand-muted text-sm"></i>
                         </div>
-                        {% if categoryOptions.length %}
-                        <div>
-                            <p class="text-xs uppercase tracking-wider text-brand-muted mb-3">Quick topics</p>
-                            <div class="flex flex-wrap gap-2">
-                                {% for option in categoryOptions | slice(0, 8) %}
-                                <button type="button" class="px-3 py-1 rounded-full glass-chip border-brand-border/60 text-xs text-brand-dark hover:border-brand-accent hover:text-brand-accent transition" data-quick-filter="category" data-value="{{ option | slugify }}">{{ option }}</button>
-                                {% endfor %}
-                            </div>
-                        </div>
-                        {% endif %}
                     </div>
                 </div>
             </div>
         </section>
+
+        {% set featured = collections.posts | getFeatured %}
+        {% set primaryFeatured = featured %}
+        {% if not primaryFeatured and (posts | length) %}
+            {% set primaryFeatured = posts[0] %}
+        {% endif %}
+        {% set visiblePosts = posts %}
+        {% if pagination.pageNumber == 0 %}
+            {% if featured %}
+                {% set visiblePosts = posts | excludeFeatured %}
+            {% else %}
+                {% set visiblePosts = posts | slice(1) %}
+            {% endif %}
+        {% endif %}
+        {% set secondaryFeatured = [] %}
+        {% set gridPosts = visiblePosts %}
+        {% if pagination.pageNumber == 0 %}
+            {% set secondaryFeatured = visiblePosts | slice(0, 2) %}
+            {% set gridPosts = visiblePosts | slice(2) %}
+        {% endif %}
+
+        {% if pagination.pageNumber == 0 and primaryFeatured %}
+        <section class="pb-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {% if secondaryFeatured.length %}
+                <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] gap-6">
+                    <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="{{ primaryFeatured.data.title | escape }}" data-summary="{{ primaryFeatured.data.summary | escape }}" data-category="{{ primaryFeatured.data.category | slugify }}" data-tags="{{ primaryFeatured.data.tags | contentTags | joinSlugList }}" data-author="{{ primaryFeatured.data.author | default('GateRemoteSource') | escape }}">
+                        <div class="grid grid-cols-1 md:grid-cols-2">
+                            <div class="relative min-h-[220px] overflow-hidden">
+                                <img src="{{ primaryFeatured.data.hero_image }}" alt="{{ primaryFeatured.data.hero_alt or primaryFeatured.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="p-6 flex flex-col gap-3">
+                                <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">{{ primaryFeatured.data.category }}</span>
+                                <h2 class="text-2xl md:text-3xl font-bold text-brand-dark leading-tight group-hover:text-brand-accent transition">{{ primaryFeatured.data.title }}</h2>
+                                <div class="text-xs text-brand-muted">{{ primaryFeatured.date | readableDate }} | {{ primaryFeatured.data.author or "GateRemoteSource" }} | {{ primaryFeatured.data.read_time }}</div>
+                                <p class="text-brand-muted text-sm leading-relaxed line-clamp-3 flex-1">{{ primaryFeatured.data.summary }}</p>
+                                <a href="{{ primaryFeatured.url }}" class="mt-auto text-brand-accent font-semibold text-sm inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    <div class="grid grid-cols-1 gap-6">
+                        {% for post in secondaryFeatured %}
+                        <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="{{ post.data.title | escape }}" data-summary="{{ post.data.summary | escape }}" data-category="{{ post.data.category | slugify }}" data-tags="{{ post.data.tags | contentTags | joinSlugList }}" data-author="{{ post.data.author | default('GateRemoteSource') | escape }}">
+                            <div class="relative h-44 overflow-hidden">
+                                <img loading="lazy" decoding="async" src="{{ post.data.hero_image }}" alt="{{ post.data.hero_alt or post.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="p-5 flex flex-col gap-3 flex-1">
+                                <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">{{ post.data.category }}</span>
+                                <h3 class="text-lg font-bold text-brand-dark leading-tight group-hover:text-brand-accent transition">{{ post.data.title }}</h3>
+                                <div class="text-xs text-brand-muted">{{ post.date | readableDate }} | {{ post.data.author or "GateRemoteSource" }} | {{ post.data.read_time }}</div>
+                                <p class="text-brand-muted text-sm line-clamp-2 flex-1">{{ post.data.summary }}</p>
+                                <a href="{{ post.url }}" class="mt-auto text-brand-accent font-semibold text-sm inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                            </div>
+                        </article>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% else %}
+                <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="{{ primaryFeatured.data.title | escape }}" data-summary="{{ primaryFeatured.data.summary | escape }}" data-category="{{ primaryFeatured.data.category | slugify }}" data-tags="{{ primaryFeatured.data.tags | contentTags | joinSlugList }}" data-author="{{ primaryFeatured.data.author | default('GateRemoteSource') | escape }}">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                        <div class="relative min-h-[220px] overflow-hidden">
+                            <img src="{{ primaryFeatured.data.hero_image }}" alt="{{ primaryFeatured.data.hero_alt or primaryFeatured.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col gap-3">
+                            <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">{{ primaryFeatured.data.category }}</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-brand-dark leading-tight group-hover:text-brand-accent transition">{{ primaryFeatured.data.title }}</h2>
+                            <div class="text-xs text-brand-muted">{{ primaryFeatured.date | readableDate }} | {{ primaryFeatured.data.author or "GateRemoteSource" }} | {{ primaryFeatured.data.read_time }}</div>
+                            <p class="text-brand-muted text-sm leading-relaxed line-clamp-3 flex-1">{{ primaryFeatured.data.summary }}</p>
+                            <a href="{{ primaryFeatured.url }}" class="mt-auto text-brand-accent font-semibold text-sm inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                        </div>
+                    </div>
+                </article>
+                {% endif %}
+            </div>
+        </section>
+        {% endif %}
 
         <section class="pb-8">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-brand-surface border border-brand-border/40 rounded-xl p-4">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                        <div>
-                            <h2 class="text-brand-dark font-bold text-lg">Latest guides</h2>
-                            <p class="text-sm text-brand-muted">Browse newest updates or refine by topic and brand.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {% for post in gridPosts %}
+                    <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="{{ post.data.title | escape }}" data-summary="{{ post.data.summary | escape }}" data-category="{{ post.data.category | slugify }}" data-tags="{{ post.data.tags | contentTags | joinSlugList }}" data-author="{{ post.data.author | default('GateRemoteSource') | escape }}">
+                        <div class="relative h-48 overflow-hidden">
+                            <img loading="lazy" decoding="async" src="{{ post.data.hero_image }}" alt="{{ post.data.hero_alt or post.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         </div>
-                        <div class="flex flex-wrap items-center gap-3">
-                            <span id="resultsCount" class="text-sm text-brand-muted">Showing 0 results</span>
-                            <button type="button" class="px-3 py-2 rounded-lg border border-brand-border/60 text-brand-muted hover:border-brand-accent hover:text-brand-dark transition text-sm" data-clear-filters>Clear filters</button>
+                        <div class="p-5 flex flex-col gap-3 flex-1">
+                            <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">{{ post.data.category }}</span>
+                            <h3 class="text-lg font-bold text-brand-dark leading-tight group-hover:text-brand-accent transition">{{ post.data.title }}</h3>
+                            <div class="text-xs text-brand-muted">{{ post.date | readableDate }} | {{ post.data.author or "GateRemoteSource" }} | {{ post.data.read_time }}</div>
+                            <p class="text-brand-muted text-sm line-clamp-3 flex-1">{{ post.data.summary }}</p>
+                            <a href="{{ post.url }}" class="mt-auto text-brand-accent font-semibold text-sm inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
                         </div>
-                    </div>
+                    </article>
+                    {% endfor %}
                 </div>
-                <div id="activeFilters" class="mt-4 flex flex-wrap gap-2"></div>
-                <div id="no-results" class="hidden text-brand-muted mt-4">No articles found on this page. Try a different filter.</div>
+                <p id="no-results" class="hidden text-brand-muted mt-8" data-i18n="blog.no_articles">No articles found.</p>
             </div>
         </section>
 
-        <section>
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                    <div class="lg:col-span-2 space-y-10">
-                        {% if pagination.pageNumber == 0 %}
-                        {% set featured = collections.posts | getFeatured %}
-                        {% if featured %}
-                        <section class="bg-brand-surface border border-brand-border/40 rounded-2xl overflow-hidden shadow-lg group" data-post-card data-title="{{ featured.data.title | escape }}" data-summary="{{ featured.data.summary | escape }}" data-category="{{ featured.data.category | slugify }}" data-tags="{{ featured.data.tags | contentTags | joinSlugList }}" data-brand="{{ featured.data.brand | joinSlugList }}" data-frequency="{{ featured.data.frequency | joinSlugList }}" data-scene="{{ featured.data.scene | joinSlugList }}">
-                            <div class="grid grid-cols-1 md:grid-cols-2">
-                                <div class="relative">
-                                    <img src="{{ featured.data.hero_image }}" alt="{{ featured.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                                    <div class="absolute top-4 left-4 bg-brand-cta text-white text-xs font-bold px-3 py-1 rounded-full">Featured</div>
-                                </div>
-                                <div class="p-6 flex flex-col justify-between">
-                                    <div>
-                                        <div class="flex items-center gap-3 text-xs text-brand-muted mb-3">
-                                            <span class="uppercase tracking-wider text-brand-accent font-bold">{{ featured.data.category }}</span>
-                                            <span>{{ featured.date | readableDate }}</span>
-                                            <span>{{ featured.data.read_time }}</span>
-                                        </div>
-                                        <h2 class="text-2xl font-bold text-brand-dark mb-3 group-hover:text-brand-accent transition">{{ featured.data.title }}</h2>
-                                        <p class="text-brand-muted text-sm mb-4">{{ featured.data.summary }}</p>
-                                    </div>
-                                    <a href="{{ featured.url }}" class="text-brand-accent font-bold text-sm hover:text-brand-hover inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
-                                </div>
-                            </div>
-                        </section>
-                        {% endif %}
-                        {% endif %}
-
-                        {% set visiblePosts = posts %}
-                        {% if pagination.pageNumber == 0 %}
-                        {% set visiblePosts = posts | excludeFeatured %}
-                        {% endif %}
-                        {% set gridPosts = visiblePosts | slice(0, 8) %}
-                        {% set listPosts = visiblePosts | slice(8) %}
-
-                        <section class="space-y-6">
-                            <div class="flex items-center justify-between">
-                                <h3 class="text-brand-dark font-bold text-lg">Fresh from the lab</h3>
-                                <span class="text-xs text-brand-muted">Newest updates first</span>
-                            </div>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                {% for post in gridPosts %}
-                                <article class="bg-brand-surface p-6 rounded-xl border border-brand-border/40 hover:border-brand-accent transition flex flex-col gap-4 group" data-post-card data-title="{{ post.data.title | escape }}" data-summary="{{ post.data.summary | escape }}" data-category="{{ post.data.category | slugify }}" data-tags="{{ post.data.tags | contentTags | joinSlugList }}" data-brand="{{ post.data.brand | joinSlugList }}" data-frequency="{{ post.data.frequency | joinSlugList }}" data-scene="{{ post.data.scene | joinSlugList }}">
-                                    <div class="h-48 rounded-lg overflow-hidden">
-                                        <img loading="lazy" decoding="async" src="{{ post.data.hero_image }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="{{ post.data.title }}">
-                                    </div>
-                                    <div class="flex items-center gap-3 text-xs text-brand-muted">
-                                        <span class="uppercase tracking-wider text-brand-accent font-bold">{{ post.data.category }}</span>
-                                        <span>{{ post.date | readableDate }}</span>
-                                        <span>{{ post.data.read_time }}</span>
-                                    </div>
-                                    <h3 class="text-lg font-bold text-brand-dark group-hover:text-brand-accent transition">{{ post.data.title }}</h3>
-                                    <p class="text-brand-muted text-sm line-clamp-2">{{ post.data.summary }}</p>
-                                    <a href="{{ post.url }}" class="text-brand-accent font-bold text-sm hover:text-brand-hover inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
-                                </article>
-                                {% endfor %}
-                            </div>
-                        </section>
-
-                        {% if listPosts.length %}
-                        <section class="bg-brand-surface border border-brand-border/40 rounded-2xl overflow-hidden">
-                            <div class="flex items-center justify-between px-6 py-4 border-b border-brand-border/40">
-                                <h3 class="text-brand-dark font-bold text-lg">More from the field</h3>
-                                <span class="text-xs text-brand-muted">Short reads and updates</span>
-                            </div>
-                            <div class="divide-y divide-brand-border/40">
-                                {% for post in listPosts %}
-                                <div class="px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4" data-post-card data-title="{{ post.data.title | escape }}" data-summary="{{ post.data.summary | escape }}" data-category="{{ post.data.category | slugify }}" data-tags="{{ post.data.tags | contentTags | joinSlugList }}" data-brand="{{ post.data.brand | joinSlugList }}" data-frequency="{{ post.data.frequency | joinSlugList }}" data-scene="{{ post.data.scene | joinSlugList }}">
-                                    <div>
-                                        <p class="text-xs text-brand-accent uppercase tracking-wide font-bold">{{ post.data.category }}</p>
-                                        <a href="{{ post.url }}" class="text-brand-dark font-semibold hover:text-brand-accent">{{ post.data.title }}</a>
-                                        <p class="text-xs text-brand-muted">{{ post.date | readableDate }} - {{ post.data.read_time }}</p>
-                                    </div>
-                                    <div class="flex items-center gap-4">
-                                        <p class="text-xs text-brand-muted max-w-md hidden md:block line-clamp-2">{{ post.data.summary }}</p>
-                                        <a href="{{ post.url }}" class="text-brand-accent text-sm font-bold hover:text-brand-hover">View</a>
-                                    </div>
-                                </div>
-                                {% endfor %}
-                            </div>
-                        </section>
-                        {% endif %}
-
-                        {% if pagination.pages.length > 1 %}
-                        <div class="mt-8 flex justify-center gap-2" aria-label="Blog pagination">
-                            {% if pagination.previousPageHref %}
-                            <a href="{{ pagination.previousPageHref }}" class="w-10 h-10 rounded-lg bg-brand-surface border border-brand-border/60 text-brand-muted hover:border-brand-accent hover:text-brand-dark transition flex items-center justify-center" aria-label="Previous page">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </a>
-                            {% endif %}
-                            {% for href in pagination.hrefs %}
-                            <a href="{{ href }}" class="w-10 h-10 rounded-lg {% if pagination.pageNumber == loop.index0 %}bg-brand-cta text-white font-bold{% else %}bg-brand-surface border border-brand-border/60 text-brand-muted hover:border-brand-accent hover:text-brand-dark{% endif %} transition flex items-center justify-center">{{ loop.index }}</a>
-                            {% endfor %}
-                            {% if pagination.nextPageHref %}
-                            <a href="{{ pagination.nextPageHref }}" class="w-10 h-10 rounded-lg bg-brand-surface border border-brand-border/60 text-brand-muted hover:border-brand-accent hover:text-brand-dark transition flex items-center justify-center" aria-label="Next page">
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </a>
-                            {% endif %}
-                        </div>
-                        {% endif %}
-                    </div>
-                    <aside class="space-y-8">
-                        <div class="bg-brand-surface p-6 rounded-xl border border-brand-border/40 shadow-lg">
-                            <div class="flex items-center justify-between mb-4">
-                                <h3 class="font-bold text-brand-dark">Filters</h3>
-                                <button type="button" class="text-xs text-brand-muted hover:text-brand-dark" data-clear-filters>Reset</button>
-                            </div>
-                            <p class="text-xs text-brand-muted mb-4">Stack filters to narrow down results.</p>
-                            <div class="space-y-6 text-sm text-brand-dark/80">
-                                {% if categoryOptions.length %}
-                                <div>
-                                    <p class="text-brand-dark font-semibold mb-2">Topics</p>
-                                    <div class="grid grid-cols-2 gap-2">
-                                        {% for option in categoryOptions %}
-                                        <label class="flex items-center gap-2">
-                                            <input type="checkbox" class="accent-brand-accent" data-filter="category" data-label="{{ option }}" value="{{ option | slugify }}">
-                                            <span>{{ option }}</span>
-                                        </label>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                {% endif %}
-
-                                {% set tagOptions = collections.posts | pluck("tags") | contentTags | unique %}
-                                {% if tagOptions.length %}
-                                <div>
-                                    <p class="text-brand-dark font-semibold mb-2">Tags</p>
-                                    <div class="flex flex-wrap gap-2">
-                                        {% for option in tagOptions %}
-                                        <label class="flex items-center gap-2 glass-chip border-brand-border/60 rounded-full px-3 py-1 text-brand-dark">
-                                            <input type="checkbox" class="accent-brand-accent" data-filter="tags" data-label="{{ option }}" value="{{ option | slugify }}">
-                                            <span>{{ option }}</span>
-                                        </label>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                {% endif %}
-
-                                {% set brandOptions = collections.posts | pluck("brand") | unique %}
-                                {% if brandOptions.length %}
-                                <div>
-                                    <p class="text-brand-dark font-semibold mb-2">Brand</p>
-                                    <div class="flex flex-wrap gap-2">
-                                        {% for option in brandOptions %}
-                                        <label class="flex items-center gap-2 glass-chip border-brand-border/60 rounded-full px-3 py-1 text-brand-dark">
-                                            <input type="checkbox" class="accent-brand-accent" data-filter="brand" data-label="{{ option }}" value="{{ option | slugify }}">
-                                            <span>{{ option }}</span>
-                                        </label>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                {% endif %}
-
-                                {% set frequencyOptions = collections.posts | pluck("frequency") | unique %}
-                                {% if frequencyOptions.length %}
-                                <div>
-                                    <p class="text-brand-dark font-semibold mb-2">Frequency</p>
-                                    <div class="flex flex-wrap gap-2">
-                                        {% for option in frequencyOptions %}
-                                        <label class="flex items-center gap-2 glass-chip border-brand-border/60 rounded-full px-3 py-1 text-brand-dark">
-                                            <input type="checkbox" class="accent-brand-accent" data-filter="frequency" data-label="{{ option }}" value="{{ option | slugify }}">
-                                            <span>{{ option }}</span>
-                                        </label>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                {% endif %}
-
-                                {% set sceneOptions = collections.posts | pluck("scene") | unique %}
-                                {% if sceneOptions.length %}
-                                <div>
-                                    <p class="text-brand-dark font-semibold mb-2">Scene</p>
-                                    <div class="flex flex-wrap gap-2">
-                                        {% for option in sceneOptions %}
-                                        <label class="flex items-center gap-2 glass-chip border-brand-border/60 rounded-full px-3 py-1 text-brand-dark">
-                                            <input type="checkbox" class="accent-brand-accent" data-filter="scene" data-label="{{ option }}" value="{{ option | slugify }}">
-                                            <span>{{ option }}</span>
-                                        </label>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                {% endif %}
-                            </div>
-                        </div>
-
-                        <div class="bg-brand-surface border-2 border-brand-accent p-8 rounded-xl text-center text-brand-dark shadow-lg relative overflow-hidden">
-                            <div class="absolute top-0 right-0 w-32 h-32 bg-brand-light/70 rounded-full blur-2xl -mr-10 -mt-10"></div>
-                            <h3 class="font-bold text-xl mb-2 relative z-10" data-i18n="blog.become_distributor_title">Become a Distributor</h3>
-                            <p class="text-sm text-brand-muted mb-6 relative z-10" data-i18n="blog.become_distributor_description">Get access to wholesale pricing and marketing materials.</p>
-                            <a href="/contact/" class="bg-brand-cta text-white px-6 py-3 rounded-full font-bold text-sm shadow-lg hover:bg-brand-ctaHover transition relative z-10 w-full" data-i18n="blog.apply_now">Apply Now</a>
-                        </div>
-
-                        {% set latestPosts = collections.posts | slice(0, 3) %}
-                        {% if latestPosts.length %}
-                        <div class="bg-brand-surface p-6 rounded-xl border border-brand-border/40 shadow-lg">
-                            <h3 class="font-bold text-brand-dark mb-4">Newest guides</h3>
-                            <div class="space-y-4">
-                                {% for post in latestPosts %}
-                                <a href="{{ post.url }}" class="flex gap-3 group">
-                                    <div class="w-16 h-16 bg-brand-light/80 rounded-lg flex-shrink-0 overflow-hidden">
-                                        <img loading="lazy" decoding="async" src="{{ post.data.hero_image }}" class="w-full h-full object-cover" alt="{{ post.data.title }}">
-                                    </div>
-                                    <div>
-                                        <p class="text-xs text-brand-accent uppercase tracking-wide font-bold">{{ post.data.category }}</p>
-                                        <p class="text-sm font-bold text-brand-dark group-hover:text-brand-accent transition">{{ post.data.title }}</p>
-                                        <p class="text-xs text-brand-muted mt-1">{{ post.date | readableDate }}</p>
-                                    </div>
-                                </a>
-                                {% endfor %}
-                            </div>
-                        </div>
-                        {% endif %}
-                    </aside>
-                </div>
-            </div>
-        </section>
+        {% if pagination.pages.length > 1 %}
+        <div class="mt-8 flex justify-center gap-2" aria-label="Blog pagination">
+            {% if pagination.previousPageHref %}
+            <a href="{{ pagination.previousPageHref }}" class="w-10 h-10 rounded-lg bg-brand-surface border border-brand-border/60 text-brand-muted hover:border-brand-accent hover:text-brand-dark transition flex items-center justify-center" aria-label="Previous page">
+                <i class="fa-solid fa-chevron-left"></i>
+            </a>
+            {% endif %}
+            {% for href in pagination.hrefs %}
+            <a href="{{ href }}" class="w-10 h-10 rounded-lg {% if pagination.pageNumber == loop.index0 %}bg-brand-cta text-white font-bold{% else %}bg-brand-surface border border-brand-border/60 text-brand-muted hover:border-brand-accent hover:text-brand-dark{% endif %} transition flex items-center justify-center">{{ loop.index }}</a>
+            {% endfor %}
+            {% if pagination.nextPageHref %}
+            <a href="{{ pagination.nextPageHref }}" class="w-10 h-10 rounded-lg bg-brand-surface border border-brand-border/60 text-brand-muted hover:border-brand-accent hover:text-brand-dark transition flex items-center justify-center" aria-label="Next page">
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+            {% endif %}
+        </div>
+        {% endif %}
     </main>
 
     <section class="py-16 bg-brand-light border-t border-brand-border">
@@ -774,61 +625,25 @@
         }
 
         const searchInput = document.getElementById('blogSearch');
-        const suggestionBox = document.getElementById('searchSuggestions');
+        const topicFilterButtons = Array.from(document.querySelectorAll('.topic-filter-btn'));
         const cards = Array.from(document.querySelectorAll('[data-post-card]'));
-        const filterInputs = Array.from(document.querySelectorAll('[data-filter]'));
         const emptyState = document.getElementById('no-results');
-        const resultsCount = document.getElementById('resultsCount');
-        const activeFilters = document.getElementById('activeFilters');
-        const clearFilterButtons = Array.from(document.querySelectorAll('[data-clear-filters]'));
-        const quickFilters = Array.from(document.querySelectorAll('[data-quick-filter]'));
-
-        let searchIndex = [];
-
-        function escapeHtml(value) {
-            return String(value)
-                .replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;')
-                .replace(/"/g, '&quot;')
-                .replace(/'/g, '&#39;');
-        }
 
         function normalizeValue(value) {
             return (value || '').toString().toLowerCase();
         }
 
-        function getSelectedFilters() {
-            const selected = {};
-            filterInputs.forEach((input) => {
-                if (!input.checked) return;
-                if (!selected[input.dataset.filter]) {
-                    selected[input.dataset.filter] = new Set();
-                }
-                selected[input.dataset.filter].add(input.value);
-            });
-            return selected;
+        function getActiveTopic() {
+            const activeButton = topicFilterButtons.find((btn) => btn.classList.contains('active'));
+            return activeButton ? activeButton.dataset.topic : 'all';
         }
 
-        function getActiveFilters() {
-            return filterInputs
-                .filter((input) => input.checked)
-                .map((input) => ({
-                    group: input.dataset.filter,
-                    value: input.value,
-                    label: input.dataset.label || input.value
-                }));
-        }
-
-        function matchesFilters(card, selected) {
-            const filters = Object.keys(selected);
-            if (!filters.length) return true;
-            return filters.every((group) => {
-                const datasetValue = card.getAttribute(`data-${group}`) || '';
-                if (!datasetValue) return false;
-                const set = new Set(datasetValue.split('|').filter(Boolean));
-                return Array.from(selected[group]).every((value) => set.has(value));
-            });
+        function matchesTopic(card, topic) {
+            if (topic === 'all') return true;
+            const category = (card.getAttribute('data-category') || '').toLowerCase();
+            const tags = (card.getAttribute('data-tags') || '').toLowerCase();
+            const tokens = new Set(`${category}|${tags}`.split('|').filter(Boolean));
+            return tokens.has(topic);
         }
 
         function matchesSearch(card, query) {
@@ -838,203 +653,44 @@
                 card.getAttribute('data-summary'),
                 card.getAttribute('data-category'),
                 card.getAttribute('data-tags'),
-                card.getAttribute('data-brand'),
-                card.getAttribute('data-frequency'),
-                card.getAttribute('data-scene')
+                card.getAttribute('data-author')
             ].join(' ').toLowerCase();
             return haystack.includes(query);
         }
 
-        function updateResultsCount(visibleCount) {
-            if (!resultsCount) return;
-            const totalCount = cards.length;
-            const label = visibleCount === totalCount
-                ? `${visibleCount} guides on this page`
-                : `${visibleCount} of ${totalCount} guides on this page`;
-            resultsCount.textContent = label;
-        }
-
-        function renderActiveFilters(query) {
-            if (!activeFilters) return;
-            const items = getActiveFilters().map((item) => ({
-                ...item,
-                type: 'filter'
-            }));
-            if (query) {
-                items.unshift({
-                    type: 'search',
-                    label: `Search: ${query}`
-                });
-            }
-
-            if (!items.length) {
-                activeFilters.innerHTML = '<span class="text-sm text-brand-muted">No active filters.</span>';
-                return;
-            }
-
-            activeFilters.innerHTML = items.map((item) => {
-                const label = escapeHtml(item.label);
-                if (item.type === 'search') {
-                    return `
-                        <button type="button" class="flex items-center gap-2 px-3 py-1 rounded-full glass-chip border-brand-border/60 text-xs text-brand-dark hover:border-brand-accent hover:text-brand-accent transition" data-remove-filter data-type="search">
-                            <span>${label}</span>
-                            <i class="fa-solid fa-xmark text-[10px]"></i>
-                        </button>
-                    `;
-                }
-                return `
-                    <button type="button" class="flex items-center gap-2 px-3 py-1 rounded-full glass-chip border-brand-border/60 text-xs text-brand-dark hover:border-brand-accent hover:text-brand-accent transition" data-remove-filter data-type="filter" data-group="${escapeHtml(item.group)}" data-value="${escapeHtml(item.value)}">
-                        <span>${label}</span>
-                        <i class="fa-solid fa-xmark text-[10px]"></i>
-                    </button>
-                `;
-            }).join('');
-        }
-
-        function syncQuickFilters() {
-            if (!quickFilters.length) return;
-            quickFilters.forEach((chip) => {
-                const group = chip.dataset.quickFilter;
-                const value = chip.dataset.value;
-                const input = filterInputs.find((item) => item.dataset.filter === group && item.value === value);
-                const isActive = input && input.checked;
-                chip.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-                chip.classList.toggle('border-brand-accent', isActive);
-                chip.classList.toggle('bg-brand-light/90', isActive);
-                chip.classList.toggle('text-brand-accent', isActive);
-                chip.classList.toggle('text-brand-dark', !isActive);
-            });
-        }
-
         function applyFilters() {
-            const rawQuery = searchInput ? searchInput.value.trim() : '';
-            const query = normalizeValue(rawQuery);
-            const selected = getSelectedFilters();
+            const query = normalizeValue(searchInput ? searchInput.value.trim() : '');
+            const activeTopic = getActiveTopic();
             let visibleCount = 0;
+
             cards.forEach((card) => {
-                const visible = matchesFilters(card, selected) && matchesSearch(card, query);
+                const visible = matchesTopic(card, activeTopic) && matchesSearch(card, query);
                 card.classList.toggle('hidden', !visible);
                 if (visible) visibleCount += 1;
             });
+
             if (emptyState) {
                 emptyState.classList.toggle('hidden', visibleCount > 0);
             }
-            updateResultsCount(visibleCount);
-            renderActiveFilters(rawQuery);
-            syncQuickFilters();
         }
 
-        function renderSuggestions(results) {
-            if (!suggestionBox) return;
-            if (!results.length) {
-                suggestionBox.classList.add('hidden');
-                suggestionBox.innerHTML = '';
-                return;
-            }
-            suggestionBox.classList.remove('hidden');
-            suggestionBox.innerHTML = results.map((item) => `
-                <a href="${item.url}" class="block px-3 py-2 rounded-lg bg-brand-surface/90 border border-brand-border/60 hover:border-brand-accent transition">
-                    <p class="text-sm text-brand-dark font-semibold">${escapeHtml(item.title)}</p>
-                    <p class="text-xs text-brand-muted">${escapeHtml(item.summary)}</p>
-                </a>
-            `).join('');
-        }
-
-        function handleSearchInput() {
-            const query = normalizeValue(searchInput ? searchInput.value : '');
-            applyFilters();
-            if (!searchIndex.length || !query) {
-                renderSuggestions([]);
-                return;
-            }
-            const results = searchIndex
-                .filter((item) => item.search.includes(query))
-                .slice(0, 6);
-            renderSuggestions(results);
-        }
-
-        function clearAllFilters() {
-            if (searchInput) searchInput.value = '';
-            filterInputs.forEach((input) => {
-                input.checked = false;
+        topicFilterButtons.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                topicFilterButtons.forEach((button) => {
+                    button.classList.remove('active');
+                    button.setAttribute('aria-pressed', 'false');
+                });
+                btn.classList.add('active');
+                btn.setAttribute('aria-pressed', 'true');
+                applyFilters();
             });
-            renderSuggestions([]);
-            applyFilters();
-        }
+        });
 
         if (searchInput) {
-            searchInput.addEventListener('input', handleSearchInput);
+            searchInput.addEventListener('input', applyFilters);
         }
-
-        filterInputs.forEach((input) => {
-            input.addEventListener('change', applyFilters);
-        });
-
-        clearFilterButtons.forEach((button) => {
-            button.addEventListener('click', clearAllFilters);
-        });
-
-        quickFilters.forEach((chip) => {
-            chip.addEventListener('click', () => {
-                const group = chip.dataset.quickFilter;
-                const value = chip.dataset.value;
-                const input = filterInputs.find((item) => item.dataset.filter === group && item.value === value);
-                if (!input) return;
-                input.checked = !input.checked;
-                applyFilters();
-            });
-        });
-
-        if (activeFilters) {
-            activeFilters.addEventListener('click', (event) => {
-                const button = event.target.closest('button[data-remove-filter]');
-                if (!button) return;
-                const type = button.dataset.type;
-                if (type === 'search') {
-                    if (searchInput) searchInput.value = '';
-                    renderSuggestions([]);
-                } else {
-                    const group = button.dataset.group;
-                    const value = button.dataset.value;
-                    const input = filterInputs.find((item) => item.dataset.filter === group && item.value === value);
-                    if (input) input.checked = false;
-                }
-                applyFilters();
-            });
-        }
-
-        document.addEventListener('click', (event) => {
-            if (!suggestionBox || !searchInput) return;
-            if (!searchInput.contains(event.target) && !suggestionBox.contains(event.target)) {
-                suggestionBox.classList.add('hidden');
-            }
-        });
 
         applyFilters();
-        fetch('./search.json')
-            .then((response) => response.json())
-            .then((data) => {
-                searchIndex = data.map((item) => ({
-                    ...item,
-                    search: normalizeValue([item.title, item.summary, item.category, ...(item.tags || []), ...(item.brand || []), ...(item.frequency || []), ...(item.scene || [])].join(' '))
-                }));
-            })
-            .catch(() => {
-                searchIndex = cards.map((card) => ({
-                    title: card.getAttribute('data-title'),
-                    summary: card.getAttribute('data-summary'),
-                    url: card.querySelector('a') ? card.querySelector('a').getAttribute('href') : '#',
-                    search: normalizeValue([
-                        card.getAttribute('data-title'),
-                        card.getAttribute('data-summary'),
-                        card.getAttribute('data-category'),
-                        card.getAttribute('data-tags'),
-                        card.getAttribute('data-brand'),
-                        card.getAttribute('data-frequency'),
-                        card.getAttribute('data-scene')
-                    ].join(' '))
-                }));
-            });
 
         const url = new URL(window.location.href);
         const paramLang = url.searchParams.get('lang');

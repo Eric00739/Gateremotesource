@@ -187,6 +187,25 @@ eleventyComputed:
             -webkit-backdrop-filter: blur(20px) saturate(180%);
         }
 
+        .topic-filter-btn {
+            border: 1px solid transparent;
+            color: #1D1D1F;
+            background: transparent;
+            transition: all 0.2s ease;
+        }
+
+        .topic-filter-btn:hover {
+            border-color: #D1D1D6;
+            background: rgba(255, 255, 255, 0.9);
+            color: #1D1D1F;
+        }
+
+        .topic-filter-btn.active {
+            background: #0071E3;
+            border-color: #0071E3;
+            color: #ffffff;
+        }
+
         /* Hero depth + glass */
         .hero-wrapper {
             position: relative;
@@ -2675,81 +2694,30 @@ eleventyComputed:
 
 
 
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-
-                    <!-- Main Content: Articles -->
-
-                    <div class="lg:col-span-2 space-y-8" id="blog-list-area">
-
-                        <!-- JS Injected -->
-
+                <div class="border border-brand-border/60 bg-brand-surface/80 rounded-xl px-4 py-3 mb-10">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                        <div class="flex items-center gap-2 overflow-x-auto pb-1 lg:pb-0" role="tablist" aria-label="Topic filters">
+                            <button type="button" class="topic-filter-btn active px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="all" aria-pressed="true">All</button>
+                            <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="technical-guides" aria-pressed="false">Technical Guides</button>
+                            <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="case-studies" aria-pressed="false">Case Studies</button>
+                            <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="industry-news" aria-pressed="false">Industry News</button>
+                            <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="rf-basics" aria-pressed="false">RF Basics</button>
+                            <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="installation-guides" aria-pressed="false">Installation Guides</button>
+                            <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="programming" aria-pressed="false">Programming</button>
+                        </div>
+                        <div class="relative w-full lg:w-64">
+                            <label for="blogSearch" class="sr-only">Search articles</label>
+                            <input type="search" id="blogSearch" placeholder="Search articles..." oninput="filterBlogs()" class="w-full bg-brand-light border border-brand-border rounded-lg pl-10 pr-4 py-2.5 text-sm text-brand-dark focus:border-brand-accent outline-none transition">
+                            <i class="fa-solid fa-search absolute left-3 top-3 text-brand-muted text-sm"></i>
+                        </div>
                     </div>
-
-
-
-                    <!-- Sidebar: Marketing Tools -->
-
-                    <div class="space-y-8">
-
-                        <!-- Search Widget -->
-
-                        <div class="bg-brand-surface p-6 rounded-xl border border-brand-border shadow-sm hover:shadow-md transition">
-
-                            <h3 class="font-bold text-brand-dark mb-4" data-i18n="blog.installer_resources">Search Guides</h3>
-
-                            <div class="relative">
-
-                                <input type="text" id="blogSearch" placeholder="e.g. Programming Nice..." onkeyup="filterBlogs()" class="w-full bg-brand-light border border-brand-border rounded-lg pl-4 pr-10 py-3 text-brand-dark focus:border-brand-accent outline-none transition">
-
-                                <i class="fa-solid fa-search absolute right-3 top-3.5 text-brand-muted"></i>
-
-                            </div>
-
-                        </div>
-
-                        
-
-                        <!-- Categories Widget -->
-
-                        <div class="bg-brand-surface p-6 rounded-xl border border-brand-border shadow-sm hover:shadow-md transition">
-
-                            <h3 class="font-bold text-brand-dark mb-4" data-i18n="blog.topics">Topics</h3>
-
-                            <ul class="space-y-3 text-brand-muted text-sm">
-
-                                <li class="hover:text-brand-accent cursor-pointer flex justify-between border-b border-brand-border pb-2"><span data-i18n="blog.programming_guides">Programming Guides</span> <span class="bg-brand-light text-brand-dark text-xs px-2 rounded-full">12</span></li>
-
-                                <li class="hover:text-brand-accent cursor-pointer flex justify-between border-b border-brand-border pb-2"><span data-i18n="blog.market_trends">Market Trends</span> <span class="bg-brand-light text-brand-dark text-xs px-2 rounded-full">5</span></li>
-
-                                <li class="hover:text-brand-accent cursor-pointer flex justify-between border-b border-brand-border pb-2"><span data-i18n="blog.troubleshooting">Troubleshooting</span> <span class="bg-brand-light text-brand-dark text-xs px-2 rounded-full">8</span></li>
-
-                                <li class="hover:text-brand-accent cursor-pointer flex justify-between"><span data-i18n="blog.new_products">New Products</span> <span class="bg-brand-light text-brand-dark text-xs px-2 rounded-full">3</span></li>
-
-                            </ul>
-
-                        </div>
-
-
-
-                        <!-- Marketing CTA Widget -->
-
-                        <div class="bg-brand-surface border border-brand-accent/30 p-8 rounded-xl text-center text-brand-dark shadow-sm hover:shadow-md transition relative overflow-hidden">
-
-                            <div class="absolute top-0 right-0 w-32 h-32 bg-brand-accent/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
-
-                            <h3 class="font-bold text-xl mb-2 relative z-10" data-i18n="blog.become_distributor_title">Become a Distributor</h3>
-
-                            <p class="text-sm opacity-90 mb-6 relative z-10" data-i18n="blog.become_distributor_description">Get access to wholesale pricing and marketing materials.</p>
-
-                            <button onclick="navigateTo('contact')" class="bg-brand-cta text-brand-surface px-6 py-3 rounded-full font-bold text-sm shadow-sm hover:shadow-md transition relative z-10 w-full" data-i18n="blog.apply_now">Apply Now</button>
-
-                        </div>
-
-                    </div>
-
                 </div>
 
-                
+                <div id="blog-featured" class="space-y-6"></div>
+
+                <div id="blog-list-area" class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+
+                <p id="blog-no-results" class="hidden text-brand-muted mt-8" data-i18n="blog.no_articles">No articles found.</p>
 
                 <!-- Pagination -->
 
@@ -3208,13 +3176,21 @@ eleventyComputed:
 
                 title: "Avoid the \"Public Mold\" Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls",
 
-                category: "ENGINEERING",
+                category: "Technical Guides",
 
                 summary: "Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation.",
 
                 image: "/assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-01.webp",
 
-                link: "/blog/avoid-public-mold-trap-pcb-quality/"
+                link: "/blog/avoid-public-mold-trap-pcb-quality/",
+
+                date: "Feb 20, 2026",
+
+                author: "GateRemoteSource",
+
+                read_time: "9 Min Read",
+
+                topic: "technical-guides"
 
             },
 
@@ -3222,13 +3198,21 @@ eleventyComputed:
 
                 title: "Top 5 High-Margin Aftermarket Remotes for 2026",
 
-                category: "PROFIT TIPS",
+                category: "Industry News",
 
                 summary: "Which brands have the most demand? We analyze the market data to help you stock right.",
 
                 image: "/assets/factory/smt-line.webp",
 
-                link: "/blog/"
+                link: "/blog/",
+
+                date: "Jan 08, 2026",
+
+                author: "GateRemoteSource",
+
+                read_time: "6 Min Read",
+
+                topic: "industry-news"
 
             },
 
@@ -3236,13 +3220,21 @@ eleventyComputed:
 
                 title: "Universal Receivers: Super Receiver for Old Gates",
 
-                category: "TECHNICAL",
+                category: "Installation Guides",
 
                 summary: "When an old receiver board dies, don't replace the motor. Install our $5 receiver.",
 
                 image: "/assets/factory/qc-pass.webp",
 
-                link: "/blog/"
+                link: "/blog/",
+
+                date: "Dec 12, 2025",
+
+                author: "GateRemoteSource",
+
+                read_time: "5 Min Read",
+
+                topic: "installation-guides"
 
             },
 
@@ -3250,13 +3242,21 @@ eleventyComputed:
 
                 title: "Troubleshooting 433MHz Interference",
 
-                category: "TECHNICAL",
+                category: "RF Basics",
 
                 summary: "Customer complaining about short range? Here is a checklist to identify and fix signal interference on site.",
 
                 image: "/assets/factory/warehouse.webp",
 
-                link: "/blog/"
+                link: "/blog/",
+
+                date: "Nov 22, 2025",
+
+                author: "GateRemoteSource",
+
+                read_time: "7 Min Read",
+
+                topic: "rf-basics"
 
             }
 
@@ -3773,10 +3773,41 @@ eleventyComputed:
 
 
         // Blog Data (Tailored for Installers)
+        function slugify(value) {
+            return (value || '')
+                .toString()
+                .trim()
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-+|-+$/g, '');
+        }
+
+        function mapTopic(category) {
+            const slug = slugify(category);
+            if (!slug) return 'technical-guides';
+            if (slug.includes('case')) return 'case-studies';
+            if (slug.includes('industry') || slug.includes('news') || slug.includes('market')) return 'industry-news';
+            if (slug.includes('rf')) return 'rf-basics';
+            if (slug.includes('install')) return 'installation-guides';
+            if (slug.includes('program')) return 'programming';
+            return 'technical-guides';
+        }
+
+        function normalizePost(post) {
+            const category = post.category || 'Technical Guides';
+            return {
+                ...post,
+                category,
+                author: post.author || 'GateRemoteSource',
+                read_time: post.read_time || '5 Min Read',
+                date: post.date || 'Feb 20, 2026',
+                topic: post.topic || mapTopic(category)
+            };
+        }
 
         function getBlogPosts() {
 
-            const fallback = defaultBlogPosts;
+            const fallback = defaultBlogPosts.map(normalizePost);
 
             if (!translations.blog) return fallback;
 
@@ -3794,7 +3825,15 @@ eleventyComputed:
 
                 image: fallback[0].image,
 
-                link: fallback[0].link || "/blog/avoid-public-mold-trap-pcb-quality/"
+                link: fallback[0].link || "/blog/avoid-public-mold-trap-pcb-quality/",
+
+                date: fallback[0].date,
+
+                author: fallback[0].author,
+
+                read_time: fallback[0].read_time,
+
+                topic: fallback[0].topic
 
             },
 
@@ -3808,7 +3847,15 @@ eleventyComputed:
 
                 image: fallback[1].image,
 
-                link: fallback[1].link || "/blog/"
+                link: fallback[1].link || "/blog/",
+
+                date: fallback[1].date,
+
+                author: fallback[1].author,
+
+                read_time: fallback[1].read_time,
+
+                topic: fallback[1].topic
 
             },
 
@@ -3822,7 +3869,15 @@ eleventyComputed:
 
                 image: fallback[2].image,
 
-                link: fallback[2].link || "/blog/"
+                link: fallback[2].link || "/blog/",
+
+                date: fallback[2].date,
+
+                author: fallback[2].author,
+
+                read_time: fallback[2].read_time,
+
+                topic: fallback[2].topic
 
             },
 
@@ -3836,11 +3891,19 @@ eleventyComputed:
 
                 image: fallback[3].image,
 
-                link: fallback[3].link || "/blog/"
+                link: fallback[3].link || "/blog/",
+
+                date: fallback[3].date,
+
+                author: fallback[3].author,
+
+                read_time: fallback[3].read_time,
+
+                topic: fallback[3].topic
 
             }
 
-        ];
+        ].map(normalizePost);
 
         }
 
@@ -3894,79 +3957,149 @@ eleventyComputed:
 
             
 
-            // Blog Page List (Rich)
+            // Blog Page List (Silicon Labs layout)
 
+            const featuredContainer = document.getElementById('blog-featured');
             const listArea = document.getElementById('blog-list-area');
             const pagination = document.getElementById('blog-pagination');
-            const pageSize = 3;
+            const emptyState = document.getElementById('blog-no-results');
+            const pageSize = 9;
             let currentPage = 1;
             let filteredPosts = posts;
 
-            
+            const topicButtons = Array.from(document.querySelectorAll('.topic-filter-btn'));
+            const searchInput = document.getElementById('blogSearch');
 
-            window.filterBlogs = function() {
-
-                const searchInput = document.getElementById('blogSearch');
-                const query = searchInput ? searchInput.value.toLowerCase() : '';
-                filteredPosts = posts.filter(post => 
-
-                    post.title.toLowerCase().includes(query) || 
-
-                    post.summary.toLowerCase().includes(query)
-
-                );
-
-                currentPage = 1;
-                renderPage();
-
+            function getActiveTopic() {
+                const activeBtn = topicButtons.find((btn) => btn.classList.contains('active'));
+                return activeBtn ? activeBtn.dataset.topic : 'all';
             }
 
+            function matchesTopic(post, activeTopic) {
+                if (activeTopic === 'all') return true;
+                const topics = Array.isArray(post.topic) ? post.topic : [post.topic];
+                const category = slugify(post.category);
+                const tokens = new Set([...topics, category].filter(Boolean));
+                return tokens.has(activeTopic);
+            }
 
+            function matchesSearch(post, query) {
+                if (!query) return true;
+                const haystack = [
+                    post.title,
+                    post.summary,
+                    post.category,
+                    post.author
+                ].join(' ').toLowerCase();
+                return haystack.includes(query);
+            }
 
-            function renderList(items) {
+            function formatMeta(post) {
+                const date = post.date || '';
+                const author = post.author || 'GateRemoteSource';
+                const readTime = post.read_time || '5 Min Read';
+                return `${date} | ${author} | ${readTime}`;
+            }
 
-                if (listArea) {
+            function applyFilters() {
+                const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+                const activeTopic = getActiveTopic();
+                filteredPosts = posts.filter((post) => matchesTopic(post, activeTopic) && matchesSearch(post, query));
+                currentPage = 1;
+                renderPage();
+            }
 
-                    if(items.length === 0) {
+            window.filterBlogs = function() {
+                applyFilters();
+            }
 
-                        listArea.innerHTML = `<p class="text-brand-muted">${noArticlesLabel}</p>`;
-
-                        return;
-
-                    }
-
-                    listArea.innerHTML = items.map(post => `
-
-                        <article class="flex flex-col md:flex-row gap-6 bg-brand-surface p-6 rounded-xl border border-brand-border hover:border-brand-accent transition group">
-
-                            <div class="w-full md:w-48 h-48 md:h-32 flex-shrink-0 rounded-lg overflow-hidden relative">
-
-                        <img loading="lazy" decoding="async" src="${post.image}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-
-                            </div>
-
-                            <div class="flex-1 flex flex-col justify-center">
-
-                                <div class="flex items-center gap-3 mb-2">
-
-                                    <span class="text-xs font-bold text-brand-accent uppercase tracking-wider bg-brand-dark/70 backdrop-blur px-2 py-1 rounded">${post.category}</span>
-
-                                </div>
-
-                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand-accent transition">${post.title}</h3>
-
-                                <p class="text-brand-muted text-sm mb-2 line-clamp-2">${post.summary}</p>
-
-                                <a href="${localizeBlogLink(post.link || '/blog/')}" class="text-brand-accent font-bold text-sm hover:text-white inline-flex items-center">${readArticleLabel} <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
-
-                            </div>
-
-                        </article>
-
-                    `).join('');
-
+            function renderFeatured(featuredPosts) {
+                if (!featuredContainer) return;
+                if (!featuredPosts.length) {
+                    featuredContainer.innerHTML = '';
+                    return;
                 }
 
+                const primary = featuredPosts[0];
+                const secondary = featuredPosts.slice(1, 3);
+
+                const primaryMarkup = `
+                    <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group">
+                        <div class="grid grid-cols-1 md:grid-cols-2">
+                            <div class="relative min-h-[240px] overflow-hidden">
+                                <img src="${primary.image}" alt="${primary.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="p-6 flex flex-col gap-3">
+                                <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">${primary.category}</span>
+                                <h2 class="text-2xl md:text-3xl font-bold text-brand-dark leading-tight">${primary.title}</h2>
+                                <div class="text-xs text-brand-muted">${formatMeta(primary)}</div>
+                                <p class="text-brand-muted text-sm leading-relaxed line-clamp-3 flex-1">${primary.summary}</p>
+                                <a href="${localizeBlogLink(primary.link || '/blog/')}" class="mt-auto inline-flex items-center text-brand-accent font-semibold hover:text-brand-hover transition-colors text-sm">
+                                    ${readArticleLabel}
+                                    <i class="fa-solid fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                `;
+
+                if (secondary.length) {
+                    const secondaryMarkup = secondary.map(post => `
+                        <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group">
+                            <div class="relative h-44 overflow-hidden">
+                                <img loading="lazy" decoding="async" src="${post.image}" alt="${post.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="p-5 flex flex-col gap-3 flex-1">
+                                <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">${post.category}</span>
+                                <h3 class="text-lg font-bold text-brand-dark leading-tight">${post.title}</h3>
+                                <div class="text-xs text-brand-muted">${formatMeta(post)}</div>
+                                <p class="text-brand-muted text-sm line-clamp-2 flex-1">${post.summary}</p>
+                                <a href="${localizeBlogLink(post.link || '/blog/')}" class="mt-auto inline-flex items-center text-brand-accent font-semibold hover:text-brand-hover transition-colors text-sm">
+                                    ${readArticleLabel}
+                                    <i class="fa-solid fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </article>
+                    `).join('');
+
+                    featuredContainer.innerHTML = `
+                        <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] gap-6">
+                            ${primaryMarkup}
+                            <div class="grid grid-cols-1 gap-6">
+                                ${secondaryMarkup}
+                            </div>
+                        </div>
+                    `;
+                    return;
+                }
+
+                featuredContainer.innerHTML = primaryMarkup;
+            }
+
+            function renderGrid(items) {
+                if (!listArea) return;
+                if (!items.length) {
+                    listArea.innerHTML = '';
+                    return;
+                }
+
+                listArea.innerHTML = items.map(post => `
+                    <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group">
+                        <div class="relative h-48 overflow-hidden">
+                            <img loading="lazy" decoding="async" src="${post.image}" alt="${post.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-5 flex flex-col gap-3 flex-1">
+                            <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">${post.category}</span>
+                            <h3 class="text-lg font-bold text-brand-dark leading-tight">${post.title}</h3>
+                            <div class="text-xs text-brand-muted">${formatMeta(post)}</div>
+                            <p class="text-brand-muted text-sm line-clamp-3 flex-1">${post.summary}</p>
+                            <a href="${localizeBlogLink(post.link || '/blog/')}" class="mt-auto inline-flex items-center text-brand-accent font-semibold hover:text-brand-hover transition-colors text-sm">
+                                ${readArticleLabel}
+                                <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </article>
+                `).join('');
             }
 
             function renderPagination(totalPages) {
@@ -3975,7 +4108,7 @@ eleventyComputed:
                 if (totalPages <= 1) return;
 
                 const activeClass = 'w-10 h-10 rounded-lg bg-brand-accent text-white font-bold flex items-center justify-center';
-                const inactiveClass = 'w-10 h-10 rounded-lg bg-brand-dark/70 backdrop-blur border border-brand-dark/60 text-brand-light/70 hover:border-brand-accent hover:text-brand-light transition flex items-center justify-center';
+                const inactiveClass = 'w-10 h-10 rounded-lg bg-brand-surface border border-brand-border/60 text-brand-muted hover:border-brand-accent hover:text-brand-dark transition flex items-center justify-center';
 
                 for (let page = 1; page <= totalPages; page += 1) {
                     const btn = document.createElement('button');
@@ -3993,35 +4126,41 @@ eleventyComputed:
                     }
                     pagination.appendChild(btn);
                 }
-
-                const nextBtn = document.createElement('button');
-                nextBtn.type = 'button';
-                nextBtn.className = inactiveClass;
-                nextBtn.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
-                nextBtn.setAttribute('aria-label', 'Next page');
-                if (currentPage >= totalPages) {
-                    nextBtn.disabled = true;
-                    nextBtn.classList.add('opacity-50', 'cursor-default');
-                } else {
-                    nextBtn.addEventListener('click', () => {
-                        currentPage += 1;
-                        renderPage();
-                    });
-                }
-                pagination.appendChild(nextBtn);
             }
 
             function renderPage() {
-                const totalPages = Math.max(1, Math.ceil(filteredPosts.length / pageSize));
+                const featuredCount = Math.min(3, filteredPosts.length);
+                const showFeatured = currentPage === 1 && filteredPosts.length > 0;
+                const featuredPosts = showFeatured ? filteredPosts.slice(0, featuredCount) : [];
+                const gridSource = filteredPosts.slice(featuredCount);
+                const totalPages = Math.max(1, Math.ceil(gridSource.length / pageSize));
                 if (currentPage > totalPages) currentPage = totalPages;
                 const start = (currentPage - 1) * pageSize;
-                const pageItems = filteredPosts.slice(start, start + pageSize);
-                renderList(pageItems);
+                const pageItems = gridSource.slice(start, start + pageSize);
+                renderFeatured(featuredPosts);
+                renderGrid(pageItems);
                 renderPagination(totalPages);
+                if (emptyState) {
+                    emptyState.classList.toggle('hidden', filteredPosts.length > 0);
+                }
                 attachCtaTracking();
             }
 
-            renderPage();
+            topicButtons.forEach((btn) => {
+                if (btn.dataset.bound === 'true') return;
+                btn.addEventListener('click', () => {
+                    topicButtons.forEach((button) => {
+                        button.classList.remove('active');
+                        button.setAttribute('aria-pressed', 'false');
+                    });
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-pressed', 'true');
+                    applyFilters();
+                });
+                btn.dataset.bound = 'true';
+            });
+
+            applyFilters();
 
         }
 
