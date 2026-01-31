@@ -47,7 +47,7 @@ lang: en
                 "description": "{{ featured.data.summary | escape }}",
                 "image": "{{ site.url }}{{ featured.data.hero_image }}",
                 "author": {
-                    "@type": "Organization",
+                    "@type": "Person",
                     "name": "{{ featured.data.author }}"
                 },
                 "datePublished": "{{ featured.date | htmlDate }}",
@@ -125,7 +125,7 @@ lang: en
     <link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon-16.png?v=1">
     <link rel="apple-touch-icon" sizes="180x180" href="/logo/apple-touch-icon.png?v=1">
     <link rel="manifest" href="/site.webmanifest?v=1">
-    <meta name="theme-color" content="#007BFF">
+    <meta name="theme-color" content="#0071E3">
 
     <!-- Critical CSS inline -->
     <link rel="preload" href="/assets/css/tailwind.css" as="style">
@@ -323,16 +323,11 @@ lang: en
             transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Smooth image loading */
-        img {
+        /* Smooth image loading - Only for loading images */
+        img:not([src]) {
             background: linear-gradient(90deg, #F5F5F7 0%, #E8E8ED 50%, #F5F5F7 100%);
             background-size: 200% 100%;
             animation: shimmer 1.5s infinite;
-        }
-
-        img[src] {
-            animation: none;
-            background: transparent;
         }
 
         @keyframes shimmer {
@@ -383,7 +378,7 @@ lang: en
                                 </a>
                                 <a href="#" onclick="changeLanguage('es')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition" role="menuitem" lang="es">
                                     <span class="text-xs font-semibold">ES</span>
-                                    <span class="text-brand-dark">Espanol</span>
+                                    <span class="text-brand-dark">Español</span>
                                 </a>
                                 <a href="#" onclick="changeLanguage('de')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition" role="menuitem" lang="de">
                                     <span class="text-xs font-semibold">DE</span>
@@ -395,11 +390,11 @@ lang: en
                                 </a>
                                 <a href="#" onclick="changeLanguage('fr')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition" role="menuitem" lang="fr">
                                     <span class="text-xs font-semibold">FR</span>
-                                    <span class="text-brand-dark">Francais</span>
+                                    <span class="text-brand-dark">Français</span>
                                 </a>
                                 <a href="#" onclick="changeLanguage('pt')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition" role="menuitem" lang="pt">
                                     <span class="text-xs font-semibold">PT</span>
-                                    <span class="text-brand-dark">Portugues</span>
+                                    <span class="text-brand-dark">Português</span>
                                 </a>
                             </div>
                         </div>
@@ -444,7 +439,7 @@ lang: en
     </nav>
 
     <!-- Main Content -->
-    <main id="main-content" class="pt-16 pb-20 bg-white min-h-screen" role="main">
+    <main id="main-content" class="pt-16 pb-20 bg-white min-h-screen scroll-mt-16" role="main">
         <!-- Topic Filter Navigation Bar -->
         <section class="border-b border-brand-border/60 bg-brand-light sticky top-16 z-40" aria-label="Article filters">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -837,11 +832,11 @@ lang: en
 
             const langNames = {
                 'en': 'English',
-                'es': 'Espanol',
+                'es': 'Español',
                 'de': 'Deutsch',
                 'it': 'Italiano',
-                'fr': 'Francais',
-                'pt': 'Portugues'
+                'fr': 'Français',
+                'pt': 'Português'
             };
 
             const flagElement = document.getElementById('currentFlag');
