@@ -220,6 +220,16 @@
             opacity: 1;
             visibility: visible;
         }
+
+        /* Hard safety rail for footer logo rendering */
+        .site-footer-logo-icon {
+            width: 32px;
+            height: 32px;
+            max-width: 32px;
+            max-height: 32px;
+            object-fit: contain;
+            display: block;
+        }
     </style>
 </head>
 <body class="font-sans text-brand-dark/80 bg-brand-light backdrop-blur selection:bg-brand-accent selection:text-white flex flex-col min-h-screen">
@@ -493,7 +503,7 @@
     <footer class="bg-brand-light backdrop-blur border-t border-brand-border py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-brand-dark/80">
             <div class="flex items-center gap-2 text-brand-dark">
-                <img src="/logo/logo.png" width="32" height="32" alt="GateRemoteSource logo" class="h-8 w-auto object-contain">
+                <img src="/logo/logo.png" width="32" height="32" alt="GateRemoteSource logo" class="site-footer-logo-icon h-8 w-auto object-contain">
                 <span class="font-bold">GateRemote<span class="text-brand-accent">Source</span></span>
             </div>
             <div class="flex items-center gap-4">

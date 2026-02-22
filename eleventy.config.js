@@ -101,6 +101,7 @@ const safeImagePath = (value, fallback = "/assets/factory/team.webp") => {
 
   const normalized = path.posix.normalize(trimmed);
   if (!normalized.startsWith("/")) return fallback;
+  if (normalized.startsWith("/logo/")) return fallback;
 
   const absolutePath = path.join(process.cwd(), normalized.slice(1));
   return fs.existsSync(absolutePath) ? normalized : fallback;

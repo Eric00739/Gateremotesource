@@ -124,6 +124,53 @@
             border-color: #0071E3;
             color: #ffffff;
         }
+
+        /* Hard safety rails for blog logo and card media rendering */
+        .site-logo-frame {
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+            min-height: 28px;
+        }
+
+        .site-logo-icon {
+            width: 100%;
+            height: 100%;
+            max-width: 28px;
+            max-height: 28px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .site-footer-logo-icon {
+            width: 40px;
+            height: 40px;
+            max-width: 40px;
+            max-height: 40px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .blog-card-media {
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+
+        .blog-card-media--sm {
+            min-height: 176px;
+        }
+
+        .blog-card-media--grid {
+            min-height: 192px;
+        }
+
+        .blog-card-media > img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            display: block;
+        }
     </style>
 </head>
 <body class="font-sans text-brand-dark/80 bg-brand-light backdrop-blur selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="blog">
@@ -132,8 +179,8 @@
             <div class="flex justify-between items-center h-20">
                         <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
                             <a href="/" class="flex items-center gap-3">
-                                <div class="bg-brand-surface border border-brand-border/50 p-1 rounded-lg h-7 w-7 flex items-center justify-center shadow-sm hover:shadow-md transition-shadow duration-200">
-                                    <img src="/logo/logo.png" width="28" height="28" alt="GateRemoteSource Logo" class="h-full w-full object-contain">
+                                <div class="site-logo-frame bg-brand-surface border border-brand-border/50 p-1 rounded-lg h-7 w-7 flex items-center justify-center shadow-sm hover:shadow-md transition-shadow duration-200">
+                                    <img src="/logo/logo.png" width="28" height="28" alt="GateRemoteSource Logo" class="site-logo-icon h-full w-full object-contain">
                                 </div>
                                 <span class="font-bold text-lg text-brand-dark tracking-tight">GateRemote<span class="text-brand-accent">Source</span></span>
                             </a>
@@ -276,7 +323,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] gap-6">
                     <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="{{ primaryFeatured.data.title | escape }}" data-summary="{{ primaryFeatured.data.summary | escape }}" data-category="{{ primaryFeatured.data.category | slugify }}" data-tags="{{ primaryFeatured.data.tags | contentTags | joinSlugList }}" data-author="{{ primaryFeatured.data.author | default('GateRemoteSource') | escape }}">
                         <div class="grid grid-cols-1 md:grid-cols-2">
-                            <div class="relative min-h-[220px] overflow-hidden">
+                            <div class="blog-card-media relative min-h-[220px] overflow-hidden">
                                 <img src="{{ primaryFeatured.data.hero_image | safeImage(defaultCardImage) }}" alt="{{ primaryFeatured.data.hero_alt or primaryFeatured.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             </div>
                             <div class="p-6 flex flex-col gap-3">
@@ -291,7 +338,7 @@
                     <div class="grid grid-cols-1 gap-6">
                         {% for post in secondaryFeatured %}
                         <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="{{ post.data.title | escape }}" data-summary="{{ post.data.summary | escape }}" data-category="{{ post.data.category | slugify }}" data-tags="{{ post.data.tags | contentTags | joinSlugList }}" data-author="{{ post.data.author | default('GateRemoteSource') | escape }}">
-                            <div class="relative h-44 overflow-hidden">
+                            <div class="blog-card-media blog-card-media--sm relative h-44 overflow-hidden">
                                 <img loading="lazy" decoding="async" src="{{ post.data.hero_image | safeImage(defaultCardImage) }}" alt="{{ post.data.hero_alt or post.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             </div>
                             <div class="p-5 flex flex-col gap-3 flex-1">
@@ -308,7 +355,7 @@
                 {% else %}
                 <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="{{ primaryFeatured.data.title | escape }}" data-summary="{{ primaryFeatured.data.summary | escape }}" data-category="{{ primaryFeatured.data.category | slugify }}" data-tags="{{ primaryFeatured.data.tags | contentTags | joinSlugList }}" data-author="{{ primaryFeatured.data.author | default('GateRemoteSource') | escape }}">
                     <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="relative min-h-[220px] overflow-hidden">
+                        <div class="blog-card-media relative min-h-[220px] overflow-hidden">
                             <img src="{{ primaryFeatured.data.hero_image | safeImage(defaultCardImage) }}" alt="{{ primaryFeatured.data.hero_alt or primaryFeatured.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         </div>
                         <div class="p-6 flex flex-col gap-3">
@@ -330,7 +377,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {% for post in gridPosts %}
                     <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="{{ post.data.title | escape }}" data-summary="{{ post.data.summary | escape }}" data-category="{{ post.data.category | slugify }}" data-tags="{{ post.data.tags | contentTags | joinSlugList }}" data-author="{{ post.data.author | default('GateRemoteSource') | escape }}">
-                        <div class="relative h-48 overflow-hidden">
+                        <div class="blog-card-media blog-card-media--grid relative h-48 overflow-hidden">
                             <img loading="lazy" decoding="async" src="{{ post.data.hero_image | safeImage(defaultCardImage) }}" alt="{{ post.data.hero_alt or post.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         </div>
                         <div class="p-5 flex flex-col gap-3 flex-1">
@@ -402,7 +449,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <div>
                     <div class="flex items-center gap-3 mb-4 text-brand-dark">
-                        <img src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="h-10 w-auto object-contain">
+                        <img src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="site-footer-logo-icon h-10 w-auto object-contain">
                     </div>
                     <p class="mb-4 text-brand-muted/70" data-i18n="footer.company_description">Your Profit Partner in Access Control. Supplying locksmiths worldwide.</p>
                 </div>
