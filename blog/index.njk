@@ -45,7 +45,7 @@ lang: en
                 "@id": "{{ site.url }}{{ featured.url | canonicalPath }}",
                 "headline": "{{ featured.data.title | escape }}",
                 "description": "{{ featured.data.summary | escape }}",
-                "image": "{{ site.url }}{{ featured.data.hero_image }}",
+                "image": "{{ site.url }}{{ featured.data.hero_image | safeImage('/assets/factory/team.webp') }}",
                 "author": {
                     "@type": "Person",
                     "name": "{{ featured.data.author }}"
@@ -61,7 +61,7 @@ lang: en
                 "@id": "{{ site.url }}{{ post.url | canonicalPath }}",
                 "headline": "{{ post.data.title | escape }}",
                 "description": "{{ post.data.summary | escape }}",
-                "image": "{{ site.url }}{{ post.data.hero_image }}",
+                "image": "{{ site.url }}{{ post.data.hero_image | safeImage('/assets/factory/team.webp') }}",
                 "author": {
                     "@type": "Organization",
                     "name": "{{ post.data.author }}"
@@ -507,6 +507,7 @@ lang: en
         {% endif %}
         {% set secondaryFeatured = [] %}
         {% set gridPosts = visiblePosts %}
+        {% set defaultCardImage = '/assets/factory/team.webp' %}
         {% if pagination.pageNumber == 0 %}
             {% set secondaryFeatured = visiblePosts | slice(0, 2) %}
             {% set gridPosts = visiblePosts | slice(2) %}
@@ -521,7 +522,7 @@ lang: en
                     <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="{{ primaryFeatured.data.title | escape }}" data-summary="{{ primaryFeatured.data.summary | escape }}" data-category="{{ primaryFeatured.data.category | slugify }}" data-tags="{{ primaryFeatured.data.tags | contentTags | joinSlugList }}" data-author="{{ primaryFeatured.data.author | default('GateRemoteSource') | escape }}">
                         <div class="grid grid-cols-1 md:grid-cols-2">
                             <div class="relative min-h-[240px] overflow-hidden">
-                                <img src="{{ primaryFeatured.data.hero_image }}" alt="{{ primaryFeatured.data.hero_alt or primaryFeatured.data.title }}" width="800" height="520" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" fetchpriority="high">
+                                <img src="{{ primaryFeatured.data.hero_image | safeImage(defaultCardImage) }}" alt="{{ primaryFeatured.data.hero_alt or primaryFeatured.data.title }}" width="800" height="520" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" fetchpriority="high">
                             </div>
                             <div class="p-6 flex flex-col gap-3">
                                 <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">{{ primaryFeatured.data.category }}</span>
@@ -541,7 +542,7 @@ lang: en
                         {% for post in secondaryFeatured %}
                         <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="{{ post.data.title | escape }}" data-summary="{{ post.data.summary | escape }}" data-category="{{ post.data.category | slugify }}" data-tags="{{ post.data.tags | contentTags | joinSlugList }}" data-author="{{ post.data.author | default('GateRemoteSource') | escape }}">
                             <div class="relative h-44 overflow-hidden">
-                                <img loading="lazy" decoding="async" src="{{ post.data.hero_image }}" alt="{{ post.data.hero_alt or post.data.title }}" width="640" height="400" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <img loading="lazy" decoding="async" src="{{ post.data.hero_image | safeImage(defaultCardImage) }}" alt="{{ post.data.hero_alt or post.data.title }}" width="640" height="400" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             </div>
                             <div class="p-5 flex flex-col gap-3 flex-1">
                                 <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">{{ post.data.category }}</span>
@@ -563,7 +564,7 @@ lang: en
                 <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="{{ primaryFeatured.data.title | escape }}" data-summary="{{ primaryFeatured.data.summary | escape }}" data-category="{{ primaryFeatured.data.category | slugify }}" data-tags="{{ primaryFeatured.data.tags | contentTags | joinSlugList }}" data-author="{{ primaryFeatured.data.author | default('GateRemoteSource') | escape }}">
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div class="relative min-h-[240px] overflow-hidden">
-                            <img src="{{ primaryFeatured.data.hero_image }}" alt="{{ primaryFeatured.data.hero_alt or primaryFeatured.data.title }}" width="800" height="520" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" fetchpriority="high">
+                            <img src="{{ primaryFeatured.data.hero_image | safeImage(defaultCardImage) }}" alt="{{ primaryFeatured.data.hero_alt or primaryFeatured.data.title }}" width="800" height="520" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" fetchpriority="high">
                         </div>
                         <div class="p-6 flex flex-col gap-3">
                             <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">{{ primaryFeatured.data.category }}</span>
@@ -592,7 +593,7 @@ lang: en
                     {% for post in gridPosts %}
                     <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="{{ post.data.title | escape }}" data-summary="{{ post.data.summary | escape }}" data-category="{{ post.data.category | slugify }}" data-tags="{{ post.data.tags | contentTags | joinSlugList }}" data-author="{{ post.data.author | default('GateRemoteSource') | escape }}">
                         <div class="relative h-48 overflow-hidden">
-                            <img loading="lazy" decoding="async" src="{{ post.data.hero_image }}" alt="{{ post.data.hero_alt or post.data.title }}" width="640" height="400" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                            <img loading="lazy" decoding="async" src="{{ post.data.hero_image | safeImage(defaultCardImage) }}" alt="{{ post.data.hero_alt or post.data.title }}" width="640" height="400" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
                         </div>
                         <div class="p-5 flex flex-col gap-3 flex-1">
                             <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">{{ post.data.category }}</span>

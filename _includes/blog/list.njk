@@ -263,6 +263,7 @@
         {% endif %}
         {% set secondaryFeatured = [] %}
         {% set gridPosts = visiblePosts %}
+        {% set defaultCardImage = '/assets/factory/team.webp' %}
         {% if pagination.pageNumber == 0 %}
             {% set secondaryFeatured = visiblePosts | slice(0, 2) %}
             {% set gridPosts = visiblePosts | slice(2) %}
@@ -276,7 +277,7 @@
                     <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="{{ primaryFeatured.data.title | escape }}" data-summary="{{ primaryFeatured.data.summary | escape }}" data-category="{{ primaryFeatured.data.category | slugify }}" data-tags="{{ primaryFeatured.data.tags | contentTags | joinSlugList }}" data-author="{{ primaryFeatured.data.author | default('GateRemoteSource') | escape }}">
                         <div class="grid grid-cols-1 md:grid-cols-2">
                             <div class="relative min-h-[220px] overflow-hidden">
-                                <img src="{{ primaryFeatured.data.hero_image }}" alt="{{ primaryFeatured.data.hero_alt or primaryFeatured.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <img src="{{ primaryFeatured.data.hero_image | safeImage(defaultCardImage) }}" alt="{{ primaryFeatured.data.hero_alt or primaryFeatured.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             </div>
                             <div class="p-6 flex flex-col gap-3">
                                 <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">{{ primaryFeatured.data.category }}</span>
@@ -291,7 +292,7 @@
                         {% for post in secondaryFeatured %}
                         <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="{{ post.data.title | escape }}" data-summary="{{ post.data.summary | escape }}" data-category="{{ post.data.category | slugify }}" data-tags="{{ post.data.tags | contentTags | joinSlugList }}" data-author="{{ post.data.author | default('GateRemoteSource') | escape }}">
                             <div class="relative h-44 overflow-hidden">
-                                <img loading="lazy" decoding="async" src="{{ post.data.hero_image }}" alt="{{ post.data.hero_alt or post.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <img loading="lazy" decoding="async" src="{{ post.data.hero_image | safeImage(defaultCardImage) }}" alt="{{ post.data.hero_alt or post.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             </div>
                             <div class="p-5 flex flex-col gap-3 flex-1">
                                 <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">{{ post.data.category }}</span>
@@ -308,7 +309,7 @@
                 <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="{{ primaryFeatured.data.title | escape }}" data-summary="{{ primaryFeatured.data.summary | escape }}" data-category="{{ primaryFeatured.data.category | slugify }}" data-tags="{{ primaryFeatured.data.tags | contentTags | joinSlugList }}" data-author="{{ primaryFeatured.data.author | default('GateRemoteSource') | escape }}">
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div class="relative min-h-[220px] overflow-hidden">
-                            <img src="{{ primaryFeatured.data.hero_image }}" alt="{{ primaryFeatured.data.hero_alt or primaryFeatured.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <img src="{{ primaryFeatured.data.hero_image | safeImage(defaultCardImage) }}" alt="{{ primaryFeatured.data.hero_alt or primaryFeatured.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         </div>
                         <div class="p-6 flex flex-col gap-3">
                             <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">{{ primaryFeatured.data.category }}</span>
@@ -330,7 +331,7 @@
                     {% for post in gridPosts %}
                     <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="{{ post.data.title | escape }}" data-summary="{{ post.data.summary | escape }}" data-category="{{ post.data.category | slugify }}" data-tags="{{ post.data.tags | contentTags | joinSlugList }}" data-author="{{ post.data.author | default('GateRemoteSource') | escape }}">
                         <div class="relative h-48 overflow-hidden">
-                            <img loading="lazy" decoding="async" src="{{ post.data.hero_image }}" alt="{{ post.data.hero_alt or post.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <img loading="lazy" decoding="async" src="{{ post.data.hero_image | safeImage(defaultCardImage) }}" alt="{{ post.data.hero_alt or post.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         </div>
                         <div class="p-5 flex flex-col gap-3 flex-1">
                             <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">{{ post.data.category }}</span>
@@ -401,7 +402,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <div>
                     <div class="flex items-center gap-3 mb-4 text-brand-dark">
-                        <img src="/logo/logo.png" width="1024" height="1024" alt="GateRemoteSource logo" class="h-10 w-auto object-contain">
+                        <img src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="h-10 w-auto object-contain">
                     </div>
                     <p class="mb-4 text-brand-muted/70" data-i18n="footer.company_description">Your Profit Partner in Access Control. Supplying locksmiths worldwide.</p>
                 </div>

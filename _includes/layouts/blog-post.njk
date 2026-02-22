@@ -9,7 +9,7 @@
     {% set keywordString = keywordItems | unique | join(', ') %}
     {% set contentTags = tags | contentTags %}
     {% set canonicalUrl = site.url ~ (page.url | canonicalPath) %}
-    {% set defaultHero = hero_image or '/logo/logo.png' %}
+    {% set defaultHero = hero_image | safeImage('/assets/factory/team.webp') %}
     {% set ogImages = (og_images or defaultHero) | asArray %}
     {% set ogPrimary = ogImages[0] %}
     {% if ogPrimary.url %}
@@ -53,10 +53,10 @@
     <meta property="og:url" content="{{ canonicalUrl }}">
     {% for image in ogImages %}
     {% if image.url %}
-    {% set imagePath = image.url %}
+    {% set imagePath = image.url | safeImage('/assets/factory/team.webp') %}
     {% set imageAlt = image.alt or hero_alt or title %}
     {% else %}
-    {% set imagePath = image %}
+    {% set imagePath = image | safeImage('/assets/factory/team.webp') %}
     {% set imageAlt = hero_alt or title %}
     {% endif %}
     <meta property="og:image" content="{{ site.url ~ imagePath }}">
@@ -316,7 +316,7 @@
                         
                         {% if hero_image %}
                         <figure class="img-frame">
-                            <img loading="lazy" decoding="async" src="{{ hero_image }}" alt="{{ hero_alt or title }}">
+                            <img loading="lazy" decoding="async" src="{{ hero_image | safeImage('/assets/factory/team.webp') }}" alt="{{ hero_alt or title }}">
                             {% if hero_caption %}
                             <figcaption class="text-center text-brand-muted text-sm mt-3">{{ hero_caption }}</figcaption>
                             {% endif %}
@@ -493,7 +493,7 @@
     <footer class="bg-brand-light backdrop-blur border-t border-brand-border py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-brand-dark/80">
             <div class="flex items-center gap-2 text-brand-dark">
-                <img src="/logo/logo.png" width="1024" height="1024" alt="GateRemoteSource logo" class="h-8 w-auto object-contain">
+                <img src="/logo/logo.png" width="32" height="32" alt="GateRemoteSource logo" class="h-8 w-auto object-contain">
                 <span class="font-bold">GateRemote<span class="text-brand-accent">Source</span></span>
             </div>
             <div class="flex items-center gap-4">

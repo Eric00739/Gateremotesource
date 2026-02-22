@@ -1,4 +1,6 @@
 const { parse } = require("node-html-parser");
+const fs = require("fs");
+const path = require("path");
 const i18n = require("./_data/i18n");
 const seo = require("./_data/seo");
 
@@ -86,6 +88,24 @@ const slugify = (value) => {
     .replace(/(^-|-$)+/g, "");
 };
 
+const isExternalAsset = (value) => {
+  return /^https?:\/\//i.test(value) || value.startsWith("//") || value.startsWith("data:");
+};
+
+const safeImagePath = (value, fallback = "/assets/factory/team.webp") => {
+  if (!value || typeof value !== "string") return fallback;
+  const trimmed = value.trim();
+  if (!trimmed) return fallback;
+  if (isExternalAsset(trimmed)) return trimmed;
+  if (!trimmed.startsWith("/")) return fallback;
+
+  const normalized = path.posix.normalize(trimmed);
+  if (!normalized.startsWith("/")) return fallback;
+
+  const absolutePath = path.join(process.cwd(), normalized.slice(1));
+  return fs.existsSync(absolutePath) ? normalized : fallback;
+};
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy("logo");
@@ -167,6 +187,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("canonicalPath", canonicalPath);
+  eleventyConfig.addFilter("safeImage", (value, fallback) => safeImagePath(value, fallback));
 
   eleventyConfig.addFilter("asArray", (value) => {
     if (!value) return [];
