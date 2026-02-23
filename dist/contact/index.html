@@ -54,9 +54,61 @@
     <meta property="og:description" content="Request pricing, MOQs, and shipping options. WhatsApp/Email support for installers and locksmith distributors. Typical response under 24h.">
     <meta property="og:url" content="https://www.gateremotesource.com/contact/">
     <meta property="og:image" content="https://www.gateremotesource.com/logo/logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:title" content="Contact GateRemoteSource | Wholesale Quotes & Support">
     <meta name="twitter:description" content="Request pricing, MOQs, and shipping options. WhatsApp/Email support for installers and locksmith distributors. Typical response under 24h.">
     <meta name="twitter:image" content="https://www.gateremotesource.com/logo/logo.png">
+    <meta name="theme-color" content="#0071E3">
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "GateRemoteSource",
+      "url": "https://www.gateremotesource.com",
+      "logo": "https://www.gateremotesource.com/logo/logo.png",
+      "description": "Your Profit Partner in Access Control. Supplying locksmiths worldwide with brand-compatible remotes and universal receivers.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Huawei Kegu Industrial Park, Dalingshan Town",
+        "addressLocality": "Dongguan",
+        "addressRegion": "Guangdong",
+        "addressCountry": "CN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+86-158-9964-8898",
+        "contactType": "sales",
+        "email": "sales@gateremotesource.com",
+        "availableLanguage": ["English", "Spanish", "German", "Italian", "French", "Portuguese"]
+      },
+      "sameAs": [
+        "https://wa.me/8615899648898"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact GateRemoteSource",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "GateRemoteSource",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+86-158-9964-8898",
+          "contactType": "sales",
+          "email": "sales@gateremotesource.com",
+          "areaServed": ["Global"],
+          "availableLanguage": ["English", "Spanish", "German", "Italian", "French", "Portuguese"]
+        }
+      }
+    }
+    </script>
 
     
     <link rel="icon" type="image/x-icon" href="/logo/favicon.ico?v=1">
@@ -67,6 +119,9 @@
 
     
     <link rel="preconnect" href="https://www.googletagmanager.com">
+
+    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
 
     
     <link rel="preload" href="/assets/css/tailwind.css" as="style">
@@ -94,11 +149,28 @@
     </script>
 
     <style>
+        /* Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #0071E3;
+            color: white;
+            padding: 10px 16px;
+            z-index: 100;
+            transition: top 0.3s;
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
         /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: #1D1D1F; }
-        ::-webkit-scrollbar-thumb { background: #6E6E73; border-radius: 5px; }
-        ::-webkit-scrollbar-thumb:hover { background: #0A84FF; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(0, 113, 227, 0.3); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(0, 113, 227, 0.5); }
 
         /* Glass navigation */
         .nav-glass {
@@ -123,9 +195,17 @@
             outline: none;
         }
         .lang-select option { background-color: #1D1D1F; color: white; }
+
+        /* Focus visible styles */
+        *:focus-visible {
+            outline: 2px solid #0071E3;
+            outline-offset: 2px;
+        }
     </style>
 </head>
 <body class="font-sans text-brand-dark/80 bg-brand-light backdrop-blur selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="contact">
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     
     <nav class="fixed w-full z-50 nav-glass transition-all duration-300">
@@ -135,7 +215,7 @@
                 <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
                     <a href="/" class="flex items-center gap-3">
                         <div class="bg-brand-surface border border-brand-border/60 p-1.5 rounded-lg h-10 w-10 flex items-center justify-center">
-                            <img src="/logo/logo.png" width="1024" height="1024" alt="GateRemoteSource Logo" class="h-full w-full object-contain">
+                            <img src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="h-full w-full object-contain">
                         </div>
                         <span class="font-bold text-2xl text-brand-dark tracking-tight">GateRemote<span class="text-brand-accent">Source</span></span>
                     </a>
@@ -148,38 +228,38 @@
                     <a href="/oem/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2" id="nav-oem" data-i18n="navigation.oem">OEM/ODM</a>
                     <a href="/about/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2" id="nav-about" data-i18n="navigation.about">About</a>
                     <a href="/blog/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2" id="nav-blog" data-i18n="navigation.blog">Blog</a>
-                    <a href="/contact/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2 active" id="nav-contact" data-i18n="navigation.contact">Contact</a>
-                    
+                    <a href="/contact/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2 active" id="nav-contact" aria-current="page" data-i18n="navigation.contact">Contact</a>
+
                     
                     <div class="flex items-center ml-2 border-l border-brand-border pl-4">
                         <div class="relative">
-                            <button id="languageDropdownBtn" class="flex items-center gap-2 text-brand-dark hover:text-brand-accent transition">
+                            <button id="languageDropdownBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Select language" class="flex items-center gap-2 text-brand-dark hover:text-brand-accent transition">
                                 <span id="currentFlag" class="text-xs font-semibold tracking-wide">EN</span>
                                 <span id="currentLang" class="text-sm">English</span>
-                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                                <i class="fa-solid fa-chevron-down text-xs" aria-hidden="true"></i>
                             </button>
-                            <div id="languageDropdown" class="absolute right-0 mt-2 w-48 bg-brand-surface border border-brand-border rounded-lg shadow-lg hidden z-50 backdrop-blur">
-                                <a href="#" onclick="changeLanguage('en')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+                            <div id="languageDropdown" role="menu" aria-labelledby="languageDropdownBtn" class="absolute right-0 mt-2 w-48 bg-brand-surface border border-brand-border rounded-lg shadow-lg hidden z-50 backdrop-blur">
+                                <a href="#" onclick="changeLanguage('en')" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
                                     <span class="text-xs font-semibold">EN</span>
                                     <span class="text-brand-dark">English</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('es')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+                                <a href="#" onclick="changeLanguage('es')" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
                                     <span class="text-xs font-semibold">ES</span>
                                     <span class="text-brand-dark">Español</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('de')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+                                <a href="#" onclick="changeLanguage('de')" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
                                     <span class="text-xs font-semibold">DE</span>
                                     <span class="text-brand-dark">Deutsch</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('it')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+                                <a href="#" onclick="changeLanguage('it')" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
                                     <span class="text-xs font-semibold">IT</span>
                                     <span class="text-brand-dark">Italiano</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('fr')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+                                <a href="#" onclick="changeLanguage('fr')" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
                                     <span class="text-xs font-semibold">FR</span>
                                     <span class="text-brand-dark">Français</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('pt')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+                                <a href="#" onclick="changeLanguage('pt')" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
                                     <span class="text-xs font-semibold">PT</span>
                                     <span class="text-brand-dark">Português</span>
                                 </a>
@@ -192,8 +272,8 @@
 
                 
                 <div class="lg:hidden flex items-center gap-4">
-                    <button id="mobile-menu-btn" class="text-brand-dark text-2xl focus:outline-none">
-                        <i class="fa-solid fa-bars"></i>
+                    <button id="mobile-menu-btn" type="button" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu" class="text-brand-dark text-2xl focus:outline-none">
+                        <i class="fa-solid fa-bars" aria-hidden="true"></i>
                     </button>
                 </div>
             </div>
@@ -224,7 +304,7 @@
     </nav>
 
     
-    <main class="pt-32 pb-24 bg-brand-light backdrop-blur min-h-screen">
+    <main id="main-content" class="pt-32 pb-24 bg-brand-light backdrop-blur min-h-screen">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h1 class="text-4xl md:text-5xl font-bold text-brand-dark mb-4" data-i18n="contact.title">Open Wholesale Account</h1>
@@ -272,36 +352,64 @@
                 </div>
                 <div class="bg-brand-surface p-8 rounded-2xl border border-brand-border shadow-lg">
                     
-                    <form onsubmit="event.preventDefault(); showSuccessMessage();" class="space-y-5" enctype="multipart/form-data">
+                    <form id="contactForm" class="space-y-5" enctype="multipart/form-data">
                         <h3 class="text-brand-dark text-xl font-bold mb-2" data-i18n="contact.inquire_now.title">Inquire Now</h3>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-brand-muted text-sm mb-2">Name</label>
-                                <input type="text" id="contactName" name="name" class="w-full bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-dark focus:border-brand-accent transition" required>
+                                <label for="contactName" class="block text-brand-muted text-sm mb-2">Name</label>
+                                <input type="text" id="contactName" name="name" class="w-full bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-dark focus:border-brand-accent transition" required aria-required="true" aria-invalid="false" aria-describedby="contactNameError">
+                                <span id="contactNameError" class="text-red-500 text-sm mt-1 hidden" role="alert"></span>
                             </div>
                             <div>
-                                <label class="block text-brand-muted text-sm mb-2">Company (optional)</label>
+                                <label for="contactCompany" class="block text-brand-muted text-sm mb-2">Company (optional)</label>
                                 <input type="text" id="contactCompany" name="company" class="w-full bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-dark focus:border-brand-accent transition">
                             </div>
                         </div>
                         <div>
-                            <label class="block text-brand-muted text-sm mb-2" data-i18n="contact.email_label">Email</label>
-                            <input type="email" id="contactEmail" name="email" class="w-full bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-dark focus:border-brand-accent transition" required>
+                            <label for="contactEmail" class="block text-brand-muted text-sm mb-2" data-i18n="contact.email_label">Email</label>
+                            <input type="email" id="contactEmail" name="email" class="w-full bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-dark focus:border-brand-accent transition" required aria-required="true" aria-invalid="false" aria-describedby="contactEmailError" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$">
+                            <span id="contactEmailError" class="text-red-500 text-sm mt-1 hidden" role="alert"></span>
                         </div>
-                        <div>
-                            <label class="block text-brand-muted text-sm mb-2">Message</label>
-                            <textarea id="contactMessage" name="message" rows="4" class="w-full bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-dark focus:border-brand-accent transition"></textarea>
-                        </div>
-                        <div>
-                            <label class="block text-brand-muted text-sm mb-2">Attachment (optional)</label>
-                            <div class="relative">
-                                <input type="file" id="contactAttachment" name="attachment" class="hidden">
-                                <div id="fileInputDisplay" class="w-full bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-muted focus:border-brand-accent transition cursor-pointer flex items-center justify-between">
-                                    <span id="fileName">No file selected</span>
-                                    <button type="button" id="browseButton" class="bg-brand-accent hover:bg-brand-hover text-white px-3 py-1 rounded text-sm font-medium transition">Choose File</button>
-                                </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="contactDemandType" class="block text-brand-muted text-sm mb-2">Requirement Type</label>
+                                <select id="contactDemandType" name="demand_type" class="w-full bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-dark focus:border-brand-accent transition" required aria-required="true" aria-invalid="false" aria-describedby="contactDemandTypeError">
+                                    <option value="">Select one</option>
+                                    <option value="finished-wholesale">Finished product wholesale</option>
+                                    <option value="oem-odm">OEM / ODM customization</option>
+                                    <option value="not-sure">Need model recommendation</option>
+                                </select>
+                                <span id="contactDemandTypeError" class="text-red-500 text-sm mt-1 hidden" role="alert"></span>
+                            </div>
+                            <div>
+                                <label for="contactOrderVolume" class="block text-brand-muted text-sm mb-2">Estimated Order Volume</label>
+                                <select id="contactOrderVolume" name="order_volume" class="w-full bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-dark focus:border-brand-accent transition" required aria-required="true" aria-invalid="false" aria-describedby="contactOrderVolumeError">
+                                    <option value="">Select one</option>
+                                    <option value="50-199">50-199 pcs</option>
+                                    <option value="200-499">200-499 pcs</option>
+                                    <option value="500-999">500-999 pcs</option>
+                                    <option value="1000-plus">1000+ pcs</option>
+                                </select>
+                                <span id="contactOrderVolumeError" class="text-red-500 text-sm mt-1 hidden" role="alert"></span>
                             </div>
                         </div>
+                        <div>
+                            <label for="contactMessage" class="block text-brand-muted text-sm mb-2">Message</label>
+                            <textarea id="contactMessage" name="message" rows="4" class="w-full bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-dark focus:border-brand-accent transition" required aria-required="true" aria-invalid="false" aria-describedby="contactMessageError" minlength="10"></textarea>
+                            <span id="contactMessageError" class="text-red-500 text-sm mt-1 hidden" role="alert"></span>
+                        </div>
+                        <div>
+                            <label for="contactAttachment" class="block text-brand-muted text-sm mb-2">Attachment (optional)</label>
+                            <div class="relative">
+                                <input type="file" id="contactAttachment" name="attachment" class="hidden" aria-describedby="fileAttachmentHelp">
+                                <div id="fileInputDisplay" class="w-full bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-muted focus:border-brand-accent transition cursor-pointer flex items-center justify-between" role="button" tabindex="0" aria-label="Choose file to attach">
+                                    <span id="fileName">No file selected</span>
+                                    <button type="button" id="browseButton" class="bg-brand-accent hover:bg-brand-hover text-white px-3 py-1 rounded text-sm font-medium transition" aria-label="Browse files">Choose File</button>
+                                </div>
+                                <span id="fileAttachmentHelp" class="text-brand-muted text-xs mt-1">Accepted formats: PDF, DOC, DOCX, JPG, PNG</span>
+                            </div>
+                        </div>
+                        <input type="hidden" name="_subject" value="Wholesale account application from GateRemoteSource.com">
                         <button type="submit" class="w-full bg-brand-quote hover:bg-brand-quoteHover text-white font-bold py-4 rounded-lg transition transform hover:scale-[1.02] shadow-lg" data-cta="form_submit_contact">
                             <span data-i18n="contact.submit_button">Quote now</span>
                         </button>
@@ -376,7 +484,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <div>
                     <div class="flex items-center gap-3 mb-4 text-brand-dark">
-                        <img src="/logo/logo.png" width="1024" height="1024" alt="GateRemoteSource logo" class="h-10 w-auto object-contain">
+                        <img src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="h-10 w-auto object-contain">
                     </div>
                     <p class="mb-4" data-i18n="footer.company_description">Your Profit Partner in Access Control. Supplying locksmiths worldwide.</p>
                 </div>
@@ -397,7 +505,7 @@
                 </div>
                 <div>
                     <h4 class="text-brand-dark font-bold mb-4" data-i18n="footer.address">Address</h4>
-                    <p class="flex items-start gap-2"><i class="fa-solid fa-location-dot mt-1 text-brand-accent"></i><span data-i18n="footer.address_text">Huawei Kegu Industrial Park, Dalingshan Town, Dongguan, Guangdong, China</span></p>
+                    <p class="flex items-start gap-2"><i class="fa-solid fa-location-dot mt-1 text-brand-accent" aria-hidden="true"></i><span data-i18n="footer.address_text">Huawei Kegu Industrial Park, Dalingshan Town, Dongguan, Guangdong, China</span></p>
                 </div>
             </div>
             <div class="text-center pt-8 border-t border-brand-border">
@@ -407,12 +515,21 @@
     </footer>
 
     
-    <a href="https://wa.me/8615899648898" target="_blank" class="whatsapp-float fixed bottom-6 right-6 z-50 bg-brand-quote hover:bg-brand-quoteHover text-white rounded-full p-4 shadow-lg flex items-center justify-center transition transform hover:scale-105">
-        <i class="fa-brands fa-whatsapp text-4xl"></i>
+    <a href="https://wa.me/8615899648898" target="_blank" aria-label="Contact us on WhatsApp" class="whatsapp-float fixed bottom-6 right-6 z-50 bg-brand-quote hover:bg-brand-quoteHover text-white rounded-full p-4 shadow-lg flex items-center justify-center transition transform hover:scale-105">
+        <i class="fa-brands fa-whatsapp text-4xl" aria-hidden="true"></i>
     </a>
 
     
     <script>
+        // Global error handlers
+        window.addEventListener('error', (event) => {
+            console.error('Global error:', event.error);
+        });
+
+        window.addEventListener('unhandledrejection', (event) => {
+            console.error('Unhandled promise rejection:', event.reason);
+        });
+
         // i18n System
         const supportedLangs = ['en', 'es', 'de', 'it', 'fr', 'pt'];
         const defaultLang = 'en';
@@ -451,27 +568,107 @@
             });
         }
 
-        // Show success message
-        function showSuccessMessage() {
-            trackCtaClick('form_submit_contact');
-            const successMsg = document.getElementById('successMessage');
-            successMsg.classList.remove('hidden');
-            
-            // Scroll to success message
-            successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            
-            // Hide form temporarily
-            const form = successMsg.previousElementSibling;
-            form.style.opacity = '0.5';
-            form.style.pointerEvents = 'none';
-            
-            // Reset after 5 seconds
-            setTimeout(() => {
-                successMsg.classList.add('hidden');
-                form.style.opacity = '1';
-                form.style.pointerEvents = 'auto';
-                form.reset();
-            }, 5000);
+        function validateContactForm() {
+            const name = document.getElementById('contactName');
+            const email = document.getElementById('contactEmail');
+            const demandType = document.getElementById('contactDemandType');
+            const orderVolume = document.getElementById('contactOrderVolume');
+            const message = document.getElementById('contactMessage');
+            let isValid = true;
+
+            document.querySelectorAll('[id$="Error"]').forEach(el => {
+                el.classList.add('hidden');
+                el.textContent = '';
+            });
+            document.querySelectorAll('[aria-invalid]').forEach(el => {
+                el.setAttribute('aria-invalid', 'false');
+            });
+
+            if (!name.value.trim()) {
+                showError('contactName', 'Name is required');
+                isValid = false;
+            }
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email.value.trim() || !emailPattern.test(email.value)) {
+                showError('contactEmail', 'Please enter a valid email address');
+                isValid = false;
+            }
+
+            if (!demandType.value) {
+                showError('contactDemandType', 'Please select requirement type');
+                isValid = false;
+            }
+
+            if (!orderVolume.value) {
+                showError('contactOrderVolume', 'Please select estimated order volume');
+                isValid = false;
+            }
+
+            if (!message.value.trim() || message.value.trim().length < 10) {
+                showError('contactMessage', 'Message must be at least 10 characters');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        function showFormStatus(type, message) {
+            const statusBox = document.getElementById('successMessage');
+            if (!statusBox) return;
+            const text = statusBox.querySelector('span');
+            if (text) text.textContent = message;
+            statusBox.classList.remove('hidden', 'bg-brand-success/10', 'border-brand-success/30', 'text-brand-success', 'bg-red-500/10', 'border-red-500/30', 'text-red-500');
+            if (type === 'error') {
+                statusBox.classList.add('bg-red-500/10', 'border-red-500/30', 'text-red-500');
+            } else {
+                statusBox.classList.add('bg-brand-success/10', 'border-brand-success/30', 'text-brand-success');
+            }
+        }
+
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                if (!validateContactForm()) return;
+
+                contactForm.style.opacity = '0.6';
+                contactForm.style.pointerEvents = 'none';
+                showFormStatus('success', 'Sending...');
+
+                try {
+                    const formData = new FormData(contactForm);
+                    const response = await fetch('https://formspree.io/f/xqakpznl', {
+                        method: 'POST',
+                        headers: { 'Accept': 'application/json' },
+                        body: formData
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('submit_failed');
+                    }
+
+                    trackCtaClick('form_submit_contact');
+                    showFormStatus('success', 'Message sent successfully. We will reply within 48 hours.');
+                    contactForm.reset();
+                    if (fileName) fileName.textContent = 'No file selected';
+                } catch (error) {
+                    showFormStatus('error', 'Send failed. Please email sales@gateremotesource.com or WhatsApp +86 158 9964 8898.');
+                } finally {
+                    contactForm.style.opacity = '1';
+                    contactForm.style.pointerEvents = 'auto';
+                }
+            });
+        }
+
+        function showError(fieldId, message) {
+            const field = document.getElementById(fieldId);
+            const errorEl = document.getElementById(fieldId + 'Error');
+            if (field && errorEl) {
+                field.setAttribute('aria-invalid', 'true');
+                errorEl.textContent = message;
+                errorEl.classList.remove('hidden');
+            }
         }
 
         function applyContactPrefill() {
@@ -488,6 +685,8 @@
             setInput('contactName', 'name');
             setInput('contactCompany', 'company');
             setInput('contactEmail', 'email');
+            setInput('contactDemandType', 'demand_type');
+            setInput('contactOrderVolume', 'order_volume');
             setInput('contactMessage', 'message');
         }
 
@@ -607,7 +806,10 @@
 
         // Language dropdown toggle
         document.getElementById('languageDropdownBtn').addEventListener('click', function() {
-            document.getElementById('languageDropdown').classList.toggle('hidden');
+            const dropdown = document.getElementById('languageDropdown');
+            const button = document.getElementById('languageDropdownBtn');
+            dropdown.classList.toggle('hidden');
+            button.setAttribute('aria-expanded', dropdown.classList.contains('hidden') ? 'false' : 'true');
         });
 
         // Close dropdown when clicking outside
@@ -622,7 +824,17 @@
         // Mobile menu
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        mobileBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                mobileMenu.classList.toggle('hidden');
+                mobileBtn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+                if (!isHidden) {
+                    mobileBtn.focus(); // Return focus when closing
+                }
+            });
+        }
 
         // Custom file input functionality
         const fileInput = document.getElementById('contactAttachment');

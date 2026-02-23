@@ -90,10 +90,10 @@
     </script>
 
     <style>
-        ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: #1D1D1F; }
-        ::-webkit-scrollbar-thumb { background: #6E6E73; border-radius: 5px; }
-        ::-webkit-scrollbar-thumb:hover { background: #0A84FF; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(0, 113, 227, 0.3); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(0, 113, 227, 0.5); }
 
         .nav-glass {
             background: rgba(255, 255, 255, 0.72);
@@ -115,60 +115,126 @@
             outline: none;
         }
         .lang-select option { background-color: #F3F4F6; color: #111827; }
+
+        .topic-filter-btn {
+            border: 1px solid transparent;
+            color: #1D1D1F;
+            background: transparent;
+            transition: all 0.2s ease;
+        }
+
+        .topic-filter-btn:hover {
+            border-color: #D1D1D6;
+            background: rgba(255, 255, 255, 0.9);
+            color: #1D1D1F;
+        }
+
+        .topic-filter-btn.active {
+            background: #0071E3;
+            border-color: #0071E3;
+            color: #ffffff;
+        }
+
+        /* Hard safety rails for blog logo and card media rendering */
+        .site-logo-frame {
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+            min-height: 28px;
+        }
+
+        .site-logo-icon {
+            width: 100%;
+            height: 100%;
+            max-width: 28px;
+            max-height: 28px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .site-footer-logo-icon {
+            width: 40px;
+            height: 40px;
+            max-width: 40px;
+            max-height: 40px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .blog-card-media {
+            position: relative;
+            overflow: hidden;
+            min-height: 220px;
+        }
+
+        .blog-card-media--sm {
+            min-height: 176px;
+        }
+
+        .blog-card-media--grid {
+            min-height: 192px;
+        }
+
+        .blog-card-media > img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            display: block;
+        }
     </style>
 </head>
 <body class="font-sans text-brand-dark/80 bg-brand-light backdrop-blur selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="blog">
     <nav class="fixed w-full z-50 nav-glass transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
-                    <a href="/fr/" class="flex items-center gap-3">
-                        <div class="bg-brand-surface border border-brand-border/60 p-1.5 rounded-lg h-10 w-10 flex items-center justify-center">
-                            <img src="/logo/logo.png" width="1024" height="1024" alt="GateRemoteSource Logo" class="h-full w-full object-contain">
+                        <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
+                            <a href="/fr/" class="flex items-center gap-3">
+                                <div class="site-logo-frame bg-brand-surface border border-brand-border/50 p-1 rounded-lg h-7 w-7 flex items-center justify-center shadow-sm hover:shadow-md transition-shadow duration-200" style="width: 28px; height: 28px; min-width: 28px; min-height: 28px;">
+                                    <img src="/logo/logo.png" width="28" height="28" alt="GateRemoteSource Logo" class="site-logo-icon h-full w-full object-contain" style="width: 100%; height: 100%; max-width: 28px; max-height: 28px; object-fit: contain;">
+                                </div>
+                                <span class="font-bold text-lg text-brand-dark tracking-tight">GateRemote<span class="text-brand-accent">Source</span></span>
+                            </a>
                         </div>
-                        <span class="font-bold text-2xl text-brand-dark tracking-tight">GateRemote<span class="text-brand-accent">Source</span></span>
-                    </a>
-                </div>
 
                 <div class="hidden lg:flex space-x-8 items-center">
                     <a href="/fr/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2" id="nav-home" data-i18n="navigation.home">Accueil</a>
                     <a href="/fr/catalog/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2" id="nav-products" data-i18n="navigation.catalog">Catalogue</a>
                     <a href="/fr/oem/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2" id="nav-oem" data-i18n="navigation.oem">OEM/ODM</a>
                     <a href="/fr/about/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2" id="nav-about" data-i18n="navigation.about">À Propos</a>
-                    <a href="/fr/blog/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2 active" id="nav-blog" data-i18n="navigation.blog">Blog</a>
+                    <a href="/fr/blog/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2 active" id="nav-blog" data-i18n="navigation.blog" aria-current="page">Blog</a>
                     <a href="/fr/contact/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2" id="nav-contact" data-i18n="navigation.contact">Contact</a>
                     
                     <div class="flex items-center ml-2 border-l border-brand-border pl-4">
                         <div class="relative">
-                            <button id="languageDropdownBtn" class="flex items-center gap-2 text-brand-dark hover:text-brand-accent transition">
+                            <button id="languageDropdownBtn" class="flex items-center gap-2 text-brand-dark hover:text-brand-accent transition" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Select language">
                                 <span id="currentFlag" class="text-xs font-semibold tracking-wide">EN</span>
                                 <span id="currentLang" class="text-sm">English</span>
-                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                                <i class="fa-solid fa-chevron-down text-xs" aria-hidden="true"></i>
                             </button>
-                            <div id="languageDropdown" class="absolute right-0 mt-2 w-48 bg-brand-surface border border-brand-border rounded-lg shadow-lg hidden z-50 backdrop-blur">
-                                <a href="#" onclick="changeLanguage('en')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+                            <div id="languageDropdown" class="absolute right-0 mt-2 w-48 bg-brand-surface border border-brand-border rounded-lg shadow-lg hidden z-50 backdrop-blur" role="menu" aria-labelledby="languageDropdownBtn">
+                                <a href="#" onclick="changeLanguage('en')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition" role="menuitem">
                                     <span class="text-xs font-semibold">EN</span>
                                     <span class="text-brand-dark">English</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('es')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+                                <a href="#" onclick="changeLanguage('es')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition" role="menuitem">
                                     <span class="text-xs font-semibold">ES</span>
-                                    <span class="text-brand-dark">Espanol</span>
+                                    <span class="text-brand-dark">Español</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('de')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+                                <a href="#" onclick="changeLanguage('de')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition" role="menuitem">
                                     <span class="text-xs font-semibold">DE</span>
                                     <span class="text-brand-dark">Deutsch</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('it')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+                                <a href="#" onclick="changeLanguage('it')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition" role="menuitem">
                                     <span class="text-xs font-semibold">IT</span>
                                     <span class="text-brand-dark">Italiano</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('fr')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+                                <a href="#" onclick="changeLanguage('fr')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition" role="menuitem">
                                     <span class="text-xs font-semibold">FR</span>
-                                    <span class="text-brand-dark">Francais</span>
+                                    <span class="text-brand-dark">Français</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('pt')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+                                <a href="#" onclick="changeLanguage('pt')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition" role="menuitem">
                                     <span class="text-xs font-semibold">PT</span>
-                                    <span class="text-brand-dark">Portugues</span>
+                                    <span class="text-brand-dark">Português</span>
                                 </a>
                             </div>
                         </div>
@@ -178,8 +244,8 @@
                 </div>
 
                 <div class="lg:hidden flex items-center gap-4">
-                    <button id="mobile-menu-btn" class="text-brand-dark text-2xl focus:outline-none">
-                        <i class="fa-solid fa-bars"></i>
+                    <button id="mobile-menu-btn" class="text-brand-dark text-2xl p-2 hover:bg-brand-light/50 rounded-lg transition" type="button" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+                        <i class="fa-solid fa-bars" aria-hidden="true"></i>
                     </button>
                 </div>
             </div>
@@ -209,308 +275,128 @@
     </nav>
 
     <main class="pt-28 pb-24 bg-brand-light backdrop-blur min-h-screen">
+        <section class="pb-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col gap-6">
+                    <div class="space-y-3">
+                        <p class="text-xs uppercase tracking-wider text-brand-muted font-semibold">Installer Hub</p>
+                        <h1 class="text-4xl md:text-5xl font-bold text-brand-dark" data-i18n="blog.title">Installer Hub</h1>
+                        <p class="text-brand-muted max-w-2xl" data-i18n="blog.subtitle">Technical guides, programming tutorials, and industry news for locksmiths.</p>
+                    </div>
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 border border-brand-border/60 bg-brand-surface/80 rounded-xl px-4 py-3">
+                        <div class="flex items-center gap-2 overflow-x-auto pb-1 lg:pb-0" role="tablist" aria-label="Topic filters">
+                            <button type="button" class="topic-filter-btn active px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="all" aria-pressed="true">All</button>
+                            <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="technical-guides" aria-pressed="false">Technical Guides</button>
+                            <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="case-studies" aria-pressed="false">Case Studies</button>
+                            <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="industry-news" aria-pressed="false">Industry News</button>
+                            <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="rf-basics" aria-pressed="false">RF Basics</button>
+                            <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="installation-guides" aria-pressed="false">Installation Guides</button>
+                            <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="programming" aria-pressed="false">Programming</button>
+                        </div>
+                        <div class="relative w-full lg:w-64">
+                            <label for="blogSearch" class="sr-only">Search articles</label>
+                            <input type="search" id="blogSearch" placeholder="Search articles..." class="w-full bg-brand-light border border-brand-border/60 rounded-lg pl-10 pr-4 py-2.5 text-sm text-brand-dark focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 outline-none transition">
+                            <i class="fa-solid fa-search absolute left-3 top-3 text-brand-muted text-sm"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        
+        
+        
+        
+            
+                
+            
+        
+        
+        
+        
+        
+            
+            
+        
+
         
         <section class="pb-12">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="space-y-6">
-                        <span class="text-xs uppercase tracking-wider text-brand-muted font-semibold">Installer Hub</span>
-                        <h1 class="text-4xl md:text-5xl font-bold text-brand-dark" data-i18n="blog.title">Installer Hub</h1>
-                        <p class="text-brand-muted max-w-2xl" data-i18n="blog.subtitle">Technical guides, programming tutorials, and industry news for locksmiths.</p>
-                        <div class="flex flex-wrap gap-3 text-sm text-brand-muted">
-                            <span class="flex items-center gap-2 glass-chip text-brand-dark rounded-full px-3 py-1">
-                                <i class="fa-solid fa-circle-check text-brand-accent"></i>
-                                <span>Programming and compatibility guides</span>
-                            </span>
-                            <span class="flex items-center gap-2 glass-chip text-brand-dark rounded-full px-3 py-1">
-                                <i class="fa-solid fa-circle-check text-brand-accent"></i>
-                                <span>RF troubleshooting and range fixes</span>
-                            </span>
-                            <span class="flex items-center gap-2 glass-chip text-brand-dark rounded-full px-3 py-1">
-                                <i class="fa-solid fa-circle-check text-brand-accent"></i>
-                                <span>Distributor-ready sales playbooks</span>
-                            </span>
-                        </div>
-                        <div class="flex flex-wrap gap-4 items-center text-sm text-brand-muted">
-                            <div class="bg-brand-surface border border-brand-border/40 rounded-lg px-4 py-2 text-brand-dark">
-                                <span class="text-brand-dark font-bold">2</span> total guides
+                
+                <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] gap-6">
+                    <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance" data-summary="A field-proven checklist for OEM teams to turn range and compliance into measurable KPIs: link margin, blocking, protocol airtime, and regulator-limited transmit behavior." data-category="rf-engineering" data-tags="433-92mhz|rf-compliance|link-budget|oem-procurement|garage-doors" data-author="Eric Huang">
+                        <div class="grid grid-cols-1 md:grid-cols-2">
+                            <div class="blog-card-media relative min-h-[220px] overflow-hidden">
+                                <img src="/assets/blog-drops/choose-433-92mhz-remote-control/image-01.webp" alt="Hand holding a 433.92MHz remote in front of a garage door" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             </div>
-                            <div class="bg-brand-surface border border-brand-border/40 rounded-lg px-4 py-2 text-brand-dark/80">
-                                Updated weekly by factory engineers
+                            <div class="p-6 flex flex-col gap-3">
+                                <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">RF Engineering</span>
+                                <h2 class="text-2xl md:text-3xl font-bold text-brand-dark leading-tight group-hover:text-brand-accent transition">How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance</h2>
+                                <div class="text-xs text-brand-muted">February 20, 2025 | Eric Huang | 12 min read</div>
+                                <p class="text-brand-muted text-sm leading-relaxed line-clamp-3 flex-1">A field-proven checklist for OEM teams to turn range and compliance into measurable KPIs: link margin, blocking, protocol airtime, and regulator-limited transmit behavior.</p>
+                                <a href="/fr/blog/choose-433-92mhz-remote-control/" class="mt-auto text-brand-accent font-semibold text-sm inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
                             </div>
                         </div>
-                        <div class="flex flex-wrap gap-3">
-                            <a href="/fr/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-white px-6 py-3 rounded-lg font-bold transition shadow-md shadow-brand-cta/20 hover:shadow-lg" data-cta="blog_hero_get_price">Get price list</a>
-                            <a href="/fr/catalog/" class="border border-brand-cta text-brand-cta hover:border-brand-ctaHover hover:text-brand-ctaHover hover:bg-brand-light/80 px-6 py-3 rounded-lg font-bold transition" data-cta="blog_hero_catalog">Download catalog</a>
-                        </div>
-                    </div>
-                    <div class="bg-brand-surface border border-brand-border/40 rounded-2xl p-6 shadow-lg space-y-6">
-                        <div>
-                            <h3 class="text-brand-dark font-bold text-lg mb-2">Search the library</h3>
-                            <p class="text-brand-muted text-sm mb-4">Find guides by model, brand, frequency, or issue.</p>
-                            <div class="relative">
-                                <input type="text" id="blogSearch" placeholder="Search by model, brand, or topic" class="w-full bg-brand-light/80 border border-brand-border/60 rounded-lg pl-4 pr-10 py-3 text-brand-dark focus:border-brand-accent outline-none transition">
-                                <i class="fa-solid fa-search absolute right-3 top-3.5 text-brand-muted/70"></i>
-                            </div>
-                            <div id="searchSuggestions" class="mt-3 space-y-2 hidden"></div>
-                        </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div class="bg-brand-light/80 border border-brand-border/60 rounded-xl p-4">
-                                <p class="text-xs text-brand-muted uppercase tracking-wide mb-2">Fast quote</p>
-                                <h4 class="text-brand-dark font-semibold mb-2">Pricing in 24 hours</h4>
-                                <p class="text-xs text-brand-muted mb-4">MOQ, lead time, and compatibility pack.</p>
-                                <a href="/fr/contact/" class="text-brand-accent text-sm font-bold hover:text-brand-hover">Request quote</a>
-                            </div>
-                            <div class="bg-brand-light/80 border border-brand-border/60 rounded-xl p-4">
-                                <p class="text-xs text-brand-muted uppercase tracking-wide mb-2">Distributor kit</p>
-                                <h4 class="text-brand-dark font-semibold mb-2">Get the playbook</h4>
-                                <p class="text-xs text-brand-muted mb-4">RF benchmarks and margin guidance.</p>
-                                <a href="/fr/contact/" class="text-brand-accent text-sm font-bold hover:text-brand-hover">Send me the kit</a>
-                            </div>
-                        </div>
+                    </article>
+                    <div class="grid grid-cols-1 gap-6">
                         
-                        <div>
-                            <p class="text-xs uppercase tracking-wider text-brand-muted mb-3">Quick topics</p>
-                            <div class="flex flex-wrap gap-2">
-                                
-                                <button type="button" class="px-3 py-1 rounded-full glass-chip border-brand-border/60 text-xs text-brand-dark hover:border-brand-accent hover:text-brand-accent transition" data-quick-filter="category" data-value="rf-engineering">RF Engineering</button>
-                                
-                                <button type="button" class="px-3 py-1 rounded-full glass-chip border-brand-border/60 text-xs text-brand-dark hover:border-brand-accent hover:text-brand-accent transition" data-quick-filter="category" data-value="engineering">Engineering</button>
-                                
+                        <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls" data-summary="Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation." data-category="engineering" data-tags="pcb-quality|rolling-code|oem-manufacturing" data-author="Eric Huang">
+                            <div class="blog-card-media blog-card-media--sm relative h-44 overflow-hidden">
+                                <img loading="lazy" decoding="async" src="/assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-01.webp" alt="Remote shell next to FR-4 PCB" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             </div>
-                        </div>
+                            <div class="p-5 flex flex-col gap-3 flex-1">
+                                <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">Engineering</span>
+                                <h3 class="text-lg font-bold text-brand-dark leading-tight group-hover:text-brand-accent transition">Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls</h3>
+                                <div class="text-xs text-brand-muted">February 10, 2025 | Eric Huang | 9 min read</div>
+                                <p class="text-brand-muted text-sm line-clamp-2 flex-1">Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation.</p>
+                                <a href="/fr/blog/avoid-public-mold-trap-pcb-quality/" class="mt-auto text-brand-accent font-semibold text-sm inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                            </div>
+                        </article>
+                        
+                        <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="Nice, Came, Hormann Compatibility Guide for Wholesale Buyers" data-summary="A procurement-first matrix to match OEM families, frequency bands, and replacement SKUs before bulk ordering." data-category="installation-guides" data-tags="compatibility|nice|came|hormann|wholesale" data-author="GateRemoteSource Lab">
+                            <div class="blog-card-media blog-card-media--sm relative h-44 overflow-hidden">
+                                <img loading="lazy" decoding="async" src="/assets/factory/team.webp" alt="Team reviewing compatibility matrix for OEM remote replacements" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="p-5 flex flex-col gap-3 flex-1">
+                                <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">Installation Guides</span>
+                                <h3 class="text-lg font-bold text-brand-dark leading-tight group-hover:text-brand-accent transition">Nice, Came, Hormann Compatibility Guide for Wholesale Buyers</h3>
+                                <div class="text-xs text-brand-muted">January 10, 2026 | GateRemoteSource Lab | 7 min read</div>
+                                <p class="text-brand-muted text-sm line-clamp-2 flex-1">A procurement-first matrix to match OEM families, frequency bands, and replacement SKUs before bulk ordering.</p>
+                                <a href="/fr/blog/nice-came-hormann-compatibility-guide/" class="mt-auto text-brand-accent font-semibold text-sm inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                            </div>
+                        </article>
                         
                     </div>
                 </div>
+                
             </div>
         </section>
+        
 
         <section class="pb-8">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-brand-surface border border-brand-border/40 rounded-xl p-4">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                        <div>
-                            <h2 class="text-brand-dark font-bold text-lg">Latest guides</h2>
-                            <p class="text-sm text-brand-muted">Browse newest updates or refine by topic and brand.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="Garage Remote Pairing Checklist for Field Installers" data-summary="A practical on-site SOP to pair remotes faster and reduce callback risk across mixed-brand gate projects." data-category="programming" data-tags="programming|installation-guides|troubleshooting|nice|came|liftmaster" data-author="GateRemoteSource Lab">
+                        <div class="blog-card-media blog-card-media--grid relative h-48 overflow-hidden">
+                            <img loading="lazy" decoding="async" src="/assets/factory/rd-lab.webp" alt="Technician validating remote pairing in engineering lab" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         </div>
-                        <div class="flex flex-wrap items-center gap-3">
-                            <span id="resultsCount" class="text-sm text-brand-muted">Showing 0 results</span>
-                            <button type="button" class="px-3 py-2 rounded-lg border border-brand-border/60 text-brand-muted hover:border-brand-accent hover:text-brand-dark transition text-sm" data-clear-filters>Clear filters</button>
+                        <div class="p-5 flex flex-col gap-3 flex-1">
+                            <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">Programming</span>
+                            <h3 class="text-lg font-bold text-brand-dark leading-tight group-hover:text-brand-accent transition">Garage Remote Pairing Checklist for Field Installers</h3>
+                            <div class="text-xs text-brand-muted">January 22, 2026 | GateRemoteSource Lab | 8 min read</div>
+                            <p class="text-brand-muted text-sm line-clamp-3 flex-1">A practical on-site SOP to pair remotes faster and reduce callback risk across mixed-brand gate projects.</p>
+                            <a href="/fr/blog/garage-remote-pairing-checklist/" class="mt-auto text-brand-accent font-semibold text-sm inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
                         </div>
-                    </div>
+                    </article>
+                    
                 </div>
-                <div id="activeFilters" class="mt-4 flex flex-wrap gap-2"></div>
-                <div id="no-results" class="hidden text-brand-muted mt-4">No articles found on this page. Try a different filter.</div>
+                <p id="no-results" class="hidden text-brand-muted mt-8" data-i18n="blog.no_articles">Aucun article trouv?.</p>
             </div>
         </section>
 
-        <section>
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                    <div class="lg:col-span-2 space-y-10">
-                        
-                        
-                        
-                        <section class="bg-brand-surface border border-brand-border/40 rounded-2xl overflow-hidden shadow-lg group" data-post-card data-title="How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance" data-summary="A field-proven checklist for OEM teams to turn range and compliance into measurable KPIs: link margin, blocking, protocol airtime, and regulator-limited transmit behavior." data-category="rf-engineering" data-tags="433-92mhz|rf-compliance|link-budget|oem-procurement|garage-doors" data-brand="" data-frequency="433-92mhz" data-scene="">
-                            <div class="grid grid-cols-1 md:grid-cols-2">
-                                <div class="relative">
-                                    <img src="/assets/blog-drops/choose-433-92mhz-remote-control/image-01.webp" alt="How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                                    <div class="absolute top-4 left-4 bg-brand-cta text-white text-xs font-bold px-3 py-1 rounded-full">Featured</div>
-                                </div>
-                                <div class="p-6 flex flex-col justify-between">
-                                    <div>
-                                        <div class="flex items-center gap-3 text-xs text-brand-muted mb-3">
-                                            <span class="uppercase tracking-wider text-brand-accent font-bold">RF Engineering</span>
-                                            <span>February 20, 2025</span>
-                                            <span>12 min read</span>
-                                        </div>
-                                        <h2 class="text-2xl font-bold text-brand-dark mb-3 group-hover:text-brand-accent transition">How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance</h2>
-                                        <p class="text-brand-muted text-sm mb-4">A field-proven checklist for OEM teams to turn range and compliance into measurable KPIs: link margin, blocking, protocol airtime, and regulator-limited transmit behavior.</p>
-                                    </div>
-                                    <a href="/fr/blog/choose-433-92mhz-remote-control/" class="text-brand-accent font-bold text-sm hover:text-brand-hover inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
-                                </div>
-                            </div>
-                        </section>
-                        
-                        
-
-                        
-                        
-                        
-                        
-                        
-                        
-
-                        <section class="space-y-6">
-                            <div class="flex items-center justify-between">
-                                <h3 class="text-brand-dark font-bold text-lg">Fresh from the lab</h3>
-                                <span class="text-xs text-brand-muted">Newest updates first</span>
-                            </div>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                
-                                <article class="bg-brand-surface p-6 rounded-xl border border-brand-border/40 hover:border-brand-accent transition flex flex-col gap-4 group" data-post-card data-title="Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls" data-summary="Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation." data-category="engineering" data-tags="pcb-quality|rolling-code|oem-manufacturing" data-brand="" data-frequency="433-92mhz" data-scene="">
-                                    <div class="h-48 rounded-lg overflow-hidden">
-                                        <img loading="lazy" decoding="async" src="/assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-01.webp" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls">
-                                    </div>
-                                    <div class="flex items-center gap-3 text-xs text-brand-muted">
-                                        <span class="uppercase tracking-wider text-brand-accent font-bold">Engineering</span>
-                                        <span>February 10, 2025</span>
-                                        <span>9 min read</span>
-                                    </div>
-                                    <h3 class="text-lg font-bold text-brand-dark group-hover:text-brand-accent transition">Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls</h3>
-                                    <p class="text-brand-muted text-sm line-clamp-2">Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation.</p>
-                                    <a href="/fr/blog/avoid-public-mold-trap-pcb-quality/" class="text-brand-accent font-bold text-sm hover:text-brand-hover inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
-                                </article>
-                                
-                            </div>
-                        </section>
-
-                        
-
-                        
-                    </div>
-                    <aside class="space-y-8">
-                        <div class="bg-brand-surface p-6 rounded-xl border border-brand-border/40 shadow-lg">
-                            <div class="flex items-center justify-between mb-4">
-                                <h3 class="font-bold text-brand-dark">Filters</h3>
-                                <button type="button" class="text-xs text-brand-muted hover:text-brand-dark" data-clear-filters>Reset</button>
-                            </div>
-                            <p class="text-xs text-brand-muted mb-4">Stack filters to narrow down results.</p>
-                            <div class="space-y-6 text-sm text-brand-dark/80">
-                                
-                                <div>
-                                    <p class="text-brand-dark font-semibold mb-2">Topics</p>
-                                    <div class="grid grid-cols-2 gap-2">
-                                        
-                                        <label class="flex items-center gap-2">
-                                            <input type="checkbox" class="accent-brand-accent" data-filter="category" data-label="RF Engineering" value="rf-engineering">
-                                            <span>RF Engineering</span>
-                                        </label>
-                                        
-                                        <label class="flex items-center gap-2">
-                                            <input type="checkbox" class="accent-brand-accent" data-filter="category" data-label="Engineering" value="engineering">
-                                            <span>Engineering</span>
-                                        </label>
-                                        
-                                    </div>
-                                </div>
-                                
-
-                                
-                                
-                                <div>
-                                    <p class="text-brand-dark font-semibold mb-2">Tags</p>
-                                    <div class="flex flex-wrap gap-2">
-                                        
-                                        <label class="flex items-center gap-2 glass-chip border-brand-border/60 rounded-full px-3 py-1 text-brand-dark">
-                                            <input type="checkbox" class="accent-brand-accent" data-filter="tags" data-label="433.92MHz" value="433-92mhz">
-                                            <span>433.92MHz</span>
-                                        </label>
-                                        
-                                        <label class="flex items-center gap-2 glass-chip border-brand-border/60 rounded-full px-3 py-1 text-brand-dark">
-                                            <input type="checkbox" class="accent-brand-accent" data-filter="tags" data-label="RF Compliance" value="rf-compliance">
-                                            <span>RF Compliance</span>
-                                        </label>
-                                        
-                                        <label class="flex items-center gap-2 glass-chip border-brand-border/60 rounded-full px-3 py-1 text-brand-dark">
-                                            <input type="checkbox" class="accent-brand-accent" data-filter="tags" data-label="Link Budget" value="link-budget">
-                                            <span>Link Budget</span>
-                                        </label>
-                                        
-                                        <label class="flex items-center gap-2 glass-chip border-brand-border/60 rounded-full px-3 py-1 text-brand-dark">
-                                            <input type="checkbox" class="accent-brand-accent" data-filter="tags" data-label="OEM Procurement" value="oem-procurement">
-                                            <span>OEM Procurement</span>
-                                        </label>
-                                        
-                                        <label class="flex items-center gap-2 glass-chip border-brand-border/60 rounded-full px-3 py-1 text-brand-dark">
-                                            <input type="checkbox" class="accent-brand-accent" data-filter="tags" data-label="Garage Doors" value="garage-doors">
-                                            <span>Garage Doors</span>
-                                        </label>
-                                        
-                                        <label class="flex items-center gap-2 glass-chip border-brand-border/60 rounded-full px-3 py-1 text-brand-dark">
-                                            <input type="checkbox" class="accent-brand-accent" data-filter="tags" data-label="PCB Quality" value="pcb-quality">
-                                            <span>PCB Quality</span>
-                                        </label>
-                                        
-                                        <label class="flex items-center gap-2 glass-chip border-brand-border/60 rounded-full px-3 py-1 text-brand-dark">
-                                            <input type="checkbox" class="accent-brand-accent" data-filter="tags" data-label="Rolling Code" value="rolling-code">
-                                            <span>Rolling Code</span>
-                                        </label>
-                                        
-                                        <label class="flex items-center gap-2 glass-chip border-brand-border/60 rounded-full px-3 py-1 text-brand-dark">
-                                            <input type="checkbox" class="accent-brand-accent" data-filter="tags" data-label="OEM Manufacturing" value="oem-manufacturing">
-                                            <span>OEM Manufacturing</span>
-                                        </label>
-                                        
-                                    </div>
-                                </div>
-                                
-
-                                
-                                
-
-                                
-                                
-                                <div>
-                                    <p class="text-brand-dark font-semibold mb-2">Frequency</p>
-                                    <div class="flex flex-wrap gap-2">
-                                        
-                                        <label class="flex items-center gap-2 glass-chip border-brand-border/60 rounded-full px-3 py-1 text-brand-dark">
-                                            <input type="checkbox" class="accent-brand-accent" data-filter="frequency" data-label="433.92MHz" value="433-92mhz">
-                                            <span>433.92MHz</span>
-                                        </label>
-                                        
-                                    </div>
-                                </div>
-                                
-
-                                
-                                
-                            </div>
-                        </div>
-
-                        <div class="bg-brand-surface border-2 border-brand-accent p-8 rounded-xl text-center text-brand-dark shadow-lg relative overflow-hidden">
-                            <div class="absolute top-0 right-0 w-32 h-32 bg-brand-light/70 rounded-full blur-2xl -mr-10 -mt-10"></div>
-                            <h3 class="font-bold text-xl mb-2 relative z-10" data-i18n="blog.become_distributor_title">Become a Distributor</h3>
-                            <p class="text-sm text-brand-muted mb-6 relative z-10" data-i18n="blog.become_distributor_description">Get access to wholesale pricing and marketing materials.</p>
-                            <a href="/fr/contact/" class="bg-brand-cta text-white px-6 py-3 rounded-full font-bold text-sm shadow-lg hover:bg-brand-ctaHover transition relative z-10 w-full" data-i18n="blog.apply_now">Apply Now</a>
-                        </div>
-
-                        
-                        
-                        <div class="bg-brand-surface p-6 rounded-xl border border-brand-border/40 shadow-lg">
-                            <h3 class="font-bold text-brand-dark mb-4">Newest guides</h3>
-                            <div class="space-y-4">
-                                
-                                <a href="/fr/blog/choose-433-92mhz-remote-control/" class="flex gap-3 group">
-                                    <div class="w-16 h-16 bg-brand-light/80 rounded-lg flex-shrink-0 overflow-hidden">
-                                        <img loading="lazy" decoding="async" src="/assets/blog-drops/choose-433-92mhz-remote-control/image-01.webp" class="w-full h-full object-cover" alt="How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance">
-                                    </div>
-                                    <div>
-                                        <p class="text-xs text-brand-accent uppercase tracking-wide font-bold">RF Engineering</p>
-                                        <p class="text-sm font-bold text-brand-dark group-hover:text-brand-accent transition">How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance</p>
-                                        <p class="text-xs text-brand-muted mt-1">February 20, 2025</p>
-                                    </div>
-                                </a>
-                                
-                                <a href="/fr/blog/avoid-public-mold-trap-pcb-quality/" class="flex gap-3 group">
-                                    <div class="w-16 h-16 bg-brand-light/80 rounded-lg flex-shrink-0 overflow-hidden">
-                                        <img loading="lazy" decoding="async" src="/assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-01.webp" class="w-full h-full object-cover" alt="Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls">
-                                    </div>
-                                    <div>
-                                        <p class="text-xs text-brand-accent uppercase tracking-wide font-bold">Engineering</p>
-                                        <p class="text-sm font-bold text-brand-dark group-hover:text-brand-accent transition">Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls</p>
-                                        <p class="text-xs text-brand-muted mt-1">February 10, 2025</p>
-                                    </div>
-                                </a>
-                                
-                            </div>
-                        </div>
-                        
-                    </aside>
-                </div>
-            </div>
-        </section>
+        
     </main>
 
     <section class="py-16 bg-brand-light border-t border-brand-border">
@@ -547,7 +433,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <div>
                     <div class="flex items-center gap-3 mb-4 text-brand-dark">
-                        <img src="/logo/logo.png" width="1024" height="1024" alt="GateRemoteSource logo" class="h-10 w-auto object-contain">
+                        <img src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="site-footer-logo-icon h-10 w-auto object-contain" style="width: 40px; height: 40px; max-width: 40px; max-height: 40px; object-fit: contain;">
                     </div>
                     <p class="mb-4 text-brand-muted/70" data-i18n="footer.company_description">Your Profit Partner in Access Control. Supplying locksmiths worldwide.</p>
                 </div>
@@ -678,11 +564,11 @@
 
             const langNames = {
                 'en': 'English',
-                'es': 'Espanol',
+                'es': 'Español',
                 'de': 'Deutsch',
                 'it': 'Italiano',
-                'fr': 'Francais',
-                'pt': 'Portugues'
+                'fr': 'Français',
+                'pt': 'Português'
             };
 
             const flagElement = document.getElementById('currentFlag');
@@ -711,7 +597,10 @@
         }
 
         document.getElementById('languageDropdownBtn').addEventListener('click', function() {
-            document.getElementById('languageDropdown').classList.toggle('hidden');
+            const dropdown = document.getElementById('languageDropdown');
+            const button = document.getElementById('languageDropdownBtn');
+            dropdown.classList.toggle('hidden');
+            button.setAttribute('aria-expanded', dropdown.classList.contains('hidden') ? 'false' : 'true');
         });
 
         document.addEventListener('click', function(event) {
@@ -724,7 +613,14 @@
 
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        mobileBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                mobileMenu.classList.toggle('hidden');
+                mobileBtn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+            });
+        }
 
         const newsletterForm = document.getElementById('newsletterForm');
         if (newsletterForm) {
@@ -735,10 +631,10 @@
                 event.preventDefault();
 
                 const emailValue = emailInput ? emailInput.value.trim() : '';
-                if (!emailValue) {
+                if (!emailValue || !emailInput.validity.valid) {
                     if (statusEl) {
                         statusEl.classList.remove('hidden');
-                        statusEl.textContent = 'Please enter a valid email.';
+                        statusEl.textContent = 'Please enter a valid email address.';
                     }
                     return;
                 }
@@ -771,61 +667,25 @@
         }
 
         const searchInput = document.getElementById('blogSearch');
-        const suggestionBox = document.getElementById('searchSuggestions');
+        const topicFilterButtons = Array.from(document.querySelectorAll('.topic-filter-btn'));
         const cards = Array.from(document.querySelectorAll('[data-post-card]'));
-        const filterInputs = Array.from(document.querySelectorAll('[data-filter]'));
         const emptyState = document.getElementById('no-results');
-        const resultsCount = document.getElementById('resultsCount');
-        const activeFilters = document.getElementById('activeFilters');
-        const clearFilterButtons = Array.from(document.querySelectorAll('[data-clear-filters]'));
-        const quickFilters = Array.from(document.querySelectorAll('[data-quick-filter]'));
-
-        let searchIndex = [];
-
-        function escapeHtml(value) {
-            return String(value)
-                .replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;')
-                .replace(/"/g, '&quot;')
-                .replace(/'/g, '&#39;');
-        }
 
         function normalizeValue(value) {
             return (value || '').toString().toLowerCase();
         }
 
-        function getSelectedFilters() {
-            const selected = {};
-            filterInputs.forEach((input) => {
-                if (!input.checked) return;
-                if (!selected[input.dataset.filter]) {
-                    selected[input.dataset.filter] = new Set();
-                }
-                selected[input.dataset.filter].add(input.value);
-            });
-            return selected;
+        function getActiveTopic() {
+            const activeButton = topicFilterButtons.find((btn) => btn.classList.contains('active'));
+            return activeButton ? activeButton.dataset.topic : 'all';
         }
 
-        function getActiveFilters() {
-            return filterInputs
-                .filter((input) => input.checked)
-                .map((input) => ({
-                    group: input.dataset.filter,
-                    value: input.value,
-                    label: input.dataset.label || input.value
-                }));
-        }
-
-        function matchesFilters(card, selected) {
-            const filters = Object.keys(selected);
-            if (!filters.length) return true;
-            return filters.every((group) => {
-                const datasetValue = card.getAttribute(`data-${group}`) || '';
-                if (!datasetValue) return false;
-                const set = new Set(datasetValue.split('|').filter(Boolean));
-                return Array.from(selected[group]).every((value) => set.has(value));
-            });
+        function matchesTopic(card, topic) {
+            if (topic === 'all') return true;
+            const category = (card.getAttribute('data-category') || '').toLowerCase();
+            const tags = (card.getAttribute('data-tags') || '').toLowerCase();
+            const tokens = new Set(`${category}|${tags}`.split('|').filter(Boolean));
+            return tokens.has(topic);
         }
 
         function matchesSearch(card, query) {
@@ -835,203 +695,44 @@
                 card.getAttribute('data-summary'),
                 card.getAttribute('data-category'),
                 card.getAttribute('data-tags'),
-                card.getAttribute('data-brand'),
-                card.getAttribute('data-frequency'),
-                card.getAttribute('data-scene')
+                card.getAttribute('data-author')
             ].join(' ').toLowerCase();
             return haystack.includes(query);
         }
 
-        function updateResultsCount(visibleCount) {
-            if (!resultsCount) return;
-            const totalCount = cards.length;
-            const label = visibleCount === totalCount
-                ? `${visibleCount} guides on this page`
-                : `${visibleCount} of ${totalCount} guides on this page`;
-            resultsCount.textContent = label;
-        }
-
-        function renderActiveFilters(query) {
-            if (!activeFilters) return;
-            const items = getActiveFilters().map((item) => ({
-                ...item,
-                type: 'filter'
-            }));
-            if (query) {
-                items.unshift({
-                    type: 'search',
-                    label: `Search: ${query}`
-                });
-            }
-
-            if (!items.length) {
-                activeFilters.innerHTML = '<span class="text-sm text-brand-muted">No active filters.</span>';
-                return;
-            }
-
-            activeFilters.innerHTML = items.map((item) => {
-                const label = escapeHtml(item.label);
-                if (item.type === 'search') {
-                    return `
-                        <button type="button" class="flex items-center gap-2 px-3 py-1 rounded-full glass-chip border-brand-border/60 text-xs text-brand-dark hover:border-brand-accent hover:text-brand-accent transition" data-remove-filter data-type="search">
-                            <span>${label}</span>
-                            <i class="fa-solid fa-xmark text-[10px]"></i>
-                        </button>
-                    `;
-                }
-                return `
-                    <button type="button" class="flex items-center gap-2 px-3 py-1 rounded-full glass-chip border-brand-border/60 text-xs text-brand-dark hover:border-brand-accent hover:text-brand-accent transition" data-remove-filter data-type="filter" data-group="${escapeHtml(item.group)}" data-value="${escapeHtml(item.value)}">
-                        <span>${label}</span>
-                        <i class="fa-solid fa-xmark text-[10px]"></i>
-                    </button>
-                `;
-            }).join('');
-        }
-
-        function syncQuickFilters() {
-            if (!quickFilters.length) return;
-            quickFilters.forEach((chip) => {
-                const group = chip.dataset.quickFilter;
-                const value = chip.dataset.value;
-                const input = filterInputs.find((item) => item.dataset.filter === group && item.value === value);
-                const isActive = input && input.checked;
-                chip.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-                chip.classList.toggle('border-brand-accent', isActive);
-                chip.classList.toggle('bg-brand-light/90', isActive);
-                chip.classList.toggle('text-brand-accent', isActive);
-                chip.classList.toggle('text-brand-dark', !isActive);
-            });
-        }
-
         function applyFilters() {
-            const rawQuery = searchInput ? searchInput.value.trim() : '';
-            const query = normalizeValue(rawQuery);
-            const selected = getSelectedFilters();
+            const query = normalizeValue(searchInput ? searchInput.value.trim() : '');
+            const activeTopic = getActiveTopic();
             let visibleCount = 0;
+
             cards.forEach((card) => {
-                const visible = matchesFilters(card, selected) && matchesSearch(card, query);
+                const visible = matchesTopic(card, activeTopic) && matchesSearch(card, query);
                 card.classList.toggle('hidden', !visible);
                 if (visible) visibleCount += 1;
             });
+
             if (emptyState) {
                 emptyState.classList.toggle('hidden', visibleCount > 0);
             }
-            updateResultsCount(visibleCount);
-            renderActiveFilters(rawQuery);
-            syncQuickFilters();
         }
 
-        function renderSuggestions(results) {
-            if (!suggestionBox) return;
-            if (!results.length) {
-                suggestionBox.classList.add('hidden');
-                suggestionBox.innerHTML = '';
-                return;
-            }
-            suggestionBox.classList.remove('hidden');
-            suggestionBox.innerHTML = results.map((item) => `
-                <a href="${item.url}" class="block px-3 py-2 rounded-lg bg-brand-surface/90 border border-brand-border/60 hover:border-brand-accent transition">
-                    <p class="text-sm text-brand-dark font-semibold">${escapeHtml(item.title)}</p>
-                    <p class="text-xs text-brand-muted">${escapeHtml(item.summary)}</p>
-                </a>
-            `).join('');
-        }
-
-        function handleSearchInput() {
-            const query = normalizeValue(searchInput ? searchInput.value : '');
-            applyFilters();
-            if (!searchIndex.length || !query) {
-                renderSuggestions([]);
-                return;
-            }
-            const results = searchIndex
-                .filter((item) => item.search.includes(query))
-                .slice(0, 6);
-            renderSuggestions(results);
-        }
-
-        function clearAllFilters() {
-            if (searchInput) searchInput.value = '';
-            filterInputs.forEach((input) => {
-                input.checked = false;
+        topicFilterButtons.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                topicFilterButtons.forEach((button) => {
+                    button.classList.remove('active');
+                    button.setAttribute('aria-pressed', 'false');
+                });
+                btn.classList.add('active');
+                btn.setAttribute('aria-pressed', 'true');
+                applyFilters();
             });
-            renderSuggestions([]);
-            applyFilters();
-        }
+        });
 
         if (searchInput) {
-            searchInput.addEventListener('input', handleSearchInput);
+            searchInput.addEventListener('input', applyFilters);
         }
-
-        filterInputs.forEach((input) => {
-            input.addEventListener('change', applyFilters);
-        });
-
-        clearFilterButtons.forEach((button) => {
-            button.addEventListener('click', clearAllFilters);
-        });
-
-        quickFilters.forEach((chip) => {
-            chip.addEventListener('click', () => {
-                const group = chip.dataset.quickFilter;
-                const value = chip.dataset.value;
-                const input = filterInputs.find((item) => item.dataset.filter === group && item.value === value);
-                if (!input) return;
-                input.checked = !input.checked;
-                applyFilters();
-            });
-        });
-
-        if (activeFilters) {
-            activeFilters.addEventListener('click', (event) => {
-                const button = event.target.closest('button[data-remove-filter]');
-                if (!button) return;
-                const type = button.dataset.type;
-                if (type === 'search') {
-                    if (searchInput) searchInput.value = '';
-                    renderSuggestions([]);
-                } else {
-                    const group = button.dataset.group;
-                    const value = button.dataset.value;
-                    const input = filterInputs.find((item) => item.dataset.filter === group && item.value === value);
-                    if (input) input.checked = false;
-                }
-                applyFilters();
-            });
-        }
-
-        document.addEventListener('click', (event) => {
-            if (!suggestionBox || !searchInput) return;
-            if (!searchInput.contains(event.target) && !suggestionBox.contains(event.target)) {
-                suggestionBox.classList.add('hidden');
-            }
-        });
 
         applyFilters();
-        fetch('./search.json')
-            .then((response) => response.json())
-            .then((data) => {
-                searchIndex = data.map((item) => ({
-                    ...item,
-                    search: normalizeValue([item.title, item.summary, item.category, ...(item.tags || []), ...(item.brand || []), ...(item.frequency || []), ...(item.scene || [])].join(' '))
-                }));
-            })
-            .catch(() => {
-                searchIndex = cards.map((card) => ({
-                    title: card.getAttribute('data-title'),
-                    summary: card.getAttribute('data-summary'),
-                    url: card.querySelector('a') ? card.querySelector('a').getAttribute('href') : '#',
-                    search: normalizeValue([
-                        card.getAttribute('data-title'),
-                        card.getAttribute('data-summary'),
-                        card.getAttribute('data-category'),
-                        card.getAttribute('data-tags'),
-                        card.getAttribute('data-brand'),
-                        card.getAttribute('data-frequency'),
-                        card.getAttribute('data-scene')
-                    ].join(' '))
-                }));
-            });
 
         const url = new URL(window.location.href);
         const paramLang = url.searchParams.get('lang');

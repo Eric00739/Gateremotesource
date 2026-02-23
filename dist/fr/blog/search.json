@@ -1,6 +1,28 @@
 [
 
   {
+    "title": &quot;Garage Remote Pairing Checklist for Field Installers&quot;,
+    "summary": &quot;A practical on-site SOP to pair remotes faster and reduce callback risk across mixed-brand gate projects.&quot;,
+    "category": &quot;Programming&quot;,
+    "tags": [&quot;Programming&quot;,&quot;Installation Guides&quot;,&quot;Troubleshooting&quot;,&quot;Nice&quot;,&quot;Came&quot;,&quot;LiftMaster&quot;],
+    "brand": [],
+    "frequency": [],
+    "scene": [],
+    "url": &quot;/blog/garage-remote-pairing-checklist/&quot;
+  },
+
+  {
+    "title": &quot;Nice, Came, Hormann Compatibility Guide for Wholesale Buyers&quot;,
+    "summary": &quot;A procurement-first matrix to match OEM families, frequency bands, and replacement SKUs before bulk ordering.&quot;,
+    "category": &quot;Installation Guides&quot;,
+    "tags": [&quot;Compatibility&quot;,&quot;Nice&quot;,&quot;Came&quot;,&quot;Hormann&quot;,&quot;Wholesale&quot;],
+    "brand": [],
+    "frequency": [],
+    "scene": [],
+    "url": &quot;/blog/nice-came-hormann-compatibility-guide/&quot;
+  },
+
+  {
     "title": &quot;How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance&quot;,
     "summary": &quot;A field-proven checklist for OEM teams to turn range and compliance into measurable KPIs: link margin, blocking, protocol airtime, and regulator-limited transmit behavior.&quot;,
     "category": &quot;RF Engineering&quot;,

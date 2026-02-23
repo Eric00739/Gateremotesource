@@ -54,9 +54,55 @@
     <meta property="og:description" content="Moldes personalizados, ajuste de firmware e branding para controles e receptores de garagem e portao. CE/FCC, MOQ baixo, suporte de engenharia.">
     <meta property="og:url" content="https://www.gateremotesource.com/pt/oem/">
     <meta property="og:image" content="https://www.gateremotesource.com/logo/logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:title" content="Solucoes OEM/ODM | Marca Propria 433MHz e Rolling Code">
     <meta name="twitter:description" content="Moldes personalizados, ajuste de firmware e branding para controles e receptores de garagem e portao. CE/FCC, MOQ baixo, suporte de engenharia.">
     <meta name="twitter:image" content="https://www.gateremotesource.com/logo/logo.png">
+    <meta name="theme-color" content="#0071E3">
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "GateRemoteSource",
+      "url": "https://www.gateremotesource.com",
+      "logo": "https://www.gateremotesource.com/logo/logo.png",
+      "description": "Your Profit Partner in Access Control. Supplying locksmiths worldwide with brand-compatible remotes and universal receivers.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Huawei Kegu Industrial Park, Dalingshan Town",
+        "addressLocality": "Dongguan",
+        "addressRegion": "Guangdong",
+        "addressCountry": "CN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+86-158-9964-8898",
+        "contactType": "sales",
+        "email": "sales@gateremotesource.com",
+        "availableLanguage": ["English", "Spanish", "German", "Italian", "French", "Portuguese"]
+      },
+      "sameAs": [
+        "https://wa.me/8615899648898"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "OEM/ODM Manufacturing Services",
+      "description": "Full OEM/ODM manufacturer for the global access control market with ISO9001 certification",
+      "provider": {
+        "@type": "Organization",
+        "name": "GateRemoteSource"
+      },
+      "areaServed": "Global"
+    }
+    </script>
 
     
     <link rel="icon" type="image/x-icon" href="/logo/favicon.ico?v=1">
@@ -67,6 +113,9 @@
 
     
     <link rel="preconnect" href="https://www.googletagmanager.com">
+
+    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
 
     
     <link rel="preload" href="/assets/css/tailwind.css" as="style">
@@ -94,11 +143,28 @@
     </script>
 
     <style>
+        /* Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #0071E3;
+            color: white;
+            padding: 10px 16px;
+            z-index: 100;
+            transition: top 0.3s;
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
         /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: #1D1D1F; }
-        ::-webkit-scrollbar-thumb { background: #6E6E73; border-radius: 5px; }
-        ::-webkit-scrollbar-thumb:hover { background: #0A84FF; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(0, 113, 227, 0.3); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(0, 113, 227, 0.5); }
 
         /* Glass navigation */
         .nav-glass {
@@ -123,9 +189,17 @@
             outline: none;
         }
         .lang-select option { background-color: #1D1D1F; color: white; }
+
+        /* Focus visible styles */
+        *:focus-visible {
+            outline: 2px solid #0071E3;
+            outline-offset: 2px;
+        }
     </style>
 </head>
 <body class="font-sans text-brand-dark/80 bg-brand-light backdrop-blur selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="oem">
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     
     <nav class="fixed w-full z-50 nav-glass transition-all duration-300">
@@ -135,7 +209,7 @@
                 <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
                     <a href="/pt/" class="flex items-center gap-3">
                         <div class="bg-brand-surface border border-brand-border/60 p-1.5 rounded-lg h-10 w-10 flex items-center justify-center">
-                            <img src="/logo/logo.png" width="1024" height="1024" alt="GateRemoteSource Logo" class="h-full w-full object-contain">
+                            <img src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="h-full w-full object-contain">
                         </div>
                         <span class="font-bold text-2xl text-brand-dark tracking-tight">GateRemote<span class="text-brand-accent">Source</span></span>
                     </a>
@@ -145,41 +219,41 @@
                 <div class="hidden lg:flex space-x-8 items-center">
                     <a href="/pt/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2" id="nav-home" data-i18n="navigation.home">Início</a>
                     <a href="/pt/catalog/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2" id="nav-products" data-i18n="navigation.catalog">Catálogo</a>
-                    <a href="/pt/oem/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2 active" id="nav-oem" data-i18n="navigation.oem">OEM/ODM</a>
+                    <a href="/pt/oem/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2 active" id="nav-oem" aria-current="page" data-i18n="navigation.oem">OEM/ODM</a>
                     <a href="/pt/about/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2" id="nav-about" data-i18n="navigation.about">Sobre</a>
                     <a href="/pt/blog/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2" id="nav-blog" data-i18n="navigation.blog">Blog</a>
                     <a href="/pt/contact/" class="nav-link text-brand-dark hover:text-brand-accent transition font-semibold py-2" id="nav-contact" data-i18n="navigation.contact">Contato</a>
-                    
+
                     
                     <div class="flex items-center ml-2 border-l border-brand-border pl-4">
                         <div class="relative">
-                            <button id="languageDropdownBtn" class="flex items-center gap-2 text-brand-dark hover:text-brand-accent transition">
+                            <button id="languageDropdownBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Select language" class="flex items-center gap-2 text-brand-dark hover:text-brand-accent transition">
                                 <span id="currentFlag" class="text-xs font-semibold tracking-wide">EN</span>
                                 <span id="currentLang" class="text-sm">English</span>
-                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                                <i class="fa-solid fa-chevron-down text-xs" aria-hidden="true"></i>
                             </button>
-                            <div id="languageDropdown" class="absolute right-0 mt-2 w-48 bg-brand-surface border border-brand-border rounded-lg shadow-lg hidden z-50 backdrop-blur">
-                                <a href="#" onclick="changeLanguage('en')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+                            <div id="languageDropdown" role="menu" aria-labelledby="languageDropdownBtn" class="absolute right-0 mt-2 w-48 bg-brand-surface border border-brand-border rounded-lg shadow-lg hidden z-50 backdrop-blur">
+                                <a href="#" onclick="changeLanguage('en')" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
                                     <span class="text-xs font-semibold">EN</span>
                                     <span class="text-brand-dark">English</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('es')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+                                <a href="#" onclick="changeLanguage('es')" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
                                     <span class="text-xs font-semibold">ES</span>
                                     <span class="text-brand-dark">Español</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('de')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+                                <a href="#" onclick="changeLanguage('de')" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
                                     <span class="text-xs font-semibold">DE</span>
                                     <span class="text-brand-dark">Deutsch</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('it')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+                                <a href="#" onclick="changeLanguage('it')" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
                                     <span class="text-xs font-semibold">IT</span>
                                     <span class="text-brand-dark">Italiano</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('fr')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+                                <a href="#" onclick="changeLanguage('fr')" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
                                     <span class="text-xs font-semibold">FR</span>
                                     <span class="text-brand-dark">Français</span>
                                 </a>
-                                <a href="#" onclick="changeLanguage('pt')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+                                <a href="#" onclick="changeLanguage('pt')" role="menuitem" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
                                     <span class="text-xs font-semibold">PT</span>
                                     <span class="text-brand-dark">Português</span>
                                 </a>
@@ -192,8 +266,8 @@
 
                 
                 <div class="lg:hidden flex items-center gap-4">
-                    <button id="mobile-menu-btn" class="text-brand-dark text-2xl focus:outline-none">
-                        <i class="fa-solid fa-bars"></i>
+                    <button id="mobile-menu-btn" type="button" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu" class="text-brand-dark text-2xl focus:outline-none">
+                        <i class="fa-solid fa-bars" aria-hidden="true"></i>
                     </button>
                 </div>
             </div>
@@ -224,7 +298,7 @@
     </nav>
 
     
-    <main class="pt-32 pb-24 bg-brand-light backdrop-blur min-h-screen">
+    <main id="main-content" class="pt-32 pb-24 bg-brand-light backdrop-blur min-h-screen">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
              <div class="text-center mb-16">
                 <h1 class="text-4xl md:text-5xl font-bold text-brand-dark mb-4" data-i18n="oem_odm.title">Soluções OEM/ODM</h1>
@@ -435,7 +509,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <div>
                     <div class="flex items-center gap-3 mb-4 text-brand-dark">
-                        <img src="/logo/logo.png" width="1024" height="1024" alt="GateRemoteSource logo" class="h-10 w-auto object-contain">
+                        <img src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="h-10 w-auto object-contain">
                     </div>
                     <p class="mb-4" data-i18n="footer.company_description">Seu parceiro de lucro em controle de acesso. Fornecendo chaveiros no mundo todo.</p>
                 </div>
@@ -456,7 +530,7 @@
                 </div>
                 <div>
                     <h4 class="text-brand-dark font-bold mb-4" data-i18n="footer.address">Endereço</h4>
-                    <p class="flex items-start gap-2"><i class="fa-solid fa-location-dot mt-1 text-brand-accent"></i><span data-i18n="footer.address_text">Huawei Kegu Industrial Park, Dalingshan Town, Dongguan, Guangdong, China</span></p>
+                    <p class="flex items-start gap-2"><i class="fa-solid fa-location-dot mt-1 text-brand-accent" aria-hidden="true"></i><span data-i18n="footer.address_text">Huawei Kegu Industrial Park, Dalingshan Town, Dongguan, Guangdong, China</span></p>
                 </div>
             </div>
             <div class="text-center pt-8 border-t border-brand-border">
@@ -466,12 +540,21 @@
     </footer>
 
     
-    <a href="https://wa.me/8615899648898" target="_blank" class="whatsapp-float fixed bottom-6 right-6 z-50 bg-brand-quote hover:bg-brand-quoteHover text-white rounded-full p-4 shadow-lg flex items-center justify-center transition transform hover:scale-105">
-        <i class="fa-brands fa-whatsapp text-4xl"></i>
+    <a href="https://wa.me/8615899648898" target="_blank" aria-label="Contact us on WhatsApp" class="whatsapp-float fixed bottom-6 right-6 z-50 bg-brand-quote hover:bg-brand-quoteHover text-white rounded-full p-4 shadow-lg flex items-center justify-center transition transform hover:scale-105">
+        <i class="fa-brands fa-whatsapp text-4xl" aria-hidden="true"></i>
     </a>
 
     
     <script>
+        // Global error handlers
+        window.addEventListener('error', (event) => {
+            console.error('Global error:', event.error);
+        });
+
+        window.addEventListener('unhandledrejection', (event) => {
+            console.error('Unhandled promise rejection:', event.reason);
+        });
+
         // i18n System
         const supportedLangs = ['en', 'es', 'de', 'it', 'fr', 'pt'];
         const defaultLang = 'en';
@@ -612,7 +695,10 @@
 
         // Language dropdown toggle
         document.getElementById('languageDropdownBtn').addEventListener('click', function() {
-            document.getElementById('languageDropdown').classList.toggle('hidden');
+            const dropdown = document.getElementById('languageDropdown');
+            const button = document.getElementById('languageDropdownBtn');
+            dropdown.classList.toggle('hidden');
+            button.setAttribute('aria-expanded', dropdown.classList.contains('hidden') ? 'false' : 'true');
         });
 
         // Close dropdown when clicking outside
@@ -627,7 +713,17 @@
         // Mobile menu
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        mobileBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                mobileMenu.classList.toggle('hidden');
+                mobileBtn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+                if (!isHidden) {
+                    mobileBtn.focus(); // Return focus when closing
+                }
+            });
+        }
 
         const url = new URL(window.location.href);
         const paramLang = url.searchParams.get('lang');

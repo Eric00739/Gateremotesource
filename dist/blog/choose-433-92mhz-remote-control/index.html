@@ -237,6 +237,16 @@
             opacity: 1;
             visibility: visible;
         }
+
+        /* Hard safety rail for footer logo rendering */
+        .site-footer-logo-icon {
+            width: 32px;
+            height: 32px;
+            max-width: 32px;
+            max-height: 32px;
+            object-fit: contain;
+            display: block;
+        }
     </style>
 </head>
 <body class="font-sans text-brand-dark/80 bg-brand-light backdrop-blur selection:bg-brand-accent selection:text-white flex flex-col min-h-screen">
@@ -559,6 +569,18 @@ That is how OEM teams avoid &quot;datasheet dreams&quot; and ship reliable produ
                         </h3>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-brand-muted">
                             
+                            <a href="/blog/garage-remote-pairing-checklist/" class="p-4 rounded-xl bg-brand-surface backdrop-blur border border-brand-border hover:border-brand-accent transition block">
+                                <p class="text-xs text-brand-accent font-bold uppercase tracking-wide mb-1">Programming</p>
+                                <p class="text-brand-dark font-semibold mb-1">Garage Remote Pairing Checklist for Field Installers</p>
+                                <p class="text-brand-muted text-xs">A practical on-site SOP to pair remotes faster and reduce callback risk across mixed-brand gate projects.</p>
+                            </a>
+                            
+                            <a href="/blog/nice-came-hormann-compatibility-guide/" class="p-4 rounded-xl bg-brand-surface backdrop-blur border border-brand-border hover:border-brand-accent transition block">
+                                <p class="text-xs text-brand-accent font-bold uppercase tracking-wide mb-1">Installation Guides</p>
+                                <p class="text-brand-dark font-semibold mb-1">Nice, Came, Hormann Compatibility Guide for Wholesale Buyers</p>
+                                <p class="text-brand-muted text-xs">A procurement-first matrix to match OEM families, frequency bands, and replacement SKUs before bulk ordering.</p>
+                            </a>
+                            
                             <a href="/blog/avoid-public-mold-trap-pcb-quality/" class="p-4 rounded-xl bg-brand-surface backdrop-blur border border-brand-border hover:border-brand-accent transition block">
                                 <p class="text-xs text-brand-accent font-bold uppercase tracking-wide mb-1">Engineering</p>
                                 <p class="text-brand-dark font-semibold mb-1">Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls</p>
@@ -687,7 +709,7 @@ That is how OEM teams avoid &quot;datasheet dreams&quot; and ship reliable produ
     <footer class="bg-brand-light backdrop-blur border-t border-brand-border py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-brand-dark/80">
             <div class="flex items-center gap-2 text-brand-dark">
-                <img src="/logo/logo.png" width="1024" height="1024" alt="GateRemoteSource logo" class="h-8 w-auto object-contain">
+                <img src="/logo/logo.png" width="32" height="32" alt="GateRemoteSource logo" class="site-footer-logo-icon h-8 w-auto object-contain" style="width: 32px; height: 32px; max-width: 32px; max-height: 32px; object-fit: contain;">
                 <span class="font-bold">GateRemote<span class="text-brand-accent">Source</span></span>
             </div>
             <div class="flex items-center gap-4">
