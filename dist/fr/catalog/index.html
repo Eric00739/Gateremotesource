@@ -251,7 +251,7 @@
                         <div class="relative">
                             <button id="languageDropdownBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Select language" class="flex items-center gap-2 text-brand-dark hover:text-brand-accent transition">
                                 <span id="currentFlag" class="text-xs font-semibold tracking-wide">EN</span>
-                                <span id="currentLang" class="text-sm">English</span>
+                                <span id="currentLang" class="sr-only">English</span>
                                 <i class="fa-solid fa-chevron-down text-xs" aria-hidden="true"></i>
                             </button>
                             <div id="languageDropdown" role="menu" aria-labelledby="languageDropdownBtn" class="absolute right-0 mt-2 w-48 bg-brand-surface border border-brand-border rounded-lg shadow-lg hidden z-50 backdrop-blur">
@@ -306,13 +306,20 @@
                 <a href="/fr/contact/" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-cta font-bold" data-i18n="navigation.contact" data-cta="mobile_get_price_list">Contact</a>
                 <div class="pt-4 border-t border-brand-border">
                     <p class="px-3 text-xs uppercase tracking-wide text-brand-light/60">Language</p>
-                    <div class="px-3 mt-2 flex flex-wrap gap-2">
-                        <button type="button" onclick="changeLanguage('en')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-dark hover:text-brand-accent transition">EN</button>
-                        <button type="button" onclick="changeLanguage('es')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-dark hover:text-brand-accent transition">ES</button>
-                        <button type="button" onclick="changeLanguage('de')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-dark hover:text-brand-accent transition">DE</button>
-                        <button type="button" onclick="changeLanguage('it')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-dark hover:text-brand-accent transition">IT</button>
-                        <button type="button" onclick="changeLanguage('fr')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-dark hover:text-brand-accent transition">FR</button>
-                        <button type="button" onclick="changeLanguage('pt')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-dark hover:text-brand-accent transition">PT</button>
+                    <div class="px-3 mt-2">
+                        <div class="relative">
+                            <i class="fa-solid fa-globe absolute left-3 top-1/2 -translate-y-1/2 text-brand-muted text-xs" aria-hidden="true"></i>
+                            <label for="mobileLangSelect" class="sr-only">Select language</label>
+                            <select id="mobileLangSelect" onchange="changeLanguage(this.value)" class="w-full appearance-none bg-brand-light border border-brand-border rounded-lg pl-9 pr-8 py-2 text-xs font-semibold text-brand-dark focus:border-brand-accent focus:outline-none transition">
+                                <option value="en">English (EN)</option>
+                                <option value="es">Español (ES)</option>
+                                <option value="de">Deutsch (DE)</option>
+                                <option value="it">Italiano (IT)</option>
+                                <option value="fr">Français (FR)</option>
+                                <option value="pt">Português (PT)</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-brand-muted text-xs pointer-events-none" aria-hidden="true"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -478,7 +485,7 @@
             <div class="bg-brand-surface p-8 rounded-2xl border border-brand-border text-center">
                 <h2 class="text-2xl font-bold text-brand-dark mb-4" data-i18n="products_page.catalog_download">Need Full 2026 Catalog?</h2>
                 <p class="text-brand-muted mb-8">Use the web catalog above for quick filtering first, then download the PDF for complete specifications and packing details.</p>
-                <a href="/fr/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-brand-surface px-8 py-3 rounded-full font-bold transition shadow-lg" data-cta="download_catalog_pdf">
+                <a href="/fr/contact/" class="inline-flex items-center gap-2 border border-brand-border bg-brand-surface text-brand-dark px-8 py-3 rounded-full font-semibold hover:border-brand-accent hover:text-brand-accent hover:bg-white transition" data-cta="download_catalog_pdf">
                     <span data-i18n="products_page.download_pdf_catalog">Download PDF Catalog</span>
                 </a>
             </div>
@@ -834,6 +841,8 @@
             const langElement = document.getElementById('currentLang');
             if (flagElement) flagElement.textContent = flags[lang] || flags[defaultLang];
             if (langElement) langElement.textContent = langNames[lang] || langNames[defaultLang];
+            const mobileLangSelect = document.getElementById('mobileLangSelect');
+            if (mobileLangSelect) mobileLangSelect.value = lang;
             document.documentElement.setAttribute('lang', lang);
         }
         

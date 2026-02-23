@@ -765,7 +765,7 @@
 
                                 <span id="currentFlag" class="text-xs font-semibold tracking-wide">EN</span>
 
-                                <span id="currentLang" class="text-sm">English</span>
+                                <span id="currentLang" class="sr-only">English</span>
 
                                 <i class="fa-solid fa-chevron-down text-xs"></i>
 
@@ -873,13 +873,20 @@
 
                 <div class="pt-4 border-t border-brand-border">
                     <p class="px-3 text-xs uppercase tracking-wide text-brand-light/60">Language</p>
-                    <div class="px-3 mt-2 flex flex-wrap gap-2">
-                        <button type="button" onclick="changeLanguage('en')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-dark hover:text-brand-accent transition">EN</button>
-                        <button type="button" onclick="changeLanguage('es')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-dark hover:text-brand-accent transition">ES</button>
-                        <button type="button" onclick="changeLanguage('de')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-dark hover:text-brand-accent transition">DE</button>
-                        <button type="button" onclick="changeLanguage('it')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-dark hover:text-brand-accent transition">IT</button>
-                        <button type="button" onclick="changeLanguage('fr')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-dark hover:text-brand-accent transition">FR</button>
-                        <button type="button" onclick="changeLanguage('pt')" class="glass-chip px-3 py-1 text-xs font-semibold text-brand-dark hover:text-brand-accent transition">PT</button>
+                    <div class="px-3 mt-2">
+                        <div class="relative">
+                            <i class="fa-solid fa-globe absolute left-3 top-1/2 -translate-y-1/2 text-brand-muted text-xs" aria-hidden="true"></i>
+                            <label for="mobileLangSelect" class="sr-only">Select language</label>
+                            <select id="mobileLangSelect" onchange="changeLanguage(this.value)" class="w-full appearance-none bg-brand-light border border-brand-border rounded-lg pl-9 pr-8 py-2 text-xs font-semibold text-brand-dark focus:border-brand-accent focus:outline-none transition">
+                                <option value="en">English (EN)</option>
+                                <option value="es">Español (ES)</option>
+                                <option value="de">Deutsch (DE)</option>
+                                <option value="it">Italiano (IT)</option>
+                                <option value="fr">Français (FR)</option>
+                                <option value="pt">Português (PT)</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-brand-muted text-xs pointer-events-none" aria-hidden="true"></i>
+                        </div>
                     </div>
                 </div>
 
@@ -1332,7 +1339,7 @@
 
                             <p class="text-brand-muted text-sm mb-3">Download current FOB Dongguan sheets with distributor tiers and suggested UK retail.</p>
 
-                            <button onclick="navigateTo('contact')" class="text-brand-accent font-bold hover:text-brand-hover text-sm" data-cta="portal_price_list">Get Updated Sheet</button>
+                            <button onclick="navigateTo('contact')" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-brand-border bg-brand-surface text-brand-dark font-semibold text-sm hover:border-brand-accent hover:text-brand-accent hover:bg-white transition" data-cta="portal_price_list">Get Updated Sheet</button>
 
                         </div>
 
@@ -1350,7 +1357,7 @@
 
                             <p class="text-brand-muted text-sm mb-3">Includes Nice/Came compatible remotes and universal receivers ready for UK site demos.</p>
 
-                            <a href="/es/contact/" class="text-brand-cta font-bold hover:text-brand-ctaHover text-sm" data-cta="portal_sample_kit">Request Sample Kit</a>
+                            <a href="/es/contact/" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-brand-border bg-brand-surface text-brand-dark font-semibold text-sm hover:border-brand-accent hover:text-brand-accent hover:bg-white transition" data-cta="portal_sample_kit">Request Sample Kit</a>
 
                         </div>
 
@@ -1452,6 +1459,39 @@
                     </div>
                 </div>
 
+                <div class="mb-10 bg-brand-surface border border-brand-border rounded-2xl p-6">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-5">
+                        <div>
+                            <h3 class="text-xl font-bold text-brand-dark">Certification Evidence (Tap to Enlarge)</h3>
+                            <p class="text-sm text-brand-muted">ISO9001, CE, and FCC proof is presented as visual files, not text-only claims.</p>
+                        </div>
+                        <span class="text-xs font-semibold uppercase tracking-wide text-brand-accent">Visual Proof</span>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <button type="button" class="text-left bg-brand-light border border-brand-border rounded-xl overflow-hidden hover:border-brand-accent transition" data-cert-image="/factroy%20photo/gate%20remote%20(11).webp" data-cert-title="ISO9001 Certificate">
+                            <img loading="lazy" decoding="async" src="/factroy%20photo/gate%20remote%20(11).webp" alt="ISO9001 certificate document" class="h-40 w-full object-cover">
+                            <div class="p-3">
+                                <p class="text-sm font-bold text-brand-dark">ISO9001 Certificate</p>
+                                <p class="text-xs text-brand-muted mt-1">Quality system verification file</p>
+                            </div>
+                        </button>
+                        <button type="button" class="text-left bg-brand-light border border-brand-border rounded-xl overflow-hidden hover:border-brand-accent transition" data-cert-image="/factroy%20photo/gate%20remote%20(10).webp" data-cert-title="CE Compliance File">
+                            <img loading="lazy" decoding="async" src="/factroy%20photo/gate%20remote%20(10).webp" alt="CE compliance certificate file" class="h-40 w-full object-cover">
+                            <div class="p-3">
+                                <p class="text-sm font-bold text-brand-dark">CE Compliance</p>
+                                <p class="text-xs text-brand-muted mt-1">EU market entry certificate package</p>
+                            </div>
+                        </button>
+                        <button type="button" class="text-left bg-brand-light border border-brand-border rounded-xl overflow-hidden hover:border-brand-accent transition" data-cert-image="/factroy%20photo/gate%20remote%20(18).webp" data-cert-title="FCC Compliance File">
+                            <img loading="lazy" decoding="async" src="/factroy%20photo/gate%20remote%20(18).webp" alt="FCC compliance certificate file" class="h-40 w-full object-cover">
+                            <div class="p-3">
+                                <p class="text-sm font-bold text-brand-dark">FCC Compliance</p>
+                                <p class="text-xs text-brand-muted mt-1">US RF compliance evidence set</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <article class="md:col-span-2 lg:col-span-2 bg-brand-surface border border-brand-border rounded-2xl overflow-hidden shadow-sm">
                         <div class="relative aspect-video bg-brand-dark">
@@ -1498,6 +1538,42 @@
                     </article>
                 </div>
 
+                <div class="mt-10">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-5">
+                        <div>
+                            <h3 class="text-xl font-bold text-brand-dark">Buyer-Side Deployment Scenes</h3>
+                            <p class="text-sm text-brand-muted">Replace scripted testimonials with real usage context from installation, warehousing, and field support.</p>
+                        </div>
+                        <span class="text-xs font-semibold uppercase tracking-wide text-brand-accent">Scene Evidence</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                        <article class="bg-brand-surface border border-brand-border rounded-2xl overflow-hidden">
+                            <img loading="lazy" decoding="async" src="/assets/factory/rd-lab.webp" alt="Engineer testing remote pairing and compatibility" class="h-44 w-full object-cover">
+                            <div class="p-4">
+                                <p class="text-xs uppercase tracking-wide text-brand-accent font-semibold">Field Testing Scene</p>
+                                <p class="text-sm text-brand-dark font-bold mt-1">Installer Pairing Verification</p>
+                                <p class="text-xs text-brand-muted mt-1">Used by distributor tech teams to validate first-press success before bulk rollout.</p>
+                            </div>
+                        </article>
+                        <article class="bg-brand-surface border border-brand-border rounded-2xl overflow-hidden">
+                            <img loading="lazy" decoding="async" src="/assets/factory/warehouse.webp" alt="Warehouse staging for channel partner shipments" class="h-44 w-full object-cover">
+                            <div class="p-4">
+                                <p class="text-xs uppercase tracking-wide text-brand-accent font-semibold">Channel Fulfillment Scene</p>
+                                <p class="text-sm text-brand-dark font-bold mt-1">Mixed-SKU Staging for Reorders</p>
+                                <p class="text-xs text-brand-muted mt-1">Shows outbound handling process for recurring B2B distribution orders.</p>
+                            </div>
+                        </article>
+                        <article class="bg-brand-surface border border-brand-border rounded-2xl overflow-hidden">
+                            <img loading="lazy" decoding="async" src="/assets/factory/team.webp" alt="Support team reviewing distributor requirements" class="h-44 w-full object-cover">
+                            <div class="p-4">
+                                <p class="text-xs uppercase tracking-wide text-brand-accent font-semibold">Support Collaboration Scene</p>
+                                <p class="text-sm text-brand-dark font-bold mt-1">OEM + Distributor Alignment</p>
+                                <p class="text-xs text-brand-muted mt-1">Evidence of real engineering support workflow instead of anonymous quote cards.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
                 <div class="mt-10 bg-brand-surface border border-brand-border rounded-2xl p-6">
                     <h3 class="text-xl font-bold text-brand-dark mb-3">What Procurement Teams Can Verify Immediately</h3>
                     <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-brand-muted">
@@ -1506,7 +1582,7 @@
                         <li class="flex gap-2"><i class="fa-solid fa-check text-brand-accent mt-0.5"></i><span>Compatibility-first support for Nice, Came, Hormann, LiftMaster ecosystems.</span></li>
                         <li class="flex gap-2"><i class="fa-solid fa-check text-brand-accent mt-0.5"></i><span>Evidence pack available before volume commitment.</span></li>
                     </ul>
-                    <a href="/es/contact/?demand_type=finished-wholesale&order_volume=500-999" class="inline-flex items-center mt-5 px-5 py-3 rounded-lg bg-brand-cta text-white font-bold hover:bg-brand-ctaHover transition" data-cta="factory_evidence_pack">Request Factory Evidence Pack <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                    <a href="/es/contact/?demand_type=finished-wholesale&order_volume=500-999" class="inline-flex items-center mt-5 px-5 py-3 rounded-lg border border-brand-border bg-brand-surface text-brand-dark font-semibold hover:border-brand-accent hover:text-brand-accent hover:bg-white transition" data-cta="factory_evidence_pack">Request Factory Evidence Pack <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
                 </div>
 
             </div>
@@ -2000,7 +2076,7 @@
 
                     <p class="text-brand-muted mb-8">Start with the web catalog above for fast filtering, then download the complete PDF with full specifications and packaging options.</p>
 
-                    <button onclick="navigateTo('contact')" class="bg-brand-cta hover:bg-brand-ctaHover text-brand-surface px-8 py-3 rounded-full font-bold transition shadow-lg">
+                    <button onclick="navigateTo('contact')" class="inline-flex items-center gap-2 border border-brand-border bg-brand-surface text-brand-dark px-8 py-3 rounded-full font-semibold hover:border-brand-accent hover:text-brand-accent hover:bg-white transition">
 
                         <span data-i18n="products_page.download_pdf_catalog">Descargar Catálogo PDF</span>
 
@@ -2790,7 +2866,7 @@
 
             </div>
 
-            <button onclick="navigateTo('contact')" class="bg-brand-cta text-brand-surface px-8 py-3 rounded-lg font-bold hover:bg-brand-ctaHover transition shadow-sm hover:shadow-md">
+            <button onclick="navigateTo('contact')" class="inline-flex items-center gap-2 border border-brand-border bg-brand-surface text-brand-dark px-8 py-3 rounded-lg font-semibold hover:border-brand-accent hover:text-brand-accent hover:bg-white transition">
 
                 <span data-i18n="pre_footer.order_samples">Pedir Muestras</span>
 
@@ -2891,6 +2967,20 @@
         <i class="fa-brands fa-whatsapp text-4xl"></i>
 
     </a>
+
+    <div id="certificate-lightbox" class="fixed inset-0 z-[120] hidden items-center justify-center bg-brand-dark/80 backdrop-blur p-4" role="dialog" aria-modal="true" aria-labelledby="certificate-lightbox-title">
+        <div class="w-full max-w-4xl bg-brand-surface border border-brand-border rounded-2xl overflow-hidden shadow-xl">
+            <div class="flex items-center justify-between px-4 py-3 border-b border-brand-border">
+                <h3 id="certificate-lightbox-title" class="text-base font-bold text-brand-dark">Certificate Preview</h3>
+                <button type="button" id="certificate-lightbox-close" class="h-8 w-8 rounded-md border border-brand-border text-brand-muted hover:text-brand-dark hover:border-brand-accent transition" aria-label="Close certificate preview">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="bg-brand-light">
+                <img id="certificate-lightbox-image" src="" alt="Certificate preview" class="w-full max-h-[75vh] object-contain">
+            </div>
+        </div>
+    </div>
 
     
 
@@ -3325,6 +3415,8 @@
             const langElement = document.getElementById('currentLang');
             if (flagElement) flagElement.textContent = flags[lang] || flags[defaultLang];
             if (langElement) langElement.textContent = langNames[lang] || langNames[defaultLang];
+            const mobileLangSelect = document.getElementById('mobileLangSelect');
+            if (mobileLangSelect) mobileLangSelect.value = lang;
             document.documentElement.setAttribute('lang', lang);
         }
 
@@ -3486,6 +3578,56 @@
 
         }
 
+        function initCertificateLightbox() {
+
+            const lightbox = document.getElementById('certificate-lightbox');
+            const image = document.getElementById('certificate-lightbox-image');
+            const title = document.getElementById('certificate-lightbox-title');
+            const closeBtn = document.getElementById('certificate-lightbox-close');
+
+            if (!lightbox || !image || !title) return;
+
+            const openLightbox = (src, label) => {
+                image.src = src;
+                title.textContent = label || 'Certificate Preview';
+                lightbox.classList.remove('hidden');
+                lightbox.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            };
+
+            const closeLightbox = () => {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+                image.src = '';
+                document.body.style.overflow = '';
+            };
+
+            document.querySelectorAll('[data-cert-image]').forEach((trigger) => {
+                if (trigger.dataset.bound === 'true') return;
+                trigger.addEventListener('click', () => openLightbox(trigger.dataset.certImage, trigger.dataset.certTitle));
+                trigger.dataset.bound = 'true';
+            });
+
+            if (closeBtn && closeBtn.dataset.bound !== 'true') {
+                closeBtn.addEventListener('click', closeLightbox);
+                closeBtn.dataset.bound = 'true';
+            }
+
+            if (lightbox.dataset.bound !== 'true') {
+                lightbox.addEventListener('click', (event) => {
+                    if (event.target === lightbox) closeLightbox();
+                });
+
+                document.addEventListener('keydown', (event) => {
+                    if (event.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+                        closeLightbox();
+                    }
+                });
+
+                lightbox.dataset.bound = 'true';
+            }
+        }
+
 
 
         function updateView(pageId) {
@@ -3578,6 +3720,7 @@
             attachCtaTracking();
             initTestimonialPager();
             initProductFilters();
+            initCertificateLightbox();
             renderBlogs(getBlogPosts());
         });
 
