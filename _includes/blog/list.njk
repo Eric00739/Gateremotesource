@@ -603,7 +603,7 @@
             "Installation Guides": "fa-solid fa-screwdriver-wrench"
         } %}
         {% set globalPosts = collections.posts %}
-        {% set categoryList = globalPosts | pluck("data.category") | unique %}
+        {% set categoryList = globalPosts | pluck("category") | unique %}
 
         <section class="resource-hero">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
