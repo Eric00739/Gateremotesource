@@ -176,6 +176,46 @@
             object-fit: cover !important;
             display: block;
         }
+
+        .blog-feed-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .blog-feed-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .blog-feature-card {
+                grid-column: span 2 / span 2;
+            }
+        }
+
+        .clamp-title-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .clamp-excerpt-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        @media (max-width: 767px) {
+            .sidebar-rfq-desktop {
+                display: none;
+            }
+        }
+
+        .mobile-quote-modal[hidden] {
+            display: none !important;
+        }
     </style>
 </head>
 <body class="font-sans text-brand-dark/80 bg-brand-light backdrop-blur selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="blog">
