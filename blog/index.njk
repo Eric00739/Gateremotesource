@@ -390,7 +390,7 @@ lang: en
         .blog-feed-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 2rem;
+            gap: 1.25rem;
         }
 
         @media (min-width: 768px) {
@@ -417,8 +417,36 @@ lang: en
             overflow: hidden;
         }
 
+        .clamp-excerpt-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .blog-card-compact {
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+        }
+
+        .blog-card-meta {
+            font-size: 11px;
+            line-height: 1.35;
+            color: #8b95a1;
+        }
+
+        .blog-card-excerpt {
+            font-size: 13px;
+            line-height: 1.5;
+            color: #6b7280;
+        }
+
         @media (max-width: 767px) {
             .sidebar-rfq-desktop {
+                display: none;
+            }
+
+            .blog-card-excerpt {
                 display: none;
             }
         }
@@ -632,19 +660,19 @@ lang: en
                             <h2 id="articles-heading" class="sr-only">Latest Articles</h2>
                             <div class="blog-feed-grid">
                                 {% if pagination.pageNumber == 0 and primaryFeatured %}
-                                <article id="featured-heading" class="blog-feature-card bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group h-full" data-post-card data-title="{{ primaryFeatured.data.title | escape }}" data-summary="{{ primaryFeatured.data.summary | escape }}" data-category="{{ primaryFeatured.data.category | slugify }}" data-tags="{{ primaryFeatured.data.tags | contentTags | joinSlugList }}" data-author="{{ primaryFeatured.data.author | default('GateRemoteSource') | escape }}">
+                                <article id="featured-heading" class="blog-feature-card blog-card-compact bg-brand-surface rounded-xl overflow-hidden flex flex-col group h-full" data-post-card data-title="{{ primaryFeatured.data.title | escape }}" data-summary="{{ primaryFeatured.data.summary | escape }}" data-category="{{ primaryFeatured.data.category | slugify }}" data-tags="{{ primaryFeatured.data.tags | contentTags | joinSlugList }}" data-author="{{ primaryFeatured.data.author | default('GateRemoteSource') | escape }}">
                                     <div class="grid grid-cols-1 md:grid-cols-2 h-full">
                                         <div class="blog-card-media blog-card-media--lg">
                                             <img src="{{ primaryFeatured.data.hero_image | safeImage(defaultCardImage) }}" alt="{{ primaryFeatured.data.hero_alt or primaryFeatured.data.title }}" width="800" height="450" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" fetchpriority="high">
                                         </div>
-                                        <div class="p-6 flex flex-col gap-3">
-                                            <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">{{ primaryFeatured.data.category }}</span>
-                                            <h3 class="text-2xl md:text-3xl font-bold text-brand-dark leading-tight clamp-title-2">
+                                        <div class="p-4 md:p-5 flex flex-col gap-2">
+                                            <span class="inline-flex items-center text-[10px] font-semibold uppercase tracking-[0.08em] text-brand-accent bg-brand-light/70 border border-brand-border/50 px-2.5 py-1 rounded-full">{{ primaryFeatured.data.category }}</span>
+                                            <h3 class="text-xl md:text-2xl font-semibold text-brand-dark leading-tight clamp-title-2">
                                                 <a href="{{ primaryFeatured.url }}" class="hover:text-brand-accent transition-colors">{{ primaryFeatured.data.title }}</a>
                                             </h3>
-                                            <div class="text-xs text-brand-muted">{{ primaryFeatured.date | readableDate }} | {{ primaryFeatured.data.author or "GateRemoteSource" }} | {{ primaryFeatured.data.read_time }}</div>
-                                            <p class="text-brand-muted text-sm leading-relaxed clamp-excerpt-3 flex-1">{{ primaryFeatured.data.summary }}</p>
-                                            <a href="{{ primaryFeatured.url }}" class="mt-auto inline-flex items-center text-brand-accent font-semibold hover:text-brand-hover transition-colors text-sm">
+                                            <div class="blog-card-meta">{{ primaryFeatured.date | readableDate }} | {{ primaryFeatured.data.author or "GateRemoteSource" }} | {{ primaryFeatured.data.read_time }}</div>
+                                            <p class="blog-card-excerpt clamp-excerpt-2 flex-1">{{ primaryFeatured.data.summary }}</p>
+                                            <a href="{{ primaryFeatured.url }}" class="mt-auto inline-flex items-center text-brand-accent font-semibold hover:text-brand-hover transition-colors text-xs">
                                                 Read Article
                                                 <i class="fa-solid fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
                                             </a>
@@ -654,18 +682,18 @@ lang: en
                                 {% endif %}
 
                                 {% for post in gridPosts %}
-                                <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group h-full" data-post-card data-title="{{ post.data.title | escape }}" data-summary="{{ post.data.summary | escape }}" data-category="{{ post.data.category | slugify }}" data-tags="{{ post.data.tags | contentTags | joinSlugList }}" data-author="{{ post.data.author | default('GateRemoteSource') | escape }}">
+                                <article class="blog-card-compact bg-brand-surface rounded-xl overflow-hidden flex flex-col group h-full" data-post-card data-title="{{ post.data.title | escape }}" data-summary="{{ post.data.summary | escape }}" data-category="{{ post.data.category | slugify }}" data-tags="{{ post.data.tags | contentTags | joinSlugList }}" data-author="{{ post.data.author | default('GateRemoteSource') | escape }}">
                                     <div class="blog-card-media blog-card-media--grid">
                                         <img loading="lazy" decoding="async" src="{{ post.data.hero_image | safeImage(defaultCardImage) }}" alt="{{ post.data.hero_alt or post.data.title }}" width="640" height="360" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
                                     </div>
-                                    <div class="p-5 flex flex-col gap-3 flex-1">
-                                        <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">{{ post.data.category }}</span>
-                                        <h3 class="text-lg font-bold text-brand-dark leading-tight clamp-title-2">
+                                    <div class="p-4 flex flex-col gap-2 flex-1">
+                                        <span class="inline-flex items-center text-[10px] font-semibold uppercase tracking-[0.08em] text-brand-accent bg-brand-light/70 border border-brand-border/50 px-2.5 py-1 rounded-full">{{ post.data.category }}</span>
+                                        <h3 class="text-base font-semibold text-brand-dark leading-tight clamp-title-2">
                                             <a href="{{ post.url }}" class="hover:text-brand-accent transition-colors">{{ post.data.title }}</a>
                                         </h3>
-                                        <div class="text-xs text-brand-muted">{{ post.date | readableDate }} | {{ post.data.author or "GateRemoteSource" }} | {{ post.data.read_time }}</div>
-                                        <p class="text-brand-muted text-sm clamp-excerpt-3 flex-1 leading-relaxed">{{ post.data.summary }}</p>
-                                        <a href="{{ post.url }}" class="mt-auto inline-flex items-center text-brand-accent font-semibold hover:text-brand-hover transition-colors text-sm">
+                                        <div class="blog-card-meta">{{ post.date | readableDate }} | {{ post.data.author or "GateRemoteSource" }} | {{ post.data.read_time }}</div>
+                                        <p class="blog-card-excerpt clamp-excerpt-2 flex-1">{{ post.data.summary }}</p>
+                                        <a href="{{ post.url }}" class="mt-auto inline-flex items-center text-brand-accent font-semibold hover:text-brand-hover transition-colors text-xs">
                                             Read Article
                                             <i class="fa-solid fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
                                         </a>
