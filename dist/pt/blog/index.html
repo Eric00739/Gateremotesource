@@ -164,15 +164,20 @@
         .blog-card-media {
             position: relative;
             overflow: hidden;
-            min-height: 220px;
+            aspect-ratio: 16 / 9;
+            background: #f3f4f6;
+        }
+
+        .blog-card-media--lg {
+            aspect-ratio: 16 / 9;
         }
 
         .blog-card-media--sm {
-            min-height: 176px;
+            aspect-ratio: 16 / 9;
         }
 
         .blog-card-media--grid {
-            min-height: 192px;
+            aspect-ratio: 16 / 9;
         }
 
         .blog-card-media > img {
@@ -292,8 +297,8 @@
                         <h1 class="text-4xl md:text-5xl font-bold text-brand-dark" data-i18n="blog.title">Hub do Instalador</h1>
                         <p class="text-brand-muted max-w-2xl" data-i18n="blog.subtitle">Guias técnicos, tutoriais de programação e novidades do setor para chaveiros.</p>
                     </div>
-                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 border border-brand-border/60 bg-brand-surface/80 rounded-xl px-4 py-3">
-                        <div class="flex items-center gap-2 overflow-x-auto pb-1 lg:pb-0" role="tablist" aria-label="Topic filters">
+                    <div class="flex flex-wrap lg:flex-nowrap items-center gap-3 border border-brand-border/60 bg-brand-surface/80 rounded-xl px-4 py-3">
+                        <div class="flex-1 min-w-0 flex items-center gap-2 overflow-x-auto pb-1 lg:pb-0" role="tablist" aria-label="Topic filters">
                             <button type="button" class="topic-filter-btn active px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="all" aria-pressed="true">All</button>
                             <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="technical-guides" aria-pressed="false">Technical Guides</button>
                             <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="case-studies" aria-pressed="false">Case Studies</button>
@@ -302,7 +307,7 @@
                             <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="installation-guides" aria-pressed="false">Installation Guides</button>
                             <button type="button" class="topic-filter-btn px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap" data-topic="programming" aria-pressed="false">Programming</button>
                         </div>
-                        <div class="relative w-full lg:w-64">
+                        <div class="relative w-full sm:w-72 lg:w-80 lg:flex-none">
                             <label for="blogSearch" class="sr-only">Search articles</label>
                             <input type="search" id="blogSearch" placeholder="Search articles..." class="w-full bg-brand-light border border-brand-border/60 rounded-lg pl-10 pr-4 py-2.5 text-sm text-brand-dark focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 outline-none transition">
                             <i class="fa-solid fa-search absolute left-3 top-3 text-brand-muted text-sm"></i>
@@ -323,85 +328,118 @@
         
         
         
-        
-        
-            
-            
-        
-
-        
-        <section class="pb-12">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] gap-6">
-                    <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance" data-summary="A field-proven checklist for OEM teams to turn range and compliance into measurable KPIs: link margin, blocking, protocol airtime, and regulator-limited transmit behavior." data-category="rf-engineering" data-tags="433-92mhz|rf-compliance|link-budget|oem-procurement|garage-doors" data-author="Eric Huang">
-                        <div class="grid grid-cols-1 md:grid-cols-2">
-                            <div class="blog-card-media relative min-h-[220px] overflow-hidden">
-                                <img src="/assets/blog-drops/choose-433-92mhz-remote-control/image-01.webp" alt="Hand holding a 433.92MHz remote in front of a garage door" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            </div>
-                            <div class="p-6 flex flex-col gap-3">
-                                <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">RF Engineering</span>
-                                <h2 class="text-2xl md:text-3xl font-bold text-brand-dark leading-tight group-hover:text-brand-accent transition">How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance</h2>
-                                <div class="text-xs text-brand-muted">February 20, 2025 | Eric Huang | 12 min read</div>
-                                <p class="text-brand-muted text-sm leading-relaxed line-clamp-3 flex-1">A field-proven checklist for OEM teams to turn range and compliance into measurable KPIs: link margin, blocking, protocol airtime, and regulator-limited transmit behavior.</p>
-                                <a href="/pt/blog/choose-433-92mhz-remote-control/" class="mt-auto text-brand-accent font-semibold text-sm inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
-                            </div>
-                        </div>
-                    </article>
-                    <div class="grid grid-cols-1 gap-6">
-                        
-                        <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls" data-summary="Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation." data-category="engineering" data-tags="pcb-quality|rolling-code|oem-manufacturing" data-author="Eric Huang">
-                            <div class="blog-card-media blog-card-media--sm relative h-44 overflow-hidden">
-                                <img loading="lazy" decoding="async" src="/assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-01.webp" alt="Remote shell next to FR-4 PCB" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            </div>
-                            <div class="p-5 flex flex-col gap-3 flex-1">
-                                <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">Engineering</span>
-                                <h3 class="text-lg font-bold text-brand-dark leading-tight group-hover:text-brand-accent transition">Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls</h3>
-                                <div class="text-xs text-brand-muted">February 10, 2025 | Eric Huang | 9 min read</div>
-                                <p class="text-brand-muted text-sm line-clamp-2 flex-1">Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation.</p>
-                                <a href="/pt/blog/avoid-public-mold-trap-pcb-quality/" class="mt-auto text-brand-accent font-semibold text-sm inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
-                            </div>
-                        </article>
-                        
-                        <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="Nice, Came, Hormann Compatibility Guide for Wholesale Buyers" data-summary="A procurement-first matrix to match OEM families, frequency bands, and replacement SKUs before bulk ordering." data-category="installation-guides" data-tags="compatibility|nice|came|hormann|wholesale" data-author="GateRemoteSource Lab">
-                            <div class="blog-card-media blog-card-media--sm relative h-44 overflow-hidden">
-                                <img loading="lazy" decoding="async" src="/assets/factory/team.webp" alt="Team reviewing compatibility matrix for OEM remote replacements" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            </div>
-                            <div class="p-5 flex flex-col gap-3 flex-1">
-                                <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">Installation Guides</span>
-                                <h3 class="text-lg font-bold text-brand-dark leading-tight group-hover:text-brand-accent transition">Nice, Came, Hormann Compatibility Guide for Wholesale Buyers</h3>
-                                <div class="text-xs text-brand-muted">January 10, 2026 | GateRemoteSource Lab | 7 min read</div>
-                                <p class="text-brand-muted text-sm line-clamp-2 flex-1">A procurement-first matrix to match OEM families, frequency bands, and replacement SKUs before bulk ordering.</p>
-                                <a href="/pt/blog/nice-came-hormann-compatibility-guide/" class="mt-auto text-brand-accent font-semibold text-sm inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
-                            </div>
-                        </article>
-                        
-                    </div>
-                </div>
-                
-            </div>
-        </section>
-        
 
         <section class="pb-8">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="Garage Remote Pairing Checklist for Field Installers" data-summary="A practical on-site SOP to pair remotes faster and reduce callback risk across mixed-brand gate projects." data-category="programming" data-tags="programming|installation-guides|troubleshooting|nice|came|liftmaster" data-author="GateRemoteSource Lab">
-                        <div class="blog-card-media blog-card-media--grid relative h-48 overflow-hidden">
-                            <img loading="lazy" decoding="async" src="/assets/factory/rd-lab.webp" alt="Technician validating remote pairing in engineering lab" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        </div>
-                        <div class="p-5 flex flex-col gap-3 flex-1">
-                            <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">Programming</span>
-                            <h3 class="text-lg font-bold text-brand-dark leading-tight group-hover:text-brand-accent transition">Garage Remote Pairing Checklist for Field Installers</h3>
-                            <div class="text-xs text-brand-muted">January 22, 2026 | GateRemoteSource Lab | 8 min read</div>
-                            <p class="text-brand-muted text-sm line-clamp-3 flex-1">A practical on-site SOP to pair remotes faster and reduce callback risk across mixed-brand gate projects.</p>
-                            <a href="/pt/blog/garage-remote-pairing-checklist/" class="mt-auto text-brand-accent font-semibold text-sm inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
-                        </div>
-                    </article>
-                    
+                <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] gap-8">
+                    <div class="space-y-8">
+                        
+                        <section aria-labelledby="featured-heading">
+                            <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance" data-summary="A field-proven checklist for OEM teams to turn range and compliance into measurable KPIs: link margin, blocking, protocol airtime, and regulator-limited transmit behavior." data-category="rf-engineering" data-tags="433-92mhz|rf-compliance|link-budget|oem-procurement|garage-doors" data-author="Eric Huang">
+                                <div class="grid grid-cols-1 md:grid-cols-2">
+                                    <div class="blog-card-media blog-card-media--lg">
+                                        <img src="/assets/blog-drops/choose-433-92mhz-remote-control/image-01.webp" alt="Hand holding a 433.92MHz remote in front of a garage door" width="800" height="450" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                    </div>
+                                    <div class="p-6 flex flex-col gap-3">
+                                        <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">RF Engineering</span>
+                                        <h2 id="featured-heading" class="text-2xl md:text-3xl font-bold text-brand-dark leading-tight">
+                                            <a href="/pt/blog/choose-433-92mhz-remote-control/" class="hover:text-brand-accent transition-colors">How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance</a>
+                                        </h2>
+                                        <div class="text-xs text-brand-muted">February 20, 2025 | Eric Huang | 12 min read</div>
+                                        <p class="text-brand-muted text-sm leading-relaxed line-clamp-3 flex-1">A field-proven checklist for OEM teams to turn range and compliance into measurable KPIs: link margin, blocking, protocol airtime, and regulator-limited transmit behavior.</p>
+                                        <a href="/pt/blog/choose-433-92mhz-remote-control/" class="mt-auto inline-flex items-center text-brand-accent font-semibold text-sm">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                                    </div>
+                                </div>
+                            </article>
+                        </section>
+                        
+
+                        <section aria-labelledby="articles-heading">
+                            <h2 id="articles-heading" class="sr-only">Latest Articles</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                
+                                <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls" data-summary="Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation." data-category="engineering" data-tags="pcb-quality|rolling-code|oem-manufacturing" data-author="Eric Huang">
+                                    <div class="blog-card-media blog-card-media--grid">
+                                        <img loading="lazy" decoding="async" src="/assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-01.webp" alt="Remote shell next to FR-4 PCB" width="640" height="360" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                    </div>
+                                    <div class="p-5 flex flex-col gap-3 flex-1">
+                                        <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">Engineering</span>
+                                        <h3 class="text-lg font-bold text-brand-dark leading-tight group-hover:text-brand-accent transition">Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls</h3>
+                                        <div class="text-xs text-brand-muted">February 10, 2025 | Eric Huang | 9 min read</div>
+                                        <p class="text-brand-muted text-sm line-clamp-3 flex-1">Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation.</p>
+                                        <a href="/pt/blog/avoid-public-mold-trap-pcb-quality/" class="mt-auto text-brand-accent font-semibold text-sm inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                                    </div>
+                                </article>
+                                
+                                <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="Nice, Came, Hormann Compatibility Guide for Wholesale Buyers" data-summary="A procurement-first matrix to match OEM families, frequency bands, and replacement SKUs before bulk ordering." data-category="installation-guides" data-tags="compatibility|nice|came|hormann|wholesale" data-author="GateRemoteSource Lab">
+                                    <div class="blog-card-media blog-card-media--grid">
+                                        <img loading="lazy" decoding="async" src="/assets/factory/team.webp" alt="Team reviewing compatibility matrix for OEM remote replacements" width="640" height="360" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                    </div>
+                                    <div class="p-5 flex flex-col gap-3 flex-1">
+                                        <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">Installation Guides</span>
+                                        <h3 class="text-lg font-bold text-brand-dark leading-tight group-hover:text-brand-accent transition">Nice, Came, Hormann Compatibility Guide for Wholesale Buyers</h3>
+                                        <div class="text-xs text-brand-muted">January 10, 2026 | GateRemoteSource Lab | 7 min read</div>
+                                        <p class="text-brand-muted text-sm line-clamp-3 flex-1">A procurement-first matrix to match OEM families, frequency bands, and replacement SKUs before bulk ordering.</p>
+                                        <a href="/pt/blog/nice-came-hormann-compatibility-guide/" class="mt-auto text-brand-accent font-semibold text-sm inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                                    </div>
+                                </article>
+                                
+                                <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="Garage Remote Pairing Checklist for Field Installers" data-summary="A practical on-site SOP to pair remotes faster and reduce callback risk across mixed-brand gate projects." data-category="programming" data-tags="programming|installation-guides|troubleshooting|nice|came|liftmaster" data-author="GateRemoteSource Lab">
+                                    <div class="blog-card-media blog-card-media--grid">
+                                        <img loading="lazy" decoding="async" src="/assets/factory/rd-lab.webp" alt="Technician validating remote pairing in engineering lab" width="640" height="360" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                    </div>
+                                    <div class="p-5 flex flex-col gap-3 flex-1">
+                                        <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">Programming</span>
+                                        <h3 class="text-lg font-bold text-brand-dark leading-tight group-hover:text-brand-accent transition">Garage Remote Pairing Checklist for Field Installers</h3>
+                                        <div class="text-xs text-brand-muted">January 22, 2026 | GateRemoteSource Lab | 8 min read</div>
+                                        <p class="text-brand-muted text-sm line-clamp-3 flex-1">A practical on-site SOP to pair remotes faster and reduce callback risk across mixed-brand gate projects.</p>
+                                        <a href="/pt/blog/garage-remote-pairing-checklist/" class="mt-auto text-brand-accent font-semibold text-sm inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                                    </div>
+                                </article>
+                                
+                            </div>
+                            <p id="no-results" class="hidden text-brand-muted mt-8" data-i18n="blog.no_articles">Nenhum artigo encontrado.</p>
+                        </section>
+                    </div>
+
+                    <aside class="lg:sticky lg:top-28 self-start space-y-5" aria-label="B2B conversion sidebar">
+                        <section class="bg-brand-surface border border-brand-border/60 rounded-xl p-5 shadow-sm">
+                            <h3 class="text-lg font-bold text-brand-dark">Top Sellers</h3>
+                            <p class="text-sm text-brand-muted mt-2">Popular remotes buyers request most often.</p>
+                            <ul class="mt-4 space-y-3 text-sm text-brand-dark">
+                                <li><a href="/pt/catalog/" class="hover:text-brand-accent">Universal 433.92 MHz Remote</a></li>
+                                <li><a href="/pt/catalog/" class="hover:text-brand-accent">Rolling Code Replacement Remote</a></li>
+                                <li><a href="/pt/catalog/" class="hover:text-brand-accent">2-Channel Receiver Starter Kit</a></li>
+                            </ul>
+                            <a href="/pt/contact/?intent=sample-kit&source=blog_sidebar" class="mt-5 inline-flex w-full items-center justify-center rounded-lg bg-brand-cta px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-ctaHover transition">
+                                Request Sample Kit
+                            </a>
+                        </section>
+
+                        <section class="bg-brand-surface border border-brand-border/60 rounded-xl p-5 shadow-sm">
+                            <h3 class="text-lg font-bold text-brand-dark">Quick RFQ</h3>
+                            <p class="text-sm text-brand-muted mt-2">Submit your demand while reading.</p>
+                            <form action="/contact/" method="get" class="mt-4 space-y-3">
+                                <input type="hidden" name="source" value="blog_sidebar_rfq">
+                                <div>
+                                    <label for="sidebar-name" class="sr-only">Name</label>
+                                    <input id="sidebar-name" name="name" type="text" required placeholder="Your name" class="w-full rounded-lg border border-brand-border bg-brand-light px-3 py-2 text-sm text-brand-dark focus:border-brand-accent focus:outline-none">
+                                </div>
+                                <div>
+                                    <label for="sidebar-email" class="sr-only">Business email</label>
+                                    <input id="sidebar-email" name="email" type="email" required placeholder="Business email" class="w-full rounded-lg border border-brand-border bg-brand-light px-3 py-2 text-sm text-brand-dark focus:border-brand-accent focus:outline-none">
+                                </div>
+                                <div>
+                                    <label for="sidebar-message" class="sr-only">Message</label>
+                                    <textarea id="sidebar-message" name="message" rows="3" placeholder="Required model, quantity, destination market" class="w-full rounded-lg border border-brand-border bg-brand-light px-3 py-2 text-sm text-brand-dark focus:border-brand-accent focus:outline-none"></textarea>
+                                </div>
+                                <button type="submit" class="w-full rounded-lg border border-brand-border bg-brand-light px-4 py-2.5 text-sm font-semibold text-brand-dark hover:border-brand-accent hover:text-brand-accent transition">
+                                    Send Quick Inquiry
+                                </button>
+                            </form>
+                        </section>
+                    </aside>
                 </div>
-                <p id="no-results" class="hidden text-brand-muted mt-8" data-i18n="blog.no_articles">Nenhum artigo encontrado.</p>
             </div>
         </section>
 
