@@ -186,9 +186,49 @@
             object-fit: cover !important;
             display: block;
         }
+
+        .blog-feed-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .blog-feed-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .blog-feature-card {
+                grid-column: span 2 / span 2;
+            }
+        }
+
+        .clamp-title-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .clamp-excerpt-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        @media (max-width: 767px) {
+            .sidebar-rfq-desktop {
+                display: none;
+            }
+        }
+
+        .mobile-quote-modal[hidden] {
+            display: none !important;
+        }
     </style>
 </head>
-<body class="font-sans text-brand-dark/80 bg-brand-light backdrop-blur selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="blog">
+<body class="font-sans text-brand-dark/80 bg-brand-light backdrop-blur selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" style="font-family: 'Inter', 'Roboto', 'Segoe UI', sans-serif;" data-meta-override="true" data-meta-page="blog">
     <nav class="fixed w-full z-50 nav-glass transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
@@ -286,10 +326,10 @@
         </div>
     </nav>
 
-    <main class="pt-28 pb-24 bg-brand-light backdrop-blur min-h-screen">
+    <main class="pt-28 pb-28 bg-brand-light backdrop-blur min-h-screen">
         
         
-        <section class="pb-10">
+        <section class="pb-14">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col gap-6">
                     <div class="space-y-3">
@@ -329,81 +369,78 @@
         
         
 
-        <section class="pb-8">
+        <section class="pb-14">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] gap-8">
-                    <div class="space-y-8">
-                        
-                        <section aria-labelledby="featured-heading">
-                            <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance" data-summary="A field-proven checklist for OEM teams to turn range and compliance into measurable KPIs: link margin, blocking, protocol airtime, and regulator-limited transmit behavior." data-category="rf-engineering" data-tags="433-92mhz|rf-compliance|link-budget|oem-procurement|garage-doors" data-author="Eric Huang">
-                                <div class="grid grid-cols-1 md:grid-cols-2">
-                                    <div class="blog-card-media blog-card-media--lg">
-                                        <img src="/assets/blog-drops/choose-433-92mhz-remote-control/image-01.webp" alt="Hand holding a 433.92MHz remote in front of a garage door" width="800" height="450" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                                    </div>
-                                    <div class="p-6 flex flex-col gap-3">
-                                        <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">RF Engineering</span>
-                                        <h2 id="featured-heading" class="text-2xl md:text-3xl font-bold text-brand-dark leading-tight">
-                                            <a href="/pt/blog/choose-433-92mhz-remote-control/" class="hover:text-brand-accent transition-colors">How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance</a>
-                                        </h2>
-                                        <div class="text-xs text-brand-muted">February 20, 2025 | Eric Huang | 12 min read</div>
-                                        <p class="text-brand-muted text-sm leading-relaxed line-clamp-3 flex-1">A field-proven checklist for OEM teams to turn range and compliance into measurable KPIs: link margin, blocking, protocol airtime, and regulator-limited transmit behavior.</p>
-                                        <a href="/pt/blog/choose-433-92mhz-remote-control/" class="mt-auto inline-flex items-center text-brand-accent font-semibold text-sm">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
-                                    </div>
-                                </div>
-                            </article>
-                        </section>
-                        
-
+                <div class="grid grid-cols-1 lg:grid-cols-[7fr_3fr] gap-8">
+                    <div>
                         <section aria-labelledby="articles-heading">
                             <h2 id="articles-heading" class="sr-only">Latest Articles</h2>
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <div class="blog-feed-grid">
                                 
-                                <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls" data-summary="Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation." data-category="engineering" data-tags="pcb-quality|rolling-code|oem-manufacturing" data-author="Eric Huang">
+                                <article id="featured-heading" class="blog-feature-card bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group h-full" data-post-card data-title="How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance" data-summary="A field-proven checklist for OEM teams to turn range and compliance into measurable KPIs: link margin, blocking, protocol airtime, and regulator-limited transmit behavior." data-category="rf-engineering" data-tags="433-92mhz|rf-compliance|link-budget|oem-procurement|garage-doors" data-author="Eric Huang">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 h-full">
+                                        <div class="blog-card-media blog-card-media--lg">
+                                            <img src="/assets/blog-drops/choose-433-92mhz-remote-control/image-01.webp" alt="Hand holding a 433.92MHz remote in front of a garage door" width="800" height="450" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                        </div>
+                                        <div class="p-6 flex flex-col gap-3">
+                                            <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">RF Engineering</span>
+                                            <h3 class="text-2xl md:text-3xl font-bold text-brand-dark leading-tight clamp-title-2">
+                                                <a href="/pt/blog/choose-433-92mhz-remote-control/" class="hover:text-brand-accent transition-colors">How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance</a>
+                                            </h3>
+                                            <div class="text-xs text-brand-muted">February 20, 2025 | Eric Huang | 12 min read</div>
+                                            <p class="text-brand-muted text-sm leading-relaxed clamp-excerpt-3 flex-1">A field-proven checklist for OEM teams to turn range and compliance into measurable KPIs: link margin, blocking, protocol airtime, and regulator-limited transmit behavior.</p>
+                                            <a href="/pt/blog/choose-433-92mhz-remote-control/" class="mt-auto inline-flex items-center text-brand-accent font-semibold text-sm">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                                        </div>
+                                    </div>
+                                </article>
+                                
+
+                                
+                                <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group h-full" data-post-card data-title="Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls" data-summary="Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation." data-category="engineering" data-tags="pcb-quality|rolling-code|oem-manufacturing" data-author="Eric Huang">
                                     <div class="blog-card-media blog-card-media--grid">
                                         <img loading="lazy" decoding="async" src="/assets/blog-drops/avoid-public-mold-trap-pcb-quality/image-01.webp" alt="Remote shell next to FR-4 PCB" width="640" height="360" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                                     </div>
                                     <div class="p-5 flex flex-col gap-3 flex-1">
                                         <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">Engineering</span>
-                                        <h3 class="text-lg font-bold text-brand-dark leading-tight group-hover:text-brand-accent transition">Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls</h3>
+                                        <h3 class="text-lg font-bold text-brand-dark leading-tight clamp-title-2">Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls</h3>
                                         <div class="text-xs text-brand-muted">February 10, 2025 | Eric Huang | 9 min read</div>
-                                        <p class="text-brand-muted text-sm line-clamp-3 flex-1">Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation.</p>
+                                        <p class="text-brand-muted text-sm clamp-excerpt-3 flex-1">Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation.</p>
                                         <a href="/pt/blog/avoid-public-mold-trap-pcb-quality/" class="mt-auto text-brand-accent font-semibold text-sm inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
                                     </div>
                                 </article>
                                 
-                                <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="Nice, Came, Hormann Compatibility Guide for Wholesale Buyers" data-summary="A procurement-first matrix to match OEM families, frequency bands, and replacement SKUs before bulk ordering." data-category="installation-guides" data-tags="compatibility|nice|came|hormann|wholesale" data-author="GateRemoteSource Lab">
+                                <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group h-full" data-post-card data-title="Nice, Came, Hormann Compatibility Guide for Wholesale Buyers" data-summary="A procurement-first matrix to match OEM families, frequency bands, and replacement SKUs before bulk ordering." data-category="installation-guides" data-tags="compatibility|nice|came|hormann|wholesale" data-author="GateRemoteSource Lab">
                                     <div class="blog-card-media blog-card-media--grid">
                                         <img loading="lazy" decoding="async" src="/assets/factory/team.webp" alt="Team reviewing compatibility matrix for OEM remote replacements" width="640" height="360" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                                     </div>
                                     <div class="p-5 flex flex-col gap-3 flex-1">
                                         <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">Installation Guides</span>
-                                        <h3 class="text-lg font-bold text-brand-dark leading-tight group-hover:text-brand-accent transition">Nice, Came, Hormann Compatibility Guide for Wholesale Buyers</h3>
+                                        <h3 class="text-lg font-bold text-brand-dark leading-tight clamp-title-2">Nice, Came, Hormann Compatibility Guide for Wholesale Buyers</h3>
                                         <div class="text-xs text-brand-muted">January 10, 2026 | GateRemoteSource Lab | 7 min read</div>
-                                        <p class="text-brand-muted text-sm line-clamp-3 flex-1">A procurement-first matrix to match OEM families, frequency bands, and replacement SKUs before bulk ordering.</p>
+                                        <p class="text-brand-muted text-sm clamp-excerpt-3 flex-1">A procurement-first matrix to match OEM families, frequency bands, and replacement SKUs before bulk ordering.</p>
                                         <a href="/pt/blog/nice-came-hormann-compatibility-guide/" class="mt-auto text-brand-accent font-semibold text-sm inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
                                     </div>
                                 </article>
                                 
-                                <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group" data-post-card data-title="Garage Remote Pairing Checklist for Field Installers" data-summary="A practical on-site SOP to pair remotes faster and reduce callback risk across mixed-brand gate projects." data-category="programming" data-tags="programming|installation-guides|troubleshooting|nice|came|liftmaster" data-author="GateRemoteSource Lab">
+                                <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group h-full" data-post-card data-title="Garage Remote Pairing Checklist for Field Installers" data-summary="A practical on-site SOP to pair remotes faster and reduce callback risk across mixed-brand gate projects." data-category="programming" data-tags="programming|installation-guides|troubleshooting|nice|came|liftmaster" data-author="GateRemoteSource Lab">
                                     <div class="blog-card-media blog-card-media--grid">
                                         <img loading="lazy" decoding="async" src="/assets/factory/rd-lab.webp" alt="Technician validating remote pairing in engineering lab" width="640" height="360" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                                     </div>
                                     <div class="p-5 flex flex-col gap-3 flex-1">
                                         <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">Programming</span>
-                                        <h3 class="text-lg font-bold text-brand-dark leading-tight group-hover:text-brand-accent transition">Garage Remote Pairing Checklist for Field Installers</h3>
+                                        <h3 class="text-lg font-bold text-brand-dark leading-tight clamp-title-2">Garage Remote Pairing Checklist for Field Installers</h3>
                                         <div class="text-xs text-brand-muted">January 22, 2026 | GateRemoteSource Lab | 8 min read</div>
-                                        <p class="text-brand-muted text-sm line-clamp-3 flex-1">A practical on-site SOP to pair remotes faster and reduce callback risk across mixed-brand gate projects.</p>
+                                        <p class="text-brand-muted text-sm clamp-excerpt-3 flex-1">A practical on-site SOP to pair remotes faster and reduce callback risk across mixed-brand gate projects.</p>
                                         <a href="/pt/blog/garage-remote-pairing-checklist/" class="mt-auto text-brand-accent font-semibold text-sm inline-flex items-center">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
                                     </div>
                                 </article>
                                 
                             </div>
-                            <p id="no-results" class="hidden text-brand-muted mt-8" data-i18n="blog.no_articles">Nenhum artigo encontrado.</p>
                         </section>
                     </div>
 
-                    <aside class="lg:sticky lg:top-28 self-start space-y-5" aria-label="B2B conversion sidebar">
-                        <section class="bg-brand-surface border border-brand-border/60 rounded-xl p-5 shadow-sm">
+                    <aside class="hidden md:block lg:sticky lg:top-28 self-start space-y-5" aria-label="B2B conversion sidebar">
+                        <section class="bg-brand-surface border border-brand-border/30 rounded-xl p-5 shadow-sm">
                             <h3 class="text-lg font-bold text-brand-dark">Top Sellers</h3>
                             <p class="text-sm text-brand-muted mt-2">Popular remotes buyers request most often.</p>
                             <ul class="mt-4 space-y-3 text-sm text-brand-dark">
@@ -416,27 +453,34 @@
                             </a>
                         </section>
 
-                        <section class="bg-brand-surface border border-brand-border/60 rounded-xl p-5 shadow-sm">
+                        <section class="sidebar-rfq-desktop bg-brand-surface border border-brand-border/30 rounded-xl p-5 shadow-sm">
                             <h3 class="text-lg font-bold text-brand-dark">Quick RFQ</h3>
                             <p class="text-sm text-brand-muted mt-2">Submit your demand while reading.</p>
-                            <form action="/contact/" method="get" class="mt-4 space-y-3">
-                                <input type="hidden" name="source" value="blog_sidebar_rfq">
-                                <div>
-                                    <label for="sidebar-name" class="sr-only">Name</label>
-                                    <input id="sidebar-name" name="name" type="text" required placeholder="Your name" class="w-full rounded-lg border border-brand-border bg-brand-light px-3 py-2 text-sm text-brand-dark focus:border-brand-accent focus:outline-none">
-                                </div>
-                                <div>
-                                    <label for="sidebar-email" class="sr-only">Business email</label>
-                                    <input id="sidebar-email" name="email" type="email" required placeholder="Business email" class="w-full rounded-lg border border-brand-border bg-brand-light px-3 py-2 text-sm text-brand-dark focus:border-brand-accent focus:outline-none">
-                                </div>
-                                <div>
-                                    <label for="sidebar-message" class="sr-only">Message</label>
-                                    <textarea id="sidebar-message" name="message" rows="3" placeholder="Required model, quantity, destination market" class="w-full rounded-lg border border-brand-border bg-brand-light px-3 py-2 text-sm text-brand-dark focus:border-brand-accent focus:outline-none"></textarea>
-                                </div>
-                                <button type="submit" class="w-full rounded-lg border border-brand-border bg-brand-light px-4 py-2.5 text-sm font-semibold text-brand-dark hover:border-brand-accent hover:text-brand-accent transition">
-                                    Send Quick Inquiry
+                            <div class="mt-4 space-y-3">
+                                <label for="sidebarQuickEmail" class="sr-only">Business email</label>
+                                <input id="sidebarQuickEmail" type="email" placeholder="Enter your email to get a quote" class="line-input">
+                                <button id="desktopQuoteCta" type="button" class="w-full rounded-lg bg-brand-cta px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-ctaHover transition">
+                                    Get a Quick Quote
                                 </button>
-                            </form>
+                            </div>
+                        </section>
+
+                        <section class="bg-brand-surface border border-brand-border/30 rounded-xl p-5 shadow-sm">
+                            <h3 class="text-sm font-bold uppercase tracking-wide text-brand-dark">Certified Factory</h3>
+                            <div class="mt-3 grid grid-cols-3 gap-2 text-center">
+                                <div class="rounded-lg border border-brand-border bg-white px-2 py-3">
+                                    <i class="fa-solid fa-award text-brand-accent text-sm" aria-hidden="true"></i>
+                                    <p class="mt-1 text-[11px] font-semibold text-brand-dark">ISO9001</p>
+                                </div>
+                                <div class="rounded-lg border border-brand-border bg-white px-2 py-3">
+                                    <i class="fa-solid fa-shield-halved text-brand-accent text-sm" aria-hidden="true"></i>
+                                    <p class="mt-1 text-[11px] font-semibold text-brand-dark">CE</p>
+                                </div>
+                                <div class="rounded-lg border border-brand-border bg-white px-2 py-3">
+                                    <i class="fa-solid fa-microchip text-brand-accent text-sm" aria-hidden="true"></i>
+                                    <p class="mt-1 text-[11px] font-semibold text-brand-dark">FCC</p>
+                                </div>
+                            </div>
                         </section>
                     </aside>
                 </div>
@@ -447,28 +491,26 @@
         
     </main>
 
-    <section class="py-16 bg-brand-light border-t border-brand-border">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-brand-dark mb-4">Stay Updated with Latest Tips</h2>
-            <p class="text-brand-muted mb-8">Get weekly technical guides and market insights delivered to your inbox.</p>
-            <form id="newsletterForm" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input id="newsletterEmail" name="email" type="email" placeholder="Enter your email" required class="flex-1 bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-dark focus:border-brand-accent outline-none transition">
-                <button type="submit" class="bg-brand-cta hover:bg-brand-ctaHover text-white px-6 py-3 rounded-lg font-bold transition">Subscribe</button>
-            </form>
-            <p id="newsletter-status" class="text-sm text-brand-muted mt-3 hidden" aria-live="polite"></p>
-        </div>
-    </section>
-
-    <section class="py-16 bg-brand-light relative overflow-hidden">
-        <div class="absolute inset-0 bg-brand-dark/10"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
-            <div>
-                <h2 class="text-3xl font-bold text-brand-dark mb-2" data-i18n="pre_footer.title">Precisa de um kit de amostras?</h2>
-                <p class="text-brand-muted text-lg" data-i18n="pre_footer.subtitle">Teste nossa linha e compatibilidade antes de comprar em volume.</p>
+    <section class="py-24 bg-brand-light border-t border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-2xl bg-brand-surface border border-brand-border/40 shadow-sm px-6 py-8 md:px-10 md:py-10">
+                <div class="grid grid-cols-1 md:grid-cols-[1.3fr_1fr] gap-8 items-center">
+                    <div class="text-center md:text-left">
+                        <h2 class="text-3xl md:text-4xl font-semibold text-brand-dark tracking-tight">Need Technical Support or Weekly Updates?</h2>
+                        <p class="mt-3 text-brand-muted leading-relaxed">Talk to our engineers for compatibility checks and subscribe to receive practical installer guides.</p>
+                        <a href="/pt/contact/" class="mt-5 inline-flex items-center justify-center rounded-md bg-brand-cta px-6 py-2.5 text-sm font-semibold text-white hover:bg-brand-ctaHover transition">
+                            <span data-i18n="pre_footer.order_samples">Pedir amostras</span>
+                        </a>
+                    </div>
+                    <div>
+                        <form id="newsletterForm" class="flex flex-col sm:flex-row gap-3 max-w-lg">
+                            <input id="newsletterEmail" name="email" type="email" placeholder="Enter your email" required class="flex-1 bg-brand-light border border-brand-border rounded-md px-4 py-2.5 text-brand-dark focus:border-brand-accent outline-none transition text-sm">
+                            <button type="submit" class="bg-brand-cta hover:bg-brand-ctaHover text-white px-6 py-2.5 rounded-md font-semibold transition text-sm">Subscribe</button>
+                        </form>
+                        <p id="newsletter-status" class="text-sm text-brand-muted mt-3 hidden" aria-live="polite"></p>
+                    </div>
+                </div>
             </div>
-            <a href="/pt/contact/" class="bg-brand-cta text-white px-8 py-3 rounded-full font-bold hover:bg-brand-ctaHover transition shadow-lg shadow-brand-cta/20">
-                <span data-i18n="pre_footer.order_samples">Pedir amostras</span>
-            </a>
         </div>
     </section>
 
@@ -511,7 +553,41 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/8615899648898" target="_blank" class="whatsapp-float fixed bottom-6 right-6 z-50 bg-brand-cta hover:bg-brand-ctaHover text-white rounded-full p-4 shadow-lg flex items-center justify-center transition transform hover:scale-105">
+    <button id="mobileQuoteCta" type="button" class="md:hidden fixed inset-x-4 bottom-4 z-50 h-12 rounded-xl bg-brand-cta px-5 text-sm font-bold text-white shadow-lg shadow-brand-cta/30" aria-haspopup="dialog" aria-controls="mobileQuoteModal">
+        Inquiry Now
+    </button>
+
+    <div id="mobileQuoteModal" class="mobile-quote-modal fixed inset-0 z-[70] bg-black/50 p-4" hidden aria-hidden="true">
+        <div class="mx-auto mt-16 max-w-md rounded-xl bg-white p-5 shadow-2xl" role="dialog" aria-modal="true" aria-labelledby="mobileQuoteTitle">
+            <div class="flex items-center justify-between">
+                <h3 id="mobileQuoteTitle" class="text-lg font-bold text-brand-dark">Quick RFQ</h3>
+                <button id="mobileQuoteClose" type="button" class="rounded-md p-2 text-brand-muted hover:bg-brand-light" aria-label="Close quote form">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+            </div>
+            <p class="mt-2 text-sm text-brand-muted">Tell us your model and quantity. We will reply fast.</p>
+            <form action="/contact/" method="get" class="mt-4 space-y-3">
+                <input type="hidden" name="source" value="blog_mobile_modal_rfq">
+                <div>
+                    <label for="mobile-rfq-name" class="sr-only">Name</label>
+                    <input id="mobile-rfq-name" name="name" type="text" required placeholder="Your name" class="w-full rounded-lg border border-brand-border bg-white px-3 py-2 text-sm text-brand-dark focus:border-brand-accent focus:outline-none">
+                </div>
+                <div>
+                    <label for="mobile-rfq-email" class="sr-only">Business email</label>
+                    <input id="mobile-rfq-email" name="email" type="email" required placeholder="Business email" class="w-full rounded-lg border border-brand-border bg-white px-3 py-2 text-sm text-brand-dark focus:border-brand-accent focus:outline-none">
+                </div>
+                <div>
+                    <label for="mobile-rfq-message" class="sr-only">Message</label>
+                    <textarea id="mobile-rfq-message" name="message" rows="3" placeholder="Required model, quantity, destination market" class="w-full rounded-lg border border-brand-border bg-white px-3 py-2 text-sm text-brand-dark focus:border-brand-accent focus:outline-none"></textarea>
+                </div>
+                <button type="submit" class="w-full rounded-lg bg-brand-cta px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-ctaHover transition">
+                    Send Quick Inquiry
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <a href="https://wa.me/8615899648898" target="_blank" class="whatsapp-float hidden md:flex fixed bottom-6 right-6 z-50 bg-brand-cta hover:bg-brand-ctaHover text-white rounded-full p-4 shadow-lg items-center justify-center transition transform hover:scale-105">
         <i class="fa-brands fa-whatsapp text-4xl"></i>
     </a>
 
@@ -719,7 +795,6 @@
         const searchInput = document.getElementById('blogSearch');
         const topicFilterButtons = Array.from(document.querySelectorAll('.topic-filter-btn'));
         const cards = Array.from(document.querySelectorAll('[data-post-card]'));
-        const emptyState = document.getElementById('no-results');
 
         function normalizeValue(value) {
             return (value || '').toString().toLowerCase();
@@ -753,17 +828,11 @@
         function applyFilters() {
             const query = normalizeValue(searchInput ? searchInput.value.trim() : '');
             const activeTopic = getActiveTopic();
-            let visibleCount = 0;
 
             cards.forEach((card) => {
                 const visible = matchesTopic(card, activeTopic) && matchesSearch(card, query);
                 card.classList.toggle('hidden', !visible);
-                if (visible) visibleCount += 1;
             });
-
-            if (emptyState) {
-                emptyState.classList.toggle('hidden', visibleCount > 0);
-            }
         }
 
         topicFilterButtons.forEach((btn) => {
@@ -781,6 +850,57 @@
         if (searchInput) {
             searchInput.addEventListener('input', applyFilters);
         }
+
+        const mobileQuoteCta = document.getElementById('mobileQuoteCta');
+        const desktopQuoteCta = document.getElementById('desktopQuoteCta');
+        const sidebarQuickEmail = document.getElementById('sidebarQuickEmail');
+        const mobileRfqEmail = document.getElementById('mobile-rfq-email');
+        const mobileQuoteModal = document.getElementById('mobileQuoteModal');
+        const mobileQuoteClose = document.getElementById('mobileQuoteClose');
+
+        function openMobileQuoteModal() {
+            if (!mobileQuoteModal) return;
+            if (sidebarQuickEmail && mobileRfqEmail && sidebarQuickEmail.value.trim()) {
+                mobileRfqEmail.value = sidebarQuickEmail.value.trim();
+            }
+            mobileQuoteModal.hidden = false;
+            mobileQuoteModal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeMobileQuoteModal() {
+            if (!mobileQuoteModal) return;
+            mobileQuoteModal.hidden = true;
+            mobileQuoteModal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        if (mobileQuoteCta) mobileQuoteCta.addEventListener('click', openMobileQuoteModal);
+        if (desktopQuoteCta) desktopQuoteCta.addEventListener('click', openMobileQuoteModal);
+        if (mobileQuoteClose) mobileQuoteClose.addEventListener('click', closeMobileQuoteModal);
+
+        if (sidebarQuickEmail) {
+            sidebarQuickEmail.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    openMobileQuoteModal();
+                }
+            });
+        }
+
+        if (mobileQuoteModal) {
+            mobileQuoteModal.addEventListener('click', (event) => {
+                if (event.target === mobileQuoteModal) {
+                    closeMobileQuoteModal();
+                }
+            });
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && mobileQuoteModal && !mobileQuoteModal.hidden) {
+                closeMobileQuoteModal();
+            }
+        });
 
         applyFilters();
 
