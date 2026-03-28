@@ -138,6 +138,8 @@ eleventyComputed:
     <link rel="stylesheet" href="/assets/css/fonts.css">
     <noscript><link rel="stylesheet" href="/assets/css/fonts.css"></noscript>
     
+    <link rel="stylesheet" href="/styles/enhanced.css">
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZF8T77R309"></script>
     <script>
@@ -224,7 +226,7 @@ eleventyComputed:
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- ================= NAVIGATION ================= -->
-    <nav class="fixed w-full z-50 nav-glass transition-all duration-300">
+    <nav class="fixed w-full z-50 nav-glass nav-enhanced transition-all duration-300">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
@@ -347,7 +349,7 @@ eleventyComputed:
             </div>
  
             <div id="catalog-products-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-20">
-                <div class="bg-brand-surface border border-brand-border rounded-xl overflow-hidden group hover:border-brand-accent transition-all duration-200 ease-in-out hover:shadow-md" data-category="rolling">
+                <div class="glass-card hover-lift bg-brand-surface border border-brand-border rounded-xl overflow-hidden group hover:border-brand-accent transition-all duration-200 ease-in-out hover:shadow-md reveal stagger-1" data-category="rolling">
                     <div class="aspect-square bg-brand-light relative flex items-center justify-center p-4">
                         <div class="absolute top-4 left-4 bg-brand-surface backdrop-blur text-brand-accent text-xs font-bold px-2 py-1 rounded border border-brand-accent/20">433.92MHz</div>
                         <div class="bg-brand-light rounded-lg p-8 flex items-center justify-center w-full h-full"><i class="fa-solid fa-satellite-dish text-6xl text-brand-accent"></i></div>
@@ -362,7 +364,7 @@ eleventyComputed:
                     </div>
                 </div>
 
-                <div class="bg-brand-surface border border-brand-border rounded-xl overflow-hidden group hover:border-brand-accent transition-all duration-200 ease-in-out hover:shadow-md" data-category="rolling">
+                <div class="glass-card hover-lift bg-brand-surface border border-brand-border rounded-xl overflow-hidden group hover:border-brand-accent transition-all duration-200 ease-in-out hover:shadow-md reveal stagger-2" data-category="rolling">
                     <div class="aspect-square bg-brand-light relative flex items-center justify-center p-4">
                         <div class="absolute top-4 left-4 bg-brand-surface backdrop-blur text-brand-accent text-xs font-bold px-2 py-1 rounded border border-brand-accent/20">433.92MHz</div>
                         <div class="bg-brand-light rounded-lg p-8 flex items-center justify-center w-full h-full"><i class="fa-solid fa-tower-cell text-6xl text-brand-accent"></i></div>
@@ -658,7 +660,7 @@ eleventyComputed:
     </footer>
     
     <!-- Floating WhatsApp -->
-    <a href="https://wa.me/8615899648898" target="_blank" aria-label="Contact us on WhatsApp" class="whatsapp-float fixed bottom-6 right-6 z-50 bg-brand-cta hover:bg-brand-ctaHover text-white rounded-full p-4 shadow-lg flex items-center justify-center transition transform hover:scale-105">
+    <a href="https://wa.me/8615899648898" target="_blank" aria-label="Contact us on WhatsApp" class="whatsapp-float animate-float">
         <i class="fa-brands fa-whatsapp text-4xl" aria-hidden="true"></i>
     </a>
 
@@ -925,5 +927,8 @@ eleventyComputed:
             initProductFilters();
         }
     </script>
+
+    <!-- Enhanced Interactions -->
+    <script src="/assets/js/enhanced.js"></script>
 </body>
 </html>
