@@ -138,6 +138,8 @@ eleventyComputed:
     <link rel="stylesheet" href="/assets/css/fonts.css">
     <noscript><link rel="stylesheet" href="/assets/css/fonts.css"></noscript>
 
+    <link rel="stylesheet" href="/styles/enhanced.css">
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZF8T77R309"></script>
     <script>
@@ -208,7 +210,7 @@ eleventyComputed:
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- ================= NAVIGATION ================= -->
-    <nav class="fixed w-full z-50 nav-glass transition-all duration-300">
+    <nav class="fixed w-full z-50 nav-glass nav-enhanced transition-all duration-300">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
@@ -366,17 +368,17 @@ eleventyComputed:
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label for="contactName" class="block text-brand-muted text-sm mb-2">Name</label>
-                                <input type="text" id="contactName" name="name" class="w-full bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-dark focus:border-brand-accent transition" required aria-required="true" aria-invalid="false" aria-describedby="contactNameError">
+                                <input type="text" id="contactName" name="name" class="input-enhanced w-full bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-dark focus:border-brand-accent transition" required aria-required="true" aria-invalid="false" aria-describedby="contactNameError">
                                 <span id="contactNameError" class="text-red-500 text-sm mt-1 hidden" role="alert"></span>
                             </div>
                             <div>
                                 <label for="contactCompany" class="block text-brand-muted text-sm mb-2">Company (optional)</label>
-                                <input type="text" id="contactCompany" name="company" class="w-full bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-dark focus:border-brand-accent transition">
+                                <input type="text" id="contactCompany" name="company" class="input-enhanced w-full bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-dark focus:border-brand-accent transition">
                             </div>
                         </div>
                         <div>
                             <label for="contactEmail" class="block text-brand-muted text-sm mb-2" data-i18n="contact.email_label">Email</label>
-                            <input type="email" id="contactEmail" name="email" class="w-full bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-dark focus:border-brand-accent transition" required aria-required="true" aria-invalid="false" aria-describedby="contactEmailError" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$">
+                            <input type="email" id="contactEmail" name="email" class="input-enhanced w-full bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-dark focus:border-brand-accent transition" required aria-required="true" aria-invalid="false" aria-describedby="contactEmailError" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$">
                             <span id="contactEmailError" class="text-red-500 text-sm mt-1 hidden" role="alert"></span>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -404,7 +406,7 @@ eleventyComputed:
                         </div>
                         <div>
                             <label for="contactMessage" class="block text-brand-muted text-sm mb-2">Message</label>
-                            <textarea id="contactMessage" name="message" rows="4" class="w-full bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-dark focus:border-brand-accent transition" required aria-required="true" aria-invalid="false" aria-describedby="contactMessageError" minlength="10"></textarea>
+                            <textarea id="contactMessage" name="message" rows="4" class="input-enhanced w-full bg-brand-light border border-brand-border rounded-lg px-4 py-3 text-brand-dark focus:border-brand-accent transition" required aria-required="true" aria-invalid="false" aria-describedby="contactMessageError" minlength="10"></textarea>
                             <span id="contactMessageError" class="text-red-500 text-sm mt-1 hidden" role="alert"></span>
                         </div>
                         <div>
@@ -526,7 +528,7 @@ eleventyComputed:
     </footer>
 
     <!-- Floating WhatsApp -->
-    <a href="https://wa.me/8615899648898" target="_blank" aria-label="Contact us on WhatsApp" class="whatsapp-float fixed bottom-6 right-6 z-50 bg-brand-cta hover:bg-brand-ctaHover text-white rounded-full p-4 shadow-lg flex items-center justify-center transition transform hover:scale-105">
+    <a href="https://wa.me/8615899648898" target="_blank" aria-label="Contact us on WhatsApp" class="whatsapp-float animate-float">
         <i class="fa-brands fa-whatsapp text-4xl" aria-hidden="true"></i>
     </a>
 
@@ -899,5 +901,8 @@ eleventyComputed:
             applyContactPrefill();
         }
     </script>
+
+    <!-- Enhanced Interactions -->
+    <script src="/assets/js/enhanced.js"></script>
 </body>
 </html>
