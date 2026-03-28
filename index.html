@@ -143,6 +143,9 @@ eleventyComputed:
 
 
 
+    <!-- Enhanced Design System -->
+    <link rel="stylesheet" href="/styles/enhanced.css">
+
     <!-- Google tag (gtag.js) -->
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZF8T77R309"></script>
@@ -711,7 +714,7 @@ eleventyComputed:
 
     <!-- ================= NAVIGATION ================= -->
 
-    <nav class="sticky top-0 w-full z-50 nav-glass transition-all duration-200 ease-in-out">
+    <nav class="sticky top-0 w-full z-50 nav-glass nav-enhanced transition-all duration-200 ease-in-out">
 
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -981,11 +984,20 @@ eleventyComputed:
 
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 py-8 text-center text-sm font-semibold text-brand-dark">
 
-                    <div class="bg-brand-surface border border-brand-border rounded-xl py-4">500k+ remotes/year</div>
+                    <div class="stat-card bg-brand-surface border border-brand-border rounded-xl py-4 reveal stagger-1">
+                        <div class="stat-number text-3xl font-bold text-brand-accent mb-1" data-count="500" data-suffix="k+">0</div>
+                        <div class="text-brand-muted text-xs uppercase tracking-wider">remotes/year</div>
+                    </div>
 
-                    <div class="bg-brand-surface border border-brand-border rounded-xl py-4">Defect rate &lt;0.5%</div>
+                    <div class="stat-card bg-brand-surface border border-brand-border rounded-xl py-4 reveal stagger-2">
+                        <div class="stat-number text-3xl font-bold text-brand-accent mb-1" data-count="0.5" data-prefix="&lt;" data-suffix="%">0</div>
+                        <div class="text-brand-muted text-xs uppercase tracking-wider">defect rate</div>
+                    </div>
 
-                    <div class="bg-brand-surface border border-brand-border rounded-xl py-4">48h sample shipping</div>
+                    <div class="stat-card bg-brand-surface border border-brand-border rounded-xl py-4 reveal stagger-3">
+                        <div class="stat-number text-3xl font-bold text-brand-accent mb-1" data-count="48" data-suffix="h">0</div>
+                        <div class="text-brand-muted text-xs uppercase tracking-wider">sample shipping</div>
+                    </div>
 
                 </div>
 
@@ -1069,7 +1081,7 @@ eleventyComputed:
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
 
-                    <div class="glass-card group overflow-hidden cursor-pointer">
+                    <div class="glass-card hover-lift img-hover-zoom group overflow-hidden cursor-pointer reveal stagger-1">
 
                         <div class="aspect-square relative flex items-center justify-center p-4">
 
@@ -1115,7 +1127,7 @@ eleventyComputed:
 
                     </div>
 
-                    <div class="glass-card group overflow-hidden cursor-pointer">
+                    <div class="glass-card hover-lift img-hover-zoom group overflow-hidden cursor-pointer reveal stagger-2">
 
                         <div class="aspect-square relative flex items-center justify-center p-4">
 
@@ -1149,7 +1161,7 @@ eleventyComputed:
 
                     </div>
 
-                    <div class="bg-brand-surface rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 ease-in-out group overflow-hidden cursor-pointer">
+                    <div class="glass-card hover-lift img-hover-zoom bg-brand-surface rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 ease-in-out group overflow-hidden cursor-pointer reveal stagger-3">
 
                         <div class="aspect-square bg-brand-light relative flex items-center justify-center p-4">
 
@@ -1687,7 +1699,7 @@ eleventyComputed:
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-                            <details class="group glass-card p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
+                            <details class="group faq-item glass-card p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md reveal">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-brand-dark font-semibold">
 
@@ -1701,7 +1713,7 @@ eleventyComputed:
 
                             </details>
 
-                            <details class="group glass-card p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
+                            <details class="group faq-item glass-card p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md reveal">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-brand-dark font-semibold">
 
@@ -1715,7 +1727,7 @@ eleventyComputed:
 
                             </details>
 
-                            <details class="group glass-card p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
+                            <details class="group faq-item glass-card p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md reveal">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-brand-dark font-semibold">
 
@@ -1729,7 +1741,7 @@ eleventyComputed:
 
                             </details>
 
-                            <details class="group glass-card p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
+                            <details class="group faq-item glass-card p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md reveal">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-brand-dark font-semibold">
 
@@ -1743,7 +1755,7 @@ eleventyComputed:
 
                             </details>
 
-                            <details class="group glass-card p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
+                            <details class="group faq-item glass-card p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md reveal">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-brand-dark font-semibold">
 
@@ -1757,7 +1769,7 @@ eleventyComputed:
 
                             </details>
 
-                            <details class="group glass-card p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
+                            <details class="group faq-item glass-card p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md reveal">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-brand-dark font-semibold">
 
@@ -1771,7 +1783,7 @@ eleventyComputed:
 
                             </details>
 
-                            <details class="group glass-card p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
+                            <details class="group faq-item glass-card p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md reveal">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-brand-dark font-semibold">
 
@@ -1785,7 +1797,7 @@ eleventyComputed:
 
                             </details>
 
-                            <details class="group glass-card p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md">
+                            <details class="group faq-item glass-card p-5 rounded-xl border border-brand-border hover:border-brand-accent transition shadow-sm hover:shadow-md reveal">
 
                                 <summary class="flex items-center justify-between cursor-pointer text-brand-dark font-semibold">
 
@@ -2974,7 +2986,7 @@ eleventyComputed:
 
     <!-- Floating WhatsApp -->
 
-    <a href="https://wa.me/8615899648898" target="_blank" class="whatsapp-float fixed bottom-6 right-6 z-50 bg-brand-cta hover:bg-brand-ctaHover text-white rounded-full p-4 shadow-lg flex items-center justify-center transition transform hover:scale-105">
+    <a href="https://wa.me/8615899648898" target="_blank" class="whatsapp-float animate-float" aria-label="Contact us on WhatsApp">
 
         <i class="fa-brands fa-whatsapp text-4xl"></i>
 
@@ -4288,6 +4300,9 @@ eleventyComputed:
             }
         }
     </script>
+
+    <!-- Enhanced Interactions -->
+    <script src="/assets/js/enhanced.js"></script>
 </body>
 
 </html>
