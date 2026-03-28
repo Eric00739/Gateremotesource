@@ -66,6 +66,8 @@
     <link rel="stylesheet" href="/assets/css/fonts.css">
     <noscript><link rel="stylesheet" href="/assets/css/fonts.css"></noscript>
 
+    <link rel="stylesheet" href="/styles/enhanced.css">
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZF8T77R309"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -508,7 +510,7 @@
     </style>
 </head>
 <body class="bg-white text-gray-900 flex flex-col min-h-screen selection:bg-brand-accent selection:text-white" data-meta-override="true" data-meta-page="blog">
-    <nav class="fixed w-full z-50 nav-glass transition-all duration-300" role="navigation" aria-label="Main navigation">
+    <nav class="fixed w-full z-50 nav-glass nav-enhanced transition-all duration-300" role="navigation" aria-label="Main navigation">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
@@ -628,7 +630,7 @@
                 {% endif %}
             {% endfor %}
             {% if categoryTotal > 0 %}
-            <article class="resource-band {% if loop.index0 % 2 == 0 %}alt{% else %}base{% endif %}" data-category-card>
+            <article class="resource-band reveal {% if loop.index0 % 2 == 0 %}alt{% else %}base{% endif %}" data-category-card>
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="category-card">
                         <div class="category-card-inner">
@@ -1092,5 +1094,8 @@
             loadTranslations(initialLang);
         }
     </script>
+
+    <!-- Enhanced Interactions -->
+    <script src="/assets/js/enhanced.js"></script>
 </body>
 </html>
