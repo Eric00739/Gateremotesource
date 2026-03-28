@@ -134,6 +134,8 @@ eleventyComputed:
     <link rel="stylesheet" href="/assets/css/fonts.css">
     <noscript><link rel="stylesheet" href="/assets/css/fonts.css"></noscript>
 
+    <link rel="stylesheet" href="/styles/enhanced.css">
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZF8T77R309"></script>
     <script>
@@ -204,7 +206,7 @@ eleventyComputed:
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- ================= NAVIGATION ================= -->
-    <nav class="fixed w-full z-50 nav-glass transition-all duration-300">
+    <nav class="fixed w-full z-50 nav-glass nav-enhanced transition-all duration-300">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
@@ -445,46 +447,50 @@ eleventyComputed:
                 <p class="text-brand-muted max-w-3xl mx-auto">State-of-the-art manufacturing facility with comprehensive in-house capabilities.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-brand-light rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-brand-accent transition duration-300">
+                <div class="stat-card text-center reveal stagger-1">
+                    <div class="w-20 h-20 bg-brand-light rounded-full flex items-center justify-center mb-4 mx-auto hover:bg-brand-accent transition duration-300">
                         <i class="fa-solid fa-industry text-brand-accent text-3xl group-hover:text-white transition"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-brand-dark mb-2">4,000sqm Facility</h3>
+                    <div class="stat-number text-3xl font-bold text-brand-accent mb-1" data-count="4000" data-suffix="">0</div>
+                    <div class="text-brand-muted text-xs uppercase tracking-wider mb-2">sqm Facility</div>
                     <p class="text-brand-muted text-sm">Modern production base in Dongguan's manufacturing hub</p>
                 </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-brand-light rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-brand-accent transition duration-300">
+                <div class="stat-card text-center reveal stagger-2">
+                    <div class="w-20 h-20 bg-brand-light rounded-full flex items-center justify-center mb-4 mx-auto hover:bg-brand-accent transition duration-300">
                         <i class="fa-solid fa-certificate text-brand-accent text-3xl group-hover:text-white transition"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-brand-dark mb-2">ISO9001 Certified</h3>
+                    <div class="stat-number text-3xl font-bold text-brand-accent mb-1" data-count="9001" data-prefix="ISO">0</div>
+                    <div class="text-brand-muted text-xs uppercase tracking-wider mb-2">Certified</div>
                     <p class="text-brand-muted text-sm">Quality management systems certified since 2015</p>
                 </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-brand-light rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-brand-accent transition duration-300">
+                <div class="stat-card text-center reveal stagger-3">
+                    <div class="w-20 h-20 bg-brand-light rounded-full flex items-center justify-center mb-4 mx-auto hover:bg-brand-accent transition duration-300">
                         <i class="fa-solid fa-users text-brand-accent text-3xl group-hover:text-white transition"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-brand-dark mb-2">200+ Employees</h3>
+                    <div class="stat-number text-3xl font-bold text-brand-accent mb-1" data-count="200" data-suffix="+">0</div>
+                    <div class="text-brand-muted text-xs uppercase tracking-wider mb-2">Employees</div>
                     <p class="text-brand-muted text-sm">Skilled technicians and engineers dedicated to quality</p>
                 </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-brand-light rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-brand-accent transition duration-300">
+                <div class="stat-card text-center reveal stagger-4">
+                    <div class="w-20 h-20 bg-brand-light rounded-full flex items-center justify-center mb-4 mx-auto hover:bg-brand-accent transition duration-300">
                         <i class="fa-solid fa-clipboard-check text-brand-accent text-3xl group-hover:text-white transition"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-brand-dark mb-2">100% Testing</h3>
+                    <div class="stat-number text-3xl font-bold text-brand-accent mb-1" data-count="100" data-suffix="%">0</div>
+                    <div class="text-brand-muted text-xs uppercase tracking-wider mb-2">Testing</div>
                     <p class="text-brand-muted text-sm">All products undergo rigorous aging and performance tests</p>
                 </div>
             </div>
             <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="rounded-xl overflow-hidden border border-brand-border bg-brand-light">
+                <div class="rounded-xl overflow-hidden border border-brand-border bg-brand-light img-hover-zoom reveal stagger-1">
                     <img loading="lazy" decoding="async" src="/assets/factory/smt-line.webp" width="400" height="300" alt="SMT line for remote PCBs" class="w-full h-40 object-cover">
                 </div>
-                <div class="rounded-xl overflow-hidden border border-brand-border bg-brand-light">
+                <div class="rounded-xl overflow-hidden border border-brand-border bg-brand-light img-hover-zoom reveal stagger-2">
                     <img loading="lazy" decoding="async" src="/assets/factory/qc-pass.webp" width="400" height="300" alt="Functional testing rack with PASS indicators" class="w-full h-40 object-cover">
                 </div>
-                <div class="rounded-xl overflow-hidden border border-brand-border bg-brand-light">
+                <div class="rounded-xl overflow-hidden border border-brand-border bg-brand-light img-hover-zoom reveal stagger-3">
                     <img loading="lazy" decoding="async" src="/assets/factory/rd-lab.webp" width="400" height="300" alt="RF lab validating signal quality" class="w-full h-40 object-cover">
                 </div>
-                <div class="rounded-xl overflow-hidden border border-brand-border bg-brand-light">
+                <div class="rounded-xl overflow-hidden border border-brand-border bg-brand-light img-hover-zoom reveal stagger-4">
                     <img loading="lazy" decoding="async" src="/assets/factory/warehouse.webp" width="400" height="300" alt="Warehouse staging outbound cartons" class="w-full h-40 object-cover">
                 </div>
             </div>
@@ -620,7 +626,7 @@ eleventyComputed:
     </footer>
 
     <!-- Floating WhatsApp -->
-    <a href="https://wa.me/8615899648898" target="_blank" aria-label="Contact us on WhatsApp" class="whatsapp-float fixed bottom-6 right-6 z-50 bg-brand-cta hover:bg-brand-ctaHover text-white rounded-full p-4 shadow-lg flex items-center justify-center transition transform hover:scale-105">
+    <a href="https://wa.me/8615899648898" target="_blank" aria-label="Contact us on WhatsApp" class="whatsapp-float animate-float">
         <i class="fa-brands fa-whatsapp text-4xl" aria-hidden="true"></i>
     </a>
 
@@ -829,5 +835,8 @@ eleventyComputed:
             loadTranslations(initialLang);
         }
     </script>
+
+    <!-- Enhanced Interactions -->
+    <script src="/assets/js/enhanced.js"></script>
 </body>
 </html>
