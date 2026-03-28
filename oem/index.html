@@ -132,6 +132,8 @@ eleventyComputed:
     <link rel="stylesheet" href="/assets/css/fonts.css">
     <noscript><link rel="stylesheet" href="/assets/css/fonts.css"></noscript>
 
+    <link rel="stylesheet" href="/styles/enhanced.css">
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZF8T77R309"></script>
     <script>
@@ -202,7 +204,7 @@ eleventyComputed:
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- ================= NAVIGATION ================= -->
-    <nav class="fixed w-full z-50 nav-glass transition-all duration-300">
+    <nav class="fixed w-full z-50 nav-glass nav-enhanced transition-all duration-300">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
@@ -320,15 +322,15 @@ eleventyComputed:
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-                <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 shadow-lg">
+                <div class="glass-card hover-lift bg-brand-surface border border-brand-border rounded-2xl p-6 shadow-lg reveal stagger-1">
                     <h3 class="text-xl font-bold text-brand-dark mb-3">RF & Firmware Lab</h3>
                     <p class="text-brand-muted text-sm leading-relaxed">Rolling-code compatible firmware (HCS301), 433/868MHz auto-scan, range tuning, and authorized encryption key management.</p>
                 </div>
-                <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 shadow-lg">
+                <div class="glass-card hover-lift bg-brand-surface border border-brand-border rounded-2xl p-6 shadow-lg reveal stagger-2">
                     <h3 class="text-xl font-bold text-brand-dark mb-3">Tooling & ID</h3>
                     <p class="text-brand-muted text-sm leading-relaxed">Industrial design, silicone keypads, metal shells, rapid molds, and PP/PC material selection.</p>
                 </div>
-                <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 shadow-lg">
+                <div class="glass-card hover-lift bg-brand-surface border border-brand-border rounded-2xl p-6 shadow-lg reveal stagger-3">
                     <h3 class="text-xl font-bold text-brand-dark mb-3">Certification Ready</h3>
                     <p class="text-brand-muted text-sm leading-relaxed">FCC/CE test support, ISO9001 QA flow, traceable batches, and burn-in testing.</p>
                 </div>
@@ -336,20 +338,20 @@ eleventyComputed:
 
             <div class="bg-brand-surface border border-brand-border rounded-2xl p-10 mt-16">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-                    <div>
-                        <p class="text-3xl font-bold text-brand-accent mb-2">10</p>
+                    <div class="stat-card reveal stagger-1">
+                        <p class="stat-number text-3xl font-bold text-brand-accent mb-2" data-count="10">0</p>
                         <p class="text-brand-muted text-sm">RF Engineers</p>
                     </div>
-                    <div>
-                        <p class="text-3xl font-bold text-brand-accent mb-2">6</p>
+                    <div class="stat-card reveal stagger-2">
+                        <p class="stat-number text-3xl font-bold text-brand-accent mb-2" data-count="6">0</p>
                         <p class="text-brand-muted text-sm">ID/Mold Designers</p>
                     </div>
-                    <div>
-                        <p class="text-3xl font-bold text-brand-accent mb-2">4</p>
+                    <div class="stat-card reveal stagger-3">
+                        <p class="stat-number text-3xl font-bold text-brand-accent mb-2" data-count="4">0</p>
                         <p class="text-brand-muted text-sm">Aging Rooms</p>
                     </div>
-                    <div>
-                        <p class="text-3xl font-bold text-brand-accent mb-2">48h</p>
+                    <div class="stat-card reveal stagger-4">
+                        <p class="stat-number text-3xl font-bold text-brand-accent mb-2" data-count="48" data-suffix="h">0</p>
                         <p class="text-brand-muted text-sm">Prototype Turnaround</p>
                     </div>
                 </div>
@@ -365,28 +367,28 @@ eleventyComputed:
                 <p class="text-brand-muted max-w-3xl mx-auto">From concept to production in 6-12 weeks.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center">
+                <div class="text-center reveal stagger-1">
                     <div class="w-16 h-16 bg-brand-accent/20 rounded-full flex items-center justify-center mb-4 mx-auto">
                         <span class="text-2xl font-bold text-brand-accent">1</span>
                     </div>
                     <h3 class="text-lg font-bold text-brand-dark mb-2">Requirements</h3>
                     <p class="text-brand-muted text-sm">Technical specification and design brief review</p>
                 </div>
-                <div class="text-center">
+                <div class="text-center reveal stagger-2">
                     <div class="w-16 h-16 bg-brand-accent/20 rounded-full flex items-center justify-center mb-4 mx-auto">
                         <span class="text-2xl font-bold text-brand-accent">2</span>
                     </div>
                     <h3 class="text-lg font-bold text-brand-dark mb-2">Design</h3>
                     <p class="text-brand-muted text-sm">PCB layout, industrial design, and firmware architecture</p>
                 </div>
-                <div class="text-center">
+                <div class="text-center reveal stagger-3">
                     <div class="w-16 h-16 bg-brand-accent/20 rounded-full flex items-center justify-center mb-4 mx-auto">
                         <span class="text-2xl font-bold text-brand-accent">3</span>
                     </div>
                     <h3 class="text-lg font-bold text-brand-dark mb-2">Prototype</h3>
                     <p class="text-brand-muted text-sm">Rapid tooling and first article testing</p>
                 </div>
-                <div class="text-center">
+                <div class="text-center reveal stagger-4">
                     <div class="w-16 h-16 bg-brand-accent/20 rounded-full flex items-center justify-center mb-4 mx-auto">
                         <span class="text-2xl font-bold text-brand-accent">4</span>
                     </div>
@@ -405,7 +407,7 @@ eleventyComputed:
                 <p class="text-brand-muted max-w-3xl mx-auto">Full-stack RF product development under one roof.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-brand-surface border border-brand-border rounded-2xl p-6">
+                <div class="glass-card hover-lift bg-brand-surface border border-brand-border rounded-2xl p-6 reveal stagger-1">
                     <h3 class="text-xl font-bold text-brand-dark mb-4 flex items-center">
                         <i class="fa-solid fa-microchip text-brand-accent mr-3"></i>
                         RF Engineering
@@ -417,7 +419,7 @@ eleventyComputed:
                         <li class="flex items-start"><i class="fa-solid fa-check text-brand-accent mr-2 mt-1"></i> Range optimization and antenna design</li>
                     </ul>
                 </div>
-                <div class="bg-brand-surface border border-brand-border rounded-2xl p-6">
+                <div class="glass-card hover-lift bg-brand-surface border border-brand-border rounded-2xl p-6 reveal stagger-2">
                     <h3 class="text-xl font-bold text-brand-dark mb-4 flex items-center">
                         <i class="fa-solid fa-cube text-brand-accent mr-3"></i>
                         Manufacturing
@@ -429,7 +431,7 @@ eleventyComputed:
                         <li class="flex items-start"><i class="fa-solid fa-check text-brand-accent mr-2 mt-1"></i> 100% aging test and QC</li>
                     </ul>
                 </div>
-                <div class="bg-brand-surface border border-brand-border rounded-2xl p-6">
+                <div class="glass-card hover-lift bg-brand-surface border border-brand-border rounded-2xl p-6 reveal stagger-3">
                     <h3 class="text-xl font-bold text-brand-dark mb-4 flex items-center">
                         <i class="fa-solid fa-certificate text-brand-accent mr-3"></i>
                         Certification
@@ -551,7 +553,7 @@ eleventyComputed:
     </footer>
 
     <!-- Floating WhatsApp -->
-    <a href="https://wa.me/8615899648898" target="_blank" aria-label="Contact us on WhatsApp" class="whatsapp-float fixed bottom-6 right-6 z-50 bg-brand-cta hover:bg-brand-ctaHover text-white rounded-full p-4 shadow-lg flex items-center justify-center transition transform hover:scale-105">
+    <a href="https://wa.me/8615899648898" target="_blank" aria-label="Contact us on WhatsApp" class="whatsapp-float animate-float">
         <i class="fa-brands fa-whatsapp text-4xl" aria-hidden="true"></i>
     </a>
 
@@ -760,5 +762,8 @@ eleventyComputed:
             loadTranslations(initialLang);
         }
     </script>
+
+    <!-- Enhanced Interactions -->
+    <script src="/assets/js/enhanced.js"></script>
 </body>
 </html>
