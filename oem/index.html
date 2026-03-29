@@ -12,6 +12,12 @@ eleventyComputed:
 <html lang="{{ lang or site.lang }}" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
@@ -111,6 +117,21 @@ eleventyComputed:
     <link rel="apple-touch-icon" sizes="180x180" href="/logo/apple-touch-icon.png?v=1">
     <link rel="manifest" href="/site.webmanifest?v=1">
 
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "OEM/ODM Services | GateRemoteSource",
+      "url": "https://www.gateremotesource.com/oem/",
+      "description": "Custom gate remote manufacturing with logo printing, shell colors, button layouts, and frequency programming.",
+      "provider": {
+        "@type": "Organization",
+        "name": "GateRemoteSource"
+      }
+    }
+    </script>
+
     <!-- Preconnects -->
     <link rel="preconnect" href="https://www.googletagmanager.com">
 
@@ -142,6 +163,21 @@ eleventyComputed:
         gtag('js', new Date());
 
         gtag('config', 'G-ZF8T77R309');
+    </script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('[SW] Registered:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('[SW] Registration failed:', error);
+                    });
+            });
+        }
     </script>
 
     <style>
@@ -204,14 +240,17 @@ eleventyComputed:
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- ================= NAVIGATION ================= -->
-    <nav class="fixed w-full z-50 nav-glass nav-enhanced transition-all duration-300">
+    <nav class="fixed w-full z-50 nav-glass nav-enhanced transition-all duration-300" aria-label="Main navigation">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
                     <a href="/" class="flex items-center gap-3">
                         <div class="bg-brand-surface border border-brand-border/60 p-1.5 rounded-lg h-10 w-10 flex items-center justify-center">
-                            <img src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="h-full w-full object-contain">
+                            <picture>
+    <source srcset="/logo/logo.webp 1x" type="image/webp">
+    <img src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="h-full w-full object-contain">
+</picture>
                         </div>
                         <span class="font-bold text-2xl text-brand-dark tracking-tight">GateRemote<span class="text-brand-accent">Source</span></span>
                     </a>
@@ -522,7 +561,10 @@ eleventyComputed:
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <div>
                     <div class="flex items-center gap-3 mb-4 text-brand-dark">
-                        <img src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="h-10 w-auto object-contain">
+                        <picture>
+    <source srcset="/logo/logo.webp 1x" type="image/webp">
+    <img src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="h-10 w-auto object-contain">
+</picture>
                     </div>
                     <p class="mb-4" data-i18n="footer.company_description">Your Profit Partner in Access Control. Supplying locksmiths worldwide.</p>
                 </div>

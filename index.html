@@ -16,6 +16,14 @@ eleventyComputed:
 
     <meta charset="UTF-8">
 
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+    <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     
@@ -102,6 +110,47 @@ eleventyComputed:
     <link rel="apple-touch-icon" sizes="180x180" href="/logo/apple-touch-icon.png?v=1">
     <link rel="manifest" href="/site.webmanifest?v=1">
 
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "GateRemoteSource",
+      "url": "https://www.gateremotesource.com",
+      "logo": "https://www.gateremotesource.com/logo/logo.png",
+      "description": "Your #1 Source for Brand Compatible Garage Door Remotes & Universal Receivers. High-margin aftermarket solutions for Installers & Locksmiths.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dongguan",
+        "addressRegion": "Guangdong",
+        "addressCountry": "CN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Sales",
+        "availableLanguage": ["English", "Spanish", "German", "French", "Italian", "Portuguese"]
+      },
+      "sameAs": [
+        "https://github.com/Eric00739/Gateremotesource"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "GateRemoteSource",
+      "url": "https://www.gateremotesource.com",
+      "description": "Wholesale Aftermarket Garage Door Remotes & Receivers",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.gateremotesource.com/catalog?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
 
     <!-- Preconnects -->
 
@@ -110,7 +159,7 @@ eleventyComputed:
 
     <link rel="preconnect" href="https://www.googletagmanager.com">
 
-    <link rel="preload" as="image" href="/assets/videos/V1.3-poster.jpg">
+    <link rel="preload" as="image" href="/assets/videos/V1.3-poster.webp" type="image/webp">
 
 
 
@@ -146,6 +195,8 @@ eleventyComputed:
     <!-- Enhanced Design System -->
     <link rel="stylesheet" href="/styles/enhanced.css">
 
+    <meta name="google-site-verification" content="ADD_YOUR_VERIFICATION_CODE_HERE">
+
     <!-- Google tag (gtag.js) -->
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZF8T77R309"></script>
@@ -162,6 +213,21 @@ eleventyComputed:
 
         gtag('config', 'G-ZF8T77R309');
 
+    </script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('[SW] Registered:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('[SW] Registration failed:', error);
+                    });
+            });
+        }
     </script>
 
     <!-- Custom styles remain below -->
@@ -710,11 +776,16 @@ eleventyComputed:
 
 <body class="font-sans text-brand-light/80 bg-brand-light backdrop-blur selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="home">
 
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content-area" class="skip-link">Skip to main content</a>
+
+    <main id="main-content-area">
+
 
 
     <!-- ================= NAVIGATION ================= -->
 
-    <nav class="sticky top-0 w-full z-50 nav-glass nav-enhanced transition-all duration-200 ease-in-out">
+    <nav aria-label="Main navigation" class="sticky top-0 w-full z-50 nav-glass nav-enhanced transition-all duration-200 ease-in-out">
 
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -728,7 +799,10 @@ eleventyComputed:
 
                     <div class="bg-brand-surface border border-brand-border/60 p-1.5 rounded-lg h-10 w-10 flex items-center justify-center" style="width: 40px; height: 40px; min-width: 40px; min-height: 40px;">
 
-                        <img src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource Logo" class="h-full w-full object-contain" style="width: 100%; height: 100%; max-width: 40px; max-height: 40px; object-fit: contain;">
+                        <picture>
+                          <source srcset="/logo/logo.webp 1x" type="image/webp">
+                          <img src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource Logo" class="h-full w-full object-contain" style="width: 100%; height: 100%; max-width: 40px; max-height: 40px; object-fit: contain;">
+                        </picture>
 
                     </div>
 
@@ -744,7 +818,7 @@ eleventyComputed:
 
                 <div class="hidden lg:flex space-x-8 items-center">
 
-                    <a href="/" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent active" id="nav-home" data-i18n="navigation.home">Home</a>
+                    <a href="/" aria-current="page" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent active" id="nav-home" data-i18n="navigation.home">Home</a>
 
                     <a href="/catalog/" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-products" data-i18n="navigation.catalog">Catalog</a>
 
@@ -764,7 +838,7 @@ eleventyComputed:
 
                         <div class="relative">
 
-                            <button id="languageDropdownBtn" class="flex items-center gap-2 text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out">
+                            <button id="languageDropdownBtn" class="flex items-center gap-2 text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out" aria-label="Select language" aria-expanded="false" aria-haspopup="true">
 
                                 <span id="currentFlag" class="text-xs font-semibold tracking-wide">EN</span>
 
@@ -846,7 +920,7 @@ eleventyComputed:
 
                 <div class="lg:hidden flex items-center gap-4">
 
-                    <button id="mobile-menu-btn" class="text-brand-dark text-2xl focus:outline-none transition-colors duration-200 ease-in-out hover:text-brand-accent">
+                    <button id="mobile-menu-btn" class="text-brand-dark text-2xl focus:outline-none transition-colors duration-200 ease-in-out hover:text-brand-accent" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
 
                         <i class="fa-solid fa-bars"></i>
 
@@ -909,9 +983,9 @@ eleventyComputed:
 
         <!-- Hero -->
 
-        <section class="hero-wrapper pt-24">
-            <div class="hero-video" aria-hidden="false">
-                <video autoplay muted loop playsinline preload="metadata" poster="/assets/videos/V1.3-poster.jpg">
+        <section id="main-content" class="hero-wrapper pt-24">
+            <div class="hero-video" aria-hidden="true">
+                <video autoplay muted loop playsinline preload="none" poster="/assets/videos/V1.3-poster.webp">
                     <source src="/assets/videos/V1.3-mobile-optimized.mp4" type="video/mp4" media="(max-width: 768px)">
                     <source src="/assets/videos/V1.3-optimized.mp4" type="video/mp4">
                 </video>
@@ -948,19 +1022,7 @@ eleventyComputed:
 
                     </div>
 
-                    <!-- Right: Image -->
-                    <div class="hidden bg-brand-light rounded-2xl p-8 shadow-md relative overflow-hidden transition-all duration-200 ease-in-out hover:shadow-lg aspect-square flex items-center justify-center">
-
-                        <div class="absolute inset-0 bg-gradient-to-br from-brand-accent/5 to-brand-dark/5 pointer-events-none"></div>
-
-                        <div class="relative z-10 w-full h-full flex items-center justify-center">
-                            <picture class="w-full h-full">
-                                <source type="image/webp" srcset="/assets/factory/smt-line.webp">
-                                <img loading="lazy" decoding="async" src="/assets/factory/smt-line.webp" alt="SMT production line at GateRemoteSource factory" class="w-full h-full object-contain rounded-lg">
-                            </picture>
-                        </div>
-
-                    </div>
+                    <!-- Hidden image div removed to improve LCP -->
 
                 </div>
 
@@ -1511,7 +1573,7 @@ eleventyComputed:
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <article class="md:col-span-2 lg:col-span-2 bg-brand-surface border border-brand-border rounded-2xl overflow-hidden shadow-sm">
                         <div class="relative aspect-video bg-brand-dark">
-                            <video class="w-full h-full object-cover" controls preload="metadata" poster="/assets/videos/V1.3-poster.jpg">
+                            <video class="w-full h-full object-cover" controls preload="metadata" poster="/assets/videos/V1.3-poster.webp">
                                 <source src="/assets/videos/V1.3-optimized.mp4" type="video/mp4">
                             </video>
                         </div>
@@ -1858,6 +1920,72 @@ eleventyComputed:
             </div>
 
         </section>
+
+        <!-- FAQ Schema Structured Data -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Do you sell to end users?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. We are a B2B manufacturer and supply locksmiths, installers, and distributors only."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is your MOQ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "50 pcs."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which currency can you quote in?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "USD or EUR."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you have distributor tier pricing levels?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We offer tiered pricing based on annual volume and order size. Share your forecast and we will quote the correct tier."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is packaging included? Custom packaging/labels?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Standard packaging is included by default. Custom packaging/labels require an additional cost."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Payment terms and methods?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Standard terms: T/T 30/70. We also accept PayPal (samples), L/C, and Alibaba Trade Assurance."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the MOQ for OEM/ODM customization?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "500 pcs."
+              }
+            }
+          ]
+        }
+        </script>
 
 
 
@@ -2924,7 +3052,10 @@ eleventyComputed:
 
                     <div class="flex items-center gap-3 mb-4 text-brand-dark">
 
-                        <img src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="h-10 w-auto object-contain" style="width: 40px; height: 40px; max-width: 40px; max-height: 40px; object-fit: contain;">
+                        <picture>
+                          <source srcset="/logo/logo.webp 1x" type="image/webp">
+                          <img src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="h-10 w-auto object-contain" style="width: 40px; height: 40px; max-width: 40px; max-height: 40px; object-fit: contain;">
+                        </picture>
 
                     </div>
 
@@ -2981,6 +3112,8 @@ eleventyComputed:
         </div>
 
     </footer>
+
+    </main>
 
 
 

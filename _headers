@@ -1,0 +1,12 @@
+# Security Headers for GateRemoteSource
+# 安全头部配置（用于 _headers 文件或服务器配置）
+
+# Netlify/_headers 格式
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://cdn.jsdelivr.net https://player.vimeo.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.example.com https://www.google-analytics.com; frame-src https://player.vimeo.com; media-src 'self';
+
+# Cloudflare Pages/_headers 格式（相同）
