@@ -8,7 +8,8 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@tailwindcss/typography": "^0.5.19",
-    "node-html-parser": "^6.1.12"
+    "node-html-parser": "^6.1.12",
+    "purgecss": "^8.0.0"
   },
   "version": "0.1.0"
 }

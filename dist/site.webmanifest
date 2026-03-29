@@ -1,19 +1,28 @@
 {
   "name": "GateRemoteSource",
   "short_name": "GRSource",
+  "description": "Wholesale Aftermarket Garage Door Remotes & Receivers for Installers & Locksmiths",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
     {
       "src": "/logo/android-chrome-192x192.png?v=1",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/logo/android-chrome-512x512.png?v=1",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "theme_color": "#1D1D1F",
-  "background_color": "#1D1D1F",
-  "display": "standalone"
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "categories": ["business", "shopping", "utilities"],
+  "lang": "en",
+  "dir": "ltr"
 }

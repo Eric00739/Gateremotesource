@@ -33,7 +33,7 @@ module.exports = {
           hover: "#005BB5",
           light: "#F5F5F7",
           surface: "#FFFFFF",
-          muted: "#86868B",
+          muted: "#6E6E73",
           success: "#34C759",
           border: "#D1D1D6",
           cta: "#0071E3",
