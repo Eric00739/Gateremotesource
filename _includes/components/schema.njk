@@ -1,0 +1,46 @@
+{# Schema.org Structured Data - Organization & WebSite #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ site.name }}",
+  "url": "{{ site.url }}",
+  "logo": "{{ site.company.logo }}",
+  "description": "Your #1 Source for Brand Compatible Garage Door Remotes & Universal Receivers. High-margin aftermarket solutions for Installers & Locksmiths.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Huawei Kegu Industrial Park, Dalingshan Town",
+    "addressLocality": "Dongguan",
+    "addressRegion": "Guangdong",
+    "addressCountry": "CN"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Sales",
+    "email": "{{ site.contact.email }}",
+    "telephone": "{{ site.contact.phone }}",
+    "availableLanguage": ["English", "Spanish", "German", "French", "Italian", "Portuguese"]
+  },
+  "sameAs": [
+    "{{ site.social.linkedin }}",
+    "{{ site.social.twitter }}",
+    "{{ site.social.facebook }}",
+    "https://github.com/Eric00739/Gateremotesource"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ site.name }}",
+  "url": "{{ site.url }}",
+  "description": "Wholesale Aftermarket Garage Door Remotes & Receivers",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ site.url }}/catalog?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>

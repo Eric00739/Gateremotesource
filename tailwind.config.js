@@ -3,7 +3,18 @@ module.exports = {
   content: [
     "./**/*.{html,njk,md}",
     "_includes/**/*.njk",
-    "dist/**/*.html"
+    "!dist/**/*.html"
+  ],
+  safelist: [
+    // Language dropdown classes
+    'hidden',
+    'block',
+    // Animation classes
+    'animate-fade-in-up',
+    'animate-fade-in-scale',
+    // Mobile menu classes
+    'lg:hidden',
+    'lg:flex'
   ],
   theme: {
     extend: {

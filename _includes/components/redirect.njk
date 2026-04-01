@@ -1,0 +1,25 @@
+{# HTTPS and www Redirect - Inline Script #}
+<script>
+(function() {
+    var preferredHost = "www.gateremotesource.com";
+    var currentProtocol = location.protocol;
+    var currentHost = location.hostname;
+
+    // Force HTTPS redirect
+    if (currentProtocol !== "https:") {
+        var target = "https://" + currentHost + location.pathname + location.search + location.hash;
+        if (target !== location.href) {
+            location.replace(target);
+        }
+        return;
+    }
+
+    // Force www redirect
+    if (currentHost !== preferredHost) {
+        var target = "https://" + preferredHost + location.pathname + location.search + location.hash;
+        if (target !== location.href) {
+            location.replace(target);
+        }
+    }
+})();
+</script>

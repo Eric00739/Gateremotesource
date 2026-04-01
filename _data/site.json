@@ -3,5 +3,24 @@
   "url": "https://www.gateremotesource.com",
   "blogTitle": "Installer Hub",
   "blogDescription": "Technical guides, programming tutorials, and industry news for locksmiths.",
-  "lang": "en"
+  "lang": "en",
+  "gaId": "G-ZF8T77R309",
+  "contact": {
+    "whatsapp": "+86 158 9964 8898",
+    "whatsappClean": "8615899648898",
+    "email": "sales@gateremotesource.com",
+    "address": "Huawei Kegu Industrial Park, Dalingshan Town, Dongguan, Guangdong, China",
+    "phone": "+86 158 9964 8898"
+  },
+  "social": {
+    "linkedin": "https://linkedin.com/company/gateremotesource",
+    "twitter": "https://twitter.com/gateremotesrc",
+    "facebook": "https://facebook.com/gateremotesource"
+  },
+  "company": {
+    "name": "GateRemoteSource",
+    "foundingYear": 2010,
+    "description": "Professional manufacturer of aftermarket garage door remotes and universal receivers",
+    "logo": "https://www.gateremotesource.com/logo/logo.png"
+  }
 }

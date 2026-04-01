@@ -46,30 +46,7 @@ eleventyComputed:
     {% endfor %}
 
     <!-- HTTP to HTTPS and non-www to www redirect -->
-    <script>
-        (function() {
-            var preferredHost = "www.gateremotesource.com";
-            var currentProtocol = location.protocol;
-            var currentHost = location.hostname;
-            
-            // Force HTTPS redirect
-            if (currentProtocol !== "https:") {
-                var target = "https://" + currentHost + location.pathname + location.search + location.hash;
-                if (target !== location.href) {
-                    location.replace(target);
-                }
-                return;
-            }
-            
-            // Force www redirect
-            if (currentHost !== preferredHost) {
-                var target = "https://" + preferredHost + location.pathname + location.search + location.hash;
-                if (target !== location.href) {
-                    location.replace(target);
-                }
-            }
-        })();
-    </script>
+    {% include "components/redirect.njk" %}
 
     <meta property="og:type" content="website">
 
@@ -111,46 +88,7 @@ eleventyComputed:
     <link rel="manifest" href="/site.webmanifest?v=1">
 
     <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "GateRemoteSource",
-      "url": "https://www.gateremotesource.com",
-      "logo": "https://www.gateremotesource.com/logo/logo.png",
-      "description": "Your #1 Source for Brand Compatible Garage Door Remotes & Universal Receivers. High-margin aftermarket solutions for Installers & Locksmiths.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Dongguan",
-        "addressRegion": "Guangdong",
-        "addressCountry": "CN"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "Sales",
-        "availableLanguage": ["English", "Spanish", "German", "French", "Italian", "Portuguese"]
-      },
-      "sameAs": [
-        "https://github.com/Eric00739/Gateremotesource"
-      ]
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "GateRemoteSource",
-      "url": "https://www.gateremotesource.com",
-      "description": "Wholesale Aftermarket Garage Door Remotes & Receivers",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://www.gateremotesource.com/catalog?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
-
+    {% include "components/schema.njk" %}
 
     <!-- Preconnects -->
 
@@ -778,6 +716,9 @@ eleventyComputed:
 
     <!-- Skip Link for Accessibility -->
     <a href="#main-content-area" class="skip-link">Skip to main content</a>
+
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-[100] focus:bg-brand-accent focus:text-white focus:px-4 focus:py-2 focus:rounded-md focus:shadow-lg" style="position:absolute;z-index:100;">Skip to main content</a>
 
     <main id="main-content-area">
 
@@ -3054,7 +2995,7 @@ eleventyComputed:
 
                         <picture>
                           <source srcset="/logo/logo.webp 1x" type="image/webp">
-                          <img src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="h-10 w-auto object-contain" style="width: 40px; height: 40px; max-width: 40px; max-height: 40px; object-fit: contain;">
+                          <img loading="lazy" src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="h-10 w-auto object-contain" style="width: 40px; height: 40px; max-width: 40px; max-height: 40px; object-fit: contain;">
                         </picture>
 
                     </div>
@@ -4131,7 +4072,7 @@ eleventyComputed:
                     <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group">
                         <div class="grid grid-cols-1 md:grid-cols-2">
                             <div class="relative min-h-[240px] overflow-hidden">
-                                <img src="${primary.image}" alt="${primary.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <img loading="lazy" src="${primary.image}" alt="${primary.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             </div>
                             <div class="p-6 flex flex-col gap-3">
                                 <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">${primary.category}</span>

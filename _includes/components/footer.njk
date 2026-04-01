@@ -1,0 +1,54 @@
+{# Footer Component #}
+<footer class="bg-brand-light pt-20 pb-10 border-t border-brand-border text-brand-dark/80 text-base" role="contentinfo">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Legal Disclaimer -->
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-6 mb-12">
+            <p class="text-sm text-brand-muted text-center" data-i18n="footer.legal_disclaimer">
+                Disclaimer: All product names, logos, and brands are property of their respective owners. All company, product and service names used in this website are for identification purposes only. Use of these names, logos, and brands does not imply endorsement.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <div>
+                <div class="flex items-center gap-3 mb-4 text-brand-dark">
+                    <picture>
+                        <source srcset="/logo/logo.webp 1x" type="image/webp">
+                        <img src="/logo/logo.png" width="40" height="40" alt="{{ site.name }} logo" class="h-10 w-auto object-contain" style="width: 40px; height: 40px; max-width: 40px; max-height: 40px; object-fit: contain;">
+                    </picture>
+                </div>
+                <p class="mb-4" data-i18n="footer.company_description">Your Profit Partner in Access Control. Supplying locksmiths worldwide.</p>
+            </div>
+
+            <div>
+                <h4 class="text-brand-dark font-bold mb-4" data-i18n="footer.products">Products</h4>
+                <ul class="space-y-2">
+                    <li><a href="/catalog/" class="hover:text-brand-accent" data-i18n="footer.remotes">Remotes</a></li>
+                    <li><a href="/catalog/" class="hover:text-brand-accent" data-i18n="footer.receivers">Receivers</a></li>
+                    <li><a href="/catalog/" class="hover:text-brand-accent" data-i18n="footer.smart_home">Smart Home</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-brand-dark font-bold mb-4" data-i18n="footer.contact">Contact</h4>
+                <ul class="space-y-2">
+                    <li><a href="mailto:{{ site.contact.email }}" class="hover:text-brand-accent" data-i18n="footer.email_sales">{{ site.contact.email }}</a></li>
+                    <li><a href="https://wa.me/{{ site.contact.whatsappClean }}" class="hover:text-brand-accent" data-i18n="footer.whatsapp">{{ site.contact.whatsapp }}</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-brand-dark font-bold mb-4" data-i18n="footer.address">Address</h4>
+                <p class="flex items-start gap-2"><i class="fa-solid fa-location-dot mt-1 text-brand-accent"></i> {{ site.contact.address }}</p>
+            </div>
+        </div>
+
+        <div class="text-center pt-8 border-t border-brand-border">
+            <span data-i18n="footer.copyright">&copy; {{ "now" | date: "%Y" }} {{ site.name }}. All rights reserved.</span>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/{{ site.contact.whatsappClean }}" target="_blank" rel="noopener noreferrer" class="whatsapp-float animate-float" aria-label="Contact us on WhatsApp">
+    <i class="fa-brands fa-whatsapp text-4xl"></i>
+</a>

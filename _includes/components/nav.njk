@@ -1,0 +1,92 @@
+{# Main Navigation Component #}
+<a href="#main-content" class="skip-link sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:bg-brand-accent focus:text-white focus:px-4 focus:py-2">Skip to main content</a>
+
+<nav aria-label="Main navigation" class="sticky top-0 w-full z-50 nav-glass nav-enhanced transition-all duration-200 ease-in-out">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
+                <a href="/" class="flex items-center gap-3">
+                    <div class="bg-brand-surface border border-brand-border/60 p-1.5 rounded-lg h-10 w-10 flex items-center justify-center" style="width: 40px; height: 40px; min-width: 40px; min-height: 40px;">
+                        <picture>
+                          <source srcset="/logo/logo.webp 1x" type="image/webp">
+                          <img src="/logo/logo.png" width="40" height="40" alt="{{ site.name }} Logo" class="h-full w-full object-contain" style="width: 100%; height: 100%; max-width: 40px; max-height: 40px; object-fit: contain;">
+                        </picture>
+                    </div>
+                    <span class="font-bold text-2xl text-brand-dark tracking-tight transition-colors duration-200 ease-in-out">GateRemote<span class="text-brand-accent">Source</span></span>
+                </a>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex space-x-8 items-center">
+                <a href="/" aria-current="page" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent active" id="nav-home" data-i18n="navigation.home">Home</a>
+                <a href="/catalog/" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-products" data-i18n="navigation.catalog">Catalog</a>
+                <a href="/oem/" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-oem" data-i18n="navigation.oem">OEM/ODM</a>
+                <a href="/about/" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-about" data-i18n="navigation.about">About</a>
+                <a href="/blog/" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-blog" data-i18n="navigation.blog">Blog</a>
+                <a href="/contact/" class="nav-link text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out font-semibold py-2 border-b-2 border-transparent hover:border-brand-accent" id="nav-contact" data-i18n="navigation.contact">Contact</a>
+
+                <!-- Language Switcher -->
+                <div class="flex items-center ml-2 border-l border-brand-border pl-4">
+                    <div class="relative">
+                        <button id="languageDropdownBtn" class="flex items-center gap-2 text-brand-dark hover:text-brand-accent transition-colors duration-200 ease-in-out" aria-label="Select language" aria-expanded="false" aria-haspopup="true">
+                            <span id="currentFlag" class="text-xs font-semibold tracking-wide">EN</span>
+                            <span id="currentLang" class="sr-only">English</span>
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </button>
+                        <div id="languageDropdown" class="absolute right-0 mt-2 w-48 bg-brand-surface border border-brand-border rounded-lg shadow-lg hidden z-50 backdrop-blur">
+                            <a href="#" onclick="changeLanguage('en')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+                                <span class="text-xs font-semibold text-brand-dark">EN</span>
+                                <span class="text-brand-dark">English</span>
+                            </a>
+                            <a href="#" onclick="changeLanguage('es')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+                                <span class="text-xs font-semibold text-brand-dark">ES</span>
+                                <span class="text-brand-dark">Spanish</span>
+                            </a>
+                            <a href="#" onclick="changeLanguage('de')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+                                <span class="text-xs font-semibold text-brand-dark">DE</span>
+                                <span class="text-brand-dark">Deutsch</span>
+                            </a>
+                            <a href="#" onclick="changeLanguage('it')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+                                <span class="text-xs font-semibold text-brand-dark">IT</span>
+                                <span class="text-brand-dark">Italiano</span>
+                            </a>
+                            <a href="#" onclick="changeLanguage('fr')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+                                <span class="text-xs font-semibold text-brand-dark">FR</span>
+                                <span class="text-brand-dark">French</span>
+                            </a>
+                            <a href="#" onclick="changeLanguage('pt')" class="flex items-center gap-3 px-4 py-3 text-brand-dark hover:bg-brand-light transition">
+                                <span class="text-xs font-semibold text-brand-dark">PT</span>
+                                <span class="text-brand-dark">Portuguese</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-brand-surface px-6 py-2 rounded-lg font-bold transition-all duration-200 ease-in-out shadow-sm hover:shadow-md transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_get_price_list">
+                    Quote now
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="lg:hidden flex items-center gap-4">
+                <button id="mobile-menu-btn" class="text-brand-dark text-2xl focus:outline-none transition-colors duration-200 ease-in-out hover:text-brand-accent" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="lg:hidden hidden bg-brand-surface/95 backdrop-blur border-t border-brand-border" role="navigation" aria-label="Mobile navigation">
+        <div class="px-4 py-4 space-y-2">
+            <a href="/" class="block py-2 text-brand-dark hover:text-brand-accent font-semibold" data-i18n="navigation.home">Home</a>
+            <a href="/catalog/" class="block py-2 text-brand-dark hover:text-brand-accent font-semibold" data-i18n="navigation.catalog">Catalog</a>
+            <a href="/oem/" class="block py-2 text-brand-dark hover:text-brand-accent font-semibold" data-i18n="navigation.oem">OEM/ODM</a>
+            <a href="/about/" class="block py-2 text-brand-dark hover:text-brand-accent font-semibold" data-i18n="navigation.about">About</a>
+            <a href="/blog/" class="block py-2 text-brand-dark hover:text-brand-accent font-semibold" data-i18n="navigation.blog">Blog</a>
+            <a href="/contact/" class="block py-2 text-brand-dark hover:text-brand-accent font-semibold" data-i18n="navigation.contact">Contact</a>
+            <a href="/contact/" class="block mt-4 bg-brand-cta hover:bg-brand-ctaHover text-brand-surface px-6 py-3 rounded-lg font-bold text-center" data-i18n="navigation.dealer_login">Quote now</a>
+        </div>
+    </div>
+</nav>
