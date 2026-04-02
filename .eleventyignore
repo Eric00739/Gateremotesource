@@ -1,0 +1,6 @@
+dist
+.tmp
+node_modules
+README.md
+content-rules.md
+assets/blog-drops/**/post.md

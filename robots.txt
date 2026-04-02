@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /blog/posts/
+Disallow: /docs/
+Allow: /
+Sitemap: https://www.gateremotesource.com/sitemap.xml

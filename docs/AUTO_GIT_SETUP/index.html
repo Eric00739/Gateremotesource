@@ -1,0 +1,79 @@
+<h1>自动 Git 提交/推送配置指南</h1>
+<p>本指南介绍如何配置 VSCode 实现保存文件时自动提交并推送到 GitHub。</p>
+<h2>方案一：Auto Git Commit and Push（推荐，最简单）</h2>
+<h3>1. 安装扩展</h3>
+<p>在 VSCode 中安装扩展：</p>
+<ul>
+<li><strong>扩展名称</strong>: Auto Git Commit and Push</li>
+<li><strong>扩展 ID</strong>: <code>YogeshValiya.autogitcommit</code></li>
+<li><strong>链接</strong>: https://marketplace.visualstudio.com/items?itemName=YogeshValiya.autogitcommit</li>
+</ul>
+<h3>2. 配置扩展</h3>
+<p>安装后，在 VSCode 设置中搜索 <code>autogitcommit</code>，配置以下选项：</p>
+<pre><code class="language-json">{
+  &quot;autogitcommit.enabled&quot;: true,
+  &quot;autogitcommit.commitMessage&quot;: &quot;Auto commit:  &quot;,
+  &quot;autogitcommit.pushAfterCommit&quot;: true,
+  &quot;autogitcommit.commitOnSave&quot;: true
+}
+</code></pre>
+<h3>3. 注意事项</h3>
+<ul>
+<li>⚠️ 此扩展会在每次保存文件时自动提交并推送</li>
+<li>建议只在确认内容 OK 时启用此功能</li>
+<li>避免把半成品代码推送到仓库</li>
+</ul>
+<hr>
+<h2>方案二：Run on Save（更灵活的控制）</h2>
+<h3>1. 安装扩展</h3>
+<ul>
+<li><strong>扩展名称</strong>: Run on Save</li>
+<li><strong>扩展 ID</strong>: <code>pucelle.run-on-save</code></li>
+<li><strong>链接</strong>: https://marketplace.visualstudio.com/items?itemName=pucelle.run-on-save</li>
+</ul>
+<h3>2. 配置扩展</h3>
+<p>在 VSCode 设置中添加以下配置：</p>
+<pre><code class="language-json">{
+  &quot;emeraldwalk.runonsave&quot;: {
+    &quot;commands&quot;: [
+      {
+        &quot;match&quot;: &quot;\\.(md|njk|html|js|css)$&quot;,
+        &quot;cmd&quot;: &quot;git add ${file} &amp;&amp; git commit -m 'Update ${fileBasename}' &amp;&amp; git push&quot;,
+        &quot;isAsync&quot;: true
+      }
+    ]
+  }
+}
+</code></pre>
+<h3>3. 注意事项</h3>
+<ul>
+<li>可以自定义 commit 消息</li>
+<li>可以指定只对特定文件类型执行</li>
+<li>更灵活但配置稍复杂</li>
+</ul>
+<hr>
+<h2>方案三：手动脚本（最安全）</h2>
+<p>创建一个简单的 npm 脚本，在需要时手动运行：</p>
+<h3>1. 在 <code>package.json</code> 中添加脚本</h3>
+<pre><code class="language-json">{
+  &quot;scripts&quot;: {
+    &quot;commit-push&quot;: &quot;git add . &amp;&amp; git commit -m 'Update blog content' &amp;&amp; git push&quot;
+  }
+}
+</code></pre>
+<h3>2. 使用方法</h3>
+<pre><code class="language-bash">npm run commit-push
+</code></pre>
+<hr>
+<h2>推荐工作流程</h2>
+<p>对于博客写作，推荐以下流程：</p>
+<ol>
+<li><strong>写作阶段</strong>: 使用 VSCode 编辑 Markdown 文件</li>
+<li><strong>格式化</strong>: 保存时自动格式化（已配置 Prettier + markdownlint）</li>
+<li><strong>预览</strong>: 运行 <code>npm run dev</code> 预览效果</li>
+<li><strong>提交</strong>: 确认无误后，手动运行 <code>npm run commit-push</code> 或启用自动提交</li>
+</ol>
+<hr>
+<h2>安全提示</h2>
+<p>⚠️ <strong>重要</strong>: 自动提交/自动推送类扩展只应安装来自可信来源、装机量高的扩展，并且不要授予不必要的权限。</p>
+<p>最近确实出现过恶意 VSCode 扩展的安全案例，请务必注意安全。</p>

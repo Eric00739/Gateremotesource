@@ -1,0 +1,323 @@
+{
+  "meta": {
+    "home": {
+      "title": "GateRemoteSource | Grossiste Télécommandes Aftermarket et Récepteurs de Porte de Garage",
+      "description": "Votre source #1 de Télécommandes Compatibles et Récepteurs Universels pour Portes de Garage. Solutions aftermarket à haute marge spécifiquement pour Installateurs et Serruriers. Remplace Nice, Came, Liftmaster et plus.",
+      "keywords": "Télécommande Aftermarket Garage, Récepteur Universel Portail, Remplacement Code Roulant, Duplicateur Télécommande, Grossiste Télécommandes Portail, Fournitures Serruriers, GateRemoteSource"
+    },
+    "about": {
+      "title": "A propos de GateRemoteSource | Fabricant a Dongguan pour Installateurs et Serruriers",
+      "description": "Equipe usine fournissant telecommandes compatibles et recepteurs universels aux distributeurs UE/USA/AmSud/AU avec QC, outillage et support technique.",
+      "keywords": "A propos GateRemoteSource, Historique Societe, ISO9001 Certifie, Fabricant Controle d'acces, Usine Dongguan"
+    },
+    "contact": {
+      "title": "Contact GateRemoteSource | Devis Grossiste et Support",
+      "description": "Demandez tarifs, MOQ et options d'expedition. Support WhatsApp/Email pour installateurs et distributeurs. Reponse sous 24 h.",
+      "keywords": "Contact GateRemoteSource, Compte Grossiste, Liste de prix, Distributeur telecommandes, Support WhatsApp"
+    },
+    "catalog": {
+      "title": "Catalogue Telecommandes | Compatibles 433MHz et Recepteurs Universels",
+      "description": "Parcourez telecommandes compatibles et recepteurs universels: 433MHz, rolling code, compatibles Nice/Came/FAAC/Beninca, kits, antennes, packs bulk.",
+      "keywords": "Catalogue Telecommandes, Recepteurs Universels, Telecommandes Aftermarket, Grossiste automatismes, Fournitures serruriers"
+    },
+    "oem": {
+      "title": "Solutions OEM/ODM | Marque Privee 433MHz et Rolling Code",
+      "description": "Moules personnalises, ajustement firmware et branding pour telecommandes et recepteurs garage/portail. CE/FCC, MOQ bas, support engineering.",
+      "keywords": "Fabrication OEM, Services ODM, Telecommandes sur mesure, Design PCB, Ingenierie RF, Support certification"
+    },
+    "blog": {
+      "title": "Blog Installer Hub | Guides et Depannage",
+      "description": "Guides techniques sur clonage de telecommandes, configuration de recepteurs, depannage RF et controle d'acces.",
+      "keywords": "Programmation telecommandes, Ressources serruriers, Guides d'installation, Blog technique"
+    }
+  },
+  "navigation": {
+    "home": "Accueil",
+    "catalog": "Catalogue",
+    "oem": "OEM/ODM",
+    "about": "À Propos",
+    "blog": "Blog",
+    "contact": "Contact",
+    "dealer_login": "Quote Now",
+    "language": "Langue"
+  },
+  "hero": {
+    "badge": "Pour Professionnels de Portes de Garage et Portails",
+    "title": "Augmentez Vos Marges",
+    "title_highlight": "avec Télécommandes de Portail 100% Compatibles",
+    "description": "Ne perdez pas une vente parce que la télécommande originale est chère ou discontinuée. Stockez nos <strong>Télécommandes Compatibles et Récepteurs Universels</strong> pour profit maximum.",
+    "search_placeholder": "Recherchez ID FCC, Puce (ex. HCS301) ou Fréquence...",
+    "search_button": "Rechercher",
+    "cta_catalog": "Voir Catalogue Remplacements",
+    "cta_samples": "Commande Kit d'Échantillons"
+  },
+  "trust_bar": {
+    "high_margins": {
+      "title": "Marges Élevées",
+      "subtitle": "Prix Direct Usine"
+    },
+    "compatible": {
+      "title": "Garantie 1 an",
+      "subtitle": "Testé et Garanti"
+    },
+    "low_moq": {
+      "title": "MOQ Bas",
+      "subtitle": "À partir de 50 pièces"
+    },
+    "fast_dispatch": {
+      "title": "Expédition Rapide",
+      "subtitle": "Priorité DHL/FedEx"
+    }
+  },
+  "inventory": {
+    "top_sellers": "Meilleures Ventes",
+    "title": "L'Inventaire \"Indispensable\"",
+    "subtitle": "Outils essentiels pour chaque serrurier et installateur d'automatisation de portail.",
+    "database_access": "Accès Base de Données",
+    "supported_models": "500+ Modèles Supportés",
+    "database_description": "Nous fournissons une liste Excel complète correspondant les numéros de pièce originaux à nos modèles compatibles.",
+    "request_full_list": "Demander Liste Complète",
+    "card1": {
+      "title": "Compatibilité Aftermarket",
+      "description": "Alternatives à haute marge compatibles avec les meilleures marques.",
+      "image_alt": "Gros plan de PCB/Circuit Télécommande",
+      "badge": "Haute Marge",
+      "cta": "Voir Liste Compatibilité ->"
+    },
+    "card2": {
+      "title": "Récepteurs Universels",
+      "description": "Résolvez les problèmes de portails legacy avec modules auto-scan 433/868MHz.",
+      "image_alt": "Schéma de câblage récepteur ou Gros plan Port",
+      "badge": "Le Solutionneur",
+      "cta": "Voir Spécifications ->"
+    },
+    "card3": {
+      "title": "Télécommandes Auto-Apprentissage",
+      "description": "Clonez télécommandes à code fixe en secondes. Aucun outil requis.",
+      "image_alt": "Deux télécommandes clonant signal",
+      "badge": "Multi-Fréq",
+      "cta": "Voir Démo ->"
+    }
+  },
+  "factory_trust": {
+    "title": "Pourquoi Faire Confiance à GateRemoteSource",
+    "subtitle": "Nous sommes une usine, pas un dropshipper.",
+    "iso_certified": {
+      "title": "Usine Certifiée ISO9001",
+      "description": "Systèmes de gestion qualité certifiés"
+    },
+    "authentic_components": {
+      "title": "Composants Authentiques Microchip/NXP",
+      "description": "Puces authentiques pour performance fiable"
+    },
+    "aging_test": {
+      "title": "Salle Test Vieillissement 100%",
+      "description": "Tous les produits subissent des tests rigoureux"
+    },
+    "production_base": {
+      "title": "4,000sqm Production Base",
+      "description": "Capacité production à grande échelle"
+    }
+  },
+  "testimonials": {
+    "title": "Que Disent Nos Partenaires B2B",
+    "subtitle": "Vrai feedback de serruriers et distributeurs worldwide.",
+    "review1": {
+      "text": "La portée de ces télécommandes HCS301 est meilleure que l'originale. Mes installateurs les adorent.",
+      "author": "John D.",
+      "company": "Distributeur UK"
+    },
+    "review2": {
+      "text": "Prototypage OEM le plus rapide que j'ai vu à Shenzhen. Excellent partenaire.",
+      "author": "Carlos M.",
+      "company": "Espagne"
+    },
+    "review3": {
+      "text": "La compatibilité est 100% parfaite. Nous avons doublé notre volume de ventes de télécommandes depuis que nous avons changé.",
+      "author": "Marco T.",
+      "company": "Italie"
+    }
+  },
+  "blog": {
+    "installer_resources": "Ressources Installateur",
+    "technical_guides": "Guides Techniques",
+    "read_all": "Tout lire ->",
+    "title": "Hub Installateur",
+    "subtitle": "Guides techniques, tutoriels de programmation et actualités de l'industrie pour les serruriers.",
+    "topics": "Sujets",
+    "programming_guides": "Guides de Programmation",
+    "market_trends": "Tendances du Marché",
+    "troubleshooting": "Dépannage",
+    "new_products": "Nouveaux Produits",
+    "become_distributor_title": "Devenir Distributeur",
+    "become_distributor_description": "Accédez aux tarifs de gros et aux supports marketing.",
+    "apply_now": "Postuler",
+    "post1": {
+      "title": "Comment Cloner des Télécommandes à Code Roulant en 10 Secondes",
+      "category": "TUTORIEL",
+      "summary": "Arrêtez de perdre du temps sur site. Notre nouvelle série de duplicateurs face-à-face copie HCS301 instantanément."
+    },
+    "post2": {
+      "title": "Top 5 Télécommandes Aftermarket à Haute Marge pour 2025",
+      "category": "CONSEILS PROFIT",
+      "summary": "Quelles marques ont le plus de demande? Nous analysons les données du marché pour vous aider à stocker correctement."
+    },
+    "post3": {
+      "title": "Récepteurs Universels: La Solution pour Portes Anciennes",
+      "category": "TECHNIQUE",
+      "summary": "Quand une carte récepteur ancienne meurt, ne remplacez pas le moteur. Installez notre récepteur."
+    },
+    "post4": {
+      "title": "Dépannage Interférence 433MHz",
+      "category": "TECHNIQUE",
+      "summary": "Client se plaint de courte portée? Voici une checklist pour identifier et réparer l'interférence de signal sur site."
+    },
+    "read_more": "Lire plus ->",
+    "no_articles": "Aucun article trouvé.",
+    "read_article": "Lire l'article"
+  },
+  "faq": {
+    "title": "FAQ Distributeur",
+    "distributor_title": "FAQ Distributeur",
+    "oem_title": "FAQ OEM/ODM",
+    "q1": {
+      "question": "Vendez-vous aux utilisateurs finaux ?",
+      "answer": "Non. Nous sommes un fabricant B2B protégeant nos distributeurs. Nous ne vendons pas d'unités individuelles au public."
+    },
+    "q2": {
+      "question": "Puis-je mélanger différentes marques ?",
+      "answer": "Absolument. Vous pouvez mélanger 50pcs compatibles Nice + 50pcs compatibles Came pour atteindre le MOQ."
+    },
+    "q3": {
+      "question": "Les récepteurs sont-ils fournis avec télécommandes ?",
+      "answer": "Vous pouvez acheter des récepteurs séparément, ou en kit avec 2 télécommandes à un prix bundle spécial."
+    },
+    "q4": {
+      "question": "Quelle est la garantie de vos télécommandes ?",
+      "answer": "Toutes nos télécommandes sont garanties 2 ans contre tout défaut de fabrication. Nous remplaçons gratuitement toute unité défectueuse."
+    },
+    "q5": {
+      "question": "Proposez-vous un marquage privé pour les distributeurs ?",
+      "answer": "Oui, nous proposons un service OEM avec marquage de votre logo et emballage personnalisé pour les commandes de 1000 pièces et plus."
+    }
+  },
+  "pre_footer": {
+    "title": "Besoin d'un Kit d'Échantillons?",
+    "subtitle": "Testez notre gamme et compatibilité avant d'acheter en gros.",
+    "order_samples": "Commander Échantillons"
+  },
+  "contact": {
+    "title": "Ouvrir un Compte de Gros",
+    "subtitle": "Rejoignez notre réseau de 500+ distributeurs. Obtenez la liste de prix aujourd'hui.",
+    "fastest_response": {
+      "title": "Réponse la Plus Rapide",
+      "description": "Contactez notre équipe commerciale via WhatsApp pour une assistance immédiate."
+    },
+    "email_sales": {
+      "title": "Email Commercial",
+      "description": "Contactez notre équipe commerciale pour les commandes en gros et le support technique."
+    },
+    "inquire_now": {
+      "title": "Demander un Devis",
+      "email_label": "Email",
+      "message_label": "Message",
+      "message_placeholder": "Je recherche des remplacements pour...",
+      "submit_button": "Demander la Liste de Prix"
+    }
+  },
+  "footer": {
+    "legal_disclaimer": "Avis: Tous les noms de produits, logos et marques sont la propriété de leurs propriétaires respectifs. Tous les noms d'entreprise, de produits et de services utilisés dans ce site web sont uniquement à des fins d'identification. L'utilisation de ces noms, logos et marques n'implique pas d'approbation.",
+    "copyright": "© 2026 GateRemoteSource. Tous droits réservés.",
+    "products": "Produits",
+    "remotes": "Télécommandes",
+    "receivers": "Récepteurs",
+    "smart_home": "Maison Intelligente",
+    "contact": "Contact",
+    "email_sales": "sales@gateremotesource.com",
+    "whatsapp": "+86 158 9964 8898",
+    "address": "Adresse",
+    "address_text": "Huawei Kegu Industrial Park, Dalingshan Town, Dongguan, Guangdong, China",
+    "company_description": "Votre Partenaire Profit en Contrôle d'Accès. Approvisionnement des serruriers dans le monde entier."
+  },
+  "products": {
+    "all_products": "Tous les Produits",
+    "rolling_code_remotes": "Télécommandes à Code Roulant",
+    "universal_receivers": "Récepteurs Universels",
+    "duplicators": "Duplicateurs",
+    "get_price": "Obtenir le Prix",
+    "moq_50pcs": "MOQ : 50pcs",
+    "moq_100pcs": "MOQ : 100pcs",
+    "frequency_433": "433.92MHz",
+    "multi_freq": "Multi-Fréq",
+    "receiver": "Récepteur"
+  },
+  "products_page": {
+    "title": "Catalogue de Gros",
+    "subtitle": "Solutions aftermarket complètes pour installateurs professionnels.",
+    "nice_smilo": "Nice SMILO Compatible",
+    "nice_description": "Compatible avec SM2/SM4. Design noir rond. Boutons haute durabilité.",
+    "universal_face_copy": "Copie Universelle Face-à-Face",
+    "universal_description": "Duplicateur 4 canaux. Copie 95% des codes fixes et nombreux codes roulants (HCS301).",
+    "mini_receiver": "Récepteur Mini 2CH",
+    "mini_description": "Design compact s'adapte dans le boîtier moteur. Entrée AC/DC 12-24V. Capacité 400 utilisateurs.",
+    "catalog_download": "Besoin du Catalogue Complet 2025?",
+    "catalog_description": "Téléchargez notre catalogue PDF complet avec spécifications techniques pour plus de 200 produits.",
+    "download_pdf_catalog": "Télécharger Catalogue PDF",
+    "trusted_by_pros": "Approuvé par les Pros",
+    "what_installers_say": "Ce que Disent les Installateurs",
+    "installers_feedback": "Vrai retour de serruriers et installateurs de portails utilisant nos télécommandes et récepteurs compatibles.",
+    "frequency_433": "433.92MHz",
+    "multi_freq": "Multi-Fréq",
+    "receiver": "Récepteur",
+    "moq_50pcs": "MOQ : 50 pcs",
+    "moq_100pcs": "MOQ : 100 pcs",
+    "get_price": "Obtenir le prix ->"
+  },
+  "oem_odm": {
+    "title": "Solutions OEM/ODM",
+    "subtitle": "Transformez votre idée en produit. Nous fournissons des services de fabrication clé en main."
+  },
+  "oem_page": {
+    "title": "Prêt à développer votre télécommande personnalisée?",
+    "subtitle": "Nous proposons Conception PCB, Design ID, Outillage Moule et Développement Firmware.",
+    "start_consultation": "Démarrer Consultation"
+  },
+  "about": {
+    "title": "À Propos de GateRemoteSource",
+    "description": "Fondée en 2015 à Shenzhen comme atelier PCBA, relocalisée à Dongguan (2021) avec une installation de 4 000 m² - maintenant un fabricant OEM/ODM complet pour le marché mondial du contrôle d'accès.",
+    "mission": "Notre mission est de doter les serruriers et installateurs de solutions aftermarket de haute qualité et haute marge qui fonctionnent parfaitement.",
+    "years_experience": "10+",
+    "years_label": "Années d'Expérience",
+    "remotes_per_year": "500k+",
+    "remotes_label": "Télécommandes / An",
+    "our_journey": "Notre Parcours",
+    "timeline_2015_title": "Fondation",
+    "timeline_2015_description": "Fondée en 2015 à Shenzhen, Chine, démarrant comme atelier d'assemblage PCBA.",
+    "timeline_2018_title": "Certification ISO",
+    "timeline_2018_description": "Obtention de la certification ISO pour renforcer notre système de gestion qualité.",
+    "timeline_2020_title": "Jalon Produit",
+    "timeline_2020_description": "Lancement de notre première série de télécommandes à code roulant universel.",
+    "timeline_2021_relocation_title": "Expansion et Relocalisation",
+    "timeline_2021_relocation_description": "Relocalisation de notre usine de Shenzhen à Dongguan et expansion de l'atelier à 4 000 m².",
+    "timeline_2021_hightech_title": "Reconnaissance High-Tech",
+    "timeline_2021_hightech_description": "Attribution du certificat Entreprise Nationale High-Tech de Chine.",
+    "timeline_2023_title": "Rayonnement Mondial",
+    "timeline_2023_description": "Exportation vers 40+ pays, 100% concentré sur les solutions aftermarket B2B."
+  },
+  "advantages": {
+    "title": "Pourquoi les Distributeurs Choisissent GateRemoteSource",
+    "subtitle": "Plus que des télécommandes : outils de vente, support technique et logistique fiable pour les acheteurs B2B.",
+    "card1": {
+      "title": "Kit Avant-Vente",
+      "body": "Fiches de compatibilité et modèles de prix prêts à envoyer pour conclure plus vite."
+    },
+    "card2": {
+      "title": "Support Technique",
+      "body": "Vidéos de programmation, guides de câblage et ingénieurs OEM prêts pour vos installateurs."
+    },
+    "card3": {
+      "title": "Logistique Fiable",
+      "body": "Stocks tampons, expédition 48h sur réassorts et étiquettes carton prêtes pour vos entrepôts."
+    }
+  }
+}
