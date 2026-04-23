@@ -191,6 +191,23 @@ eleventyComputed:
             -webkit-backdrop-filter: blur(20px) saturate(180%);
         }
 
+        .nav-glass a,
+        .hero-wrapper a,
+        .trust-glass a {
+            text-decoration: none;
+        }
+
+        .nav-glass .nav-link {
+            border-bottom: 0 !important;
+            border-radius: 999px;
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+        }
+
+        .nav-glass .nav-link.active {
+            background: rgba(10, 132, 255, 0.1);
+        }
+
         .topic-filter-btn {
             border: 1px solid transparent;
             color: #1D1D1F;
@@ -282,10 +299,7 @@ eleventyComputed:
         }
 
         .hero-eyebrow::before {
-            content: "";
-            width: 34px;
-            height: 2px;
-            background: #0A84FF;
+            content: none;
         }
 
         .hero-title {
@@ -474,7 +488,7 @@ eleventyComputed:
 
         /* Navigation State */
 
-        .nav-link.active { color: #0A84FF !important; font-weight: 700; border-bottom: 2px solid #0A84FF; }
+        .nav-link.active { color: #0A84FF !important; font-weight: 700; border-bottom: 0; }
 
         
 
