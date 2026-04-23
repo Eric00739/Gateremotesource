@@ -114,6 +114,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("locales");
   eleventyConfig.addPassthroughCopy("site.webmanifest");
   eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("styles");
   eleventyConfig.addPassthroughCopy("Products Photo");
   eleventyConfig.addPassthroughCopy("factroy photo");
 
