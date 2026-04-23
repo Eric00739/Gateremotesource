@@ -56,6 +56,7 @@ const shouldSkipHref = (path) => {
   if (path.startsWith("/assets/")) return true;
   if (path.startsWith("/logo/")) return true;
   if (path.startsWith("/locales/")) return true;
+  if (/^\/blog\/[^/]+\/?$/.test(path)) return true;
   if (path.startsWith("/Products Photo/")) return true;
   if (path.startsWith("/factroy photo/")) return true;
   if (path.startsWith("/styles/")) return true;
