@@ -135,26 +135,24 @@ eleventyComputed:
     <meta name="google-site-verification" content="ADD_YOUR_VERIFICATION_CODE_HERE">
 
     <!-- Google tag (gtag.js) -->
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZF8T77R309"></script>
-
     <script>
-
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag(){dataLayer.push(arguments);}
-
-        gtag('js', new Date());
-
-
-
-        gtag('config', 'G-ZF8T77R309');
-
+        (function() {
+            var isProductionHost = /^(www\.)?gateremotesource\.com$/.test(location.hostname);
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+            if (!isProductionHost) return;
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZF8T77R309';
+            document.head.appendChild(script);
+            window.gtag('js', new Date());
+            window.gtag('config', 'G-ZF8T77R309');
+        })();
     </script>
 
     <!-- Service Worker Registration -->
     <script>
-        if ('serviceWorker' in navigator) {
+        if ('serviceWorker' in navigator && /^(www\.)?gateremotesource\.com$/.test(location.hostname)) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/sw.js')
                     .then(registration => {
@@ -265,13 +263,29 @@ eleventyComputed:
         .hero-content-card {
             width: 100%;
             max-width: 720px;
-            padding: 48px 60px;
-            border-radius: 28px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
-            backdrop-filter: blur(25px) saturate(180%);
-            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            padding: 0;
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            width: fit-content;
+            color: rgba(255, 255, 255, 0.86);
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0;
+        }
+
+        .hero-eyebrow::before {
+            content: "";
+            width: 34px;
+            height: 2px;
+            background: #0A84FF;
         }
 
         .hero-title {
@@ -279,7 +293,7 @@ eleventyComputed:
             font-weight: 800;
             font-size: clamp(2.2rem, 5vw, 3.8rem);
             line-height: 1.1;
-            letter-spacing: -0.02em;
+            letter-spacing: 0;
             color: #fff;
             margin-bottom: 20px;
             background: linear-gradient(180deg, #fff 0%, #ccc 100%);
@@ -295,12 +309,23 @@ eleventyComputed:
             margin-bottom: 20px;
         }
 
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 8px;
+        }
+
         .hero-cta-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             background: #0071e3;
             color: #fff;
             border-radius: 999px;
             padding: 16px 32px;
             font-weight: 700;
+            text-decoration: none;
             box-shadow: 0 10px 20px rgba(0, 113, 227, 0.3);
             transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
         }
@@ -312,6 +337,13 @@ eleventyComputed:
         }
 
         .hero-cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 26px;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
             border-radius: 999px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             background: rgba(255, 255, 255, 0.1);
@@ -323,6 +355,22 @@ eleventyComputed:
         .hero-cta-secondary:hover {
             background: rgba(255, 255, 255, 0.12);
             border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-proof-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-top: 8px;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .hero-proof-strip span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .hero-trust-card {
@@ -364,6 +412,23 @@ eleventyComputed:
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
+        }
+
+        .hero-scroll-cue {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            z-index: 4;
+            transform: translateX(-50%);
+            color: rgba(245, 245, 247, 0.72);
+            cursor: pointer;
+            padding: 1rem;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .hero-scroll-cue:hover {
+            color: #0A84FF;
+            transform: translateX(-50%) translateY(3px);
         }
 
         .trust-card {
@@ -573,10 +638,14 @@ eleventyComputed:
 
             .hero-content-card {
                 width: 100%;
-                padding: 32px 24px;
-                border-radius: 22px;
-                backdrop-filter: blur(16px) saturate(160%);
-                -webkit-backdrop-filter: blur(16px) saturate(160%);
+            }
+
+            .hero-title {
+                font-size: clamp(2.35rem, 12vw, 3.4rem);
+            }
+
+            .hero-actions {
+                flex-direction: column;
             }
 
             .hero-cta-primary,
@@ -598,6 +667,26 @@ eleventyComputed:
 
             .section-gap {
                 margin-top: 72px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .animate-fade-in-up,
+            .hero-video video,
+            .hero-cta-primary,
+            .hero-cta-secondary,
+            .hero-scroll-cue {
+                animation: none !important;
+                transition: none !important;
+            }
+
+            .hero-cta-primary:hover {
+                transform: none !important;
+            }
+
+            .hero-scroll-cue,
+            .hero-scroll-cue:hover {
+                transform: translateX(-50%) !important;
             }
         }
 
@@ -936,6 +1025,7 @@ eleventyComputed:
                     <!-- Left: Content -->
                     <div class="hero-content-stack animate-fade-in-up">
                         <div class="hero-content-card">
+                        <p class="hero-eyebrow">GateRemoteSource</p>
 
                         <h1 class="hero-title">
 
@@ -949,12 +1039,23 @@ eleventyComputed:
 
                         </p>
 
+                        <div class="hero-actions" aria-label="Primary actions">
+                            <a href="/catalog/" class="hero-cta-primary">
+                                <i class="fa-solid fa-table-list" aria-hidden="true"></i>
+                                View Catalog
+                            </a>
+                            <a href="/contact/" class="hero-cta-secondary">
+                                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                                Get Wholesale Quote
+                            </a>
                         </div>
 
-                        <div class="hero-badges" aria-label="Key terms">
-                            <span class="hero-badge">10+ Yrs Exp</span>
-                            <span class="hero-badge">MOQ 50pcs</span>
-                            <span class="hero-badge">CE/FCC Certified</span>
+                        </div>
+
+                        <div class="hero-proof-strip" aria-label="Key terms">
+                            <span><i class="fa-solid fa-industry" aria-hidden="true"></i>10+ Yrs Exp</span>
+                            <span><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i>MOQ 50pcs</span>
+                            <span><i class="fa-solid fa-certificate" aria-hidden="true"></i>CE/FCC Certified</span>
                         </div>
 
                     </div>
@@ -965,9 +1066,9 @@ eleventyComputed:
 
             </div>
 
-            <a href="#" onclick="document.getElementById('products-preview').scrollIntoView({behavior: 'smooth'}); return false;" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-brand-light/70 hover:text-brand-accent cursor-pointer p-4 transition-colors duration-200 ease-in-out">
+            <a href="#products-preview" aria-label="Scroll to product preview" onclick="document.getElementById('products-preview').scrollIntoView({behavior: 'smooth'}); return false;" class="hero-scroll-cue">
 
-                <i class="fa-solid fa-chevron-down text-3xl"></i>
+                <i class="fa-solid fa-chevron-down text-3xl" aria-hidden="true"></i>
 
             </a>
 
@@ -4338,35 +4439,34 @@ eleventyComputed:
             if (prefersReducedData) {
                 heroVideo.removeAttribute('autoplay');
                 heroVideo.pause();
-                return;
-            }
-
-            const loadAndPlay = () => {
-
-                heroVideo.load();
-
-                const playPromise = heroVideo.play();
-
-                if (playPromise && typeof playPromise.catch === 'function') {
-
-                    playPromise.catch(() => {});
-
-                }
-
-            };
-
-            if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            loadAndPlay();
-                            observer.disconnect();
-                        }
-                    });
-                }, { threshold: 0.2 });
-                observer.observe(heroVideo);
             } else {
-                loadAndPlay();
+                const loadAndPlay = () => {
+
+                    heroVideo.load();
+
+                    const playPromise = heroVideo.play();
+
+                    if (playPromise && typeof playPromise.catch === 'function') {
+
+                        playPromise.catch(() => {});
+
+                    }
+
+                };
+
+                if ('IntersectionObserver' in window) {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                loadAndPlay();
+                                observer.disconnect();
+                            }
+                        });
+                    }, { threshold: 0.2 });
+                    observer.observe(heroVideo);
+                } else {
+                    loadAndPlay();
+                }
             }
         }
     </script>
