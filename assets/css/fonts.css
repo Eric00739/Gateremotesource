@@ -1,17 +1,17 @@
-/* Google Fonts Import - Outfit + Space Grotesk */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+/* Google Fonts Import - Space Grotesk + DM Sans */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 /* Base font classes */
 .font-sans {
-  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .font-display {
-  font-family: 'Space Grotesk', 'Outfit', sans-serif;
+  font-family: 'Space Grotesk', 'DM Sans', sans-serif;
 }
 
 .font-body {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .font-mono {

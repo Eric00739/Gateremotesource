@@ -19,21 +19,21 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        // Using skill-recommended fonts: Outfit + Space Grotesk
+        // German Industrial Aesthetic: Space Grotesk + DM Sans
         // Avoiding: Inter, Roboto, Arial, Fraunces, system-ui
         sans: [
-          "Outfit",
+          "DM Sans",
           "-apple-system",
           "BlinkMacSystemFont",
           "sans-serif",
         ],
         display: [
           "Space Grotesk",
-          "Outfit",
+          "DM Sans",
           "sans-serif",
         ],
         body: [
-          "Outfit",
+          "DM Sans",
           "sans-serif",
         ],
         mono: [
@@ -152,11 +152,11 @@ module.exports = {
         'bounce': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
       },
       borderRadius: {
-        'sm': '6px',
-        'md': '10px',
-        'lg': '16px',
-        'xl': '24px',
-        '2xl': '32px',
+        'sm': '4px',
+        'md': '6px',
+        'lg': '8px',
+        'xl': '12px',
+        '2xl': '16px',
       },
     },
   },

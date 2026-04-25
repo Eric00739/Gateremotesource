@@ -31,70 +31,32 @@
     <link rel="alternate" href="https://www.gateremotesource.com/pt/oem/" hreflang="pt">
     
     
-    <script>
-        (function() {
-            var preferredHost = "www.gateremotesource.com";
-            var currentProtocol = location.protocol;
-            var currentHost = location.hostname;
-            
-            // Force HTTPS redirect
-            if (currentProtocol !== "https:") {
-                var target = "https://" + currentHost + location.pathname + location.search + location.hash;
-                if (target !== location.href) {
-                    location.replace(target);
-                }
-                return;
-            }
-            
-            // Force www redirect
-            if (currentHost !== preferredHost) {
-                var target = "https://" + preferredHost + location.pathname + location.search + location.hash;
-                if (target !== location.href) {
-                    location.replace(target);
-                }
-            }
-        })();
-    </script>
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="OEM/ODM Remote Solutions | Private Label 433MHz & Rolling Code">
-    <meta property="og:description" content="Custom molds, firmware tuning, and branding for garage and gate remotes and receivers. CE/FCC-ready, low MOQs, and engineering support for private label programs.">
-    <meta property="og:url" content="https://www.gateremotesource.com/oem/">
-    <meta property="og:image" content="https://www.gateremotesource.com/logo/logo.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name="twitter:title" content="OEM/ODM Remote Solutions | Private Label 433MHz & Rolling Code">
-    <meta name="twitter:description" content="Custom molds, firmware tuning, and branding for garage and gate remotes and receivers. CE/FCC-ready, low MOQs, and engineering support for private label programs.">
-    <meta name="twitter:image" content="https://www.gateremotesource.com/logo/logo.png">
-    <meta name="theme-color" content="#0071E3">
-
     
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "GateRemoteSource",
-      "url": "https://www.gateremotesource.com",
-      "logo": "https://www.gateremotesource.com/logo/logo.png",
-      "description": "Your Profit Partner in Access Control. Supplying locksmiths worldwide with brand-compatible remotes and universal receivers.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Huawei Kegu Industrial Park, Dalingshan Town",
-        "addressLocality": "Dongguan",
-        "addressRegion": "Guangdong",
-        "addressCountry": "CN"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+86-158-9964-8898",
-        "contactType": "sales",
-        "email": "sales@gateremotesource.com",
-        "availableLanguage": ["English", "Spanish", "German", "Italian", "French", "Portuguese"]
-      },
-      "sameAs": [
-        "https://wa.me/8615899648898"
-      ]
+<script>
+(function() {
+    var preferredHost = "www.gateremotesource.com";
+    var currentProtocol = location.protocol;
+    var currentHost = location.hostname;
+    var isLocalPreview = /^(localhost|127\.0\.0\.1|0\.0\.0\.0)$/.test(currentHost);
+
+    if (!isLocalPreview && currentProtocol !== "file:") {
+        // Force HTTPS redirect
+        if (currentProtocol !== "https:") {
+            var httpsTarget = "https://" + currentHost + location.pathname + location.search + location.hash;
+            if (httpsTarget !== location.href) {
+                location.replace(httpsTarget);
+            }
+        } else if (currentHost !== preferredHost) {
+            // Force www redirect
+            var wwwTarget = "https://" + preferredHost + location.pathname + location.search + location.hash;
+            if (wwwTarget !== location.href) {
+                location.replace(wwwTarget);
+            }
+        }
     }
-    </script>
+})();
+</script>
+
 
     <script type="application/ld+json">
     {
@@ -249,7 +211,7 @@
                         <div class="bg-brand-surface border border-brand-border/60 p-1.5 rounded-lg h-10 w-10 flex items-center justify-center">
                             <picture>
     <source srcset="/logo/logo.webp 1x" type="image/webp">
-    <img src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="h-full w-full object-contain">
+    <img loading="lazy" src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="h-full w-full object-contain">
 </picture>
                         </div>
                         <span class="font-bold text-2xl text-brand-dark tracking-tight">GateRemote<span class="text-brand-accent">Source</span></span>
@@ -559,7 +521,7 @@
                     <div class="flex items-center gap-3 mb-4 text-brand-dark">
                         <picture>
     <source srcset="/logo/logo.webp 1x" type="image/webp">
-    <img src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="h-10 w-auto object-contain">
+    <img loading="lazy" src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="h-10 w-auto object-contain">
 </picture>
                     </div>
                     <p class="mb-4" data-i18n="footer.company_description">Your Profit Partner in Access Control. Supplying locksmiths worldwide.</p>

@@ -29,16 +29,16 @@
             var preferredHost = "www.gateremotesource.com";
             var currentProtocol = location.protocol;
             var currentHost = location.hostname;
+            var isLocalPreview = /^(localhost|127\.0\.0\.1|0\.0\.0\.0)$/.test(currentHost);
 
-            if (currentProtocol !== "https:") {
-                var httpsTarget = "https://" + currentHost + location.pathname + location.search + location.hash;
-                if (httpsTarget !== location.href) location.replace(httpsTarget);
-                return;
-            }
-
-            if (currentHost !== preferredHost) {
-                var wwwTarget = "https://" + preferredHost + location.pathname + location.search + location.hash;
-                if (wwwTarget !== location.href) location.replace(wwwTarget);
+            if (!isLocalPreview && currentProtocol !== "file:") {
+                if (currentProtocol !== "https:") {
+                    var httpsTarget = "https://" + currentHost + location.pathname + location.search + location.hash;
+                    if (httpsTarget !== location.href) location.replace(httpsTarget);
+                } else if (currentHost !== preferredHost) {
+                    var wwwTarget = "https://" + preferredHost + location.pathname + location.search + location.hash;
+                    if (wwwTarget !== location.href) location.replace(wwwTarget);
+                }
             }
         })();
     </script>
@@ -98,7 +98,7 @@
         }
 
         body {
-            font-family: 'Inter', 'Roboto', 'Segoe UI', sans-serif;
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
             color: var(--rc-text);
         }
 
@@ -661,7 +661,7 @@
                                     
                                     
                                     <li class="resource-link-item">
-                                        <a href="/de/blog/garage-remote-pairing-checklist/" class="resource-link">
+                                        <a href="/blog/garage-remote-pairing-checklist/" class="resource-link">
                                             <span class="resource-link-title">Garage Remote Pairing Checklist for Field Installers</span>
                                             <span class="resource-link-arrow" aria-hidden="true">→</span>
                                         </a>
@@ -724,7 +724,7 @@
                                     
                                     
                                     <li class="resource-link-item">
-                                        <a href="/de/blog/nice-came-hormann-compatibility-guide/" class="resource-link">
+                                        <a href="/blog/nice-came-hormann-compatibility-guide/" class="resource-link">
                                             <span class="resource-link-title">Nice, Came, Hormann Compatibility Guide for Wholesale Buyers</span>
                                             <span class="resource-link-arrow" aria-hidden="true">→</span>
                                         </a>
@@ -787,7 +787,7 @@
                                     
                                     
                                     <li class="resource-link-item">
-                                        <a href="/de/blog/choose-433-92mhz-remote-control/" class="resource-link">
+                                        <a href="/blog/choose-433-92mhz-remote-control/" class="resource-link">
                                             <span class="resource-link-title">How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance</span>
                                             <span class="resource-link-arrow" aria-hidden="true">→</span>
                                         </a>
@@ -850,7 +850,7 @@
                                     
                                     
                                     <li class="resource-link-item">
-                                        <a href="/de/blog/avoid-public-mold-trap-pcb-quality/" class="resource-link">
+                                        <a href="/blog/avoid-public-mold-trap-pcb-quality/" class="resource-link">
                                             <span class="resource-link-title">Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls</span>
                                             <span class="resource-link-arrow" aria-hidden="true">→</span>
                                         </a>
@@ -989,7 +989,7 @@
         </div>
     </div>
 
-    <a href="https://wa.me/8615899648898" target="_blank" rel="noopener noreferrer" class="hidden md:flex fixed bottom-6 right-6 z-50 bg-brand-accent hover:bg-brand-hover text-white rounded-full p-4 shadow-lg items-center justify-center transition transform hover:scale-105" aria-label="Contact us on WhatsApp">
+    <a href="https://wa.me/8615899648898" target="_blank" rel="noopener noreferrer" class="whatsapp-float blog-whatsapp-float fixed bottom-6 right-6 z-50 text-white rounded-full p-4 shadow-lg items-center justify-center transition transform hover:scale-105" aria-label="Contact us on WhatsApp">
         <i class="fa-brands fa-whatsapp text-4xl" aria-hidden="true"></i>
     </a>
 

@@ -50,47 +50,7 @@
   </url>
 
   <url>
-    <loc>https://www.gateremotesource.com/blog/</loc>
-    
-    
-    
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://www.gateremotesource.com/de/blog/</loc>
-    
-    
-    
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://www.gateremotesource.com/es/blog/</loc>
-    
-    
-    
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://www.gateremotesource.com/fr/blog/</loc>
-    
-    
-    
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://www.gateremotesource.com/it/blog/</loc>
-    
-    
-    
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://www.gateremotesource.com/pt/blog/</loc>
+    <loc>https://www.gateremotesource.com/OPTIMIZATION_CHECKLIST/</loc>
     
     
     
@@ -99,102 +59,6 @@
 
   <url>
     <loc>https://www.gateremotesource.com/OPTIMIZATION_GUIDE/</loc>
-    
-    
-    
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://www.gateremotesource.com/catalog/</loc>
-    
-    
-    
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://www.gateremotesource.com/es/catalog/</loc>
-    
-    
-    
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://www.gateremotesource.com/de/catalog/</loc>
-    
-    
-    
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://www.gateremotesource.com/it/catalog/</loc>
-    
-    
-    
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://www.gateremotesource.com/fr/catalog/</loc>
-    
-    
-    
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://www.gateremotesource.com/pt/catalog/</loc>
-    
-    
-    
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://www.gateremotesource.com/oem/</loc>
-    
-    
-    
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://www.gateremotesource.com/es/oem/</loc>
-    
-    
-    
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://www.gateremotesource.com/de/oem/</loc>
-    
-    
-    
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://www.gateremotesource.com/it/oem/</loc>
-    
-    
-    
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://www.gateremotesource.com/fr/oem/</loc>
-    
-    
-    
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://www.gateremotesource.com/pt/oem/</loc>
     
     
     
@@ -250,6 +114,62 @@
   </url>
 
   <url>
+    <loc>https://www.gateremotesource.com/blog/</loc>
+    
+    
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/catalog/</loc>
+    
+    
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/es/catalog/</loc>
+    
+    
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/de/catalog/</loc>
+    
+    
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/it/catalog/</loc>
+    
+    
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/fr/catalog/</loc>
+    
+    
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/pt/catalog/</loc>
+    
+    
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
     <loc>https://www.gateremotesource.com/contact/</loc>
     
     
@@ -298,7 +218,87 @@
   </url>
 
   <url>
-    <loc>https://www.gateremotesource.com/OPTIMIZATION_CHECKLIST/</loc>
+    <loc>https://www.gateremotesource.com/de/blog/</loc>
+    
+    
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/es/blog/</loc>
+    
+    
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/fr/blog/</loc>
+    
+    
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/it/blog/</loc>
+    
+    
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/oem/</loc>
+    
+    
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/es/oem/</loc>
+    
+    
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/de/oem/</loc>
+    
+    
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/it/oem/</loc>
+    
+    
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/fr/oem/</loc>
+    
+    
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/pt/oem/</loc>
+    
+    
+    
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.gateremotesource.com/pt/blog/</loc>
     
     
     

@@ -31,70 +31,32 @@
     <link rel="alternate" href="https://www.gateremotesource.com/pt/about/" hreflang="pt">
     
     
-    <script>
-        (function() {
-            var preferredHost = "www.gateremotesource.com";
-            var currentProtocol = location.protocol;
-            var currentHost = location.hostname;
-            
-            // Force HTTPS redirect
-            if (currentProtocol !== "https:") {
-                var target = "https://" + currentHost + location.pathname + location.search + location.hash;
-                if (target !== location.href) {
-                    location.replace(target);
-                }
-                return;
-            }
-            
-            // Force www redirect
-            if (currentHost !== preferredHost) {
-                var target = "https://" + preferredHost + location.pathname + location.search + location.hash;
-                if (target !== location.href) {
-                    location.replace(target);
-                }
-            }
-        })();
-    </script>
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="A propos de GateRemoteSource | Fabricant a Dongguan pour Installateurs et Serruriers">
-    <meta property="og:description" content="Equipe usine fournissant telecommandes compatibles et recepteurs universels aux distributeurs UE/USA/AmSud/AU avec QC, outillage et support technique.">
-    <meta property="og:url" content="https://www.gateremotesource.com/fr/about/">
-    <meta property="og:image" content="https://www.gateremotesource.com/logo/logo.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name="twitter:title" content="A propos de GateRemoteSource | Fabricant a Dongguan pour Installateurs et Serruriers">
-    <meta name="twitter:description" content="Equipe usine fournissant telecommandes compatibles et recepteurs universels aux distributeurs UE/USA/AmSud/AU avec QC, outillage et support technique.">
-    <meta name="twitter:image" content="https://www.gateremotesource.com/logo/logo.png">
-    <meta name="theme-color" content="#0071E3">
-
     
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "GateRemoteSource",
-      "url": "https://www.gateremotesource.com",
-      "logo": "https://www.gateremotesource.com/logo/logo.png",
-      "description": "Your Profit Partner in Access Control. Supplying locksmiths worldwide with brand-compatible remotes and universal receivers.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Huawei Kegu Industrial Park, Dalingshan Town",
-        "addressLocality": "Dongguan",
-        "addressRegion": "Guangdong",
-        "addressCountry": "CN"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+86-158-9964-8898",
-        "contactType": "sales",
-        "email": "sales@gateremotesource.com",
-        "availableLanguage": ["English", "Spanish", "German", "Italian", "French", "Portuguese"]
-      },
-      "sameAs": [
-        "https://wa.me/8615899648898"
-      ]
+<script>
+(function() {
+    var preferredHost = "www.gateremotesource.com";
+    var currentProtocol = location.protocol;
+    var currentHost = location.hostname;
+    var isLocalPreview = /^(localhost|127\.0\.0\.1|0\.0\.0\.0)$/.test(currentHost);
+
+    if (!isLocalPreview && currentProtocol !== "file:") {
+        // Force HTTPS redirect
+        if (currentProtocol !== "https:") {
+            var httpsTarget = "https://" + currentHost + location.pathname + location.search + location.hash;
+            if (httpsTarget !== location.href) {
+                location.replace(httpsTarget);
+            }
+        } else if (currentHost !== preferredHost) {
+            // Force www redirect
+            var wwwTarget = "https://" + preferredHost + location.pathname + location.search + location.hash;
+            if (wwwTarget !== location.href) {
+                location.replace(wwwTarget);
+            }
+        }
     }
-    </script>
+})();
+</script>
+
 
     
     <link rel="icon" type="image/x-icon" href="/logo/favicon.ico?v=1">
@@ -244,7 +206,7 @@
                         <div class="bg-brand-surface border border-brand-border/60 p-1.5 rounded-lg h-10 w-10 flex items-center justify-center">
                             <picture>
                                 <source srcset="/logo/logo.webp 1x" type="image/webp">
-                                <img src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="h-full w-full object-contain">
+                                <img loading="lazy" src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="h-full w-full object-contain">
                             </picture>
                         </div>
                         <span class="font-bold text-2xl text-brand-dark tracking-tight">GateRemote<span class="text-brand-accent">Source</span></span>
@@ -345,19 +307,17 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-20">
                 <div>
-                    <h1 class="text-4xl md:text-5xl font-bold text-brand-dark mb-6" data-i18n="about.title">About GateRemoteSource</h1>
-                    <p class="text-brand-muted text-lg mb-6 leading-relaxed" data-i18n="about.description">Founded in 2015 in Shenzhen as a PCBA workshop, later relocated to Dongguan (2021) with a 4,000 m2 facility - now a full OEM/ODM manufacturer for the global access control market.</p>
-                    <p class="text-brand-muted text-lg mb-8 leading-relaxed" data-i18n="about.mission">
-                        Our mission is to empower locksmiths and installers with high-quality, high-margin aftermarket solutions that just work.
-                    </p>
+                    <h1 class="text-4xl md:text-5xl font-bold text-brand-dark mb-6" data-i18n="about.title">À Propos de GateRemoteSource</h1>
+                    <p class="text-brand-muted text-lg mb-6 leading-relaxed" data-i18n="about.description">Fondée en 2015 à Shenzhen comme atelier PCBA, relocalisée à Dongguan (2021) avec une installation de 4 000 m² - maintenant un fabricant OEM/ODM complet pour le marché mondial du contrôle d&#39;accès.</p>
+                    <p class="text-brand-muted text-lg mb-8 leading-relaxed" data-i18n="about.mission">Notre mission est de doter les serruriers et installateurs de solutions aftermarket de haute qualité et haute marge qui fonctionnent parfaitement.</p>
                     <div class="grid grid-cols-2 gap-6">
                         <div class="bg-brand-surface p-6 rounded-xl border border-brand-border text-center">
                             <span class="block text-4xl font-bold text-brand-accent mb-2" data-i18n="about.years_experience">10+</span>
-                            <span class="text-sm text-brand-muted uppercase tracking-wider" data-i18n="about.years_label">Years Experience</span>
+                            <span class="text-sm text-brand-muted uppercase tracking-wider" data-i18n="about.years_label">Années d&#39;Expérience</span>
                         </div>
                         <div class="bg-brand-surface p-6 rounded-xl border border-brand-border text-center">
                             <span class="block text-4xl font-bold text-brand-accent mb-2" data-i18n="about.remotes_per_year">500k+</span>
-                            <span class="text-sm text-brand-muted uppercase tracking-wider" data-i18n="about.remotes_label">Remotes / Year</span>
+                            <span class="text-sm text-brand-muted uppercase tracking-wider" data-i18n="about.remotes_label">Télécommandes / An</span>
                         </div>
                     </div>
                 </div>
@@ -412,54 +372,54 @@
 
             
             <div class="border-t border-brand-border pt-20">
-                <h2 class="text-3xl font-bold text-brand-dark mb-12 text-center" data-i18n="about.our_journey">Our Journey</h2>
+                <h2 class="text-3xl font-bold text-brand-dark mb-12 text-center" data-i18n="about.our_journey">Notre Parcours</h2>
                     <div class="space-y-8 max-w-3xl mx-auto">
                         <div class="flex gap-6">
                             <div class="w-24 text-right font-bold text-brand-accent pt-1">2015</div>
                             <div class="flex-1 border-l-2 border-brand-border pl-8 pb-8 relative">
                                 <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-light backdrop-blur border-2 border-brand-accent rounded-full"></div>
-                                <h4 class="text-brand-dark font-bold text-lg" data-i18n="about.timeline_2015_title">Foundation</h4>
-                                <p class="text-brand-muted mt-2" data-i18n="about.timeline_2015_description">Founded in 2015 in Shenzhen, China, starting as a PCBA assembly workshop.</p>
+                                <h4 class="text-brand-dark font-bold text-lg" data-i18n="about.timeline_2015_title">Fondation</h4>
+                                <p class="text-brand-muted mt-2" data-i18n="about.timeline_2015_description">Fondée en 2015 à Shenzhen, Chine, démarrant comme atelier d&#39;assemblage PCBA.</p>
                             </div>
                         </div>
                         <div class="flex gap-6">
                             <div class="w-24 text-right font-bold text-brand-accent pt-1">2018</div>
                             <div class="flex-1 border-l-2 border-brand-border pl-8 pb-8 relative">
                                 <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-light backdrop-blur border-2 border-brand-accent rounded-full"></div>
-                                <h4 class="text-brand-dark font-bold text-lg" data-i18n="about.timeline_2018_title">ISO Certification</h4>
-                                <p class="text-brand-muted mt-2" data-i18n="about.timeline_2018_description">Achieved ISO certification to strengthen our quality management system.</p>
+                                <h4 class="text-brand-dark font-bold text-lg" data-i18n="about.timeline_2018_title">Certification ISO</h4>
+                                <p class="text-brand-muted mt-2" data-i18n="about.timeline_2018_description">Obtention de la certification ISO pour renforcer notre système de gestion qualité.</p>
                             </div>
                         </div>
                         <div class="flex gap-6">
                             <div class="w-24 text-right font-bold text-brand-accent pt-1">2020</div>
                             <div class="flex-1 border-l-2 border-brand-border pl-8 pb-0 relative">
                                 <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-light backdrop-blur border-2 border-brand-accent rounded-full"></div>
-                                <h4 class="text-brand-dark font-bold text-lg" data-i18n="about.timeline_2020_title">Product Milestone</h4>
-                                <p class="text-brand-muted mt-2" data-i18n="about.timeline_2020_description">Launched our first Universal Rolling Code remote series.</p>
+                                <h4 class="text-brand-dark font-bold text-lg" data-i18n="about.timeline_2020_title">Jalon Produit</h4>
+                                <p class="text-brand-muted mt-2" data-i18n="about.timeline_2020_description">Lancement de notre première série de télécommandes à code roulant universel.</p>
                             </div>
                         </div>
                         <div class="flex gap-6">
                             <div class="w-24 text-right font-bold text-brand-accent pt-1">2021</div>
                             <div class="flex-1 border-l-2 border-brand-border pl-8 pb-8 relative">
                                 <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-light backdrop-blur border-2 border-brand-accent rounded-full"></div>
-                                <h4 class="text-brand-dark font-bold text-lg" data-i18n="about.timeline_2021_relocation_title">Expansion &amp; Relocation</h4>
-                                <p class="text-brand-muted mt-2" data-i18n="about.timeline_2021_relocation_description">Relocated our factory from Shenzhen to Dongguan and expanded the workshop to 4,000 m2.</p>
+                                <h4 class="text-brand-dark font-bold text-lg" data-i18n="about.timeline_2021_relocation_title">Expansion et Relocalisation</h4>
+                                <p class="text-brand-muted mt-2" data-i18n="about.timeline_2021_relocation_description">Relocalisation de notre usine de Shenzhen à Dongguan et expansion de l&#39;atelier à 4 000 m².</p>
                             </div>
                         </div>
                         <div class="flex gap-6">
                             <div class="w-24 text-right font-bold text-brand-accent pt-1">2021</div>
                             <div class="flex-1 border-l-2 border-brand-border pl-8 pb-8 relative">
                                 <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-light backdrop-blur border-2 border-brand-accent rounded-full"></div>
-                                <h4 class="text-brand-dark font-bold text-lg" data-i18n="about.timeline_2021_hightech_title">High-Tech Recognition</h4>
-                                <p class="text-brand-muted mt-2" data-i18n="about.timeline_2021_hightech_description">Awarded the China National High-Tech Enterprise certificate.</p>
+                                <h4 class="text-brand-dark font-bold text-lg" data-i18n="about.timeline_2021_hightech_title">Reconnaissance High-Tech</h4>
+                                <p class="text-brand-muted mt-2" data-i18n="about.timeline_2021_hightech_description">Attribution du certificat Entreprise Nationale High-Tech de Chine.</p>
                             </div>
                         </div>
                         <div class="flex gap-6">
                             <div class="w-24 text-right font-bold text-brand-accent pt-1">2023</div>
                             <div class="flex-1 border-l-2 border-brand-border pl-8 pb-0 relative">
                                 <div class="absolute -left-[9px] top-1 w-4 h-4 bg-brand-light backdrop-blur border-2 border-brand-accent rounded-full"></div>
-                                <h4 class="text-brand-dark font-bold text-lg" data-i18n="about.timeline_2023_title">Global Reach</h4>
-                                <p class="text-brand-muted mt-2" data-i18n="about.timeline_2023_description">Exporting to 40+ countries, 100% focused on B2B aftermarket solutions.</p>
+                                <h4 class="text-brand-dark font-bold text-lg" data-i18n="about.timeline_2023_title">Rayonnement Mondial</h4>
+                                <p class="text-brand-muted mt-2" data-i18n="about.timeline_2023_description">Exportation vers 40+ pays, 100% concentré sur les solutions aftermarket B2B.</p>
                             </div>
                         </div>
                     </div>
@@ -623,17 +583,17 @@
                     <div class="flex items-center gap-3 mb-4 text-brand-dark">
                         <picture>
                             <source srcset="/logo/logo.webp 1x" type="image/webp">
-                            <img src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="h-10 w-auto object-contain">
+                            <img loading="lazy" src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="h-10 w-auto object-contain">
                         </picture>
                     </div>
-                    <p class="mb-4" data-i18n="footer.company_description">Your Profit Partner in Access Control. Supplying locksmiths worldwide.</p>
+                    <p class="mb-4" data-i18n="footer.company_description">Votre Partenaire Profit en Contrôle d&#39;Accès. Approvisionnement des serruriers dans le monde entier.</p>
                 </div>
                 <div>
-                    <h4 class="text-brand-dark font-bold mb-4" data-i18n="footer.products">Products</h4>
+                    <h4 class="text-brand-dark font-bold mb-4" data-i18n="footer.products">Produits</h4>
                     <ul class="space-y-2">
-                        <li><a href="/fr/catalog/" class="hover:text-brand-accent" data-i18n="footer.remotes">Remotes</a></li>
-                        <li><a href="/fr/catalog/" class="hover:text-brand-accent" data-i18n="footer.receivers">Receivers</a></li>
-                        <li><a href="/fr/catalog/" class="hover:text-brand-accent" data-i18n="footer.smart_home">Smart Home</a></li>
+                        <li><a href="/fr/catalog/" class="hover:text-brand-accent" data-i18n="footer.remotes">Télécommandes</a></li>
+                        <li><a href="/fr/catalog/" class="hover:text-brand-accent" data-i18n="footer.receivers">Récepteurs</a></li>
+                        <li><a href="/fr/catalog/" class="hover:text-brand-accent" data-i18n="footer.smart_home">Maison Intelligente</a></li>
                     </ul>
                 </div>
                 <div>
@@ -644,7 +604,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-brand-dark font-bold mb-4" data-i18n="footer.address">Address</h4>
+                    <h4 class="text-brand-dark font-bold mb-4" data-i18n="footer.address">Adresse</h4>
                     <p class="flex items-start gap-2"><i class="fa-solid fa-location-dot mt-1 text-brand-accent" aria-hidden="true"></i><span data-i18n="footer.address_text">Huawei Kegu Industrial Park, Dalingshan Town, Dongguan, Guangdong, China</span></p>
                 </div>
             </div>

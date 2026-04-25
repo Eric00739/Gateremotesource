@@ -8,7 +8,6 @@
 
     
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
     <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
     <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -46,30 +45,32 @@
     
 
     
-    <script>
-        (function() {
-            var preferredHost = "www.gateremotesource.com";
-            var currentProtocol = location.protocol;
-            var currentHost = location.hostname;
-            
-            // Force HTTPS redirect
-            if (currentProtocol !== "https:") {
-                var target = "https://" + currentHost + location.pathname + location.search + location.hash;
-                if (target !== location.href) {
-                    location.replace(target);
-                }
-                return;
+    
+<script>
+(function() {
+    var preferredHost = "www.gateremotesource.com";
+    var currentProtocol = location.protocol;
+    var currentHost = location.hostname;
+    var isLocalPreview = /^(localhost|127\.0\.0\.1|0\.0\.0\.0)$/.test(currentHost);
+
+    if (!isLocalPreview && currentProtocol !== "file:") {
+        // Force HTTPS redirect
+        if (currentProtocol !== "https:") {
+            var httpsTarget = "https://" + currentHost + location.pathname + location.search + location.hash;
+            if (httpsTarget !== location.href) {
+                location.replace(httpsTarget);
             }
-            
+        } else if (currentHost !== preferredHost) {
             // Force www redirect
-            if (currentHost !== preferredHost) {
-                var target = "https://" + preferredHost + location.pathname + location.search + location.hash;
-                if (target !== location.href) {
-                    location.replace(target);
-                }
+            var wwwTarget = "https://" + preferredHost + location.pathname + location.search + location.hash;
+            if (wwwTarget !== location.href) {
+                location.replace(wwwTarget);
             }
-        })();
-    </script>
+        }
+    }
+})();
+</script>
+
 
     <meta property="og:type" content="website">
 
@@ -111,45 +112,52 @@
     <link rel="manifest" href="/site.webmanifest?v=1">
 
     
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "GateRemoteSource",
-      "url": "https://www.gateremotesource.com",
-      "logo": "https://www.gateremotesource.com/logo/logo.png",
-      "description": "Your #1 Source for Brand Compatible Garage Door Remotes & Universal Receivers. High-margin aftermarket solutions for Installers & Locksmiths.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Dongguan",
-        "addressRegion": "Guangdong",
-        "addressCountry": "CN"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "Sales",
-        "availableLanguage": ["English", "Spanish", "German", "French", "Italian", "Portuguese"]
-      },
-      "sameAs": [
-        "https://github.com/Eric00739/Gateremotesource"
-      ]
-    }
-    </script>
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "GateRemoteSource",
+  "url": "https://www.gateremotesource.com",
+  "logo": "https://www.gateremotesource.com/logo/logo.png",
+  "description": "Your #1 Source for Brand Compatible Garage Door Remotes & Universal Receivers. High-margin aftermarket solutions for Installers & Locksmiths.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Huawei Kegu Industrial Park, Dalingshan Town",
+    "addressLocality": "Dongguan",
+    "addressRegion": "Guangdong",
+    "addressCountry": "CN"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Sales",
+    "email": "sales@gateremotesource.com",
+    "telephone": "+86 158 9964 8898",
+    "availableLanguage": ["English", "Spanish", "German", "French", "Italian", "Portuguese"]
+  },
+  "sameAs": [
+    "https://linkedin.com/company/gateremotesource",
+    "https://twitter.com/gateremotesrc",
+    "https://facebook.com/gateremotesource",
+    "https://github.com/Eric00739/Gateremotesource"
+  ]
+}
+</script>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "GateRemoteSource",
-      "url": "https://www.gateremotesource.com",
-      "description": "Wholesale Aftermarket Garage Door Remotes & Receivers",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://www.gateremotesource.com/catalog?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "GateRemoteSource",
+  "url": "https://www.gateremotesource.com",
+  "description": "Wholesale Aftermarket Garage Door Remotes & Receivers",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.gateremotesource.com/catalog?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
 
 
     
@@ -198,26 +206,24 @@
     <meta name="google-site-verification" content="ADD_YOUR_VERIFICATION_CODE_HERE">
 
     
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZF8T77R309"></script>
-
     <script>
-
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag(){dataLayer.push(arguments);}
-
-        gtag('js', new Date());
-
-
-
-        gtag('config', 'G-ZF8T77R309');
-
+        (function() {
+            var isProductionHost = /^(www\.)?gateremotesource\.com$/.test(location.hostname);
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+            if (!isProductionHost) return;
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZF8T77R309';
+            document.head.appendChild(script);
+            window.gtag('js', new Date());
+            window.gtag('config', 'G-ZF8T77R309');
+        })();
     </script>
 
     
     <script>
-        if ('serviceWorker' in navigator) {
+        if ('serviceWorker' in navigator && /^(www\.)?gateremotesource\.com$/.test(location.hostname)) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/sw.js')
                     .then(registration => {
@@ -235,25 +241,583 @@
 
 
     <style>
+        /* ============================================
+           GateRemoteSource Design System v3.0
+           German Industrial Aesthetic
+           ============================================ */
 
-        /* Custom Scrollbar */
+        /* CSS Custom Properties - Dark Industrial Theme */
+        :root {
+            /* Ink-navy base: deeper than pure black, warmer than navy */
+            --color-ink: oklch(18% 0.02 260);
+            --color-ink-light: oklch(25% 0.03 260);
+            --color-ink-lighter: oklch(32% 0.04 260);
 
-        ::-webkit-scrollbar { width: 10px; }
+            /* Industrial orange accent */
+            --color-accent: oklch(65% 0.15 55);
+            --color-accent-hover: oklch(60% 0.13 55);
+            --color-accent-subtle: oklch(65% 0.15 55 / 0.1);
 
-        ::-webkit-scrollbar-track { background: #1D1D1F; }
+            /* Neutral scale */
+            --color-paper: oklch(96% 0.01 260);
+            --color-paper-dark: oklch(90% 0.02 260);
+            --color-text: oklch(20% 0.02 260);
+            --color-text-muted: oklch(50% 0.02 260);
+            --color-border: oklch(85% 0.02 260);
 
-        ::-webkit-scrollbar-thumb { background: #6E6E73; border-radius: 5px; }
+            /* Typography */
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
 
-        ::-webkit-scrollbar-thumb:hover { background: #0A84FF; }
+            /* Spacing scale */
+            --space-xs: 0.5rem;
+            --space-sm: 0.75rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2.5rem;
+            --space-2xl: 4rem;
+            --space-3xl: 6rem;
 
-        
+            /* Border radius - industrial sharp */
+            --radius-sm: 4px;
+            --radius-md: 6px;
+            --radius-lg: 8px;
 
-        /* Glass navigation */
+            /* Shadows - minimal, sharp */
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+            /* Transitions */
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* Custom Scrollbar - industrial */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--color-ink); }
+        ::-webkit-scrollbar-thumb { background: var(--color-ink-lighter); border-radius: 0; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--color-accent); }
+
+        /* ============================================
+           Navigation
+           ============================================ */
         .nav-glass {
-            background: rgba(255, 255, 255, 0.72);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid var(--color-border);
+            backdrop-filter: blur(20px) saturate(150%);
+            -webkit-backdrop-filter: blur(20px) saturate(150%);
+        }
+
+        .nav-glass a, .hero-wrapper a, .trust-glass a {
+            text-decoration: none;
+        }
+
+        .nav-glass .nav-link {
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: -0.01em;
+            color: var(--color-text);
+            padding: 0.5rem 0.75rem;
+            border-radius: var(--radius-sm);
+            transition: all 0.2s var(--ease-out-quart);
+        }
+
+        .nav-glass .nav-link:hover {
+            color: var(--color-ink);
+            background: var(--color-paper-dark);
+        }
+
+        .nav-glass .nav-link.active {
+            color: var(--color-accent);
+            background: var(--color-accent-subtle);
+        }
+
+        /* CTA Button in nav */
+        .nav-cta {
+            background: var(--color-ink);
+            color: white;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.6rem 1.25rem;
+            border-radius: var(--radius-sm);
+            transition: all 0.25s var(--ease-out-quart);
+        }
+
+        .nav-cta:hover {
+            background: var(--color-accent);
+            transform: translateY(-1px);
+        }
+
+        /* ============================================
+           Hero Section - Full Impact
+           ============================================ */
+        .hero-wrapper {
+            position: relative;
+            min-height: 100vh;
+            background: var(--color-ink);
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        .hero-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(1.1) brightness(0.4);
+            transform: scale(1.05);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background: linear-gradient(135deg,
+                var(--color-ink) 0%,
+                var(--color-ink) 35%,
+                oklch(18% 0.02 260 / 0.8) 60%,
+                transparent 100%
+            );
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 8rem 5% 6rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 640px;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-eyebrow::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--color-accent);
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            color: white;
+            margin-bottom: 1.5rem;
+            text-wrap: balance;
+        }
+
+        .hero-title strong {
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-size: 1.15rem;
+            font-weight: 400;
+            line-height: 1.6;
+            color: oklch(80% 0.02 260);
+            margin-bottom: 2.5rem;
+            max-width: 480px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .hero-cta-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--color-accent);
+            color: white;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 1rem 2rem;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .hero-cta-primary:hover {
+            background: var(--color-accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px oklch(65% 0.15 55 / 0.3);
+        }
+
+        .hero-cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: transparent;
+            color: white;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 1rem 2rem;
+            border: 1px solid oklch(100% 0 0 / 0.25);
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .hero-cta-secondary:hover {
+            background: oklch(100% 0 0 / 0.1);
+            border-color: oklch(100% 0 0 / 0.4);
+        }
+
+        /* Hero Stats - Floating badges */
+        .hero-stats {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .hero-stat {
+            position: relative;
+        }
+
+        .hero-stat::after {
+            content: '';
+            position: absolute;
+            right: -1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 40px;
+            background: oklch(100% 0 0 / 0.15);
+        }
+
+        .hero-stat:last-child::after {
+            display: none;
+        }
+
+        .hero-stat-value {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: white;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-stat-label {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: oklch(60% 0.02 260);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 0.25rem;
+        }
+
+        /* Hero Product Showcase */
+        .hero-showcase {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-product {
+            position: relative;
+            width: 100%;
+            max-width: 480px;
+            aspect-ratio: 1;
+        }
+
+        .hero-product-ring {
+            position: absolute;
+            inset: 10%;
+            border: 1px solid oklch(100% 0 0 / 0.1);
+            border-radius: 50%;
+            animation: slowRotate 60s linear infinite;
+        }
+
+        .hero-product-ring:nth-child(2) {
+            inset: 5%;
+            border-color: oklch(100% 0 0 / 0.05);
+            animation-duration: 90s;
+            animation-direction: reverse;
+        }
+
+        @keyframes slowRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-product-image {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-product-image img {
+            max-width: 70%;
+            max-height: 70%;
+            object-fit: contain;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+        }
+
+        /* Scroll indicator */
+        .hero-scroll {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: oklch(60% 0.02 260);
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .hero-scroll:hover {
+            color: var(--color-accent);
+        }
+
+        .hero-scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, currentColor, transparent);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 0.3; transform: scaleY(0.7); }
+            50% { opacity: 1; transform: scaleY(1); }
+        }
+
+        /* ============================================
+           Stats Section - Large Numbers
+           ============================================ */
+        .stats-section {
+            background: var(--color-paper);
+            padding: 5rem 0;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 600;
+            color: var(--color-ink);
+            letter-spacing: -0.03em;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-number::after {
+            content: attr(data-suffix);
+            color: var(--color-accent);
+        }
+
+        .stat-label {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* ============================================
+           Reveal Animations
+           ============================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s var(--ease-out-expo),
+                        transform 0.6s var(--ease-out-expo);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* ============================================
+           Section Spacing
+           ============================================ */
+        .section-gap {
+            padding-top: var(--space-3xl);
+            padding-bottom: var(--space-3xl);
+        }
+
+        /* ============================================
+           Trust Cards
+           ============================================ */
+        .trust-card {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        .trust-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .trust-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ============================================
+           Glass Cards
+           ============================================ */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s var(--ease-out-quart);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* ============================================
+           Topic Filter
+           ============================================ */
+        .topic-filter-btn {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            color: var(--color-text);
+            background: white;
+            transition: all 0.2s var(--ease-out-quart);
+        }
+
+        .topic-filter-btn:hover {
+            border-color: var(--color-text-muted);
+            background: var(--color-paper);
+        }
+
+        .topic-filter-btn.active {
+            background: var(--color-ink);
+            border-color: var(--color-ink);
+            color: white;
+        }
+
+        /* ============================================
+           Responsive
+           ============================================ */
+        @media (max-width: 1024px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                padding-top: 6rem;
+                padding-bottom: 4rem;
+            }
+
+            .hero-showcase {
+                order: -1;
+                max-width: 320px;
+                margin: 0 auto;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            .hero-stat::after {
+                display: none;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+            border-bottom: 0 !important;
+            border-radius: 6px;
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+        }
+
+        .nav-glass .nav-link.active {
+            background: oklch(60% 0.18 45 / 0.12);
+            color: oklch(55% 0.16 45);
         }
 
         .topic-filter-btn {
@@ -328,27 +892,37 @@
         .hero-content-card {
             width: 100%;
             max-width: 720px;
-            padding: 48px 60px;
-            border-radius: 28px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
-            backdrop-filter: blur(25px) saturate(180%);
-            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            padding: 0;
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            width: fit-content;
+            color: rgba(255, 255, 255, 0.86);
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0;
+        }
+
+        .hero-eyebrow::before {
+            content: none;
         }
 
         .hero-title {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
-            font-weight: 800;
+            font-family: 'Space Grotesk', 'Outfit', sans-serif;
+            font-weight: 700;
             font-size: clamp(2.2rem, 5vw, 3.8rem);
             line-height: 1.1;
             letter-spacing: -0.02em;
             color: #fff;
             margin-bottom: 20px;
-            background: linear-gradient(180deg, #fff 0%, #ccc 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            text-wrap: pretty;
         }
 
         .hero-subtitle {
@@ -358,34 +932,74 @@
             margin-bottom: 20px;
         }
 
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 8px;
+        }
+
         .hero-cta-primary {
-            background: #0071e3;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: oklch(60% 0.18 45);
             color: #fff;
-            border-radius: 999px;
+            border-radius: 8px;
             padding: 16px 32px;
-            font-weight: 700;
-            box-shadow: 0 10px 20px rgba(0, 113, 227, 0.3);
+            font-weight: 600;
+            font-family: 'Outfit', sans-serif;
+            text-decoration: none;
+            box-shadow: 0 4px 16px oklch(60% 0.18 45 / 0.3);
             transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
         }
 
         .hero-cta-primary:hover {
-            background: #005bb5;
-            box-shadow: 0 14px 28px rgba(0, 113, 227, 0.35), 0 0 28px rgba(0, 113, 227, 0.35);
+            background: oklch(55% 0.16 45);
+            box-shadow: 0 6px 20px oklch(60% 0.18 45 / 0.35);
+            transform: translateY(-2px);
+        }
             transform: translateY(-2px) scale(1.05);
         }
 
         .hero-cta-secondary {
-            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 26px;
+            font-weight: 600;
+            font-family: 'Outfit', sans-serif;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
         }
 
         .hero-cta-secondary:hover {
-            background: rgba(255, 255, 255, 0.12);
-            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .hero-proof-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-top: 8px;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .hero-proof-strip span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .hero-trust-card {
@@ -429,17 +1043,34 @@
             -webkit-backdrop-filter: blur(20px) saturate(180%);
         }
 
+        .hero-scroll-cue {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            z-index: 4;
+            transform: translateX(-50%);
+            color: rgba(245, 245, 247, 0.72);
+            cursor: pointer;
+            padding: 1rem;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .hero-scroll-cue:hover {
+            color: #0A84FF;
+            transform: translateX(-50%) translateY(3px);
+        }
+
         .trust-card {
             position: relative;
-            border-radius: 24px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .trust-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
         }
 
         .trust-card img {
@@ -472,7 +1103,7 @@
 
         /* Navigation State */
 
-        .nav-link.active { color: #0A84FF !important; font-weight: 700; border-bottom: 2px solid #0A84FF; }
+        .nav-link.active { color: #0A84FF !important; font-weight: 700; border-bottom: 0; }
 
         
 
@@ -543,24 +1174,16 @@
         /* Apple Glassmorphism Cards */
 
         .glass-card {
-
-            background: rgba(255, 255, 255, 0.45);  /* Glass background */
-
-            backdrop-filter: blur(18px);  /* Frosted glass effect */
-
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
-
-            border: 1px solid rgba(255, 255, 255, 0.3);  /* Glass border */
-
-            border-radius: 24px;
-
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
             padding: 30px;
-
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);  /* Glass shadow */
-
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);  /* Apple easing */
-
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-align: center;
+        }
 
         }
 
@@ -636,10 +1259,14 @@
 
             .hero-content-card {
                 width: 100%;
-                padding: 32px 24px;
-                border-radius: 22px;
-                backdrop-filter: blur(16px) saturate(160%);
-                -webkit-backdrop-filter: blur(16px) saturate(160%);
+            }
+
+            .hero-title {
+                font-size: clamp(2.35rem, 12vw, 3.4rem);
+            }
+
+            .hero-actions {
+                flex-direction: column;
             }
 
             .hero-cta-primary,
@@ -664,7 +1291,27 @@
             }
         }
 
-    </style>
+        @media (prefers-reduced-motion: reduce) {
+            .animate-fade-in-up,
+            .hero-video video,
+            .hero-cta-primary,
+            .hero-cta-secondary,
+            .hero-scroll-cue {
+                animation: none !important;
+                transition: none !important;
+            }
+
+            .hero-cta-primary:hover {
+                transform: none !important;
+            }
+
+            .hero-scroll-cue,
+            .hero-scroll-cue:hover {
+                transform: translateX(-50%) !important;
+            }
+        }
+
+    
 
     <script type="application/ld+json">
 
@@ -777,7 +1424,7 @@
 <body class="font-sans text-brand-light/80 bg-brand-light backdrop-blur selection:bg-brand-accent selection:text-white flex flex-col min-h-screen" data-meta-override="true" data-meta-page="home">
 
     
-    <a href="#main-content-area" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-[100] focus:bg-brand-accent focus:text-white focus:px-4 focus:py-2 focus:rounded-md focus:shadow-lg" style="position:absolute;z-index:100;">Skip to main content</a>
 
     <main id="main-content-area">
 
@@ -906,7 +1553,7 @@
 
                     
 
-                    <a href="/fr/contact/" class="bg-brand-cta hover:bg-brand-ctaHover text-brand-surface px-6 py-2 rounded-lg font-bold transition-all duration-200 ease-in-out shadow-sm hover:shadow-md transform hover:-translate-y-0.5" data-i18n="navigation.dealer_login" data-cta="nav_get_price_list">Quote Now</a>
+                    <a href="/fr/contact/" class="nav-cta" data-i18n="navigation.dealer_login" data-cta="nav_get_price_list">Quote Now</a>
 
                 </div>
 
@@ -978,8 +1625,7 @@
     <div id="page-home" class="page-view active">
 
         
-
-        <section id="main-content" class="hero-wrapper pt-24">
+        <section id="main-content" class="hero-wrapper">
             <div class="hero-video" aria-hidden="true">
                 <video autoplay muted loop playsinline preload="none" poster="/assets/videos/V1.3-poster.webp">
                     <source src="/assets/videos/V1.3-mobile-optimized.mp4" type="video/mp4" media="(max-width: 768px)">
@@ -988,63 +1634,87 @@
             </div>
             <div class="hero-overlay" aria-hidden="true"></div>
 
-            <div class="max-w-7xl mx-auto w-full pt-20 relative z-10 hero-inner">
+            <div class="hero-inner">
+                
+                <div class="hero-content reveal">
+                    <p class="hero-eyebrow">Factory Direct Since 2015</p>
 
-                <div class="grid grid-cols-1 gap-12 items-center">
+                    <h1 class="hero-title">
+                        Industrial-grade<br>
+                        <strong>gate remotes</strong> for<br>
+                        wholesale
+                    </h1>
 
-                    
-                    <div class="hero-content-stack animate-fade-in-up">
-                        <div class="hero-content-card">
+                    <p class="hero-subtitle">
+                        OEM-compatible rolling code remotes manufactured in Dongguan.
+                        CE/FCC certified. MOQ 50 pieces. Serving distributors across Europe, Americas, and Australia.
+                    </p>
 
-                        <h1 class="hero-title">
-
-                            Factory-direct B2B Gate & Garage Remotes
-
-                        </h1>
-
-                        <p class="hero-subtitle max-w-xl">
-
-                            Factory-direct OEM-compatible remotes for installers, locksmiths, and distributors.
-
-                        </p>
-
-                        </div>
-
-                        <div class="hero-badges" aria-label="Key terms">
-                            <span class="hero-badge">10+ Yrs Exp</span>
-                            <span class="hero-badge">MOQ 50pcs</span>
-                            <span class="hero-badge">CE/FCC Certified</span>
-                        </div>
-
+                    <div class="hero-actions">
+                        <a href="/fr/catalog/" class="hero-cta-primary">
+                            Browse Catalog
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <a href="/fr/contact/" class="hero-cta-secondary">
+                            Request Quote
+                        </a>
                     </div>
 
-                    
-
+                    <div class="hero-stats">
+                        <div class="hero-stat reveal reveal-delay-1">
+                            <div class="hero-stat-value">500k+</div>
+                            <div class="hero-stat-label">Units Annually</div>
+                        </div>
+                        <div class="hero-stat reveal reveal-delay-2">
+                            <div class="hero-stat-value">10yr</div>
+                            <div class="hero-stat-label">Experience</div>
+                        </div>
+                        <div class="hero-stat reveal reveal-delay-3">
+                            <div class="hero-stat-value">50+</div>
+                            <div class="hero-stat-label">Countries</div>
+                        </div>
+                    </div>
                 </div>
 
+                
+                <div class="hero-showcase reveal reveal-delay-2" aria-hidden="true">
+                    <div class="hero-product">
+                        <div class="hero-product-ring"></div>
+                        <div class="hero-product-ring"></div>
+                        <div class="hero-product-image">
+                            [product image]
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <a href="#" onclick="document.getElementById('products-preview').scrollIntoView({behavior: 'smooth'}); return false;" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-brand-light/70 hover:text-brand-accent cursor-pointer p-4 transition-colors duration-200 ease-in-out">
-
-                <i class="fa-solid fa-chevron-down text-3xl"></i>
-
+            <a href="#stats" class="hero-scroll" aria-label="Scroll to content">
+                <span>Scroll</span>
+                <div class="hero-scroll-line"></div>
             </a>
-
         </section>
 
-
-
         
-
-        <section class="bg-brand-light section-gap">
-
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 py-8 text-center text-sm font-semibold text-brand-dark">
-
-                    <div class="stat-card bg-brand-surface border border-brand-border rounded-xl py-4 reveal stagger-1">
-                        <div class="stat-number text-3xl font-bold text-brand-accent mb-1" data-count="500" data-suffix="k+">0</div>
-                        <div class="text-brand-muted text-xs uppercase tracking-wider">remotes/year</div>
+        <section id="stats" class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-item reveal">
+                    <div class="stat-number" data-suffix="k+">500</div>
+                    <div class="stat-label">Remotes Manufactured / Year</div>
+                </div>
+                <div class="stat-item reveal reveal-delay-1">
+                    <div class="stat-number" data-suffix="+">50</div>
+                    <div class="stat-label">Compatible Brands</div>
+                </div>
+                <div class="stat-item reveal reveal-delay-2">
+                    <div class="stat-number" data-suffix="">24h</div>
+                    <div class="stat-label">Sample Shipping</div>
+                </div>
+                <div class="stat-item reveal reveal-delay-3">
+                    <div class="stat-number" data-suffix="">100%</div>
+                    <div class="stat-label">Quality Tested</div>
+                </div>
+            </div>
+        </section>
                     </div>
 
                     <div class="stat-card bg-brand-surface border border-brand-border rounded-xl py-4 reveal stagger-2">
@@ -1057,11 +1727,11 @@
                         <div class="text-brand-muted text-xs uppercase tracking-wider">sample shipping</div>
                     </div>
 
-                </div>
+                
 
-            </div>
+            
 
-        </section>
+        
 
         
 
@@ -1489,7 +2159,7 @@
                         <img loading="lazy" decoding="async" src="/factroy%20photo/gate%20remote%20(21).webp" alt="Production team assembling RF products">
 
                         <div class="trust-glass">
-                            <h3 class="text-lg font-bold" data-i18n="factory_trust.production_base.title">Base Production 4.000m²</h3>
+                            <h3 class="text-lg font-bold" data-i18n="factory_trust.production_base.title">4,000sqm Production Base</h3>
                             <p class="text-sm text-white/80" data-i18n="factory_trust.production_base.description">Capacité production à grande échelle</p>
                         </div>
 
@@ -1688,7 +2358,7 @@
                 <div id="home-blog-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
                     <article class="bg-brand-surface rounded-xl border border-brand-border overflow-hidden hover:border-brand-accent transition group cursor-pointer">
-                        <a href="/fr/blog/choose-433-92mhz-remote-control/" class="block">
+                        <a href="/blog/choose-433-92mhz-remote-control/" class="block">
                             <div class="h-48 relative overflow-hidden">
                                 <img loading="lazy" decoding="async" src="/assets/blog-drops/choose-433-92mhz-remote-control/image-01.webp" alt="433.92MHz remote engineering checklist" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
                                 <div class="absolute top-4 left-4 bg-brand-dark/70 backdrop-blur text-white text-xs font-bold px-2 py-1 rounded">RF Engineering</div>
@@ -1702,7 +2372,7 @@
                     </article>
 
                     <article class="bg-brand-surface rounded-xl border border-brand-border overflow-hidden hover:border-brand-accent transition group cursor-pointer">
-                        <a href="/fr/blog/garage-remote-pairing-checklist/" class="block">
+                        <a href="/blog/garage-remote-pairing-checklist/" class="block">
                             <div class="h-48 relative overflow-hidden">
                                 <img loading="lazy" decoding="async" src="/assets/factory/rd-lab.webp" alt="Engineer testing remote pairing workflow" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
                                 <div class="absolute top-4 left-4 bg-brand-dark/70 backdrop-blur text-white text-xs font-bold px-2 py-1 rounded">Programming</div>
@@ -1716,7 +2386,7 @@
                     </article>
 
                     <article class="bg-brand-surface rounded-xl border border-brand-border overflow-hidden hover:border-brand-accent transition group cursor-pointer">
-                        <a href="/fr/blog/nice-came-hormann-compatibility-guide/" class="block">
+                        <a href="/blog/nice-came-hormann-compatibility-guide/" class="block">
                             <div class="h-48 relative overflow-hidden">
                                 <img loading="lazy" decoding="async" src="/assets/factory/team.webp" alt="Factory team preparing compatibility matrix" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
                                 <div class="absolute top-4 left-4 bg-brand-dark/70 backdrop-blur text-white text-xs font-bold px-2 py-1 rounded">Compatibility</div>
@@ -1753,7 +2423,7 @@
 
                     <div data-faq-group="distributor">
 
-                        <h3 class="text-xl md:text-2xl font-bold text-brand-dark mb-4" data-i18n="faq.distributor_title">Distributor FAQ</h3>
+                        <h3 class="text-xl md:text-2xl font-bold text-brand-dark mb-4" data-i18n="faq.distributor_title">FAQ Distributeur</h3>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
@@ -1875,7 +2545,7 @@
 
                     <div data-faq-group="oem">
 
-                        <h3 class="text-xl md:text-2xl font-bold text-brand-dark mb-4" data-i18n="faq.oem_title">OEM/ODM FAQ</h3>
+                        <h3 class="text-xl md:text-2xl font-bold text-brand-dark mb-4" data-i18n="faq.oem_title">FAQ OEM/ODM</h3>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
@@ -1993,7 +2663,7 @@
 
                 <div class="text-center mb-12">
 
-                    <h2 class="text-4xl font-bold text-brand-dark mb-4" data-i18n="advantages.title">Pourquoi les distributeurs choisissent GateRemoteSource</h2>
+                    <h2 class="text-4xl font-bold text-brand-dark mb-4" data-i18n="advantages.title">Pourquoi les Distributeurs Choisissent GateRemoteSource</h2>
 
                     <p class="text-brand-muted max-w-3xl mx-auto" data-i18n="advantages.subtitle">Plus que des télécommandes : outils de vente, support technique et logistique fiable pour les acheteurs B2B.</p>
 
@@ -2031,7 +2701,7 @@
 
         </section>
 
-    </div>
+    
 
     
 
@@ -2043,9 +2713,9 @@
 
                 <div class="text-center mb-16">
 
-                    <h1 class="text-4xl md:text-5xl font-bold text-brand-dark mb-6" data-i18n="products_page.title">Wholesale Catalog</h1>
+                    <h1 class="text-4xl md:text-5xl font-bold text-brand-dark mb-6" data-i18n="products_page.title">Catalogue de Gros</h1>
 
-                    <p class="text-brand-muted max-w-2xl mx-auto text-lg" data-i18n="products_page.subtitle">Comprehensive aftermarket solutions for professional installers.</p>
+                    <p class="text-brand-muted max-w-2xl mx-auto text-lg" data-i18n="products_page.subtitle">Solutions aftermarket complètes pour installateurs professionnels.</p>
 
                 </div>
 
@@ -2212,13 +2882,13 @@
 
                 <div class="bg-brand-surface p-8 rounded-2xl border border-brand-border text-center">
 
-                    <h2 class="text-2xl font-bold text-brand-dark mb-4" data-i18n="products_page.catalog_download">Need the Full 2026 Catalog?</h2>
+                    <h2 class="text-2xl font-bold text-brand-dark mb-4" data-i18n="products_page.catalog_download">Besoin du Catalogue Complet 2025?</h2>
 
                     <p class="text-brand-muted mb-8">Start with the web catalog above for fast filtering, then download the complete PDF with full specifications and packaging options.</p>
 
                     <button onclick="navigateTo('contact')" class="inline-flex items-center gap-2 border border-brand-border bg-brand-surface text-brand-dark px-8 py-3 rounded-full font-semibold hover:border-brand-accent hover:text-brand-accent hover:bg-white transition">
 
-                        <span data-i18n="products_page.download_pdf_catalog">Download PDF Catalog</span>
+                        <span data-i18n="products_page.download_pdf_catalog">Télécharger Catalogue PDF</span>
 
                     </button>
 
@@ -2430,9 +3100,9 @@
 
                  <div class="text-center mb-16">
 
-                    <h1 class="text-4xl md:text-5xl font-bold text-brand-dark mb-4" data-i18n="oem_odm.title">OEM/ODM Solutions</h1>
+                    <h1 class="text-4xl md:text-5xl font-bold text-brand-dark mb-4" data-i18n="oem_odm.title">Solutions OEM/ODM</h1>
 
-                    <p class="text-brand-muted max-w-2xl mx-auto text-lg" data-i18n="oem_odm.subtitle">Turn your idea into a product. We provide turnkey manufacturing services.</p>
+                    <p class="text-brand-muted max-w-2xl mx-auto text-lg" data-i18n="oem_odm.subtitle">Transformez votre idée en produit. Nous fournissons des services de fabrication clé en main.</p>
 
                 </div>
 
@@ -2592,7 +3262,7 @@
 
                     <div>
 
-                        <h1 class="text-4xl md:text-5xl font-bold text-brand-dark mb-6" data-i18n="about.title">About GateRemoteSource</h1>
+                        <h1 class="text-4xl md:text-5xl font-bold text-brand-dark mb-6" data-i18n="about.title">À Propos de GateRemoteSource</h1>
 
                         <p class="text-brand-muted text-lg mb-6 leading-relaxed">
 
@@ -2600,11 +3270,7 @@
 
                         </p>
 
-                        <p class="text-brand-muted text-lg mb-8 leading-relaxed" data-i18n="about.mission">
-
-                            Our mission is to empower locksmiths and installers with high-quality, high-margin aftermarket solutions that just work.
-
-                        </p>
+                        <p class="text-brand-muted text-lg mb-8 leading-relaxed" data-i18n="about.mission">Notre mission est de doter les serruriers et installateurs de solutions aftermarket de haute qualité et haute marge qui fonctionnent parfaitement.</p>
 
                         <div class="grid grid-cols-2 gap-6">
 
@@ -2612,7 +3278,7 @@
 
                                 <span class="block text-4xl font-bold text-brand-accent mb-2" data-i18n="about.years_experience">10+</span>
 
-                                <span class="text-sm text-brand-muted uppercase tracking-wider" data-i18n="about.years_label">Years Experience</span>
+                                <span class="text-sm text-brand-muted uppercase tracking-wider" data-i18n="about.years_label">Années d&#39;Expérience</span>
 
                             </div>
 
@@ -2620,7 +3286,7 @@
 
                                 <span class="block text-4xl font-bold text-brand-accent mb-2" data-i18n="about.remotes_per_year">500k+</span>
 
-                                <span class="text-sm text-brand-muted uppercase tracking-wider" data-i18n="about.remotes_label">Remotes / Year</span>
+                                <span class="text-sm text-brand-muted uppercase tracking-wider" data-i18n="about.remotes_label">Télécommandes / An</span>
 
                             </div>
 
@@ -2648,7 +3314,7 @@
 
                 <div class="border-t border-brand-dark/60 pt-20">
 
-                    <h2 class="text-3xl font-bold text-brand-dark mb-12 text-center" data-i18n="about.our_journey">Our Journey</h2>
+                    <h2 class="text-3xl font-bold text-brand-dark mb-12 text-center" data-i18n="about.our_journey">Notre Parcours</h2>
 
                     <div class="space-y-8 max-w-3xl mx-auto">
 
@@ -2770,9 +3436,9 @@
 
                 <div class="text-center mb-16">
 
-                    <h1 class="text-4xl font-bold text-brand-dark mb-4" data-i18n="blog.title">Installer Hub</h1>
+                    <h1 class="text-4xl font-bold text-brand-dark mb-4" data-i18n="blog.title">Hub Installateur</h1>
 
-                    <p class="text-brand-muted max-w-2xl mx-auto" data-i18n="blog.subtitle">Technical guides, programming tutorials, and industry news for locksmiths.</p>
+                    <p class="text-brand-muted max-w-2xl mx-auto" data-i18n="blog.subtitle">Guides techniques, tutoriels de programmation et actualités de l&#39;industrie pour les serruriers.</p>
 
                 </div>
 
@@ -2801,7 +3467,7 @@
 
                 <div id="blog-list-area" class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
 
-                <p id="blog-no-results" class="hidden text-brand-muted mt-8" data-i18n="blog.no_articles">Aucun article trouv?.</p>
+                <p id="blog-no-results" class="hidden text-brand-muted mt-8" data-i18n="blog.no_articles">Aucun article trouvé.</p>
 
                 
 
@@ -2823,9 +3489,9 @@
 
                 <div class="text-center mb-16">
 
-                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4" data-i18n="contact.title">Open Wholesale Account</h1>
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4" data-i18n="contact.title">Ouvrir un Compte de Gros</h1>
 
-                    <p class="text-brand-light/70 max-w-2xl mx-auto" data-i18n="contact.subtitle">Join our network of 500+ distributors. Get the price list today.</p>
+                    <p class="text-brand-light/70 max-w-2xl mx-auto" data-i18n="contact.subtitle">Rejoignez notre réseau de 500+ distributeurs. Obtenez la liste de prix aujourd&#39;hui.</p>
 
                 </div>
 
@@ -2835,13 +3501,13 @@
 
                         <div class="glass-card p-6 flex items-start gap-4">
 
-                            <div class="bg-brand-accent/20 p-3 rounded-full"><i class="fa-brands fa-whatsapp text-brand-accent text-xl"></i></div>
+                            <div class="whatsapp-contact-icon p-3 rounded-full"><i class="fa-brands fa-whatsapp text-xl"></i></div>
 
                             <div>
 
-                                <h4 class="text-brand-dark font-bold" data-i18n="contact.fastest_response.title">Fastest Response</h4>
+                                <h4 class="text-brand-dark font-bold" data-i18n="contact.fastest_response.title">Réponse la Plus Rapide</h4>
 
-                                <a href="https://wa.me/8615899648898" class="text-brand-accent hover:underline text-lg" data-i18n="contact.fastest_response.description">Get in touch with our sales team via WhatsApp for immediate assistance.</a>
+                                <a href="https://wa.me/8615899648898" class="text-brand-accent hover:underline text-lg" data-i18n="contact.fastest_response.description">Contactez notre équipe commerciale via WhatsApp pour une assistance immédiate.</a>
 
                                 <p class="text-brand-muted text-sm mt-2">Prefer voice? <a href="tel:+8615899648898" class="text-brand-cta hover:text-brand-ctaHover font-semibold">Call +86 158 9964 8898</a></p>
 
@@ -2855,9 +3521,9 @@
 
                             <div>
 
-                                <h4 class="text-brand-dark font-bold" data-i18n="contact.email_sales.title">Email Sales</h4>
+                                <h4 class="text-brand-dark font-bold" data-i18n="contact.email_sales.title">Email Commercial</h4>
 
-                                <a href="mailto:sales@gateremotesource.com" class="text-brand-accent hover:underline" data-i18n="contact.email_sales.description">Reach out to our sales team for bulk orders and technical support.</a>
+                                <a href="mailto:sales@gateremotesource.com" class="text-brand-accent hover:underline" data-i18n="contact.email_sales.description">Contactez notre équipe commerciale pour les commandes en gros et le support technique.</a>
 
                             </div>
 
@@ -2899,7 +3565,7 @@
 
                         <form id="contactForm" class="space-y-5" enctype="multipart/form-data">
 
-                            <h3 class="text-brand-cta text-xl font-bold mb-2" data-i18n="contact.inquire_now.title">Quote now</h3>
+                            <h3 class="text-brand-cta text-xl font-bold mb-2" data-i18n="contact.inquire_now.title">Demander un Devis</h3>
 
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
@@ -3046,26 +3712,26 @@
 
                         <picture>
                           <source srcset="/logo/logo.webp 1x" type="image/webp">
-                          <img src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="h-10 w-auto object-contain" style="width: 40px; height: 40px; max-width: 40px; max-height: 40px; object-fit: contain;">
+                          <img loading="lazy" src="/logo/logo.png" width="40" height="40" alt="GateRemoteSource logo" class="h-10 w-auto object-contain" style="width: 40px; height: 40px; max-width: 40px; max-height: 40px; object-fit: contain;">
                         </picture>
 
                     </div>
 
-                    <p class="mb-4" data-i18n="footer.company_description">Your Profit Partner in Access Control. Supplying locksmiths worldwide.</p>
+                    <p class="mb-4" data-i18n="footer.company_description">Votre Partenaire Profit en Contrôle d&#39;Accès. Approvisionnement des serruriers dans le monde entier.</p>
 
                 </div>
 
                 <div>
 
-                    <h4 class="text-brand-dark font-bold mb-4" data-i18n="footer.products">Products</h4>
+                    <h4 class="text-brand-dark font-bold mb-4" data-i18n="footer.products">Produits</h4>
 
                     <ul class="space-y-2">
 
-                        <li><a href="/fr/catalog/" class="hover:text-brand-accent" data-i18n="footer.remotes">Remotes</a></li>
+                        <li><a href="/fr/catalog/" class="hover:text-brand-accent" data-i18n="footer.remotes">Télécommandes</a></li>
 
-                        <li><a href="/fr/catalog/" class="hover:text-brand-accent" data-i18n="footer.receivers">Receivers</a></li>
+                        <li><a href="/fr/catalog/" class="hover:text-brand-accent" data-i18n="footer.receivers">Récepteurs</a></li>
 
-                        <li><a href="/fr/catalog/" class="hover:text-brand-accent" data-i18n="footer.smart_home">Smart Home</a></li>
+                        <li><a href="/fr/catalog/" class="hover:text-brand-accent" data-i18n="footer.smart_home">Maison Intelligente</a></li>
 
                     </ul>
 
@@ -3087,7 +3753,7 @@
 
                 <div>
 
-                    <h4 class="text-brand-dark font-bold mb-4" data-i18n="footer.address">Address</h4>
+                    <h4 class="text-brand-dark font-bold mb-4" data-i18n="footer.address">Adresse</h4>
 
                     <p class="flex items-start gap-2"><i class="fa-solid fa-location-dot mt-1 text-brand-accent"></i> Huawei Kegu Industrial Park, Dalingshan Town, Dongguan, Guangdong, China</p>
 
@@ -4123,7 +4789,7 @@
                     <article class="bg-brand-surface border border-brand-border/60 rounded-xl overflow-hidden shadow-sm flex flex-col group">
                         <div class="grid grid-cols-1 md:grid-cols-2">
                             <div class="relative min-h-[240px] overflow-hidden">
-                                <img src="${primary.image}" alt="${primary.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <img loading="lazy" src="${primary.image}" alt="${primary.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             </div>
                             <div class="p-6 flex flex-col gap-3">
                                 <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand-accent bg-brand-light/80 border border-brand-border/60 px-3 py-1 rounded-full">${primary.category}</span>
@@ -4393,37 +5059,63 @@
             if (prefersReducedData) {
                 heroVideo.removeAttribute('autoplay');
                 heroVideo.pause();
-                return;
-            }
-
-            const loadAndPlay = () => {
-
-                heroVideo.load();
-
-                const playPromise = heroVideo.play();
-
-                if (playPromise && typeof playPromise.catch === 'function') {
-
-                    playPromise.catch(() => {});
-
-                }
-
-            };
-
-            if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            loadAndPlay();
-                            observer.disconnect();
-                        }
-                    });
-                }, { threshold: 0.2 });
-                observer.observe(heroVideo);
             } else {
-                loadAndPlay();
+                const loadAndPlay = () => {
+
+                    heroVideo.load();
+
+                    const playPromise = heroVideo.play();
+
+                    if (playPromise && typeof playPromise.catch === 'function') {
+
+                        playPromise.catch(() => {});
+
+                    }
+
+                };
+
+                if ('IntersectionObserver' in window) {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                loadAndPlay();
+                                observer.disconnect();
+                            }
+                        });
+                    }, { threshold: 0.2 });
+                    observer.observe(heroVideo);
+                } else {
+                    loadAndPlay();
+                }
             }
         }
+    </script>
+
+    
+    <script>
+        // Reveal on scroll animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const reveals = document.querySelectorAll('.reveal');
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            reveals.forEach(el => revealObserver.observe(el));
+
+            // Trigger first reveal immediately
+            setTimeout(() => {
+                document.querySelector('.hero-content')?.classList.add('visible');
+            }, 100);
+        });
     </script>
 
     
