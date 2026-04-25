@@ -737,14 +737,11 @@ eleventyComputed:
                 grid-template-columns: 1fr;
             }
         }
-    </style>
+        .nav-glass .nav-link.active {
             border-bottom: 0 !important;
             border-radius: 6px;
             padding-left: 0.75rem;
             padding-right: 0.75rem;
-        }
-
-        .nav-glass .nav-link.active {
             background: oklch(60% 0.18 45 / 0.12);
             color: oklch(55% 0.16 45);
         }
@@ -886,8 +883,6 @@ eleventyComputed:
         .hero-cta-primary:hover {
             background: oklch(55% 0.16 45);
             box-shadow: 0 6px 20px oklch(60% 0.18 45 / 0.35);
-            transform: translateY(-2px);
-        }
             transform: translateY(-2px) scale(1.05);
         }
 
