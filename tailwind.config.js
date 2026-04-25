@@ -19,50 +19,68 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        // Using skill-recommended fonts: Outfit + Space Grotesk
+        // Avoiding: Inter, Roboto, Arial, Fraunces, system-ui
         sans: [
-          "Inter",
+          "Outfit",
           "-apple-system",
           "BlinkMacSystemFont",
-          "SF Pro Display",
-          "SF Pro Text",
-          "Segoe UI",
-          "Helvetica Neue",
-          "Arial",
           "sans-serif",
         ],
         display: [
-          "Playfair Display",
-          "Georgia",
-          "serif",
+          "Space Grotesk",
+          "Outfit",
+          "sans-serif",
+        ],
+        body: [
+          "Outfit",
+          "sans-serif",
+        ],
+        mono: [
+          "JetBrains Mono",
+          "Fira Code",
+          "monospace",
         ],
       },
       colors: {
-        // Industrial Design System
+        // Industrial Design System with oklch colors
+        // Using perceptually uniform color space for better visual harmony
         brand: {
-          dark: "#1D1D1F",
-          accent: "#0071E3",
-          hover: "#005BB5",
-          light: "#F5F5F7",
+          // Navy: oklch(15% 0.03 260) - deep industrial blue
+          dark: "oklch(15% 0.03 260)",
+          "dark-hover": "oklch(20% 0.04 260)",
+          // Orange accent: oklch(60% 0.18 45) - vibrant but professional
+          accent: "oklch(60% 0.18 45)",
+          "accent-hover": "oklch(55% 0.16 45)",
+          // Light surfaces
+          light: "oklch(97% 0.01 260)",
           surface: "#FFFFFF",
-          muted: "#6E6E73",
-          success: "#34C759",
-          border: "#D1D1D6",
-          cta: "#0071E3",
-          ctaHover: "#005BB5",
-          quote: "#F37021",
-          quoteHover: "#D65A1A",
+          // Muted text: oklch(55% 0.02 260)
+          muted: "oklch(55% 0.02 260)",
+          // Success green
+          success: "oklch(65% 0.15 145)",
+          // Border: subtle gray
+          border: "oklch(85% 0.02 260)",
+          // CTA colors (same as accent for consistency)
+          cta: "oklch(60% 0.18 45)",
+          ctaHover: "oklch(55% 0.16 45)",
+          // Quote/secondary accent
+          quote: "oklch(60% 0.18 45)",
+          quoteHover: "oklch(55% 0.16 45)",
+          // Glass effects
           glass: "rgba(255, 255, 255, 0.45)",
           glassBorder: "rgba(255, 255, 255, 0.3)",
-          // New industrial colors
-          navy: "#0a1628",
-          "navy-light": "#1a2942",
-          "navy-dark": "#050d1a",
-          orange: "#f37021",
-          "orange-hover": "#e06015",
-          "orange-light": "#ff8533",
+          // Navy variations in oklch
+          navy: "oklch(15% 0.03 260)",
+          "navy-light": "oklch(25% 0.05 260)",
+          "navy-dark": "oklch(10% 0.02 260)",
+          // Orange variations in oklch
+          orange: "oklch(60% 0.18 45)",
+          "orange-hover": "oklch(55% 0.16 45)",
+          "orange-light": "oklch(70% 0.14 45)",
         },
-        primary: "#1D1D1F",
-        secondary: "#F5F5F7",
+        primary: "oklch(15% 0.03 260)",
+        secondary: "oklch(97% 0.01 260)",
       },
       boxShadow: {
         'sm': '0 1px 2px rgba(0, 0, 0, 0.06)',

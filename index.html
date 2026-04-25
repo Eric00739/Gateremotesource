@@ -199,13 +199,14 @@ eleventyComputed:
 
         .nav-glass .nav-link {
             border-bottom: 0 !important;
-            border-radius: 999px;
+            border-radius: 6px;
             padding-left: 0.75rem;
             padding-right: 0.75rem;
         }
 
         .nav-glass .nav-link.active {
-            background: rgba(10, 132, 255, 0.1);
+            background: oklch(60% 0.18 45 / 0.12);
+            color: oklch(55% 0.16 45);
         }
 
         .topic-filter-btn {
@@ -303,17 +304,14 @@ eleventyComputed:
         }
 
         .hero-title {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
-            font-weight: 800;
+            font-family: 'Space Grotesk', 'Outfit', sans-serif;
+            font-weight: 700;
             font-size: clamp(2.2rem, 5vw, 3.8rem);
             line-height: 1.1;
-            letter-spacing: 0;
+            letter-spacing: -0.02em;
             color: #fff;
             margin-bottom: 20px;
-            background: linear-gradient(180deg, #fff 0%, #ccc 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            text-wrap: pretty;
         }
 
         .hero-subtitle {
@@ -334,19 +332,22 @@ eleventyComputed:
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: #0071e3;
+            background: oklch(60% 0.18 45);
             color: #fff;
-            border-radius: 999px;
+            border-radius: 8px;
             padding: 16px 32px;
-            font-weight: 700;
+            font-weight: 600;
+            font-family: 'Outfit', sans-serif;
             text-decoration: none;
-            box-shadow: 0 10px 20px rgba(0, 113, 227, 0.3);
+            box-shadow: 0 4px 16px oklch(60% 0.18 45 / 0.3);
             transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
         }
 
         .hero-cta-primary:hover {
-            background: #005bb5;
-            box-shadow: 0 14px 28px rgba(0, 113, 227, 0.35), 0 0 28px rgba(0, 113, 227, 0.35);
+            background: oklch(55% 0.16 45);
+            box-shadow: 0 6px 20px oklch(60% 0.18 45 / 0.35);
+            transform: translateY(-2px);
+        }
             transform: translateY(-2px) scale(1.05);
         }
 
@@ -355,20 +356,23 @@ eleventyComputed:
             align-items: center;
             gap: 10px;
             padding: 16px 26px;
-            font-weight: 700;
+            font-weight: 600;
+            font-family: 'Outfit', sans-serif;
             color: #fff;
             text-decoration: none;
-            border-radius: 999px;
+            border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
         }
 
         .hero-cta-secondary:hover {
-            background: rgba(255, 255, 255, 0.12);
-            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
         }
 
         .hero-proof-strip {
@@ -447,15 +451,15 @@ eleventyComputed:
 
         .trust-card {
             position: relative;
-            border-radius: 24px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .trust-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
         }
 
         .trust-card img {
@@ -559,24 +563,16 @@ eleventyComputed:
         /* Apple Glassmorphism Cards */
 
         .glass-card {
-
-            background: rgba(255, 255, 255, 0.45);  /* Glass background */
-
-            backdrop-filter: blur(18px);  /* Frosted glass effect */
-
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
-
-            border: 1px solid rgba(255, 255, 255, 0.3);  /* Glass border */
-
-            border-radius: 24px;
-
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
             padding: 30px;
-
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);  /* Glass shadow */
-
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);  /* Apple easing */
-
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-align: center;
+        }
 
         }
 
