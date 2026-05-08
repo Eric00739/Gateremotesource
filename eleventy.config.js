@@ -44,6 +44,13 @@ const canonicalPath = (urlPath) => {
   return urlPath.replace(/\/index\.html$/, "/");
 };
 
+const redirectPermalink = (fromPath) => {
+  const cleanPath = String(fromPath || "").replace(/^\/+/, "");
+  if (!cleanPath) return false;
+  if (cleanPath.endsWith("/")) return `${cleanPath}index.html`;
+  return cleanPath;
+};
+
 const splitHref = (href) => {
   const match = href.match(/^([^?#]*)(.*)$/);
   return { path: match ? match[1] : href, suffix: match ? match[2] : "" };
@@ -190,6 +197,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("canonicalPath", canonicalPath);
+  eleventyConfig.addFilter("redirectPermalink", redirectPermalink);
   eleventyConfig.addFilter("safeImage", (value, fallback) => safeImagePath(value, fallback));
 
   eleventyConfig.addFilter("asArray", (value) => {
