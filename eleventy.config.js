@@ -258,17 +258,16 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("sitemapEntries", (collection) => {
     if (!Array.isArray(collection)) return [];
+    const excludedPrefixes = [
+      ...(Array.isArray(seo.sitemapExcludePrefixes) ? seo.sitemapExcludePrefixes : []),
+      ...(Array.isArray(seo.noindexPrefixes) ? seo.noindexPrefixes : []),
+    ];
     return collection.filter((item) => {
       if (!item.url) return false;
       if (item.data && item.data.eleventyExcludeFromCollections) return false;
       if (item.data && item.data.sitemap === false) return false;
       if (item.url.endsWith(".json")) return false;
-      if (
-        Array.isArray(seo.sitemapExcludePrefixes) &&
-        seo.sitemapExcludePrefixes.some((prefix) => item.url.startsWith(prefix))
-      ) {
-        return false;
-      }
+      if (excludedPrefixes.some((prefix) => item.url.startsWith(prefix))) return false;
       return true;
     });
   });

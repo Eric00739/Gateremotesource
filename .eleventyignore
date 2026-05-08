@@ -6,3 +6,5 @@ content-rules.md
 assets/blog-drops/**/post.md
 .agents
 docs
+OPTIMIZATION_CHECKLIST.md
+OPTIMIZATION_GUIDE.md

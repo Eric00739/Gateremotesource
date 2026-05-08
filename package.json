@@ -2,7 +2,7 @@
   "name": "gateremotesource",
   "private": true,
   "scripts": {
-    "build": "eleventy",
+    "build": "node scripts/clean-seo-output.js && eleventy",
     "dev": "eleventy --serve",
     "seo:audit": "node scripts/seo-audit.js",
     "test:seo": "node scripts/seo-audit.test.js"
