@@ -3,7 +3,9 @@
   "private": true,
   "scripts": {
     "build": "eleventy",
-    "dev": "eleventy --serve"
+    "dev": "eleventy --serve",
+    "seo:audit": "node scripts/seo-audit.js",
+    "test:seo": "node scripts/seo-audit.test.js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
