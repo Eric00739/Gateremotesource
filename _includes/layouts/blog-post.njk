@@ -21,6 +21,8 @@
     <meta name="keywords" content="{{ keywordString }}">
     <meta name="author" content="{{ author or 'GateRemoteSource' }}">
     <link rel="canonical" href="{{ canonicalUrl }}">
+    <link rel="alternate" href="{{ canonicalUrl }}" hreflang="x-default">
+    <link rel="alternate" href="{{ canonicalUrl }}" hreflang="{{ lang or site.lang }}">
     
     <script>
         (function() {

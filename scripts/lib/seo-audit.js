@@ -20,6 +20,12 @@ const stripUrlNoise = (value) => {
   return String(value || "").split("#")[0].split("?")[0];
 };
 
+const normalizeUrlPath = (value) => {
+  const cleanPath = stripUrlNoise(value || "");
+  if (!cleanPath || cleanPath === "/") return cleanPath || "/";
+  return cleanPath.replace(/\/+$/, "");
+};
+
 const toUrlPath = (siteUrl, absoluteUrl) => {
   if (!absoluteUrl || !absoluteUrl.startsWith(siteUrl)) return null;
   try {
@@ -100,6 +106,7 @@ const auditDist = ({
 
   const robotsPath = path.join(distDir, "robots.txt");
   const sitemapPath = path.join(distDir, "sitemap.xml");
+  const redirectsPath = path.join(distDir, "_redirects");
 
   if (!fs.existsSync(robotsPath)) {
     errors.push("Missing dist/robots.txt");
@@ -114,6 +121,28 @@ const auditDist = ({
     if (sitemapLines.length !== 1) {
       errors.push(`robots.txt must contain exactly one Sitemap line; found ${sitemapLines.length}`);
     }
+    ["/_next/static/", "/_next/image"].forEach((rule) => {
+      if (!robots.includes(`Disallow: ${rule}`)) {
+        errors.push(`robots.txt missing Disallow rule: ${rule}`);
+      }
+    });
+  }
+
+  if (!fs.existsSync(redirectsPath)) {
+    errors.push("Missing dist/_redirects");
+  } else {
+    const redirects = fs.readFileSync(redirectsPath, "utf8");
+    [
+      "http://www.gateremotesource.com/* https://www.gateremotesource.com/:splat 301!",
+      "https://gateremotesource.com/* https://www.gateremotesource.com/:splat 301!",
+      "http://gateremotesource.com/* https://www.gateremotesource.com/:splat 301!",
+      "/about.html /about/ 301!",
+      "/index.html / 301!",
+    ].forEach((line) => {
+      if (!redirects.includes(line)) {
+        errors.push(`_redirects missing rule: ${line}`);
+      }
+    });
   }
 
   if (!fs.existsSync(sitemapPath)) {
@@ -141,7 +170,9 @@ const auditDist = ({
     const pageUrl = htmlUrlForFile(distDir, file);
     const pageHasNoindex = hasNoindex(html);
     const expectedNoindex = noindexPathPrefixes.some((prefix) => pageUrl.startsWith(prefix));
-    const isLegacyRedirect = redirects.some((redirect) => redirect.from === pageUrl);
+    const isLegacyRedirect = redirects.some((redirect) => {
+      return normalizeUrlPath(redirect.from) === normalizeUrlPath(pageUrl);
+    });
 
     if (expectedNoindex && !pageHasNoindex) {
       errors.push(`Expected noindex on ${pageUrl}`);
@@ -170,6 +201,25 @@ const auditDist = ({
   redirects.forEach((redirect) => {
     if (!urlExists(distDir, redirect.from)) {
       errors.push(`Missing legacy redirect fallback: ${redirect.from} -> ${redirect.to}`);
+    }
+  });
+
+  [
+    "/compatibility/",
+    "/compatibility/liftmaster/",
+    "/compatibility/faac/",
+    "/compatibility/bft/",
+    "/compatibility/nice/",
+    "/compatibility/came/",
+    "/compatibility/doorhan/",
+  ].forEach((urlPath) => {
+    if (!urlExists(distDir, urlPath)) {
+      errors.push(`Missing compatibility page: ${urlPath}`);
+      return;
+    }
+    const file = outputPathForUrl(distDir, urlPath);
+    if (hasNoindex(fs.readFileSync(file, "utf8"))) {
+      errors.push(`Compatibility page must be indexable: ${urlPath}`);
     }
   });
 

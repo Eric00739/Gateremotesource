@@ -1,0 +1,14 @@
+---
+permalink: "_redirects"
+eleventyExcludeFromCollections: true
+sitemap: false
+---
+{% for redirect in seo.hostRedirects -%}
+{{ redirect.from }} {{ redirect.to }} 301!
+{% endfor -%}
+{% for redirect in seo.legacyRedirects -%}
+{{ redirect.from }} {{ redirect.to }} 301!
+{% endfor -%}
+{% for redirect in seo.patternRedirects -%}
+{{ redirect.from }} {{ redirect.to }} 301!
+{% endfor -%}

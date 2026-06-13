@@ -30,10 +30,38 @@ const createFixture = () => {
   write(
     path.join(dist, "robots.txt"),
     `User-agent: *
+Disallow: /_next/static/
+Disallow: /_next/image
 Allow: /
 Sitemap: https://www.gateremotesource.com/sitemap.xml
 `,
   );
+  write(
+    path.join(dist, "_redirects"),
+    `http://www.gateremotesource.com/* https://www.gateremotesource.com/:splat 301!
+https://gateremotesource.com/* https://www.gateremotesource.com/:splat 301!
+http://gateremotesource.com/* https://www.gateremotesource.com/:splat 301!
+/about.html /about/ 301!
+/index.html / 301!
+`,
+  );
+  [
+    "compatibility",
+    "compatibility/liftmaster",
+    "compatibility/faac",
+    "compatibility/bft",
+    "compatibility/nice",
+    "compatibility/came",
+    "compatibility/doorhan",
+  ].forEach((route) => {
+    write(
+      path.join(dist, route, "index.html"),
+      `<!doctype html>
+<html><head>
+<link rel="canonical" href="https://www.gateremotesource.com/${route}/">
+</head><body>${route}</body></html>`,
+    );
+  });
   write(
     path.join(dist, "sitemap.xml"),
     `<?xml version="1.0" encoding="UTF-8"?>

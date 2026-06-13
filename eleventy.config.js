@@ -48,6 +48,7 @@ const redirectPermalink = (fromPath) => {
   const cleanPath = String(fromPath || "").replace(/^\/+/, "");
   if (!cleanPath) return false;
   if (cleanPath.endsWith("/")) return `${cleanPath}index.html`;
+  if (!path.posix.extname(cleanPath)) return `${cleanPath}/index.html`;
   return cleanPath;
 };
 
