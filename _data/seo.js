@@ -52,8 +52,6 @@ module.exports = {
     { from: "/blog.html", to: "/blog/" },
     { from: "/contact.html", to: "/contact/" },
     { from: "/oem.html", to: "/oem/" },
-    { from: "/oem-odm/", to: "/oem/" },
-    { from: "/en/oem-odm/", to: "/oem/" },
     { from: "/privacy.html", to: "/" },
     { from: "/shipping.html", to: "/" },
     { from: "/terms.html", to: "/" },
