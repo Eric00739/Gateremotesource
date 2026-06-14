@@ -3,7 +3,7 @@
  * PWA 离线缓存策略
  */
 
-const CACHE_NAME = 'grs-v2-20260614';
+const CACHE_NAME = 'grs-v1';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -54,7 +54,7 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-// 拦截请求
+// 拦截请求 - 缓存优先策略
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
@@ -65,24 +65,7 @@ self.addEventListener('fetch', (event) => {
   // 跳过外部请求
   if (url.origin !== self.location.origin) return;
 
-  // HTML must be network-first so users do not keep seeing an old broken deploy.
-  if (request.mode === 'navigate' || request.destination === 'document') {
-    event.respondWith(
-      fetch(request)
-        .then((networkResponse) => {
-          if (networkResponse && networkResponse.ok) {
-            caches.open(CACHE_NAME).then((cache) => {
-              cache.put(request, networkResponse.clone());
-            });
-          }
-          return networkResponse;
-        })
-        .catch(() => caches.match(request).then((cachedResponse) => cachedResponse || caches.match('/')))
-    );
-    return;
-  }
-
-  // Static assets stay cache-first with background refresh.
+  // 策略：缓存优先，网络回退
   event.respondWith(
     caches.match(request).then((cachedResponse) => {
       if (cachedResponse) {
