@@ -9,7 +9,7 @@ import { blogCategories, blogPosts, popularGuides, type BlogPost } from '@/data/
 import LeadModalTrigger from '@/components/LeadModalTrigger';
 import { useDict, useLocale } from '@/i18n';
 
-const ARTICLES_PER_PAGE = 10;
+const ARTICLES_PER_PAGE = 24;
 
 function formatDate(date?: string) {
   if (!date) return null;
@@ -350,7 +350,7 @@ export default function BlogIndexClient() {
                         Article index
                       </p>
                       <p className="text-xs text-[#64748B]">
-                        Compact view for larger content libraries
+                        All current guides are shown in one complete index
                       </p>
                     </div>
                     <div className="divide-y divide-[#E2E8F0]">
