@@ -32,6 +32,35 @@ const syncDocumentLanguage = `
 })();
 `;
 
+const cleanupLegacyServiceWorker = `
+(() => {
+  if (!('serviceWorker' in navigator)) return;
+
+  const reloadOnce = () => {
+    const key = 'grs-sw-cleaned-20260614';
+    if (sessionStorage.getItem(key)) return;
+    sessionStorage.setItem(key, '1');
+    window.location.reload();
+  };
+
+  const clearCaches = () => {
+    if (!('caches' in window)) return Promise.resolve();
+    return caches.keys().then((names) => Promise.all(names.map((name) => caches.delete(name))));
+  };
+
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.getRegistrations()
+      .then((registrations) => {
+        if (!registrations.length) return clearCaches();
+        return Promise.all(registrations.map((registration) => registration.unregister()))
+          .then(clearCaches)
+          .then(reloadOnce);
+      })
+      .catch(() => {});
+  });
+})();
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -41,6 +70,7 @@ export default function RootLayout({
     <html lang="en" className={`${outfit.variable} ${inter.variable} ${jetBrainsMono.variable} antialiased`} data-scroll-behavior="smooth" suppressHydrationWarning>
       <body className="min-h-screen flex flex-col bg-[#062748]">
         <script dangerouslySetInnerHTML={{ __html: syncDocumentLanguage }} />
+        <script dangerouslySetInnerHTML={{ __html: cleanupLegacyServiceWorker }} />
         {children}
       </body>
     </html>
