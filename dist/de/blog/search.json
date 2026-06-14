@@ -1,58 +1,58 @@
 [
 
   {
-    "title": &quot;LED Bulbs Can Break Your Garage Door Remote: Here&#39;s the Fix&quot;,
-    "summary": &quot;A practical RF troubleshooting guide for garage door remotes that stop working after LED bulb upgrades, with a 60-second field test and quiet fixes for installers.&quot;,
-    "category": &quot;Troubleshooting&quot;,
-    "tags": [&quot;LED Interference&quot;,&quot;Garage Doors&quot;,&quot;RF Interference&quot;,&quot;Troubleshooting&quot;,&quot;433.92MHz&quot;],
+    "title": "LED Bulbs Can Break Your Garage Door Remote: Here's the Fix",
+    "summary": "A practical RF troubleshooting guide for garage door remotes that stop working after LED bulb upgrades, with a 60-second field test and quiet fixes for installers.",
+    "category": "Troubleshooting",
+    "tags": ["LED Interference","Garage Doors","RF Interference","Troubleshooting","433.92MHz"],
     "brand": [],
-    "frequency": [&quot;433.92MHz&quot;],
-    "scene": [&quot;Garage Doors&quot;,&quot;Field Service&quot;],
-    "url": &quot;/blog/led-bulbs-garage-door-remote-interference/&quot;
+    "frequency": ["433.92MHz"],
+    "scene": ["Garage Doors","Field Service"],
+    "url": "/blog/led-bulbs-garage-door-remote-interference/"
   },
 
   {
-    "title": &quot;Garage Remote Pairing Checklist for Field Installers&quot;,
-    "summary": &quot;A practical on-site SOP to pair remotes faster and reduce callback risk across mixed-brand gate projects.&quot;,
-    "category": &quot;Programming&quot;,
-    "tags": [&quot;Programming&quot;,&quot;Installation Guides&quot;,&quot;Troubleshooting&quot;,&quot;Nice&quot;,&quot;Came&quot;,&quot;LiftMaster&quot;],
+    "title": "Garage Remote Pairing Checklist for Field Installers",
+    "summary": "A practical on-site SOP to pair remotes faster and reduce callback risk across mixed-brand gate projects.",
+    "category": "Programming",
+    "tags": ["Programming","Installation Guides","Troubleshooting","Nice","Came","LiftMaster"],
     "brand": [],
     "frequency": [],
     "scene": [],
-    "url": &quot;/blog/garage-remote-pairing-checklist/&quot;
+    "url": "/blog/garage-remote-pairing-checklist/"
   },
 
   {
-    "title": &quot;Nice, Came, Hormann Compatibility Guide for Wholesale Buyers&quot;,
-    "summary": &quot;A procurement-first matrix to match OEM families, frequency bands, and replacement SKUs before bulk ordering.&quot;,
-    "category": &quot;Installation Guides&quot;,
-    "tags": [&quot;Compatibility&quot;,&quot;Nice&quot;,&quot;Came&quot;,&quot;Hormann&quot;,&quot;Wholesale&quot;],
+    "title": "Nice, Came, Hormann Compatibility Guide for Wholesale Buyers",
+    "summary": "A procurement-first matrix to match OEM families, frequency bands, and replacement SKUs before bulk ordering.",
+    "category": "Installation Guides",
+    "tags": ["Compatibility","Nice","Came","Hormann","Wholesale"],
     "brand": [],
     "frequency": [],
     "scene": [],
-    "url": &quot;/blog/nice-came-hormann-compatibility-guide/&quot;
+    "url": "/blog/nice-came-hormann-compatibility-guide/"
   },
 
   {
-    "title": &quot;How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance&quot;,
-    "summary": &quot;A field-proven checklist for OEM teams to turn range and compliance into measurable KPIs: link margin, blocking, protocol airtime, and regulator-limited transmit behavior.&quot;,
-    "category": &quot;RF Engineering&quot;,
-    "tags": [&quot;433.92MHz&quot;,&quot;RF Compliance&quot;,&quot;Link Budget&quot;,&quot;OEM Procurement&quot;,&quot;Garage Doors&quot;],
+    "title": "How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters: Distance, RF Anti-interference, and Compliance",
+    "summary": "A field-proven checklist for OEM teams to turn range and compliance into measurable KPIs: link margin, blocking, protocol airtime, and regulator-limited transmit behavior.",
+    "category": "RF Engineering",
+    "tags": ["433.92MHz","RF Compliance","Link Budget","OEM Procurement","Garage Doors"],
     "brand": [],
-    "frequency": [&quot;433.92MHz&quot;],
+    "frequency": ["433.92MHz"],
     "scene": [],
-    "url": &quot;/blog/choose-433-92mhz-remote-control/&quot;
+    "url": "/blog/choose-433-92mhz-remote-control/"
   },
 
   {
-    "title": &quot;Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls&quot;,
-    "summary": &quot;Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation.&quot;,
-    "category": &quot;Engineering&quot;,
-    "tags": [&quot;PCB Quality&quot;,&quot;Rolling Code&quot;,&quot;OEM Manufacturing&quot;],
+    "title": "Avoid the Public Mold Trap: The Definitive Guide to Identifying Industrial-Grade Remote Controls",
+    "summary": "Why do identical-looking remotes perform differently? We dismantle the PCB to reveal the hidden differences in FR-4 material, soldering, and RF stability that impact your reputation.",
+    "category": "Engineering",
+    "tags": ["PCB Quality","Rolling Code","OEM Manufacturing"],
     "brand": [],
-    "frequency": [&quot;433.92MHz&quot;],
+    "frequency": ["433.92MHz"],
     "scene": [],
-    "url": &quot;/blog/avoid-public-mold-trap-pcb-quality/&quot;
+    "url": "/blog/avoid-public-mold-trap-pcb-quality/"
   }
 
 ]
