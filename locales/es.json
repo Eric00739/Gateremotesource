@@ -152,29 +152,24 @@
     "become_distributor_description": "Acceda a precios mayoristas y materiales de marketing.",
     "apply_now": "Solicitar Ahora",
     "post1": {
-      "title": "Las Bombillas LED Pueden Afectar el Control Remoto de su Garaje: Esta es la Solución",
-      "category": "Solución de Problemas",
-      "summary": "Una prueba de campo de 60 segundos y soluciones discretas para controles remotos que fallan después de cambiar a bombillas LED."
+      "title": "Cómo Clonar Controles Remotos de Código Rodante en 10 Segundos",
+      "category": "TUTORIAL",
+      "summary": "Deje de perder tiempo en sitio. Nuestra nueva serie de duplicadores cara a cara copia HCS301 instantáneamente."
     },
     "post2": {
-      "title": "Cómo Elegir un Control Remoto RF de 433.92MHz para Puertas de Garaje y Persianas",
-      "category": "Ingeniería RF",
-      "summary": "Una lista práctica para margen de enlace, resistencia a interferencias y límites de firmware listos para cumplimiento."
+      "title": "Top 5 Controles Remotos Aftermarket de Alto Margen para 2025",
+      "category": "CONSEJOS DE GANANCIA",
+      "summary": "¿Qué marcas tienen más demanda? Analizamos los datos del mercado para ayudarle a stockear correctamente."
     },
     "post3": {
-      "title": "Evite la Trampa del Molde Público: Lista de PCB para Remotos Industriales",
-      "category": "Guías Técnicas",
-      "summary": "Use material de placa, tipo de oscilador y controles AOI para identificar remotos confiables antes de pedidos en volumen."
+      "title": "Receptores Universales: La Solución para Puertas Antiguas",
+      "category": "TÉCNICO",
+      "summary": "Cuando una placa de receptor vieja falla, no reemplace el motor. Instale nuestro receptor de $5."
     },
     "post4": {
-      "title": "Lista de Emparejamiento de Controles de Garaje para Instaladores",
-      "category": "Programación",
-      "summary": "Un procedimiento práctico de emparejamiento para reducir devoluciones en trabajos con Nice, Came y LiftMaster."
-    },
-    "post5": {
-      "title": "Guía de Compatibilidad Nice, Came y Hormann para Compradores Mayoristas",
-      "category": "Guías de Instalación",
-      "summary": "Relacione frecuencia, serie de receptor y familias de código rodante para evitar pedidos con SKU incorrecto."
+      "title": "Solución de Problemas de Interferencia 433MHz",
+      "category": "TÉCNICO",
+      "summary": "¿Cliente quejándose de corto alcance? Aquí hay una lista para identificar y solucionar interferencia de señal en sitio."
     },
     "read_more": "Leer más ->",
     "no_articles": "No se encontraron artículos.",
