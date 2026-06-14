@@ -118,6 +118,7 @@ const safeImagePath = (value, fallback = "/assets/factory/team.webp") => {
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("CNAME");
+  eleventyConfig.addPassthroughCopy("sw.js");
   eleventyConfig.addPassthroughCopy("logo");
   eleventyConfig.addPassthroughCopy("locales");
   eleventyConfig.addPassthroughCopy("site.webmanifest");
