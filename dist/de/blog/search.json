@@ -1,6 +1,17 @@
 [
 
   {
+    "title": &quot;LED Bulbs Can Break Your Garage Door Remote: Here&#39;s the Fix&quot;,
+    "summary": &quot;A practical RF troubleshooting guide for garage door remotes that stop working after LED bulb upgrades, with a 60-second field test and quiet fixes for installers.&quot;,
+    "category": &quot;Troubleshooting&quot;,
+    "tags": [&quot;LED Interference&quot;,&quot;Garage Doors&quot;,&quot;RF Interference&quot;,&quot;Troubleshooting&quot;,&quot;433.92MHz&quot;],
+    "brand": [],
+    "frequency": [&quot;433.92MHz&quot;],
+    "scene": [&quot;Garage Doors&quot;,&quot;Field Service&quot;],
+    "url": &quot;/blog/led-bulbs-garage-door-remote-interference/&quot;
+  },
+
+  {
     "title": &quot;Garage Remote Pairing Checklist for Field Installers&quot;,
     "summary": &quot;A practical on-site SOP to pair remotes faster and reduce callback risk across mixed-brand gate projects.&quot;,
     "category": &quot;Programming&quot;,
