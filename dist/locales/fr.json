@@ -153,24 +153,29 @@
     "become_distributor_description": "Accédez aux tarifs de gros et aux supports marketing.",
     "apply_now": "Postuler",
     "post1": {
-      "title": "Comment Cloner des Télécommandes à Code Roulant en 10 Secondes",
-      "category": "TUTORIEL",
-      "summary": "Arrêtez de perdre du temps sur site. Notre nouvelle série de duplicateurs face-à-face copie HCS301 instantanément."
+      "title": "Les Ampoules LED Peuvent Perturber Votre Télécommande de Garage: Voici la Solution",
+      "category": "Dépannage",
+      "summary": "Un test terrain de 60 secondes et des corrections simples pour les télécommandes qui échouent après un passage aux ampoules LED."
     },
     "post2": {
-      "title": "Top 5 Télécommandes Aftermarket à Haute Marge pour 2025",
-      "category": "CONSEILS PROFIT",
-      "summary": "Quelles marques ont le plus de demande? Nous analysons les données du marché pour vous aider à stocker correctement."
+      "title": "Comment Choisir une Télécommande RF 433.92MHz pour Portes de Garage et Volets Roulants",
+      "category": "Ingénierie RF",
+      "summary": "Une checklist terrain pour la marge de liaison, l'anti-interférence et les limites firmware prêtes pour la conformité."
     },
     "post3": {
-      "title": "Récepteurs Universels: La Solution pour Portes Anciennes",
-      "category": "TECHNIQUE",
-      "summary": "Quand une carte récepteur ancienne meurt, ne remplacez pas le moteur. Installez notre récepteur."
+      "title": "Éviter le Piège du Moule Public: Checklist PCB pour Télécommandes Industrielles",
+      "category": "Guides Techniques",
+      "summary": "Utilisez le matériau PCB, le type d'oscillateur et les contrôles AOI pour identifier des télécommandes fiables avant les commandes volume."
     },
     "post4": {
-      "title": "Dépannage Interférence 433MHz",
-      "category": "TECHNIQUE",
-      "summary": "Client se plaint de courte portée? Voici une checklist pour identifier et réparer l'interférence de signal sur site."
+      "title": "Checklist d'Appairage de Télécommandes de Garage pour Installateurs",
+      "category": "Programmation",
+      "summary": "Une procédure d'appairage pratique pour réduire les rappels sur les remplacements Nice, Came et LiftMaster."
+    },
+    "post5": {
+      "title": "Guide de Compatibilité Nice, Came et Hormann pour Acheteurs Grossistes",
+      "category": "Guides d'Installation",
+      "summary": "Associez fréquence, série de récepteur et familles de code roulant pour éviter les mauvaises références dans les projets mixtes."
     },
     "read_more": "Lire plus ->",
     "no_articles": "Aucun article trouvé.",

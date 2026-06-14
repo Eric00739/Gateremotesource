@@ -152,24 +152,29 @@
     "become_distributor_description": "Erhalten Sie Zugang zu Großhandelspreisen und Marketingmaterialien.",
     "apply_now": "Jetzt Bewerben",
     "post1": {
-      "title": "Wie man Rolling-Code-Fernbedienungen in 10 Sekunden kloniert",
-      "category": "TUTORIAL",
-      "summary": "Hören Sie auf, Zeit auf der Baustelle zu verschwenden. Unsere neue Face-to-Face-Duplizatorserie kopiert HCS301 sofort."
+      "title": "LED-Lampen Können Ihre Garagentor-Fernbedienung Stören: So Lösen Sie es",
+      "category": "Fehlerbehebung",
+      "summary": "Ein 60-Sekunden-Feldtest und leise Abhilfen für Garagentor-Fernbedienungen, die nach LED-Upgrades ausfallen."
     },
     "post2": {
-      "title": "Top 5 High-Margin Aftermarket-Fernbedienungen für 2025",
-      "category": "PROFIT TIPPS",
-      "summary": "Welche Marken haben die meiste Nachfrage? Wir analysieren Marktdaten, um Ihnen beim richtigen Stock zu helfen."
+      "title": "So Wählen Sie eine 433.92MHz RF-Fernbedienung für Garagentore und Rollläden",
+      "category": "RF Engineering",
+      "summary": "Eine praxiserprobte Checkliste für Link Margin, Störfestigkeit und konforme Firmware-Grenzen."
     },
     "post3": {
-      "title": "Universalempfänger: Die Lösung für alte Tore",
-      "category": "TECHNISCH",
-      "summary": "Wenn eine alte Empfängerplatine ausfällt, ersetzen Sie nicht den Motor. Installieren Sie unseren $5 Empfänger."
+      "title": "Die Public-Mold-Falle Vermeiden: PCB-Checkliste für Industrie-Fernbedienungen",
+      "category": "Technische Anleitungen",
+      "summary": "Nutzen Sie Leiterplattenmaterial, Oszillatortyp und AOI-Kontrollen, um zuverlässige Fernbedienungen vor Volumenaufträgen zu erkennen."
     },
     "post4": {
-      "title": "Fehlerbehebung bei 433MHz-Interferenz",
-      "category": "TECHNISCH",
-      "summary": "Kunde beschwert sich über kurze Reichweite? Hier ist eine Checkliste, um Signalinterferenzen auf der Baustelle zu identifizieren und zu beheben."
+      "title": "Pairing-Checkliste für Garagentor-Fernbedienungen im Außendienst",
+      "category": "Programmierung",
+      "summary": "Ein praktischer Pairing-Ablauf, um Rückrufe bei Nice-, Came- und LiftMaster-Ersatzjobs zu reduzieren."
+    },
+    "post5": {
+      "title": "Nice-, Came- und Hormann-Kompatibilitätsleitfaden für Großhandelskunden",
+      "category": "Installationsanleitungen",
+      "summary": "Ordnen Sie Frequenz, Empfängerserie und Rolling-Code-Familien zu, um falsche SKUs in gemischten Projekten zu vermeiden."
     },
     "read_more": "Mehr lesen ->",
     "no_articles": "Keine Artikel gefunden.",

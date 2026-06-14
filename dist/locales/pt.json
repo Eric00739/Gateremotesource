@@ -152,24 +152,29 @@
     "become_distributor_description": "Acesse preços de atacado e materiais de marketing.",
     "apply_now": "Inscreva-se agora",
     "post1": {
-      "title": "Como clonar controles rolling code em 10 segundos",
-      "category": "TUTORIAL",
-      "summary": "Pare de perder tempo em campo. Nossa nova série de duplicadores face-a-face copia HCS301 instantaneamente."
+      "title": "Lâmpadas LED Podem Atrapalhar o Controle do Portão da Garagem: Veja a Solução",
+      "category": "Solução de problemas",
+      "summary": "Um teste de campo de 60 segundos e correções discretas para controles que falham após a troca para lâmpadas LED."
     },
     "post2": {
-      "title": "Top 5 controles de alta margem para 2025",
-      "category": "DICAS DE LUCRO",
-      "summary": "Quais marcas têm mais demanda? Analisamos os dados de mercado para você estocar certo."
+      "title": "Como escolher um controle RF 433.92MHz para portas de garagem e persianas",
+      "category": "Engenharia RF",
+      "summary": "Uma checklist prática para margem de link, anti-interferência e limites de firmware prontos para conformidade."
     },
     "post3": {
-      "title": "Receptores universais: a solução para portões antigos",
-      "category": "TÉCNICO",
-      "summary": "Quando a placa receptora queima, não troque o motor. Instale nosso receptor de US$5."
+      "title": "Evite a armadilha do molde público: checklist de PCB para controles industriais",
+      "category": "Guias técnicos",
+      "summary": "Use material da placa, tipo de oscilador e inspeção AOI para identificar controles confiáveis antes de pedidos em volume."
     },
     "post4": {
-      "title": "Resolvendo interferência em 433MHz",
-      "category": "TÉCNICO",
-      "summary": "Cliente reclamando de curto alcance? Checklist para identificar e corrigir interferência de sinal em campo."
+      "title": "Checklist de pareamento de controles de garagem para instaladores",
+      "category": "Programação",
+      "summary": "Um fluxo prático de pareamento para reduzir retornos em trabalhos com Nice, Came e LiftMaster."
+    },
+    "post5": {
+      "title": "Guia de compatibilidade Nice, Came e Hormann para compradores atacadistas",
+      "category": "Guias de instalação",
+      "summary": "Mapeie frequência, série do receptor e famílias rolling code para evitar SKUs errados em projetos multi-marca."
     },
     "read_more": "Ler mais ->",
     "no_articles": "Nenhum artigo encontrado.",

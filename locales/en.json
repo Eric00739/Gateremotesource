@@ -152,24 +152,29 @@
     "become_distributor_description": "Get access to wholesale pricing and marketing materials.",
     "apply_now": "Apply Now",
     "post1": {
-      "title": "How to Clone Rolling Code Remotes in 10 Seconds",
-      "category": "TUTORIAL",
-      "summary": "Stop wasting time on site. Our new face-to-face duplicator series copies HCS301 instantly."
+      "title": "LED Bulbs Can Break Your Garage Door Remote: Here's the Fix",
+      "category": "Troubleshooting",
+      "summary": "A 60-second field test and quiet fixes for garage door remotes that fail after LED bulb upgrades."
     },
     "post2": {
-      "title": "Top 5 High-Margin Aftermarket Remotes for 2025",
-      "category": "PROFIT TIPS",
-      "summary": "Which brands have the most demand? We analyze the market data to help you stock right."
+      "title": "How to Choose a 433.92MHz RF Remote Control for Garage Doors and Roller Shutters",
+      "category": "RF Engineering",
+      "summary": "A field-tested checklist for link margin, anti-interference performance, and compliance-ready firmware limits."
     },
     "post3": {
-      "title": "Universal Receivers: The Fix for Old Gates",
-      "category": "TECHNICAL",
-      "summary": "When an old receiver board dies, don't replace the motor. Install our $5 receiver."
+      "title": "Avoid the Public Mold Trap: Industrial-Grade Remote PCB Checklist",
+      "category": "Technical Guides",
+      "summary": "Use board material, oscillator type, and AOI checkpoints to identify reliable remotes before placing volume orders."
     },
     "post4": {
-      "title": "Troubleshooting 433MHz Interference",
-      "category": "TECHNICAL",
-      "summary": "Customer complaining about short range? Here is a checklist to identify and fix signal interference on site."
+      "title": "Garage Remote Pairing Checklist for Field Installers",
+      "category": "Programming",
+      "summary": "A practical pairing SOP to reduce call-backs on Nice, Came, and LiftMaster replacement jobs."
+    },
+    "post5": {
+      "title": "Nice, Came, Hormann Compatibility Guide for Wholesale Buyers",
+      "category": "Installation Guides",
+      "summary": "Map frequency, receiver series, and rolling-code families to avoid wrong-SKU orders in mixed-brand projects."
     },
     "read_more": "Read More ->",
     "no_articles": "No articles found.",

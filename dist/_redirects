@@ -8,6 +8,7 @@ http://gateremotesource.com/* https://www.gateremotesource.com/:splat 301!
 /contact.html /contact/ 301!
 /oem.html /oem/ 301!
 /oem-odm/ /oem/ 301!
+/en/blog/ /blog/ 301!
 /en/oem-odm/ /oem/ 301!
 /privacy.html / 301!
 /shipping.html / 301!
